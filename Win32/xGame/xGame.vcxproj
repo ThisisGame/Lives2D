@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{29763FBA-1FE7-4A96-BA42-5A19728BE612}</ProjectGuid>
+    <RootNamespace>xGame</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(Game2D)\Libs\libcurl\include\curl;$(Game2D)\Libs\libpng;$(Game2D)\Android\jni;$(Game2D)\Libs\glew\include;$(Game2D)\Libs\glut;$(Game2D)\Libs\OpenAL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(Game2D)\Libs\glew\bin;$(Game2D)\Libs\glew\lib;$(Game2D)\Libs\glut;$(Game2D)\Libs\libpng\projects\vstudio\Debug;$(Game2D)\Libs\OpenAL;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glew32.lib;glut32.lib;libpng16.lib;OpenAL32.lib;alut.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\..\Libs\libcurl\include\curl;..\..\Libs\libpng;..\..\Android\jni;..\..\Libs\glew\include;..\..\Libs\glut;..\..\Libs\OpenAL</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>..\..\Libs\glew\bin;..\..\Libs\glew\lib;..\..\Libs\glut;..\..\Libs\libpng\projects\vstudio\Release;..\..\Libs\OpenAL</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glew32.lib;glut32.lib;libpng16.lib;OpenAL32.lib;alut.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions> /SAFESEH:NO %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="CCAudioManager.cpp" />
+    <ClCompile Include="CCEngine.cpp" />
+    <ClCompile Include="CCEventManager.cpp" />
+    <ClCompile Include="CCImage.cpp" />
+    <ClCompile Include="CCOGL.cpp" />
+    <ClCompile Include="CCRender.cpp" />
+    <ClCompile Include="CCSceneBase.cpp" />
+    <ClCompile Include="CCSceneManager.cpp" />
+    <ClCompile Include="CCTexture.cpp" />
+    <ClCompile Include="CCVector3.cpp" />
+    <ClCompile Include="CCTimer.cpp" />
+    <ClCompile Include="Helper.cpp" />
+    <ClCompile Include="CCWinMain.cpp" />
+    <ClCompile Include="SceneWelcome.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CCAudioManager.h" />
+    <ClInclude Include="CCEngine.h" />
+    <ClInclude Include="CCEventManager.h" />
+    <ClInclude Include="CCImage.h" />
+    <ClInclude Include="CCOGL.h" />
+    <ClInclude Include="CCRender.h" />
+    <ClInclude Include="CCSceneBase.h" />
+    <ClInclude Include="CCSceneManager.h" />
+    <ClInclude Include="CCTexture.h" />
+    <ClInclude Include="CCVector3.h" />
+    <ClInclude Include="CCTimer.h" />
+    <ClInclude Include="Helper.h" />
+    <ClInclude Include="SceneWelcome.h" />
+    <ClInclude Include="ShaderNormal.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ShaderNormal.fsh" />
+    <None Include="ShaderNormal.vsh" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
