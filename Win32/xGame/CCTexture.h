@@ -2,7 +2,6 @@
 
 #include<iostream>
 #include"Helper.h"
-#include"png.h"
 
 class CCTexture
 {

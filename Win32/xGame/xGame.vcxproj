@@ -43,13 +43,13 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(Game2D)\Libs\libcurl\include\curl;$(Game2D)\Libs\libpng;$(Game2D)\Android\jni;$(Game2D)\Libs\glew\include;$(Game2D)\Libs\glut;$(Game2D)\Libs\OpenAL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\Libs\libcurl\include\curl;..\..\Libs\FreeImage;..\..\Android\jni;..\..\Libs\glew\include;..\..\Libs\glut;..\..\Libs\OpenAL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(Game2D)\Libs\glew\bin;$(Game2D)\Libs\glew\lib;$(Game2D)\Libs\glut;$(Game2D)\Libs\libpng\projects\vstudio\Debug;$(Game2D)\Libs\OpenAL;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glew32.lib;glut32.lib;libpng16.lib;OpenAL32.lib;alut.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\Libs\glew\bin;..\..\Libs\glew\lib;..\..\Libs\glut;C:\workspace\Github\Game2D\Libs\FreeImage;..\..\Libs\OpenAL;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glew32.lib;glut32.lib;OpenAL32.lib;alut.lib;FreeImage.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

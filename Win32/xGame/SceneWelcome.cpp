@@ -10,7 +10,7 @@
 SceneWelcome::SceneWelcome(void)
 {
 	m_pLogoImg=new CCImage();
-	m_pLogoImg->SetImageFile("./Resources/images/logo.png");
+	m_pLogoImg->SetImageFile("./Resources/images/test.png");
 
 	m_pSuvImg=new CCImage();
 	m_pSuvImg->SetImageFile("./Resources/images/suv.png");
