@@ -30,6 +30,10 @@ SceneWelcome::SceneWelcome(void)
 	pFunc p=&SceneWelcome::test;
 	
 	CCEventManager<SceneWelcome>::SharedInstance()->RegisterEvent(KEY_A_PRESS,this,&SceneWelcome::test);
+
+	
+	CCAudioManager::SharedInstance()->LoadBGMusic("Resources/sound/effect/skill.wav");
+	CCAudioManager::SharedInstance()->PlayBGMusic("Resources/sound/effect/skill.wav");
 }
 
 void SceneWelcome::test()

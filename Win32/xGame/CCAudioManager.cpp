@@ -41,7 +41,7 @@ ALboolean CCAudioManager::LoadBGMusic(string filename)
 	{
 		return AL_FALSE;
 	}
-	alutLoadWAVFile("music.wav",&format,&data,&size,&freq,&loop);//打开文件,传入创建内存所需信息
+	alutLoadWAVFile((ALbyte*)filename.c_str(),&format,&data,&size,&freq,&loop);//打开文件,传入创建内存所需信息
 	alBufferData(m_SoundBuffer,format,data,size,freq);//把wav数据存入到m_SoundBuffer
 	alutUnloadWAV(format,data,size,freq);//处理掉wav数据
 

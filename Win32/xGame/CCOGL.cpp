@@ -115,8 +115,7 @@ bool CCOGL::NativeInit(int argc,char* argv[],int width,int height)
 	CCSceneManager::SharedInstance()->RegisterAllScene();//注册所有的场景
 
 	CCAudioManager::SharedInstance()->Init(argc,argv);//初始化OpenAL
-	CCAudioManager::SharedInstance()->LoadBGMusic("music.wav");
-	CCAudioManager::SharedInstance()->PlayBGMusic("music.wav");
+
 
 	glutMainLoop();  //消息循环
 	return false;
