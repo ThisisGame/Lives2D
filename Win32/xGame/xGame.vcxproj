@@ -105,8 +105,10 @@
     <ClInclude Include="CCTexture.h" />
     <ClInclude Include="CCVector3.h" />
     <ClInclude Include="CCTimer.h" />
+    <ClInclude Include="GameMessage.h" />
     <ClInclude Include="Helper.h" />
     <ClInclude Include="NetWorkDispatch.h" />
+    <ClInclude Include="NetworkReceiver.h" />
     <ClInclude Include="SceneWelcome.h" />
     <ClInclude Include="ShaderNormal.h" />
   </ItemGroup>

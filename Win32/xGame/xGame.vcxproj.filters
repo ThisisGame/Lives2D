@@ -143,6 +143,12 @@
     <ClInclude Include="NetWorkDispatch.h">
       <Filter>头文件\NetWork</Filter>
     </ClInclude>
+    <ClInclude Include="NetworkReceiver.h">
+      <Filter>头文件\NetWork</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMessage.h">
+      <Filter>头文件\NetWork</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="ShaderNormal.vsh" />
