@@ -43,8 +43,8 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\..\Libs\libcurl\include\curl;..\..\Libs\FreeImage;..\..\Android\jni;..\..\Libs\glew\include;..\..\Libs\glut;..\..\Libs\OpenAL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\Libs\libcurl\include\curl;..\..\Libs\FreeImage;..\..\Android\jni;..\..\Libs\glew\include;..\..\Libs\glut;..\..\Libs\OpenAL;..\..\Libs\ODSocket;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -71,6 +71,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Libs\ODSocket\ODSocket.cpp" />
+    <ClCompile Include="..\..\Libs\ODSocket\stdafx.cpp" />
     <ClCompile Include="CCAudioManager.cpp" />
     <ClCompile Include="CCEngine.cpp" />
     <ClCompile Include="CCEventManager.cpp" />
@@ -84,9 +86,14 @@
     <ClCompile Include="CCTimer.cpp" />
     <ClCompile Include="Helper.cpp" />
     <ClCompile Include="CCWinMain.cpp" />
+    <ClCompile Include="NetWorkDispatch.cpp" />
     <ClCompile Include="SceneWelcome.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Libs\ODSocket\ODSocket.h" />
+    <ClInclude Include="..\..\Libs\ODSocket\stdafx.h" />
+    <ClInclude Include="..\..\Libs\ODSocket\targetver.h" />
+    <ClInclude Include="..\..\Libs\ODSocket\tchar.h" />
     <ClInclude Include="CCAudioManager.h" />
     <ClInclude Include="CCEngine.h" />
     <ClInclude Include="CCEventManager.h" />
@@ -99,6 +106,7 @@
     <ClInclude Include="CCVector3.h" />
     <ClInclude Include="CCTimer.h" />
     <ClInclude Include="Helper.h" />
+    <ClInclude Include="NetWorkDispatch.h" />
     <ClInclude Include="SceneWelcome.h" />
     <ClInclude Include="ShaderNormal.h" />
   </ItemGroup>

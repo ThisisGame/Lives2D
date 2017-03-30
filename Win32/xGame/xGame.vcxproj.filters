@@ -19,6 +19,18 @@
     <Filter Include="头文件\Interface">
       <UniqueIdentifier>{0f7e003c-86e1-4699-989b-b7087c801267}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\NetWork">
+      <UniqueIdentifier>{c793b1fc-dd5f-44e0-89a6-e06ee1431379}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\NetWork\ODSocket">
+      <UniqueIdentifier>{2aaa9228-f44a-4080-9220-c13829643d84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\NetWork">
+      <UniqueIdentifier>{349264ef-c5e3-4d34-aaa9-abf1121dda9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\NetWork\ODSocket">
+      <UniqueIdentifier>{fe557db9-886d-4173-b0ad-b1f8e266fd34}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CCTexture.cpp">
@@ -63,6 +75,15 @@
     <ClCompile Include="CCEventManager.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Libs\ODSocket\ODSocket.cpp">
+      <Filter>源文件\NetWork\ODSocket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libs\ODSocket\stdafx.cpp">
+      <Filter>源文件\NetWork\ODSocket</Filter>
+    </ClCompile>
+    <ClCompile Include="NetWorkDispatch.cpp">
+      <Filter>头文件\NetWork</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CCTexture.h">
@@ -106,6 +127,21 @@
     </ClInclude>
     <ClInclude Include="CCEventManager.h">
       <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libs\ODSocket\ODSocket.h">
+      <Filter>头文件\NetWork\ODSocket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libs\ODSocket\stdafx.h">
+      <Filter>头文件\NetWork\ODSocket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libs\ODSocket\targetver.h">
+      <Filter>头文件\NetWork\ODSocket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libs\ODSocket\tchar.h">
+      <Filter>头文件\NetWork\ODSocket</Filter>
+    </ClInclude>
+    <ClInclude Include="NetWorkDispatch.h">
+      <Filter>头文件\NetWork</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
