@@ -5,13 +5,11 @@
 #include"NetworkReceiver.h"
 
 
-
-
-
-
 class NetWorkDispatch
 {
 public:
+	NetWorkDispatch() {};
+
 	NetWorkDispatch(NetWorkDispatch&)
 	{
 
@@ -30,15 +28,54 @@ public:
 		bool tmpRet = mODSocket.Connect(varIp.c_str(), varPort);
 		if (tmpRet)
 		{
-			std::thread tmpRecvThread = std::thread(&NetWorkDispatch::ReceiveThreadFunc);
+			std::thread tmpRecvThread = std::thread(&NetWorkDispatch::ReceiveThreadFunc,this);
 			tmpRecvThread.detach();
 
-			std::thread tmpSendThread = std::thread(&NetWorkDispatch::SendThreadFunc);
+			std::thread tmpSendThread = std::thread(&NetWorkDispatch::SendThreadFunc,this);
 			tmpSendThread.detach();
 		}
 		return tmpRet;
 	}
 
+	void RegisterNetworkReceiver(GameMessage varGameMessage, NetworkReceiver& varNetworkReceiver)
+	{
+		std::list<NetworkReceiver> tmpList = mNetWorkReceiverMap[varGameMessage];
+		tmpList.push_back(varNetworkReceiver);
+	}
+
+	void UnRegisterNetworkReceiver(GameMessage varGameMessage, NetworkReceiver& varNetworkReceiver)
+	{
+		std::map<GameMessage, std::list<NetworkReceiver>>::iterator tmpIter = mNetWorkReceiverMap.find(varGameMessage);
+		if (tmpIter != mNetWorkReceiverMap.end())
+		{
+			std::list<NetworkReceiver> tmpList = tmpIter->second;
+			for (std::list<NetworkReceiver>::iterator tmpIterNetworkReceiver=tmpList.begin();tmpIterNetworkReceiver!=tmpList.end();)
+			{
+				//if (tmpIterNetworkReceiver == varNetworkReceiver)
+				//{
+
+				//}
+			}
+		}
+	}
+
+	void Update()
+	{
+		mutexReceive.lock();
+		char* data = listReceive.front();
+		mutexReceive.unlock();
+	}
+
+
+	void Send(GameMessage varGameMessage, char* varData)
+	{
+		mutexSend.lock();
+
+		listSend.push_back(varData);
+
+		mutexSend.unlock();
+	}
+private:
 	void ReceiveThreadFunc()
 	{
 		while (true)
@@ -73,20 +110,6 @@ public:
 		}
 	}
 
-	void Receive()
-	{
-
-	}
-
-	void Send(GameMessage varGameMessage, char* varData)
-	{
-		mutexSend.lock();
-
-		listSend.push_back(varData);
-
-		mutexSend.unlock();
-	}
-
 private:
 	static NetWorkDispatch mInstance;
 
@@ -101,5 +124,5 @@ private:
 
 	std::map<GameMessage, std::list<NetworkReceiver>> mNetWorkReceiverMap;
 };
-
+NetWorkDispatch NetWorkDispatch::mInstance;
 
