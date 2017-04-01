@@ -8,7 +8,7 @@ int main(int argc,char* argv[])
 	//{
 	//	exit(1);
 	//}
-	bool tmpRet= NetWorkDispatch::SharedInstance().Connect("127.0.0.1", 1234);
+	bool tmpRet= NetWorkDispatch::SharedInstance().Connect("192.168.2.19", 12312);
 	if (tmpRet)
 	{
 		NetWorkDispatch::SharedInstance().Send(GameMessage::None, "login");

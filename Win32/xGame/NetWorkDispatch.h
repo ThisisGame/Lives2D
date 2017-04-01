@@ -23,8 +23,8 @@ public:
 
 	bool Connect(std::string varIp, unsigned short varPort)
 	{
-		mODSocket = ODSocket();
 		mODSocket.Init();
+		mODSocket.Create(AF_INET, SOCK_STREAM, 0);
 		bool tmpRet = mODSocket.Connect(varIp.c_str(), varPort);
 		if (tmpRet)
 		{
@@ -61,9 +61,12 @@ public:
 
 	void Update()
 	{
-		mutexReceive.lock();
-		char* data = listReceive.front();
-		mutexReceive.unlock();
+		if (listReceive.size() > 0)
+		{
+			mutexReceive.lock();
+			char* data = listReceive.front();
+			mutexReceive.unlock();
+		}
 	}
 
 
