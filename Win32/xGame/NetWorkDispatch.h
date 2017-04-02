@@ -2,25 +2,25 @@
 
 #include "ODSocket.h"
 #include<list>
+#include<map>
 #include"NetworkReceiver.h"
+#include<string>
+#include<iostream>
 
 
 class NetWorkDispatch
 {
 public:
-	NetWorkDispatch() {};
-
-	NetWorkDispatch(NetWorkDispatch&)
+	static NetWorkDispatch* SharedInstance()
 	{
-
-	}
-
-public:
-	static NetWorkDispatch SharedInstance()
-	{
+		if (mInstance == nullptr)
+		{
+			mInstance = new NetWorkDispatch();
+		}
 		return mInstance;
 	}
 
+	//连接服务器
 	bool Connect(std::string varIp, unsigned short varPort)
 	{
 		mODSocket.Init();
@@ -37,36 +37,55 @@ public:
 		return tmpRet;
 	}
 
-	void RegisterNetworkReceiver(GameMessage varGameMessage, NetworkReceiver& varNetworkReceiver)
+	void RegisterNetworkReceiver(GameMessage varGameMessage, NetworkReceiver* varNetworkReceiver)
 	{
-		std::list<NetworkReceiver> tmpList = mNetWorkReceiverMap[varGameMessage];
+		std::list<NetworkReceiver*> tmpList = mNetWorkReceiverMap[varGameMessage];
 		tmpList.push_back(varNetworkReceiver);
 	}
 
-	void UnRegisterNetworkReceiver(GameMessage varGameMessage, NetworkReceiver& varNetworkReceiver)
+	void UnRegisterNetworkReceiver(GameMessage varGameMessage, NetworkReceiver* varNetworkReceiver)
 	{
-		std::map<GameMessage, std::list<NetworkReceiver>>::iterator tmpIter = mNetWorkReceiverMap.find(varGameMessage);
+		std::map<GameMessage, std::list<NetworkReceiver*>>::iterator tmpIter = mNetWorkReceiverMap.find(varGameMessage);
 		if (tmpIter != mNetWorkReceiverMap.end())
 		{
-			std::list<NetworkReceiver> tmpList = tmpIter->second;
-			for (std::list<NetworkReceiver>::iterator tmpIterNetworkReceiver=tmpList.begin();tmpIterNetworkReceiver!=tmpList.end();)
+			std::list<NetworkReceiver*> tmpList = tmpIter->second;
+			for (std::list<NetworkReceiver*>::iterator tmpIterNetworkReceiver=tmpList.begin();tmpIterNetworkReceiver!=tmpList.end();)
 			{
-				//if (tmpIterNetworkReceiver == varNetworkReceiver)
-				//{
-
-				//}
+				if ((*tmpIterNetworkReceiver) == varNetworkReceiver)
+				{
+					tmpIterNetworkReceiver = tmpList.erase(tmpIterNetworkReceiver);
+				}
+				else
+				{
+					tmpIterNetworkReceiver++;
+				}
 			}
 		}
 	}
 
 	void Update()
 	{
+		mutexReceive.lock();
 		if (listReceive.size() > 0)
 		{
-			mutexReceive.lock();
 			char* data = listReceive.front();
-			mutexReceive.unlock();
+			listReceive.pop_front();
+
+			//事件分发,取前面2个字节为GameMessage
+			GameMessage tmpGameMessage = GameMessage::None;
+			memcpy(&tmpGameMessage, data, 2);
+
+			std::map<GameMessage, std::list<NetworkReceiver*>>::iterator tmpIter = mNetWorkReceiverMap.find(tmpGameMessage);
+			if (tmpIter != mNetWorkReceiverMap.end())
+			{
+				std::list<NetworkReceiver*> tmpList = tmpIter->second;
+				for (std::list<NetworkReceiver*>::iterator tmpIterNetworkReceiver = tmpList.begin(); tmpIterNetworkReceiver != tmpList.end();)
+				{
+					(*tmpIterNetworkReceiver)->OnNetworkReceive(tmpGameMessage, data);
+				}
+			}
 		}
+		mutexReceive.unlock();
 	}
 
 
@@ -74,7 +93,11 @@ public:
 	{
 		mutexSend.lock();
 
-		listSend.push_back(varData);
+		char* tmpFullData = (char*)malloc(2 + sizeof(varData));
+		memcpy(tmpFullData, &varGameMessage, 2);
+		memcpy(tmpFullData + 2, varData, sizeof(varData));
+
+		listSend.push_back(tmpFullData);
 
 		mutexSend.unlock();
 	}
@@ -83,12 +106,20 @@ private:
 	{
 		while (true)
 		{
-			char data[1024] = "";
+			//延时代码 good
+			//this_thread::sleep_for(chrono::seconds(3));
+			//this_thread::yield();
+
+			char *data = (char*)malloc(1024);
 			int tmpRet = mODSocket.Recv(data, 1024);
 			if (tmpRet >= 0)
 			{
 				mutexReceive.lock();
-				listReceive.push_back(data);
+				char *datareal = (char*)malloc(tmpRet);
+				memcpy(datareal, data, tmpRet);
+				listReceive.push_back(datareal);
+				delete(data);
+				data = nullptr;
 				mutexReceive.unlock();
 			}
 			else
@@ -104,18 +135,21 @@ private:
 	{
 		while (true)
 		{
+			mutexSend.lock();
 			if (listSend.size() > 0)
 			{
-				mutexSend.lock();
 				char* data = listSend.front();
-				mutexSend.unlock();
+				listSend.pop_front();
+
+				mODSocket.Send(data, sizeof(data));
 			}
+			mutexSend.unlock();
 		}
 	}
 
 private:
-	static NetWorkDispatch mInstance;
-
+	NetWorkDispatch() {};
+	static NetWorkDispatch* mInstance;
 
 	ODSocket mODSocket;
 
@@ -125,7 +159,6 @@ private:
 	std::list<char*> listSend;
 	std::list<char*> listReceive;
 
-	std::map<GameMessage, std::list<NetworkReceiver>> mNetWorkReceiverMap;
+	std::map<GameMessage, std::list<NetworkReceiver*>> mNetWorkReceiverMap;
 };
-NetWorkDispatch NetWorkDispatch::mInstance;
 

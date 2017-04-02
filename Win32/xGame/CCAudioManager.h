@@ -11,7 +11,6 @@ AUDIO LIBRARY CONTEXT）处理声音通过不同的平台，她也处理你在几个窗口下共
 */
 
 #include<iostream>
-#include"CCVector3.h"
 #include<map>
 
 using namespace std;
@@ -70,17 +69,8 @@ private:
 	ALuint m_SoundBuffer; //声音数据
 	ALuint m_SoundSource; //音源
 
-	CCVector3 m_SoundSourcePosVec3;//音源的位置
-	CCVector3 m_SoundSourceVelVec3;//音源的速度 Velocity
-
-	CCVector3 m_ListenerPosVec3;//听者的位置
-	CCVector3 m_ListenerVelVec3;//听者的速度
-	CCVector3 m_ListenerOriVec3;//听者的方向
 
 	typedef map<string,ALuint> SOUND_MAP; //声音的Map
 	SOUND_MAP m_SoundMap;
-
-
-
 };
 

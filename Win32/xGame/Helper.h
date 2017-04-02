@@ -18,14 +18,10 @@ using namespace std;
 #define LOGI(...) __android_log_print(ANDROID_LOG_INFO,LOG_TAG,__VA_ARGS__)
 #define LOGE(...) __android_log_print(ANDROID_LOG_ERROR,LOG_TAG,__VA_ARGS__)
 #elif defined WIN32
-#include "GL\glew.h"
-#include"GL\wglew.h"
-#include"glut.h"
 #include<windows.h>
 #include<stdio.h>
 #include<stdlib.h>
-
-#pragma comment(lib,"glew32.lib")
+#include"gles2\gl2.h"
 
 #define LOGI(out,...) printf(out,##__VA_ARGS__);fflush(stdout)
 #define LOGE(out,...) printf(out,##__VA_ARGS__);\

@@ -1,157 +1,132 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="源文件">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="Audio">
+      <UniqueIdentifier>{7a3e458c-5d75-41f2-8b12-fcf2d3900e8b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="头文件">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{b3d21d11-80ec-48f9-b53e-73ae1fb4b803}</UniqueIdentifier>
     </Filter>
-    <Filter Include="资源文件">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="源文件\Interface">
-      <UniqueIdentifier>{60ae4d33-c197-46b5-a02e-c70150c2ec03}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="头文件\Interface">
-      <UniqueIdentifier>{0f7e003c-86e1-4699-989b-b7087c801267}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="头文件\NetWork">
+    <Filter Include="NetWork">
       <UniqueIdentifier>{c793b1fc-dd5f-44e0-89a6-e06ee1431379}</UniqueIdentifier>
     </Filter>
-    <Filter Include="头文件\NetWork\ODSocket">
+    <Filter Include="NetWork\ODSocket">
       <UniqueIdentifier>{2aaa9228-f44a-4080-9220-c13829643d84}</UniqueIdentifier>
     </Filter>
-    <Filter Include="源文件\NetWork">
-      <UniqueIdentifier>{349264ef-c5e3-4d34-aaa9-abf1121dda9d}</UniqueIdentifier>
+    <Filter Include="Image">
+      <UniqueIdentifier>{90bb121a-1aed-4edd-8123-37ccec50736c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="源文件\NetWork\ODSocket">
-      <UniqueIdentifier>{fe557db9-886d-4173-b0ad-b1f8e266fd34}</UniqueIdentifier>
+    <Filter Include="GLProgram">
+      <UniqueIdentifier>{0d88bccf-282b-42f4-b186-1e55232c8335}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Texture2D">
+      <UniqueIdentifier>{3b9e50b9-5220-46d5-8d1a-e6fe0e915c89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tools">
+      <UniqueIdentifier>{4cd2b753-7115-4614-8ae4-b975bca72b0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{447dc460-528a-4c2a-a95e-cc715d074848}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Windows">
+      <UniqueIdentifier>{bb208602-2d8d-49b8-b6af-ba3cc8ad6a32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game2D_Main">
+      <UniqueIdentifier>{359a5f85-8635-4c10-96bf-1f462de6b9f0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CCTexture.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="NetWorkDispatch.cpp">
+      <Filter>NetWork</Filter>
     </ClCompile>
-    <ClCompile Include="Helper.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="CCSceneManager.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="CCSceneBase.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneWelcome.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="CCRender.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="CCWinMain.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="CCImage.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="CCOGL.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="CCEngine.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="Texture2D\Texture2D.cpp">
+      <Filter>Texture2D</Filter>
     </ClCompile>
     <ClCompile Include="CCAudioManager.cpp">
-      <Filter>源文件</Filter>
+      <Filter>Audio</Filter>
     </ClCompile>
-    <ClCompile Include="CCVector3.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="CCSceneBase.cpp">
+      <Filter>Scene</Filter>
     </ClCompile>
-    <ClCompile Include="CCTimer.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="CCSceneManager.cpp">
+      <Filter>Scene</Filter>
     </ClCompile>
-    <ClCompile Include="CCEventManager.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="SceneWelcome.cpp">
+      <Filter>Scene</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Libs\ODSocket\ODSocket.cpp">
-      <Filter>源文件\NetWork\ODSocket</Filter>
+      <Filter>NetWork\ODSocket</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Libs\ODSocket\stdafx.cpp">
-      <Filter>源文件\NetWork\ODSocket</Filter>
+      <Filter>NetWork\ODSocket</Filter>
     </ClCompile>
-    <ClCompile Include="NetWorkDispatch.cpp">
-      <Filter>头文件\NetWork</Filter>
+    <ClCompile Include="CCImage.cpp">
+      <Filter>Image</Filter>
+    </ClCompile>
+    <ClCompile Include="Helper.cpp">
+      <Filter>Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="WinMain.cpp">
+      <Filter>Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Game2D.cpp">
+      <Filter>Game2D_Main</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CCTexture.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Helper.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="CCSceneManager.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="CCSceneBase.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneWelcome.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="CCRender.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="CCImage.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="CCEngine.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="CCOGL.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="ShaderNormal.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="CCAudioManager.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="CCVector3.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="CCTimer.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="CCEventManager.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Libs\ODSocket\ODSocket.h">
-      <Filter>头文件\NetWork\ODSocket</Filter>
+      <Filter>NetWork\ODSocket</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Libs\ODSocket\stdafx.h">
-      <Filter>头文件\NetWork\ODSocket</Filter>
+      <Filter>NetWork\ODSocket</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Libs\ODSocket\targetver.h">
-      <Filter>头文件\NetWork\ODSocket</Filter>
+      <Filter>NetWork\ODSocket</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Libs\ODSocket\tchar.h">
-      <Filter>头文件\NetWork\ODSocket</Filter>
+      <Filter>NetWork\ODSocket</Filter>
     </ClInclude>
     <ClInclude Include="NetWorkDispatch.h">
-      <Filter>头文件\NetWork</Filter>
+      <Filter>NetWork</Filter>
     </ClInclude>
     <ClInclude Include="NetworkReceiver.h">
-      <Filter>头文件\NetWork</Filter>
+      <Filter>NetWork</Filter>
     </ClInclude>
     <ClInclude Include="GameMessage.h">
-      <Filter>头文件\NetWork</Filter>
+      <Filter>NetWork</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ShaderNormal.vsh" />
-    <None Include="ShaderNormal.fsh" />
+    <ClInclude Include="shader\GLProgram.h">
+      <Filter>GLProgram</Filter>
+    </ClInclude>
+    <ClInclude Include="shader\GLProgram_Texture.h">
+      <Filter>GLProgram</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture2D\Texture2D.h">
+      <Filter>Texture2D</Filter>
+    </ClInclude>
+    <ClInclude Include="CCAudioManager.h">
+      <Filter>Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="CCSceneBase.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="CCSceneManager.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneWelcome.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="CCImage.h">
+      <Filter>Image</Filter>
+    </ClInclude>
+    <ClInclude Include="Helper.h">
+      <Filter>Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="WinGame.h">
+      <Filter>Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="Game2D.h">
+      <Filter>Game2D_Main</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

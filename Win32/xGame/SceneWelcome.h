@@ -1,9 +1,9 @@
 #pragma once
 #include "ccscenebase.h"
-
 #include"CCSceneManager.h"
-
 #include"CCImage.h"
+#include<iostream>
+#include<vector>
 
 class SceneWelcome :public CCSceneBase
 {
@@ -15,14 +15,8 @@ public:
 
 	virtual void Update();
 
-private:
-	void test();
 
 private:
 	CCImage* m_pLogoImg;
-	CCImage* m_pSuvImg;
-
-	vector<string> m_anmationFileVec;
-	vector<CCImage*> m_animImgVec;
 };
 

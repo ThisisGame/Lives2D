@@ -8,15 +8,15 @@ public:
 	/// <summary>
 	/// 注册网络监听
 	/// </summary>
-	void RegisterNetworkReceiver();
+	virtual void RegisterNetworkReceiver()=0;
 
 
 	/// <summary>
 	/// 取消网络监听
 	/// </summary>
-	void UnRegisterNetworkReceiver();
+	virtual void UnRegisterNetworkReceiver()=0;
 
 
 	//收到网络消息;
-	void OnNetworkReceive(GameMessage varGameMessage, char* varData);
+	virtual void OnNetworkReceive(GameMessage varGameMessage, char* varData)=0;
 };

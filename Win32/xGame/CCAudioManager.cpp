@@ -55,8 +55,8 @@ ALboolean CCAudioManager::LoadBGMusic(string filename)
 	alSourcef(m_SoundSource,AL_PITCH,1.0f);
 	alSourcef(m_SoundSource,AL_GAIN,1.0f);
 	//alSourcefv(m_SoundSource,AL_POSITION,m_SoundSourcePos);
-	alSourcefv(m_SoundSource,AL_POSITION,m_SoundSourcePosVec3.m_Data);
-	alSourcefv(m_SoundSource,AL_VELOCITY,m_SoundSourceVelVec3.m_Data);
+	alSourcefv(m_SoundSource, AL_POSITION, {0});
+	alSourcefv(m_SoundSource, AL_VELOCITY, { 0 });
 	alSourcei(m_SoundSource,AL_LOOPING,loop);
 	if(alGetError()==AL_NO_ERROR)
 	{
@@ -68,9 +68,9 @@ ALboolean CCAudioManager::LoadBGMusic(string filename)
 //设置听者的位置-角色的位置 角色移动时要更新角色位置等属性
 void CCAudioManager::SetListener()
 {
-	alListenerfv(AL_POSITION,m_ListenerPosVec3.m_Data);
-	alListenerfv(AL_VELOCITY,m_ListenerVelVec3.m_Data);
-	alListenerfv(AL_ORIENTATION,m_ListenerOriVec3.m_Data);
+	alListenerfv(AL_POSITION, { 0 });
+	alListenerfv(AL_VELOCITY, { 0 });
+	alListenerfv(AL_ORIENTATION, { 0 });
 }
 
 void CCAudioManager::PlayBGMusic(string filename)

@@ -1,6 +1,7 @@
 #pragma once
-#include "CCTexture.h"
-#include "CCEngine.h"
+
+#include"shader\GLProgram_Texture.h"
+#include"Texture2D\Texture2D.h"
 
 class CCImage
 {
@@ -9,19 +10,12 @@ public:
 	~CCImage(void);
 
 public:
+	void  Init(const char* varFilePath); //加载图片，生成Texture;
 
-	//设置图片路径
-	void SetImageFile(const string filename);
-
-
-	void DrawImage(float x,float y,float w,float h);
-
-	void DrawImage(float x,float y,float w,float h,int z);
+	void Draw(float varX,float varY);
 
 private:
-
-	string m_imageFileName;
-
-	GLuint m_textureId;
+	GLProgram_Texture m_GLProgram;
+	Texture2D* mTexture2D;
 };
 

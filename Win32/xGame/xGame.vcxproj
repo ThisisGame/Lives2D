@@ -43,13 +43,14 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\..\Libs\libcurl\include\curl;..\..\Libs\FreeImage;..\..\Android\jni;..\..\Libs\glew\include;..\..\Libs\glut;..\..\Libs\OpenAL;..\..\Libs\ODSocket;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\Libs\FreeImage;..\..\Libs\OpenAL;..\..\Libs\ODSocket;..\..\Libs\GLES2.0\include;C:\workspace\Github\Game2D\Libs\GLM-0.9.6.3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\..\Libs\glew\bin;..\..\Libs\glew\lib;..\..\Libs\glut;..\..\Libs\FreeImage;..\..\Libs\OpenAL;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glew32.lib;glut32.lib;OpenAL32.lib;alut.lib;FreeImage.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\Libs\FreeImage;..\..\Libs\OpenAL;..\..\Libs\GLES2.0\lib\windows\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>OpenAL32.lib;alut.lib;FreeImage.lib;libEGL.lib;libGLESv2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Windows</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -74,20 +75,15 @@
     <ClCompile Include="..\..\Libs\ODSocket\ODSocket.cpp" />
     <ClCompile Include="..\..\Libs\ODSocket\stdafx.cpp" />
     <ClCompile Include="CCAudioManager.cpp" />
-    <ClCompile Include="CCEngine.cpp" />
-    <ClCompile Include="CCEventManager.cpp" />
     <ClCompile Include="CCImage.cpp" />
-    <ClCompile Include="CCOGL.cpp" />
-    <ClCompile Include="CCRender.cpp" />
     <ClCompile Include="CCSceneBase.cpp" />
     <ClCompile Include="CCSceneManager.cpp" />
-    <ClCompile Include="CCTexture.cpp" />
-    <ClCompile Include="CCVector3.cpp" />
-    <ClCompile Include="CCTimer.cpp" />
+    <ClCompile Include="Game2D.cpp" />
     <ClCompile Include="Helper.cpp" />
-    <ClCompile Include="CCWinMain.cpp" />
+    <ClCompile Include="WinMain.cpp" />
     <ClCompile Include="NetWorkDispatch.cpp" />
     <ClCompile Include="SceneWelcome.cpp" />
+    <ClCompile Include="Texture2D\Texture2D.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Libs\ODSocket\ODSocket.h" />
@@ -95,26 +91,19 @@
     <ClInclude Include="..\..\Libs\ODSocket\targetver.h" />
     <ClInclude Include="..\..\Libs\ODSocket\tchar.h" />
     <ClInclude Include="CCAudioManager.h" />
-    <ClInclude Include="CCEngine.h" />
-    <ClInclude Include="CCEventManager.h" />
     <ClInclude Include="CCImage.h" />
-    <ClInclude Include="CCOGL.h" />
-    <ClInclude Include="CCRender.h" />
     <ClInclude Include="CCSceneBase.h" />
     <ClInclude Include="CCSceneManager.h" />
-    <ClInclude Include="CCTexture.h" />
-    <ClInclude Include="CCVector3.h" />
-    <ClInclude Include="CCTimer.h" />
     <ClInclude Include="GameMessage.h" />
     <ClInclude Include="Helper.h" />
+    <ClInclude Include="WinGame.h" />
     <ClInclude Include="NetWorkDispatch.h" />
     <ClInclude Include="NetworkReceiver.h" />
     <ClInclude Include="SceneWelcome.h" />
-    <ClInclude Include="ShaderNormal.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ShaderNormal.fsh" />
-    <None Include="ShaderNormal.vsh" />
+    <ClInclude Include="shader\GLProgram.h" />
+    <ClInclude Include="shader\GLProgram_Texture.h" />
+    <ClInclude Include="Game2D.h" />
+    <ClInclude Include="Texture2D\Texture2D.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
