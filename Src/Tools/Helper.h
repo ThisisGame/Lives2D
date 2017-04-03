@@ -7,6 +7,12 @@
 #include<stdarg.h>
 #include<iostream>
 #include<assert.h>
+
+#include <fstream>
+#include <cassert>
+#include <string>
+#include<vector>
+
 using namespace std;
 
 #ifdef ANDROID
@@ -46,6 +52,16 @@ public:
 	static void CheckGLError(const char* op);
 
 	//输出LOG
-	static void CCLOG(const char* str);
+	static void LOG(const char* str);
+
+public :
+	//读取Txt文本
+	static std::string ReadTxt(std::string& varFilePath);
+
+	//字符串分割函数  
+	static std::vector<std::string> Split(std::string& varStr, std::string& varPattern);
+
+	//获取时间
+	static unsigned int GetTime();
 };
 

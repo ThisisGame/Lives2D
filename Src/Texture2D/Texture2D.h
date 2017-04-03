@@ -13,6 +13,9 @@ public:
 	std::string m_imageFilePath;//文件路径;
 	GLuint m_textureId;
 
+	int mTextureWidth;
+	int mTextureHeight;
+
 public:
 	void  LoadTexture(const char* varFilePath); //加载图片，生成Texture;
 };

@@ -23,11 +23,11 @@ void Texture2D::LoadTexture(const char* varFilePath)
 	BYTE *pixels = (BYTE*)FreeImage_GetBits(bitmap);
 
 	//5、使用;
-	int width = FreeImage_GetWidth(bitmap);
-	int height = FreeImage_GetHeight(bitmap);
+	mTextureWidth = FreeImage_GetWidth(bitmap);
+	mTextureHeight = FreeImage_GetHeight(bitmap);
 
 	//6、交换数据，获得正确的颜色 交换1和3 RGB 原来存储的是 BGR?;
-	for (int i = 0; i < width * height * 4; i += 4)
+	for (int i = 0; i < mTextureWidth * mTextureHeight * 4; i += 4)
 	{
 		BYTE r = pixels[i];
 		pixels[i] = pixels[i + 2];
@@ -45,7 +45,7 @@ void Texture2D::LoadTexture(const char* varFilePath)
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 
 	//将图片rgb数据上传到OpenGL,在这一步才把数据从内存Copy到显存;
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, pixels);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, mTextureWidth, mTextureHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, pixels);
 
 	//释放内存;
 	FreeImage_Unload(bitmap);

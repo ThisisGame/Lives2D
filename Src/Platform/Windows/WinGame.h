@@ -82,6 +82,10 @@ public:
 		UnregisterClass(_T("WinGame"), m_hInstance);
 	}
 
+	void update(float varDeltaTime)
+	{
+		Game2D::Update(varDeltaTime);
+	}
 
 	//äÖÈ¾º¯Êý;
 	void render()
@@ -95,7 +99,7 @@ public:
 
 		glViewport(0, 0, m_width, m_height);
 
-		Game2D::render();
+		Game2D::Draw();
 
 		eglSwapBuffers(m_EGLDisplay, m_EGLSurface);
 	}
@@ -162,7 +166,18 @@ public:
 			}
 			else
 			{
-				render();
+				static float frameTime = 1.0f/30; //ËøÖ¡ 30
+				static int begintime = 0;
+				static int endtime = 0;
+				static float deltaTime = 0.0f;
+				deltaTime = (endtime - begintime)/1000.0f;
+				if (deltaTime>frameTime)
+				{
+					begintime = GetTickCount();
+					update(deltaTime);
+					render();
+				}
+				endtime = GetTickCount();
 			}
 		}
 

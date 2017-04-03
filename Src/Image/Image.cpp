@@ -7,7 +7,7 @@
 #include<glm\gtx\euler_angles.hpp>
 
 
-Image::Image(void)
+Image::Image(void):mPosX(0),mPosY(0),mScaleX(1),mScaleY(1)
 {
 	mTexture2D = new Texture2D();
 }
@@ -25,36 +25,53 @@ void Image::Init(const char * varFilePath)
 	mTexture2D->LoadTexture(varFilePath);
 }
 
-void Image::Draw(float varX, float varY)
+void Image::SetPosition(float varPosX, float varPosY)
 {
-	glm::mat4 trans = glm::translate(glm::vec3(0, 0, 0));
+	mPosX = varPosX;
+	mPosY = varPosY;
+}
+
+void Image::SetScale(float varScaleX, float varScaleY)
+{
+	mScaleX = varScaleX;
+	mScaleY = varScaleY;
+}
+
+void Image::Draw()
+{
+	glm::mat4 trans = glm::translate(glm::vec3(mPosX, mPosY, 0));
 	glm::mat4 rotation = glm::eulerAngleYXZ(glm::radians(0.0f), glm::radians(0.0f), glm::radians(0.0f));
-	glm::mat4 scale = glm::scale(glm::vec3(1.0f, 1.0f, 1.0f));
+	glm::mat4 scale = glm::scale(glm::vec3(mScaleX, mScaleY, 1.0f));
 
 	//一定要先trans，然后再其它;先缩放，然后再移动，那么移动的位置也被缩放了。先移动再缩放就不会放大移动的位置;
-	glm::mat4 model = trans*scale*rotation; 
+	glm::mat4 model = trans*scale*rotation;
 
 	//View
 	glm::mat4 view = glm::lookAt(glm::vec3(0, 0, 10), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0));
 
 
-	//透视
-	glm::mat4 proj = glm::perspective(glm::radians(60.0f), Game2D::mAspectRatio, 0.3f, 1000.0f);
+	//正交摄像机
+	glm::mat4 proj = glm::ortho(-Game2D::m_DesignWidth/2, Game2D::m_DesignWidth/2, -Game2D::m_DesignHeight/2, Game2D::m_DesignHeight/2, 0.0f, 100.0f);
+
 
 	glm::mat4 mvp = proj*view*model;
 
 	m_GLProgram.begin();
 	{
+		float tmpRectRight = (float)mTexture2D->mTextureWidth / 2;
+		float tmpRectLeft = -tmpRectRight;
+		float tmpRectTop = (float)mTexture2D->mTextureHeight / 2;
+		float tmpRectBottom = -tmpRectTop;
+
 		glm::vec3 pos[] =
 		{
-			//Front
-			glm::vec3(-1.0f, -1.0f, 1.0f),
-			glm::vec3(1.0f, -1.0f, 1.0f),
-			glm::vec3(1.0f, 1.0f, 1.0f),
+			glm::vec3(tmpRectLeft, tmpRectBottom, 1.0f),
+			glm::vec3(tmpRectRight, tmpRectBottom, 1.0f),
+			glm::vec3(tmpRectRight, tmpRectTop, 1.0f),
 
-			glm::vec3(-1.0f, -1.0f, 1.0f),
-			glm::vec3(1.0f, 1.0f, 1.0f),
-			glm::vec3(-1.0f, 1.0f, 1.0f),
+			glm::vec3(tmpRectLeft, tmpRectBottom, 1.0f),
+			glm::vec3(tmpRectRight, tmpRectTop, 1.0f),
+			glm::vec3(tmpRectLeft, tmpRectTop, 1.0f),
 		};
 
 		glm::vec2 uv[] =

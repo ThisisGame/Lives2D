@@ -11,31 +11,23 @@ public:
 	static int m_Width;
 	static int m_Height;
 
-	static float mAspectRatio;
+	static float m_DesignWidth;
+	static float m_DesignHeight;
 
 	//绘制一个图片
 	static Image* mImage;
 
 public:
-	static void Init(EGLSurface& varEGLSurface, EGLDisplay& varEGLDisplay,int& varWidth,int& varHeight)
-	{
 
-		m_Width = varWidth;
-		m_Height = varHeight;
-		mAspectRatio = (float)m_Width / m_Height;
+	//初始化
+	static void Init(EGLSurface& varEGLSurface, EGLDisplay& varEGLDisplay, int& varWidth, int& varHeight);
 
+	//刷帧
+	static void Update(float varDeltaTime);
 
-		//图片初始化
-		mImage = new Image();
-		mImage->Init("../../Resources/images/logo.png");
-	}
+	//绘制
+	static void Draw();
 
-
-	static void render()
-	{
-		//绘制一个图片
-		mImage->Draw(0, 0);
-	}
 };
 
 
