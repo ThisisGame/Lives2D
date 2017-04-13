@@ -1,7 +1,7 @@
 ![image](https://github.com/ThisisGame/Game2D/blob/master/Docs/Logo.png)
 
 
-Game2D is a simple 2D gameengine,it is degined to learn opengles.
+Lives2D is a simple 2D gameengine,it is degined to learn opengles.
 
 you can use to make game too.
 
