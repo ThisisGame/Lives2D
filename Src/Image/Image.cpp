@@ -1,6 +1,6 @@
 #include "Image.h"
 
-#include"Game2D_Main\Game2D.h"
+#include"Lives2D_Main\Lives2D.h"
 #include<glm\glm.hpp>
 #include<glm\gtc\matrix_transform.hpp>
 #include<glm\gtx\transform2.hpp>
@@ -51,7 +51,7 @@ void Image::Draw()
 
 
 	//Õý½»ÉãÏñ»ú
-	glm::mat4 proj = glm::ortho(-Game2D::m_DesignWidth/2, Game2D::m_DesignWidth/2, -Game2D::m_DesignHeight/2, Game2D::m_DesignHeight/2, 0.0f, 100.0f);
+	glm::mat4 proj = glm::ortho(-Lives2D::m_DesignWidth/2, Lives2D::m_DesignWidth/2, -Lives2D::m_DesignHeight/2, Lives2D::m_DesignHeight/2, 0.0f, 100.0f);
 
 
 	glm::mat4 mvp = proj*view*model;

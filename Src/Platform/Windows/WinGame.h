@@ -15,7 +15,7 @@
 #include<glm\gtx\transform2.hpp>
 #include<glm\gtx\euler_angles.hpp>
 
-#include"Game2D_Main\Game2D.h"
+#include"Lives2D_Main\Lives2D.h"
 
 class WinGame
 {
@@ -84,7 +84,7 @@ public:
 
 	void update(float varDeltaTime)
 	{
-		Game2D::Update(varDeltaTime);
+		Lives2D::Update(varDeltaTime);
 	}
 
 	//渲染函数;
@@ -99,7 +99,7 @@ public:
 
 		glViewport(0, 0, m_width, m_height);
 
-		Game2D::Draw();
+		Lives2D::Draw();
 
 		eglSwapBuffers(m_EGLDisplay, m_EGLSurface);
 	}
@@ -113,7 +113,7 @@ public:
 
 		glViewport(0, 0, (GLsizei)m_width, (GLsizei)m_height);
 
-		Game2D::Init(m_EGLSurface, m_EGLDisplay,m_width,m_height);
+		Lives2D::Init(m_EGLSurface, m_EGLDisplay,m_width,m_height);
 	}
 
 	//入口函数;
@@ -269,7 +269,7 @@ protected:
 		m_hWnd = CreateWindowEx(
 			NULL,
 			_T("WinGame"),
-			_T("Game2D"),
+			_T("Lives2D"),
 			WS_OVERLAPPEDWINDOW,
 			CW_USEDEFAULT,
 			CW_USEDEFAULT,
