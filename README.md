@@ -1,4 +1,4 @@
-![image](https://github.com/ThisisGame/Game2D/blob/master/Docs/Logo.png)
+![image](https://github.com/ThisisGame/Lives2D/blob/master/Docs/Logo.png)
 
 
 Lives2D is a simple 2D gameengine,it is degined to learn opengles.
@@ -14,15 +14,15 @@ V1_Only_ImageDraw_Windows is simplest version ,only draw images. very easy to le
 
 ## Run
 
-First you need vs2015 community,open sln file in  Game2D\Win32\Game2D\Game2D.sln and press F5 run it.
+First you need vs2015 community,open sln file in  Lives2D\Win32\Lives2D\Lives2D.sln and press F5 run it.
 
-![image](https://github.com/ThisisGame/Game2D/blob/V1_Only_ImageDraw_Windows/Docs/drawimage.png)
+![image](https://github.com/ThisisGame/Lives2D/blob/V1_Only_ImageDraw_Windows/Docs/drawimage.png)
 
 ## Draw
 
 the only thing you can do is create a image and draw it.
 
-in the sample,i create a Image in Game2D.cpp.
+in the sample,i create a Image in Lives2D.cpp.
 
 import Image head file.
 ```
@@ -45,7 +45,7 @@ mImage->Init("../../Resources/images/logo.png");
 then draw it
 
 ```
-void Game2D::Draw()
+void Lives2D::Draw()
 {
 	//绘制一个图片
 	mImage->Draw();
