@@ -19,14 +19,11 @@
     <Filter Include="Platform\Windows">
       <UniqueIdentifier>{bb208602-2d8d-49b8-b6af-ba3cc8ad6a32}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game2D_Main">
+    <Filter Include="Lives2D_Main">
       <UniqueIdentifier>{359a5f85-8635-4c10-96bf-1f462de6b9f0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Src\Game2D_Main\Game2D.cpp">
-      <Filter>Game2D_Main</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Src\Image\Image.cpp">
       <Filter>Image</Filter>
     </ClCompile>
@@ -39,11 +36,11 @@
     <ClCompile Include="..\..\Src\Tools\Helper.cpp">
       <Filter>Tools</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Src\Lives2D_Main\Lives2D.cpp">
+      <Filter>Lives2D_Main</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Src\Game2D_Main\Game2D.h">
-      <Filter>Game2D_Main</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Src\GLProgram\GLProgram.h">
       <Filter>GLProgram</Filter>
     </ClInclude>
@@ -61,6 +58,9 @@
     </ClInclude>
     <ClInclude Include="..\..\Src\Tools\Helper.h">
       <Filter>Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Lives2D_Main\Lives2D.h">
+      <Filter>Lives2D_Main</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

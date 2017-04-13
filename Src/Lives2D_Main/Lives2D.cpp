@@ -1,17 +1,17 @@
-#include"Game2D.h"
+#include"Lives2D.h"
 #include"Tools\Helper.h"
 #include"glm\glm.hpp"
 
 
-int Game2D::m_Width = 0;
-int Game2D::m_Height = 0;
+int Lives2D::m_Width = 0;
+int Lives2D::m_Height = 0;
 
-float Game2D::m_DesignWidth = 960.0f;
-float Game2D::m_DesignHeight = 540.0f;
+float Lives2D::m_DesignWidth = 960.0f;
+float Lives2D::m_DesignHeight = 540.0f;
 
-Image* Game2D::mImage = NULL;
+Image* Lives2D::mImage = NULL;
 
-void Game2D::Init(EGLSurface & varEGLSurface, EGLDisplay & varEGLDisplay, int & varWidth, int & varHeight)
+void Lives2D::Init(EGLSurface & varEGLSurface, EGLDisplay & varEGLDisplay, int & varWidth, int & varHeight)
 {
 	m_Width = varWidth;
 	m_Height = varHeight;
@@ -24,7 +24,7 @@ void Game2D::Init(EGLSurface & varEGLSurface, EGLDisplay & varEGLDisplay, int & 
 
 
 
-void Game2D::Update(float varDeltaTime)
+void Lives2D::Update(float varDeltaTime)
 {
 	Helper::LOG(std::to_string(varDeltaTime).c_str());
 
@@ -34,7 +34,7 @@ void Game2D::Update(float varDeltaTime)
 
 
 
-void Game2D::Draw()
+void Lives2D::Draw()
 {
 	//»æÖÆÒ»¸öÍ¼Æ¬
 	mImage->Draw();

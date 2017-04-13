@@ -5,7 +5,7 @@
 #include"Image\Image.h"
 
 
-class Game2D
+class Lives2D
 {
 public:
 	static int m_Width;

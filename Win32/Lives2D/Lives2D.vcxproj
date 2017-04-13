@@ -13,7 +13,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{29763FBA-1FE7-4A96-BA42-5A19728BE612}</ProjectGuid>
     <RootNamespace>xGame</RootNamespace>
-    <ProjectName>Game2D</ProjectName>
+    <ProjectName>Lives2D</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -73,17 +73,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Src\Game2D_Main\Game2D.cpp" />
     <ClCompile Include="..\..\Src\Image\Image.cpp" />
+    <ClCompile Include="..\..\Src\Lives2D_Main\Lives2D.cpp" />
     <ClCompile Include="..\..\Src\Platform\Windows\WinMain.cpp" />
     <ClCompile Include="..\..\Src\Texture2D\Texture2D.cpp" />
     <ClCompile Include="..\..\Src\Tools\Helper.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Src\Game2D_Main\Game2D.h" />
     <ClInclude Include="..\..\Src\GLProgram\GLProgram.h" />
     <ClInclude Include="..\..\Src\GLProgram\GLProgram_Texture.h" />
     <ClInclude Include="..\..\Src\Image\Image.h" />
+    <ClInclude Include="..\..\Src\Lives2D_Main\Lives2D.h" />
     <ClInclude Include="..\..\Src\Platform\Windows\WinGame.h" />
     <ClInclude Include="..\..\Src\Texture2D\Texture2D.h" />
     <ClInclude Include="..\..\Src\Tools\Helper.h" />
