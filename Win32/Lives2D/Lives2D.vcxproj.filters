@@ -22,6 +22,15 @@
     <Filter Include="Lives2D_Main">
       <UniqueIdentifier>{359a5f85-8635-4c10-96bf-1f462de6b9f0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GUI">
+      <UniqueIdentifier>{944135db-5d93-4fac-a288-93f2e912e640}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="KeyTouch">
+      <UniqueIdentifier>{c917618c-4796-4071-ad42-db2579db601b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sample">
+      <UniqueIdentifier>{e118393a-1914-4e58-8ac5-ac6a4a114006}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Src\Image\Image.cpp">
@@ -38,6 +47,9 @@
     </ClCompile>
     <ClCompile Include="..\..\Src\Lives2D_Main\Lives2D.cpp">
       <Filter>Lives2D_Main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\KeyTouch\KeyTouch.cpp">
+      <Filter>KeyTouch</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -61,6 +73,18 @@
     </ClInclude>
     <ClInclude Include="..\..\Src\Lives2D_Main\Lives2D.h">
       <Filter>Lives2D_Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\KeyTouch\KeyTouch.h">
+      <Filter>KeyTouch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\KeyTouch\KeyTouchListener.h">
+      <Filter>KeyTouch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Sample\DemoScene.h">
+      <Filter>Sample</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\KeyTouch\KeyCode.h">
+      <Filter>KeyTouch</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

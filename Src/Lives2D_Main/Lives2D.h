@@ -2,7 +2,11 @@
 
 #include"GLProgram\GLProgram_Texture.h"
 #include"Texture2D\Texture2D.h"
-#include"Image\Image.h"
+
+
+
+//DemoScene
+#include"./Sample/DemoScene.h"
 
 
 class Lives2D
@@ -14,8 +18,9 @@ public:
 	static float m_DesignWidth;
 	static float m_DesignHeight;
 
-	//绘制一个图片
-	static Image* mImage;
+
+
+	static DemoScene* mDemoScene;
 
 public:
 
@@ -28,6 +33,11 @@ public:
 	//绘制
 	static void Draw();
 
+	//键盘鼠标
+	static void OnKey(KeyCode varkeyCode);
+
+	//屏幕触摸点击
+	static void OnTouch(float varX, float varY);
 };
 
 

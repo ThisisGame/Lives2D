@@ -1,6 +1,7 @@
 #include"Lives2D.h"
 #include"Tools\Helper.h"
 #include"glm\glm.hpp"
+#include"KeyTouch\KeyTouch.h"
 
 
 int Lives2D::m_Width = 0;
@@ -9,7 +10,8 @@ int Lives2D::m_Height = 0;
 float Lives2D::m_DesignWidth = 960.0f;
 float Lives2D::m_DesignHeight = 540.0f;
 
-Image* Lives2D::mImage = NULL;
+DemoScene* Lives2D::mDemoScene = NULL;
+
 
 void Lives2D::Init(EGLSurface & varEGLSurface, EGLDisplay & varEGLDisplay, int & varWidth, int & varHeight)
 {
@@ -17,25 +19,31 @@ void Lives2D::Init(EGLSurface & varEGLSurface, EGLDisplay & varEGLDisplay, int &
 	m_Height = varHeight;
 
 
-	//图片初始化
-	mImage = new Image();
-	mImage->Init("../../Resources/images/logo.png");
+	mDemoScene = new DemoScene();
+	mDemoScene->Init();
+	
 }
 
 
 
 void Lives2D::Update(float varDeltaTime)
 {
-	Helper::LOG(std::to_string(varDeltaTime).c_str());
-
-	//Scale Test
-	mImage->SetScale(1.0f+ varDeltaTime, 1.0f+ varDeltaTime);
+	mDemoScene->Update(varDeltaTime);
 }
 
 
 
 void Lives2D::Draw()
 {
-	//绘制一个图片
-	mImage->Draw();
+	mDemoScene->Draw();
+}
+
+void Lives2D::OnKey(KeyCode varkeyCode)
+{
+	KeyTouch::OnKey(varkeyCode);
+}
+
+void Lives2D::OnTouch(float varX, float varY)
+{
+	KeyTouch::OnTouch(varX, varY);
 }

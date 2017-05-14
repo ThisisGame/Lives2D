@@ -74,6 +74,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Src\Image\Image.cpp" />
+    <ClCompile Include="..\..\Src\KeyTouch\KeyTouch.cpp" />
     <ClCompile Include="..\..\Src\Lives2D_Main\Lives2D.cpp" />
     <ClCompile Include="..\..\Src\Platform\Windows\WinMain.cpp" />
     <ClCompile Include="..\..\Src\Texture2D\Texture2D.cpp" />
@@ -83,8 +84,12 @@
     <ClInclude Include="..\..\Src\GLProgram\GLProgram.h" />
     <ClInclude Include="..\..\Src\GLProgram\GLProgram_Texture.h" />
     <ClInclude Include="..\..\Src\Image\Image.h" />
+    <ClInclude Include="..\..\Src\KeyTouch\KeyCode.h" />
+    <ClInclude Include="..\..\Src\KeyTouch\KeyTouch.h" />
+    <ClInclude Include="..\..\Src\KeyTouch\KeyTouchListener.h" />
     <ClInclude Include="..\..\Src\Lives2D_Main\Lives2D.h" />
     <ClInclude Include="..\..\Src\Platform\Windows\WinGame.h" />
+    <ClInclude Include="..\..\Src\Sample\DemoScene.h" />
     <ClInclude Include="..\..\Src\Texture2D\Texture2D.h" />
     <ClInclude Include="..\..\Src\Tools\Helper.h" />
   </ItemGroup>

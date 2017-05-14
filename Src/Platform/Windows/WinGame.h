@@ -203,6 +203,8 @@ public:
 #define GET_WHEEL_DELTA_WPARAM(wParam)          (int)((short)HIWORD(wParam))
 #endif
 
+		printf("msg %d  %d\n", msg,wParam);
+
 		switch (msg)
 		{
 		case WM_SIZE:
@@ -215,6 +217,7 @@ public:
 		break;
 		case WM_LBUTTONDOWN:
 		{
+			
 		}
 		break;
 		case WM_LBUTTONUP:
@@ -238,14 +241,43 @@ public:
 		{
 		}
 		break;
+
+
+
+		case WM_KEYDOWN:
+		{
+			switch (wParam)
+			{
+			case 27:
+				Lives2D::OnKey(KeyCode::Esc);
+				break;
+			case 37:
+				Lives2D::OnKey(KeyCode::Left);
+				break;
+			case 38:
+				Lives2D::OnKey(KeyCode::Up);
+				break;
+			case 39:
+				Lives2D::OnKey(KeyCode::Right);
+				break;
+			case 40:
+				Lives2D::OnKey(KeyCode::Down);
+				break;
+			default:
+				break;
+			}
+		}
+		break;
 		case WM_CHAR:
 		{
 		}
 		break;
-		case WM_KEYDOWN:
+		case WM_KEYUP:
 		{
+
 		}
 		break;
+
 		case WM_CLOSE:
 		case WM_DESTROY:
 		{
