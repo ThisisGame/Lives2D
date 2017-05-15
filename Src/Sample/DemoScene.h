@@ -38,39 +38,7 @@ public:
 		mImage->Init("../../Resources/images/logo.png");
 
 		//Ö¡¶¯»­³õÊ¼»¯
-		std::string tmpImageArray[] = { 
-			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/29.png",
-			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/28.png",
-			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/27.png",
-			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/26.png",
-			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/25.png",
-			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/24.png",
-			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/23.png",
-			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/22.png",
-			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/21.png",
-			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/20.png",
-			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/19.png",
-			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/18.png",
-			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/17.png",
-			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/16.png",
-			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/15.png",
-			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/14.png",
-			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/13.png",
-			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/12.png",
-			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/11.png",
-			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/10.png",
-			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/9.png",
-			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/8.png",
-			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/7.png",
-			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/6.png",
-			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/5.png",
-			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/4.png",
-			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/3.png",
-			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/2.png",
-			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/1.png",
-			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/0.png"
-		};
-		mImageAnimation = new ImageAnimation(tmpImageArray,30,1.0f/10);
+		mImageAnimation = new ImageAnimation("",4,1.0f/4);
 
 		mImageAnimation->Play();
 	}

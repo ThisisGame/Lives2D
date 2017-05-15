@@ -2,16 +2,22 @@
 
 #include "ImageAnimation.h"
 
+#include"Tools\Helper.h"
 
-ImageAnimation::ImageAnimation(std::string varImageData[],int varKeyFrameCount,float varSpeed):mPlay(false), mPlayTime(0), mKeyFrameCount(varKeyFrameCount), mSpeed(varSpeed)
+
+ImageAnimation::ImageAnimation(std::string varConfigPath,int varKeyFrameCount,float varSpeed):mPlay(false), mPlayTime(0), mKeyFrameCount(varKeyFrameCount), mSpeed(varSpeed)
 {
-	for (size_t i = 0; i <mKeyFrameCount; i++)
-	{
-		Image* tmpImage = new Image();
-		tmpImage->Init(varImageData[i].c_str());
+	std::string tmpConfig = Helper::ReadTxt(varConfigPath);
 
-		mVectorImageData.push_back(tmpImage);
-	}
+
+
+	//for (size_t i = 0; i <mKeyFrameCount; i++)
+	//{
+	//	Image* tmpImage = new Image();
+	//	tmpImage->Init(varImageData[i].c_str());
+
+	//	mVectorImageData.push_back(tmpImage);
+	//}
 }
 
 ImageAnimation::~ImageAnimation()

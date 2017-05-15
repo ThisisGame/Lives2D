@@ -1,0 +1,2 @@
+Idle:176.png,177.png,178.png,179.png
+Walk:180.png,181.png,182.png,183.png,184.png,185.png,186.png,187.png

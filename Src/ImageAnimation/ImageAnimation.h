@@ -25,7 +25,7 @@ private:
 
 
 public:
-	ImageAnimation(std::string varImageData[],int varKeyFrameCount,float varSpeed);
+	ImageAnimation(std::string varConfigPath,int varKeyFrameCount,float varSpeed);
 	~ImageAnimation();
 
 	void Update(float varDeltaTime);
