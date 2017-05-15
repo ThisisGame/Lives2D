@@ -1,0 +1,1980 @@
+common常见贴图
+sprite_common_activestatus.NPK                              异常状态效果
+sprite_common_changedeffect.NPK                         之前赛MM卖的花
+sprite_common_commoneffect.NPK                              常见特效
+sprite_common_commoneffect_avenger_aimpoint.npk  复仇者使用天灾降临时的准心魔法阵
+sprite_common_commoneffect_cure.NPK                         净化特效
+sprite_common_commoneffect_forcefield.NPK                   常见特效
+sprite_common_commoneffect_new_superarmor.NPK        受远程攻击后霸体化效果
+sprite_common_commoneffect_status_effect.NPK                一些Buff和Debuff的效果
+sprite_common_digit.NPK                                     等级数字
+sprite_common_digit_level02.NPK                         第四季等级数字
+sprite_common_digit_sp.NPK                                  sp数字
+sprite_common_digit_tp.NPK                                   tp数字
+sprite_common_etc.NPK                           常见贴图,如BOSS坐标、伤害数字等
+sprite_common_hiteffect.NPK                                 物理攻击命中效果
+sprite_common_hiteffect_age 12.NPK                          少儿版物理攻击命中效果
+sprite_common_hiteffect_china.NPK                           法师水浒时装的云
+sprite_common_hiteffect_elementalhiteffect.NPK              元素属性攻击特效
+sprite_common_hiteffect_optionaldamagerate.NPK              击中效果
+sprite.NPK                                            登陆界面
+sprite_character.NPK                       默认角色头像和角色轮廓
+sprite_character_common.NPK                                 通用技能图标
+sprite_character_common_8thrare_effect.NPK          时装特效
+sprite_character_common_aura.npk                            时装光环
+sprite_character_common_bustermode.NPK                 n种爆炸效果
+sprite_character_common_customui.NPK    左下角显示各种BUFF的剩余时间和使用次数
+sprite_character_common_fallingeffect.NPK          貌似卡勒特角色骑的飞船
+sprite_character_common_footprint.npk                         穿着天空7时的移动效果
+sprite_character_common_personalcast.NPK       玩家号数和施放BUFF时的目标选择
+sprite_character_common_privatestore_donkey.NPK             商店和驴
+sprite_character_common_teleport_after.npk                  传送后特效
+sprite_character_common_teleport_before.npk                 传送前特效
+sprite_character_common_teleport_wait.npk                   传送时特效
+sprite_character_common_weaponavatar_1.NPK            名称装饰卡
+sprite_character_common_weaponavatar_2.NPK            时装特效
+
+character角色
+黑暗武士
+sprite_character_demonicswordsman.NPK                         空的
+sprite_character_demonicswordsman_effect.NPK 暗影斩、冥光斩、暗影 . 波动剑、冥魂之陨、
+sprite_character_demonicswordsman_effect_ashenfork.NPK               类似波动暗杀
+sprite_character_demonicswordsman_effect_blastblood.NPK        暗劲爆发
+sprite_character_demonicswordsman_effect_bloodsword.NPK        破魂之刃
+sprite_character_demonicswordsman_effect_bloodyrave.NPK        灭魂封魔斩
+sprite_character_demonicswordsman_effect_chargecrash.NPK       暗影升龙击 
+sprite_character_demonicswordsman_effect_combostep.NPk      施放下一个阶段技能的效果
+sprite_character_demonicswordsman_effect_flowmindone.NPK       突刺
+sprite_character_demonicswordsman_effect_flowmindpowerup.NPK 
+sprite_character_demonicswordsman_effect_flowmindthree.NPK
+sprite_character_demonicswordsman_effect_flowmindtwo.NPK       跃斩
+sprite_character_demonicswordsman_effect_ghostsidewind.NPK     暗影鞭
+sprite_character_demonicswordsman_effect_ghoststepslash.NPK    禁魂斩
+sprite_character_demonicswordsman_effect_gorecross.NPK         暗黑十字斩
+sprite_character_demonicswordsman_effect_grabblastblood.NPK    暗魂之手
+sprite_character_demonicswordsman_effect_hopsmash.NPK               类似突刺
+sprite_character_demonicswordsman_effect_illusionslash.NPK     魔影剑舞
+sprite_character_demonicswordsman_effect_jumpattackmulti.NPK   
+sprite_character_demonicswordsman_effect_kalla.NPK             冥炎破空斩
+sprite_character_demonicswordsman_effect_momentaryslash.NPK    破灭斩
+sprite_character_demonicswordsman_effect_moonslash.NPK        暗月斩
+sprite_character_demonicswordsman_effect_outragebreak.NPK     魔狱裂魂斩
+sprite_character_demonicswordsman_effect_rapidmoveslash.NPK   突刺
+sprite_character_demonicswordsman_effect_reflectguard.NPK     冥魂珠
+sprite_character_demonicswordsman_effect_shockwavearea.NPK    凝魂波动阵
+sprite_character_demonicswordsman_effect_dark_hadouken.NPK    邪影·波动剑
+sprite_character_demonicswordsman_effect_triplestab.NPK       暗影三击剑
+sprite_character_demonicswordsman_effect_vaneslash.NPK        漩涡斩
+sprite_character_demonicswordsman_effect_wavespinarea.NPK     黑暗冥王阵
+格斗家♂
+时装
+sprite_character_fighter_atequipment_avatar_belt.NPK        腰部
+sprite_character_fighter_atequipment_avatar_cap.NPK         帽子
+sprite_character_fighter_atequipment_avatar_coat.NPK        上衣
+sprite_character_fighter_atequipment_avatar_face.NPK        脸部
+sprite_character_fighter_atequipment_avatar_hair.NPK        头发
+sprite_character_fighter_atequipment_avatar_neck.NPK        胸部
+sprite_character_fighter_atequipment_avatar_pants.NPK       下装
+sprite_character_fighter_atequipment_avatar_shoes.NPK       裤子
+sprite_character_fighter_atequipment_avatar_skin.NPK        皮肤
+武器
+sprite_character_fighter_atequipment_weapon_arm.NPK          机械臂铠
+sprite_character_fighter_atequipment_weapon_boneclaw.NPK    骨爪
+sprite_character_fighter_atequipment_weapon_boxglove.NPK    拳套
+sprite_character_fighter_atequipment_weapon_claw.NPK           爪
+sprite_character_fighter_atequipment_weapon_gauntlet.NPK    臂铠
+sprite_character_fighter_atequipment_weapon_glove.NPK        手套
+sprite_character_fighter_atequipment_weapon_knuckle.NPK     指虎
+sprite_character_fighter_atequipment_weapon_tonfa.NPK       东方棍
+职业特征
+sprite_character_fighter_atequipment_growtype.NPK               柔道、街霸、散打
+sprite_character_fighter_effect.NPK                          气功、技能图标、其他特效
+技能
+sprite_character_fighter_effect_at108stairsex.NPK           武莲华 
+sprite_character_fighter_effect_atattack.NPK              男格斗家技能特效
+sprite_character_fighter_effect_atblockbuster.NPK           狂暴 - 砖块投掷
+sprite_character_fighter_effect_atchainkick.NPK           霹雳三重踢
+sprite_character_fighter_effect_atchargespear.NPK          彗星冲击
+sprite_character_fighter_effect_atclosepunch.NPK            冲膝
+sprite_character_fighter_effect_atcrashlowkick.NPK          碎骨
+sprite_character_fighter_effect_atcrashrope.NPK              千丝乱舞
+sprite_character_fighter_effect_atcrazymount.NPK            念兽：猛虎震地特效
+sprite_character_fighter_effect_atdashafterdash.NPK         野蛮冲撞
+sprite_character_fighter_effect_atdashpunch.NPK             肘击
+sprite_character_fighter_effect_atdefinitegrab.NPK          暴力抓取的特效
+sprite_character_fighter_effect_atdestroyearthskydrop.NPK   天崩地裂
+sprite_character_fighter_effect_atearthbreak.NPK            金刚碎
+sprite_character_fighter_effect_atenchantpoison.NPK         毒瓶投掷
+sprite_character_fighter_effect_atenergyball.NPK            念气波
+sprite_character_fighter_effect_atenergyfield.NPK          螺旋念气场
+sprite_character_fighter_effect_atfastdash.NPK              瞬步
+sprite_character_fighter_effect_atflamelegs.NPK              烈焰焚步
+sprite_character_fighter_effect_atglueyfruitthrow.NPK        爆破黏球
+sprite_character_fighter_effect_atglueyfruitthrow_appendage.NPK         爆破黏球
+sprite_character_fighter_effect_atglueyfruitthrow_explosionfruit.NPK           爆破黏球
+sprite_character_fighter_effect_atglueyfruitthrow_throwfruit.NPK            爆破黏球
+sprite_character_fighter_effect_atgrabexplosion.NPK         擒月炎
+sprite_character_fighter_effect_atgroundkick.NPK            螺旋滑铲
+sprite_character_fighter_effect_athiddensting.NPK            毒针投掷
+sprite_character_fighter_effect_atholdup.NPK                雷霆旋踢
+sprite_character_fighter_effect_athurricanespear.NPK         旋风碎心踢
+sprite_character_fighter_effect_atillusion.NPK              分身
+sprite_character_fighter_effect_atjumpsuplex.NPK             空中抓取特效
+sprite_character_fighter_effect_atjunkspin.NPK               血色风暴
+sprite_character_fighter_effect_atlegsuplex.NPK              浮空凌云踢抓取特效
+sprite_character_fighter_effect_atlightningdance.NPK       闪电之舞
+sprite_character_fighter_effect_atlightningdragon.NPK        念兽：猛虎震地
+sprite_character_fighter_effect_atmount.NPK                 骑乘金雷虎的特效
+sprite_character_fighter_effect_atneedleload.NPK           血色风暴的飞出来的血针
+sprite_character_fighter_effect_atnenflower.NPK             念兽：审判之金雷虎
+sprite_character_fighter_effect_atnenmonster.NPK             念兽：龙虎啸
+sprite_character_fighter_effect_atnenspear.NPK               念之战矛
+sprite_character_fighter_effect_atpunchafterreturn.NPK       折颈
+sprite_character_fighter_effect_atrandomkick.NPK            瞬影连环踢
+sprite_character_fighter_effect_atrisingupper.NPK           炽焰旋风腿
+sprite_character_fighter_effect_atroarstun.NPK               狮子吼
+sprite_character_fighter_effect_atshouldercharge.NPK        铁山靠
+sprite_character_fighter_effect_atsinglekick.NPK             上踢
+sprite_character_fighter_effect_atspiralcolumnex.NPK        冲云念气场
+sprite_character_fighter_effect_atspire.NPK                  浮空凌云踢
+sprite_character_fighter_effect_atstomp.NPK                  鹰踏
+sprite_character_fighter_effect_atsuplex.NPK                 膝击
+sprite_character_fighter_effect_atsuplexcyclone.NPK         地狱风火轮
+sprite_character_fighter_effect_atthrowenemy.NPK             抛投
+sprite_character_fighter_effect_atthrowweb.NPK               罗网投掷
+sprite_character_fighter_effect_attyphoon.NPK               死亡旋律
+sprite_character_fighter_effect_atvenommine.NPK             毒雷引爆
+sprite_character_fighter_effect_atwhirlwindkick.NPK          旋风踢
+sprite_character_fighter_effect_atwildcannonspike.NPK       裂石破天
+格斗家♀
+时装
+sprite_character_fighter_equipment_avatar_belt.NPK          腰部
+sprite_character_fighter_equipment_avatar_cap.NPK           帽子
+sprite_character_fighter_equipment_avatar_coat.NPK          上衣
+sprite_character_fighter_equipment_avatar_face.NPK          脸部
+sprite_character_fighter_equipment_avatar_hair.NPK          头发
+sprite_character_fighter_equipment_avatar_neck.NPK          胸部
+sprite_character_fighter_equipment_avatar_pants.NPK         下装
+sprite_character_fighter_equipment_avatar_shoes.NPK         鞋子
+sprite_character_fighter_equipment_avatar_skin.NPK          皮肤
+武器
+sprite_character_fighter_equipment_weapon_arm.NPK           机械臂铠
+sprite_character_fighter_equipment_weapon_boneclaw.NPK      骨爪
+sprite_character_fighter_equipment_weapon_boxglove.NPK      拳套
+sprite_character_fighter_equipment_weapon_claw.NPK          爪
+sprite_character_fighter_equipment_weapon_gauntlet.NPK      臂铠
+sprite_character_fighter_equipment_weapon_glove.NPK         手套
+sprite_character_fighter_equipment_weapon_knuckle.NPK       指虎
+sprite_character_fighter_equipment_weapon_tonfa.NPK         东方棍
+职业特征
+sprite_character_fighter_equipment_growtype.NPK             柔道、街霸、散打
+sprite_character_fighter_effect.NPK                                 气功、技能图标、其他特效
+二次觉醒过屏走图、二次觉醒插图、二次觉醒特写（几种叫法一种内容姐）
+sprite_character_fighter_effect_cutin.NPK
+sprite_character_fighter_effect_blockbusterex.NPK          爆碎砖袭
+sprite_character_fighter_effect_chaindestruction.NPK     圣武连环破
+sprite_character_fighter_effect_closepunch.NPK               寸拳
+sprite_character_fighter_effect_crashlowkick.NPK             碎骨
+sprite_character_fighter_effect_dashafterdash.NPK            疾风连击
+sprite_character_fighter_effect_dashpunchex.NPK              破碎拳
+sprite_character_fighter_effect_dragonmine.NPK              毒龙轰天雷
+sprite_character_fighter_effect_earthbreak.NPK               金刚碎
+sprite_character_fighter_effect_energyball.NPK               念气波
+sprite_character_fighter_effect_energyfield.NPK              螺旋念气场
+sprite_character_fighter_effect_finalheaven.NPK             极舞霸皇拳
+sprite_character_fighter_effect_giantswing.NPK                末日摇篮
+sprite_character_fighter_effect_grabexplosionex.NPK          狂毒擒月炎
+sprite_character_fighter_effect_groundkick.NPK              裂地飞沙
+sprite_character_fighter_effect_hurricanesp.NPK               苍宇彗星落
+sprite_character_fighter_effect_inhaledenergyshot.NPK   聚能念气炮
+sprite_character_fighter_effect_inhaledenergyshot_absorbenergyball.NPK  聚能念气炮特效
+sprite_character_fighter_effect_jumpsuplex.NPK               霹雳肘击
+sprite_character_fighter_effect_junkspin.NPK                 街头风暴
+sprite_character_fighter_effect_junkspin_objects.NPK       街头风暴的大件垃圾
+sprite_character_fighter_effect_legsuplexex.NPK             空绞连锤
+sprite_character_fighter_effect_lightningdance.NPK           闪电之舞
+sprite_character_fighter_effect_lightningdragon.NPK         念兽：雷龙出海
+sprite_character_fighter_effect_muscleshift.NPK              柔化肌肉
+sprite_character_fighter_effect_nencharge.NPK               风之气息
+sprite_character_fighter_effect_nenflower.NPK               千莲怒放
+sprite_character_fighter_effect_nenguardex.NPK              究极念气罩
+sprite_character_fighter_effect_nenmonster_whitetiger.NPK   念兽：龙虎啸
+sprite_character_fighter_effect_nenofbrilliance.NPK        念帝旋天破
+sprite_character_fighter_effect_nenshield.NPK                念气罩
+sprite_character_fighter_effect_poisonexplosion.NPK     连环毒爆弹
+sprite_character_fighter_effect_poisonmist.NPK               死亡毒雾
+sprite_character_fighter_effect_poisonsnake.NPK              万毒噬心决
+sprite_character_fighter_effect_powerupondash.NPK            武神步
+sprite_character_fighter_effect_punchafterreturn.NPK         折颈
+sprite_character_fighter_effect_randomkick.NPK               纷影连环踢
+sprite_character_fighter_effect_risingupper.NPK              升龙拳
+sprite_character_fighter_effect_risingupperex.NPK           升龙霸
+sprite_character_fighter_effect_roarstunex.NPK               狂狮怒吼
+sprite_character_fighter_effect_saintillusion.NPK              奇袭幻影
+sprite_character_fighter_effect_shouldercharge.NPK          铁山靠
+sprite_character_fighter_effect_singlekick.NPK              上踢
+sprite_character_fighter_effect_stomp.NPK                   鹰踏
+sprite_character_fighter_effect_strongestlowkick.NPK       武神强踢
+sprite_character_fighter_effect_suplexcyclone.NPK            地狱摇篮
+sprite_character_fighter_effect_suplexcycloneex.NPK         死亡摇篮
+sprite_character_fighter_effect_suplexsubpowerup.NPK         背摔强化
+sprite_character_fighter_effect_throwenemy.NPK               抛投
+sprite_character_fighter_effect_tigerstrike.NPK                    虎啸神拳
+sprite_character_fighter_effect_torbellino.NPK                  风暴之舞
+sprite_character_fighter_effect_typhoon.NPK                 末日风暴
+sprite_character_fighter_effect_venommine.NPK                毒雷引爆
+sprite_character_fighter_effect_wildcannonspike.NPK          裂石破天
+神枪手♀
+时装
+sprite_character_gunner_atequipment_avatar_belt.NPK         腰部
+sprite_character_gunner_atequipment_avatar_cap.NPK          帽子
+sprite_character_gunner_atequipment_avatar_coat.NPK         上衣
+sprite_character_gunner_atequipment_avatar_face.NPK         脸部
+sprite_character_gunner_atequipment_avatar_hair.NPK         头部
+sprite_character_gunner_atequipment_avatar_neck.NPK         胸部
+sprite_character_gunner_atequipment_avatar_pants.NPK        裤子
+sprite_character_gunner_atequipment_avatar_shoes.NPK        鞋子
+sprite_character_gunner_atequipment_avatar_skin.NPK         皮肤
+武器
+sprite_character_gunner_atequipment_weapon_auto.NPK         自动
+sprite_character_gunner_atequipment_weapon_bowgun.NPK       手弩
+sprite_character_gunner_atequipment_weapon_hcan.NPK         手炮
+sprite_character_gunner_atequipment_weapon_musket.NPK       步枪
+sprite_character_gunner_atequipment_weapon_rev.NPK          左轮
+职业特征
+sprite_character_gunner_atequipment_growtype.NPK          枪炮、弹药、漫游
+sprite_character_gunner_effect.NPK                             机械、技能图标、其他特效
+技能
+sprite_character_gunner_effect_ancienttrigger.NPK            远古粒子炮
+sprite_character_gunner_effect_atnapalmbomb.NPK              光子爆弹
+sprite_character_gunner_effect_atstinger.NPK                 FM-92 mk2榴弹
+sprite_character_gunner_effect_attwingunblade.NPK            双枪极舞刃
+sprite_character_gunner_effect_empstorm.NPK                 EMP风暴
+sprite_character_gunner_effect_g0.NPK                        G-0战争领主
+sprite_character_gunner_effect_shooteffect_randomshoot.NPK   枪舞
+sprite_character_gunner_effect_veiledcut.NPK                 隐匿切割
+sprite_monster_gunner_tempesterat.NPK                       空战机械：狂风
+神枪手♂
+时装
+sprite_character_gunner_equipment_avatar_belt.NPK           腰部 
+sprite_character_gunner_equipment_avatar_cap.NPK            帽子 
+sprite_character_gunner_equipment_avatar_coat.NPK           上衣 
+sprite_character_gunner_equipment_avatar_face.NPK           脸部 
+sprite_character_gunner_equipment_avatar_hair.NPK           头部 
+sprite_character_gunner_equipment_avatar_neck.NPK           胸部 
+sprite_character_gunner_equipment_avatar_pants.NPK          裤子 
+sprite_character_gunner_equipment_avatar_shoes.NPK          鞋子 
+sprite_character_gunner_equipment_avatar_skin.NPK           皮肤
+武器
+sprite_character_gunner_equipment_weapon_auto.NPK           自动
+sprite_character_gunner_equipment_weapon_bowgun.NPK         手弩
+sprite_character_gunner_equipment_weapon_hcan.NPK           手炮
+sprite_character_gunner_equipment_weapon_musket.NPK         步枪
+sprite_character_gunner_equipment_weapon_rev.NPK            左轮
+职业特征
+sprite_character_gunner_equipment_growtype.NPK          枪炮、弹药、漫游
+sprite_character_gunner_effect.NPK                       机械、技能图标、其他特效
+技能
+sprite_character_gunner_effect_blackrose.NPK                黑玫瑰特种战队
+sprite_character_gunner_effect_desperado.NPK                疯狂屠戳
+sprite_character_gunner_effect_gaebolgpunch.NPK             盖波加之拳
+sprite_character_gunner_effect_hiteffect_suddendeath.NPK     致死
+sprite_character_gunner_effect_radarstuckdown.NPK           卫星定位
+sprite_character_gunner_effect_redrose.NPK                  活动-红玫瑰军团
+sprite_character_gunner_effect_satelaser.NPK               卫星射线
+sprite_character_gunner_effect_stinger.NPK                   FM-92刺弹炮
+sprite_monster_gunner_tempester.NPK                         空战机械：风暴
+神枪手通用技能
+sprite_character_gunner_effect_bullet.NPK                   各种子弹
+sprite_character_gunner_effect_bullet_exs.NPK               毒蛇炮的子弹
+sprite_character_gunner_effect_c4remote.NPK                 C4远程炸弹
+sprite_character_gunner_effect_cannonball.NPK               加农炮
+sprite_character_gunner_effect_chargebuster.npk     使用FM-31榴弹发射器时的特效
+sprite_character_gunner_effect_countershoot.NPK             复仇反击
+sprite_character_gunner_effect_doublegunhawk.NPK            双鹰回旋
+sprite_character_gunner_effect_dropbomblight.NPK            量子爆弹掉落特效
+sprite_character_gunner_effect_extruder.NPK                 X-1压缩量子炮
+sprite_character_gunner_effect_fastshoot.NPK                膝撞等特效
+sprite_character_gunner_effect_flamethrower.NPK             M-3喷火器
+sprite_character_gunner_effect_flamethrowerboost.NPK        聚焦喷火器
+sprite_character_gunner_effect_flashmine.NPK                闪光地雷
+sprite_character_gunner_effect_fm-31.npk                    FM-31榴弹发射器
+sprite_character_gunner_effect_g1.NPK                       G-1科罗纳
+sprite_character_gunner_effect_g2.NPK                       G-2旋雷者
+sprite_character_gunner_effect_g3.NPK                       G-3捕食者
+sprite_character_gunner_effect_grenade.NPK                  手雷 - 投掷
+sprite_character_gunner_effect_grenade_boom.NPK             手雷 - 爆炸
+sprite_character_gunner_effect_grenade_reload.NPK           手雷 - 填装
+sprite_character_gunner_effect_grenade_ui.NPK                  手雷 - 残弹显示
+sprite_character_gunner_effect_hiteffect.NPK                子弹的命中效果
+sprite_character_gunner_effect_laserriflecharge.NPK         激光炮
+sprite_character_gunner_effect_markofdeath.npk              死亡标记
+sprite_character_gunner_effect_multiheadshot.NPK            多重爆头
+sprite_character_gunner_effect_nielsniping.NPK              尼尔狙击
+sprite_character_gunner_effect_shooteffect.NPK              射击效果
+sprite_character_gunner_effect_shooteffect_crossshot.NPK     散弹枪
+sprite_character_gunner_effect_shooteffect_exs.NPK           Ex-S毒蛇炮的射击效果
+sprite_character_gunner_effect_sparrowfactory.NPK           拦截机工厂
+sprite_character_gunner_effect_steyrheavyrifle.NPK           反坦克炮
+sprite_character_gunner_effect_subweapon.NPK                 重火器
+sprite_character_gunner_effect_subweaponstuckdown.NPK       加BUFF时候的特效
+sprite_character_gunner_effect_tread.NPK                    踏射特效
+sprite_character_gunner_effect_uraniumbomb.NPK              量子爆弹爆炸特效
+sprite_character_gunner_effect_walkshoot.NPK                移动射击特效
+sprite_monster_gunner_exs.NPK                               Ex-S毒蛇炮
+sprite_monster_gunner_ez8.NPK                               EZ-8自爆者
+sprite_monster_gunner_fightingspirit.NPK                   斗志之歌
+sprite_monster_gunner_firerx78.NPK                          红色破坏者
+sprite_monster_gunner_headingrx78.NPK                   钢铁机器人
+sprite_monster_gunner_healrx78.NPK                        修复者格莱/神力雷克斯
+sprite_monster_gunner_rx78.NPK                              RX-78追击者
+sprite_character_gunner_effect_airraidex.NPK   回旋劫击、炽焰劫击、音速劫击、浮空劫击
+sprite_character_gunner_effect_airraidex_old.NPK            同上
+sprite_character_gunner_effect_blizzardthrowerboost.NPK     聚焦冰息炮
+sprite_character_gunner_effect_blizzardthrowerboost_female.NPK               聚焦冰息炮
+sprite_character_gunner_effect_blizzardthrowerboost_male.NPK                           聚焦冰息炮
+sprite_character_gunner_effect_c4ex.NPK                      C4飞速炸弹
+sprite_monster_gunner_ez8ex.NPK                              Ez-10反击者
+sprite_character_gunner_effect_flashmineex.NPK               M-16地雷
+sprite_character_gunner_effect_multiheadshotex.NPK           极限多重爆头
+sprite_character_gunner_effect_stingerex.NPK                 FM-92系列的小飞弹
+魔法师♂
+时装
+sprite_character_mage_atequipment_avatar_belt.npk           腰部
+sprite_character_mage_atequipment_avatar_cap.npk            帽子
+sprite_character_mage_atequipment_avatar_coat.npk           衣服
+sprite_character_mage_atequipment_avatar_face.npk           脸部
+sprite_character_mage_atequipment_avatar_hair.npk           头部
+sprite_character_mage_atequipment_avatar_neck.npk           胸部
+sprite_character_mage_atequipment_avatar_pants.npk          裤子
+sprite_character_mage_atequipment_avatar_shoes.npk          鞋子
+sprite_character_mage_atequipment_avatar_skin.npk           皮肤
+sprite_character_mage_atequipment_face.npk                  也是脸部
+武器
+sprite_character_mage_atequipment_weapon_pole.npk           棍棒
+sprite_character_mage_atequipment_weapon_rod.npk            魔杖
+sprite_character_mage_atequipment_weapon_spear.npk          矛
+sprite_character_mage_atequipment_weapon_staff.npk          法杖
+职业特征
+sprite_character_mage_equipment_growtype.NPK                  冰法
+sprite_character_mage_effect.NPK                   元素、技能图标、其他特效
+技能
+sprite_character_mage_effect_atattack.npk                   魔法球
+sprite_character_mage_effect_atbluedragonwill.npk           冰魄锤击
+sprite_character_mage_effect_atbrokenarrow.npk              冰魄之弓
+sprite_character_mage_effect_atchainlightning.npk           雷光链
+sprite_character_mage_effect_atconcentrate.npk              元素浓缩球
+sprite_character_mage_effect_atdarknessmantle.npk           黑暗禁域
+sprite_character_mage_effect_atdiehard.npk                   不死之身死亡后的恢复特效
+sprite_character_mage_effect_atelementalbuster.npk           幻魔四重奏的攻击特效
+sprite_character_mage_effect_atelementalbuster_dark.npk     幻魔四重奏的暗属性爆炸特效
+sprite_character_mage_effect_atelementalbuster_fire.npk      幻魔四重奏的火属性爆炸特效
+sprite_character_mage_effect_atelementalbuster_light.npk     幻魔四重奏的光属性爆炸特效
+sprite_character_mage_effect_atelementalbuster_water.npk   幻魔四重奏的冰属性爆炸特效
+sprite_character_mage_effect_atelementalchange.npk           属性变换
+sprite_character_mage_effect_atelementalchange_dark.npk      暗属性魔法炮攻击特效
+sprite_character_mage_effect_atelementalchange_fire.npk     火属性魔法炮攻击特效
+sprite_character_mage_effect_atelementalchange_light.npk     光属性魔法炮攻击特效
+sprite_character_mage_effect_atelementalchange_water.npk    冰属性魔法炮攻击特效
+sprite_character_mage_effect_atelementalrain.npk            元素轰炸
+sprite_character_mage_effect_atelementalstrikeex_dark.npk    暗属性的元素幻灭
+sprite_character_mage_effect_atelementalstrikeex_fire.npk    火属性的元素幻灭
+sprite_character_mage_effect_atelementalstrikeex_light.npk   光属性的元素幻灭
+sprite_character_mage_effect_atelementalstrikeex_nothing.npk属性的元素幻灭
+sprite_character_mage_effect_atelementalstrikeex_water.npk   冰属性的元素幻灭
+sprite_character_mage_effect_atfallenblossoms.npk            寒冰连枪
+sprite_character_mage_effect_atfirepillar.npk               旋火盾
+sprite_character_mage_effect_atfireroad.npk                 地炎
+sprite_character_mage_effect_atflamecircle.npk              旋炎破
+sprite_character_mage_effect_atfrozenland.npk                冰龙旋舞
+sprite_character_mage_effect_atholonglight.npk               幽冥火
+sprite_character_mage_effect_aticearea.npk                  冰晶之浴
+sprite_character_mage_effect_aticechakram.npk               冰之回旋的小冰轮攻击特效
+sprite_character_mage_effect_aticechakram_last.npk          冰之回旋的大冰轮攻击特效
+sprite_character_mage_effect_aticecrash.npk                 旋冰穿刺
+sprite_character_mage_effect_aticeelementalattack.npk        冰之印的攻击特效
+sprite_character_mage_effect_aticefieldex.npk                千里冰封
+sprite_character_mage_effect_aticeman.npk                   极冰绽放
+sprite_character_mage_effect_aticeorb.npk                   冰凌破
+sprite_character_mage_effect_aticeroad.npk                  冰霜之径
+sprite_character_mage_effect_atlightningwall.npk             雷光屏障
+sprite_character_mage_effect_atmanaburst.npk                 魔力燃烧的特效
+sprite_character_mage_effect_atpieceofice.npk               破冰飞刃
+sprite_character_mage_effect_atpush.npk                      擒拿掌
+sprite_character_mage_effect_atresonance.npk                 寒冰之境
+sprite_character_mage_effect_atteleport.npk                  瞬移
+sprite_character_mage_effect_attundrasoul.npk               冰冻空间的特效
+sprite_character_mage_effect_atturnwindmill.npk             冰魄旋枪
+缔造者
+sprite_character_mage_effect_creatorfirehurricane.NPK                      烈焰飓风
+sprite_character_mage_effect_creatorfiremeteo.NPK                            炽炎星陨
+sprite_character_mage_effect_creatorfirewall.NPK                              烈火燎原
+sprite_character_mage_effect_creatoriceplate.NPK                            冰天震地
+sprite_character_mage_effect_creatoricerock.NPK                       冰霜之球
+sprite_character_mage_effect_creatoriceshield.NPK                           极冰护盾
+sprite_character_mage_effect_creatoricewoodfence.NPK                 树之屏障
+sprite_character_mage_effect_creatormodechange.NPK                    风暴
+sprite_character_mage_effect_creatortargetmark.NPK                        坐标
+sprite_character_mage_effect_creatorwindpress.NPK                   超能旋风波
+sprite_character_mage_effect_creatorwindstorm.NPK                        风暴漩涡
+魔法师♀
+时装
+sprite_character_mage_equipment_avatar_belt.NPK             腰部 
+sprite_character_mage_equipment_avatar_cap.NPK              帽子 
+sprite_character_mage_equipment_avatar_coat.NPK             衣服 
+sprite_character_mage_equipment_avatar_face.NPK             脸部 
+sprite_character_mage_equipment_avatar_hair.NPK             头部 
+sprite_character_mage_equipment_avatar_neck.NPK             胸部 
+sprite_character_mage_equipment_avatar_pants.NPK            裤子 
+sprite_character_mage_equipment_avatar_shoes.NPK            鞋子 
+sprite_character_mage_equipment_avatar_skin.NPK             皮肤
+武器
+sprite_character_mage_equipment_weapon_broom.NPK            扫把
+sprite_character_mage_equipment_weapon_pole.NPK             棍棒
+sprite_character_mage_equipment_weapon_rod.NPK              魔杖
+sprite_character_mage_equipment_weapon_spear.NPK            矛
+sprite_character_mage_equipment_weapon_staff.NPK            法杖
+职业特征
+sprite_character_mage_equipment_growtype.NPK              魔道、战法、召唤
+sprite_character_mage_effect.NPK                  元素、技能图标、其他特效
+技能
+sprite_character_mage.NPK                                   驱散魔法
+sprite_character_mage_effect_acidcloud.NPK                  魔道酸雨云
+sprite_character_mage_effect_antigravity.NPK               反重力装置
+sprite_character_mage_effect_aurashield.NPK                 魔法盾
+sprite_character_mage_effect_bellatrix.NPK                 贝亚娜斗神
+sprite_character_mage_effect_blackhole.NPK                  湮灭黑洞
+sprite_character_mage_effect_blackmantle.NPK                暗影斗篷
+sprite_character_mage_effect_broomspin.NPK                  旋转扫把
+sprite_character_mage_effect_chaser.NPK                     炫纹
+sprite_character_mage_effect_chasersexplosion.NPK          贝亚娜炫纹
+sprite_character_mage_effect_doubleswing.NPK                双重锤击
+sprite_character_mage_effect_dragonspear.NPK                煌龙偃月
+sprite_character_mage_effect_elementalchain.NPK             元素点燃
+sprite_character_mage_effect_elementalshower.NPK            阿斯特雷风暴
+sprite_character_mage_effect_enhancedmagicmissile.NPK       改良星星弹
+sprite_character_mage_effect_equipbroom.NPK                 扫把装备特效
+sprite_character_mage_effect_familiar_blackcat.NPK          亲和暗影夜猫
+sprite_character_mage_effect_familiar_common.NPK            技能失败和成功的特效
+sprite_character_mage_effect_familiar_fluorescent.NPK       亲和光电鳗
+sprite_character_mage_effect_familiar_jackfrost.NPK          亲和冰霜雪人
+sprite_character_mage_effect_familiar_jol.NPK               亲和杰克南瓜
+sprite_character_mage_effect_flamestrike.NPK               烈焰冲击
+sprite_character_mage_effect_flamestrike_dust.NPK            烈焰冲击的尘土
+sprite_character_mage_effect_fluorecollider.NPK             电鳗碰撞机
+sprite_character_mage_effect_frostheadidolevent.npk        心形特效
+sprite_character_mage_effect_fusioncraft.NPK                技艺融合
+sprite_character_mage_effect_fusionchaser.NPK               炫纹融合 
+sprite_character_mage_effect_heatingfurnace.NPK             暴炎加热炉
+sprite_character_mage_effect_icefield.NPK                    极冰盛宴
+sprite_character_mage_effect_lavapotion.NPK                  熔岩药瓶
+sprite_character_mage_effect_megadrill.NPK                   冰霜钻孔车
+sprite_character_mage_effect_pinkrocketevent.npk            导弹特效
+sprite_character_mage_effect_pokethrow.NPK                  圆舞棍
+sprite_character_mage_effect_powder.NPK                     寒冰粉和猛毒粉
+sprite_character_mage_effect_randompiercestrike.NPK         流星闪影击
+sprite_character_mage_effect_sacrificespirit.NPK            精灵献祭
+sprite_character_mage_effect_shururu.NPK                    舒露露
+sprite_character_mage_effect_strengthhandstrike.NPK         强袭流星打
+sprite_character_mage_effect_successpremonition.NPK         成功预感
+sprite_character_mage_effect_summonmonsteraura.NPK          召唤光环
+sprite_character_mage_effect_summonmonsterreckless.NPK     召唤兽狂化
+sprite_character_mage_effect_sweetcandybar.NPK             幸运棒棒糖
+sprite_character_mage_effect_targetit.NPK                   魔力印记
+sprite_character_mage_effect_thunderstrike.NPK              天雷
+sprite_character_mage_effect_timerbomb_dark.npk             暗属性炫纹爆弹攻击特效
+sprite_character_mage_effect_timerbomb_fire.npk             火属性炫纹爆弹攻击特效
+sprite_character_mage_effect_timerbomb_light.npk             光属性炫纹爆弹攻击特效
+sprite_character_mage_effect_timerbomb_none.npk             无属性炫纹爆弹攻击特效
+sprite_character_mage_effect_timerbomb_water.npk            冰属性炫纹爆弹攻击特效
+sprite_character_mage_effect_transformflapper.NPK            苍蝇拍
+sprite_character_mage_effect_unsummonmonster.npk             解除召唤
+sprite_character_mage_effect_wallofice.NPK                   冰墙
+sprite_monster_casillas_appear.NPK                          卡西亚斯出现效果
+sprite_monster_casillas_body.NPK                           卡西亚斯身体
+sprite_monster_casillas_moveslash.NPK                      卡西亚斯必杀剑千鬼杀
+sprite_monster_casillas_slash.NPK                           卡西亚斯攻击特效
+sprite_monster_casillas_swordrain.NPK                       卡西亚斯必杀剑地狱图
+sprite_monster_monsterflower.NPK                           魔界花袄索
+sprite_monster_spikeking.NPK                                精灵王
+sprite_monster_spikeking_effect.NPK                        精灵王的攻击特效
+sprite_monster_spirit.NPK                                   精灵众
+sprite_monster_spirit_fire_higher.NPK                       召唤 - 火焰赫瑞克
+sprite_character_mage_effect_broomspinex.NPK                魔道 - 弹跳旋转扫把
+sprite_character_mage_effect_disenchant.NPK                 元素 - 光电冰墙特效
+sprite_character_mage_effect_flamevolcanovoid.NPK           元素 - 虚无火山
+sprite_character_mage_effect_randompiercestrikeex.NPK       战斗 - 流星雷连击
+sprite_character_mage_effect_swingex.NPK                    炫纹碎霸
+sprite_monster_soldier_sandorexpellerex.NPK                  愤怒的桑德尔
+sprite_monster_spirit_spiritex.NPK                        精灵EX
+sprite_character_mage_effect_transformflapperex.NPK          超级苍蝇拍
+sprite_character_mage_effect_walloficeex.NPK                光电冰墙特效
+圣职者
+时装
+sprite_character_priest_equipment_avatar_belt.NPK           腰部 
+sprite_character_priest_equipment_avatar_cap.NPK            帽子 
+sprite_character_priest_equipment_avatar_coat.NPK           上衣 
+sprite_character_priest_equipment_avatar_face.NPK           脸部 
+sprite_character_priest_equipment_avatar_hair.NPK           头发 
+sprite_character_priest_equipment_avatar_neck.NPK           胸部 
+sprite_character_priest_equipment_avatar_pants.NPK          裤子 
+sprite_character_priest_equipment_avatar_shoes.NPK          鞋子 
+sprite_character_priest_equipment_avatar_skin.NPK           皮肤 
+武器
+sprite_character_priest_equipment_weapon_axe.NPK            战斧
+sprite_character_priest_equipment_weapon_cross.NPK          十字架
+sprite_character_priest_equipment_weapon_rosary.NPK         念珠
+sprite_character_priest_equipment_weapon_scythe.NPK         镰刀
+sprite_character_priest_equipment_weapon_totem.NPK          图腾
+职业特征
+sprite_character_priest_effect_exorcist.NPK                            驱魔
+sprite_character_priest_equipment_growtype.NPK              蓝拳
+sprite_character_priest_effect.NPK                 圣骑、复仇、技能图标、其他特效
+技能
+sprite_character_priest_effect_antiairupper.NPK              空斩打特效
+sprite_character_priest_effect_apocalypse.NPK               天启之珠
+sprite_character_priest_effect_atomicsmash.NPK              无双击
+sprite_character_priest_effect_avengerawakening.npk          恶魔化执行审判者
+sprite_character_priest_effect_avengerawakening_attack.npk   审判者的黑暗杀戮血刃特效
+sprite_character_priest_effect_avengerawakening_attack_attack1_2.npk 
+sprite_character_priest_effect_avengerawakening_dash.npk    执行审判者的移动冲击特效
+sprite_character_priest_effect_awakening.npk                执行审判者的特效
+sprite_character_priest_effect_baekho.NPK                   式神·白虎
+sprite_character_priest_effect_battleauramastery.NPK       普通攻击拳气
+sprite_character_priest_effect_battleaxemastery.NPK         斧头精通特效
+sprite_character_priest_effect_bigbangpunch.NPK            泯灭神击
+sprite_character_priest_effect_bladeofpurewhite.NPK       纯白之刃
+sprite_character_priest_effect_bless.NPK                    天使祝福
+sprite_character_priest_effect_bluedragon.NPK              苍龙逐日
+sprite_character_priest_effect_chakraofcalmness.NPK         脉轮·圣光和寒冰
+sprite_character_priest_effect_chakraofpassion.NPK          脉轮·烈焰
+sprite_character_priest_effect_changehptomp.NPK             化魔
+sprite_character_priest_effect_chargeweapon.NPK             空斩打蓄满力特效
+sprite_character_priest_effect_choppinghammer.NPK           破碎之锤
+sprite_character_priest_effect_darkstrike.NPK               黑暗切割
+sprite_character_priest_effect_deflectwall.NPK               圣光沁盾
+sprite_character_priest_effect_devilstrike.npk              审判者的攻击特效
+sprite_character_priest_effect_disaster_active.npk           天灾降临时的跃空特效
+sprite_character_priest_effect_disaster_exp.npk            天灾降临时的攻击特效
+sprite_character_priest_effect_disaster_fallingdown.npk    天灾降临时的空降特效
+sprite_character_priest_effect_disaster_ready.npk           天灾降临前的跃空特效
+sprite_character_priest_effect_divinecrush.NPK              圣拳锤击
+sprite_character_priest_effect_divinelight.NPK              圣光守护
+sprite_character_priest_effect_earthquake.npk               裂地阵
+sprite_character_priest_effect_emblemofsafeguard.NPK        守护纹章
+sprite_character_priest_effect_enteringnirvana.NPK          破魔符
+sprite_character_priest_effect_execution.npk                审判者执刑时的攻击特效
+sprite_character_priest_effect_fallingsoul.npk             堕落之魂
+sprite_character_priest_effect_fastmove.npk                 高速移动
+sprite_character_priest_effect_flashglobe.NPK               圣光球
+sprite_character_priest_effect_fountainoflife.NPK           生命源泉
+sprite_character_priest_effect_galesmash.NPK                疾风打
+sprite_character_priest_effect_giantswing.NPK                疾空旋风破
+sprite_character_priest_effect_gloriousbless.NPK            荣誉祝福
+sprite_character_priest_effect_gorgeouscombination.NPK      圣拳连击
+sprite_character_priest_effect_grasphandofanger.NPK         恶魔之手
+sprite_character_priest_effect_hammerofcontrition.NPK    忏悔之锤
+sprite_character_priest_effect_healwind.NPK                 圣愈之风
+sprite_character_priest_effect_heavenlycombination.NPK       神圣组合拳
+sprite_character_priest_effect_hedgehog.npk                  保护之刺
+sprite_character_priest_effect_highspeedslash.npk          高速斩
+sprite_character_priest_effect_homerun.NPK                  星落打
+sprite_character_priest_effect_hotcross.NPK                 圣光十字
+sprite_character_priest_effect_hpmaxupparty.NPK            天堂谐音
+sprite_character_priest_effect_hpmaxuppersonal.NPK         天籁之音
+sprite_character_priest_effect_hurricaneroll.NPK            极速飓风拳
+sprite_character_priest_effect_hyunmoo.NPK                  式神·玄武
+sprite_character_priest_effect_judgement.NPK                正义审判
+sprite_character_priest_effect_machinegunjab.NPK            刺拳猛击
+sprite_character_priest_effect_oppressiontalisman.NPK      压制符
+sprite_character_priest_effect_oxcrash.NPK                 断空锤击
+sprite_character_priest_effect_pandemonium.npk             伏魔殿
+sprite_character_priest_effect_powerofdarkness.npk         黑暗权能
+sprite_character_priest_effect_quakearea.NPK                落凤锤
+sprite_character_priest_effect_repeatedsmash.NPK            狂乱锤击
+sprite_character_priest_effect_revengeoflight.NPK          光之复仇
+sprite_character_priest_effect_ripper.npk                  撕裂者
+sprite_character_priest_effect_risingarea.NPK               升天阵
+sprite_character_priest_effect_sacrificeofsoul.NPK         灵魂牺牲
+sprite_character_priest_effect_scythemastery.NPK           镰刀精通特效
+sprite_character_priest_effect_shadowboxer.NPK              幻影分身
+sprite_character_priest_effect_shikigami.NPK               式神·殇
+sprite_character_priest_effect_sidewind.NPK               瞬拳
+sprite_character_priest_effect_slowheal.NPK                 缓慢愈合
+sprite_character_priest_effect_smasher.NPK                   虎袭特效
+sprite_character_priest_effect_spearofvictory.NPK          胜利之矛
+sprite_character_priest_effect_spincutter.npk               旋转切割
+sprite_character_priest_effect_striking.NPK                 武器祝福
+sprite_character_priest_effect_throwweapon.NPK              巨旋风
+sprite_character_priest_effect_thunderbolttalisman.NPK     落雷符
+sprite_character_priest_effect_vermilionbirdtalisman.NPK    朱雀符
+sprite_character_priest_effect_willdriver.NPK               意念驱动
+sprite_character_priest_effect_deflectwallex.NPK            双子沁盾
+sprite_character_priest_effect_flashglobeex.NPK             圣光琉璃碎
+sprite_character_priest_effect_heavenlycombinationex.NPK    破魂组合拳
+sprite_character_priest_effect_hyunmooex.NPK                式神·真玄武
+sprite_character_priest_effect_machinegunjabex.NPK          刺拳狂击
+sprite_character_priest_effect_repeatedsmashex.NPK          狂暴锤击
+鬼剑士♀
+注意事项
+女鬼剑士的技能名是按单机版的，不一定同国服同名，但是大部分技能图标绝对是正确的，虽然有些是我猜测的，不一定准确。
+sprite_character_swordman_effect_addwave.NPK
+剑宗剑气特效
+sprite_character_swordman_effect_addwave_light.NP
+剑宗剑气特效
+sprite_character_swordman_effect_atautoguard.NPK
+收剑特效
+sprite_character_swordman_effect_atbalgumsool.NPK
+爆炸特效
+sprite_character_swordman_effect_atbladesoul.NPK
+剑宗觉醒被动【剑宗50】
+sprite_character_swordman_effect_atblooddance.NPK
+蛇腹剑缚【剑魔技能】
+sprite_character_swordman_effect_atbloodseal.NPK 
+血魔人【剑魔30技能】
+sprite_character_swordman_effect_atcalldaimus.NPK
+破天链（开双刀，变魔鞭）【剑魔15技能，相当于狂战变身】
+sprite_character_swordman_effect_atchainslash.NPK
+三段斩【女鬼剑士技能】
+sprite_character_swordman_effect_atchangesword.NPK
+ 属性变换【剑宗15技能】
+sprite_character_swordman_effect_atclawblade.NPK
+魔君乱舞（当是小漫的枪舞就是了）【剑魔35技能】
+sprite_character_swordman_effect_atcounterslash.NPK
+三段斩后奏【女鬼剑士技能】
+sprite_character_swordman_effect_atdarkslash.NPK
+暗影斩【女鬼剑士技能】
+sprite_character_swordman_effect_atdarkstrike.NPK
+剑魔击杀【剑魔45技能】
+sprite_character_swordman_effect_atdevilishness.NPK 
+处刑or女鬼剑士1级被动【女鬼剑士技能（1级or5级）】
+sprite_character_swordman_effect_atdevilslash.NPK
+恶即斩（幻影剑舞）【剑宗45技能】
+sprite_character_swordman_effect_atdevilslash_hit.NPK
+同上
+sprite_character_swordman_effect_atelementaleffect.NPK
+剑宗四属性武器特效
+sprite_character_swordman_effect_atelementalsword.NPK
+剑宗四种属性武器
+sprite_character_swordman_effect_atexcalibur.NPK
+爆鸣气剑【剑宗40技能】
+sprite_character_swordman_effect_atexecution.NPK
+暴食者镓罗亚【剑魔60技能】
+sprite_character_swordman_effect_atflash.NPK
+光影拔刀【剑宗30技能】
+sprite_character_swordman_effect_atfrenzy.NPK
+处刑or女鬼剑士1级被动【女鬼剑士技能（1级or5级）】
+sprite_character_swordman_effect_atgigablade.NPK
+剑魔觉醒-giga（怎么又是吉格）暗影剑-风暴之刃【剑魔觉醒50】
+sprite_character_swordman_effect_atgreed.NPK
+状态技能
+sprite_character_swordman_effect_atgroupdance.NPK
+血地君魔【剑魔40技能】
+sprite_character_swordman_effect_atgrowtype.NPK
+职业特征-剑宗、剑魔
+sprite_character_swordman_effect_athalfmoon.NPK
+不要看见moon就说是月光斩哦--弧光旋刃（女鬼版拔刀）【剑宗35技能】
+sprite_character_swordman_effect_atillusionslash.NPK
+幻影剑【女鬼剑士技能】
+sprite_character_swordman_effect_atjackcatch.NPK
+看贴图咋像小漫的双枪极舞刃，看动画就像极鬼剑术风暴式哦~哼----剑龙卷，【剑宗60技能】
+sprite_character_swordman_effect_atliftslash.NPK
+很华丽的女鬼版巴拉克的野心，幻影剑又一奏
+sprite_character_swordman_effect_atmagicswordup.NPK
+又是剑宗四属性武器特效啊
+sprite_character_swordman_effect_atmountaincrash.NPK
+看出来了----崩山击     单机版没有的
+sprite_character_swordman_effect_atoverdrive.NPK
+状态技能，应该是破极兵刃---神剑合一【剑宗技能】
+sprite_character_swordman_effect_atpikesword.NPK
+蛇形手（听起来像噬魂之手，用起来像街霸抓人过来的那招）【剑魔技能】
+sprite_character_swordman_effect_atsiryun.NPK
+时轮剑【女鬼剑士技能】
+sprite_character_swordman_effect_atsnakedance.NPK
+蛇腹剑无【剑魔技能】
+sprite_character_swordman_effect_atspeedslash.NPK
+瞬剑（一段斩）【女鬼剑士技能】
+sprite_character_swordman_effect_atspinslash.NPK
+按照贴图的特效来看是银光落刃，但女鬼银光不是这个，单机版没有的技能
+sprite_character_swordman_effect_atthunderslash.NPK
+追命斩（在DNF单机版里总算女鬼一个唯一的无敌技能）【剑宗25技能】
+sprite_character_swordman_effect_attimeslash.NPK
+极鬼剑术时空斩【剑宗觉醒50】
+sprite_character_swordman_effect_atupperslash.NPK
+破军，单机版叫破天击……【剑宗20技能】
+sprite_character_swordman_effect_atwhipswordbal.NPK
+蛇腹剑发（淫光落刃）【剑魔技能】
+sprite_character_swordman_effect_atwildwhip.NPK
+爆流螺旋（当是小漫的枪舞就是了）【剑宗25技能】
+sprite_character_swordman_effect_atwillpower.NPK
+破天链后奏（变魔鞭的鞭）
+以上技能名以DNF官网为准
+我就能力和时间有限有两招未翻译出
+
+
+剑魔70EX                            剑宗70EX
+望有韩服高手补充
+深夜通宵之作~~~
+鬼剑士♂
+时装
+sprite_character_swordman_equipment_avatar_belt.NPK         腰部
+sprite_character_swordman_equipment_avatar_cap.NPK          帽子 
+sprite_character_swordman_equipment_avatar_coat.NPK         衣服
+sprite_character_swordman_equipment_avatar_face.NPK         脸部 
+sprite_character_swordman_equipment_avatar_hair.NPK         头发 
+sprite_character_swordman_equipment_avatar_neck.NPK         胸部 
+sprite_character_swordman_equipment_avatar_pants.NPK        裤子 
+sprite_character_swordman_equipment_avatar_shoes.NPK        鞋子 
+sprite_character_swordman_equipment_avatar_skin.NPK         皮肤
+武器
+sprite_character_swordman_equipment_weapon_beamswd.NPK      光剑
+sprite_character_swordman_equipment_weapon_boneswd.NPK      短剑 - 骨剑
+sprite_character_swordman_equipment_weapon_club.NPK         钝器
+sprite_character_swordman_equipment_weapon_gemswd.NPK       短剑 - 宝石剑
+sprite_character_swordman_equipment_weapon_katana.NPK       太刀
+sprite_character_swordman_equipment_weapon_lgswd.NPK        短剑 - 西洋剑
+sprite_character_swordman_equipment_weapon_lkatana.NPK      太刀 - 长太刀
+sprite_character_swordman_equipment_weapon_lswd.NPK         巨剑
+sprite_character_swordman_equipment_weapon_mswd.NPK         巨剑 - 宽刃剑
+sprite_character_swordman_equipment_weapon_sswd.NPK         短剑
+职业特征
+sprite_character_swordman_equipment_growtype.NPK       剑魂、狂战、修罗
+sprite_character_swordman_effect.NPK                      鬼泣、技能图标、其他特效
+sprite_character_swordman_equipment_growtype_bloodevil.NPK          帝血弑天
+sprite_character_swordman_equipment_growtype_darklord.NPK            黑暗君主
+sprite_character_swordman_equipment_growtype_indaratian.NPK           天帝
+sprite_character_swordman_equipment_growtype_jianshen.NPK               剑神
+二次觉醒过屏走图、二次觉醒插图、二次觉醒特写（几种叫法一种内容姐）
+sprite_character_swordman_effect_cutin.NPK
+sprite_character_swordman_effect_blache.NPK                 第七鬼神：邪神怖拉修
+sprite_character_swordman_effect_bladephantom.NPK               幽冥剑影阵
+sprite_character_swordman_effect_blastblood.NPK            怒气爆发
+sprite_character_swordman_effect_bloodboom.NPK             浴血之怒
+sprite_character_swordman_effect_bloodevil.NPK              狂战静止时的血手
+sprite_character_swordman_effect_bloodinkanet.NPK             狂战剑气特效
+sprite_character_swordman_effect_bloodmarble.NPK                  魔煞血陨
+sprite_character_swordman_effect_bloodriven.NPK                    血魔弑天
+sprite_character_swordman_effect_bloodsword.NPK            血气之刃
+sprite_character_swordman_effect_bloodyrave.NPK            噬魂封魔斩
+sprite_character_swordman_effect_chargecrash.NPK             破军升龙击
+sprite_character_swordman_effect_darktoleranceup.NPK         暗月降临
+sprite_character_swordman_effect_descentsoul.NPK                鬼神诏令
+sprite_character_swordman_effect_dashattackmultihit.NPK      连突刺
+sprite_character_swordman_effect_epidemicrasa.NPK          瘟疫之罗刹
+sprite_character_swordman_effect_firewave.NPK               爆炎·波动剑
+sprite_character_swordman_effect_flowmindone.NPK          流心·刺
+sprite_character_swordman_effect_flowmindpowerup.NPK        流心·狂
+sprite_character_swordman_effect_flowmindthree.NPK       流心·升
+sprite_character_swordman_effect_flowmindtwo.NPK          流心·跃
+sprite_character_swordman_effect_frenzy.NPK              血之狂暴
+sprite_character_swordman_effect_ghostsidewind.npk          鬼剑鞭
+sprite_character_swordman_effect_ghoststep.NPK              鬼影步
+sprite_character_swordman_effect_giveblood.NPK              嗜血
+sprite_character_swordman_effect_gorecross.NPK              十字斩
+sprite_character_swordman_effect_grabblastblood.NPK          嗜魂之手
+sprite_character_swordman_effect_guard.NPK                 格挡
+sprite_character_swordman_effect_handlingsword.NPK              万剑归宗
+sprite_character_swordman_effect_hardattackcharge.NPK       噬灵鬼斩
+sprite_character_swordman_effect_hellbenter.NPK              魔狱血刹
+sprite_character_swordman_effect_hopsmash.NPK              崩山击
+sprite_character_swordman_effect_hundredsword.NPK            极 · 鬼剑术（暴风式）
+sprite_character_swordman_effect_illusionslash.NPK          幻影剑舞
+sprite_character_swordman_effect_illusionslash_finish.npk 剑魂钝器精通追加的剑风冲击波
+sprite_character_swordman_effect_indaramang.NPK               波动剑：天网
+sprite_character_swordman_effect_indratian.NPK                        电光
+sprite_character_swordman_effect_jumpattackmulti.NPK       空中连斩
+sprite_character_swordman_effect_kalla.NPK                  冥炎之卡洛
+sprite_character_swordman_effect_lightninggod.NPK              雷神
+sprite_character_swordman_effect_meteorsword.NPK             极·神剑术（流星落）
+sprite_character_swordman_effect_momentaryslash.NPK          拔刀斩
+sprite_character_swordman_effect_outragebreak.NPK            崩山裂地斩
+sprite_character_swordman_effect_rapidmoveslash.NPK            猛龙断空斩
+sprite_character_swordman_effect_reflectguard.NPK            鬼印珠
+sprite_character_swordman_effect_shockwavearea.NPK          邪光波动阵
+sprite_character_swordman_effect_shortswordmastery.npk     剑魂短剑精通上挑追加的剑气
+sprite_character_swordman_effect_standalonewave.NPK         无双波
+sprite_character_swordman_effect_standalonewave_light.NPK        二觉后无双波
+sprite_character_swordman_effect_stateoflimit.NPK            二觉后剑神剑气特效
+sprite_character_swordman_effect_swordofmind.NPK              极·神剑术（破空斩）
+sprite_character_swordman_effect_tripleslash.NPK            三段斩
+sprite_character_swordman_effect_triplestab.npk            鬼影三击剑
+sprite_character_swordman_effect_vajra.NPK                       天雷：金刚杵
+sprite_character_swordman_effect_vaneslash.NPK            裂波斩
+sprite_character_swordman_effect_vaneslash_light.NPK        二觉后裂波斩
+sprite_character_swordman_effect_waveeye.NPK               暗天波动眼
+sprite_character_swordman_effect_waveeye_light.NPK          二觉后暗天波动眼
+sprite_character_swordman_effect_wavemark.NPK               波动刻印
+sprite_character_swordman_effect_wavespinarea.NPK           不动明王阵
+sprite_character_swordman_effect_wavespinarea_light.NPK          二觉后不动明王阵
+sprite_character_swordman_effect_weaponcombo.NPK            里·鬼剑术
+sprite_character_swordman_effect_zig.NPK               王者号令：吉格降临
+sprite_monster_zig.NPK                                   王者号令：吉格降临
+sprite_character_swordman_effect_blastbloodex.NPK          血气爆发
+sprite_character_swordman_effect_chagecrashex.NPK           破军斩龙击
+sprite_character_swordman_effect_grabblastbloodex.NPK        灭魂之手
+sprite_character_swordman_effect_icewaveex.NPK              极冰·裂波剑
+sprite_character_swordman_effect_momentaryslashex.NPK       破空拔刀斩
+sprite_character_swordman_effect_sayaex.NPK                  冰晶之萨亚
+sprite_character_swordman_effect_tombstoneex.NPK            墓碑三绝阵
+暗夜使者
+时装
+sprite_character_thief_equipment_avatar_belt.NPK            腰部
+ sprite_character_thief_equipment_avatar_cap.NPK             帽子
+sprite_character_thief_equipment_avatar_coat.NPK            衣服
+sprite_character_thief_equipment_avatar_face.NPK            脸部
+sprite_character_thief_equipment_avatar_hair.NPK            头发
+sprite_character_thief_equipment_avatar_neck.NPK            胸部
+sprite_character_thief_equipment_avatar_pants.NPK           裤子
+sprite_character_thief_equipment_avatar_shoes.NPK           鞋子
+sprite_character_thief_equipment_avatar_skin.NPK            皮肤
+武器
+sprite_character_thief_equipment_weapon_dagger.NPK          匕首
+sprite_character_thief_equipment_weapon_twinswd.NPK         双剑
+sprite_character_thief_equipment_weapon_wand.NPK            权杖 
+职业特征
+sprite_character_thief_effect.NPK                     死灵、刺客
+技能
+sprite_character_thief_effect_ambitionofballacre.NPK         巴拉克的野心
+sprite_character_thief_effect_anklecut.NPK                碎踝
+sprite_character_thief_effect_ballacre.NPK                   降临：暴君巴拉克
+sprite_character_thief_effect_blackarea.NPK                 暗影蛛丝阵
+sprite_character_thief_effect_blackwave.NPK                吸魂暗劲波
+sprite_character_thief_effect_blameofdead.NPK              死灵之怨
+sprite_character_thief_effect_boneshield.NPK               骨盾
+sprite_character_thief_effect_chargeeffect.NPK             蓄力的特效
+sprite_character_thief_effect_cursespear.NPK                 诅咒之箭
+sprite_character_thief_effect_darklure.NPK                   百鬼夜行
+sprite_character_thief_effect_darknail.NPK                死亡之爪
+sprite_character_thief_effect_darkritual.NPK                 暗黑仪式
+sprite_character_thief_effect_darksoul.NPK                  暗魂波
+sprite_character_thief_effect_doublepierce.NPK             双刃穿刺
+sprite_character_thief_effect_excelstrikeadd.NPK             雷光刃影
+sprite_character_thief_effect_flyingsquirrel.NPK           飞鼠
+sprite_character_thief_effect_guillotine.NPK                 巴拉克的愤怒
+sprite_character_thief_effect_hurricane.NPK                剑刃风暴
+sprite_character_thief_effect_nicolaszombie.NPK            驱使僵尸
+sprite_character_thief_effect_phantomstrom.NPK             千魂祭
+sprite_character_thief_effect_silverstream.NPK             月轮舞
+sprite_character_thief_effect_skintakeoff.NPK               忍法：影分身
+sprite_character_thief_effect_sonicassault.NPK              疾风乱舞
+sprite_character_thief_effect_sworddance.NPK               旋舞斩
+sprite_character_thief_effect_throwknife.NPK                手里剑
+sprite_character_thief_effect_verticalspiral.NPK            螺旋穿刺
+sprite_character_thief_ui.NPK               连击点和尼古拉斯的行动模式选择
+sprite_character_thief_effect_blackareaex.NPK               死灵之缚特效
+sprite_character_thief_effect_blackwaveex.NPK                释魂暗劲波
+sprite_character_thief_effect_blameofdeadex.NPK             死灵之缚
+sprite_character_thief_effect_chainsawex.NPK                陨落螺旋刺
+sprite_character_thief_effect_verticalspiralex.NPK          旋刃冲击
+
+creature宠物
+sprite_creature_2013snake_blue.NPK    20136月30整点活动送的宠物蛇-蓝色
+sprite_creature_2013snake_darkblue.NPK    20136月30整点活动送的宠物蛇-深蓝色
+sprite_creature_2013snake_green.NPK      20136月30整点活动送的宠物蛇-绿色
+sprite_creature_2013snake_orange.NPK      20136月30整点活动送的宠物蛇-橙色
+sprite_creature_2013snake_purple.NPK   20136月30整点活动送的宠物蛇-紫色
+sprite_creature_2013snake_rainbow.NPK   20136月30整点活动送的宠物蛇-白色
+sprite_creature_2013snake_red.NPK    20136月30整点活动送的红色宠物蛇和红色宠物龙
+sprite_creature_2013snake_yellow.NPK              20136月30整点活动送的黄色宠物蛇
+sprite_creature_amy.NPK                                     亚米
+sprite_creature_aquajello.NPK                               冰翼之魂
+sprite_creature_artbook_creature_effect.NPK
+sprite_creature_bakal.NPK                                   迷你巴卡尔
+sprite_creature_balam.NPK                                   巴拉姆
+sprite_creature_belz.NPK                                    贝雷斯
+sprite_creature_belzebe.NPK                                 贝雷斯普
+sprite_creature_belzebuite.NPK                              贝雷斯普特
+sprite_creature_berith.NPK                                  比利士
+sprite_creature_bobo.NPK                                    波比
+sprite_creature_botis.NPK                                   波提斯
+sprite_creature_brass.NPK                                   看书后会变样的宠物
+sprite_creature_bonnybunny.NPK                              金钱兔
+sprite_creature_bronzepig.NPK                               铜色猪
+sprite_creature_brownie.NPK                                 宠物狗-彩色雕像-韩服
+sprite_creature_camelcricket.NPK                            蟋蟀
+sprite_creature_charp.NPK                                   红色蛇虫
+sprite_creature_chinadragon.NPK                             冰息蓝龙和冰息红龙
+sprite_creature_chn_defense_town_goblin.NPK                 迷你哥布林
+sprite_creature_chn_shelby_common.NPK                        2013春节龙女特征
+sprite_creature_chn_shelby_common_normal.NPK            2013春节龙女第1招技
+sprite_creature_chn_shelby_common_over.NPK            2013春节龙女第2招技
+sprite_creature_chn_shelby_shelbyblue.NPK                2013春节蓝色龙女
+sprite_creature_chn_shelby_shelbyblue_normal.NPK      2013春节蓝色龙女第1招技
+sprite_creature_chn_shelby_shelbyblue_over.NPK              2013春节蓝色龙女第2招技
+sprite_creature_chn_shelby_shelbyblack.NPK                        2013春节黑色龙女
+sprite_creature_chn_shelby_shelbyblack_normal.NPK     2013春节黑色龙女第1招技
+sprite_creature_chn_shelby_shelbyblack_over.NPK      2013春节黑色龙女第2招技
+sprite_creature_chn_shelby_shelbypink.NPK             2013春季粉色龙女
+sprite_creature_chn_shelby_shelbypink_normal.NPK       2013春季粉色龙女第1招技能
+sprite_creature_chn_shelby_shelbypink_over.NPK           2013春季粉色龙女第2招技能
+sprite_creature_chn_shelby_shelbyred.NPK                           2013春季红色龙女
+sprite_creature_chn_shelby_shelbyred_normal.NPK           2013春季红色龙女第1招技能
+sprite_creature_chn_shelby_shelbyred_over.NPK           2013春季红色龙女第2招技能
+sprite_creature_chn_tree_creature.NPK                                     小树苗
+sprite_creature_chn_tree_creature_tspirit_04_common.NPK           小树苗技能
+sprite_creature_chn_tree_creature_tspirit_04_maple.NPK                 红色枫叶
+sprite_creature_chn_tree_creature_tspirit_04_normal.NPK                 绿色枫叶
+sprite_creature_chowchow.NPK                                金毛球
+sprite_creature_common.NPK                                  宠物的一些特效文件
+sprite_creature_dragon.NPK                                  虚祖蓝漓龙和虚祖绿蛟龙
+sprite_creature_earthgoblin.NPK                             大地哥布林
+sprite_creature_elbon.NPK                                   伊尔本
+sprite_creature_fairytail_erza.NPK                      妖精的尾巴活动宠物艾露莎
+sprite_creature_fairytail_lucy.NPK                      妖精的尾巴活动宠物露西
+sprite_creature_fairytail_natsu.NPK                      妖精的尾巴活动宠物纳兹
+sprite_creature_faras.NPK                                   佛拉斯
+sprite_creature_fate_berserker.NPK                       fate活动宠物
+sprite_creature_fate_berserker_appearance.NPK           fate活动兰斯洛特-出现
+sprite_creature_fate_berserker_overskill.NPK             fate活动兰斯洛特-技能2
+sprite_creature_fate_berserker_roar.NPK                       fate活动兰斯洛特-化魔
+sprite_creature_fate_berserker_skill.NPK                       fate活动兰斯洛特-技能1
+sprite_creature_fate_berserker_streetlamp.NPK        fate活动兰斯洛特-技能环境特效
+sprite_creature_fate_lancer.NPK              fate活动迪卢木多
+sprite_creature_fate_lancer_buff.NPK                fate活动迪卢木多特效
+sprite_creature_fate_rider.NPK                fate活动伊斯坎达尔
+sprite_creature_fate_rider_buff.NPK                      fate活动伊斯坎达尔特效
+sprite_creature_fate_saver.NPK                       fate活动阿尔托莉亚
+sprite_creature_fate_saver_buff.NPK               fate活动阿尔托莉亚特效
+sprite_creature_girlsday.NPK                                女生
+sprite_creature_glasya.NPK                                  格剌希亚拉波斯
+sprite_creature_goldpig.NPK                                 金色猪
+sprite_creature_haagenti.NPK                                哈艮地
+sprite_creature_halphas.NPK                                 红色蛇虫进化 哈帕斯
+sprite_creature_hellhound.NPK                            幽灵狗
+sprite_creature_ignis.NPK                                   火翼之魂
+sprite_creature_launchergirl.NPK               兔精灵卫队长月蝉和兔精灵战士灵芸
+sprite_creature_littletiger.NPK                             可爱虎和淘气虎
+sprite_creature_marbas.NPK                                  玛巴斯
+sprite_creature_nazarl.NPK                                  纳扎鲁
+sprite_creature_ox.NPK                                      憨憨牛
+sprite_Creature_panda.NPK                                   吉祥熊猫
+sprite_creature_pentabas.NPK                                佛尔卡斯
+sprite_creature_petit_alex.NPK                              小夜叉
+sprite_creature_petit_ashcore.NPK                           小火龙
+sprite_creature_petit_assaulter.NPK                         小牛怪
+sprite_creature_petit_bebe.NPK                                 BB仔
+sprite_creature_petit_itrenog.NPK                            小水龙
+sprite_creature_petit_lotus.NPK                             小罗特斯
+sprite_creature_petit_marpissa.NPK                          小蜘蛛
+sprite_creature_petit_nagor.NPK                              小暗龙
+sprite_creature_petit_nemaug.NPK                         小金龙
+sprite_creature_petit_skeleton.NPK                          小骷髅
+sprite_creature_petit_tiger.NPK                             小寒冰虎
+sprite_creature_phoenix.NPK                                 菲尼克斯
+sprite_creature_pinocchia.NPK                               长鼻妹
+sprite_creature_pinocchio.NPK                               长鼻男
+sprite_creature_princess_petit.NPK                          只会一踢的小公主
+sprite_creature_psy.NPK                                     迷你思密达
+sprite_creature_rat_female.NPK                              淘气鼠
+sprite_creature_rat_male.NPK                                欢乐鼠
+sprite_creature_raum.NPK                                    劳姆
+sprite_creature_reva_crusader.NPK                           纸片人圣骑-空的
+sprite_creature_reva_necro.NPK                              纸片人死灵-空的
+sprite_creature_reva_nenma.NPK                              纸片人气功师-空的
+sprite_creature_reva_ranger.NPK                             纸片人漫游-空的
+sprite_creature_reva_soul.NPK                               纸片人鬼泣-空的
+sprite_creature_reva_witch.NPK                              纸片人魔道-空的
+sprite_creature_rudolph.NPK                                 叮叮和当当、两个鹿而已
+sprite_creature_sdcharacter_atfighter.NPK                迷你男气功
+sprite_creature_sdcharacter_atgunner.NPK                  迷你女漫
+sprite_creature_sdcharacter_atmage.NPK                      迷你男法
+sprite_creature_sdcharacter_atswordman.NPK                迷你女鬼剑士
+sprite_creature_sdcharacter_creator.NPK                      迷你缔造者
+sprite_creature_sdcharacter_darknight.NPK                   迷你黑暗武士
+sprite_creature_sdcharacter_fighter.NPK                            迷你女气功
+sprite_creature_sdcharacter_fighterat.NPK                         迷你男气功
+sprite_creature_sdcharacter_ghostknight.NPK                   迷你鬼泣
+sprite_creature_sdcharacter_gunner.NPK                            迷你男漫
+sprite_creature_sdcharacter_gunnerat.NPK                        迷你女漫
+sprite_creature_sdcharacter_mage.NPK                               迷你魔道
+sprite_creature_sdcharacter_priest.NPK                               迷你圣骑
+sprite_creature_sdcharacter_swordman.NPK                      迷你鬼泣
+sprite_creature_sdcharacter_thief.NPK                                 迷你死灵
+sprite_creature_sdcharacters_fighter.NPK                    迷你气功师
+sprite_creature_sdcharacters_fighterat.NPK                  迷你男气功
+sprite_creature_sdcharacters_ghostknight.NPK                迷你鬼泣
+sprite_creature_sdcharacters_gunner.NPK                     迷你漫游
+sprite_creature_sdcharacters_gunnerat.NPK                   迷你女漫
+sprite_creature_sdcharacters_mage.NPK                       迷你魔道
+sprite_creature_sdcharacters_priest.NPK                     迷你圣骑
+sprite_creature_sdcharacters_thief.NPK                      迷你死灵
+sprite_creature_silverpig.NPK                               银色猪
+sprite_creature_sledgerudolph.NPK                           乘雪橇的叮叮和当当
+sprite_creature_spiritgoblin.NPK                            精灵哥布林
+sprite_creature_tcgfairy.NPK                                小精灵TCGW和TCGE
+sprite_creature_unicorn.NPK                                 星光独角兽
+sprite_creature_valefor.NPK                                 华利弗
+sprite_creature_woodendoll.NPK                     木头人
+sprite_creature_zagan.NPK                                   撒共
+
+interface2事件贴图
+sprite_interface2.npk                                       大地图
+sprite_interface2_auction.npk                               拍卖行系统界面
+sprite_interface2_aura.npk                                  光环系统界面
+sprite_interface2_awakening2.NPK                                 二次觉醒窗口
+sprite_interface2_awakening2_awakening_cha.NPK                二次觉醒特写
+sprite_interface2_awakening2_awakening_txt.NPK                     二次觉醒名称
+sprite_interface2_awakening.NPK                                   初次觉醒窗口
+sprite_interface2_awakening_awakening_txt.NPK                 初次觉醒名称
+sprite_interface2_battledungeon.npk                         格林赛罗斯战场界面
+sprite_interface2_cartelcommand.NPK               卡勒特指挥部跳下去时的进度条
+sprite_interface2_ceraitem.npk                             心愿宝盒活动
+sprite_interface2_channel_channelselect.NPK        活动频道选择：生化禁区、吉赛尔袭击
+sprite_interface2_channel_channelselect_channelbackground.npk  频道选择时的使徒背景
+sprite_interface2_channel_channelselect_channelbase.npk            频道选择时的向导
+sprite_interface2_channel_channelselect_channelinfo.NPK        新型的频道选择
+sprite_interface2_channel_channelselect_channelslot.npk     频道背景
+sprite_interface2_channel_serverselect_base.npk             暂时是空的
+sprite_interface2_channel_serverselect_server_bg.npk        暂时是空的
+sprite_interface2_channel_serverselect_serverslot.npk       暂时是空的
+sprite_interface2_charactercreate.npk                       创建新角色时的界面
+sprite_interface2_chn_qqpcbenefitreward.NPK       龙跃武器升级的窗口
+sprite_interface2_classchange.npk                           转职视频界面背景
+sprite_interface2_classchange_classchange_bt.npk            转职视频界面的选择职业按钮
+sprite_interface2_classchange_classchange_cha.npk           转职视频界面的职业特写
+sprite_interface2_classchange_classchange_txt.npk           转职视频界面的职业描述
+sprite_interface2_comiccut.npk                  新角色刚进入游戏的开场动画
+sprite_Interface2_common_digit.NPK                         4种数字
+sprite_interface2_common_digit_pvp_room_number.npk          决斗场的数字
+sprite_interface2_common_digit_upgrade_number.NPK             数字、红色、灰色
+sprite_interface2_countdown.npk               刷图死后用点卷买复活币窗口
+sprite_interface2_cs_shop.npk                               商城按钮
+sprite_interface2_cutscene_pvp_versus.npk                   决斗等待界面
+sprite_interface2_deathtower.npk                            亡者峡谷的塔通关界面
+sprite_interface2_dualraid.NPK                              吉赛尔袭击活动贴图
+sprite_interface2_dualraid_dualraid_matching.NPK                吉赛尔袭击活动背景
+sprite_interface2_dualraid_dualraid_minimap.NPK                吉赛尔袭击活动地图
+sprite_interface2_dungeonexercise.npk                       练习模式和勇者模式的背景
+sprite_interface2_dungeonloading.npk                        地图载入时的读条和提醒
+sprite_interface2_etc.npk                                   几个图标
+sprite_interface2_event_2011_chuseok.npk                    树咯
+sprite_interface2_event_2013_06_firework_cn.NPK                5周年烟花、礼盒
+sprite_interface2_event_banner.NPK                                  第四季宣传图片
+sprite_interface2_event_bingo.NPK                                         1种活动  
+sprite_interface2_event_bluemarble.NPK                        充满韩文的图片
+sprite_interface2_event_childrensday.NPK                    韩服活动
+sprite_interface2_event_chn_daily_mission_gift.NPK          2013年1月每日任务活动
+sprite_interface2_event_chn_event_dnf_settlement_2013.NPK           勇者归来任务
+sprite_interface2_event_chn_golden_fruittree_2012.NPK              树
+sprite_interface2_event_christmas_santa.npk                     圣诞老人
+sprite_interface2_event_christmas_seriaroom_deco.npk       某年圣诞的赛丽亚及房间
+sprite_interface2_event_christmas_tree_plaza.npk            某年圣诞活动
+sprite_interface2_event_christmas_tree_seriaroom.npk        某年圣诞活动
+sprite_interface2_event_common.NPK                      1张韩服图片      
+sprite_interface2_event_destroydungeon.NPK                    泰拉遗迹活动
+sprite_interface2_event_dnfstudyexam.NPK                         韩服活动
+sprite_interface2_event_event_2011_christmas_santa.NPK     又系圣诞老人
+sprite_interface2_event_event_2011_christmas_seriaroom_deco.NPK  某年圣诞活动
+sprite_interface2_event_event_2011_christmas_tree_plaza.NPK某年圣诞活动
+sprite_interface2_event_event_2011_christmas_tree_seriaroom.NPK 某年圣诞活动
+sprite_interface2_event_event_2011_halloween.NPK            某些活动机械
+sprite_interface2_event_event_2011_planning_atmage.NPK      充满韩文的图片
+sprite_interface2_event_event_2013_blessofgirls.NPK                      冷夜之气息
+sprite_interface2_event_event_2013_characterday.NPK         2013夏日明星活动
+sprite_interface2_event_event_2013_daily_quiz.NPK               2013答题活动
+sprite_interface2_event_event_2013_darkknightpuzzle.NPK   拼图
+sprite_interface2_event_event_2013_fairytail.NPK                         妖精的尾巴
+sprite_interface2_event_event_2013_fortune_cookie.NPK       切蛋糕？
+sprite_interface2_event_event_2013_levelupgift.NPK                  缔造者升级活动
+sprite_interface2_event_event_2013_newpu.NPK                        礼盒
+sprite_interface2_event_event_2013_newyear_firework.NPK   放连炮？
+sprite_interface2_event_event_2013_ria_letter.NPK                    给哥哥的信活动
+sprite_interface2_event_event_2013_roger_auction.NPK             罗杰的私人拍卖活动
+sprite_interface2_event_event_2013_summereventawaken.NPK              夏日觉醒活动
+sprite_interface2_event_event_2013_userchoice.NPK                 2013 6月整点活动
+sprite_interface2_event_event_map.NPK                         一些 充满韩文的图片
+sprite_interface2_event_event_map_countdown.NPK        某数字
+sprite_interface2_event_event_map_digit.NPK                  某数字
+sprite_interface2_event_event_map_eventmap_countdown.NPK某数字
+sprite_interface2_event_event_map_eventmap_dice.NPK       色仔
+sprite_interface2_event_event_map_eventmap_result.NPK    一些韩文
+sprite_interface2_event_eventserver.npk                    赛丽亚+韩文
+sprite_interface2_event_fatigueaccelerate.NPK             某某活动
+sprite_interface2_event_freelygiveitem.NPK                 韩服小鸡活动
+sprite_interface2_event_givegrowcreature.NPK          某种活动
+sprite_interface2_event_growcapsule.NPK                   与上一个文件对应
+sprite_interface2_event_growthitem.NPK                   时间沙漏
+sprite_interface2_event_halloween.npk                      某种机械
+sprite_interface2_event_jumpingcharacter.NPK       充满韩文的图片
+sprite_interface2_event_lank_event.NPK                       评分
+sprite_interface2_event_mileageshop.NPK                    小鸡、小鸟~~
+sprite_Interface2_event_OccupyDungeon.NPK                   攻占阿拉德的活动界面
+sprite_interface2_event_ontimeevent4rd.npk                 几个圆圈+韩文
+sprite_interface2_event_packagebounsevent.NPK          两张充满韩文的图片
+sprite_interface2_event_pandorabox.NPK                     ipone~~~
+sprite_interface2_event_partyplay.NPK                           充满韩文的图片
+sprite_interface2_event_planningatmage.npk                  充满韩文的图
+sprite_interface2_event_privateinfomation.NPK               韩服活动
+sprite_interface2_event_racing.NPK                                      跑酷活动
+sprite_interface2_event_rentalservice.NPK                       韩国版扩展技能框
+sprite_interface2_event_returngiftinfo.NPK                     夏日赛丽亚图片*1
+sprite_interface2_event_roguerenewal.NPK               图片意思：40→50→60→75
+sprite_interface2_event_secondawakening.NPK                 两张充满韩文的图片
+sprite_interface2_event_seriaroomanimationdecoration.NPK      LUCKY图片~~
+sprite_interface2_event_stepattendance.NPK               龙跃武器升级的窗口
+sprite_interface2_global_navigation_community.npk           社交的导航按钮
+sprite_interface2_global_navigation_contents.npk            活动的导航按钮
+sprite_interface2_global_navigation_extrafeature.npk        常用的导航按钮
+sprite_interface2_global_navigation_gameoption.npk          游戏的导航按钮
+sprite_interface2_global_navigation_myinfomenu.npk          个人的导航按钮
+sprite_interface2_global_navigation_short_btn.npk           右中方的导航按钮
+sprite_interface2_hud.npk                                   血槽
+sprite_interface2_hud_aura_gauge.npk                        宠物技能冷却条
+sprite_interface2_hud_creature_gauge.npk                    宠物饥饿度条
+sprite_interface2_hud_creature_icon.npk                     宠物图标
+sprite_interface2_hud_information_button.npk                血条上的导航按钮
+sprite_interface2_hud_luck_gauge.npk                        用动画播放看看~
+sprite_interface2_hud_luck_icon.npk                         世界仪图标
+sprite_interface2_hud_party_icon.npk                        队伍情况信息
+sprite_interface2_hud_party_info.npk                        也是队队伍情况信息
+sprite_interface2_ingameadvertisement.NPK                     彩色球
+sprite_interface2_itemdictionary.npk                        装备词典界面
+sprite_interface2_itemtoolwindow_windows4.npk        强化、分解、封装等窗口界面
+sprite_interface2_keyoption.npk                             设置快捷键的窗口界面
+sprite_interface2_loading_dungeon.NPK                   韩服框~
+sprite_interface2_mercenary.npk                             佣兵系统界面
+sprite_interface2_messenger.npk                             邀请界面
+sprite_interface2_minimap_dungeon.npk                       右上角小地图
+sprite_interface2_minimap_dungeon_champion_gage.NPK     右上角的精英奖励进度
+sprite_interface2_minimap_dungeon_champion_gage_fire_eff.NPK    右上角的精英奖励火焰
+sprite_interface2_minimap_town.npk                          光环的传送选择界面
+sprite_interface2_nowloading.npk                            服务器载入界面
+sprite_interface2_nowloading_intro.npk                    DNF动画
+sprite_interface2_nowloading_review grade.npk              一些韩文
+sprite_interface2_pcroomupgrade.NPK                     一些韩文
+sprite_interface2_pk_intown.npk                           街头争霸waitting
+sprite_interface2_popup.npk                                 鼠标的导航选择
+sprite_interface2_popup_menu.NPK                   功能图标，强化+10活动
+sprite_interface2_popup_upgraderoom.NPK                   韩服拍卖活动
+sprite_interface2_popup_upgraderoom_title.NPK            韩服强化器
+sprite_interface2_popup_upgraderoom_title_upgraderoom_titleeff.NPK闪亮的成功和失败窗
+sprite_interface2_powerwar_rvr_assault_character_cut.npk    势力战的职业特写
+sprite_interface2_powerwar_rvr_assault_counter_effect.npk   势力战的角色载入界面
+sprite_interface2_powerwar_rvr_assault_lightning_effect.npk 势力战的角色载入界面特效
+sprite_interface2_powerwar_rvr_point.npk                    势力战的对战信息
+sprite_interface2_powerwar_rvr_powerwarloading.npk          势力战的载入读条界面
+sprite_interface2_powerwar_rvr_powerwarresult.npk           势力战的奖励界面
+sprite_interface2_powerwar_rvr_powerwarstatue.npk           势力战的角色铜像描述
+sprite_interface2_privateinfomation.NPK
+sprite_interface2_profile.npk                               个人信息界面
+sprite_interface2_pvp02.NPK                                新版PK场搜索
+sprite_interface2_pvp02_channel.NPK                    新版PK场频道选择
+sprite_interface2_pvp02_ingame.NPK                      生化禁区活动
+sprite_interface2_pvp02_loading.NPK                   新版PK场角色卡片，组队赛选择
+sprite_interface2_pvp02_matching.NPK                   新版PK场目录
+sprite_interface2_pvp02_matching_individual.NPK                  新版PK场个人战
+sprite_interface2_pvp02_matching_leader.NPK                         新版PK场擂台赛
+sprite_interface2_pvp02_matching_personvsperson.NPK                 新版PK场1对1
+sprite_interface2_pvp02_matching_team.NPK                  新版PK场组队战
+sprite_interface2_pvp02_matching_zombie.NPK                生化禁区插图
+sprite_interface2_pvp02_result.NPK                              生化禁区角色列表
+sprite_interface2_pvp02_result_zombie.NPK                         生化禁区贴图
+sprite_interface2_pvp02_tournament.NPK                        素喃武斗大会选择
+sprite_interface2_pvp_deathmatch.npk                   决斗场的生存模式队伍信息
+sprite_interface2_pvp_pvp_1_vs_n_match.NPK              PK场强者模式的地图图标
+sprite_interface2_pvp_pvp_fair.npk                          决斗场的导航按钮和提醒
+sprite_interface2_pvp_pvp_loading.NPK                    跑酷、跑甩子等人的图片
+sprite_interface2_pvp_pvp_practice.npk                      决斗场的练习房界面
+sprite_interface2_pvp_pvp_result.npk                        决斗场的决斗奖励界面
+sprite_interface2_pvp_pvp_roomlist.npk                      决斗场的模式选择界面
+sprite_interface2_pvp_pvp_tournament02.npk                  决斗场的角色血条
+sprite_interface2_quest.NPK                                      事件任务
+sprite_interface2_quest_mission.NPK                                    奇遇任务
+sprite_Interface2_RandomboxBooster.NPK                      心愿值
+sprite_interface2_reportbaduser.npk                         举报系统界面
+sprite_interface2_research.NPK                                 新增表情
+sprite_interface2_result_ver2.0.npk                         通关奖励界面
+sprite_interface2_result_ver2.0_rank_effect.npk             通关评分特效
+sprite_interface2_result_ver2.0_rank_letter.npk             通关评分
+sprite_interface2_result_ver2.0_result_eventtag.npk         通关奖励加成提示
+sprite_interface2_reward_ver2.0.npk                         通关翻牌界面
+sprite_interface2_secret shop.npk                           神秘商店界面
+sprite_interface2_security_card.npk                         暂时是空的
+sprite_interface2_selectcharacter.npk                       角色选择界面
+sprite_interface2_selectcharacter_effect.npk                角色选择界面的特效
+sprite_interface2_selectcharacter_link_system.npk           角色关联时的特效
+sprite_interface2_selectdungeon.NPK                                      活动-抗魔值
+sprite_interface2_selectdungeon_announcedungeonevent_cn.NPK    活动-抗魔值
+sprite_interface2_selectdungeon_selectdungeonhell.npk       挑战深渊时的背景
+sprite_interface2_shop.NPK                             第四季按物品店上的提示
+sprite_interface2_shutdown.npk                             暂时是空的
+sprite_interface2_specialdungeon_goldencommerce.NPK                 韩服活动
+sprite_interface2_titlebook.npk                             成就薄系统界面
+sprite_interface2_topsecretarea_timeload.NPK                          破坏转移装置噢~
+sprite_interface2_tournament.npk                      青龙大会黄龙大会的载入界面
+sprite_interface2_ui_community_guild.NPK              某些贴图
+sprite_interface2_ui_eventlist.NPK                                    1些活动
+sprite_interface2_ui_iteminfowindow.NPK                     龙跃武器经验条
+sprite_interface2_ui_personalinformation.NPK               频道选择、装备槽
+sprite_interface2_ui_skillshop.NPK                                    第四季技能栏
+sprite_interface2_window_title_accessory.npk                各种系统栏左方图标
+
+interface事件贴图
+sprite_interface.NPK                                        界面相关
+sprite_interface_actionpointsystem.NPK                      AP活跃度系统
+sprite_interface_advancealtar_ingame.NPK             守护者祭坛进行时里面的图标
+sprite_interface_advancealtar_result.NPK                    守护者祭坛的通关奖励界面
+sprite_interface_advancealtar_selectstage.NPK               守护者祭坛的选择界面
+sprite_interface_advancealtar_upgrade.NPK                   守护者祭坛的升级选择界面
+sprite_interface_assault.NPK                              PK场角色1对1特写
+sprite_interface_awakening.NPK                             暂时是空的
+sprite_interface_bandi.NPK                                  1个很小的贴图
+sprite_interface_battledungeon.NPK                          格林赛罗斯战场界面
+sprite_interface_bloodwar.NPK                               无限的祭坛界面
+sprite_interface_cashshop.NPK                               现金商城界面
+sprite_interface_chaos.NPK                                  暂时是空的
+sprite_interface_chatting.NPK                               聊天框
+sprite_interface_chn_convenience.NPK                       修理按X提示
+sprite_interface_chn_tournament.npk                         武斗大会的前往提示
+sprite_interface_common_digit.NPK                           地图推荐等级的数字
+sprite_interface_common_ridable.NPK                         变身活动
+sprite_interface_digit.NPK                                  一些数字
+sprite_interface_dot.NPK                                    有1点
+sprite_interface_dungeonexercise.NPK                      暂时是空的
+sprite_interface_dungeoninfo.NPK                          暂时是空的
+sprite_interface_emoticon.NPK                               表情图标
+sprite_interface_emotionexpression.NPK                      心情相关
+sprite_interface_event.npk                                  六行合一
+sprite_interface_event_popup.npk                           暂时是空的
+sprite_interface_expertjob.NPK                              副职业相关界面与特效
+sprite_interface_gbosstower.NPK                             领主之塔通关界面
+sprite_interface_globalani.NPK                              完成事件时的特效
+sprite_interface_globalnavigation.NPK                      暂时是空的
+sprite_interface_goblinpad.NPK                            暂时是空的
+sprite_interface_goldskill.NPK                              绝杀技系统界面
+sprite_interface_iga_iga01.npk                              广告
+sprite_interface_iga_iga02.npk                              广告
+sprite_interface_iga_iga03.npk                              广告
+sprite_interface_iga_iga04.npk                              广告
+sprite_interface_iga_iga05.npk                              广告
+sprite_interface_iga_iga06.npk                              广告
+sprite_interface_iga_iga07.npk                              广告
+sprite_interface_iga_iga08.NPK                             广告
+sprite_interface_ingametool_soundtool.NPK             喇叭
+sprite_interface_inputroompassword.NPK                      验证码输入
+sprite_interface_itemlock.NPK                               物品锁
+sprite_Interface_Localization_china.NPK                     魔王契约的高效开罐界面
+sprite_interface_mission.NPK                                保护冰心和深渊开启提示
+sprite_interface_monstercard.NPK                            附魔卡片
+sprite_interface_monstercard_cn.NPK                           活动卡片
+sprite_interface_mouseregister.NPK                          二级密保界面
+sprite_interface_newresult.NPK                              通关奖励界面
+sprite_interface_newstyle_windows.NPK           游戏鼠标和一些新的窗口界面 
+sprite_interface_newstyle_windows_cerashop_cs_shop.npk      暂时是空的
+sprite_interface_newstyle_windows_channel_serverselect.npk  暂时是空的
+sprite_interface_newstyle_windows_chatting.NPK              新聊天界面
+sprite_interface_newstyle_windows_common_digit.NPK          数字
+sprite_interface_newstyle_windows_community.NPK             社交界面
+sprite_interface_newstyle_windows_customui.npk              BUFF图标
+sprite_interface_newstyle_windows_cutscene.NPK              暂时是空的
+sprite_interface_newstyle_windows_event.NPK                 活动提示
+sprite_interface_newstyle_windows_event_fighter.npk        暂时是空的
+sprite_interface_newstyle_windows_globalnavigation.NPK      界面导航按钮
+sprite_interface_newstyle_windows_guide.NPK                 游戏指南界面
+sprite_interface_newstyle_windows_hud.NPK                   血条和地下城评分
+sprite_interface_newstyle_windows_inventory.NPK             物品栏界面
+sprite_interface_newstyle_windows_limitedcube.npk           暂时是空的
+sprite_interface_newstyle_windows_mail.NPK                  新邮件箱界面
+sprite_interface_newstyle_windows_monster_hp.npk            新版领主血条
+sprite_interface_newstyle_windows_monsterskill.NPK          光辉之阿伽门农攻击特效
+sprite_interface_newstyle_windows_party.NPK                 队伍界面
+sprite_interface_newstyle_windows_popup.NPK          各种卷轴   弹出的选择按钮
+prite_interface_newstyle_windows_profile.npk              暂时是空的
+sprite_interface_newstyle_windows_pvp.NPK                  吉赛尔袭击活动
+ssprite_interface_newstyle_windows_pvp_pvp_fair.npk          暂时是空的
+sprite_interface_newstyle_windows_result_ver2.0.NPK         翻牌特效
+sprite_interface_newstyle_windows_reward_ver2.0.NPK         新版通关奖励界面
+sprite_interface_newstyle_windows_safe.NPK                  负重条
+sprite_interface_newstyle_windows_safe_safe_title.npk       仓库顶条
+sprite_interface_newstyle_windows_selectcharacter_link_system.NPK     角色关联特效
+sprite_interface_newstyle_windows_selectdungeon.npk         角色共享地下城难度特效
+sprite_interface_newstyle_windows_tarot_ui.NPK              使徒卡片，用于南部溪谷
+sprite_interface_newstyle_windows_trade.NPK                 未翻译交易界面
+sprite_interface_newstyle_windows_transport.NPK             技能（Z）
+sprite_interface_newstyle_windows_tutorial.NPK              操作提示
+sprite_interface_newwindowui.NPK                            频道选择等部分新界面
+sprite_interface_option.NPK                                 Esc菜单
+sprite_interface_powerwar.NPK                              暂时是空的
+sprite_interface_pvp.NPK                           竞技场界面（包括练习房间）
+sprite_interface_quest.NPK                                  任务的分类
+sprite_interface_scheduledungeonquest.NPK                   限时副本开放提示
+sprite_interface_securitycard.NPK                           韩服密保卡验证
+sprite_interface_skillcutscene.NPK                          使用觉醒时的职业特写
+sprite_interface_streetvictor.NPK                           街头争霸界面
+sprite_interface_towersstoryimage.NPK                       死亡之塔的剧情文字
+sprite_interface_tutorial02.NPK                           韩服角色动画
+sprite_interface_tutorialtip.NPK                            暂时是空的
+sprite_interface_userinfomation.NPK                         角色信息界面
+sprite_interface_villageattacked.NPK                        城镇保卫战有关
+sprite_internationalimage.NPK                               悬空怪物的空中标记
+
+item图标
+sprite_item.NPK                                             物品图标
+sprite_item_avatar_atfighter.NPK                            男格斗时装图标
+sprite_item_avatar_atgunner.NPK                             女神枪手时装图标
+sprite_item_avatar_atmage.npk                               男法师时装图标
+sprite_item_avatar_atswordman.NPK                       女鬼剑士时装图标
+sprite_item_avatar_common.NPK                               通用时装图标
+sprite_item_avatar_fighter.NPK                              格斗家时装图标
+sprite_item_avatar_gunner.NPK                               男神枪手时装图标
+sprite_item_avatar_mage.NPK                                 魔法师时装图标
+sprite_item_avatar_priest.NPK                               圣职者时装图标
+sprite_item_avatar_swordman.NPK                             鬼剑士时装图标
+sprite_item_avatar_thief.NPK                                暗夜使者时装图标
+sprite_item_common.NPK                           装备图标（地雷和落石机关）
+sprite_item_creature.NPK                                    宠物相关图标
+sprite_item_emblem.NPK                                      装备徽章图标
+sprite_item_emoticon.NPK                                      新增聊天心情
+sprite_item_nametag.NPK                                     名称装饰卡
+sprite_item_new_equipment_01_weapon_fighter_bglove.NPK         70以上拳套图标
+sprite_item_new_equipment_01_weapon_fighter_claw.NPK              70以上爪图标
+sprite_item_new_equipment_01_weapon_fighter_gauntlet.NPK        70以上臂铠图标
+sprite_item_new_equipment_01_weapon_fighter_knuckle.NPK      70以上指虎图标
+sprite_item_new_equipment_01_weapon_fighter_tonfa.NPK         70以上东方棍图标
+sprite_item_new_equipment_01_weapon_gunner_automatic.NPK   70以上自动步枪图标
+sprite_item_new_equipment_01_weapon_gunner_bowgun.NPK      70以上手弩图标
+sprite_item_new_equipment_01_weapon_gunner_hcannon.NPK        70以上手炮图标
+sprite_item_new_equipment_01_weapon_gunner_musket.NPK          70以上步枪图标
+sprite_item_new_equipment_01_weapon_gunner_revolver.NPK           70以上左轮图标
+sprite_item_new_equipment_01_weapon_mage_broom.NPK           70以上扫把图标
+sprite_item_new_equipment_01_weapon_mage_pole.NPK              70以上棍棒图标
+sprite_item_new_equipment_01_weapon_mage_rod.NPK               70以上魔杖图标
+sprite_item_new_equipment_01_weapon_mage_spear.NPK                70以上矛图标
+sprite_item_new_equipment_01_weapon_mage_staff.NPK         70以上法杖图标
+sprite_item_new_equipment_01_weapon_priest_axe.NPK            70以上战斧图标
+sprite_item_new_equipment_01_weapon_priest_cross.NPK         70以上十字架图标
+sprite_item_new_equipment_01_weapon_priest_rosary.NPK                70以上念珠图标
+sprite_item_new_equipment_01_weapon_priest_scythe.NPK               70以上镰刀图标
+sprite_item_new_equipment_01_weapon_priest_totem.NPK             70以上图腾图标
+sprite_item_new_equipment_01_weapon_swordman_beamswd.NPK     70以上光剑图标
+sprite_item_new_equipment_01_weapon_swordman_club.NPK            70以上钝器图标
+sprite_item_new_equipment_01_weapon_swordman_katana.NPK         70以上太刀图标
+sprite_item_new_equipment_01_weapon_swordman_lswd.NPK           70以上巨剑图标
+sprite_item_new_equipment_01_weapon_swordman_sswd.NPK       70以上短剑图标
+sprite_item_new_equipment_01_weapon_thief_dagger.NPK          70以上匕首图标
+sprite_item_new_equipment_01_weapon_thief_twinswd.NPK       70以上双剑图标
+sprite_item_new_equipment_01_weapon_thief_wand.NPK         70以上权杖图标
+sprite_item_new_equipment_02_cloth_coat.NPK                  布甲-上衣
+sprite_item_new_equipment_02_cloth_neck.NPK                  布甲-护肩
+sprite_item_new_equipment_02_cloth_pants.NPK                  布甲-下装
+sprite_item_new_equipment_02_cloth_shoes.NPK                  布甲-鞋子
+sprite_item_new_equipment_02_cloth_belt.NPK                     布甲-腰带
+sprite_item_new_equipment_03_leather_belt.NPK                     皮甲-腰带
+sprite_item_new_equipment_03_leather_coat.NPK                  皮甲-上衣
+sprite_item_new_equipment_03_leather_neck.NPK                  皮甲-护肩
+sprite_item_new_equipment_03_leather_pants.NPK               皮甲-下装
+sprite_item_new_equipment_03_leather_shoes.NPK                 皮甲-鞋子
+sprite_item_new_equipment_04_larmor_belt.NPK                 轻甲-腰带
+sprite_item_new_equipment_04_larmor_coat.NPK                轻甲-上衣
+sprite_item_new_equipment_04_larmor_neck.NPK                 轻甲-护肩
+sprite_item_new_equipment_04_larmor_pants.NPK                轻甲-裤子
+sprite_item_new_equipment_04_larmor_shoes.NPK                轻甲-鞋子
+sprite_item_new_equipment_05_harmor_belt.NPK                重甲-腰带
+sprite_item_new_equipment_05_harmor_shoes.NPK               重甲-鞋子
+sprite_item_new_equipment_05_harmor_coat.NPK                重甲-上衣
+sprite_item_new_equipment_05_harmor_neck.NPK                 重甲-护肩
+sprite_item_new_equipment_05_harmor_pants.NPK                   重甲-下装
+sprite_item_new_equipment_06_plate_belt.NPK                  板甲-腰带
+sprite_item_new_equipment_06_plate_pants.NPK                  板甲-下装
+sprite_item_new_equipment_06_plate_neck.NPK                      板甲-护肩
+sprite_item_new_equipment_06_plate_coat.NPK                       板甲-上衣
+sprite_item_new_equipment_06_plate_shoes.NPK                   板甲-鞋子
+sprite_item_new_equipment_07_ring.NPK                                 戒指
+sprite_item_new_equipment_08_necklace.NPK                            项链
+sprite_item_new_equipment_09_bracelet.NPK                           手腕
+sprite_item_new_equipment_10_support.NPK                       辅助装备
+sprite_item_new_equipment_11_magicstone.NPK                               魔法石
+sprite_item_stackable.NPK                   消耗、材料、任务、商城道具等图标
+sprite_item_throwitem.NPK                                   投掷道具的投掷效果
+sprite_item_title.NPK                                       称号的佩戴效果和图标
+sprite_item_weapon_fighter.NPK                              格斗家武器图标
+sprite_item_weapon_gunner.NPK                               神枪手武器图标
+sprite_item_weapon_mage.NPK                                 魔法师武器图标
+sprite_item_weapon_priest.NPK                               圣职者武器图标
+sprite_item_weapon_swordman.NPK                             鬼剑士武器图标
+sprite_item_weapon_thief.NPK                                暗夜使者武器图标
+
+map背景
+sprite_map.NPK                          地图背景相关（赛利亚房间）
+sprite_map_2013blob.NPK                                几颗珠和一些数字
+sprite_map_abnoba_blackstone.NPK           女鬼剑士专属地图-黑石监狱及其里面的怪
+sprite_map_abnoba_empirerampart_background.NPK          帝国城墙和远景
+sprite_map_abnoba_empirerampart_obj.NPK              女鬼剑士专属地图-帝国城墙
+sprite_map_abnoba_empirerampart_tile.NPK             女鬼剑士专属地图-帝国城墙的地
+sprite_map_abnoba_redstone.NPK                       女鬼剑士专属地图-红石监狱
+sprite_map_abnoba_rollingstone.NPK                       女鬼剑士专属地图-乱党监狱
+sprite_map_act2.NPK                                         天空之城区域的置物
+sprite_map_act2_amon.NPK                            天空之城蒙亚区域的背景
+sprite_map_act2_fountain.NPK                                天空之城区域的喷泉
+sprite_map_act2_ocean.NPK                                   天空之海的背景
+sprite_map_act2_sepa.NPK                             天空之城世帕罗塔的背景
+sprite_map_act2_stoneimage.NPK                               冒险家石像
+sprite_map_act3.NPK                                天帷巨兽区域的背景和置物
+sprite_map_act3_gbl_breeding.npk                            树精繁殖地的背景和置物
+sprite_map_act3_gbl_goddess_temple.npk               GBL教女神殿的背景和置物
+sprite_map_act3_gblaradsociety.NPK                  堕落之殿区域的背景和置物
+sprite_map_act4.NPK                                         暗黑城区域的置物
+sprite_map_act4_darkelfcemetary.NPK                         暗精灵墓地的背景
+sprite_map_act4_kingsruins.NPK                              王之遗迹的背景
+sprite_map_act4_magmacave.NPK                               熔岩穴的的背景
+sprite_map_act4_marpissalair.NPK                            蜘蛛洞穴的背景
+sprite_map_act4_noirpera.NPK                                诺斯玛尔的背景
+sprite_map_act4_screamingcave.NPK                           悲鸣洞穴的背景
+sprite_map_act4_shadowmaze.NPK                              暗影迷宫的背景
+sprite_map_act4_shallowkeep.NPK                             浅栖之地的背景
+sprite_map_act4_underfoot.NPK                               暗黑城地面
+sprite_map_act5.NPK                                         万年雪山区域背景
+sprite_map_act5_scasalair.NPK                               斯卡萨之巢的背景
+sprite_map_act6.NPK                                青面修罗·洛兹贝伦的毒泡
+sprite_map_act6_astraythief.NPK                             堕落的盗贼的背景和置物
+sprite_map_act6_astraythief_breakableobject.NPK             堕落的盗贼可破坏的置物
+sprite_map_act6_bloodbutterfly.NPK                          血蝴蝶之舞的背景
+sprite_map_act6_bloodbutterfly_flowertrap.NPK               血蝴蝶之舞的置物
+sprite_map_act6_bloodbutterfly_holetrap.NPK                 血蝴蝶之舞的置物
+sprite_map_act6_bloodbutterfly_object.NPK                   血蝴蝶之舞的置物
+sprite_map_act6_bloodbutterfly_sandtarp.NPK                 血蝴蝶之舞的置物
+sprite_map_act6_bloodbutterfly_treetrap.NPK                 血蝴蝶之舞的置物
+sprite_map_act6_leshphon.NPK                                痛苦之村的背景
+sprite_map_act6_suspicion.NPK                               疑惑之村的背景
+sprite_map_act6_suspicion_object.NPK                        疑惑之村的背景和置物
+sprite_map_act6_suspicion_object_coalwaggon.NPK             疑惑之村的背景和置物
+sprite_map_act6_temptation.NPK                      迷乱之村哈穆林背景和置物
+sprite_map_act6_temptation_breakableobject.NPK              迷乱之村哈穆林可破坏置物
+sprite_map_act7_antberadd_day.NPK                           追击歼灭战的置物
+sprite_map_act7_antberadd_night.NPK                         夜间袭击战的置物
+sprite_map_act7_antberadd_tent.NPK                          补给线阻断战的置物
+sprite_map_act7_fieldday.NPK                                根特东门的背景和置物
+sprite_map_act7_fieldnight.NPK                              根特南门的背景和置物
+sprite_map_act7_rampart2.NPK                   根特南门的背景和可破坏置物
+sprite_map_act7_rampart.NPK                       根特东门的背景和可破坏置物
+sprite_map_act7_rampart_cannon.NPK                          根特的各种坦克车
+sprite_map_act7_supplycut.NPK                               补给线阻断战的置物
+sprite_map_act8_background.NPK                              海上列车的背景
+sprite_map_act8_ghosttrain.NPK                              幽灵列车的背景置物
+sprite_map_act8_pirateonthetrain.NPK                        列车上的海贼的置物
+sprite_map_act8_seatrainretaking.NPK                        夺回西部线的置物
+sprite_map_advancealtar.NPK                        守护者祭坛的背景和置物
+sprite_map_alfhlyra.NPK                       阿法利亚城镇的背景和置物
+sprite_map_antber.NPK                                       追击歼灭战的背景
+sprite_map_arden.npk                           决战之都阿登高地的背景和置物
+sprite_map_breakableobject.NPK                              各种可破坏的置物
+sprite_map_breakableobject_actiontree.NPK                   冰树
+sprite_map_breakableobject_actiontreerenew.NPK              格兰之森的树
+sprite_map_breakableobject_charnakridge.NPK                 哥布林投石车
+sprite_map_breakableobject_eventbarrier.NPK                 栅栏
+sprite_map_breakableobject_fairy.NPK                        补给精灵和BUFF
+sprite_map_breakableobject_grenselos.NPK              格林赛罗斯战场的可破坏置物
+sprite_map_breakableobject_magmacave.NPK                    熔岩穴的可破坏置物
+sprite_map_breakableobject_seagrass.NPK                     天空之城的海草
+sprite_map_breakableobject_skycastle.NPK                    天空之城的可破坏置物
+sprite_map_breakableobject_stonepillar.NPK                  格兰之森的石柱
+sprite_map_breakableobject_underfoot.NPK                    暗黑城的可破坏置物
+sprite_map_cartelcommand.NPK                                   卡勒特指挥部背景
+sprite_map_cartelcommand_bridge.NPK                 卡勒特指挥部的桥
+sprite_map_chaos.NPK                                      某门
+sprite_map_chaostest.NPK                                   暗黑城D地
+sprite_map_chn_pvp_chn_park.NPK                   PK场新地图
+sprite_map_chn_pvp_chn_studio.NPK                   PK场新地图
+sprite_map_church.NPK                                    教堂
+sprite_map_cutscene.NPK                         城镇地图的切换画面和副本进入画面
+sprite_map_dimentiongate.NPK                    暗黑城异次元裂缝门口背景
+sprite_map_dimentiongate_bakalcastle.npk                    巴卡尔之城的背景和置物
+sprite_map_dimentiongate_blackearth_background.npk          黑暗大地的背景
+sprite_map_dimentiongate_blackearth_gate.npk                黑暗大地的副本门
+sprite_map_dimentiongate_blackearth_object.npk              黑暗大地的置物
+sprite_map_dimentiongate_blackearth_tile.npk                黑暗大地的地面
+sprite_map_dimentiongate_cosmofiend.npk                     虚无之境的背景和置物
+sprite_map_disguiser.NPK                          阴深的地图
+sprite_map_elvengard.npk                               艾尔文防线的背景和置物
+sprite_map_event.NPK                                        2009年国庆旗子
+sprite_map_event_2008sinhan.NPK                            某活动-韩服
+sprite_map_event_2008xmas.NPK                               圣诞节的赛丽亚房间
+sprite_map_event_2009gmarket.NPK                           韩服活动
+sprite_map_event_2009newyear.NPK                            DNF三周年蛋糕垫底
+sprite_map_event_2010cokacola.npk                           韩服活动
+sprite_map_event_2010SoloDay.NPK               DNF2010光棍节凯丽强化打折横幅
+sprite_map_event_2010sonye.npk                              韩服活动
+sprite_map_event_2011_event_dungeon.NPK                     人偶工厂
+sprite_map_event_2011child.npk                              韩服活动
+sprite_map_event_2011christmas.npk                         韩服活动
+sprite_map_event_2011summer.npk                            韩服活动
+sprite_map_event_bluemarble.NPK                            韩服活动
+sprite_map_event_c_event.NPK                                抉择之泽的气球
+sprite_map_event_chn_3th_birthday_firework.NPK              DNF三周年时旅馆的烟火
+sprite_map_event_chn_4th_birthday_firework.npk              DNF四周年时旅馆的烟火
+sprite_map_event_chn_2011_heart_of_jarbro_banner.NPK        三倍袖珍罐的旗子
+sprite_map_event_chn_2012_christmas.NPK                         圣诞树
+sprite_map_event_chn_20130108_ddayevent.NPK                时空之门倒计时
+sprite_map_event_chn_dday_innovation.NPK          2012年6月第三季革新倒计时的旅馆
+sprite_map_event_chn_dday_ready85_2013.NPK                   开放85级倒计时
+sprite_map_event_chn_eco_energy_event.NPK                       某活动绿化机
+sprite_map_event_chn_get_acc_2012.NPK                        冬日首饰
+sprite_map_event_chn_golden_event_npc_2013.NPK          凿福胖胖的雕像
+sprite_map_event_chn_golden_fruittree_2012.NPK           扔树
+sprite_map_event_chn_lunar_new_year.NPK                     DNF春节旅馆装饰
+sprite_map_event_chn_ria_letter_2013.NPK                          给哥哥的信
+sprite_map_event_chn_timegate_2013.NPK           2013 1月时空之门扔石头活动
+sprite_map_event_chn_toy.NPK                                人偶工厂副本门
+sprite_map_event_chn_upgrade_discount_2013.NPK             强化打折
+sprite_map_event_dnf5thyear.npk                             韩服五周年时旅馆的烟火
+sprite_map_event_dnf6thyear.npk                             韩服六周年时旅馆的烟火
+sprite_map_event_halloween.NPK                              DNF万圣节旅馆
+sprite_map_event_j_event.npk                                韩服活动
+sprite_map_event_superschool.NPK                            韩服活动
+sprite_map_gent.NPK                                         根特城镇的背景和置物
+sprite_map_goblinkingdom.NPK                                哥布林王国的置物
+sprite_map_grenselos.NPK                                    格林赛罗斯战场的背景
+sprite_map_guildagit.NPK                                  貌似赛丽亚间房
+sprite_map_haze.npk                             雾都赫伊斯的背景和置物
+sprite_map_hellmap.NPK                         深渊恶魔的背景（远景）   
+sprite_map_hendonmyre.NPK                       赫顿玛尔城镇的背景和置物
+sprite_map_hendonmyre_pvp.NPK                    决斗场练习模式的背景
+sprite_map_larguslake_obj.NPK                           女鬼剑士开场地图
+sprite_map_larguslake_tile.NPK                     女鬼剑士开场地图的地
+sprite_map_lufthafen.NPK                                    鲁夫特悬空海港的背景
+sprite_map_minimap.NPK                                      小地图
+sprite_map_mission_obj.NPK                              奇遇任务-宝箱
+sprite_map_mission_tile.NPK                             赛丽亚的财富~~~
+sprite_map_new_event_dnfrider_obj.NPK                      活动
+sprite_map_new_event_dnfrider_tile.NPK                      活动
+sprite_map_new_event_dual_obj.NPK                              根特皇宫外
+sprite_map_new_event_dual_obj_boss.NPK                       吉赛尔的袭击
+sprite_map_new_event_dual_tile.NPK                              根特皇宫外的地
+sprite_map_new_event_dual_tile_boss.NPK                       吉赛尔的袭击的地
+sprite_map_new_event_zombi.NPK                              生化禁区
+sprite_map_npc.NPK                                          NPC站街时的外观
+sprite_map_pathgate.NPK                                     格兰之森区域的副本门
+sprite_map_pathgate_abnoba_blackstone.NPK                        黑石监狱的副本门
+sprite_map_pathgate_abnoba_redstone.NPK                 红石监狱的副本门
+sprite_map_pathgate_abnoba_rollingstone.NPK              乱党监狱的副本门
+sprite_map_pathgate_act2.NPK                                天空之城区域的副本门
+sprite_map_pathgate_act3.NPK                                天帷巨兽区域的副本门
+sprite_map_pathgate_act3_gbl_breeding.npk                   树精繁殖地的副本门
+sprite_map_pathgate_act4.NPK                                暗黑城区域的副本门
+sprite_map_pathgate_act5.NPK                                万年雪山区域的副本门
+sprite_map_pathgate_act5_coldboy.NPK                        冰心的某块石头
+sprite_map_pathgate_act6.NPK                                堕落的盗贼的副本门
+sprite_map_pathgate_act6_bloodbutterfly.NPK                 血蝴蝶之舞的副本门
+sprite_map_pathgate_act6_leshphon.NPK                       痛苦之村的副本门
+sprite_map_pathgate_act6_suspicion.NPK                      疑惑之村的副本门
+sprite_map_pathgate_act6_temptation.NPK                     迷乱之村哈穆林的副本门
+sprite_map_pathgate_act7_dayfield.NPK                       追击歼灭战的副本门
+sprite_map_pathgate_act7_nightfield.NPK                     夜间袭击战的副本门
+sprite_map_pathgate_act7_rampart2.NPK                       根特南门的副本门
+sprite_map_pathgate_act7_rampart.NPK                        根特东门的副本门
+sprite_map_pathgate_act7_supplycut.NPK                      补给线阻断战的副本门
+sprite_map_pathgate_act8_arden.npk             决战之都阿登高地的副本门
+sprite_map_pathgate_act8_cartelcommand.NPK          卡勒特指挥部副本门
+sprite_map_pathgate_act8_ghosttrain.NPK                    幽灵列车的副本门
+sprite_map_pathgate_act8_haze.npk                           雾都赫尔斯的副本门
+sprite_map_pathgate_act8_pirateonthetrain.NPK               列车上的海贼的副本门
+sprite_map_pathgate_act8_seatrainretaking.NPK               夺回西部线的副本门
+sprite_map_pathgate_act8_testtrain.NPK                      幽灵列车的副本门
+sprite_map_pathgate_citywar_elvengardsf.NPK           艾尔文防线袭击战的副本门
+sprite_map_pathgate_citywar_hendonmyresf.NPK                赫顿玛尔街市战的副本门
+sprite_map_pathgate_dimensiongate.NPK                       虚无之境的副本门
+sprite_map_pathgate_event_twin.NPK               吉赛尔的袭击的副本门
+sprite_map_pathgate_event_zombi.NPK                              生化禁区的副本门
+sprite_map_pathgate_gbosstower.NPK                          领主之塔的副本门
+sprite_map_pathgate_golden_road.NPK               吉赛尔的袭击防线
+sprite_map_pathgate_helldungeon.NPK                         深渊恶魔的柱子
+srite_map_pathgate_powerstation.NPK                         能源中心副本门
+sprite_map_pathgate_timegate.NPK                                时空之门副本门
+sprite_map_pathgate_towerofbloodyfight.NPK                  无尽的祭坛的副本门
+sprite_map_pathgate_towerofdespair.npk                      绝望之塔的副本门
+sprite_map_pathgate_town_cartelarad.NPK                     陌路者要塞的副本门
+sprite_map_pathgate_town_gblarad.NPK                        堕落之殿的副本门
+sprite_map_pathgate_town_grim.NPK                           南部溪谷的副本门
+sprite_map_pathgate_town_moonlightpub.NPK                   月光酒吧的副本门
+sprite_map_powerstation.NPK                                      永远是空的
+sprite_map_powerstation_fruz_station.NPK                             永远是空的
+sprite_map_powerstation_fruz_station_background.NPK                 普鲁兹发电站
+sprite_map_powerstation_fruz_station_obj.NPK                   普鲁兹发电站
+sprite_map_powerstation_fruz_station_tile.NPK                            普鲁兹发电站
+sprite_map_powerstation_grandine_background.NPK                       格兰迪发电站
+sprite_map_powerstation_grandine_obj.NPK                       格兰迪发电站
+sprite_map_powerstation_grandine_tile.NPK                          格兰迪发电站
+sprite_map_powerstation_kohlepowerstation_background.NPK              科雷发电站
+sprite_map_powerstation_kohlepowerstation_obj.NPK                     科雷发电站
+sprite_map_powerstation_kohlepowerstation_tile.NPK                  科雷发电站
+sprite_map_powerstation_trombe_background.NPK                         特仑斯发电站
+sprite_map_powerstation_trombe_obj.NPK                              特仑斯发电站
+sprite_map_powerstation_trombe_tile.NPK                            特仑斯发电站
+sprite_map_pvp.NPK                                             新版PK场
+sprite_map_realskycastle.NPK                                蠕动之城的背景和置物
+sprite_map_requiem.NPK                                     时空之门远景
+sprite_map_sainthorn.NPK                                        圣魂船
+sprite_map_shonan.npk                                虚祖首都素喃的背景和置物
+sprite_map_shonan_tournament.npk               青龙大会黄龙大会的背景和置物
+sprite_map_slough.NPK                              斯曼工业基地的背景
+sprite_map_stormpass.NPK                      斯顿雪域城镇的背景和置物
+sprite_map_timegate.NPK                                     时空之门的沙漏
+prite_map_timegate_beginning.NPK                            凛冬背景
+sprite_map_timegate_black_church.NPK                          暗黑圣战背景
+sprite_map_timegate_conflagration.NPK                             格兰之火背景
+sprite_map_timegate_consciousness.NPK                                迷之觉悟背景
+sprite_map_timegate_epidemic.NPK                                    瘟疫之地背景
+sprite_map_timegate_formacartel.NPK                         卡勒特之初背景
+sprite_map_timegate_oldscreamingcave.NPK                     昔日悲鸣的背景
+sprite_map_timegate_oldscreamingcave_far.NPK                     昔日悲鸣的背景
+sprite_map_timegate_oldscreamingcave_obj.NPK                     昔日悲鸣的背景
+sprite_map_timegate_oldscreamingcave_tile.NPK                   昔日悲鸣的地
+sprite_map_timegate_timegate.NPK                           时空之门某东西
+sprite_map_timegate_topsecretarea.NPK               绝密区域背景
+sprite_map_timegatearea.NPK                                时空之门背景
+sprite_map_timegaterequiem.NPK                      时空之门背景
+sprite_map_title.NPK                              城镇中地图切换和进副本时的标题 
+sprite_map_title_towerofdespair.npk                         绝望之塔每层的横幅
+sprite_map_towers_deadtower.NPK                             死亡之塔背景和置物
+sprite_map_towers_gbosstower.NPK                            领主之塔背景和置物
+sprite_map_towers_illusiontower.NPK                         迷惘之塔背景和置物
+sprite_map_towers_towerofbloodyfight.NPK                    无尽的祭坛背景置物
+sprite_map_towers_towerofbloodyfight_tile.NPK               无尽的祭坛脚下地图
+sprite_map_towers_towerofdespair_downstairs.NPK         绝望之塔上方的背景和置物
+sprite_map_towers_towerofdespair_upstairs.NPK               绝望之塔下方的背景和置物
+sprite_map_towers_towerofultimate.NPK                        极限祭坛背景和置物
+sprite_map_trap.NPK                                 毒沼和悲鸣草一类的陷阱置物
+sprite_map_trap_eyeofobserver.NPK                           暗影迷宫的某眼睛
+sprite_map_trap_goblinbunker.NPK                            哥布林碉堡
+sprite_map_trap_grenselosbunker.NPK                         格林赛罗斯战场的碉堡
+sprite_map_village.NPK                              堕落之殿副本的可破坏置物
+sprite_map_village_aganzo.NPK                               月光酒馆的背景
+sprite_map_village_bwanga.NPK                  布万加的修炼场的背景和置物
+sprite_map_village_cartel_object.NPK                        绿都格罗兹尼的置物
+sprite_map_village_cartel_object_groznyinside.NPK           绿都格罗兹尼的置物
+sprite_map_village_cartel_object_groznyoutside.NPK          绿都格罗兹尼的背景
+sprite_map_village_cartel_object_odesa.NPK                  热血八番街的背景和置物
+sprite_map_village_cartel_tile.NPK                          绿都格罗兹尼的背景
+sprite_map_village_cartel_westcoast.NPK                     坦克碉堡
+sprite_map_village_church.NPK                               教堂
+sprite_map_village_grim.NPK                         街头争霸排名和未知地图
+sprite_map_village_grim_new_image_new_teil.NPK              未知地图
+sprite_map_village_grim_new_image_objcet.NPK                未知地图
+sprite_map_village_grim_new_image_old_teil.NPK              未知地图
+sprite_map_warfare.npk                                      武斗大会的背景
+
+monster怪兽
+sprite_monster.NPK                                          怪物相关标记和头像
+sprite_monster_2013snake.NPK                                      2013年金蛇
+sprite_monster_abnova.NPK                        女鬼剑士救赛丽亚的图和监狱的怪
+sprite_monster_abnova_blackkobolt.NPK                             黑石监狱的怪
+sprite_monster_abnova_dalgur.NPK                      红石监狱的怪
+sprite_monster_abnova_firetroll.NPK                        红石监狱的怪
+sprite_monster_abnova_kobolt.NPK                                       监狱的怪
+sprite_monster_abnova_koboltkeeper.NPK                             监狱的怪
+sprite_monster_abnova_lion.NPK                               监狱的怪
+sprite_monster_abnova_named_kavika.NPK                            监狱的怪
+sprite_monster_abnova_steel_orc.NPK                                监狱的猪怪
+sprite_monster_abnova_stone_orc.NPK                          监狱的猪怪
+sprite_monster_abnova_waterkobolt.NPK                                 监狱的怪
+sprite_monster_act8_bigghost_flu.NPK                        巨灵布鲁
+sprite_monster_act8_chiefsars.NPK                           恶灵众
+sprite_monster_act8_chiefsars_crow.NPK                      恶灵乌鸦
+sprite_monster_act8_chiefsars_die.NPK                       恶灵雾团
+sprite_monster_act8_chiefsars_missile.NPK                   恶灵机长
+sprite_monster_act8_chiefsars_soultornado.NPK               恶灵特效
+sprite_monster_act8_congcong.NPK                            小美人鱼空空伊
+sprite_monster_act8_crokhan.NPK                             鳄鱼众
+sprite_monster_act8_dark_ghost.NPK                          黑暗恶灵
+sprite_monster_act8_mermadia.NPK                            人鱼众
+sprite_monster_act8_merman.NPK                              鱼人众
+sprite_monster_act8_turtle.NPK                              海龟众
+sprite_monster_act8_wooden_doll.NPK                         木质木偶众
+sprite_monster_act8_zombie_marine.NPK                       僵尸冲锋队员
+sprite_monster_advancealtar.NPK                             守护者祭坛的怪物
+sprite_monster_advanceatlar.NPK                             祭坛的怪物
+sprite_monster_airsword.npk                                某APC、会射线！
+sprite_monster_albert.npk                                   阿尔伯特
+sprite_monster_ancient.NPK                      暴戾搜捕团祭司众和暗精灵僵尸众
+sprite_monster_ant.NPK                                      蚂蚁众
+sprite_monster_apc.npk                             有只狗（式神玄武）有把图腾
+sprite_monster_apc_sand_doll.npk                          沙怪
+sprite_monster_arad.NPK                                     堕落之殿的一些人形怪
+sprite_monster_babydragon.NPK                               斯卡萨幼龙和弗利特
+sprite_monster_bantu.NPK                                    班图众
+sprite_monster_bantu_beastmaster.NPK                        驯兽师鲁乌格
+sprite_monster_bee.NPK                                      蜜蜂众
+sprite_monster_black_church.NPK                           暗黑圣战D怪
+sprite_monster_blood_an_agaress.NPK                         祭坛死神阿加雷斯
+sprite_monster_blood_an_chariot.NPK                         地狱哥布林战车
+sprite_monster_blood_an_propeller.NPK                       地狱哥布林直升机
+sprite_monster_bloodmoon_zetes.NPK                          祭坛骑士泽忒斯
+sprite_monster_bloodybutterfly_bloodybutterfly.NPK          血蝴蝶众
+sprite_monster_bloodybutterfly_mosqueen.NPK                 诺丝克尔
+sprite_monster_bwanga.NPK                                   布万加
+sprite_monster_cartel.NPK                                   有关卡特勒组织的怪物
+sprite_monster_cartel_cypher.NPK                            魔雷麦瑟·莫纳亨
+sprite_monster_cartel_launcher.NPK                          火箭炮塔
+sprite_monster_cartel_mafia.NPK                             棍子男众
+sprite_monster_cartel_nife_clraes.NPK                       奈普·克拉斯
+sprite_monster_cartel_rocketman.NPK                         火箭侠
+sprite_monster_cartel_smokegranade.NPK                      瓦斯
+sprite_monster_cartelcommand.NPK                        卡勒特指挥部D贴图
+sprite_monster_casillas_appear.NPK                          召唤 - 卡西亚斯出现效果
+sprite_monster_casillas_body.NPK                            召唤 - 卡西亚斯身体
+sprite_monster_casillas_moveslash.NPK               召唤 - 卡西亚斯必杀剑千鬼杀
+sprite_monster_casillas_slash.NPK                           召唤 - 卡西亚斯攻击特效
+sprite_monster_casillas_swordrain.NPK             召唤 - 卡西亚斯必杀剑地狱图
+sprite_monster_championbreak.NPK                       一个球在闪
+sprite_monster_characterstatue.NPK                          角色雕像
+sprite_monster_characterstatue_passiveobject.NPK            伪·角色雕像
+sprite_Monster_cocoon.NPK                                   罗特斯的卵
+sprite_monster_coldboy.NPK                                  查理
+sprite_monster_coldheart.NPK                                冰之心
+sprite_monster_common.NPK                  强化怪的特效、肉块、怪物死亡时的闪光
+sprite_monster_conveyer.NPK                                 人偶工厂的置物
+sprite_monster_cosmofiend.NPK                               深渊恶魔众
+sprite_monster_cosmofiend_sealedgate.NPK                    深渊恶魔的封印柱子
+sprite_monster_crimebuffalo_crimebuffaloartifacter.NPK      罪恶布法罗盗掘团安佩特
+sprite_monster_crimebuffalo_crimebuffalogeneral.NPK         罪恶布法罗盗掘团队长
+sprite_monster_crimebuffalo_crimebuffalonormal.NPK          罪恶布法罗盗掘团士兵
+sprite_monster_crimebuffalo_equipment.NPK                   罪恶布法罗盗掘团的装备
+sprite_monster_crimebuffalo_grim_crimebuffal.NPK            罪恶布法罗盗掘
+sprite_monster_crimebuffalo_grim_crimebuffalogeneral.NPK    悲鸣盗墓王
+sprite_monster_crimebuffalo_resurrectioneffect.NPK      罪恶布法罗盗掘团队长复活特效
+sprite_monster_crimebuffalo_treasurenamed.NPK               盗墓者卢瑟
+sprite_monster_cyclops.NPK                                  独眼巨人
+sprite_monster_darkelf.NPK                      暗精灵众（包括三个大块头）
+sprite_monster_dendroid.NPK                                 树精众
+sprite_monster_despair.npk                                某APC
+sprite_monster_direzie.NPK                                  狄瑞吉
+sprite_monster_disguiser.NPK                                不灭的伪装者
+sprite_monster_disguiser_lightning.NPK                      伪装者的闪电
+sprite_monster_dog.NPK                                      狗狗众
+sprite_monster_dollmaster.NPK                               人偶师众
+sprite_monster_dollmaster_masterdogridollcontrol.NPK        人偶王的控制技能
+sprite_monster_draconian.NPK                                龙人
+sprite_monster_dragonknight.NPK                             祭坛蜥蜴众
+sprite_monster_drake.NPK                                    邪龙皮兹
+sprite_monster_eltis.npk                                    机械
+sprite_monster_event_2012_thxgiving.NPK                       某活动：黑色的稻草人
+sprite_monster_event_bus.NPK                                韩服活动
+sprite_monster_event_chn_destroy_dungeon_object.NPK                    泰拉遗迹活动
+sprite_monster_event_chn_golden_egg.NPK                     金蛋
+sprite_monster_event_chn_golden_goblin_junior.NPK           活动哥布林
+sprite_monster_event_clown.npk                              韩服活动
+sprite_monster_event_cricket.NPK                            韩服活动
+sprite_monster_event_j_farmer.npk                         韩服活动
+sprite_monster_event_kinggoldenhorn.NPK                     金角大王、银角大王
+sprite_monster_event_present_box.NPK                        韩服活动
+sprite_monster_event_seria.npk                             韩服变身赛利亚活动
+sprite_monster_event_seria_beeswax.npk                      蜂蜜蜡烛攻击
+sprite_monster_event_seria_bind.npk                         变身魔盒
+sprite_monster_event_seria_kaleido.npk                      百变魔盒
+sprite_monster_event_seria_key.npk                          魔力钥匙攻击
+sprite_monster_event_seria_mega.npk                         韩服活动
+sprite_monster_event_seria_remi.npk                         雷米庇佑
+sprite_monster_event_seria_running.npk                      赛利亚移动特效
+sprite_monster_event_seria_scream.npk                       恐惧尖叫攻击
+sprite_monster_event_seria_serabox.npk                      商场衣箱攻击
+sprite_monster_event_seria_seriaguard.npk                   魔力护罩
+sprite_monster_event_seriea.NPK                             幽灵赛利亚
+sprite_monster_event_seriea_mega.npk                        音乐盒攻击
+sprite_monster_event_sheep_wolf.npk                         披着羊皮的狼
+sprite_monster_event_zombie.NPK                            生化禁区的僵尸
+sprite_monster_eventbak.NPK                               韩服活动
+sprite_monster_eventgoblin.NPK                              特殊哥布林
+sprite_monster_evileye.NPK                                  罪恶之眼
+sprite_monster_flydragon.NPK                                翼龙
+sprite_monster_flydragon_passiveobject.NPK                  蓝翼龙的冰球
+sprite_monster_gbl_breeding.npk                             树精繁殖地的怪物
+sprite_monster_gbl_goddess_temple.npk                       GBL教女神殿的怪物
+sprite_monster_ghoul.NPK                                    食尸鬼众
+sprite_monster_goblin.NPK                                   哥布林众
+sprite_monster_goblin_effect.NPK                            变身哥布林攻击特效
+sprite_monster_goblin_equipment.NPK                         哥布林的装备
+sprite_monster_goblin_event.NPK                             普通哥布林和活动哥布林
+sprite_monster_goblin_golgo.NPK               哥布林王和逆袭之谷BOSS
+sprite_monster_goblin_passiveobject.NPK                     哥布林投掷道具
+sprite_monster_goblin_skycastle.NPK                         空中投掷的哥布林
+sprite_monster_goblin_skycastle_equipment.NPK               空中投掷的哥布林装备
+sprite_monster_golem.NPK                                    石巨人众
+sprite_monster_golem_equipment.NPK                          石巨人的零件
+sprite_monster_golem_particle.NPK                           石巨人的碎片
+sprite_monster_golem_passiveobject.NPK                      石巨人的飞行道具
+sprite_monster_grim.NPK                                     未知怪物
+sprite_monster_grim_effect.NPK                              未知怪物的攻击特效
+sprite_monster_gunner_exs.NPK                               Ex-S毒蛇炮
+sprite_monster_gunner_ez8.NPK                               EZ-8自爆者
+sprite_monster_gunner_ez8ex.NPK                              Ez-10反击者
+sprite_monster_gunner_fightingspirit.NPK                   斗志之歌
+sprite_monster_gunner_firerx78.NPK                          红色破坏者
+sprite_monster_gunner_headingrx78.NPK                   钢铁机器人
+sprite_monster_gunner_healrx78.NPK                        修复者格莱/神力雷克斯
+sprite_monster_gunner_rx78.NPK                              RX-78追击者
+sprite_monster_gunner_tempester.NPK                         空战机械：风暴
+sprite_monster_gunner_tempesterat.NPK                       空战机械：狂风
+sprite_monster_haze.npk                                     雾都赫尔斯的怪物
+sprite_monster_headlessknight.NPK                           无头骑士
+sprite_monster_heaven_captain_berhik.NPK                    前锋队长波西克
+sprite_monster_heaven_captainshured.NPK                     机动队长苏雷德
+sprite_monster_heaven_dorian.NPK                            巨枪多里安
+sprite_monster_heaven_gt9600.NPK                            GT-9600
+sprite_monster_heaven_letsburn_bentinck.NPK                 纵火犯本汀克
+sprite_monster_heaven_mechanicgiselle.NPK                   机械师吉赛尔
+sprite_monster_heaven_silverman.NPK                         夜间袭击战的怪物
+sprite_monster_heaven_silversmallman.NPK                    感叹号
+sprite_monster_heaven_specialforce.NPK                      卡特勒机动队
+sprite_monster_heaven_vulcherspecialforce.NPK               辅修师斯佩特
+sprite_monster_hunter.NPK                                   夜叉众
+sprite_monster_hunter_passiveobject.NPK                     艾力斯的痰
+sprite_monster_icetiger.NPK                                 寒冰虎
+sprite_monster_impossible_bakal.npk                巴卡尔之城的怪物和攻击特效
+sprite_monster_impossible_blackearth.npk                    黑暗大地的怪物和攻击特效
+sprite_monster_impossible_blackearth_dark_column.npk        奥兹玛的混沌攻击特效
+sprite_monster_impossible_blackearth_fear_effect.npk        恐惧之手
+sprite_monster_impossible_blackearth_howling_pain.npk       奥兹玛的混沌之柱攻击特效
+sprite_monster_impossible_blackearth_icon.npk      被奥兹玛变成怪物时可使用的技能图标
+sprite_monster_impossible_blackearth_spaceescape.npk        选择
+sprite_monster_impossible_cosmofiend.npk               异界之缝的怪物和攻击特效
+sprite_monster_impossible_goblin.NPK                        哥布林王国的哥布林装备
+sprite_monster_iris.NPK                                              艾丽丝咯
+sprite_monster_laowu.npk                                    圣眼暴击拳
+sprite_monster_larguslake.NPK                            女鬼剑士开场地图的怪
+sprite_monster_larguslake_atswordman.NPK         女鬼剑士的一套时装
+sprite_monster_leshphon.NPK                     痛苦之村列瑟芬怪物和怪物的特效
+sprite_monster_leshphon_fire_effect.NPK           痛苦之村列瑟芬怪物死亡时的火焰特效
+sprite_monster_lizardman.NPK                                 蠕动之城真假蜥蜴
+sprite_monster_lordoflight.NPK                              光之城主赛格哈特
+sprite_monster_lotus.NPK                                    长脚罗特斯
+sprite_monster_lugaru.NPK                                   猫妖众
+sprite_monster_lugaru_ciel_attribute.NPK                    善变猫妖的属性选择
+sprite_monster_lugaru_equipment.NPK                         猫妖的装备
+sprite_monster_machine_ball.npk                            某球
+sprite_monster_magma.NPK                            熔岩穴的怪物和3SB的身体
+sprite_monster_magma_equipment_atlas.NPK                    阿特拉斯的零件
+sprite_monster_magma_equipment_goliath.NPK                  歌利亚的零件
+sprite_monster_magma_equipment_incomplete.NPK               残缺的歌利亚的零件
+sprite_monster_magma_equipment_titan.NPK                    泰坦的零件
+sprite_monster_magma_magmasacrificerbig.NPK                 天上掉火球
+sprite_monster_magma_oilsellerolek.NPK                      油桶希洛克
+sprite_monster_medeia.NPK                                   梅迪亚
+sprite_monster_militiaman.NPK                               暗精灵民兵
+sprite_monster_mimic.NPK                                    食人宝箱
+sprite_monster_mission.NPK                           奇遇任务-外星人
+sprite_monster_mj.NPK                                       MJ
+sprite_monster_monsterflower.NPK                            召唤 - 魔界花袄索
+sprite_monster_mouseheadsue.NPK                             鼠头人西乌
+sprite_monster_nugol.NPK                                    戮蛊众
+sprite_monster_oldscreamingcave.NPK                  昔日悲鸣的怪
+sprite_monster_peterthepiper.NPK                            魔笛使者皮特和老鼠众
+sprite_monster_power_station.NPK                         闪电
+sprite_monster_power_station_furz_station.NPK         萨缪尔和普鲁兹发电站的怪
+sprite_monster_power_station_grandine_station.NPK        虚空之弗曼和格兰迪发电站的怪
+sprite_monster_power_station_kohlepowerstation.NPK                 永远是空的
+sprite_monster_power_station_kohlepowerstation_fire_slime.NPK       燃烧的史莱姆
+sprite_monster_power_station_kohlepowerstation_fitz.NPK             业火之菲茨
+sprite_monster_power_station_kohlepowerstation_fitz_archer.NPK           业火之菲茨
+sprite_monster_power_station_kohlepowerstation_fitz_other_self.NPK           业火之菲茨
+sprite_monster_power_station_kohlepowerstation_fitz_warrior.NPK          业火之菲茨
+sprite_monster_power_station_no3_station.NPK           科雷发电站主线任务涉及到的怪
+sprite_monster_power_station_no3_station_effect.NPK科雷发电站的怪死后变成减MP的紫点
+sprite_monster_power_station_no3_station_granite_fly.NPK           科雷发电站的怪
+sprite_monster_power_station_no3_station_granite_great.NPK       科雷发电站的怪
+sprite_monster_power_station_no3_station_granite_t.NPK               科雷发电站的怪
+sprite_monster_power_station_no3_station_ma_squid.NPK             发电站里的章鱼
+sprite_monster_power_station_no3_station_paris.NPK              闪电之帕特里斯
+sprite_monster_power_station_no3_station_patris.NPK                 闪电之帕特里斯
+sprite_monster_power_station_no3_station_river.NPK                   闪电之帕特里斯
+sprite_monster_queen_rosi.NPK                               冰之女王
+sprite_monster_ranjerus.NPK                                 兰蒂卢斯的鹰犬的怪物
+sprite_monster_ranjerus_baricate.NPK                  兰蒂卢斯的鹰犬地图的电网
+sprite_monster_riding_at_5t.NPK                             AT-5T步行者
+sprite_monster_riding_gatling_tower.NPK                     加特林机枪炮塔
+sprite_monster_scarecrow.NPK                                稻草人
+sprite_monster_scasa.NPK                                    冰龙斯卡萨
+sprite_monster_screamingcave.NPK                            悲鸣骷髅凯恩
+sprite_monster_screamingcave_apopis.NPK                     悲鸣魔剑阿波菲斯
+sprite_monster_screamingcave_hardy.NPK                      悲鸣血风暴哈迪
+sprite_monster_screamingcave_highspectresslene.NPK          悲鸣空中幽灵琳恩
+sprite_monster_sealstone.NPK                                暗影迷宫的封印石
+sprite_monster_shonan.npk                         武斗大会的怪物和攻击特效
+sprite_monster_silverspoon.NPK                              补给线阻断战的怪物
+sprite_monster_skeleton.NPK                   骷髅众（还有悲鸣虫子和光圈）
+sprite_monster_skeleton_change.NPK                          堕落守护者的无敌形态
+sprite_monster_skeleton_equipment.NPK                       骷髅的装备
+sprite_monster_skeleton_magicmirror.NPK                     骸德的镜子
+sprite_monster_skeleton_sleep.NPK                           堕落守护者的地面攻击
+sprite_monster_skeleton_stick.NPK                           堕落守护者的法杖
+sprite_monster_skeleton_stone.NPK                           岩石骷髅的落石
+sprite_monster_skillhuntress.NPK                            魔女莉莉斯
+sprite_monster_slime.NPK                                    史莱姆众
+sprite_monster_slotor.NPK                                   寒冰蜘蛛
+sprite_monster_snowman.NPK                                  猩猩众
+sprite_monster_soceress.NPK                                 魔女众
+sprite_monster_soldier.NPK                                  驱逐者众的身体
+sprite_monster_soldier_axeexpeller.NPK                      斧之驱逐者的零件
+sprite_monster_soldier_axionexpeller.NPK                    阿克雄的零件
+sprite_monster_soldier_expeller.NPK                         驱逐者的零件
+sprite_monster_soldier_guard.NPK                            王之五骑士的零件
+sprite_monster_soldier_hammerking.NPK                       锤王波罗丁
+sprite_monster_soldier_heavenexpeller.NPK                   天之驱逐者的零件
+sprite_monster_soldier_legionexpeller.NPK                   勒格恩的零件
+sprite_monster_soldier_passiveobject.NPK            驱逐者众受攻击时的碎片和苏醒动作
+sprite_monster_soldier_sandorexpeller.NPK                   桑德尔的零件
+sprite_monster_soldier_sandorexpellerex.NPK               驱逐者
+sprite_monster_soldier_tsmexpeller.NPK                      侍剑骑兵的零件
+sprite_monster_spacefish.NPK                                空骨鱼
+sprite_monster_spider.NPK                                   蜘蛛众
+sprite_monster_spikeking.NPK                      貌似是光之城主赛格哈特
+sprite_monster_spikeking_effect.NPK                  貌似是光之城主赛格哈特D特效
+sprite_monster_spirit.NPK                       白色废墟个个火精灵D攻击特效
+sprite_monster_spirit_fire_higher.NPK                     白色废墟个个火精灵
+sprite_monster_spirit_spiritex.NPKK                     白色废墟个个火精灵D特效
+sprite_monster_starfish.NPK                                 章鱼众
+sprite_monster_statue.NPK                                   妖变的石像
+sprite_monster_succubus.NPK                                 迷妄12层的那两只
+sprite_monster_suspicion.NPK                                独眼巨人
+sprite_monster_tau.NPK                                      牛头怪众
+sprite_monster_tau_equipment.NPK                            牛头怪的装备
+sprite_monster_thief.NPK                                    盗贼众
+sprite_monster_timegate.npk                               卡勒特之初D怪
+sprite_monster_timegate_beginning.NPK            凛冬D怪
+sprite_monster_timegate_conflagration.NPK         格兰之火D怪
+sprite_monster_timegate_consciousness.NPK          迷之觉悟D怪
+sprite_monster_timegate_epidemic.NPK                    瘟疫之地D怪
+sprite_monster_timegate_parasite.NPK                      时空之门D怪
+sprite_monster_timegate_timelord.NPK                     时空领主
+sprite_monster_timegate_topsecretarea.NPK            绝密区域D怪
+sprite_monster_timegate_topsecretarea_allusion.NPK      绝密区域某眼睛
+sprite_monster_timegate_topsecretarea_effect.NPK           绝密区域某冰块
+sprite_monster_timegate_topsecretarea_observer.NPK      绝密区域某眼睛
+sprite_monster_toy.NPK                                      查理的玩具
+sprite_monster_toy_hiddentoy.NPK                            四个特殊玩具兵
+sprite_monster_toy_passiveobject.NPK                        玩具兵的飞行道具
+sprite_monster_trowgoblin.NPK                               哥布林投石车
+sprite_monster_vehicle.NPK                                  各种龙头炮和锯角撞车
+sprite_monster_witch.NPK                                    疑惑之村的魔女众
+sprite_monster_wraith.NPK                                   女妖众
+sprite_monster_young_scasa.NPK                       年轻斯卡萨
+sprite_monster_zealot.NPK                                   GBL教徒众
+sprite_monster_zealotrebirth.NPK                            复活的GBL教徒众
+sprite_monster_zepplin.NPK                                  多尼尔众
+sprite_monster_zig.NPK                                         王者号令：吉格降临
+sprite_monster_zombie.NPK                                   僵尸众
+
+pet宠物
+sprite_pet_common.NPK                      宠物通用效果、宠物装备、粮食、蛋图
+sprite_pet_falcon.NPK                                       无尽的猫头鹰
+
+temp临时贴图
+sprite_temp.NPK                                         里面只有一个DNFico
+sprite_temp_2006worldcupevent.NPK                           韩服世界杯活动
+
+worldmap地图
+sprite_worldmap.NPK                                         副本选择的背景
+sprite_worldmap_act1.NPK                        洛兰和格兰之森的地图选择
+sprite_worldmap_act2.NPK                             天空之城的地图选择
+sprite_worldmap_act3.NPK                          天帷巨兽神殿的地图选择
+sprite_worldmap_act4.NPK                                    暗黑城的地图选择
+sprite_worldmap_act5.NPK                                    万年雪山的地图选择
+sprite_worldmap_act6.NPK                                    诺斯玛尔的地图选择
+sprite_worldmap_act7.NPK                              安特贝鲁峡谷的地图选择
+sprite_worldmap_impossible.NPK                              异次元裂缝的地图选择
+sprite_worldmap_selectdungeonslot.NPK                       新版副本选择
+sprite_worldmap_selectdungeonslot_advancealtar.NPK          守护者祭坛的地图选择
+sprite_worldmap_towers.NPK                                  亡者峡谷的地图选择
+sprite_worldmap_village_cartel.NPK                          陌路者要塞的地图选择
+sprite_worldmap_village_gbl.NPK                             堕落之殿的地图选择
+sprite_worldmap_village_grim.NPK                         格兰之森山麓的地图选择
+sprite_worldmap_village_moonlightpub.NPK                    月光酒吧的地图选择

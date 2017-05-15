@@ -39,6 +39,9 @@ void Image::SetScale(float varScaleX, float varScaleY)
 
 void Image::Draw()
 {
+	//关联绑定这个纹理ID;
+	glBindTexture(GL_TEXTURE_2D, mTexture2D->m_textureId);
+
 	glm::mat4 trans = glm::translate(glm::vec3(mPosX, mPosY, 0));
 	glm::mat4 rotation = glm::eulerAngleYXZ(glm::radians(0.0f), glm::radians(0.0f), glm::radians(0.0f));
 	glm::mat4 scale = glm::scale(glm::vec3(mScaleX, mScaleY, 1.0f));

@@ -1,6 +1,7 @@
 #pragma once
 
 #include"Image\Image.h"
+#include"ImageAnimation\ImageAnimation.h"
 
 //继承KeyTouchListener，监听键盘鼠标事件
 #include"KeyTouch\KeyTouchListener.h"
@@ -12,8 +13,11 @@ private:
 	//绘制一个图片
 	Image* mImage;
 
+	//绘制一个帧动画
+	ImageAnimation* mImageAnimation;
+
 public:
-	DemoScene():KeyTouchListener("DemoScene"),mImage(NULL)
+	DemoScene():KeyTouchListener("DemoScene"),mImage(NULL), mImageAnimation(NULL)
 	{
 
 	}
@@ -32,18 +36,59 @@ public:
 		//图片初始化
 		mImage = new Image();
 		mImage->Init("../../Resources/images/logo.png");
+
+		//帧动画初始化
+		std::string tmpImageArray[] = { 
+			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/29.png",
+			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/28.png",
+			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/27.png",
+			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/26.png",
+			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/25.png",
+			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/24.png",
+			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/23.png",
+			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/22.png",
+			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/21.png",
+			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/20.png",
+			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/19.png",
+			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/18.png",
+			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/17.png",
+			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/16.png",
+			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/15.png",
+			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/14.png",
+			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/13.png",
+			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/12.png",
+			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/11.png",
+			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/10.png",
+			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/9.png",
+			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/8.png",
+			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/7.png",
+			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/6.png",
+			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/5.png",
+			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/4.png",
+			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/3.png",
+			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/2.png",
+			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/1.png",
+			"../../Resources/ImageAnimations/mage_overmind/sprite_character_mage_effect_cutin/mage_overmind.img/0.png"
+		};
+		mImageAnimation = new ImageAnimation(tmpImageArray,30,1.0f/10);
+
+		mImageAnimation->Play();
 	}
 
 	void Update(float varDeltaTime)
 	{
 		//Scale Test
-		mImage->SetScale(1.0f + varDeltaTime, 1.0f + varDeltaTime);
+		//mImage->SetScale(1.0f + varDeltaTime, 1.0f + varDeltaTime);
+
+		mImageAnimation->Update(varDeltaTime);
 	}
 
 	void Draw()
 	{
 		//绘制一个图片
-		mImage->Draw();
+		//mImage->Draw();
+
+		mImageAnimation->Draw();
 	}
 
 private:

@@ -31,6 +31,9 @@
     <Filter Include="Sample">
       <UniqueIdentifier>{e118393a-1914-4e58-8ac5-ac6a4a114006}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ImageAnimation">
+      <UniqueIdentifier>{e91aabd2-6604-4bbe-b783-ce87e78f18e5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Src\Image\Image.cpp">
@@ -50,6 +53,9 @@
     </ClCompile>
     <ClCompile Include="..\..\Src\KeyTouch\KeyTouch.cpp">
       <Filter>KeyTouch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\ImageAnimation\ImageAnimation.cpp">
+      <Filter>ImageAnimation</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -85,6 +91,9 @@
     </ClInclude>
     <ClInclude Include="..\..\Src\KeyTouch\KeyCode.h">
       <Filter>KeyTouch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\ImageAnimation\ImageAnimation.h">
+      <Filter>ImageAnimation</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -203,7 +203,7 @@ public:
 #define GET_WHEEL_DELTA_WPARAM(wParam)          (int)((short)HIWORD(wParam))
 #endif
 
-		printf("msg %d  %d\n", msg,wParam);
+		//printf("msg %d  %d\n", msg,wParam);
 
 		switch (msg)
 		{
@@ -217,7 +217,8 @@ public:
 		break;
 		case WM_LBUTTONDOWN:
 		{
-			
+			printf("OnTouch %d  %d\n", GET_X_LPARAM(lParam), GET_Y_LPARAM(lParam));
+			Lives2D::OnTouch(GET_X_LPARAM(lParam), GET_Y_LPARAM(lParam));
 		}
 		break;
 		case WM_LBUTTONUP:
@@ -234,6 +235,7 @@ public:
 		break;
 		case WM_MOUSEMOVE:
 		{
+
 		}
 		break;
 
