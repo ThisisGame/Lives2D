@@ -38,9 +38,9 @@ public:
 		mImage->Init("../../Resources/images/logo.png");
 
 		//Ö¡¶¯»­³õÊ¼»¯
-		mImageAnimation = new ImageAnimation("../../Resources/ImageAnimations/Swordman/Saber/Animations.txt",4,1.0f/4);
+		mImageAnimation = new ImageAnimation("../../Resources/ImageAnimations/Swordman/Saber/Animations.txt",1.0f/4);
 
-		mImageAnimation->Play();
+		mImageAnimation->Play("Idle");
 	}
 
 	void Update(float varDeltaTime)
@@ -75,6 +75,8 @@ private:
 			break;
 		case Right:
 			mImage->SetPosition(mImage->mPosX + 1, mImage->mPosY);
+
+			mImageAnimation->Play("Walk");
 			break;
 		case Esc:
 			break;

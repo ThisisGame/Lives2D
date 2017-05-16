@@ -3,35 +3,25 @@
 #include<vector>
 #include"Image\Image.h"
 
+#include"ImageAnimationClip.h"
+
 class ImageAnimation
 {
 private:
-	std::vector<Image*> mVectorImageData;
+	std::vector<ImageAnimationClip*> mVectorImageAnimationClip;
 
-	//是否在播放
+	ImageAnimationClip* mCurrentPlayClip;
+
 	bool mPlay;
 
-	//当前播放时间
-	float mPlayTime;
-
-	//总帧数
-	int mKeyFrameCount;
-
-	//当前帧
-	int mIndex;
-
-	//播放速度
-	float mSpeed;
-
-
 public:
-	ImageAnimation(std::string varConfigPath,int varKeyFrameCount,float varSpeed);
+	ImageAnimation(std::string varConfigPath,float varSpeed);
 	~ImageAnimation();
 
 	void Update(float varDeltaTime);
 
 	void Draw();
 
-	void Play();
+	void Play(std::string varClipName);
 };
 

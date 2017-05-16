@@ -64,7 +64,7 @@ std::vector<std::string> Helper::Split(std::string& varStr, std::string& varPatt
 	std::string::size_type pos;
 	std::vector<std::string> result;
 	varStr += varPattern;//扩展字符串以方便操作  
-	int size = varStr.size();
+	size_t size = varStr.size();
 
 	for (int i = 0; i<size; i++)
 	{
@@ -89,6 +89,13 @@ unsigned int Helper::GetTime()
 	tmpTime = GetTickCount();//精确到毫秒
 #endif
 	return tmpTime;
+}
+
+std::string Helper::GetDirPath(std::string varFilePath)
+{
+	int tmpLastPatternIndex = varFilePath.find_last_of('/');
+	std::string tmpDirPath = varFilePath.substr(0, tmpLastPatternIndex + 1);
+	return tmpDirPath;
 }
 
 Helper::~Helper(void)

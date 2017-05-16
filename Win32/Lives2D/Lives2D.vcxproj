@@ -81,7 +81,6 @@
     <ClCompile Include="..\..\Src\Platform\Windows\WinMain.cpp" />
     <ClCompile Include="..\..\Src\Texture2D\Texture2D.cpp" />
     <ClCompile Include="..\..\Src\Tools\Helper.cpp" />
-    <ClCompile Include="ImageAnimationClip.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\GLProgram\GLProgram.h" />
@@ -97,7 +96,6 @@
     <ClInclude Include="..\..\Src\Sample\DemoScene.h" />
     <ClInclude Include="..\..\Src\Texture2D\Texture2D.h" />
     <ClInclude Include="..\..\Src\Tools\Helper.h" />
-    <ClInclude Include="ImageAnimationClip.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

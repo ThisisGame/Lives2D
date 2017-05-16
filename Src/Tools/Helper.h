@@ -66,5 +66,8 @@ public :
 
 	//获取时间
 	static unsigned int GetTime();
+
+	//从路径中获取目录
+	static std::string GetDirPath(std::string varFilePath);
 };
 

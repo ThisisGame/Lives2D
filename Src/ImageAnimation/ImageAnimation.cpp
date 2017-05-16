@@ -5,8 +5,10 @@
 #include"Tools\Helper.h"
 
 
-ImageAnimation::ImageAnimation(std::string varConfigPath,int varKeyFrameCount,float varSpeed):mPlay(false), mPlayTime(0), mKeyFrameCount(varKeyFrameCount), mSpeed(varSpeed)
+ImageAnimation::ImageAnimation(std::string varConfigPath,float varSpeed):mPlay(false), mCurrentPlayClip(NULL)
 {
+	std::string tmpDirPath = Helper::GetDirPath(varConfigPath);
+
 	std::vector<std::string> tmpSplits = Helper::ReadLine(varConfigPath);
 
 	string tmpPattern;
@@ -19,7 +21,14 @@ ImageAnimation::ImageAnimation(std::string varConfigPath,int varKeyFrameCount,fl
 
 		tmpPattern = ",";
 		std::vector<std::string> tmpAnimationClipData = Helper::Split(tmpAnimationClipString[1], tmpPattern);
+		for (size_t i = 0; i < tmpAnimationClipData.size(); i++)
+		{
+			tmpAnimationClipData[i] = tmpDirPath + tmpAnimationClipData[i];
+		}
 
+
+		ImageAnimationClip* tmpImageAnimationClip = new ImageAnimationClip(tmpAnimationClipName,tmpAnimationClipData, (int)tmpAnimationClipData.size(), varSpeed);
+		mVectorImageAnimationClip.push_back(tmpImageAnimationClip);
 	}
 }
 
@@ -31,11 +40,7 @@ void ImageAnimation::Update(float varDeltaTime)
 {
 	if (mPlay)
 	{
-		mPlayTime += varDeltaTime;
-
-		mIndex = mPlayTime / mSpeed;
-
-		mIndex = mIndex% mVectorImageData.size();
+		mCurrentPlayClip->Update(varDeltaTime);
 	}
 }
 
@@ -43,11 +48,22 @@ void ImageAnimation::Draw()
 {
 	if (mPlay)
 	{
-		mVectorImageData[mIndex]->Draw();
+		mCurrentPlayClip->Draw();
 	}
 }
 
-void ImageAnimation::Play()
+void ImageAnimation::Play(std::string varClipName)
 {
 	mPlay = true;
+
+	for (auto val : mVectorImageAnimationClip)
+	{
+		if (strcmp(val->GetClipName().c_str(),varClipName.c_str())==0)
+		{
+			mCurrentPlayClip = val;
+
+			mCurrentPlayClip->Play();
+			break;
+		}
+	}
 }

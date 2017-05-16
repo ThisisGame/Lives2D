@@ -30,7 +30,10 @@ private:
 	float mSpeed;
 
 public:
-	ImageAnimationClip(std::vector<Image*> varClipData,int varKeyFrameCount, float varSpeed);
+	std::string GetClipName();
+
+public:
+	ImageAnimationClip(std::string varClipName,std::vector<std::string> varVectorFrameImagePath,int varKeyFrameCount, float varSpeed);
 	~ImageAnimationClip();
 
 
@@ -39,5 +42,7 @@ public:
 	void Draw();
 
 	void Play();
+
+	void Stop();
 };
 

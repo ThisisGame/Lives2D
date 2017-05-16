@@ -57,7 +57,6 @@
     <ClCompile Include="..\..\Src\ImageAnimation\ImageAnimation.cpp">
       <Filter>ImageAnimation</Filter>
     </ClCompile>
-    <ClCompile Include="ImageAnimationClip.cpp" />
     <ClCompile Include="..\..\Src\ImageAnimation\ImageAnimationClip.cpp">
       <Filter>ImageAnimation</Filter>
     </ClCompile>
@@ -99,7 +98,6 @@
     <ClInclude Include="..\..\Src\ImageAnimation\ImageAnimation.h">
       <Filter>ImageAnimation</Filter>
     </ClInclude>
-    <ClInclude Include="ImageAnimationClip.h" />
     <ClInclude Include="..\..\Src\ImageAnimation\ImageAnimationClip.h">
       <Filter>ImageAnimation</Filter>
     </ClInclude>
