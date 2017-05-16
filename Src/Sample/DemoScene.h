@@ -38,7 +38,7 @@ public:
 		mImage->Init("../../Resources/images/logo.png");
 
 		//Ö¡¶¯»­³õÊ¼»¯
-		mImageAnimation = new ImageAnimation("",4,1.0f/4);
+		mImageAnimation = new ImageAnimation("../../Resources/ImageAnimations/Swordman/Saber/Animations.txt",4,1.0f/4);
 
 		mImageAnimation->Play();
 	}

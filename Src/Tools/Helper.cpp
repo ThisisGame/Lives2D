@@ -43,6 +43,22 @@ std::string Helper::ReadTxt(std::string& varFilePath)
 	return tmpAllContent;
 }
 
+std::vector<std::string> Helper::ReadLine(std::string& varFilePath)
+{
+	ifstream infile;
+	infile.open(varFilePath.data());   //将文件流对象与文件连接起来 
+	assert(infile.is_open());   //若失败,则输出错误消息,并终止程序运行 
+
+	std::vector<std::string> tmpResult;
+	string s;
+	while (getline(infile, s))
+	{
+		tmpResult.push_back(s);
+	}
+	infile.close();             //关闭文件输入流 
+	return tmpResult;
+}
+
 std::vector<std::string> Helper::Split(std::string& varStr, std::string& varPattern)
 {
 	std::string::size_type pos;
@@ -62,6 +78,9 @@ std::vector<std::string> Helper::Split(std::string& varStr, std::string& varPatt
 	}
 	return result;
 }
+
+
+
 
 unsigned int Helper::GetTime()
 {

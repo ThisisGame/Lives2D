@@ -61,6 +61,9 @@ public :
 	//字符串分割函数  
 	static std::vector<std::string> Split(std::string& varStr, std::string& varPattern);
 
+	//读取Txt文本，一行一行存储
+	static std::vector<std::string> ReadLine(std::string & varFilePath);
+
 	//获取时间
 	static unsigned int GetTime();
 };

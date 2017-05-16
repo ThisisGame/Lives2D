@@ -7,17 +7,20 @@
 
 ImageAnimation::ImageAnimation(std::string varConfigPath,int varKeyFrameCount,float varSpeed):mPlay(false), mPlayTime(0), mKeyFrameCount(varKeyFrameCount), mSpeed(varSpeed)
 {
-	std::string tmpConfig = Helper::ReadTxt(varConfigPath);
+	std::vector<std::string> tmpSplits = Helper::ReadLine(varConfigPath);
 
+	string tmpPattern;
+	for (auto val : tmpSplits)
+	{
+		tmpPattern = ":";
+		std::vector<std::string> tmpAnimationClipString = Helper::Split(val, tmpPattern);
 
+		string tmpAnimationClipName = tmpAnimationClipString[0];
 
-	//for (size_t i = 0; i <mKeyFrameCount; i++)
-	//{
-	//	Image* tmpImage = new Image();
-	//	tmpImage->Init(varImageData[i].c_str());
+		tmpPattern = ",";
+		std::vector<std::string> tmpAnimationClipData = Helper::Split(tmpAnimationClipString[1], tmpPattern);
 
-	//	mVectorImageData.push_back(tmpImage);
-	//}
+	}
 }
 
 ImageAnimation::~ImageAnimation()
