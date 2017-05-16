@@ -58,6 +58,9 @@
       <Filter>ImageAnimation</Filter>
     </ClCompile>
     <ClCompile Include="ImageAnimationClip.cpp" />
+    <ClCompile Include="..\..\Src\ImageAnimation\ImageAnimationClip.cpp">
+      <Filter>ImageAnimation</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\GLProgram\GLProgram.h">
@@ -97,5 +100,8 @@
       <Filter>ImageAnimation</Filter>
     </ClInclude>
     <ClInclude Include="ImageAnimationClip.h" />
+    <ClInclude Include="..\..\Src\ImageAnimation\ImageAnimationClip.h">
+      <Filter>ImageAnimation</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
