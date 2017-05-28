@@ -43,9 +43,10 @@ public:
 		mImageAnimation->Play("Idle");
 
 		//°´Å¥³õÊ¼»¯
-		mUIButton = new UIButton("../../Resources/GUI/pop_button0.png", "../../Resources/GUI/pop_button1.png", 0, 100, 86, 48, []() 
+		mUIButton = new UIButton("../../Resources/GUI/pop_button0.png", "../../Resources/GUI/pop_button1.png", 0, 100, 86, 48, [=]()
 		{
 			Helper::LOG("Click Button");
+			mImageAnimation->Play("Walk");
 		});
 	}
 
