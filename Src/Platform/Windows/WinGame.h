@@ -217,12 +217,13 @@ public:
 		break;
 		case WM_LBUTTONDOWN:
 		{
-			printf("OnTouch %d  %d\n", GET_X_LPARAM(lParam), GET_Y_LPARAM(lParam));
+			printf("OnTouch %d  %d", GET_X_LPARAM(lParam), GET_Y_LPARAM(lParam));
 			Lives2D::OnTouch(GET_X_LPARAM(lParam), GET_Y_LPARAM(lParam));
 		}
 		break;
 		case WM_LBUTTONUP:
 		{
+			Lives2D::OnTouchRelease(GET_X_LPARAM(lParam), GET_Y_LPARAM(lParam));
 		}
 		break;
 		case WM_RBUTTONDOWN:

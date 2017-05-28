@@ -38,6 +38,9 @@ public:
 
 	//ÆÁÄ»´¥Ãþµã»÷
 	static void OnTouch(float varX, float varY);
+
+	//ÊÍ·Åµã»÷
+	static void OnTouchRelease(float varX, float varY);
 };
 
 

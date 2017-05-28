@@ -34,8 +34,6 @@ void KeyTouch::UnRegisterKeyTouchListener(KeyTouchListener * varKeyTouchListener
 
 	if (tmpIterator != mVectorKeyTouchListener.end())
 	{
-		
-
 		mVectorKeyTouchListener.erase(tmpIterator);
 	}
 	else
@@ -55,4 +53,16 @@ void KeyTouch::OnKey(KeyCode varkeyCode)
 
 void KeyTouch::OnTouch(float varX, float varY)
 {
+	for (auto val : mVectorKeyTouchListener)
+	{
+		val->OnTouch(varX, varY);
+	}
+}
+
+void KeyTouch::OnTouchRelease(float varX, float varY)
+{
+	for (auto val : mVectorKeyTouchListener)
+	{
+		val->OnTouchRelease(varX,varY);
+	}
 }

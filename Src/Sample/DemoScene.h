@@ -7,6 +7,10 @@
 #include"KeyTouch\KeyTouchListener.h"
 #include"KeyTouch\KeyTouch.h"
 
+#include"GUI\UIButton.h"
+
+#include"../Tools/Helper.h"
+
 class DemoScene:KeyTouchListener
 {
 private:
@@ -15,6 +19,9 @@ private:
 
 	//绘制一个帧动画
 	ImageAnimation* mImageAnimation;
+
+	//绘制一个按钮
+	UIButton* mUIButton;
 
 public:
 	DemoScene():KeyTouchListener("DemoScene"),mImage(NULL), mImageAnimation(NULL)
@@ -41,6 +48,12 @@ public:
 		mImageAnimation = new ImageAnimation("../../Resources/ImageAnimations/Swordman/Saber/Animations.txt",1.0f/4);
 
 		mImageAnimation->Play("Idle");
+
+		//按钮初始化
+		mUIButton = new UIButton("../../Resources/GUI/pop_button0.png", "../../Resources/GUI/pop_button1.png", 0, 0, 86, 48, []() 
+		{
+			Helper::LOG("Click Button");
+		});
 	}
 
 	void Update(float varDeltaTime)
@@ -49,6 +62,8 @@ public:
 		//mImage->SetScale(1.0f + varDeltaTime, 1.0f + varDeltaTime);
 
 		mImageAnimation->Update(varDeltaTime);
+
+		mUIButton->Update(varDeltaTime);
 	}
 
 	void Draw()
@@ -56,11 +71,13 @@ public:
 		//绘制一个图片
 		//mImage->Draw();
 
-		mImageAnimation->Draw();
+		//mImageAnimation->Draw();
+
+		mUIButton->Draw();
 	}
 
 private:
-	virtual void OnKey(KeyCode varkeyCode)
+	void OnKey(KeyCode varkeyCode) override
 	{
 		switch (varkeyCode)
 		{
@@ -85,7 +102,12 @@ private:
 		}
 	}
 
-	virtual void OnTouch(float varX, float varY)
+	void OnTouch(float varX, float varY) override
+	{
+
+	}
+
+	void OnTouchRelease(float varX, float varY) override
 	{
 
 	}

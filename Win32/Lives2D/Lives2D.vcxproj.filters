@@ -60,6 +60,12 @@
     <ClCompile Include="..\..\Src\ImageAnimation\ImageAnimationClip.cpp">
       <Filter>ImageAnimation</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Src\GUI\UIButton.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\GUI\UIClickRect.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\GLProgram\GLProgram.h">
@@ -100,6 +106,12 @@
     </ClInclude>
     <ClInclude Include="..\..\Src\ImageAnimation\ImageAnimationClip.h">
       <Filter>ImageAnimation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\GUI\UIButton.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\GUI\UIClickRect.h">
+      <Filter>GUI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -47,3 +47,8 @@ void Lives2D::OnTouch(float varX, float varY)
 {
 	KeyTouch::OnTouch(varX, varY);
 }
+
+void Lives2D::OnTouchRelease(float varX, float varY)
+{
+	KeyTouch::OnTouchRelease(varX, varY);
+}
