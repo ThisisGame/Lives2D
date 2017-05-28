@@ -7,9 +7,11 @@ UIButton::UIButton(std::string varNormalImagePath, std::string varClickDownImage
 {
 	mImageNormal = new Image();
 	mImageNormal->Init(varNormalImagePath.c_str());
+	mImageNormal->SetPosition(mPosX, mPosY);
 
 	mImageClickDown = new Image();
 	mImageClickDown->Init(varClickDownImagePath.c_str());
+	mImageClickDown->SetPosition(mPosX, mPosY);
 }
 
 void UIButton::Update(float varDeltaTime)

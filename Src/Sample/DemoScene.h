@@ -14,9 +14,6 @@
 class DemoScene:KeyTouchListener
 {
 private:
-	//绘制一个图片
-	Image* mImage;
-
 	//绘制一个帧动画
 	ImageAnimation* mImageAnimation;
 
@@ -24,7 +21,7 @@ private:
 	UIButton* mUIButton;
 
 public:
-	DemoScene():KeyTouchListener("DemoScene"),mImage(NULL), mImageAnimation(NULL)
+	DemoScene():KeyTouchListener("DemoScene"), mImageAnimation(NULL),mUIButton(NULL)
 	{
 
 	}
@@ -40,17 +37,13 @@ public:
 		//注册键盘鼠标屏幕监听
 		KeyTouch::RegisterKeyTouchListener(this);
 
-		//图片初始化
-		mImage = new Image();
-		mImage->Init("../../Resources/images/logo.png");
-
 		//帧动画初始化
 		mImageAnimation = new ImageAnimation("../../Resources/ImageAnimations/Swordman/Saber/Animations.txt",1.0f/4);
 
 		mImageAnimation->Play("Idle");
 
 		//按钮初始化
-		mUIButton = new UIButton("../../Resources/GUI/pop_button0.png", "../../Resources/GUI/pop_button1.png", 0, 0, 86, 48, []() 
+		mUIButton = new UIButton("../../Resources/GUI/pop_button0.png", "../../Resources/GUI/pop_button1.png", 0, 100, 86, 48, []() 
 		{
 			Helper::LOG("Click Button");
 		});
@@ -58,9 +51,6 @@ public:
 
 	void Update(float varDeltaTime)
 	{
-		//Scale Test
-		//mImage->SetScale(1.0f + varDeltaTime, 1.0f + varDeltaTime);
-
 		mImageAnimation->Update(varDeltaTime);
 
 		mUIButton->Update(varDeltaTime);
@@ -68,10 +58,7 @@ public:
 
 	void Draw()
 	{
-		//绘制一个图片
-		//mImage->Draw();
-
-		//mImageAnimation->Draw();
+		mImageAnimation->Draw();
 
 		mUIButton->Draw();
 	}
@@ -81,18 +68,7 @@ private:
 	{
 		switch (varkeyCode)
 		{
-		case Up:
-			mImage->SetPosition(mImage->mPosX, mImage->mPosY + 1);
-			break;
-		case Down:
-			mImage->SetPosition(mImage->mPosX, mImage->mPosY - 1);
-			break;
-		case Left:
-			mImage->SetPosition(mImage->mPosX-1, mImage->mPosY);
-			break;
 		case Right:
-			mImage->SetPosition(mImage->mPosX + 1, mImage->mPosY);
-
 			mImageAnimation->Play("Walk");
 			break;
 		case Esc:
