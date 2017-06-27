@@ -1,4 +1,5 @@
 #include "Texture2D.h"
+#include"./Tools/Helper.h"
 
 
 Texture2D::Texture2D():m_textureId(-1),m_imageFilePath("")
@@ -15,6 +16,12 @@ void Texture2D::LoadTexture(const char* varFilePath)
 
 	//2、根据获取到的格式来加载图片;
 	FIBITMAP *bitmap = FreeImage_Load(imageformat, varFilePath, 0);
+
+	if (bitmap == nullptr)
+	{
+		LOGI("Error %s not exist or other error ",varFilePath);
+		return;
+	}
 
 	//3、转化为rag 24色;
 	bitmap = FreeImage_ConvertTo32Bits(bitmap);

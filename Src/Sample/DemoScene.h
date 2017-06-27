@@ -20,8 +20,12 @@ private:
 	//绘制一个按钮
 	UIButton* mUIButton;
 
+	//绘制一张图片
+	Image* mImage_Hanhua;
+	Image* mImage_Sweep;
+
 public:
-	DemoScene():KeyTouchListener("DemoScene"), mImageAnimation(NULL),mUIButton(NULL)
+	DemoScene():KeyTouchListener("DemoScene"), mImageAnimation(NULL),mUIButton(NULL), mImage_Hanhua(NULL), mImage_Sweep(NULL)
 	{
 
 	}
@@ -48,6 +52,15 @@ public:
 			Helper::LOG("Click Button");
 			mImageAnimation->Play("Walk");
 		});
+
+		//图片初始化
+		mImage_Hanhua = new Image();
+		mImage_Hanhua->Init("../../Resources/GUI/hanhua.png");
+		mImage_Hanhua->SetPosition(100, 100);
+
+		mImage_Sweep = new Image();
+		mImage_Sweep->Init("../../Resources/GUI/sweep.png");
+		mImage_Sweep->SetPosition(100, 100);
 	}
 
 	void Update(float varDeltaTime)
@@ -55,6 +68,8 @@ public:
 		mImageAnimation->Update(varDeltaTime);
 
 		mUIButton->Update(varDeltaTime);
+
+		
 	}
 
 	void Draw()
@@ -62,6 +77,10 @@ public:
 		mImageAnimation->Draw();
 
 		mUIButton->Draw();
+
+		mImage_Hanhua->Draw();
+
+		mImage_Sweep->Draw();
 	}
 
 private:

@@ -3,6 +3,8 @@
 #include<egl\egl.h>
 #include<gles2\gl2.h>
 
+#include"../Tools/Helper.h"	
+
 class ShaderID
 {
 public:
@@ -53,6 +55,8 @@ public:
 				{
 					GLchar message[256];
 					glGetShaderInfoLog(m_vertexShader.m_shaderId, sizeof(message), 0, message);
+
+					LOGI("message %s", message);
 					assert((message && 0) != 0);
 					break;
 				}

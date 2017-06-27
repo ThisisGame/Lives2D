@@ -108,7 +108,7 @@ public:
 	//≥ı ºªØ;
 	void onInit()
 	{
-		glClearColor(0.8, 0.8, 0.8, 1);
+		glClearColor(0, 0, 0, 1);
 
 
 		glViewport(0, 0, (GLsizei)m_width, (GLsizei)m_height);

@@ -92,13 +92,13 @@ void Image::Draw()
 
 		glm::vec4 color[] =
 		{
-			glm::vec4(1, 1, 1, 0.4),
-			glm::vec4(1, 1, 1, 0.4),
-			glm::vec4(1, 1, 1, 0.4),
+			glm::vec4(1, 1, 1, 1),
+			glm::vec4(1, 1, 1, 1),
+			glm::vec4(1, 1, 1,1),
 
-			glm::vec4(1, 1, 1, 0.4),
-			glm::vec4(1, 1, 1, 0.4),
-			glm::vec4(1, 1, 1, 0.4),
+			glm::vec4(1, 1, 1, 1),
+			glm::vec4(1, 1, 1, 1),
+			glm::vec4(1, 1, 1, 1),
 		};
 
 		glUniformMatrix4fv(m_GLProgram.m_mvp, 1, false, &mvp[0][0]);
