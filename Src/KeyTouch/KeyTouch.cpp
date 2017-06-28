@@ -51,7 +51,7 @@ void KeyTouch::OnKey(KeyCode varkeyCode)
 	}
 }
 
-void KeyTouch::OnTouch(float varX, float varY)
+void KeyTouch::OnTouch(int varX, int varY)
 {
 	for (auto val : mVectorKeyTouchListener)
 	{
@@ -59,7 +59,7 @@ void KeyTouch::OnTouch(float varX, float varY)
 	}
 }
 
-void KeyTouch::OnTouchRelease(float varX, float varY)
+void KeyTouch::OnTouchRelease(int varX, int varY)
 {
 	for (auto val : mVectorKeyTouchListener)
 	{

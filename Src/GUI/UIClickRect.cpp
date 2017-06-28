@@ -4,7 +4,7 @@
 #include"Lives2D_Main\Lives2D.h"
 
 
-UIClickRect::UIClickRect():KeyTouchListener("UIClickRect"),mPosX(0),mPosY(0),mWidth(0),mHeight(0)
+UIClickRect::UIClickRect():KeyTouchListener("UIClickRect"),UIRect(UIRectType::Type_UIClickRect),mPosX(0),mPosY(0),mWidth(0),mHeight(0)
 {
 	//×¢²á¼üÅÌÊó±êÆÁÄ»¼àÌý
 	KeyTouch::RegisterKeyTouchListener(this);
@@ -24,7 +24,7 @@ void UIClickRect::OnKey(KeyCode varkeyCode)
 
 }
 
-void UIClickRect::OnTouch(float varX, float varY)
+void UIClickRect::OnTouch(int varX, int varY)
 {
 	float tmpStartX = mPosX - mWidth / 2;
 	float tmpStartY = mPosY + mHeight / 2;
@@ -39,7 +39,7 @@ void UIClickRect::OnTouch(float varX, float varY)
 	}
 }
 
-void UIClickRect::OnTouchRelease(float varX, float varY)
+void UIClickRect::OnTouchRelease(int varX, int varY)
 {
 	if (mOnTouchClick)
 	{

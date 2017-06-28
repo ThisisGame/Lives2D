@@ -23,10 +23,10 @@ public:
 	static void OnKey(KeyCode varkeyCode);
 
 	//ÆÁÄ»´¥Ãþµã»÷
-	static void OnTouch(float varX, float varY);
+	static void OnTouch(int varX, int varY);
 
 	//ÊÍ·Åµã»÷
-	static void OnTouchRelease(float varX, float varY);
+	static void OnTouchRelease(int varX, int varY);
 };
 
 

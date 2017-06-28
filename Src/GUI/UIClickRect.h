@@ -1,8 +1,9 @@
 #pragma once
 
 #include"../KeyTouch/KeyTouchListener.h"
+#include"UIRect.h"
 
-class UIClickRect:KeyTouchListener
+class UIClickRect:KeyTouchListener,public UIRect
 {
 private:
 	float mPosX, mPosY, mWidth, mHeight; //点击区域
@@ -18,10 +19,10 @@ public:
 
 	void OnKey(KeyCode varkeyCode) override final;
 
-	void OnTouch(float varX, float varY) override final;
+	void OnTouch(int varX, int varY) override final;
 
 	//释放点击
-	void OnTouchRelease(float varX, float varY) override final;
+	void OnTouchRelease(int varX, int varY) override final;
 
 
 

@@ -43,12 +43,12 @@ void Lives2D::OnKey(KeyCode varkeyCode)
 	KeyTouch::OnKey(varkeyCode);
 }
 
-void Lives2D::OnTouch(float varX, float varY)
+void Lives2D::OnTouch(int varX, int varY)
 {
 	KeyTouch::OnTouch(varX, varY);
 }
 
-void Lives2D::OnTouchRelease(float varX, float varY)
+void Lives2D::OnTouchRelease(int varX, int varY)
 {
 	KeyTouch::OnTouchRelease(varX, varY);
 }

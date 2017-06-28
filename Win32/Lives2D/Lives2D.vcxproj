@@ -75,6 +75,9 @@
   <ItemGroup>
     <ClCompile Include="..\..\Src\GUI\UIButton.cpp" />
     <ClCompile Include="..\..\Src\GUI\UIClickRect.cpp" />
+    <ClCompile Include="..\..\Src\GUI\UIDrawRect.cpp" />
+    <ClCompile Include="..\..\Src\GUI\UIRect.cpp" />
+    <ClCompile Include="..\..\Src\GUI\UIRoot.cpp" />
     <ClCompile Include="..\..\Src\ImageAnimation\ImageAnimation.cpp" />
     <ClCompile Include="..\..\Src\ImageAnimation\ImageAnimationClip.cpp" />
     <ClCompile Include="..\..\Src\Image\Image.cpp" />
@@ -89,6 +92,9 @@
     <ClInclude Include="..\..\Src\GLProgram\GLProgram_Texture.h" />
     <ClInclude Include="..\..\Src\GUI\UIButton.h" />
     <ClInclude Include="..\..\Src\GUI\UIClickRect.h" />
+    <ClInclude Include="..\..\Src\GUI\UIDrawRect.h" />
+    <ClInclude Include="..\..\Src\GUI\UIRect.h" />
+    <ClInclude Include="..\..\Src\GUI\UIRoot.h" />
     <ClInclude Include="..\..\Src\ImageAnimation\ImageAnimation.h" />
     <ClInclude Include="..\..\Src\ImageAnimation\ImageAnimationClip.h" />
     <ClInclude Include="..\..\Src\Image\Image.h" />

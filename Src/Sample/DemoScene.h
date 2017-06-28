@@ -1,5 +1,7 @@
 #pragma once
 
+#include"GUI\UIRoot.h"
+
 #include"Image\Image.h"
 #include"ImageAnimation\ImageAnimation.h"
 
@@ -24,8 +26,11 @@ private:
 	Image* mImage_Hanhua;
 	Image* mImage_Sweep;
 
+	//一个界面
+	UIRoot* mUIRoot;
+
 public:
-	DemoScene():KeyTouchListener("DemoScene"), mImageAnimation(NULL),mUIButton(NULL), mImage_Hanhua(NULL), mImage_Sweep(NULL)
+	DemoScene():KeyTouchListener("DemoScene"), mImageAnimation(nullptr),mUIButton(nullptr), mImage_Hanhua(nullptr), mImage_Sweep(nullptr), mUIRoot(nullptr)
 	{
 
 	}
@@ -53,34 +58,45 @@ public:
 			mImageAnimation->Play("Walk");
 		});
 
+		//UIRoot
+		mUIRoot = new UIRoot();
+		
+		
+
 		//图片初始化
-		mImage_Hanhua = new Image();
-		mImage_Hanhua->Init("../../Resources/GUI/hanhua.png");
-		mImage_Hanhua->SetPosition(100, 100);
 
 		mImage_Sweep = new Image();
 		mImage_Sweep->Init("../../Resources/GUI/sweep.png");
-		mImage_Sweep->SetPosition(100, 100);
-	}
+		mImage_Sweep->SetPosition(100, 70);
+		mUIRoot->AddChild(mImage_Sweep);
 
-	void Update(float varDeltaTime)
-	{
-		mImageAnimation->Update(varDeltaTime);
+		mImage_Hanhua = new Image();
+		mImage_Hanhua->Init("../../Resources/GUI/hanhua.png");
+		mImage_Hanhua->SetPosition(100, 100);
+		mUIRoot->AddChild(mImage_Hanhua);
 
-		mUIButton->Update(varDeltaTime);
+
 
 		
 	}
 
+	void Update(float varDeltaTime)
+	{
+		/*mImageAnimation->Update(varDeltaTime);
+
+		mUIButton->Update(varDeltaTime);*/
+
+		mUIRoot->Update(varDeltaTime);
+	}
+
 	void Draw()
 	{
-		mImageAnimation->Draw();
+		/*mImageAnimation->Draw();
 
-		mUIButton->Draw();
+		mUIButton->Draw();*/
 
-		mImage_Hanhua->Draw();
 
-		mImage_Sweep->Draw();
+		mUIRoot->Draw();
 	}
 
 private:
@@ -98,12 +114,12 @@ private:
 		}
 	}
 
-	void OnTouch(float varX, float varY) override
+	void OnTouch(int varX, int varY) override
 	{
 
 	}
 
-	void OnTouchRelease(float varX, float varY) override
+	void OnTouchRelease(int varX, int varY) override
 	{
 
 	}

@@ -66,6 +66,15 @@
     <ClCompile Include="..\..\Src\GUI\UIClickRect.cpp">
       <Filter>GUI</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Src\GUI\UIRect.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\GUI\UIRoot.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\GUI\UIDrawRect.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\GLProgram\GLProgram.h">
@@ -111,6 +120,15 @@
       <Filter>GUI</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Src\GUI\UIClickRect.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\GUI\UIRect.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\GUI\UIRoot.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\GUI\UIDrawRect.h">
       <Filter>GUI</Filter>
     </ClInclude>
   </ItemGroup>

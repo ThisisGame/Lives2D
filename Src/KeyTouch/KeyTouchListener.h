@@ -26,9 +26,9 @@ public:
 public:
 	virtual void OnKey(KeyCode varkeyCode)=0;
 
-	virtual void OnTouch(float varX, float varY)=0;
+	virtual void OnTouch(int varX, int varY)=0;
 
-	virtual void OnTouchRelease(float varX, float varY) = 0;
+	virtual void OnTouchRelease(int varX, int varY) = 0;
 
 	std::string ClassName()
 	{

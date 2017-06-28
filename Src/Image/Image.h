@@ -2,8 +2,9 @@
 
 #include"GLProgram\GLProgram_Texture.h"
 #include"Texture2D\Texture2D.h"
+#include"GUI\UIDrawRect.h"
 
-class Image
+class Image:public UIDrawRect
 {
 public:
 	Image(void);
@@ -13,7 +14,7 @@ public:
 	void  Init(const char* varFilePath); //加载图片，生成Texture;
 
 	//绘制
-	void Draw();
+	void Draw() override;
 
 
 	//设置位置

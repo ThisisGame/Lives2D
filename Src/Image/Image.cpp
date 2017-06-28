@@ -7,7 +7,7 @@
 #include<glm\gtx\euler_angles.hpp>
 
 
-Image::Image(void):mPosX(0),mPosY(0),mScaleX(1),mScaleY(1)
+Image::Image(void):UIDrawRect(),mPosX(0),mPosY(0),mScaleX(1),mScaleY(1)
 {
 	mTexture2D = new Texture2D();
 }
