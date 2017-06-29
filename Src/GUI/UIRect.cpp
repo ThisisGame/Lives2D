@@ -12,3 +12,13 @@ UIRect::~UIRect()
 {
 	
 }
+
+void UIRect::SetDepth(int varDepth)
+{
+	mDepth = varDepth;
+}
+
+int UIRect::GetDepth()
+{
+	return mDepth;
+}

@@ -2,8 +2,7 @@
 
 
 
-UIButton::UIButton(std::string varNormalImagePath, std::string varClickDownImagePath, float varPosX, float varPosY, float varWidth, float varHeight,std::function<void(void)> varOnClick)
-	:mClickDown(false),mPosX(varPosX),mPosY(varPosY),mWidth(varWidth),mHeight(varHeight),mOnClick(varOnClick)
+UIButton::UIButton(std::string varNormalImagePath, std::string varClickDownImagePath, float varPosX, float varPosY, float varWidth, float varHeight,std::function<void(void)> varOnClick):UIClickRect(),mClickDown(false),mPosX(varPosX),mPosY(varPosY),mWidth(varWidth),mHeight(varHeight),mOnClick(varOnClick)
 {
 	mImageNormal = new Image();
 	mImageNormal->Init(varNormalImagePath.c_str());

@@ -23,5 +23,9 @@ public:
 	void AddChild(UIRect* varUIRect);
 
 	void RemoveChild(UIRect* varUIRect);
+
+
+	//排序 按Depth从大到小渲染，Depth越小，就越靠前面
+	void Sort();
 };
 

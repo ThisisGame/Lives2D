@@ -6,7 +6,7 @@
 #include<string>
 #include<functional>
 
-class UIButton:UIClickRect
+class UIButton:public UIClickRect
 {
 private:
 	float mPosX, mPosY, mWidth, mHeight;
@@ -23,9 +23,9 @@ public:
 	~UIButton();
 
 
-	void Update(float varDeltaTime);
+	void Update(float varDeltaTime) override final;
 
-	void Draw();
+	void Draw() override final;
 
 	void OnTouchClickRect(float varX, float varY) override final;
 

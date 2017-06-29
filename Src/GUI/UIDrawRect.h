@@ -9,11 +9,5 @@ class UIDrawRect:public UIRect
 public:
 	UIDrawRect();
 	~UIDrawRect();
-
-public:
-	//»æÖÆ
-	virtual void Draw() {};
-
-
 };
 

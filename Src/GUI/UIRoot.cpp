@@ -3,6 +3,9 @@
 #include"UIDrawRect.h"
 #include"UIClickRect.h"
 
+#include<iostream>
+#include<algorithm>
+
 
 UIRoot::UIRoot():mDepth(0)
 {
@@ -25,11 +28,10 @@ void UIRoot::Draw()
 {
 	for (auto val : mVectorUIRect)
 	{
-		if (val->mUIRectType == UIRectType::Type_UIDrawRect)
-		{
-			UIDrawRect* tmpUIDrawRect = (UIDrawRect*)val;
-			tmpUIDrawRect->Draw();
-		}
+		
+		UIDrawRect* tmpUIDrawRect = (UIDrawRect*)val;
+		tmpUIDrawRect->Draw();
+	
 	}
 }
 
@@ -51,4 +53,14 @@ void UIRoot::RemoveChild(UIRect * varUIRect)
 	{
 		mVectorUIRect.erase(iter);
 	}
+}
+
+void UIRoot::Sort()
+{
+
+	//ÅÅÐò
+	std::sort(mVectorUIRect.begin(), mVectorUIRect.end(), [](UIRect* varUIRect1, UIRect* varUIRect2)
+	{
+		return varUIRect1->GetDepth() > varUIRect2->GetDepth();
+	});
 }

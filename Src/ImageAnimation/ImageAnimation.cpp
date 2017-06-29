@@ -5,7 +5,7 @@
 #include"Tools\Helper.h"
 
 
-ImageAnimation::ImageAnimation(std::string varConfigPath,float varSpeed):mPlay(false), mCurrentPlayClip(NULL)
+ImageAnimation::ImageAnimation(std::string varConfigPath,float varSpeed):UIDrawRect(),mPlay(false), mCurrentPlayClip(NULL)
 {
 	std::string tmpDirPath = Helper::GetDirPath(varConfigPath);
 

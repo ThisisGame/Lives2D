@@ -46,10 +46,16 @@ public:
 		//注册键盘鼠标屏幕监听
 		KeyTouch::RegisterKeyTouchListener(this);
 
+		//UIRoot
+		mUIRoot = new UIRoot();
+
 		//帧动画初始化
 		mImageAnimation = new ImageAnimation("../../Resources/ImageAnimations/Swordman/Saber/Animations.txt",1.0f/4);
 
 		mImageAnimation->Play("Idle");
+
+		mUIRoot->AddChild(mImageAnimation);
+
 
 		//按钮初始化
 		mUIButton = new UIButton("../../Resources/GUI/pop_button0.png", "../../Resources/GUI/pop_button1.png", 0, 100, 86, 48, [=]()
@@ -57,14 +63,11 @@ public:
 			Helper::LOG("Click Button");
 			mImageAnimation->Play("Walk");
 		});
-
-		//UIRoot
-		mUIRoot = new UIRoot();
-		
+		mUIButton->SetDepth(-1); //Depth越小，位于上层
+		mUIRoot->AddChild(mUIButton);
 		
 
 		//图片初始化
-
 		mImage_Sweep = new Image();
 		mImage_Sweep->Init("../../Resources/GUI/sweep.png");
 		mImage_Sweep->SetPosition(100, 70);
@@ -74,28 +77,17 @@ public:
 		mImage_Hanhua->Init("../../Resources/GUI/hanhua.png");
 		mImage_Hanhua->SetPosition(100, 100);
 		mUIRoot->AddChild(mImage_Hanhua);
-
-
-
 		
 	}
 
 	void Update(float varDeltaTime)
 	{
-		/*mImageAnimation->Update(varDeltaTime);
-
-		mUIButton->Update(varDeltaTime);*/
-
 		mUIRoot->Update(varDeltaTime);
 	}
 
 	void Draw()
 	{
-		/*mImageAnimation->Draw();
-
-		mUIButton->Draw();*/
-
-
+		
 		mUIRoot->Draw();
 	}
 
