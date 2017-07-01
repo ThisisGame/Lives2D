@@ -34,6 +34,9 @@
     <Filter Include="ImageAnimation">
       <UniqueIdentifier>{e91aabd2-6604-4bbe-b783-ce87e78f18e5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Audio">
+      <UniqueIdentifier>{54aeca78-7ff3-4b6e-9303-8d6b6afb2e1e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Src\Image\Image.cpp">
@@ -74,6 +77,9 @@
     </ClCompile>
     <ClCompile Include="..\..\Src\GUI\UIDrawRect.cpp">
       <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Audio\AudioSource.cpp">
+      <Filter>Audio</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -130,6 +136,12 @@
     </ClInclude>
     <ClInclude Include="..\..\Src\GUI\UIDrawRect.h">
       <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Audio\AudioSource.h">
+      <Filter>Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Audio\AudoCard.h">
+      <Filter>Audio</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

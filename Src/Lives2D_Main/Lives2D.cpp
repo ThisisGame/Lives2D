@@ -2,6 +2,7 @@
 #include"Tools\Helper.h"
 #include"glm\glm.hpp"
 #include"KeyTouch\KeyTouch.h"
+#include"Audio\AudoCard.h"
 
 
 int Lives2D::m_Width = 0;
@@ -18,6 +19,8 @@ void Lives2D::Init(EGLSurface & varEGLSurface, EGLDisplay & varEGLDisplay, int &
 	m_Width = varWidth;
 	m_Height = varHeight;
 
+
+	AudioCardInit();
 
 	mDemoScene = new DemoScene();
 	mDemoScene->Init();
@@ -51,4 +54,9 @@ void Lives2D::OnTouch(int varX, int varY)
 void Lives2D::OnTouchRelease(int varX, int varY)
 {
 	KeyTouch::OnTouchRelease(varX, varY);
+}
+
+void Lives2D::OnDestroy()
+{
+	AudioCardExit();
 }

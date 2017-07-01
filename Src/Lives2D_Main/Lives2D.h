@@ -41,6 +41,8 @@ public:
 
 	//ÊÍ·Åµã»÷
 	static void OnTouchRelease(int varX, int varY);
+
+	static void OnDestroy();
 };
 
 

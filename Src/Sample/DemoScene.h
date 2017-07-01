@@ -13,6 +13,8 @@
 
 #include"../Tools/Helper.h"
 
+#include"./Audio/AudioSource.h"
+
 class DemoScene:KeyTouchListener
 {
 private:
@@ -78,6 +80,14 @@ public:
 		mImage_Hanhua->SetPosition(100, 100);
 		mUIRoot->AddChild(mImage_Hanhua);
 		
+
+		AudioSource* audioSource = new AudioSource();
+		audioSource->LoadAudio("../../Resources/Audio/m_sound600.wav");
+		audioSource->Play();
+
+		AudioSource* audioSource1 = new AudioSource();
+		audioSource1->LoadAudio("../../Resources/Audio/file2.au");
+		audioSource1->Play();
 	}
 
 	void Update(float varDeltaTime)
