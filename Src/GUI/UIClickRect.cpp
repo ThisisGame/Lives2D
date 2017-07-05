@@ -29,8 +29,9 @@ void UIClickRect::OnTouch(int varX, int varY)
 	float tmpStartX = mPosX - mWidth / 2;
 	float tmpStartY = mPosY + mHeight / 2;
 
-	float tmpClickX =varX- Lives2D::m_Width/2;
-	float tmpClickY = Lives2D::m_Height / 2 - varY;
+	float tmpClickX =varX;
+	float tmpClickY = varY;
+
 
 	if( (tmpClickX > tmpStartX && tmpClickX< (tmpStartX+mWidth))  && ( tmpClickY<tmpStartY && tmpClickY > (tmpStartY - mHeight) ))
 	{

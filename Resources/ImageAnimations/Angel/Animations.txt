@@ -1,0 +1,2 @@
+Idle:frame_0.png,frame_1.png,frame_2.png,frame_3.png,frame_4.png,frame_5.png
+Talk:frame_6.png,frame_7.png,frame_8.png,frame_9.png,frame_10.png,frame_11.png

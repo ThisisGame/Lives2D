@@ -29,3 +29,8 @@ void AudioSource::Play()
 {
 	alSourcePlay(m_SoundSource);
 }
+
+void AudioSource::Loop()
+{
+	alSourcei(m_SoundSource, AL_LOOPING, AL_TRUE);
+}

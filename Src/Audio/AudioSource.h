@@ -23,5 +23,7 @@ public:
 	void LoadAudio(const char* varAudioPath);
 
 	void Play();
+
+	void Loop();
 };
 

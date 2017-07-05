@@ -56,3 +56,25 @@ void ImageAnimationClip::Stop()
 {
 	mPlay = false;
 }
+
+void ImageAnimationClip::SetPosition(float varPosX, float varPosY)
+{
+	mPosX = varPosX;
+	mPosY = varPosY;
+
+	for (auto val : mVectorImageData)
+	{
+		val->SetPosition(varPosX, varPosY);
+	}
+}
+
+void ImageAnimationClip::SetScale(float varScaleX, float varScaleY)
+{
+	mScaleX = varScaleX;
+	mScaleY = varScaleY;
+
+	for (auto val : mVectorImageData)
+	{
+		val->SetScale(varScaleX, varScaleY);
+	}
+}

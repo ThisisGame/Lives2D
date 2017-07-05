@@ -29,6 +29,11 @@ private:
 	//播放速度
 	float mSpeed;
 
+	float mPosX;
+	float mPosY;
+	float mScaleX;
+	float mScaleY;
+
 public:
 	std::string GetClipName();
 
@@ -44,5 +49,11 @@ public:
 	void Play();
 
 	void Stop();
+
+	//设置位置
+	void SetPosition(float varPosX, float varPosY);
+
+	//设置缩放
+	void SetScale(float varScaleX, float varScaleY);
 };
 

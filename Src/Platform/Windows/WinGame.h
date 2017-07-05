@@ -213,12 +213,30 @@ public:
 			GetClientRect(m_hWnd, &rt);
 			m_width = rt.right - rt.left;
 			m_height = rt.bottom - rt.top;
+
 		}
 		break;
 		case WM_LBUTTONDOWN:
 		{
+			int tmpX = GET_X_LPARAM(lParam);
+			int tmpY = GET_Y_LPARAM(lParam);
+
+
 			printf("OnTouch %d  %d \n", GET_X_LPARAM(lParam), GET_Y_LPARAM(lParam));
-			Lives2D::OnTouch(GET_X_LPARAM(lParam), GET_Y_LPARAM(lParam));
+
+
+			//转换成零点在屏幕窗口中间，右上增长的坐标
+			tmpX = tmpX - m_width / 2;
+			tmpY = m_height/2 - tmpY;
+
+			//适配设计分辨率
+			float tmpWidthRatio = Lives2D::m_DesignWidth/m_width;
+			float tmpHeightRatio = Lives2D::m_DesignHeight/ m_height;
+
+			tmpX = tmpX*tmpWidthRatio;
+			tmpY = tmpY*tmpHeightRatio;
+
+			Lives2D::OnTouch(tmpX, tmpY);
 		}
 		break;
 		case WM_LBUTTONUP:

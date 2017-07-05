@@ -67,3 +67,25 @@ void ImageAnimation::Play(std::string varClipName)
 		}
 	}
 }
+
+void ImageAnimation::SetPosition(float varPosX, float varPosY)
+{
+	mPosX = varPosX;
+	mPosY = varPosY;
+
+	for (auto val : mVectorImageAnimationClip)
+	{
+		val->SetPosition(varPosX, varPosY);
+	}
+}
+
+void ImageAnimation::SetScale(float varScaleX, float varScaleY)
+{
+	mScaleX = varScaleX;
+	mScaleY = varScaleY;
+
+	for (auto val : mVectorImageAnimationClip)
+	{
+		val->SetScale(varScaleX, varScaleY);
+	}
+}

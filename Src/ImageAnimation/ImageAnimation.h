@@ -16,6 +16,11 @@ private:
 
 	bool mPlay;
 
+	float mPosX;
+	float mPosY;
+	float mScaleX;
+	float mScaleY;
+
 public:
 	ImageAnimation(std::string varConfigPath,float varSpeed);
 	~ImageAnimation();
@@ -25,5 +30,11 @@ public:
 	void Draw() override final;
 
 	void Play(std::string varClipName);
+
+	//设置位置
+	void SetPosition(float varPosX, float varPosY);
+
+	//设置缩放
+	void SetScale(float varScaleX, float varScaleY);
 };
 
