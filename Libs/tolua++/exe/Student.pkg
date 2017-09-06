@@ -1,0 +1,13 @@
+$#include"Student.h"  
+  
+class Student  
+{  
+public:  
+	Student();  
+	~Student();  
+  
+	void Run();  
+	void Run @ Run2(int a);  
+	
+	void Run @ Run3(std::string varStr);
+};  

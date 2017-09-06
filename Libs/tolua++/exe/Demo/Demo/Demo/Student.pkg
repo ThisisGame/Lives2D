@@ -1,0 +1,23 @@
+$#include"Student.h"
+
+
+class PeopleManager
+{
+public:
+	PeopleManager();  
+	~PeopleManager();  
+
+	void AddPeople(People* varPeoPle);
+};
+  
+class Student:public People
+{  
+public:  
+	Student();  
+	~Student();  
+  
+	void Run();  
+	void Run @ Run2(int a);  
+	
+	void Run @ Run3(std::string varStr);
+};  
