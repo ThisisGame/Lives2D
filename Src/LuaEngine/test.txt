@@ -1,0 +1,18 @@
+print('run in lua')
+
+function DispatchNetwork(var_pBinaryPacker)
+	print('DispatchNetwork')
+	
+	local age=var_pBinaryPacker:PopInt()
+	local height=var_pBinaryPacker:PopFloat()
+
+	print('age:' .. age .. '   height:' .. height)
+
+
+	local pBinaryPacker=BinaryPacker:new()
+	pBinaryPacker:Malloc(8)
+	pBinaryPacker:PushInt(453)
+	pBinaryPacker:PushFloat(1.88)
+
+	NetworkClient:GetSingleton():SendMessage(34,pBinaryPacker)
+end

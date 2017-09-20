@@ -1,0 +1,10 @@
+$#include"NetworkClient.h"
+
+class NetworkClient
+{
+public:
+	static NetworkClient* GetSingleton();
+
+	void SendMessage(int varMsgID, BinaryPacker* var_pBinaryPacker);
+};
+

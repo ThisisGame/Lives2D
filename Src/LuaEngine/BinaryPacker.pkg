@@ -1,0 +1,30 @@
+$#include"BinaryPacker.h"
+
+class BinaryPacker
+{
+public:
+	BinaryPacker();
+	~BinaryPacker();
+
+
+
+public:
+
+	void Malloc(int varSize);
+
+	void PushInt(int varValue);
+
+	void PushFloat(float varValue);
+
+
+	char* GetBinaryCache();
+
+	int GetBinaryCacheSize();
+
+
+	void SetBinaryCache(char* varBinaryCache,int varSize);
+
+	int PopInt();
+
+	float PopFloat();
+};
