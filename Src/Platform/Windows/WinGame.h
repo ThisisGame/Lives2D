@@ -15,7 +15,7 @@
 #include<glm\gtx\transform2.hpp>
 #include<glm\gtx\euler_angles.hpp>
 
-#include"Lives2D_Main\Lives2D.h"
+//#include"Lives2D_Main\Lives2D.h"
 
 #include"LuaEngine\LuaEngine.h"
 
@@ -89,7 +89,12 @@ public:
 
 	void update(float varDeltaTime)
 	{
-		Lives2D::Update(varDeltaTime);
+		//Lives2D::Update(varDeltaTime);
+		std::function<void(lua_State*)> tmpFunction = [&](lua_State* var_pLuaState)
+		{
+			tolua_pushnumber(var_pLuaState, varDeltaTime);
+		};
+		LuaEngine::GetSingleton()->CallLuaFunction("Update", 1, tmpFunction);
 	}
 
 	//渲染函数;
@@ -104,7 +109,8 @@ public:
 
 		glViewport(0, 0, m_width, m_height);
 
-		Lives2D::Draw();
+		//Lives2D::Draw();
+		LuaEngine::GetSingleton()->CallLuaFunction("Draw");
 
 		eglSwapBuffers(m_EGLDisplay, m_EGLSurface);
 	}
@@ -118,7 +124,16 @@ public:
 
 		glViewport(0, 0, (GLsizei)m_width, (GLsizei)m_height);
 
-		Lives2D::Init(m_EGLSurface, m_EGLDisplay,m_width,m_height);
+		//[captures] (params) -> ret {Statments;} 
+		//Lives2D::Init(m_EGLSurface, m_EGLDisplay,m_width,m_height);
+		//http://blog.csdn.net/booirror/article/details/26973611
+
+		std::function<void(lua_State*)> tmpFunction = [&](lua_State* var_pLuaState)
+		{
+			tolua_pushnumber(var_pLuaState, m_width);
+			tolua_pushnumber(var_pLuaState, m_height);
+		};
+		LuaEngine::GetSingleton()->CallLuaFunction("Init",2, tmpFunction);
 	}
 
 	//入口函数;
@@ -226,27 +241,48 @@ public:
 			int tmpX = GET_X_LPARAM(lParam);
 			int tmpY = GET_Y_LPARAM(lParam);
 
-
-			printf("OnTouch %d  %d \n", GET_X_LPARAM(lParam), GET_Y_LPARAM(lParam));
-
-
 			//转换成零点在屏幕窗口中间，右上增长的坐标
 			tmpX = tmpX - m_width / 2;
 			tmpY = m_height/2 - tmpY;
 
 			//适配设计分辨率
-			float tmpWidthRatio = Lives2D::m_DesignWidth/m_width;
-			float tmpHeightRatio = Lives2D::m_DesignHeight/ m_height;
+			float tmpWidthRatio = 960.0f/m_width;
+			float tmpHeightRatio =540.0f/ m_height;
 
 			tmpX = tmpX*tmpWidthRatio;
 			tmpY = tmpY*tmpHeightRatio;
 
-			Lives2D::OnTouch(tmpX, tmpY);
+			//Lives2D::OnTouch(tmpX, tmpY);
+			std::function<void(lua_State*)> tmpFunction = [&](lua_State* var_pLuaState)
+			{
+				tolua_pushnumber(var_pLuaState, tmpX);
+				tolua_pushnumber(var_pLuaState, tmpY);
+			};
+			LuaEngine::GetSingleton()->CallLuaFunction("OnTouch", 2, tmpFunction);
 		}
 		break;
 		case WM_LBUTTONUP:
 		{
-			Lives2D::OnTouchRelease(GET_X_LPARAM(lParam), GET_Y_LPARAM(lParam));
+			int tmpX = GET_X_LPARAM(lParam);
+			int tmpY = GET_Y_LPARAM(lParam);
+
+			//转换成零点在屏幕窗口中间，右上增长的坐标
+			tmpX = tmpX - m_width / 2;
+			tmpY = m_height / 2 - tmpY;
+
+			//适配设计分辨率
+			float tmpWidthRatio = 960.0f / m_width;
+			float tmpHeightRatio = 540.0f / m_height;
+
+			tmpX = tmpX*tmpWidthRatio;
+			tmpY = tmpY*tmpHeightRatio;
+
+			std::function<void(lua_State*)> tmpFunction = [&](lua_State* var_pLuaState)
+			{
+				tolua_pushnumber(var_pLuaState, tmpX);
+				tolua_pushnumber(var_pLuaState, tmpY);
+			};
+			LuaEngine::GetSingleton()->CallLuaFunction("OnTouchRelease", 2, tmpFunction);
 		}
 		break;
 		case WM_RBUTTONDOWN:
@@ -272,26 +308,11 @@ public:
 
 		case WM_KEYDOWN:
 		{
-			switch (wParam)
+			std::function<void(lua_State*)> tmpFunction = [&](lua_State* var_pLuaState)
 			{
-			case 27:
-				Lives2D::OnKey(KeyCode::Esc);
-				break;
-			case 37:
-				Lives2D::OnKey(KeyCode::Left);
-				break;
-			case 38:
-				Lives2D::OnKey(KeyCode::Up);
-				break;
-			case 39:
-				Lives2D::OnKey(KeyCode::Right);
-				break;
-			case 40:
-				Lives2D::OnKey(KeyCode::Down);
-				break;
-			default:
-				break;
-			}
+				tolua_pushnumber(var_pLuaState, GET_X_LPARAM(wParam));
+			};
+			LuaEngine::GetSingleton()->CallLuaFunction("OnKey", 1, tmpFunction);
 		}
 		break;
 		case WM_CHAR:
@@ -317,9 +338,9 @@ public:
 	}
 
 
-	virtual void        onDestroy()
+	virtual void  onDestroy()
 	{
-		Lives2D::OnDestroy();
+		LuaEngine::GetSingleton()->CallLuaFunction("OnDestroy");
 	}
 
 protected:

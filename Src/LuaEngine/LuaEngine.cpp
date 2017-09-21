@@ -35,12 +35,19 @@ LuaEngine * LuaEngine::GetSingleton()
 
 void LuaEngine::DoFile(const char * varFilePath)
 {
-	luaL_dofile(m_pLua_State, varFilePath);
+	int ret = luaL_dofile(m_pLua_State, varFilePath);
+
+	if (ret != 0)
+	{
+		int t = lua_type(m_pLua_State, -1);
+		const char* err = lua_tostring(m_pLua_State, -1);
+		printf("Error: %s\n", err);
+		lua_pop(m_pLua_State, 1);
+	}
 }
 
-void LuaEngine::CallLuaFunction(const char * varLuaFunctionName, const char * varParamTypeName, void * varParamTypeData)
+void LuaEngine::CallLuaFunction(const char * varLuaFunctionName, int varParamCount,std::function<void(lua_State*)> varFunction)
 {
-	//传入BinaryPacker，网络数据反序列化
 	lua_getglobal(m_pLua_State, varLuaFunctionName);
 	if (!lua_isfunction(m_pLua_State, -1))
 	{
@@ -48,6 +55,45 @@ void LuaEngine::CallLuaFunction(const char * varLuaFunctionName, const char * va
 		return;
 	}
 
+	varFunction(m_pLua_State);
+
+	int ret = lua_pcall(m_pLua_State, varParamCount, 0, 0);
+	if (ret != 0)
+	{
+		int t = lua_type(m_pLua_State, -1);
+		const char* err = lua_tostring(m_pLua_State, -1);
+		printf("Error: %s\n", err);
+		lua_pop(m_pLua_State, 1);
+	}
+}
+
+void LuaEngine::CallLuaFunction(const char * varLuaFunctionName)
+{
+	lua_getglobal(m_pLua_State, varLuaFunctionName);
+	if (!lua_isfunction(m_pLua_State, -1))
+	{
+		std::cout << varLuaFunctionName << " is not function" << std::endl;
+		return;
+	}
+	int ret = lua_pcall(m_pLua_State, 0, 0, 0);
+	if (ret != 0)
+	{
+		int t = lua_type(m_pLua_State, -1);
+		const char* err = lua_tostring(m_pLua_State, -1);
+		printf("Error: %s\n", err);
+		lua_pop(m_pLua_State, 1);
+	}
+}
+
+void LuaEngine::CallLuaFunction(const char * varLuaFunctionName, const char * varParamTypeName, void * varParamTypeData)
+{
+	lua_getglobal(m_pLua_State, varLuaFunctionName);
+	if (!lua_isfunction(m_pLua_State, -1))
+	{
+		std::cout << varLuaFunctionName << " is not function" << std::endl;
+		return;
+	}
+	
 	tolua_pushusertype(m_pLua_State, varParamTypeData, varParamTypeName);
 
 	int ret = lua_pcall(m_pLua_State, 1, 0, 0);

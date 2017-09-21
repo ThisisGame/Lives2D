@@ -9,6 +9,8 @@ extern "C"
 }
 #include "tolua++.h"
 
+#include<functional>
+
 class LuaEngine
 {
 private:
@@ -23,6 +25,10 @@ public:
 	static LuaEngine* GetSingleton();
 
 	void DoFile(const char* varFilePath);
+
+	void CallLuaFunction(const char* varLuaFunctionName, int varParamCount, std::function<void(lua_State*)> varFunction);
+
+	void CallLuaFunction(const char* varLuaFunctionName);
 
 	void CallLuaFunction(const char* varLuaFunctionName, const char* varTypeName, void* varTypeData);
 
