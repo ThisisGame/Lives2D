@@ -37,6 +37,9 @@
     <Filter Include="Audio">
       <UniqueIdentifier>{54aeca78-7ff3-4b6e-9303-8d6b6afb2e1e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="LuaEngine">
+      <UniqueIdentifier>{a125a9bb-bc47-4aa6-b077-87d8f2adb0a0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Src\Image\Image.cpp">
@@ -80,6 +83,27 @@
     </ClCompile>
     <ClCompile Include="..\..\Src\Audio\AudioSource.cpp">
       <Filter>Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\LuaEngine\BinaryPacker.cpp">
+      <Filter>LuaEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\LuaEngine\lua_BinaryPacker.cpp">
+      <Filter>LuaEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\LuaEngine\lua_NetworkClient.cpp">
+      <Filter>LuaEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\LuaEngine\LuaEngine.cpp">
+      <Filter>LuaEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\LuaEngine\main.cpp">
+      <Filter>LuaEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\LuaEngine\NetworkClient.cpp">
+      <Filter>LuaEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\LuaEngine\NetworkDispatch.cpp">
+      <Filter>LuaEngine</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -143,5 +167,32 @@
     <ClInclude Include="..\..\Src\Audio\AudoCard.h">
       <Filter>Audio</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Src\LuaEngine\BinaryPacker.h">
+      <Filter>LuaEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\LuaEngine\LuaEngine.h">
+      <Filter>LuaEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\LuaEngine\NetworkClient.h">
+      <Filter>LuaEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\LuaEngine\NetworkDispatch.h">
+      <Filter>LuaEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="Application.h">
+      <Filter>Tools</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Src\LuaEngine\BinaryPacker.pkg">
+      <Filter>LuaEngine</Filter>
+    </None>
+    <None Include="..\..\Src\LuaEngine\NetworkClient.pkg">
+      <Filter>LuaEngine</Filter>
+    </None>
+    <None Include="..\..\Src\Lives2D_Main\GameDelegate.lua">
+      <Filter>Lives2D_Main</Filter>
+    </None>
+    <None Include="Lives2D.lua" />
   </ItemGroup>
 </Project>

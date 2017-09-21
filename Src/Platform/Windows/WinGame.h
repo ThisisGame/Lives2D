@@ -17,6 +17,8 @@
 
 #include"Lives2D_Main\Lives2D.h"
 
+#include"LuaEngine\LuaEngine.h"
+
 class WinGame
 {
 public:
@@ -73,6 +75,9 @@ public:
 		m_EGLSurface = 0;
 		m_EGLContext = 0;
 		m_EGLDisplay = 0;
+
+		//LuaEngine Start
+		LuaEngine::GetSingleton()->DoFile("./Lives2D.lua");
 	}
 
 

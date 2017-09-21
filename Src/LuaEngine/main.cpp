@@ -2,7 +2,7 @@
 
 #include"LuaEngine.h"
 
-void main()
+void pmain()
 {
 	BinaryPacker *pBinaryPacker = new BinaryPacker();
 	pBinaryPacker->Malloc(8);

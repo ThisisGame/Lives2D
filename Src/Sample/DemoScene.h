@@ -57,7 +57,7 @@ public:
 		mImage_Bg->SetPosition(0, 0);
 		mImage_Bg->SetDepth(9999);
 		mUIRoot->AddChild(mImage_Bg);
-
+		
 
 		//÷°∂Øª≠≥ı ºªØ
 		mImageAnimation_Angel = new ImageAnimation("../../Resources/ImageAnimations/Angel/Animations.txt",1.0f/5);

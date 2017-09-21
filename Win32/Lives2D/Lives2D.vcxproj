@@ -44,13 +44,13 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\..\Libs\FreeImage;..\..\Libs\GLES2.0\include;..\..\Libs\GLM-0.9.6.3;..\..\Src;..\..\Libs\Alut\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\Libs\FreeImage;..\..\Libs\GLES2.0\include;..\..\Libs\GLM-0.9.6.3;..\..\Src;..\..\Libs\Alut\include;..\..\Libs\lua\include;..\..\Libs\tolua++\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\..\Libs\FreeImage;..\..\Libs\GLES2.0\lib\windows\x86;..\..\Libs\Alut\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>FreeImage.lib;libEGL.lib;libGLESv2.lib;alut.lib;OpenAL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\Libs\FreeImage;..\..\Libs\GLES2.0\lib\windows\x86;..\..\Libs\Alut\libs;..\..\Libs\lua\lib;..\..\Libs\tolua++\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>FreeImage.lib;libEGL.lib;libGLESv2.lib;alut.lib;OpenAL32.lib;lua5.1.4.lib;tolua++.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Windows</SubSystem>
     </Link>
   </ItemDefinitionGroup>
@@ -84,6 +84,13 @@
     <ClCompile Include="..\..\Src\Image\Image.cpp" />
     <ClCompile Include="..\..\Src\KeyTouch\KeyTouch.cpp" />
     <ClCompile Include="..\..\Src\Lives2D_Main\Lives2D.cpp" />
+    <ClCompile Include="..\..\Src\LuaEngine\BinaryPacker.cpp" />
+    <ClCompile Include="..\..\Src\LuaEngine\LuaEngine.cpp" />
+    <ClCompile Include="..\..\Src\LuaEngine\lua_BinaryPacker.cpp" />
+    <ClCompile Include="..\..\Src\LuaEngine\lua_NetworkClient.cpp" />
+    <ClCompile Include="..\..\Src\LuaEngine\main.cpp" />
+    <ClCompile Include="..\..\Src\LuaEngine\NetworkClient.cpp" />
+    <ClCompile Include="..\..\Src\LuaEngine\NetworkDispatch.cpp" />
     <ClCompile Include="..\..\Src\Platform\Windows\WinMain.cpp" />
     <ClCompile Include="..\..\Src\Texture2D\Texture2D.cpp" />
     <ClCompile Include="..\..\Src\Tools\Helper.cpp" />
@@ -105,10 +112,21 @@
     <ClInclude Include="..\..\Src\KeyTouch\KeyTouch.h" />
     <ClInclude Include="..\..\Src\KeyTouch\KeyTouchListener.h" />
     <ClInclude Include="..\..\Src\Lives2D_Main\Lives2D.h" />
+    <ClInclude Include="..\..\Src\LuaEngine\BinaryPacker.h" />
+    <ClInclude Include="..\..\Src\LuaEngine\LuaEngine.h" />
+    <ClInclude Include="..\..\Src\LuaEngine\NetworkClient.h" />
+    <ClInclude Include="..\..\Src\LuaEngine\NetworkDispatch.h" />
     <ClInclude Include="..\..\Src\Platform\Windows\WinGame.h" />
     <ClInclude Include="..\..\Src\Sample\DemoScene.h" />
     <ClInclude Include="..\..\Src\Texture2D\Texture2D.h" />
     <ClInclude Include="..\..\Src\Tools\Helper.h" />
+    <ClInclude Include="Application.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Src\Lives2D_Main\GameDelegate.lua" />
+    <None Include="..\..\Src\LuaEngine\BinaryPacker.pkg" />
+    <None Include="..\..\Src\LuaEngine\NetworkClient.pkg" />
+    <None Include="Lives2D.lua" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -15,6 +15,9 @@ int APIENTRY _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCm
 	AllocConsole();
 	freopen("CONOUT$", "a+", stdout);
 
+
+
+
 	std::string tmpConfigPath = "../../Resources/Config.txt";
 	std::string tmpConfig = Helper::ReadTxt(tmpConfigPath);
 	std::string tmpPattern = "x";
