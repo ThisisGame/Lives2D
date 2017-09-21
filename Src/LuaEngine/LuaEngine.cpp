@@ -3,9 +3,10 @@
 #include<iostream>
 #include<sstream>
 
-extern int  tolua_BinaryPacker_open(lua_State* tolua_S);
-extern int  tolua_NetworkClient_open(lua_State* tolua_S);
-
+TOLUA_API int  tolua_BinaryPacker_open(lua_State* tolua_S);
+TOLUA_API int  tolua_NetworkClient_open(lua_State* tolua_S);
+TOLUA_API int  tolua_AudioCard_open(lua_State* tolua_S);
+TOLUA_API int  tolua_AudioSource_open(lua_State* tolua_S);
 
 LuaEngine* LuaEngine::m_pSingleton = nullptr;
 
@@ -16,6 +17,8 @@ LuaEngine::LuaEngine()
 
 	tolua_BinaryPacker_open(m_pLua_State);
 	tolua_NetworkClient_open(m_pLua_State);
+	tolua_AudioCard_open(m_pLua_State);
+	tolua_AudioSource_open(m_pLua_State);
 }
 
 

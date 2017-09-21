@@ -1,0 +1,6 @@
+$#include"AudioCard.h"
+
+void AudioCardInit();
+
+void AudioCardExit();
+

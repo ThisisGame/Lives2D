@@ -105,6 +105,12 @@
     <ClCompile Include="..\..\Src\LuaEngine\NetworkDispatch.cpp">
       <Filter>LuaEngine</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Src\Audio\lua_AudioCard.cpp">
+      <Filter>Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Audio\lua_AudioSource.cpp">
+      <Filter>Audio</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\GLProgram\GLProgram.h">
@@ -164,9 +170,6 @@
     <ClInclude Include="..\..\Src\Audio\AudioSource.h">
       <Filter>Audio</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Src\Audio\AudoCard.h">
-      <Filter>Audio</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Src\LuaEngine\BinaryPacker.h">
       <Filter>LuaEngine</Filter>
     </ClInclude>
@@ -181,6 +184,9 @@
     </ClInclude>
     <ClInclude Include="Application.h">
       <Filter>Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Audio\AudioCard.h">
+      <Filter>Audio</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

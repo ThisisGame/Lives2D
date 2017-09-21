@@ -5,16 +5,23 @@ print("Lives2D")
 --初始化
 function Init()
 	print("Init")
+
+	AudioCardInit()
+
+	local audioSource1 = AudioSource:new()
+	audioSource1:LoadAudio("../../Resources/Audio/m_sound600.wav")
+	audioSource1:Loop()
+	audioSource1:Play()
 end
 
 --刷帧
 function Update(varDeltaTime)
-	print("Update " .. varDeltaTime)
+	--print("Update " .. varDeltaTime)
 end
 
 --绘制
 function Draw()
-	print("Draw")
+	--print("Draw")
 end
 
 --键盘鼠标
@@ -36,4 +43,5 @@ end
 
 function OnDestroy()
 	print("OnDestroy")
+	AudioCardExit()
 end
