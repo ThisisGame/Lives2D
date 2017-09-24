@@ -76,6 +76,7 @@
     <ClCompile Include="..\..\Src\Audio\AudioSource.cpp" />
     <ClCompile Include="..\..\Src\Audio\lua_AudioCard.cpp" />
     <ClCompile Include="..\..\Src\Audio\lua_AudioSource.cpp" />
+    <ClCompile Include="..\..\Src\GUI\lua_UIButton.cpp" />
     <ClCompile Include="..\..\Src\GUI\UIButton.cpp" />
     <ClCompile Include="..\..\Src\GUI\UIClickRect.cpp" />
     <ClCompile Include="..\..\Src\GUI\UIDrawRect.cpp" />

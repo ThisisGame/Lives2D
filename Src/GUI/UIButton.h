@@ -6,6 +6,8 @@
 #include<string>
 #include<functional>
 
+#include"LuaEngine\LuaEngine.h"
+
 class UIButton:public UIClickRect
 {
 private:
@@ -15,12 +17,16 @@ private:
 	Image* mImageClickDown;		//按下的图片
 
 	bool mClickDown;		//是否按下
+	
 
-	std::function<void(void)> mOnClick;//点击回调
+	LuaFunctionPoint* mOnClickListener;
 
 public:
-	UIButton(std::string varNormalImagePath,std::string varClickDownImagePath,float varPosX,float varPosY,float varWidth,float varHeight, std::function<void(void)> varOnClick);
+	UIButton(std::string varNormalImagePath,std::string varClickDownImagePath,float varPosX,float varPosY,float varWidth,float varHeight);
+
 	~UIButton();
+
+	void SetOnClickListener(lua_State* varlua_State);
 
 
 	void Update(float varDeltaTime) override final;

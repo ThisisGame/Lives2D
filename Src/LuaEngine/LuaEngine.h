@@ -11,6 +11,26 @@ extern "C"
 
 #include<functional>
 
+class LuaFunctionPoint
+{
+public:
+	lua_State* mlua_State;
+
+public:
+	int mFunctionIndexInStack;
+	int mArgumentIndexInStack;
+
+public:
+	int mFunctionPoint;
+	int mArgumentPoint;
+
+public:
+	LuaFunctionPoint() :mFunctionPoint(LUA_REFNIL), mArgumentPoint(LUA_REFNIL)
+	{
+
+	}
+};
+
 class LuaEngine
 {
 private:
@@ -23,7 +43,7 @@ private:
 
 public:
 	static LuaEngine* GetSingleton();
-
+	
 	void DoFile(const char* varFilePath);
 
 	void CallLuaFunction(const char* varLuaFunctionName, int varParamCount, std::function<void(lua_State*)> varFunction);
@@ -31,6 +51,12 @@ public:
 	void CallLuaFunction(const char* varLuaFunctionName);
 
 	void CallLuaFunction(const char* varLuaFunctionName, const char* varTypeName, void* varTypeData);
+
+
+
+	LuaFunctionPoint* GetLuaFunction(LuaFunctionPoint* varLuaFunctionPoint);
+
+	void ExecuteLuaFunction(LuaFunctionPoint* varLuaFunctionPoint);
 
 private:
 	void PrintError();

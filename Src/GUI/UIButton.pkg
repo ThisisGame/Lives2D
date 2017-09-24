@@ -1,0 +1,17 @@
+$#include"UIButton.h"  
+  
+class UIButton  
+{  
+public:  
+	UIButton(std::string varNormalImagePath,std::string varClickDownImagePath,float varPosX,float varPosY,float varWidth,float varHeight);
+	
+	void SetOnClickListener(lua_State* varlua_State);
+	
+	void Update(float varDeltaTime);
+	
+	void Draw();
+
+	void OnTouchClickRect(float varX, float varY);
+
+	void OnTouchReleaseClickRect(float varX, float varY);
+};  

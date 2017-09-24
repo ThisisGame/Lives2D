@@ -111,6 +111,9 @@
     <ClCompile Include="..\..\Src\Audio\lua_AudioSource.cpp">
       <Filter>Audio</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Src\GUI\lua_UIButton.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\GLProgram\GLProgram.h">

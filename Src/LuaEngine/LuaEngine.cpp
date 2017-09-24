@@ -7,6 +7,7 @@ TOLUA_API int  tolua_BinaryPacker_open(lua_State* tolua_S);
 TOLUA_API int  tolua_NetworkClient_open(lua_State* tolua_S);
 TOLUA_API int  tolua_AudioCard_open(lua_State* tolua_S);
 TOLUA_API int  tolua_AudioSource_open(lua_State* tolua_S);
+TOLUA_API int  tolua_UIButton_open(lua_State* tolua_S);
 
 LuaEngine* LuaEngine::m_pSingleton = nullptr;
 
@@ -19,6 +20,7 @@ LuaEngine::LuaEngine()
 	tolua_NetworkClient_open(m_pLua_State);
 	tolua_AudioCard_open(m_pLua_State);
 	tolua_AudioSource_open(m_pLua_State);
+	tolua_UIButton_open(m_pLua_State);
 }
 
 
@@ -107,6 +109,23 @@ void LuaEngine::CallLuaFunction(const char * varLuaFunctionName, const char * va
 		printf("Error: %s\n", err);
 		lua_pop(m_pLua_State, 1);
 	}
+}
+
+LuaFunctionPoint* LuaEngine::GetLuaFunction(LuaFunctionPoint* varLuaFunctionPoint)
+{
+	lua_pushvalue(varLuaFunctionPoint->mlua_State, varLuaFunctionPoint->mFunctionIndexInStack);
+	varLuaFunctionPoint->mFunctionPoint = luaL_ref(varLuaFunctionPoint->mlua_State, LUA_REGISTRYINDEX);
+
+	lua_pushvalue(varLuaFunctionPoint->mlua_State, varLuaFunctionPoint->mArgumentIndexInStack);
+	varLuaFunctionPoint->mArgumentPoint = luaL_ref(varLuaFunctionPoint->mlua_State, LUA_REGISTRYINDEX);
+	return varLuaFunctionPoint;
+}
+
+void LuaEngine::ExecuteLuaFunction(LuaFunctionPoint* varLuaFunctionPoint)
+{
+	lua_rawgeti(m_pLua_State, LUA_REGISTRYINDEX, varLuaFunctionPoint->mFunctionPoint);
+	lua_rawgeti(m_pLua_State, LUA_REGISTRYINDEX, varLuaFunctionPoint->mArgumentPoint);
+	lua_call(m_pLua_State, 1, 0);
 }
 
 void LuaEngine::PrintError()
