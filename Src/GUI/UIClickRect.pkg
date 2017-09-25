@@ -1,0 +1,6 @@
+$#include"UIClickRect.h"
+
+class UIClickRect:public UIRect,public KeyTouchListener
+{
+
+};

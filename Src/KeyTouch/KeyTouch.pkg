@@ -1,0 +1,17 @@
+$#include"KeyTouch.h"  
+  
+class KeyTouch  
+{  
+public:  
+	KeyTouch();
+	~KeyTouch();
+	
+		
+	static void OnKey(int varkeyCode);
+
+	
+	static void OnTouch(int varX, int varY);
+
+	
+	static void OnTouchRelease(int varX, int varY);
+};  

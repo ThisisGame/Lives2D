@@ -1,0 +1,18 @@
+$#include"UIRoot.h"
+
+class UIRoot
+{
+public:
+	UIRoot();
+	~UIRoot();
+
+	void Update(float varDeltaTime);
+
+	void Draw();
+
+	void AddChild(UIRect* varUIRect);
+
+	void RemoveChild(UIRect* varUIRect);
+
+	void Sort();
+};

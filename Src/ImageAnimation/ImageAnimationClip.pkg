@@ -1,0 +1,23 @@
+$#include"ImageAnimationClip.h"
+
+class ImageAnimationClip
+{
+public:
+	std::string GetClipName();
+
+	ImageAnimationClip(std::string varClipName,std::vector<std::string> varVectorFrameImagePath,int varKeyFrameCount, float varSpeed);
+	~ImageAnimationClip();
+
+
+	void Update(float varDeltaTime);
+
+	void Draw();
+
+	void Play();
+
+	void Stop();
+
+	void SetPosition(float varPosX, float varPosY);
+
+	void SetScale(float varScaleX, float varScaleY);
+};

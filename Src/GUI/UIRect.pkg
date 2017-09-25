@@ -1,0 +1,18 @@
+$#include"UIRect.h"
+
+enum  UIRectType
+{
+	Type_UIClickRect=0,
+	Type_UIDrawRect=1,
+};
+
+class UIRect
+{
+public:
+	UIRect(UIRectType varUIRectType);
+	~UIRect();
+
+	void SetDepth(int varDepth);
+
+	int GetDepth();
+};

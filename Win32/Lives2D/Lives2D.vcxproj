@@ -77,6 +77,10 @@
     <ClCompile Include="..\..\Src\Audio\lua_AudioCard.cpp" />
     <ClCompile Include="..\..\Src\Audio\lua_AudioSource.cpp" />
     <ClCompile Include="..\..\Src\GUI\lua_UIButton.cpp" />
+    <ClCompile Include="..\..\Src\GUI\lua_UIClickRect.cpp" />
+    <ClCompile Include="..\..\Src\GUI\lua_UIDrawRect.cpp" />
+    <ClCompile Include="..\..\Src\GUI\lua_UIRect.cpp" />
+    <ClCompile Include="..\..\Src\GUI\lua_UIRoot.cpp" />
     <ClCompile Include="..\..\Src\GUI\UIButton.cpp" />
     <ClCompile Include="..\..\Src\GUI\UIClickRect.cpp" />
     <ClCompile Include="..\..\Src\GUI\UIDrawRect.cpp" />
@@ -84,8 +88,13 @@
     <ClCompile Include="..\..\Src\GUI\UIRoot.cpp" />
     <ClCompile Include="..\..\Src\ImageAnimation\ImageAnimation.cpp" />
     <ClCompile Include="..\..\Src\ImageAnimation\ImageAnimationClip.cpp" />
+    <ClCompile Include="..\..\Src\ImageAnimation\lua_ImageAnimation.cpp" />
+    <ClCompile Include="..\..\Src\ImageAnimation\lua_ImageAnimationClip.cpp" />
     <ClCompile Include="..\..\Src\Image\Image.cpp" />
+    <ClCompile Include="..\..\Src\Image\lua_Image.cpp" />
     <ClCompile Include="..\..\Src\KeyTouch\KeyTouch.cpp" />
+    <ClCompile Include="..\..\Src\KeyTouch\lua_KeyTouch.cpp" />
+    <ClCompile Include="..\..\Src\KeyTouch\lua_KeyTouchListener.cpp" />
     <ClCompile Include="..\..\Src\Lives2D_Main\Lives2D.cpp" />
     <ClCompile Include="..\..\Src\LuaEngine\BinaryPacker.cpp" />
     <ClCompile Include="..\..\Src\LuaEngine\LuaEngine.cpp" />

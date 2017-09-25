@@ -20,7 +20,7 @@ public:
 
 
 	//¼üÅÌÊó±ê
-	static void OnKey(KeyCode varkeyCode);
+	static void OnKey(int varkeyCode);
 
 	//ÆÁÄ»´¥Ãşµã»÷
 	static void OnTouch(int varX, int varY);

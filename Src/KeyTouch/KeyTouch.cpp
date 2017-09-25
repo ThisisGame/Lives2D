@@ -43,11 +43,11 @@ void KeyTouch::UnRegisterKeyTouchListener(KeyTouchListener * varKeyTouchListener
 	}
 }
 
-void KeyTouch::OnKey(KeyCode varkeyCode)
+void KeyTouch::OnKey(int varkeyCode)
 {
 	for (auto val : mVectorKeyTouchListener)
 	{
-		val->OnKey(varkeyCode);
+		val->OnKey((KeyCode)varkeyCode);
 	}
 }
 

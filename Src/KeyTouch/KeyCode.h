@@ -4,9 +4,9 @@
 ///¼üÅÌ°´¼ü
 enum KeyCode
 {
-	Up = 0,
-	Down,
-	Left,
-	Right,
-	Esc
+	Esc = 27,
+	Left = 37,
+	Up = 38,
+	Right = 39,
+	Down=40,
 };

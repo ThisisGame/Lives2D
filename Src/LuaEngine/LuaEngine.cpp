@@ -7,7 +7,19 @@ TOLUA_API int  tolua_BinaryPacker_open(lua_State* tolua_S);
 TOLUA_API int  tolua_NetworkClient_open(lua_State* tolua_S);
 TOLUA_API int  tolua_AudioCard_open(lua_State* tolua_S);
 TOLUA_API int  tolua_AudioSource_open(lua_State* tolua_S);
+
+TOLUA_API int  tolua_KeyTouchListener_open(lua_State* tolua_S);
+TOLUA_API int  tolua_KeyTouch_open(lua_State* tolua_S);
+
+
+TOLUA_API int  tolua_UIRect_open(lua_State* tolua_S);
+TOLUA_API int  tolua_UIDrawRect_open(lua_State* tolua_S);
+TOLUA_API int  tolua_UIClickRect_open(lua_State* tolua_S);
+TOLUA_API int  tolua_Image_open(lua_State* tolua_S);
+TOLUA_API int  tolua_ImageAnimationClip_open(lua_State* tolua_S);
+TOLUA_API int  tolua_ImageAnimation_open(lua_State* tolua_S);
 TOLUA_API int  tolua_UIButton_open(lua_State* tolua_S);
+TOLUA_API int  tolua_UIRoot_open(lua_State* tolua_S);
 
 LuaEngine* LuaEngine::m_pSingleton = nullptr;
 
@@ -20,7 +32,16 @@ LuaEngine::LuaEngine()
 	tolua_NetworkClient_open(m_pLua_State);
 	tolua_AudioCard_open(m_pLua_State);
 	tolua_AudioSource_open(m_pLua_State);
+	tolua_KeyTouchListener_open(m_pLua_State);
+	tolua_KeyTouch_open(m_pLua_State);
+	tolua_UIRect_open(m_pLua_State);
+	tolua_UIDrawRect_open(m_pLua_State);
+	tolua_UIClickRect_open(m_pLua_State);
+	tolua_Image_open(m_pLua_State);
+	tolua_ImageAnimationClip_open(m_pLua_State);
+	tolua_ImageAnimation_open(m_pLua_State);
 	tolua_UIButton_open(m_pLua_State);
+	tolua_UIRoot_open(m_pLua_State);
 }
 
 

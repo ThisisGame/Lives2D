@@ -3,7 +3,7 @@
 #include"../KeyTouch/KeyTouchListener.h"
 #include"UIRect.h"
 
-class UIClickRect:KeyTouchListener,public UIRect
+class UIClickRect:public UIRect,public KeyTouchListener
 {
 private:
 	float mPosX, mPosY, mWidth, mHeight; //µã»÷ÇøÓò

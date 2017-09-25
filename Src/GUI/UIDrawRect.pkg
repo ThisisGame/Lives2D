@@ -1,0 +1,8 @@
+$#include"UIDrawRect.h"
+
+class UIDrawRect:public UIRect
+{
+public:
+	UIDrawRect();
+	~UIDrawRect();
+};

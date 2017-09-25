@@ -1,0 +1,14 @@
+$#include"ImageAnimation.h"
+
+class ImageAnimation:public UIDrawRect
+{
+public:
+	ImageAnimation(std::string varConfigPath,float varSpeed);
+	~ImageAnimation();
+
+	void Play(std::string varClipName);
+
+	void SetPosition(float varPosX, float varPosY);
+
+	void SetScale(float varScaleX, float varScaleY);
+};

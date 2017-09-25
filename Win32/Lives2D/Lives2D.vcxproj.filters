@@ -114,6 +114,33 @@
     <ClCompile Include="..\..\Src\GUI\lua_UIButton.cpp">
       <Filter>GUI</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Src\KeyTouch\lua_KeyTouch.cpp">
+      <Filter>KeyTouch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Image\lua_Image.cpp">
+      <Filter>Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\GUI\lua_UIDrawRect.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\GUI\lua_UIRect.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\GUI\lua_UIRoot.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\GUI\lua_UIClickRect.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\KeyTouch\lua_KeyTouchListener.cpp">
+      <Filter>KeyTouch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\ImageAnimation\lua_ImageAnimation.cpp">
+      <Filter>ImageAnimation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\ImageAnimation\lua_ImageAnimationClip.cpp">
+      <Filter>ImageAnimation</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\GLProgram\GLProgram.h">
