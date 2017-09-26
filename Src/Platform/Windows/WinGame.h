@@ -77,7 +77,7 @@ public:
 		m_EGLDisplay = 0;
 
 		//LuaEngine Start
-		LuaEngine::GetSingleton()->DoFile("./Lives2D.lua");
+		LuaEngine::GetSingleton()->DoFile("../../Resources/Engine/Lives2D.lua");
 	}
 
 
