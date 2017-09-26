@@ -44,6 +44,8 @@ void UIRoot::AddChild(UIRect * varUIRect)
 		return;
 	}
 	mVectorUIRect.push_back(varUIRect);
+
+	Sort();
 }
 
 void UIRoot::RemoveChild(UIRect * varUIRect)
@@ -61,6 +63,6 @@ void UIRoot::Sort()
 	//ÅÅÐò
 	std::sort(mVectorUIRect.begin(), mVectorUIRect.end(), [](UIRect* varUIRect1, UIRect* varUIRect2)
 	{
-		return varUIRect1->GetDepth() > varUIRect2->GetDepth();
+		return varUIRect1->GetDepth() < varUIRect2->GetDepth();
 	});
 }
