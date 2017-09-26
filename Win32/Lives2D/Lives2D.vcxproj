@@ -14,6 +14,7 @@
     <ProjectGuid>{29763FBA-1FE7-4A96-BA42-5A19728BE612}</ProjectGuid>
     <RootNamespace>xGame</RootNamespace>
     <ProjectName>Lives2D</ProjectName>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -39,7 +40,10 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>../../Runable/Win/$(Configuration)\</OutDir>
+    <ExecutablePath>../../Runable/Win;$(ExecutablePath)</ExecutablePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -106,6 +110,7 @@
     <ClCompile Include="..\..\Src\Platform\Windows\WinMain.cpp" />
     <ClCompile Include="..\..\Src\Texture2D\Texture2D.cpp" />
     <ClCompile Include="..\..\Src\Tools\Helper.cpp" />
+    <ClCompile Include="..\..\Src\Tools\lua_Application.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\Audio\AudioSource.h" />
@@ -131,14 +136,12 @@
     <ClInclude Include="..\..\Src\Platform\Windows\WinGame.h" />
     <ClInclude Include="..\..\Src\Sample\DemoScene.h" />
     <ClInclude Include="..\..\Src\Texture2D\Texture2D.h" />
+    <ClInclude Include="..\..\Src\Tools\Application.h" />
     <ClInclude Include="..\..\Src\Tools\Helper.h" />
-    <ClInclude Include="Application.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\Src\Lives2D_Main\GameDelegate.lua" />
     <None Include="..\..\Src\LuaEngine\BinaryPacker.pkg" />
     <None Include="..\..\Src\LuaEngine\NetworkClient.pkg" />
-    <None Include="Lives2D.lua" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

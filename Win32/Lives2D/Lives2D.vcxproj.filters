@@ -141,6 +141,9 @@
     <ClCompile Include="..\..\Src\ImageAnimation\lua_ImageAnimationClip.cpp">
       <Filter>ImageAnimation</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Src\Tools\lua_Application.cpp">
+      <Filter>Tools</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\GLProgram\GLProgram.h">
@@ -212,11 +215,11 @@
     <ClInclude Include="..\..\Src\LuaEngine\NetworkDispatch.h">
       <Filter>LuaEngine</Filter>
     </ClInclude>
-    <ClInclude Include="Application.h">
-      <Filter>Tools</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Src\Audio\AudioCard.h">
       <Filter>Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Tools\Application.h">
+      <Filter>Tools</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -226,9 +229,5 @@
     <None Include="..\..\Src\LuaEngine\NetworkClient.pkg">
       <Filter>LuaEngine</Filter>
     </None>
-    <None Include="..\..\Src\Lives2D_Main\GameDelegate.lua">
-      <Filter>Lives2D_Main</Filter>
-    </None>
-    <None Include="Lives2D.lua" />
   </ItemGroup>
 </Project>

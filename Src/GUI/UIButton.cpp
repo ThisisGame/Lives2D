@@ -21,8 +21,6 @@ void UIButton::SetOnClickListener(lua_State * varlua_State)
 	mOnClickListener->mFunctionIndexInStack = -2;
 	mOnClickListener->mArgumentIndexInStack = -1;
 	mOnClickListener = LuaEngine::GetSingleton()->GetLuaFunction(mOnClickListener);
-
-	LuaEngine::GetSingleton()->ExecuteLuaFunction(mOnClickListener);
 }
 
 void UIButton::Update(float varDeltaTime)

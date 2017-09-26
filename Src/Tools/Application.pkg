@@ -1,0 +1,8 @@
+$#include"Application.h"
+
+class Application
+{
+public:
+	static std::string DataPath();
+	static std::string persistentDataPath();
+};

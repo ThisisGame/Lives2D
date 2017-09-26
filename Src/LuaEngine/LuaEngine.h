@@ -11,6 +11,8 @@ extern "C"
 
 #include<functional>
 
+
+
 class LuaFunctionPoint
 {
 public:
@@ -37,12 +39,16 @@ private:
 	static LuaEngine* m_pSingleton;
 
 	lua_State* m_pLua_State;
+
+	bool mErrorPause;
 private:
 	LuaEngine();
 	~LuaEngine();
 
 public:
 	static LuaEngine* GetSingleton();
+
+	void SetLuaPath();
 	
 	void DoFile(const char* varFilePath);
 

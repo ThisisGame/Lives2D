@@ -2,6 +2,7 @@
 #include"Tools\Helper.h"
 
 #include "WinGame.h"
+#include"Tools\Application.h"
 
 
 
@@ -18,7 +19,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCm
 
 
 
-	std::string tmpConfigPath = "../../Resources/Config.txt";
+	std::string tmpConfigPath =Application::DataPath()+ "Resources/Config.txt";
 	std::string tmpConfig = Helper::ReadTxt(tmpConfigPath);
 	std::string tmpPattern = "x";
 	std::vector<std::string> tmpConfigVector = Helper::Split(tmpConfig, tmpPattern);

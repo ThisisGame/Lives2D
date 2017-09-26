@@ -3,6 +3,9 @@
 #include<iostream>
 #include<sstream>
 
+#include"Tools\Application.h"
+
+TOLUA_API int  tolua_Application_open(lua_State* tolua_S);
 TOLUA_API int  tolua_BinaryPacker_open(lua_State* tolua_S);
 TOLUA_API int  tolua_NetworkClient_open(lua_State* tolua_S);
 TOLUA_API int  tolua_AudioCard_open(lua_State* tolua_S);
@@ -25,9 +28,11 @@ LuaEngine* LuaEngine::m_pSingleton = nullptr;
 
 LuaEngine::LuaEngine()
 {
+
 	m_pLua_State = luaL_newstate();
 	luaL_openlibs(m_pLua_State);
 
+	tolua_Application_open(m_pLua_State);
 	tolua_BinaryPacker_open(m_pLua_State);
 	tolua_NetworkClient_open(m_pLua_State);
 	tolua_AudioCard_open(m_pLua_State);
@@ -42,6 +47,10 @@ LuaEngine::LuaEngine()
 	tolua_ImageAnimation_open(m_pLua_State);
 	tolua_UIButton_open(m_pLua_State);
 	tolua_UIRoot_open(m_pLua_State);
+
+	mErrorPause = false;
+
+	SetLuaPath();
 }
 
 
@@ -59,6 +68,17 @@ LuaEngine * LuaEngine::GetSingleton()
 	return m_pSingleton;
 }
 
+void LuaEngine::SetLuaPath()
+{
+	std::string tmpPackagePath = "package.path='" + Application::DataPath() + "Resources/Script/?.lua\'";
+
+
+
+	std::cout << "Package.path=" << tmpPackagePath.c_str() << std::endl;
+
+	luaL_dostring(m_pLua_State, tmpPackagePath.c_str());
+}
+
 void LuaEngine::DoFile(const char * varFilePath)
 {
 	int ret = luaL_dofile(m_pLua_State, varFilePath);
@@ -69,11 +89,17 @@ void LuaEngine::DoFile(const char * varFilePath)
 		const char* err = lua_tostring(m_pLua_State, -1);
 		printf("Error: %s\n", err);
 		lua_pop(m_pLua_State, 1);
+
+		mErrorPause = true;
 	}
 }
 
 void LuaEngine::CallLuaFunction(const char * varLuaFunctionName, int varParamCount,std::function<void(lua_State*)> varFunction)
 {
+	if (mErrorPause)
+	{
+		return;
+	}
 	lua_getglobal(m_pLua_State, varLuaFunctionName);
 	if (!lua_isfunction(m_pLua_State, -1))
 	{
@@ -90,11 +116,17 @@ void LuaEngine::CallLuaFunction(const char * varLuaFunctionName, int varParamCou
 		const char* err = lua_tostring(m_pLua_State, -1);
 		printf("Error: %s\n", err);
 		lua_pop(m_pLua_State, 1);
+
+		mErrorPause = true;
 	}
 }
 
 void LuaEngine::CallLuaFunction(const char * varLuaFunctionName)
 {
+	if (mErrorPause)
+	{
+		return;
+	}
 	lua_getglobal(m_pLua_State, varLuaFunctionName);
 	if (!lua_isfunction(m_pLua_State, -1))
 	{
@@ -108,11 +140,17 @@ void LuaEngine::CallLuaFunction(const char * varLuaFunctionName)
 		const char* err = lua_tostring(m_pLua_State, -1);
 		printf("Error: %s\n", err);
 		lua_pop(m_pLua_State, 1);
+
+		mErrorPause = true;
 	}
 }
 
 void LuaEngine::CallLuaFunction(const char * varLuaFunctionName, const char * varParamTypeName, void * varParamTypeData)
 {
+	if (mErrorPause)
+	{
+		return;
+	}
 	lua_getglobal(m_pLua_State, varLuaFunctionName);
 	if (!lua_isfunction(m_pLua_State, -1))
 	{
@@ -129,6 +167,8 @@ void LuaEngine::CallLuaFunction(const char * varLuaFunctionName, const char * va
 		const char* err = lua_tostring(m_pLua_State, -1);
 		printf("Error: %s\n", err);
 		lua_pop(m_pLua_State, 1);
+
+		mErrorPause = true;
 	}
 }
 

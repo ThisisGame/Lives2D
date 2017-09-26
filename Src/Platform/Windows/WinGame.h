@@ -15,7 +15,7 @@
 #include<glm\gtx\transform2.hpp>
 #include<glm\gtx\euler_angles.hpp>
 
-//#include"Lives2D_Main\Lives2D.h"
+#include"Tools\Application.h"
 
 #include"LuaEngine\LuaEngine.h"
 
@@ -76,8 +76,9 @@ public:
 		m_EGLContext = 0;
 		m_EGLDisplay = 0;
 
+
 		//LuaEngine Start
-		LuaEngine::GetSingleton()->DoFile("../../Resources/Engine/Lives2D.lua");
+		LuaEngine::GetSingleton()->DoFile((Application::DataPath()+ "Resources/Script/Engine/Lives2D.lua").c_str());
 	}
 
 
