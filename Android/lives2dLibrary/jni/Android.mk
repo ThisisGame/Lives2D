@@ -14,60 +14,37 @@
 #
 LOCAL_PATH:= $(call my-dir)
 
-LUA_HEAD_PATH=../../../../Lives2D_Depends/lua-5.1.4/lua-5.1.4/src
+LUA_HEAD_PATH:=../../../../Lives2D_Depends/lua-5.1.4/lua-5.1.4/src
 LUA_SRC_PATH:=../../../../Lives2D_Depends/lua-5.1.4/lua-5.1.4/src
 
-# ProgmaBegin BuildLua
+FREE_IMAGE_SRC_PATH:=../../../../Lives2D_Depends/FreeImage
+
+ENGINE_SRC_PATH:=../../../Src
+
+
+# ProgmaBegin BuildFreeImage
 
 include $(CLEAR_VARS)
 
-LOCAL_MODULE    := libLua
-LOCAL_SRC_FILES := $(LUA_SRC_PATH)/lapi.c \
-$(LUA_SRC_PATH)/lauxlib.c \
-$(LUA_SRC_PATH)/lbaselib.c \
-$(LUA_SRC_PATH)/lcode.c \
-$(LUA_SRC_PATH)/ldblib.c \
-$(LUA_SRC_PATH)/ldebug.c \
-$(LUA_SRC_PATH)/ldo.c \
-$(LUA_SRC_PATH)/ldump.c \
-$(LUA_SRC_PATH)/lfunc.c \
-$(LUA_SRC_PATH)/lgc.c \
-$(LUA_SRC_PATH)/linit.c \
-$(LUA_SRC_PATH)/liolib.c \
-$(LUA_SRC_PATH)/llex.c \
-$(LUA_SRC_PATH)/lmathlib.c \
-$(LUA_SRC_PATH)/lmem.c \
-$(LUA_SRC_PATH)/loadlib.c \
-$(LUA_SRC_PATH)/lobject.c \
-$(LUA_SRC_PATH)/lopcodes.c \
-$(LUA_SRC_PATH)/loslib.c \
-$(LUA_SRC_PATH)/lparser.c \
-$(LUA_SRC_PATH)/lstate.c \
-$(LUA_SRC_PATH)/lstring.c \
-$(LUA_SRC_PATH)/lstrlib.c \
-$(LUA_SRC_PATH)/ltable.c \
-$(LUA_SRC_PATH)/ltablib.c \
-$(LUA_SRC_PATH)/ltm.c \
-$(LUA_SRC_PATH)/lua.c \
-$(LUA_SRC_PATH)/luac.c \
-$(LUA_SRC_PATH)/lundump.c \
-$(LUA_SRC_PATH)/lvm.c \
-$(LUA_SRC_PATH)/lzio.c \
-$(LUA_SRC_PATH)/print.c \
+LOCAL_PATH:=$(FREE_IMAGE_SRC_PATH)
+
+include $(FREE_IMAGE_SRC_PATH)/Makefile.srcs
+
+LOCAL_MODULE    := libFreeImage
+
+LOCAL_C_INCLUDES:= $(FREE_IMAGE_SRC_PATH)/Source \
+$(FREE_IMAGE_SRC_PATH)/Metadata \
+$(FREE_IMAGE_SRC_PATH)/FreeImageToolkit \
+$(FREE_IMAGE_SRC_PATH)/LibJPEG \
+$(FREE_IMAGE_SRC_PATH)/LibPNG \
+$(FREE_IMAGE_SRC_PATH)/ZLib \
+$(FREE_IMAGE_SRC_PATH)/LibOpenJPEG \
+
+LOCAL_SRC_FILES:=$(SRCS)
+LOCAL_CPP_FEATURES:=rtti exceptions
+#LOCAL_CFLAGS:=-O3 -fPIC
 
 include $(BUILD_STATIC_LIBRARY)
 
 # ProgmaEnd
 
-
-include $(CLEAR_VARS)
-
-LOCAL_MODULE    := liblives2d
-LOCAL_CFLAGS    := -Werror
-LOCAL_SRC_FILES := AndroidGame.cpp
-LOCAL_LDLIBS    := -llog -lGLESv2
-
-LOCAL_C_INCLUDES:=$(LUA_HEAD_PATH)
-LOCAL_STATIC_LIBRARIES := libLua
-
-include $(BUILD_SHARED_LIBRARY)

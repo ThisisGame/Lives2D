@@ -1,10 +1,16 @@
 #pragma once
 #include<iostream>
+
+#ifdef WIN32
 #include"AL\alut.h"
+#elif ANDROID
+
+#endif
 
 class AudioSource
 {
 private:
+#ifdef WIN32
 	ALenum format;
 	ALsizei size;
 	ALvoid* data;
@@ -13,6 +19,9 @@ private:
 
 	ALuint m_SoundBuffer; //ษ๙า๔สýพÝ
 	ALuint m_SoundSource; //า๔ิด
+#elif ANDROID
+
+#endif
 
 
 public:
