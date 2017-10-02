@@ -1,6 +1,10 @@
 #pragma once
 
-#include <Windows.h>     
+#ifdef _WIN32
+#include <Windows.h>    
+#else
+
+#endif
 #include <iostream>      
 #include <string> 
 
@@ -18,12 +22,13 @@ public:
 #else
 		tmpDataPath = GetProgramDir() + "/../../../";
 #endif
-#endif // _WIN32
-
-		while (std::string::npos!=tmpDataPath.find("\\"))
+		while (std::string::npos != tmpDataPath.find("\\"))
 		{
 			tmpDataPath = tmpDataPath.replace(tmpDataPath.find("\\"), 1, "/");
 		}
+#endif // _WIN32
+
+
 		
 
 		return tmpDataPath;
@@ -36,6 +41,7 @@ public:
 	}
 
 private:
+#ifdef _WIN32
 	static std::string GetProgramDir()
 	{
 		char exeFullPath[MAX_PATH]; // Full path   
@@ -47,4 +53,5 @@ private:
 		int pos = strPath.find_last_of('\\', strPath.length());
 		return strPath.substr(0, pos);  // Return the directory without the file name   
 	}
+#endif
 };

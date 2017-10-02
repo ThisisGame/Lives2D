@@ -135,14 +135,23 @@
     <ClCompile Include="..\..\Src\Tools\lua_Application.cpp">
       <Filter>Tools</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Src\GLProgram\GLProgram.cpp">
+      <Filter>GLProgram</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\GLProgram\GLProgram_Texture.cpp">
+      <Filter>GLProgram</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\KeyTouch\KeyTouchListener.cpp">
+      <Filter>KeyTouch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Tools\Application.cpp">
+      <Filter>Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\KeyTouch\KeyCode.cpp">
+      <Filter>KeyTouch</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Src\GLProgram\GLProgram.h">
-      <Filter>GLProgram</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Src\GLProgram\GLProgram_Texture.h">
-      <Filter>GLProgram</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Src\Image\Image.h">
       <Filter>Image</Filter>
     </ClInclude>
@@ -200,11 +209,17 @@
     <ClInclude Include="..\..\Src\LuaEngine\NetworkDispatch.h">
       <Filter>LuaEngine</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Src\Audio\AudioCard.h">
-      <Filter>Audio</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Src\Tools\Application.h">
       <Filter>Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\GLProgram\GLProgram.h">
+      <Filter>GLProgram</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\GLProgram\GLProgram_Texture.h">
+      <Filter>GLProgram</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Audio\AudioCard.cpp">
+      <Filter>Audio</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

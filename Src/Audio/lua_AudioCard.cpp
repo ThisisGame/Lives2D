@@ -13,7 +13,7 @@
 /* Exported function */
 TOLUA_API int  tolua_AudioCard_open (lua_State* tolua_S);
 
-#include"AudioCard.h"
+#include"AudioCard.cpp"
 
 /* function to register type */
 static void tolua_reg_types (lua_State* tolua_S)

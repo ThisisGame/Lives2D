@@ -83,3 +83,15 @@ include $(BUILD_STATIC_LIBRARY)
 
 # ProgmaEnd
 
+include $(CLEAR_VARS)
+LOCAL_PATH:= $(JNI_PATH)
+
+LOCAL_MODULE    := liblives2d
+LOCAL_CFLAGS    := -Werror
+LOCAL_SRC_FILES := AndroidGame.cpp
+LOCAL_LDLIBS    := -llog -lGLESv2
+
+LOCAL_C_INCLUDES:=$(LUA_SRC_PATH) $(TOLUAPP_SRC_PATH)/include
+LOCAL_STATIC_LIBRARIES := libLua libTOLUAPP
+
+include $(BUILD_SHARED_LIBRARY)
