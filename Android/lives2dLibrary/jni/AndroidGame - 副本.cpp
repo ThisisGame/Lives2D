@@ -27,12 +27,13 @@
 #define  LOGI(...)  __android_log_print(ANDROID_LOG_INFO,LOG_TAG,__VA_ARGS__)
 #define  LOGE(...)  __android_log_print(ANDROID_LOG_ERROR,LOG_TAG,__VA_ARGS__)
 
-
-#include<iostream>
-#include<string>
-#include<fstream>
-#include"FreeImage.h"
-
+extern "C"
+{
+	#import "lua.h"
+	#import "lualib.h"
+	#import "luaconf.h"
+	#import "lauxlib.h"
+}
 
 
 extern "C" {
@@ -42,32 +43,10 @@ extern "C" {
 
 JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_init(JNIEnv * env, jobject obj,  jint width, jint height)
 {
-	std::string tmpFilePath = "/mnt/sdcard/1.png";
-	
-	//判断文件是否存在
-	std::fstream fs;
-	fs.open(tmpFilePath.c_str(),std::ios::in);
-	if(!fs)
-	{
-		LOGE("file not exist");
-		return;
-	}
-
-	//1、获取图片格式;
-	FREE_IMAGE_FORMAT imageformat = FreeImage_GetFileType(tmpFilePath.c_str(), 0);
-
-	//2、根据获取到的格式来加载图片;
-	FIBITMAP *bitmap = FreeImage_Load(imageformat, tmpFilePath.c_str(), 0);
-
-	if (bitmap == nullptr)
-	{
-		LOGE("Error not exist or other error ");
-		return;
-	}
-	else
-	{
-		LOGI("FreeImage Working");
-	}
+	lua_State* p_Lua_State=luaL_newstate();
+	luaL_openlibs(p_Lua_State);
+	luaL_dostring(p_Lua_State, "print 'init'");
+	lua_close(p_Lua_State);
 }
 
 JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_step(JNIEnv * env, jobject obj)

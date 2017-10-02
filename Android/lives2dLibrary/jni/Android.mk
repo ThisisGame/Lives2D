@@ -13,6 +13,7 @@
 # limitations under the License.
 #
 LOCAL_PATH:= $(call my-dir)
+JNI_PATH:=$(call my-dir)
 
 LUA_HEAD_PATH:=../../../../Lives2D_Depends/lua-5.1.4/lua-5.1.4/src
 LUA_SRC_PATH:=../../../../Lives2D_Depends/lua-5.1.4/lua-5.1.4/src
@@ -47,4 +48,17 @@ LOCAL_CPP_FEATURES:=rtti exceptions
 include $(BUILD_STATIC_LIBRARY)
 
 # ProgmaEnd
+
+include $(CLEAR_VARS)
+LOCAL_PATH:= $(JNI_PATH)
+
+LOCAL_MODULE    := liblives2d
+LOCAL_CFLAGS    := -Werror
+LOCAL_SRC_FILES := ./AndroidGame.cpp
+LOCAL_LDLIBS    := -llog -lGLESv2
+
+LOCAL_C_INCLUDES:= $(FREE_IMAGE_SRC_PATH)/Source
+LOCAL_STATIC_LIBRARIES := libFreeImage
+
+include $(BUILD_SHARED_LIBRARY)
 
