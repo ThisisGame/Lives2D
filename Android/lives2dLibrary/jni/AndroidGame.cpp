@@ -46,6 +46,8 @@ extern "C"
 	#import "lauxlib.h"
 }
 
+#include"LuaEngine/LuaEngine.h"
+
 std::string mSdCardPath;
 
 extern "C" {
@@ -119,6 +121,9 @@ JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_init(JNIEnv * env, jo
 	//Test GLM
 	glm::vec3 pos= glm::vec3(0.3, 1.8888, 0.6666);
 	LOGI("pos %f , %f, %f",pos.x,pos.y,pos.z);
+	
+	//LuaEngine Start
+	LuaEngine::GetSingleton()->DoFile((mSdCardPath+"/lives2d.lua").c_str());
 }
 
 JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_step(JNIEnv * env, jobject obj)

@@ -137,6 +137,62 @@ include $(BUILD_STATIC_LIBRARY)
 
 # ProgmaEnd
 
+# ProgmaBegin BuildEngine
+
+ENGINE_SRC_PATH:=../../../Src
+
+include $(CLEAR_VARS)
+
+LOCAL_PATH:=$(ENGINE_SRC_PATH)
+
+LOCAL_MODULE    := libEngine
+
+LOCAL_C_INCLUDES:= $(ENGINE_SRC_PATH) \
+$(LUA_SRC_PATH) \
+$(TOLUAPP_SRC_PATH)/include \
+$(FREE_IMAGE_SRC_PATH)/Source \
+$(GLM_SRC_PATH)\
+
+LOCAL_SRC_FILES := Audio/AudioSource.cpp \
+		Audio/lua_AudioSource.cpp \
+		Audio/AudioCard.h \
+		Audio/lua_AudioCard.cpp \
+		GLProgram/GLProgram.h \
+		GLProgram/GLProgram_Texture.h \
+		GUI/UIRect.cpp \
+		GUI/UIDrawRect.cpp \
+		GUI/UIClickRect.cpp \
+		GUI/UIButton.cpp \
+		GUI/UIRoot.cpp \
+		GUI/lua_UIRect.cpp \
+		GUI/lua_UIDrawRect.cpp \
+		GUI/lua_UIClickRect.cpp \
+		GUI/lua_UIButton.cpp \
+		GUI/lua_UIRoot.cpp \
+		Image/Image.cpp \
+		Image/lua_Image.cpp \
+		ImageAnimation/ImageAnimationClip.cpp \
+		ImageAnimation/ImageAnimation.cpp \
+		ImageAnimation/lua_ImageAnimationClip.cpp \
+		ImageAnimation/lua_ImageAnimation.cpp \
+		KeyTouch/KeyCode.h \
+		KeyTouch/KeyTouchListener.h \
+		KeyTouch/KeyTouch.cpp \
+		KeyTouch/lua_KeyTouchListener.cpp \
+		KeyTouch/lua_KeyTouch.cpp \
+		LuaEngine/BinaryPacker.cpp \
+		LuaEngine/NetworkClient.cpp \
+		LuaEngine/NetworkDispatch.cpp \
+		LuaEngine/LuaEngine.cpp \
+		LuaEngine/lua_BinaryPacker.cpp \
+		LuaEngine/lua_NetworkClient.cpp \
+		Texture2D/Texture2D.cpp \
+		Tools/Application.h \
+
+include $(BUILD_STATIC_LIBRARY)
+
+# ProgmaEnd
+
 
 include $(CLEAR_VARS)
 LOCAL_PATH:= $(JNI_PATH)
@@ -149,9 +205,10 @@ LOCAL_LDLIBS    := -llog -lGLESv2
 LOCAL_C_INCLUDES:= $(LUA_SRC_PATH) \
 $(TOLUAPP_SRC_PATH)/include \
 $(FREE_IMAGE_SRC_PATH)/Source \
-$(GLM_SRC_PATH)\
+$(GLM_SRC_PATH) \
+$(ENGINE_SRC_PATH) \
 
-LOCAL_STATIC_LIBRARIES := libLua libFreeImage libGLM
+LOCAL_STATIC_LIBRARIES := libLua libTOLUAPP libFreeImage libGLM
 
 include $(BUILD_SHARED_LIBRARY)
 
