@@ -1,8 +1,6 @@
 #include "UIClickRect.h"
 #include"KeyTouch\KeyTouch.h"
 
-#include"Lives2D_Main\Lives2D.h"
-
 
 UIClickRect::UIClickRect():KeyTouchListener("UIClickRect"),UIRect(UIRectType::Type_UIClickRect),mPosX(0),mPosY(0),mWidth(0),mHeight(0)
 {
@@ -45,8 +43,8 @@ void UIClickRect::OnTouchRelease(int varX, int varY)
 	if (mOnTouchClick)
 	{
 		mOnTouchClick = false;
-		float tmpClickX = varX - Lives2D::m_Width / 2;
-		float tmpClickY = Lives2D::m_Height / 2 - varY;
+		float tmpClickX = varX - 960.0f / 2;
+		float tmpClickY = 640.0f/ 2 - varY;
 		OnTouchReleaseClickRect(tmpClickX, tmpClickY);
 	}
 }

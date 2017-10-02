@@ -18,6 +18,7 @@ package com.lives2d.library;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.WindowManager;
 
@@ -30,8 +31,23 @@ public class lives2dActivity extends Activity {
 
     @Override protected void onCreate(Bundle icicle) {
         super.onCreate(icicle);
+        
+        String tmpSdCardPath=Environment.getExternalStorageDirectory().getAbsolutePath();
+        Log.i("Lives2D","SdCardPath:"+tmpSdCardPath);
+        nativeWrap.setSdCardPath(tmpSdCardPath);
+        
+        File file=new File(tmpSdCardPath+"/1.png");
+        if(file.exists())
+        {
+        	Log.i("Lives2D", "png exist "+file.getAbsolutePath()+" size:"+file.length());
+        }
+        else {
+			
+        	Log.i("Lives2D", "png no exist");
+		}
+        
         mView = new glesView(getApplication());
-	setContentView(mView);
+        setContentView(mView);
     }
 
     @Override protected void onPause() {

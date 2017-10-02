@@ -33,6 +33,19 @@
 #include<fstream>
 #include"FreeImage.h"
 
+#include<glm\glm.hpp>
+#include<glm\gtc\matrix_transform.hpp>
+#include<glm\gtx\transform2.hpp>
+#include<glm\gtx\euler_angles.hpp>
+
+extern "C"
+{
+	#import "lua.h"
+	#import "lualib.h"
+	#import "luaconf.h"
+	#import "lauxlib.h"
+}
+
 std::string mSdCardPath;
 
 extern "C" {
@@ -43,6 +56,13 @@ extern "C" {
 
 JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_init(JNIEnv * env, jobject obj,  jint width, jint height)
 {
+	//测试Lua
+	lua_State* p_Lua_State=luaL_newstate();
+	luaL_openlibs(p_Lua_State);
+	luaL_dostring(p_Lua_State, "print 'init' print '我哈哈'");
+	lua_close(p_Lua_State);
+	
+	//测试FreeImage
 	std::string tmpFilePath = mSdCardPath+"/1.png";
 	
 	LOGI("PNG Path:%s",tmpFilePath.c_str());
@@ -94,6 +114,11 @@ JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_init(JNIEnv * env, jo
 	int textureHeight = FreeImage_GetHeight(bitmap);
 	
 	LOGI("textureWidth:%d textureHeight:%d",textureWidth,textureHeight);
+	
+	
+	//Test GLM
+	glm::vec3 pos= glm::vec3(0.3, 1.8888, 0.6666);
+	LOGI("pos %f , %f, %f",pos.x,pos.y,pos.z);
 }
 
 JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_step(JNIEnv * env, jobject obj)

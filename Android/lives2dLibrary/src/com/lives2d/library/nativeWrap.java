@@ -30,4 +30,5 @@ public class nativeWrap {
      */
      public static native void init(int width, int height);
      public static native void step();
+     public static native void setSdCardPath(String sdcardpath);
 }
