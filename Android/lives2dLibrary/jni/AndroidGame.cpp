@@ -33,16 +33,19 @@
 #include<fstream>
 #include"FreeImage.h"
 
-
+std::string mSdCardPath;
 
 extern "C" {
     JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_init(JNIEnv * env, jobject obj,  jint width, jint height);
     JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_step(JNIEnv * env, jobject obj);
+	JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_setSdCardPath(JNIEnv * env, jobject obj,jstring sdcardpath);
 };
 
 JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_init(JNIEnv * env, jobject obj,  jint width, jint height)
 {
-	std::string tmpFilePath = "/mnt/sdcard/1.png";
+	std::string tmpFilePath = mSdCardPath+"/1.png";
+	
+	LOGI("PNG Path:%s",tmpFilePath.c_str());
 	
 	//判断文件是否存在
 	std::fstream fs;
@@ -50,8 +53,19 @@ JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_init(JNIEnv * env, jo
 	if(!fs)
 	{
 		LOGE("file not exist");
-		return;
 	}
+	
+	FILE* fp;
+	fp=fopen(tmpFilePath.c_str(),"a+");
+	if(fp==NULL)
+	{
+		LOGE("C file not exist");
+	}
+	else
+	{
+		fclose(fp);
+	}
+	
 
 	//1、获取图片格式;
 	FREE_IMAGE_FORMAT imageformat = FreeImage_GetFileType(tmpFilePath.c_str(), 0);
@@ -68,9 +82,34 @@ JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_init(JNIEnv * env, jo
 	{
 		LOGI("FreeImage Working");
 	}
+	
+	//3、转化为rag 24色;
+	bitmap = FreeImage_ConvertTo32Bits(bitmap);
+
+	//4、获取数据指针;
+	BYTE *pixels = (BYTE*)FreeImage_GetBits(bitmap);
+
+	//5、使用;
+	int textureWidth = FreeImage_GetWidth(bitmap);
+	int textureHeight = FreeImage_GetHeight(bitmap);
+	
+	LOGI("textureWidth:%d textureHeight:%d",textureWidth,textureHeight);
 }
 
 JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_step(JNIEnv * env, jobject obj)
 {
 
+}
+
+JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_setSdCardPath(JNIEnv * env, jobject obj,jstring javaString)
+{
+	const char *nativeString = env->GetStringUTFChars(javaString, JNI_FALSE);
+
+	// use your string
+	LOGI("sdcardpath:%s",nativeString);
+	
+	mSdCardPath=nativeString;
+
+	env->ReleaseStringUTFChars(javaString, nativeString);
+	
 }
