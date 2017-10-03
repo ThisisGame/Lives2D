@@ -26,10 +26,6 @@ public:
 
 	HWND m_hWnd;	//窗口句柄;
 
-	int m_width;	//宽度;
-
-	int m_height;	//高度;
-
 
 	//GL相关;
 	EGLConfig m_EGLConfig;
@@ -67,8 +63,6 @@ public:
 
 
 		m_hWnd = 0;
-		m_width = 0;
-		m_height = 0;
 		m_hInstance = hInstance;
 
 		m_EGLConfig = 0;
@@ -78,7 +72,7 @@ public:
 
 
 		//LuaEngine Start
-		LuaEngine::GetSingleton()->DoFile((Application::DataPath()+ "Resources/Script/Engine/Lives2D.lua").c_str());
+		LuaEngine::GetSingleton()->DoFile((Application::PersistentDataPath()+ "/Resources/Script/Engine/Lives2D.lua").c_str());
 	}
 
 
@@ -101,14 +95,35 @@ public:
 	//渲染函数;
 	void render()
 	{
-		if (m_width == 0 || m_height == 0)
+		if (Application::ScreenWidth == 0 || Application::ScreenHeight == 0)
 		{
 			return;
 		}
 
 		glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
 
-		glViewport(0, 0, m_width, m_height);
+		//保持画面比例 进行缩放 会出现黑边
+		float tmpDesignRatio = (float)Application::DesignWidth / Application::DesignHeight;
+		float tmpScreenRatio = (float)Application::ScreenWidth / Application::ScreenHeight;
+		if (tmpScreenRatio > tmpDesignRatio)//更宽,取heihgt做适配,width做黑边
+		{
+			Application::RenderWidth = Application::DesignWidth*((float)Application::ScreenHeight/Application::DesignHeight);
+			Application::RenderHeight = Application::ScreenHeight;
+		}
+		else if (tmpScreenRatio < tmpDesignRatio)//更高,取width做适配,height做黑边
+		{
+			Application::RenderWidth = Application::ScreenWidth;
+			Application::RenderHeight = Application::DesignHeight*((float)Application::ScreenWidth/Application::DesignWidth);
+		}
+		else
+		{
+			Application::RenderWidth = Application::ScreenWidth;
+			Application::RenderHeight = Application::ScreenHeight;
+		}
+		
+		float viewportoffsetWidth = (Application::ScreenWidth - Application::RenderWidth) / 2;
+		float viewportoffsetHeight = (Application::ScreenHeight - Application::RenderHeight) / 2;
+		glViewport(viewportoffsetWidth, viewportoffsetHeight, Application::RenderWidth, Application::RenderHeight);
 
 		//Lives2D::Draw();
 		LuaEngine::GetSingleton()->CallLuaFunction("Draw");
@@ -123,7 +138,28 @@ public:
 		glClearColor(0, 0, 0, 1);
 
 
-		glViewport(0, 0, (GLsizei)m_width, (GLsizei)m_height);
+		//保持画面比例 进行缩放 会出现黑边
+		float tmpDesignRatio = (float)Application::DesignWidth / Application::DesignHeight;
+		float tmpScreenRatio = (float)Application::ScreenWidth / Application::ScreenHeight;
+		if (tmpScreenRatio > tmpDesignRatio)//更宽,取heihgt做适配,width做黑边
+		{
+			Application::RenderWidth = Application::DesignWidth*((float)Application::ScreenHeight / Application::DesignHeight);
+			Application::RenderHeight = Application::ScreenHeight;
+		}
+		else if (tmpScreenRatio < tmpDesignRatio)//更高,取width做适配,height做黑边
+		{
+			Application::RenderWidth = Application::ScreenWidth;
+			Application::RenderHeight = Application::DesignHeight*((float)Application::ScreenWidth / Application::DesignWidth);
+		}
+		else
+		{
+			Application::RenderWidth = Application::ScreenWidth;
+			Application::RenderHeight = Application::ScreenHeight;
+		}
+
+		float viewportoffsetWidth = (Application::ScreenWidth - Application::RenderWidth) / 2;
+		float viewportoffsetHeight = (Application::ScreenHeight - Application::RenderHeight) / 2;
+		glViewport(viewportoffsetWidth, viewportoffsetHeight, Application::RenderWidth, Application::RenderHeight);
 
 		//[captures] (params) -> ret {Statments;} 
 		//Lives2D::Init(m_EGLSurface, m_EGLDisplay,m_width,m_height);
@@ -131,8 +167,8 @@ public:
 
 		std::function<void(lua_State*)> tmpFunction = [&](lua_State* var_pLuaState)
 		{
-			tolua_pushnumber(var_pLuaState, m_width);
-			tolua_pushnumber(var_pLuaState, m_height);
+			tolua_pushnumber(var_pLuaState, Application::ScreenWidth);
+			tolua_pushnumber(var_pLuaState, Application::ScreenHeight);
 		};
 		LuaEngine::GetSingleton()->CallLuaFunction("Init",2, tmpFunction);
 	}
@@ -140,12 +176,12 @@ public:
 	//入口函数;
 	int start(HWND hWnd, int width, int height)
 	{
-		m_width = width;
-		m_height = height;
+		Application::ScreenWidth = width;
+		Application::ScreenHeight = height;
 
 		if (hWnd == 0)
 		{
-			if (!_createWindow(m_width, m_height))
+			if (!_createWindow(width, height))
 			{
 				return -1;
 			}
@@ -232,8 +268,8 @@ public:
 		{
 			RECT    rt;
 			GetClientRect(m_hWnd, &rt);
-			m_width = rt.right - rt.left;
-			m_height = rt.bottom - rt.top;
+			Application::ScreenWidth = rt.right - rt.left;
+			Application::ScreenHeight = rt.bottom - rt.top;
 
 		}
 		break;
@@ -243,12 +279,13 @@ public:
 			int tmpY = GET_Y_LPARAM(lParam);
 
 			//转换成零点在屏幕窗口中间，右上增长的坐标
-			tmpX = tmpX - m_width / 2;
-			tmpY = m_height/2 - tmpY;
+			tmpX = tmpX - Application::ScreenWidth / 2;
+			tmpY = Application::ScreenHeight /2 - tmpY;
+
 
 			//适配设计分辨率
-			float tmpWidthRatio = 960.0f/m_width;
-			float tmpHeightRatio =540.0f/ m_height;
+			float tmpWidthRatio = Application::RenderWidth / (float)Application::ScreenWidth;
+			float tmpHeightRatio = Application::RenderHeight / (float)Application::ScreenHeight;
 
 			tmpX = tmpX*tmpWidthRatio;
 			tmpY = tmpY*tmpHeightRatio;
@@ -268,12 +305,12 @@ public:
 			int tmpY = GET_Y_LPARAM(lParam);
 
 			//转换成零点在屏幕窗口中间，右上增长的坐标
-			tmpX = tmpX - m_width / 2;
-			tmpY = m_height / 2 - tmpY;
+			tmpX = tmpX - Application::ScreenWidth / 2;
+			tmpY = Application::ScreenHeight / 2 - tmpY;
 
 			//适配设计分辨率
-			float tmpWidthRatio = 960.0f / m_width;
-			float tmpHeightRatio = 540.0f / m_height;
+			float tmpWidthRatio = Application::RenderWidth / (float)Application::ScreenWidth;
+			float tmpHeightRatio = Application::RenderHeight / (float)Application::ScreenHeight;
 
 			tmpX = tmpX*tmpWidthRatio;
 			tmpY = tmpY*tmpHeightRatio;
@@ -410,8 +447,8 @@ protected:
 			return false;
 		}
 
-		eglQuerySurface(m_EGLDisplay, m_EGLSurface, EGL_WIDTH, &m_width);
-		eglQuerySurface(m_EGLDisplay, m_EGLSurface, EGL_HEIGHT, &m_height);
+		eglQuerySurface(m_EGLDisplay, m_EGLSurface, EGL_WIDTH, &Application::ScreenWidth);
+		eglQuerySurface(m_EGLDisplay, m_EGLSurface, EGL_HEIGHT, &Application::ScreenHeight);
 
 		//! windows api
 		SendMessage(m_hWnd, WM_SIZE, 0, 0);

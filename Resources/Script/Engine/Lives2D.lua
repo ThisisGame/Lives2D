@@ -1,6 +1,6 @@
-local GameMain=require("GameMain")
-
 print("Lives2D")
+
+local GameMain=require("GameMain")
 
 --初始化
 function Init(varWidth,varHeight)

@@ -10,13 +10,32 @@
 
 class Application
 {
+private:
+	static std::string mDataPath;//在安卓系统 指的是 Assets目录
+	static std::string mPersistentDataPath;//持久性存储目录，在安卓系统 指的是sdcard/Android/com.xxx.xxx/files
+
 public:
+	static int ScreenWidth;//屏幕分辨率
+	static int ScreenHeight;
+	static int DesignWidth;//设计分辨率
+	static int DesignHeight;
+	static int RenderWidth;//实际渲染分辨率
+	static int RenderHeight;
+
+public:
+	static void SetDataPath(const char* varDataPath)
+	{
+		mDataPath = varDataPath;
+	}
+	
 	static std::string DataPath()
 	{
-		std::string tmpDataPath;
+#ifdef ANDROID
+		return mDataPath;
+#endif
 
 #ifdef _WIN32
-
+		std::string tmpDataPath;
 #ifdef _MSC_VER
 		tmpDataPath = GetProgramDir() + "/../../../";
 #else
@@ -26,18 +45,35 @@ public:
 		{
 			tmpDataPath = tmpDataPath.replace(tmpDataPath.find("\\"), 1, "/");
 		}
-#endif // _WIN32
-
-
-		
-
 		return tmpDataPath;
+#endif // _WIN32
 	}
 
-	static std::string persistentDataPath()
+
+	static void SetPersistentDataPath(const char* varpersistentDataPath)
 	{
-		std::string tmpPersistentDataPath = "./";
-		return tmpPersistentDataPath;
+		mPersistentDataPath = varpersistentDataPath;
+	}
+
+	static std::string PersistentDataPath()
+	{
+#ifdef ANDROID
+		return mPersistentDataPath;
+#endif
+
+#ifdef _WIN32
+		std::string tmpDataPath;
+#ifdef _MSC_VER
+		tmpDataPath = GetProgramDir() + "/../../../";
+#else
+		tmpDataPath = GetProgramDir() + "/../../../";
+#endif
+		while (std::string::npos != tmpDataPath.find("\\"))
+		{
+			tmpDataPath = tmpDataPath.replace(tmpDataPath.find("\\"), 1, "/");
+		}
+		return tmpDataPath;
+#endif // _WIN32
 	}
 
 private:

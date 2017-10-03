@@ -20,7 +20,7 @@ using namespace std;
 #include <GLES2/gl2.h>
 #include <GLES2/gl2ext.h>
 #include <android/log.h>
-#define LOG_TAG "xGame-GLES"
+#define LOG_TAG "Lives2D"
 #define LOGI(...) __android_log_print(ANDROID_LOG_INFO,LOG_TAG,__VA_ARGS__)
 #define LOGE(...) __android_log_print(ANDROID_LOG_ERROR,LOG_TAG,__VA_ARGS__)
 #elif defined WIN32
@@ -52,7 +52,7 @@ public:
 	static void CheckGLError(const char* op);
 
 	//输出LOG
-	static void LOG(const char* str);
+	static void LOG(const char* str,...);
 
 public :
 	//读取Txt文本

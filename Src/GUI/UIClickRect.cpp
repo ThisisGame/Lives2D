@@ -1,5 +1,6 @@
 #include "UIClickRect.h"
 #include"KeyTouch\KeyTouch.h"
+#include"Tools\Application.h"
 
 
 UIClickRect::UIClickRect():KeyTouchListener("UIClickRect"),UIRect(UIRectType::Type_UIClickRect),mPosX(0),mPosY(0),mWidth(0),mHeight(0)
@@ -43,8 +44,8 @@ void UIClickRect::OnTouchRelease(int varX, int varY)
 	if (mOnTouchClick)
 	{
 		mOnTouchClick = false;
-		float tmpClickX = varX - 960.0f / 2;
-		float tmpClickY = 640.0f/ 2 - varY;
+		float tmpClickX = varX - Application::DesignWidth / 2;
+		float tmpClickY = Application::DesignHeight/ 2 - varY;
 		OnTouchReleaseClickRect(tmpClickX, tmpClickY);
 	}
 }

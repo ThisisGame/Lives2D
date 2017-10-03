@@ -3,6 +3,15 @@ $#include"Application.h"
 class Application
 {
 public:
+	static int ScreenWidth;//屏幕分辨率
+	static int ScreenHeight;
+	static int DesignWidth;//设计分辨率
+	static int DesignHeight;
+	static int RenderWidth;//实际渲染分辨率
+	static int RenderHeight;
+public:
+	static void SetDataPath(const char* varDataPath);
 	static std::string DataPath();
-	static std::string persistentDataPath();
+	static void SetPersistentDataPath(const char* varpersistentDataPath);
+	static std::string PersistentDataPath();
 };

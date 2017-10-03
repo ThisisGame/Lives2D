@@ -32,31 +32,27 @@ public class lives2dActivity extends Activity {
     @Override protected void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         
+        Log.i("Lives2D","onCreate");
+        
         String tmpSdCardPath=Environment.getExternalStorageDirectory().getAbsolutePath();
         Log.i("Lives2D","SdCardPath:"+tmpSdCardPath);
         nativeWrap.setSdCardPath(tmpSdCardPath);
         
-        File file=new File(tmpSdCardPath+"/1.png");
-        if(file.exists())
-        {
-        	Log.i("Lives2D", "png exist "+file.getAbsolutePath()+" size:"+file.length());
-        }
-        else {
-			
-        	Log.i("Lives2D", "png no exist");
-		}
         
         mView = new glesView(getApplication());
         setContentView(mView);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
     }
 
     @Override protected void onPause() {
         super.onPause();
         mView.onPause();
+        Log.i("Lives2D","onPause");
     }
 
     @Override protected void onResume() {
         super.onResume();
         mView.onResume();
+        Log.i("Lives2D","onResume");
     }
 }

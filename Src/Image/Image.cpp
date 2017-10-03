@@ -4,6 +4,7 @@
 #include<glm\gtc\matrix_transform.hpp>
 #include<glm\gtx\transform2.hpp>
 #include<glm\gtx\euler_angles.hpp>
+#include"Tools\Application.h"
 
 
 Image::Image(void):UIDrawRect(),mPosX(0),mPosY(0),mScaleX(1),mScaleY(1)
@@ -53,7 +54,7 @@ void Image::Draw()
 
 
 	//Õý½»ÉãÏñ»ú
-	glm::mat4 proj = glm::ortho(-960.0f/2, 960.0f/2, -640.0f/2, 640.0f/2, 0.0f, 100.0f);
+	glm::mat4 proj = glm::ortho(-(float)Application::DesignWidth/2, (float)Application::DesignWidth /2, -(float)Application::DesignHeight/2, (float)Application::DesignHeight /2, 0.0f, 100.0f);
 
 
 	glm::mat4 mvp = proj*view*model;

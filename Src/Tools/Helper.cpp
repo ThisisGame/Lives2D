@@ -22,9 +22,14 @@ void Helper::PrintGLString(const char* name,GLenum s)
 
 
 //Êä³öLOG
-void Helper::LOG(const char* str)
+void Helper::LOG(const char* format,...)
 {
-	LOGI("\n%s \n",str);
+	char buff[1024];
+	va_list paramList;
+	va_start(paramList, format);
+	vsprintf(buff, format, paramList);
+	va_end(paramList);
+	LOGI("\n%s \n", buff);
 }
 
 std::string Helper::ReadTxt(std::string& varFilePath)

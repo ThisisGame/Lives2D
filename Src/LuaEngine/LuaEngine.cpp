@@ -4,6 +4,7 @@
 #include<sstream>
 
 #include"Tools\Application.h"
+#include"Tools\Helper.h"
 
 TOLUA_API int  tolua_Application_open(lua_State* tolua_S);
 TOLUA_API int  tolua_BinaryPacker_open(lua_State* tolua_S);
@@ -70,11 +71,9 @@ LuaEngine * LuaEngine::GetSingleton()
 
 void LuaEngine::SetLuaPath()
 {
-	std::string tmpPackagePath = "package.path='" + Application::DataPath() + "Resources/Script/?.lua\'";
+	std::string tmpPackagePath = "package.path='" + Application::PersistentDataPath() + "/Resources/Script/?.lua\'";
 
-
-
-	std::cout << "Package.path=" << tmpPackagePath.c_str() << std::endl;
+	Helper::LOG("Package.path=%s", tmpPackagePath.c_str());
 
 	luaL_dostring(m_pLua_State, tmpPackagePath.c_str());
 }
@@ -87,7 +86,8 @@ void LuaEngine::DoFile(const char * varFilePath)
 	{
 		int t = lua_type(m_pLua_State, -1);
 		const char* err = lua_tostring(m_pLua_State, -1);
-		printf("Error: %s\n", err);
+
+		Helper::LOG(err);
 		lua_pop(m_pLua_State, 1);
 
 		mErrorPause = true;
@@ -103,7 +103,7 @@ void LuaEngine::CallLuaFunction(const char * varLuaFunctionName, int varParamCou
 	lua_getglobal(m_pLua_State, varLuaFunctionName);
 	if (!lua_isfunction(m_pLua_State, -1))
 	{
-		std::cout << varLuaFunctionName << " is not function" << std::endl;
+		Helper::LOG("%s is not function", varLuaFunctionName);
 		return;
 	}
 
@@ -114,7 +114,7 @@ void LuaEngine::CallLuaFunction(const char * varLuaFunctionName, int varParamCou
 	{
 		int t = lua_type(m_pLua_State, -1);
 		const char* err = lua_tostring(m_pLua_State, -1);
-		printf("Error: %s\n", err);
+		Helper::LOG("Error: %s\n", err);
 		lua_pop(m_pLua_State, 1);
 
 		mErrorPause = true;
@@ -130,7 +130,7 @@ void LuaEngine::CallLuaFunction(const char * varLuaFunctionName)
 	lua_getglobal(m_pLua_State, varLuaFunctionName);
 	if (!lua_isfunction(m_pLua_State, -1))
 	{
-		std::cout << varLuaFunctionName << " is not function" << std::endl;
+		Helper::LOG("%s is not function", varLuaFunctionName);
 		return;
 	}
 	int ret = lua_pcall(m_pLua_State, 0, 0, 0);
@@ -138,7 +138,7 @@ void LuaEngine::CallLuaFunction(const char * varLuaFunctionName)
 	{
 		int t = lua_type(m_pLua_State, -1);
 		const char* err = lua_tostring(m_pLua_State, -1);
-		printf("Error: %s\n", err);
+		Helper::LOG("Error: %s\n", err);
 		lua_pop(m_pLua_State, 1);
 
 		mErrorPause = true;
@@ -154,7 +154,7 @@ void LuaEngine::CallLuaFunction(const char * varLuaFunctionName, const char * va
 	lua_getglobal(m_pLua_State, varLuaFunctionName);
 	if (!lua_isfunction(m_pLua_State, -1))
 	{
-		std::cout << varLuaFunctionName << " is not function" << std::endl;
+		Helper::LOG("%s is not function", varLuaFunctionName);
 		return;
 	}
 	
@@ -165,7 +165,7 @@ void LuaEngine::CallLuaFunction(const char * varLuaFunctionName, const char * va
 	{
 		int t = lua_type(m_pLua_State, -1);
 		const char* err = lua_tostring(m_pLua_State, -1);
-		printf("Error: %s\n", err);
+		Helper::LOG("Error: %s\n", err);
 		lua_pop(m_pLua_State, 1);
 
 		mErrorPause = true;

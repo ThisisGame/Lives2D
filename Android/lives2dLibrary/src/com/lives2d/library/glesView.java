@@ -65,7 +65,7 @@ import javax.microedition.khronos.opengles.GL10;
  *   bit depths). Failure to do so would result in an EGL_BAD_MATCH error.
  */
 class glesView extends GLSurfaceView {
-    private static String TAG = "GL2JNIView";
+    private static String TAG = "Lives2D";
     private static final boolean DEBUG = false;
 
     public glesView(Context context) {
@@ -77,8 +77,36 @@ class glesView extends GLSurfaceView {
         super(context);
         init(translucent, depth, stencil);
     }
+    
+    @Override
+    public boolean performClick()
+    {
+    	return super.performClick();
+    }
+    
+    @Override
+    public boolean onTouchEvent(MotionEvent event)
+    {
+    	float x= event.getX();
+    	float y=event.getY();
+    	
+    	switch (event.getAction()) {
+		case MotionEvent.ACTION_DOWN:
+			Log.i("Lives2D", "onTouch x:"+x+" y:"+y);
+			nativeWrap.onTouch((int)x, (int)y);
+			break;
+		case MotionEvent.ACTION_UP:
+			Log.i("Lives2D", "onTouchRelease x:"+x+" y:"+y);
+			nativeWrap.onTouchRelease((int)x, (int)y);
+			break;
+		default:
+			break;
+		}
+    	return true;
+    }
 
-    private void init(boolean translucent, int depth, int stencil) {
+    private void init(boolean translucent, int depth, int stencil) 
+    {
 
         /* By default, GLSurfaceView() creates a RGB_565 opaque surface.
          * If we want a translucent one, we should change the surface's
@@ -323,12 +351,37 @@ class glesView extends GLSurfaceView {
         private int[] mValue = new int[1];
     }
 
+    
+    
+	final static float frameTime = 0.0333f; //ห๘ึก 30
+	static long begintime = 0;
+	static long endtime = 0;
+	static float deltaTime = 0.0f;
+	
     private static class Renderer implements GLSurfaceView.Renderer {
-        public void onDrawFrame(GL10 gl) {
-            nativeWrap.step();
+        public void onDrawFrame(GL10 gl) 
+        {
+//			deltaTime = (endtime - begintime)/1000.0f;
+//			if (deltaTime>frameTime)
+//			{
+//				begintime = System.currentTimeMillis();
+//
+//				nativeWrap.step(deltaTime);
+//			}
+//			endtime = System.currentTimeMillis();
+        	
+        	deltaTime = (endtime - begintime)/1000.0f;
+        	begintime = System.currentTimeMillis();
+        	if(deltaTime>0)
+        	{
+        		nativeWrap.step(deltaTime);
+        	}
+        	endtime = System.currentTimeMillis();
         }
 
-        public void onSurfaceChanged(GL10 gl, int width, int height) {
+        public void onSurfaceChanged(GL10 gl, int width, int height) 
+        {
+        	Log.i("Lives2D", "glesView onSurfaceChanged width:"+width+" height:"+height);
             nativeWrap.init(width, height);
         }
 
