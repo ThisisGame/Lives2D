@@ -284,11 +284,11 @@ public:
 
 
 			//适配设计分辨率
-			float tmpWidthRatio = Application::RenderWidth / (float)Application::ScreenWidth;
-			float tmpHeightRatio = Application::RenderHeight / (float)Application::ScreenHeight;
+			float tmpWidthRatio = Application::RenderWidth / (float)Application::DesignWidth;
+			float tmpHeightRatio = Application::RenderHeight / (float)Application::DesignHeight;
 
-			tmpX = tmpX*tmpWidthRatio;
-			tmpY = tmpY*tmpHeightRatio;
+			tmpX = tmpX/tmpWidthRatio;
+			tmpY = tmpY/tmpHeightRatio;
 
 			//Lives2D::OnTouch(tmpX, tmpY);
 			std::function<void(lua_State*)> tmpFunction = [&](lua_State* var_pLuaState)
@@ -309,11 +309,11 @@ public:
 			tmpY = Application::ScreenHeight / 2 - tmpY;
 
 			//适配设计分辨率
-			float tmpWidthRatio = Application::RenderWidth / (float)Application::ScreenWidth;
-			float tmpHeightRatio = Application::RenderHeight / (float)Application::ScreenHeight;
+			float tmpWidthRatio = Application::RenderWidth / (float)Application::DesignWidth;
+			float tmpHeightRatio = Application::RenderHeight / (float)Application::DesignHeight;
 
-			tmpX = tmpX*tmpWidthRatio;
-			tmpY = tmpY*tmpHeightRatio;
+			tmpX = tmpX / tmpWidthRatio;
+			tmpY = tmpY / tmpHeightRatio;
 
 			std::function<void(lua_State*)> tmpFunction = [&](lua_State* var_pLuaState)
 			{
