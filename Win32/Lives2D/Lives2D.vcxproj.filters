@@ -96,9 +96,6 @@
     <ClCompile Include="..\..\Src\LuaEngine\NetworkDispatch.cpp">
       <Filter>LuaEngine</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Src\Audio\lua_AudioCard.cpp">
-      <Filter>Audio</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Src\Audio\lua_AudioSource.cpp">
       <Filter>Audio</Filter>
     </ClCompile>

@@ -53,7 +53,10 @@ extern "C"
 
 std::string mSdCardPath;
 
+extern void AudioCardInit(JNIEnv* env, jobject thiz);
+
 extern "C" {
+	JNIEXPORT void JNICALL Java_com_lives2d_library_lives2dActivity_SetJNIEnv(JNIEnv * env, jobject obj);
     JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_init(JNIEnv * env, jobject obj,  jint width, jint height);
     JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_step(JNIEnv * env, jobject obj,jfloat deltaTime);
 	JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_setSdCardPath(JNIEnv * env, jobject obj,jstring sdcardpath);
@@ -61,10 +64,15 @@ extern "C" {
 	JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_onTouchRelease(JNIEnv * env, jobject obj,jint x, jint y);
 };
 
+JNIEXPORT void JNICALL Java_com_lives2d_library_lives2dActivity_SetJNIEnv(JNIEnv * env, jobject obj)
+{
+	AudioCardInit(env,obj);
+}
+
 bool initSuccess=false;
 
 //初始化;
-void onInit(int varWidth,int varHeight)
+void onInit(JNIEnv * env, jobject obj,  int varWidth,int varHeight)
 {
 	glClearColor(0, 0, 0, 1);
 
@@ -77,7 +85,7 @@ void onInit(int varWidth,int varHeight)
 	
 	Application::ScreenWidth=varWidth;
 	Application::ScreenHeight=varHeight;
-	
+
 	//LuaEngine Start
 	LuaEngine::GetSingleton()->DoFile((Application::PersistentDataPath()+ "/Resources/Script/Engine/Lives2D.lua").c_str());
 
@@ -111,7 +119,7 @@ void render()
 
 JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_init(JNIEnv * env, jobject obj,  jint width, jint height)
 {
-	onInit(width,height);
+	onInit(env,obj,width,height);
 }
 
 

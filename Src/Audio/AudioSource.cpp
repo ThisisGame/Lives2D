@@ -1,5 +1,5 @@
 #include "AudioSource.h"
-
+#include<string>
 
 
 AudioSource::AudioSource()
@@ -11,9 +11,9 @@ AudioSource::~AudioSource()
 {
 }
 
+#ifdef WIN32
 void AudioSource::LoadAudio(const char * varAudioPath)
 {
-#ifdef WIN32
 	m_SoundBuffer = alutCreateBufferFromFile(varAudioPath);
 	if (m_SoundBuffer == AL_NONE)
 	{
@@ -24,19 +24,31 @@ void AudioSource::LoadAudio(const char * varAudioPath)
 
 	alGenSources(1, &m_SoundSource);
 	alSourcei(m_SoundSource, AL_BUFFER, m_SoundBuffer);
+}
+
+
+void AudioSource::Play()
+{
+	alSourcePlay(m_SoundSource);
+}
+
 #elif ANDROID
 
-#endif
+extern void AudioCardPlay(const char* varAudioPath);
+
+void AudioSource::LoadAudio(const char * varAudioPath)
+{
+	mAudioPath = varAudioPath;
+	
 }
 
 void AudioSource::Play()
 {
-#ifdef WIN32
-	alSourcePlay(m_SoundSource);
-#elif ANDROID
+	AudioCardPlay(mAudioPath.c_str());
+}
 
 #endif
-}
+
 
 void AudioSource::Loop()
 {

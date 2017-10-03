@@ -20,7 +20,7 @@ private:
 	ALuint m_SoundBuffer; //ษ๙า๔สýพÝ
 	ALuint m_SoundSource; //า๔ิด
 #elif ANDROID
-
+	std::string mAudioPath;
 #endif
 
 

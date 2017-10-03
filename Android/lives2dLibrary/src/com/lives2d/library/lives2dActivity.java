@@ -17,19 +17,24 @@
 package com.lives2d.library;
 
 import android.app.Activity;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
 import android.view.WindowManager;
 
 import java.io.File;
+import java.io.IOException;
 
 
-public class lives2dActivity extends Activity {
+public class lives2dActivity extends Activity 
+{
 
     glesView mView;
+    MediaPlayer mMediaPlayer;
 
-    @Override protected void onCreate(Bundle icicle) {
+    @Override 
+    protected void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         
         Log.i("Lives2D","onCreate");
@@ -42,7 +47,62 @@ public class lives2dActivity extends Activity {
         mView = new glesView(getApplication());
         setContentView(mView);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        
+        SetJNIEnv();
+        
+        mMediaPlayer=new MediaPlayer();
     }
+    
+    public static native void SetJNIEnv();
+    
+    
+    
+   public void PlayAudio(final String varAudioPath)
+   {
+	   mMediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener()   
+	   {//播放完毕回调监听  
+		   
+		    @Override  
+		    public void onCompletion(MediaPlayer varMediaPlayer)   
+		    {  
+		    	Log.i("Lives2D", "PlayAudio:"+varAudioPath+" finish");  
+		    }
+	   });
+	   
+	   try {  
+		      
+		    Log.i("Lives2D", "PlayAudio:"+varAudioPath);  
+		    File f= new File(varAudioPath);    
+		    if (f.exists() && f.isFile())  
+		    {    
+		    	Log.i("Lives2D", "PlayAudio:"+varAudioPath+" filesize:"+f.length());  
+		    }else
+		    {    
+		    	Log.e("Lives2D", "PlayAudio:"+varAudioPath+" file not exist");  
+		    	return;
+		    }    
+
+		    mMediaPlayer.setDataSource(varAudioPath);  
+		  
+		    mMediaPlayer.prepare();  
+		  
+		    //开始播放  
+		    mMediaPlayer.start();  
+		      
+		} catch (IllegalArgumentException e) {  
+		    // TODO Auto-generated catch block  
+		    e.printStackTrace();  
+		} catch (SecurityException e) {  
+		    // TODO Auto-generated catch block  
+		    e.printStackTrace();  
+		} catch (IllegalStateException e) {  
+		    // TODO Auto-generated catch block  
+		    e.printStackTrace();  
+		} catch (IOException e) {  
+		    // TODO Auto-generated catch block  
+		    e.printStackTrace();  
+		}
+   }
 
     @Override protected void onPause() {
         super.onPause();

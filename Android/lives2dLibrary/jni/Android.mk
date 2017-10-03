@@ -154,7 +154,6 @@ LOCAL_SRC_FILES := Tools/Helper.cpp \
 		Audio/AudioSource.cpp \
 		Audio/lua_AudioSource.cpp \
 		Audio/AudioCard.cpp \
-		Audio/lua_AudioCard.cpp \
 		GLProgram/GLProgram.cpp \
 		GLProgram/GLProgram_Texture.cpp \
 		GUI/UIRect.cpp \

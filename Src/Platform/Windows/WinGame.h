@@ -18,6 +18,7 @@
 #include"Tools\Application.h"
 
 #include"LuaEngine\LuaEngine.h"
+#include"Audio\AudioCard.cpp"
 
 class WinGame
 {
@@ -160,6 +161,8 @@ public:
 		float viewportoffsetWidth = (Application::ScreenWidth - Application::RenderWidth) / 2;
 		float viewportoffsetHeight = (Application::ScreenHeight - Application::RenderHeight) / 2;
 		glViewport(viewportoffsetWidth, viewportoffsetHeight, Application::RenderWidth, Application::RenderHeight);
+
+		AudioCardInit();
 
 		//[captures] (params) -> ret {Statments;} 
 		//Lives2D::Init(m_EGLSurface, m_EGLDisplay,m_width,m_height);
@@ -379,6 +382,8 @@ public:
 	virtual void  onDestroy()
 	{
 		LuaEngine::GetSingleton()->CallLuaFunction("OnDestroy");
+
+		AudioCardExit();
 	}
 
 protected:

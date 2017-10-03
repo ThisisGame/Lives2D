@@ -6,8 +6,6 @@ local GameMain=require("GameMain")
 function Init(varWidth,varHeight)
 	print("Lives2D Init " .. varWidth .. varHeight)
 
-	AudioCardInit()
-
 	GameMain:Init()
 end
 
@@ -47,5 +45,4 @@ end
 
 function OnDestroy()
 	print("OnDestroy")
-	AudioCardExit()
 end
