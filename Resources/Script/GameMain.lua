@@ -10,8 +10,8 @@ local GameMain=
 
 --初始化
 function GameMain:Init()
-	Application.DesignWidth=960
-	Application.DesignHeight=540
+	Application.DesignWidth=540
+	Application.DesignHeight=960
 
 	self.mSceneWelcom=SceneWelcom.new()
 	self.mSceneWelcom:Init()
