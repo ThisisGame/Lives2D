@@ -32,50 +32,16 @@ THE SOFTWARE.
 #define  LOGD(...) 
 #endif
 
-#define JAVAVM JniHelper::getJavaVM()
 
 using namespace std;
 
 extern "C"
 {
+	JNIEnv* JniHelper::m_pJNIEnv=NULL;
 
     //////////////////////////////////////////////////////////////////////////
     // java vm helper function
     //////////////////////////////////////////////////////////////////////////
-
-    static pthread_key_t s_threadKey;
-
-    static void detach_current_thread (void *env) {
-        JAVAVM->DetachCurrentThread();
-    }
-    
-    static bool getEnv(JNIEnv **env)
-    {
-        bool bRet = false;
-
-        switch(JAVAVM->GetEnv((void**)env, JNI_VERSION_1_4))
-        {
-        case JNI_OK:
-            bRet = true;
-            break;
-        case JNI_EDETACHED:
-            pthread_key_create (&s_threadKey, detach_current_thread);
-            if (JAVAVM->AttachCurrentThread(env, 0) < 0)
-            {
-                LOGD("%s", "Failed to get the environment using AttachCurrentThread()");
-                break;
-            }
-            if (pthread_getspecific(s_threadKey) == NULL)
-                pthread_setspecific(s_threadKey, env); 
-            bRet = true;
-            break;
-        default:
-            LOGD("%s", "Failed to get the environment using GetEnv()");
-            break;
-        }      
-
-        return bRet;
-    }
 
     static jclass getClassID_(const char *className, JNIEnv *env)
     {
@@ -84,14 +50,6 @@ extern "C"
 
         do 
         {
-            if (! pEnv)
-            {
-                if (! getEnv(&pEnv))
-                {
-                    break;
-                }
-            }
-            
             ret = pEnv->FindClass(className);
             if (! ret)
             {
@@ -106,16 +64,11 @@ extern "C"
     static bool getStaticMethodInfo_(JniMethodInfo &methodinfo, const char *className, const char *methodName, const char *paramCode)
     {
         jmethodID methodID = 0;
-        JNIEnv *pEnv = 0;
+        JNIEnv *pEnv = JniHelper::getJNIEnv();
         bool bRet = false;
 
         do 
         {
-            if (! getEnv(&pEnv))
-            {
-                break;
-            }
-
             jclass classID = getClassID_(className, pEnv);
 
             methodID = pEnv->GetStaticMethodID(classID, methodName, paramCode);
@@ -138,16 +91,11 @@ extern "C"
     static bool getMethodInfo_(JniMethodInfo &methodinfo, const char *className, const char *methodName, const char *paramCode)
     {
         jmethodID methodID = 0;
-        JNIEnv *pEnv = 0;
+        JNIEnv *pEnv = JniHelper::getJNIEnv();
         bool bRet = false;
 
         do 
         {
-            if (! getEnv(&pEnv))
-            {
-                break;
-            }
-
             jclass classID = getClassID_(className, pEnv);
 
             methodID = pEnv->GetMethodID(classID, methodName, paramCode);
@@ -174,12 +122,7 @@ extern "C"
             return "";
         }
         
-        JNIEnv *env = 0;
-
-        if (! getEnv(&env))
-        {
-            return 0;
-        }
+        JNIEnv *env = JniHelper::getJNIEnv();
 
         const char* chars = env->GetStringUTFChars(jstr, NULL);
         string ret(chars);
@@ -189,16 +132,14 @@ extern "C"
     }
 }
 
-JavaVM* JniHelper::m_psJavaVM = NULL;
-
-JavaVM* JniHelper::getJavaVM()
+void JniHelper::setJNIEnv(JNIEnv* env)
 {
-    return m_psJavaVM;
+	m_pJNIEnv=env;
 }
 
-void JniHelper::setJavaVM(JavaVM *javaVM)
+JNIEnv* JniHelper::getJNIEnv()
 {
-    m_psJavaVM = javaVM;
+	return m_pJNIEnv;
 }
 
 jclass JniHelper::getClassID(const char *className, JNIEnv *env)

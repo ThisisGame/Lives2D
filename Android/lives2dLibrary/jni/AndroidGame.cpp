@@ -56,15 +56,6 @@ std::string mSdCardPath;
 
 extern "C" 
 {
-	jint JNI_OnLoad(JavaVM* vm,void* reserved)
-	{
-		LOGI("JNI_OnLoad");
-		JniHelper::setJavaVM(vm);
-		return JNI_VERSION_1_4;
-	}
-	
-	
-	JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_SetJNIEnv(JNIEnv * env, jobject obj);
     JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_init(JNIEnv * env, jobject obj,  jint width, jint height);
     JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_step(JNIEnv * env, jobject obj,jfloat deltaTime);
 	JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_setSdCardPath(JNIEnv * env, jobject obj,jstring sdcardpath);
@@ -150,18 +141,22 @@ void render()
 
 JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_init(JNIEnv * env, jobject obj,  jint width, jint height)
 {
+	JniHelper::setJNIEnv(env);
 	onInit(env,obj,width,height);
 }
 
 
 JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_step(JNIEnv * env, jobject obj,jfloat deltaTime)
 {
+	JniHelper::setJNIEnv(env);
 	update(deltaTime);
 	render();
 }
 
 JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_setSdCardPath(JNIEnv * env, jobject obj,jstring javaString)
 {
+	JniHelper::setJNIEnv(env);
+	
 	const char *nativeString = env->GetStringUTFChars(javaString, JNI_FALSE);
 
 	// use your string
@@ -175,6 +170,8 @@ JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_setSdCardPath(JNIEnv 
 
 JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_onTouch(JNIEnv * env, jobject obj,jint x, jint y)
 {
+	JniHelper::setJNIEnv(env);
+	
 	int tmpX = x;
 	int tmpY = y;
 
@@ -197,10 +194,16 @@ JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_onTouch(JNIEnv * env,
 		tolua_pushnumber(var_pLuaState, tmpY);
 	};
 	LuaEngine::GetSingleton()->CallLuaFunction("OnTouch", 2, tmpFunction);
+	
+	//10-05 01:04:40.186: I/Lives2D(3879): Error: ...orage/emulated/0/Resources/Script/Engine/Lives2D.lua:35: error in function 'OnTouch'.  
+	//10-05 01:04:40.186: I/Lives2D(3879):      argument #4 is '202'; '[no object]' expected.
+	//这个错误，原本是第二个参数的 #2 202 为什么变成了#4 202…… 是不是有其它的函数漏掉了 或者 多出来了传参！，或者是tolua写法不对，或者是lambda用坏了 逐一替换掉测试 模拟器按键精灵
 }
 
 JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_onTouchRelease(JNIEnv * env, jobject obj,jint x, jint y)
 {
+	JniHelper::setJNIEnv(env);
+	
 	int tmpX = x;
 	int tmpY = y;
 

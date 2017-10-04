@@ -21,6 +21,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.lives2d.library">
     
+        <uses-sdk
+        android:minSdkVersion="19"
+        android:targetSdkVersion="21" />
+    
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     
@@ -29,7 +33,8 @@
         <activity android:name="com.lives2d.library.lives2dActivity"
                 android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
             	android:launchMode="singleTask"
-            	android:configChanges="orientation|keyboardHidden">
+            	android:configChanges="orientation|keyboardHidden"
+            	android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -37,5 +42,4 @@
         </activity>
     </application>
     <uses-feature android:glEsVersion="0x00020000"/>
-    <uses-sdk android:minSdkVersion="19"/>
 </manifest>

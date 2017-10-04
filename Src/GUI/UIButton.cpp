@@ -2,7 +2,7 @@
 
 
 
-UIButton::UIButton(std::string varNormalImagePath, std::string varClickDownImagePath, float varPosX, float varPosY, float varWidth, float varHeight):UIClickRect(),mClickDown(false),mPosX(varPosX),mPosY(varPosY),mWidth(varWidth),mHeight(varHeight)
+UIButton::UIButton(std::string varNormalImagePath, std::string varClickDownImagePath, float varPosX, float varPosY, float varWidth, float varHeight):UIClickRect(),mClickDown(false),mPosX(varPosX),mPosY(varPosY),mWidth(varWidth),mHeight(varHeight), mOnClickListener(NULL)
 {
 	mImageNormal = new Image();
 	mImageNormal->Init(varNormalImagePath.c_str());
@@ -45,7 +45,10 @@ void UIButton::OnTouchClickRect(float varX, float varY)
 	mClickDown = true;
 
 	//mOnClick();
-	LuaEngine::GetSingleton()->ExecuteLuaFunction(mOnClickListener);
+	if (mOnClickListener)
+	{
+		LuaEngine::GetSingleton()->ExecuteLuaFunction(mOnClickListener);
+	}
 }
 
 void UIButton::OnTouchReleaseClickRect(float varX, float varY)

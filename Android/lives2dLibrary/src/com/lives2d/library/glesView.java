@@ -358,25 +358,32 @@ class glesView extends GLSurfaceView {
 	static long endtime = 0;
 	static float deltaTime = 0.0f;
 	
-    private static class Renderer implements GLSurfaceView.Renderer {
+    private static class Renderer implements GLSurfaceView.Renderer 
+    {
+    	long begin = 0;
+    	long end = 0;
+    	long frame_time = 33;
         public void onDrawFrame(GL10 gl) 
         {
-//			deltaTime = (endtime - begintime)/1000.0f;
-//			if (deltaTime>frameTime)
-//			{
-//				begintime = System.currentTimeMillis();
-//
-//				nativeWrap.step(deltaTime);
-//			}
-//			endtime = System.currentTimeMillis();
+        	end = System.currentTimeMillis();
         	
-        	deltaTime = (endtime - begintime)/1000.0f;
-        	begintime = System.currentTimeMillis();
-        	if(deltaTime>0)
+        	long time = end - begin;
+        	
+        	if(time < frame_time)
         	{
-        		nativeWrap.step(deltaTime);
+        		try
+            	{
+    				Thread.sleep(frame_time - time);
+    			}
+        		catch (InterruptedException e)
+        		{
+    				e.printStackTrace();
+    			}
         	}
-        	endtime = System.currentTimeMillis();
+        	
+        	begin = System.currentTimeMillis();
+        	
+        	nativeWrap.step(0.333f);
         }
 
         public void onSurfaceChanged(GL10 gl, int width, int height) 

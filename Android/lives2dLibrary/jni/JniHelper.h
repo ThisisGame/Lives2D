@@ -37,15 +37,20 @@ typedef struct JniMethodInfo_
 class JniHelper
 {
 public:
-    static JavaVM* getJavaVM();
-    static void setJavaVM(JavaVM *javaVM);
+    //static JavaVM* getJavaVM();
+    //static void setJavaVM(JavaVM *javaVM);
+	static void setJNIEnv(JNIEnv* env);
+	static JNIEnv* getJNIEnv();
+	
+	
     static jclass getClassID(const char *className, JNIEnv *env=0);
     static bool getStaticMethodInfo(JniMethodInfo &methodinfo, const char *className, const char *methodName, const char *paramCode);
     static bool getMethodInfo(JniMethodInfo &methodinfo, const char *className, const char *methodName, const char *paramCode);
     static std::string jstring2string(jstring str);
 
 private:
-    static JavaVM *m_psJavaVM;
+    //static JavaVM *m_psJavaVM;
+	static JNIEnv* m_pJNIEnv;
 };
 
 #endif // __ANDROID_JNI_HELPER_H__
