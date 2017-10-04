@@ -16,48 +16,38 @@ void AudioCardExit()
 #elif ANDROID
 #include <jni.h>
 #include"Tools\Helper.h"
+#include "JniHelper.h"
 
-JNIEnv* mJNIEnv;
-jclass mjclass;
-jobject mjobject;
-jmethodID mjmethodID_PlayAudio;
+extern  JavaVM* sJavaVM;
+extern  pthread_key_t sThreadKey;
+extern  void detach_current_thread(void* env);
+
+static jclass mjclass;
+static jobject mjobject;
+static jmethodID mjmethodID_PlayAudio;
 void AudioCardInit(JNIEnv* env, jobject thiz)
 {
 	Helper::LOG("AudioCardInit");
-	mJNIEnv=env;
-	jclass clazz = env->GetObjectClass(thiz); //获取当前对象的类信息
-	if(clazz==NULL)
-	{
-		Helper::LOG("env->GetObjectClass(thiz) NULL");
-		return;
-	}
-	mjclass = (jclass)env->NewGlobalRef(clazz); //将类型信息存储到m_class中  
-	if(mjclass==NULL)
-	{
-		Helper::LOG("env->NewGlobalRef(clazz) NULL");
-		return;
-	}
-	
-	mjobject = thiz;
-	
-	// = (jobject)env->NewGlobalRef(thiz); // 将对象信息存储到m_object中
-	//if(mjobject==NULL)
-	//{
-	//	Helper::LOG("env->NewGlobalRef(thiz) NULL");
-	//	return;
-	//}
-	mjmethodID_PlayAudio = env->GetMethodID(mjclass, "PlayAudio", "(Ljava/lang/String)V");  // 根据类信息、方法名、参数返回值找到方法ID
-	if(mjmethodID_PlayAudio ==NULL)
-	{
-		Helper::LOG("mjmethodID_PlayAudio NULL");
-		return;
-	}
 }
 
 void AudioCardPlay(const char* varAudioPath)
 {
 	Helper::LOG("AudioCardPlay 0 %s", varAudioPath);
-	mJNIEnv->CallVoidMethod(mjobject,mjmethodID_PlayAudio,varAudioPath);
+	
+	
+	JniMethodInfo t;
+    if (JniHelper::getStaticMethodInfo(t, "com/lives2d/library/nativeWrap", "PlayAudio", "(Ljava/lang/String;)V")) 
+	{
+        jstring stringArg1;
+
+        stringArg1 = t.env->NewStringUTF(varAudioPath);
+
+        t.env->CallStaticVoidMethod(t.classID, t.methodID, stringArg1);
+
+        t.env->DeleteLocalRef(stringArg1);
+        t.env->DeleteLocalRef(t.classID);
+    }
+	
 	Helper::LOG("AudioCardPlay 1 %s", varAudioPath);
 }
 

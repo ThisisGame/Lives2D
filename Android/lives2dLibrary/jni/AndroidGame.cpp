@@ -50,13 +50,21 @@ extern "C"
 
 #include <GLES2/gl2.h>
 #include <GLES2/gl2ext.h>
+#include "JniHelper.h"
 
 std::string mSdCardPath;
 
-extern void AudioCardInit(JNIEnv* env, jobject thiz);
-
-extern "C" {
-	JNIEXPORT void JNICALL Java_com_lives2d_library_lives2dActivity_SetJNIEnv(JNIEnv * env, jobject obj);
+extern "C" 
+{
+	jint JNI_OnLoad(JavaVM* vm,void* reserved)
+	{
+		LOGI("JNI_OnLoad");
+		JniHelper::setJavaVM(vm);
+		return JNI_VERSION_1_4;
+	}
+	
+	
+	JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_SetJNIEnv(JNIEnv * env, jobject obj);
     JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_init(JNIEnv * env, jobject obj,  jint width, jint height);
     JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_step(JNIEnv * env, jobject obj,jfloat deltaTime);
 	JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_setSdCardPath(JNIEnv * env, jobject obj,jstring sdcardpath);
@@ -64,12 +72,11 @@ extern "C" {
 	JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_onTouchRelease(JNIEnv * env, jobject obj,jint x, jint y);
 };
 
-JNIEXPORT void JNICALL Java_com_lives2d_library_lives2dActivity_SetJNIEnv(JNIEnv * env, jobject obj)
-{
-	AudioCardInit(env,obj);
-}
 
 bool initSuccess=false;
+
+
+
 
 //初始化;
 void onInit(JNIEnv * env, jobject obj,  int varWidth,int varHeight)
@@ -85,6 +92,7 @@ void onInit(JNIEnv * env, jobject obj,  int varWidth,int varHeight)
 	
 	Application::ScreenWidth=varWidth;
 	Application::ScreenHeight=varHeight;
+	
 
 	//LuaEngine Start
 	LuaEngine::GetSingleton()->DoFile((Application::PersistentDataPath()+ "/Resources/Script/Engine/Lives2D.lua").c_str());
@@ -114,6 +122,29 @@ void render()
 {
 	glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
 
+	//保持画面比例 进行缩放 会出现黑边
+	float tmpDesignRatio = (float)Application::DesignWidth / Application::DesignHeight;
+	float tmpScreenRatio = (float)Application::ScreenWidth / Application::ScreenHeight;
+	if (tmpScreenRatio > tmpDesignRatio)//更宽,取heihgt做适配,width做黑边
+	{
+		Application::RenderWidth = Application::DesignWidth*((float)Application::ScreenHeight/Application::DesignHeight);
+		Application::RenderHeight = Application::ScreenHeight;
+	}
+	else if (tmpScreenRatio < tmpDesignRatio)//更高,取width做适配,height做黑边
+	{
+		Application::RenderWidth = Application::ScreenWidth;
+		Application::RenderHeight = Application::DesignHeight*((float)Application::ScreenWidth/Application::DesignWidth);
+	}
+	else
+	{
+		Application::RenderWidth = Application::ScreenWidth;
+		Application::RenderHeight = Application::ScreenHeight;
+	}
+	
+	float viewportoffsetWidth = (Application::ScreenWidth - Application::RenderWidth) / 2;
+	float viewportoffsetHeight = (Application::ScreenHeight - Application::RenderHeight) / 2;
+	glViewport(viewportoffsetWidth, viewportoffsetHeight, Application::RenderWidth, Application::RenderHeight);
+	
 	LuaEngine::GetSingleton()->CallLuaFunction("Draw");
 }
 
@@ -144,20 +175,50 @@ JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_setSdCardPath(JNIEnv 
 
 JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_onTouch(JNIEnv * env, jobject obj,jint x, jint y)
 {
+	int tmpX = x;
+	int tmpY = y;
+
+	//转换成零点在屏幕窗口中间，右上增长的坐标
+	tmpX = tmpX - Application::ScreenWidth / 2;
+	tmpY = Application::ScreenHeight /2 - tmpY;
+
+
+	//适配设计分辨率
+	float tmpWidthRatio = Application::RenderWidth / (float)Application::DesignWidth;
+	float tmpHeightRatio = Application::RenderHeight / (float)Application::DesignHeight;
+
+	tmpX = tmpX/tmpWidthRatio;
+	tmpY = tmpY/tmpHeightRatio;
+
+	//Lives2D::OnTouch(tmpX, tmpY);
 	std::function<void(lua_State*)> tmpFunction = [&](lua_State* var_pLuaState)
 	{
-		tolua_pushnumber(var_pLuaState, x);
-		tolua_pushnumber(var_pLuaState, y);
+		tolua_pushnumber(var_pLuaState, tmpX);
+		tolua_pushnumber(var_pLuaState, tmpY);
 	};
 	LuaEngine::GetSingleton()->CallLuaFunction("OnTouch", 2, tmpFunction);
 }
 
 JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_onTouchRelease(JNIEnv * env, jobject obj,jint x, jint y)
 {
+	int tmpX = x;
+	int tmpY = y;
+
+	//转换成零点在屏幕窗口中间，右上增长的坐标
+	tmpX = tmpX - Application::ScreenWidth / 2;
+	tmpY = Application::ScreenHeight / 2 - tmpY;
+
+	//适配设计分辨率
+	float tmpWidthRatio = Application::RenderWidth / (float)Application::DesignWidth;
+	float tmpHeightRatio = Application::RenderHeight / (float)Application::DesignHeight;
+
+	tmpX = tmpX / tmpWidthRatio;
+	tmpY = tmpY / tmpHeightRatio;
+
 	std::function<void(lua_State*)> tmpFunction = [&](lua_State* var_pLuaState)
 	{
-		tolua_pushnumber(var_pLuaState, x);
-		tolua_pushnumber(var_pLuaState, y);
+		tolua_pushnumber(var_pLuaState, tmpX);
+		tolua_pushnumber(var_pLuaState, tmpY);
 	};
 	LuaEngine::GetSingleton()->CallLuaFunction("OnTouchRelease", 2, tmpFunction);
 }

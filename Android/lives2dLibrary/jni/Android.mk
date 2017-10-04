@@ -190,6 +190,7 @@ $(TOLUAPP_SRC_PATH)/include \
 $(FREE_IMAGE_SRC_PATH)/Source \
 $(GLM_SRC_PATH)\
 $(ENGINE_SRC_PATH) \
+$(JNI_PATH) \
 
 LOCAL_STATIC_LIBRARIES := libLua libTOLUAPP libFreeImage libGLM
 
@@ -203,7 +204,9 @@ LOCAL_PATH:= $(JNI_PATH)
 
 LOCAL_MODULE    := liblives2d
 LOCAL_CFLAGS    := -Werror
-LOCAL_SRC_FILES := ./AndroidGame.cpp
+LOCAL_SRC_FILES := ./AndroidGame.cpp \
+./JniHelper.cpp
+
 LOCAL_LDLIBS    := -llog -lGLESv2
 
 LOCAL_C_INCLUDES:= $(LUA_SRC_PATH) \
@@ -212,6 +215,7 @@ $(TOLUAPP_SRC_PATH)/src/lib \
 $(FREE_IMAGE_SRC_PATH)/Source \
 $(GLM_SRC_PATH) \
 $(ENGINE_SRC_PATH) \
+$(JNI_PATH) \
 
 LOCAL_STATIC_LIBRARIES := libEngine
 
