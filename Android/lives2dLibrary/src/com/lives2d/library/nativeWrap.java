@@ -19,7 +19,9 @@ package com.lives2d.library;
 import java.io.File;
 import java.io.IOException;
 
+import android.app.Activity;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.util.Log;
 
 // Wrapper for native library
@@ -43,12 +45,18 @@ public class nativeWrap {
      public static native void onTouchRelease(int x,int y);
      
      
+     private static Activity mActivity;
+     public static void SetContext(Activity varActivity)
+     {
+    	 mActivity=varActivity;
+     }
+     
      //播放音效
      public static void PlayAudio(String varAudioPath)
      {
      	Log.i("Lives2D", "Java PlayAudio "+varAudioPath);
 
-         final MediaPlayer mediaPlayer=new MediaPlayer();
+         final MediaPlayer mediaPlayer=MediaPlayer.create(mActivity, Uri.parse("file://"+varAudioPath));
      	
          mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener()   
  	   {//播放完毕回调监听  
@@ -63,20 +71,18 @@ public class nativeWrap {
  	   
  	   try {  
  		      
- 		    Log.i("Lives2D", "PlayAudio:"+varAudioPath);  
- 		    File f= new File(varAudioPath);    
- 		    if (f.exists() && f.isFile())  
- 		    {    
- 		    	Log.i("Lives2D", "PlayAudio:"+varAudioPath+" filesize:"+f.length());  
- 		    }else
- 		    {    
- 		    	Log.e("Lives2D", "PlayAudio:"+varAudioPath+" file not exist");  
- 		    	return;
- 		    }    
+// 		    Log.i("Lives2D", "PlayAudio:"+varAudioPath);  
+// 		    File f= new File(varAudioPath);    
+// 		    if (f.exists() && f.isFile())  
+// 		    {    
+// 		    	Log.i("Lives2D", "PlayAudio:"+varAudioPath+" filesize:"+f.length());  
+// 		    }else
+// 		    {    
+// 		    	Log.e("Lives2D", "PlayAudio:"+varAudioPath+" file not exist");  
+// 		    	return;
+// 		    }    
 
- 		    mediaPlayer.setDataSource(varAudioPath);  
- 		  
- 		    mediaPlayer.prepare();  
+ 		    //mediaPlayer.setDataSource(varAudioPath);   
  		  
  		    //开始播放  
  		    mediaPlayer.start();  
@@ -90,9 +96,6 @@ public class nativeWrap {
  		} catch (IllegalStateException e) {  
  		    // TODO Auto-generated catch block  
  		    e.printStackTrace();  
- 		} catch (IOException e) {  
- 		    // TODO Auto-generated catch block  
- 		    e.printStackTrace();  
- 		}
+ 		} 
     }
 }

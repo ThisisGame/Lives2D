@@ -48,6 +48,8 @@ public class lives2dActivity extends Activity
         setContentView(mView);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         
+        nativeWrap.SetContext(lives2dActivity.this);
+        
     }
     
     
