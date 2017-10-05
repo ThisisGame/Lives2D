@@ -30,11 +30,9 @@ function SceneWelcom:Init()
 	self.mUIRoot:AddChild(mImage_Bg);
 
 	local mUIButton = UIButton:new(ResourcesManager:DataPath() .. "/Resources/GUI/pop_button0.png", ResourcesManager:DataPath() .. "/Resources/GUI/pop_button1.png", 0, 200, 86, 48)
-	--mUIButton:SetOnClickListener(function(varTime)
-	--	print(varTime)
-
-		--audioSource2:Play()
-	--end,111)
+	mUIButton:SetOnClickListener(function(varTime)
+		audioSource2:Play()
+	end,111)
 	mUIButton:SetDepth(2);
 	self.mUIRoot:AddChild(mUIButton);
 

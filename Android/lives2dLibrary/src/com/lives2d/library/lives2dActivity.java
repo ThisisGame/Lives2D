@@ -39,9 +39,9 @@ public class lives2dActivity extends Activity
         
         Log.i("Lives2D","onCreate");
         
-        String tmpSdCardPath=Environment.getExternalStorageDirectory().getAbsolutePath();
-        Log.i("Lives2D","SdCardPath:"+tmpSdCardPath);
-        nativeWrap.setSdCardPath(tmpSdCardPath);
+
+        
+        Log.i("Lives2D", "lives2dActivity ThreadId:"+Thread.currentThread().getId());
         
         
         mView = new glesView(getApplication());

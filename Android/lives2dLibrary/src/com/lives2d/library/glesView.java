@@ -32,9 +32,18 @@ package com.lives2d.library;
  */
 
 
+import java.util.Hashtable;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
+import android.R.integer;
 import android.content.Context;
 import android.graphics.PixelFormat;
 import android.opengl.GLSurfaceView;
+import android.os.Environment;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -64,9 +73,23 @@ import javax.microedition.khronos.opengles.GL10;
  *   that matches it exactly (with regards to red/green/blue/alpha channels
  *   bit depths). Failure to do so would result in an EGL_BAD_MATCH error.
  */
-class glesView extends GLSurfaceView {
+class glesView extends GLSurfaceView 
+{
     private static String TAG = "Lives2D";
     private static final boolean DEBUG = false;
+    
+    public class Vector2
+    {
+    	public int x=0;
+    	public int y=0;
+    	
+    	public Vector2(int varX,int varY)
+    	{
+    		x=varX;
+    		y=varY;
+    	}
+    }
+    Hashtable<Integer,Vector2> mMotionEventHashtable=new Hashtable<Integer, glesView.Vector2>();
 
     public glesView(Context context) {
         super(context);
@@ -90,18 +113,9 @@ class glesView extends GLSurfaceView {
     	float x= event.getX();
     	float y=event.getY();
     	
-    	switch (event.getAction()) {
-		case MotionEvent.ACTION_DOWN:
-			Log.i("Lives2D", "onTouch x:"+x+" y:"+y);
-			nativeWrap.onTouch((int)x, (int)y);
-			break;
-		case MotionEvent.ACTION_UP:
-			Log.i("Lives2D", "onTouchRelease x:"+x+" y:"+y);
-			nativeWrap.onTouchRelease((int)x, (int)y);
-			break;
-		default:
-			break;
-		}
+    	Renderer.reentrantLock.lock();
+    	mMotionEventHashtable.put(event.getAction(), new Vector2((int)x, (int)y));
+    	Renderer.reentrantLock.unlock();
     	return true;
     }
 
@@ -132,7 +146,9 @@ class glesView extends GLSurfaceView {
                              new ConfigChooser(5, 6, 5, 0, depth, stencil) );
 
         /* Set the renderer responsible for frame rendering */
-        setRenderer(new Renderer());
+        Renderer renderer=new Renderer();
+        renderer.mMotionEventHashtable=mMotionEventHashtable;
+        setRenderer(renderer);
     }
 
     private static class ContextFactory implements GLSurfaceView.EGLContextFactory {
@@ -352,19 +368,44 @@ class glesView extends GLSurfaceView {
     }
 
     
-    
-	final static float frameTime = 0.0333f; //锁帧 30
-	static long begintime = 0;
-	static long endtime = 0;
-	static float deltaTime = 0.0f;
-	
+
     private static class Renderer implements GLSurfaceView.Renderer 
     {
+    	public Hashtable<Integer,Vector2> mMotionEventHashtable;
+    	public static ReentrantLock reentrantLock=new ReentrantLock();
+    	
     	long begin = 0;
     	long end = 0;
     	long frame_time = 33;
         public void onDrawFrame(GL10 gl) 
         {
+        	//处理点击事件
+        	reentrantLock.lock();
+        	Iterator<Entry<Integer,Vector2>> iterator=mMotionEventHashtable.entrySet().iterator();
+        	while(iterator.hasNext())
+        	{
+        		Entry<Integer,Vector2> entry=iterator.next();
+        		
+        		int event=entry.getKey();
+        		Vector2 pos=entry.getValue();
+        		
+        		switch (event) {
+        		case MotionEvent.ACTION_DOWN:
+        			Log.i("Lives2D", "onTouch x:"+pos.x+" y:"+pos.y);
+        			nativeWrap.onTouch(pos.x, pos.y);
+        			break;
+        		case MotionEvent.ACTION_UP:
+        			Log.i("Lives2D", "onTouchRelease x:"+pos.x+" y:"+pos.y);
+        			nativeWrap.onTouchRelease(pos.x, pos.y);
+        			break;
+        		default:
+        			break;
+        		}
+        	}
+        	mMotionEventHashtable.clear();
+        	reentrantLock.unlock();
+        	
+        	//刷帧
         	end = System.currentTimeMillis();
         	
         	long time = end - begin;
@@ -383,12 +424,19 @@ class glesView extends GLSurfaceView {
         	
         	begin = System.currentTimeMillis();
         	
+        	//Log.i("Lives2D", "GLThread:"+Thread.currentThread().getId());
+        	
         	nativeWrap.step(0.333f);
         }
 
         public void onSurfaceChanged(GL10 gl, int width, int height) 
         {
         	Log.i("Lives2D", "glesView onSurfaceChanged width:"+width+" height:"+height);
+        	
+            String tmpSdCardPath=Environment.getExternalStorageDirectory().getAbsolutePath();
+            Log.i("Lives2D","SdCardPath:"+tmpSdCardPath);
+            nativeWrap.setSdCardPath(tmpSdCardPath);
+        	
             nativeWrap.init(width, height);
         }
 
