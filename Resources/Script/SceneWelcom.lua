@@ -36,7 +36,7 @@ function SceneWelcom:Init()
 	mUIButton:SetDepth(2);
 	self.mUIRoot:AddChild(mUIButton);
 
-	local mImageAnimation_Angel =  ImageAnimation:new(ResourcesManager:DataPath() .. "Resources/ImageAnimations/Angel/Animations.txt",1.0/5)
+	local mImageAnimation_Angel =  ImageAnimation:new(ResourcesManager:DataPath() .. "/Resources/ImageAnimations/Angel/Animations.txt",1.0/5)
 	mImageAnimation_Angel:SetPosition(0, 200)
 	mImageAnimation_Angel:SetScale(0.6, 0.6)
 	mImageAnimation_Angel:Play("Idle")
@@ -47,7 +47,7 @@ end
 
 --ˢ֡
 function SceneWelcom:Update(varDeltaTime)
-	--print("SceneWelcom:Update")
+	--print("SceneWelcom:Update " .. varDeltaTime)
 	self.mUIRoot:Update(varDeltaTime)
 end
 

@@ -57,13 +57,13 @@ public class lives2dActivity extends Activity
 
     @Override protected void onPause() {
         super.onPause();
-        mView.onPause();
+        //mView.onPause();
         Log.i("Lives2D","onPause");
     }
 
     @Override protected void onResume() {
         super.onResume();
-        mView.onResume();
+        //mView.onResume();
         Log.i("Lives2D","onResume");
     }
 }

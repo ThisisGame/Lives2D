@@ -420,13 +420,27 @@ class glesView extends GLSurfaceView
         		{
     				e.printStackTrace();
     			}
+        		
+        		nativeWrap.step(0.033f);
+        	}
+        	else
+        	{
+        		if(time>100000)
+        		{
+        			nativeWrap.step(0.033f);
+        		}
+        		else
+        		{
+        			nativeWrap.step(time*0.001f);
+        		}
+        		
         	}
         	
         	begin = System.currentTimeMillis();
         	
         	//Log.i("Lives2D", "GLThread:"+Thread.currentThread().getId());
         	
-        	nativeWrap.step(0.333f);
+        	
         }
 
         public void onSurfaceChanged(GL10 gl, int width, int height) 

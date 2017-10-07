@@ -50,14 +50,33 @@ std::string Helper::ReadTxt(std::string& varFilePath)
 
 std::vector<std::string> Helper::ReadLine(std::string& varFilePath)
 {
+	//LOG("ReadLine %s", varFilePath.c_str());
 	ifstream infile;
-	infile.open(varFilePath.data());   //将文件流对象与文件连接起来 
-	assert(infile.is_open());   //若失败,则输出错误消息,并终止程序运行 
+	infile.open(varFilePath.c_str());   //将文件流对象与文件连接起来 
+	if (infile.is_open()==false)
+	{
+		LOG("ReadLine %s Error", varFilePath.c_str());
+	}
 
 	std::vector<std::string> tmpResult;
 	string s;
 	while (getline(infile, s))
 	{
+		//LOG("getline %s", s.c_str());
+
+		size_t pos = s.find('\n');
+		if (pos!=string::npos)
+		{
+			//LOG("%s erase n %d", s.c_str(), pos - 1);
+			s.erase(pos, 1);
+		}
+		
+		pos = s.find('\r');
+		if (pos != string::npos)
+		{
+			//LOG("%s erase r %d", s.c_str(),pos - 1);
+			s.erase(pos, 1);
+		}
 		tmpResult.push_back(s);
 	}
 	infile.close();             //关闭文件输入流 
