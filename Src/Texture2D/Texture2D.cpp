@@ -9,14 +9,14 @@ Texture2D::Texture2D():m_textureId(-1),m_imageFilePath("")
 
 void Texture2D::LoadTexture(const char* varFilePath)
 {
-	Helper::LOG("Texture2D::LoadTexture %s", varFilePath);
+	//Helper::LOG("Texture2D::LoadTexture %s", varFilePath);
 
 	m_imageFilePath = std::string(varFilePath);
 
 	//1、获取图片格式;
 	FREE_IMAGE_FORMAT imageformat = FreeImage_GetFileType(varFilePath, 0);
 
-	Helper::LOG("Texture2D::LoadTexture imageformat %d", imageformat);
+	//Helper::LOG("Texture2D::LoadTexture imageformat %d", imageformat);
 
 	//2、根据获取到的格式来加载图片;
 	FIBITMAP *bitmap = FreeImage_Load(imageformat, varFilePath, 0);

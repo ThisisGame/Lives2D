@@ -18,7 +18,7 @@ ImageAnimationClip::ImageAnimationClip(std::string varClipName, std::vector<std:
 
 		mVectorImageData.push_back(tmpImage);
 
-		Helper::LOG("%s push_back  %s", mClipName.c_str(), val.c_str());
+		//Helper::LOG("%s push_back  %s", mClipName.c_str(), val.c_str());
 	}
 }
 
