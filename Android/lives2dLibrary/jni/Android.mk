@@ -137,6 +137,98 @@ include $(BUILD_STATIC_LIBRARY)
 
 # ProgmaEnd
 
+# ProgmaBegin BuildFreeType
+FreeType_PATH:=../../../../Lives2D_Depends/freetype
+include $(CLEAR_VARS)
+LOCAL_PATH:=$(FreeType_PATH)
+
+LOCAL_MODULE    := libFreeType
+LOCAL_SRC_FILES :=  \
+ src/autofit/autofit.c \
+ src/base/basepic.c \
+ src/base/ftapi.c \
+ src/base/ftbase.c \
+ src/base/ftbbox.c \
+ src/base/ftbitmap.c \
+ src/base/ftdbgmem.c \
+ src/base/ftdebug.c \
+ src/base/ftglyph.c \
+ src/base/ftinit.c \
+ src/base/ftpic.c \
+ src/base/ftstroke.c \
+ src/base/ftsynth.c \
+ src/base/ftsystem.c \
+ src/cff/cff.c \
+ src/pshinter/pshinter.c \
+ src/pshinter/pshglob.c \
+ src/pshinter/pshpic.c \
+ src/pshinter/pshrec.c \
+ src/psnames/psnames.c \
+ src/psnames/pspic.c \
+ src/raster/raster.c \
+ src/raster/rastpic.c \
+ src/sfnt/pngshim.c \
+ src/sfnt/sfntpic.c \
+ src/sfnt/ttbdf.c \
+ src/sfnt/ttkern.c \
+ src/sfnt/ttload.c \
+ src/sfnt/ttmtx.c \
+ src/sfnt/ttpost.c \
+ src/sfnt/ttsbit.c \
+ src/sfnt/sfobjs.c \
+ src/sfnt/ttcmap.c \
+ src/sfnt/sfdriver.c \
+ src/smooth/smooth.c \
+ src/smooth/ftspic.c \
+ src/truetype/truetype.c \
+ src/type1/t1driver.c \
+ src/cid/cidgload.c \
+ src/cid/cidload.c \
+ src/cid/cidobjs.c \
+ src/cid/cidparse.c \
+ src/cid/cidriver.c \
+ src/pfr/pfr.c \
+ src/pfr/pfrgload.c \
+ src/pfr/pfrload.c \
+ src/pfr/pfrobjs.c \
+ src/pfr/pfrsbit.c \
+ src/type42/t42objs.c \
+ src/type42/t42parse.c \
+ src/type42/type42.c \
+ src/winfonts/winfnt.c \
+ src/pcf/pcfread.c \
+ src/pcf/pcfutil.c \
+ src/pcf/pcfdrivr.c \
+ src/psaux/afmparse.c \
+ src/psaux/psaux.c \
+ src/psaux/psconv.c \
+ src/psaux/psobjs.c \
+ src/psaux/t1decode.c \
+ src/tools/apinames.c \
+ src/type1/t1afm.c \
+ src/type1/t1gload.c \
+ src/type1/t1load.c \
+ src/type1/t1objs.c \
+ src/type1/t1parse.c\
+ src/bdf/bdfdrivr.c\
+ src/bdf/bdflib.c\
+ src/gzip/ftgzip.c\
+ src/lzw/ftlzw.c \
+ 
+LOCAL_CFLAGS := -DANDROID_NDK \
+  -DFT2_BUILD_LIBRARY=1 
+  
+  
+LOCAL_C_INCLUDES := $(JNI_PATH) \
+  $(FreeType_PATH)/src \
+  $(FreeType_PATH)/include
+  
+LOCAL_LDLIBS := -ldl -llog
+
+include $(BUILD_STATIC_LIBRARY)
+
+# ProgmaEnd
+
 # ProgmaBegin BuildEngine
 
 ENGINE_SRC_PATH:=../../../Src
@@ -189,10 +281,11 @@ LOCAL_C_INCLUDES:= $(LUA_SRC_PATH) \
 $(TOLUAPP_SRC_PATH)/include \
 $(FREE_IMAGE_SRC_PATH)/Source \
 $(GLM_SRC_PATH)\
+$(FreeType_PATH)/include \
 $(ENGINE_SRC_PATH) \
 $(JNI_PATH) \
 
-LOCAL_STATIC_LIBRARIES := libLua libTOLUAPP libFreeImage libGLM
+LOCAL_STATIC_LIBRARIES := libLua libTOLUAPP libFreeImage libGLM libFreeType
 
 include $(BUILD_STATIC_LIBRARY)
 
@@ -203,7 +296,7 @@ include $(CLEAR_VARS)
 LOCAL_PATH:= $(JNI_PATH)
 
 LOCAL_MODULE    := liblives2d
-LOCAL_CFLAGS    := -Werror
+LOCAL_CFLAGS    := -Werror -Wno-deprecated-register
 LOCAL_SRC_FILES := ./AndroidGame.cpp \
 ./JniHelper.cpp
 
@@ -214,6 +307,7 @@ $(TOLUAPP_SRC_PATH)/include \
 $(TOLUAPP_SRC_PATH)/src/lib \
 $(FREE_IMAGE_SRC_PATH)/Source \
 $(GLM_SRC_PATH) \
+$(FreeType_PATH)/include \
 $(ENGINE_SRC_PATH) \
 $(JNI_PATH) \
 
