@@ -147,6 +147,15 @@
     <ClCompile Include="..\..\Src\KeyTouch\KeyCode.cpp">
       <Filter>KeyTouch</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Src\GLProgram\GLProgram_Font.cpp">
+      <Filter>GLProgram</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\GUI\Font.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\GUI\UILabel.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\Image\Image.h">
@@ -217,6 +226,15 @@
     </ClInclude>
     <ClInclude Include="..\..\Src\Audio\AudioCard.cpp">
       <Filter>Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\GLProgram\GLProgram_Font.h">
+      <Filter>GLProgram</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\GUI\Font.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\GUI\UILabel.h">
+      <Filter>GUI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

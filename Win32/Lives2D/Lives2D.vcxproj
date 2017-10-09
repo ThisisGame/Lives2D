@@ -48,13 +48,13 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\..\Libs\FreeImage;..\..\Libs\GLES2.0\include;..\..\Libs\GLM-0.9.6.3;..\..\Src;..\..\Libs\Alut\include;..\..\Libs\lua\include;..\..\Libs\tolua++\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\Libs\FreeImage;..\..\Libs\GLES2.0\include;..\..\Libs\GLM-0.9.6.3;..\..\Src;..\..\Libs\Alut\include;..\..\Libs\lua\include;..\..\Libs\tolua++\include;..\..\Libs\FreeType\include\freetype;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\..\Libs\FreeImage;..\..\Libs\GLES2.0\lib\windows\x86;..\..\Libs\Alut\libs;..\..\Libs\lua\lib;..\..\Libs\tolua++\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>FreeImage.lib;libEGL.lib;libGLESv2.lib;alut.lib;OpenAL32.lib;lua5.1.4.lib;tolua++.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\Libs\FreeImage;..\..\Libs\GLES2.0\lib\windows\x86;..\..\Libs\Alut\libs;..\..\Libs\lua\lib;..\..\Libs\tolua++\lib;..\..\Libs\FreeType\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>FreeImage.lib;libEGL.lib;libGLESv2.lib;alut.lib;OpenAL32.lib;lua5.1.4.lib;tolua++.lib;freetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Windows</SubSystem>
     </Link>
   </ItemDefinitionGroup>
@@ -80,7 +80,9 @@
     <ClCompile Include="..\..\Src\Audio\AudioSource.cpp" />
     <ClCompile Include="..\..\Src\Audio\lua_AudioSource.cpp" />
     <ClCompile Include="..\..\Src\GLProgram\GLProgram.cpp" />
+    <ClCompile Include="..\..\Src\GLProgram\GLProgram_Font.cpp" />
     <ClCompile Include="..\..\Src\GLProgram\GLProgram_Texture.cpp" />
+    <ClCompile Include="..\..\Src\GUI\Font.cpp" />
     <ClCompile Include="..\..\Src\GUI\lua_UIButton.cpp" />
     <ClCompile Include="..\..\Src\GUI\lua_UIClickRect.cpp" />
     <ClCompile Include="..\..\Src\GUI\lua_UIDrawRect.cpp" />
@@ -89,6 +91,7 @@
     <ClCompile Include="..\..\Src\GUI\UIButton.cpp" />
     <ClCompile Include="..\..\Src\GUI\UIClickRect.cpp" />
     <ClCompile Include="..\..\Src\GUI\UIDrawRect.cpp" />
+    <ClCompile Include="..\..\Src\GUI\UILabel.cpp" />
     <ClCompile Include="..\..\Src\GUI\UIRect.cpp" />
     <ClCompile Include="..\..\Src\GUI\UIRoot.cpp" />
     <ClCompile Include="..\..\Src\ImageAnimation\ImageAnimation.cpp" />
@@ -119,10 +122,13 @@
     <ClInclude Include="..\..\Src\Audio\AudioSource.h" />
     <ClInclude Include="..\..\Src\Audio\AudioCard.cpp" />
     <ClInclude Include="..\..\Src\GLProgram\GLProgram.h" />
+    <ClInclude Include="..\..\Src\GLProgram\GLProgram_Font.h" />
     <ClInclude Include="..\..\Src\GLProgram\GLProgram_Texture.h" />
+    <ClInclude Include="..\..\Src\GUI\Font.h" />
     <ClInclude Include="..\..\Src\GUI\UIButton.h" />
     <ClInclude Include="..\..\Src\GUI\UIClickRect.h" />
     <ClInclude Include="..\..\Src\GUI\UIDrawRect.h" />
+    <ClInclude Include="..\..\Src\GUI\UILabel.h" />
     <ClInclude Include="..\..\Src\GUI\UIRect.h" />
     <ClInclude Include="..\..\Src\GUI\UIRoot.h" />
     <ClInclude Include="..\..\Src\ImageAnimation\ImageAnimation.h" />
