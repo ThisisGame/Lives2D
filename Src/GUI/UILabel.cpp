@@ -24,7 +24,7 @@ void UILabel::Draw()
 {
 	glm::mat4 trans = glm::translate(glm::vec3(mPosX, mPosY, 0));
 	glm::mat4 rotation = glm::eulerAngleYXZ(glm::radians(0.0f), glm::radians(0.0f), glm::radians(0.0f));
-	glm::mat4 scale = glm::scale(glm::vec3(mScaleX, -1.0f, 1.0f));
+	glm::mat4 scale = glm::scale(glm::vec3(mScaleX, mScaleY, 1.0f));
 
 	//一定要先trans，然后再其它;先缩放，然后再移动，那么移动的位置也被缩放了。先移动再缩放就不会放大移动的位置;
 	glm::mat4 model = trans*scale*rotation;
