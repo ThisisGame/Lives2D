@@ -13,7 +13,7 @@ public:
 	float mScaleY;
 
 private:
-	Font& mFont;
+	Font mFont;
 
 public:
 	UILabel();

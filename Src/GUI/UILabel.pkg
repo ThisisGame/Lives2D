@@ -1,0 +1,23 @@
+$#include"UILabel.h"
+
+class UILabel:public UIDrawRect
+{
+public:
+	float mPosX;
+	float mPosY;
+	float mScaleX;
+	float mScaleY;
+public:
+	UILabel();
+	~UILabel();
+
+public:
+	void Init();
+
+	
+	void SetPosition(float varPosX, float varPosY);
+
+
+	
+	void SetScale(float varScaleX, float varScaleY);
+};

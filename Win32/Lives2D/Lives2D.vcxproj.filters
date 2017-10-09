@@ -156,6 +156,9 @@
     <ClCompile Include="..\..\Src\GUI\UILabel.cpp">
       <Filter>GUI</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Src\GUI\lua_UILabel.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\Image\Image.h">

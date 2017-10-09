@@ -71,7 +71,7 @@ public:
 
 			"void main()"
 			"{"
-			"	vec4 pos=vec4(m_position.x,m_position.y,m_position.z,1);"
+			"	vec4 pos=vec4(m_position,1);"
 			"	gl_Position=m_mvp*pos;"
 			"	m_outUV=m_uv;"
 			"	m_outColor=m_color;"

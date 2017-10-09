@@ -43,6 +43,12 @@ function SceneWelcom:Init()
 	mImageAnimation_Angel:SetDepth(1);
 	self.mUIRoot:AddChild(mImageAnimation_Angel)
 	
+	local	label_name =  UILabel:new()
+	label_name:Init();
+	label_name:SetPosition(0, 0);
+	label_name:SetDepth(3);
+	self.mUIRoot:AddChild(label_name);
+	
 end
 
 --ˢ֡

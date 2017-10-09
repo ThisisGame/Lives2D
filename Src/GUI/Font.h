@@ -15,6 +15,11 @@
 #include<glm\glm.hpp>
 #include<glm\gtc\matrix_transform.hpp>
 
+#include"FreeImage.h"
+
+#include<iostream>
+#include<fstream>
+
 class RGBA_4_BYTE
 {
 public:
@@ -94,6 +99,8 @@ public:
 	int m_fontPixelX;
 	int m_fontPixelY;
 
+	GLProgram_Font m_GLProgram_Font;
+
 public:
 	Font()
 	{
@@ -151,6 +158,8 @@ public:
 
 	void buildSystemFont(const char* font, int fontsize)
 	{
+		m_GLProgram_Font.Initialize();
+
 		unsigned int length = 0;
 		m_fontBuffer = readFontFile(font, length); //返回的是文件大小;
 
@@ -209,6 +218,7 @@ public:
 		assert(m_FTFace != 0);
 	}
 
+
 	//读取一个字，创建Character;
 	Character getCharacter(wchar_t ch)
 	{
@@ -240,7 +250,7 @@ public:
 			//根据字体大小决定是否启用反锯齿;
 			//字体较小建议使用FT_Render_Mode_Mono;
 			//>12建议使用FT_Render_Mode_Normal; 
-			if (!(ch >= L'0' && ch <= L'9'))
+			if (!(ch >= '0' && ch <= '9'))
 			{
 				FT_Glyph_To_Bitmap(&glyph, ft_render_mode_normal, 0, 1);
 			}
@@ -327,8 +337,12 @@ public:
 				m_xStart += (bitmap.width + 1);
 				m_fontPixelY = glm::max(m_fontPixelY, bitmap.rows);
 				m_fontPixelX = glm::max(m_fontPixelX, bitmap.width);
+
+				
 			}
 			FT_Bitmap_Done((FT_Library)m_FTLibrary, &targetBitmap);
+
+			
 		}
 
 		return m_character[ch];
@@ -355,7 +369,7 @@ public:
 		m_GLProgram_Font.end();
 	}
 
-	glm::vec2 drawText(float x,float y,float z,RGBA_4_BYTE color,const wchar_t* text,size_t length)
+	glm::vec2 drawText(float x,float y,float z,RGBA_4_BYTE color,const char* text,size_t length)
 	{
 		static      UIVertex  vert[1024];
 
@@ -365,7 +379,7 @@ public:
 		float       yStart = (float)(int)y + m_fontSize;
 		float       zStart = z;
 		unsigned    index = 0;
-		unsigned    size = length == -1 ? wcslen(text) : length;
+		unsigned    size = length == -1 ? strlen(text) : length;
 		glm::vec2      vSize(0, 0);
 
 

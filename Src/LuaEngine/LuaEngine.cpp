@@ -21,6 +21,7 @@ TOLUA_API int  tolua_UIClickRect_open(lua_State* tolua_S);
 TOLUA_API int  tolua_Image_open(lua_State* tolua_S);
 TOLUA_API int  tolua_ImageAnimationClip_open(lua_State* tolua_S);
 TOLUA_API int  tolua_ImageAnimation_open(lua_State* tolua_S);
+TOLUA_API int  tolua_UILabel_open(lua_State* tolua_S);
 TOLUA_API int  tolua_UIButton_open(lua_State* tolua_S);
 TOLUA_API int  tolua_UIRoot_open(lua_State* tolua_S);
 
@@ -44,6 +45,7 @@ LuaEngine::LuaEngine()
 	tolua_Image_open(m_pLua_State);
 	tolua_ImageAnimationClip_open(m_pLua_State);
 	tolua_ImageAnimation_open(m_pLua_State);
+	tolua_UILabel_open(m_pLua_State);
 	tolua_UIButton_open(m_pLua_State);
 	tolua_UIRoot_open(m_pLua_State);
 
