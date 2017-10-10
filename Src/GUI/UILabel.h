@@ -2,6 +2,7 @@
 
 #include"UIDrawRect.h"
 #include"Font.h"
+#include"GLProgram\GLProgram_Font.h"
 
 class UILabel:public UIDrawRect
 {
@@ -13,14 +14,23 @@ public:
 	float mScaleY;
 
 private:
-	Font mFont;
+	Font* mFont;
+
+	GLProgram_Font m_GLProgram_Font;
+
+	//字体使用GL_ALPHA格式;
+	unsigned int m_fontTexture;//字体Texutre;
+
+	UIVertex  vert[1024];
+
+	std::string mText;
 
 public:
 	UILabel();
 	~UILabel();
 
 public:
-	void Init();
+	void Init(const char* varText);
 
 	//绘制				 
 	void Draw() override;

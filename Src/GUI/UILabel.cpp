@@ -5,6 +5,7 @@
 #include<glm\gtc\matrix_transform.hpp>
 #include<glm\gtx\transform2.hpp>
 #include<glm\gtx\euler_angles.hpp>
+#include"FontManager.h"
 
 UILabel::UILabel():mPosX(0), mPosY(0), mScaleX(1), mScaleY(1)
 {
@@ -15,13 +16,38 @@ UILabel::~UILabel()
 {
 }
 
-void UILabel::Init()
+void UILabel::Init(const char* varText)
 {
-	mFont.buildSystemFont((Application::PersistentDataPath()+"/Resources/Font/msyh.ttf").c_str(), 30);
+	mFont= FontManager::GetSingleton()->BuildFont("/Resources/Font/msyh.ttf");
+
+	m_GLProgram_Font.Initialize();
+
+	//首次调用，生成一个GLTexture，然后绑定使用;
+	glGenTextures(1, &m_fontTexture);
+
+	mText = varText;
 }
 
 void UILabel::Draw()
 {
+	glBindTexture(GL_TEXTURE_2D, m_fontTexture);
+
+	//指定放大缩小滤波，使用线性方式，即图片放大时插值方式;
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+
+	//产生Texture2d;
+	glTexImage2D(
+		GL_TEXTURE_2D,
+		0,
+		GL_ALPHA,
+		1024,
+		1024,
+		0,
+		GL_ALPHA,
+		GL_UNSIGNED_BYTE,
+		0);
+
 	glm::mat4 trans = glm::translate(glm::vec3(mPosX, mPosY, 0));
 	glm::mat4 rotation = glm::eulerAngleYXZ(glm::radians(0.0f), glm::radians(0.0f), glm::radians(0.0f));
 	glm::mat4 scale = glm::scale(glm::vec3(mScaleX, mScaleY, 1.0f));
@@ -39,18 +65,36 @@ void UILabel::Draw()
 
 	glm::mat4 mvp = proj*view*model;
 
-	mFont.beginText(mvp);
 
-	char buffer[1024];
-	sprintf(buffer, "LOVE 123%^&*()", 1000);
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	glActiveTexture(GL_TEXTURE0);
+	glEnable(GL_TEXTURE_2D);
+	glBindTexture(GL_TEXTURE_2D, m_fontTexture);
 
-	mFont.drawText(0, 0, 0, RGBA_4_BYTE(255, 255, 255), (const char *)(buffer), -1);
+	m_GLProgram_Font.begin();
+	{
+		glUniformMatrix4fv(m_GLProgram_Font.getMVPUniform(), 1, false, &mvp[0][0]);
+		glUniform1i(m_GLProgram_Font.getTextureUniform(), 0);
 
-	mFont.endText();
+		int length = strlen(mText.c_str());
+
+
+		UIVertex* vert = mFont->GetUIVertex(0, 0, 0, RGBA_4_BYTE(255, 255, 255), mText.c_str(), -1,m_fontTexture);
+
+		glVertexAttribPointer(m_GLProgram_Font.getPositionAttribute(), 3, GL_FLOAT, GL_FALSE, sizeof(UIVertex), vert);
+		glVertexAttribPointer(m_GLProgram_Font.getUVAttribute(), 3, GL_FLOAT, GL_FALSE, sizeof(UIVertex), &vert[0].u);
+		glVertexAttribPointer(m_GLProgram_Font.getColorAttribute(), 4, GL_UNSIGNED_BYTE, GL_TRUE, sizeof(UIVertex), &vert[0].color);
+		glDrawArrays(GL_TRIANGLES, 0, length * 6);
+	}
+
+	m_GLProgram_Font.end();
 }
 
 void UILabel::SetPosition(float varPosX, float varPosY)
 {
+	mPosX = varPosX;
+	mPosY = varPosY;
 }
 
 void UILabel::SetScale(float varScaleX, float varScaleY)

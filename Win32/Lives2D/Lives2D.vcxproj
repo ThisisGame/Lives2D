@@ -83,6 +83,7 @@
     <ClCompile Include="..\..\Src\GLProgram\GLProgram_Font.cpp" />
     <ClCompile Include="..\..\Src\GLProgram\GLProgram_Texture.cpp" />
     <ClCompile Include="..\..\Src\GUI\Font.cpp" />
+    <ClCompile Include="..\..\Src\GUI\FontManager.cpp" />
     <ClCompile Include="..\..\Src\GUI\lua_UIButton.cpp" />
     <ClCompile Include="..\..\Src\GUI\lua_UIClickRect.cpp" />
     <ClCompile Include="..\..\Src\GUI\lua_UIDrawRect.cpp" />
@@ -126,6 +127,7 @@
     <ClInclude Include="..\..\Src\GLProgram\GLProgram_Font.h" />
     <ClInclude Include="..\..\Src\GLProgram\GLProgram_Texture.h" />
     <ClInclude Include="..\..\Src\GUI\Font.h" />
+    <ClInclude Include="..\..\Src\GUI\FontManager.h" />
     <ClInclude Include="..\..\Src\GUI\UIButton.h" />
     <ClInclude Include="..\..\Src\GUI\UIClickRect.h" />
     <ClInclude Include="..\..\Src\GUI\UIDrawRect.h" />

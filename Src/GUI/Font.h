@@ -88,9 +88,6 @@ public:
 
 	char* m_fontBuffer;
 
-	int m_textureWidth; //字体纹理的宽度;
-	int m_textureHeight;//字体纹理的高度;
-
 	int m_yStart;
 	int m_xStart;
 
@@ -98,8 +95,6 @@ public:
 
 	int m_fontPixelX;
 	int m_fontPixelY;
-
-	GLProgram_Font m_GLProgram_Font;
 
 public:
 	Font()
@@ -109,8 +104,6 @@ public:
 		m_fontPixelY = 0;
 		m_yStart = 0;
 		m_xStart = 0;
-		m_textureWidth = 1024;
-		m_textureHeight = 1024;
 
 		m_fontBuffer = 0;
 		m_FTLibrary = 0;
@@ -158,8 +151,6 @@ public:
 
 	void buildSystemFont(const char* font, int fontsize)
 	{
-		m_GLProgram_Font.Initialize();
-
 		unsigned int length = 0;
 		m_fontBuffer = readFontFile(font, length); //返回的是文件大小;
 
@@ -175,33 +166,6 @@ public:
 			//清空m_character;
 			memset(m_character, 0, sizeof(m_character));
 		}
-
-		//字体已创建，就先销毁;
-		if (m_fontTexture != -1)
-		{
-			glDeleteTextures(1, &m_fontTexture);
-		}
-
-		//首次调用，生成一个GLTexture，然后绑定使用;
-		glGenTextures(1, &m_fontTexture);
-
-		glBindTexture(GL_TEXTURE_2D, m_fontTexture);
-
-		//指定放大缩小滤波，使用线性方式，即图片放大时插值方式;
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-
-		//产生Texture2d;
-		glTexImage2D(
-			GL_TEXTURE_2D,
-			0,
-			GL_ALPHA,
-			m_textureWidth,
-			m_textureHeight,
-			0,
-			GL_ALPHA,
-			GL_UNSIGNED_BYTE,
-			0);
 
 		FT_Error error = FT_New_Memory_Face(m_FTLibrary, (const FT_Byte*)m_fontBuffer, length, 0, &m_FTFace);
 		if (error != 0)
@@ -231,7 +195,7 @@ public:
 			glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
 
 			//判断当前字的起始 x 坐标+字体大小 是不是超过了纹理的宽度，超过了就换行;
-			if (m_xStart + glm::max(m_fontPixelX, m_fontSize) > m_textureWidth)
+			if (m_xStart + glm::max(m_fontPixelX, m_fontSize) > 1024)
 			{
 				m_xStart = 0;
 
@@ -348,33 +312,14 @@ public:
 		return m_character[ch];
 	}
 
-	void beginText(const glm::mat4& proj)
+	UIVertex* GetUIVertex(float x, float y, float z, RGBA_4_BYTE color, const char* text, size_t length,unsigned int varTextureID)
 	{
-		glEnable(GL_BLEND);
-		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-		glActiveTexture(GL_TEXTURE0);
-		glEnable(GL_TEXTURE_2D);
-		glBindTexture(GL_TEXTURE_2D, m_fontTexture);
+		m_fontTexture = varTextureID;
 
-		m_GLProgram_Font.begin();
-		/**
-		*   绑定程序数据
-		*/
-		glUniformMatrix4fv(m_GLProgram_Font.getMVPUniform(), 1, false, &proj[0][0]);
-		glUniform1i(m_GLProgram_Font.getTextureUniform(), 0);
-	}
+		UIVertex  vert[1024];
 
-	void endText()
-	{
-		m_GLProgram_Font.end();
-	}
-
-	glm::vec2 drawText(float x,float y,float z,RGBA_4_BYTE color,const char* text,size_t length)
-	{
-		static      UIVertex  vert[1024];
-
-		float       texWidth = (float)m_textureWidth;
-		float       texHeight = (float)m_textureHeight;
+		float       texWidth = (float)1024;
+		float       texHeight = (float)1024;
 		float       xStart = (float)(int)x;
 		float       yStart = (float)(int)y + m_fontSize;
 		float       zStart = z;
@@ -382,11 +327,6 @@ public:
 		unsigned    size = length == -1 ? strlen(text) : length;
 		glm::vec2      vSize(0, 0);
 
-
-		if (size == 0)
-		{
-			return  vSize;
-		}
 		for (unsigned i = 0; i < size; ++i)
 		{
 			Character   ch = getCharacter(text[i]);
@@ -401,7 +341,7 @@ public:
 			vert[index + 0].y = yStart - h + offsetY;
 			vert[index + 0].z = zStart;
 			vert[index + 0].u = ch.x0 / texWidth;
-			vert[index + 0].v = ch.y0 / texHeight;
+			vert[index + 0].v = ch.y1 / texHeight;
 			vert[index + 0].w = 1;
 			vert[index + 0].color = color;
 			/**
@@ -411,7 +351,7 @@ public:
 			vert[index + 1].y = yStart - h + offsetY;
 			vert[index + 1].z = zStart;
 			vert[index + 1].u = ch.x1 / texWidth;
-			vert[index + 1].v = ch.y0 / texHeight;
+			vert[index + 1].v = ch.y1 / texHeight;
 			vert[index + 1].w = 1;
 			vert[index + 1].color = color;
 			/**
@@ -421,7 +361,7 @@ public:
 			vert[index + 2].y = yStart + offsetY;
 			vert[index + 2].z = zStart;
 			vert[index + 2].u = ch.x1 / texWidth;
-			vert[index + 2].v = ch.y1 / texHeight;
+			vert[index + 2].v = ch.y0 / texHeight;
 			vert[index + 2].w = 1;
 			vert[index + 2].color = color;
 			/**
@@ -431,7 +371,7 @@ public:
 			vert[index + 3].y = yStart - h + offsetY;
 			vert[index + 3].z = zStart;
 			vert[index + 3].u = ch.x0 / texWidth;
-			vert[index + 3].v = ch.y0 / texHeight;
+			vert[index + 3].v = ch.y1 / texHeight;
 			vert[index + 3].w = 1;
 			vert[index + 3].color = color;
 			/**
@@ -441,7 +381,7 @@ public:
 			vert[index + 4].y = yStart + offsetY;
 			vert[index + 4].z = zStart;
 			vert[index + 4].u = ch.x1 / texWidth;
-			vert[index + 4].v = ch.y1 / texHeight;
+			vert[index + 4].v = ch.y0 / texHeight;
 			vert[index + 4].w = 1;
 			vert[index + 4].color = color;
 			/**
@@ -451,7 +391,7 @@ public:
 			vert[index + 5].y = yStart + offsetY;
 			vert[index + 5].z = zStart;
 			vert[index + 5].u = ch.x0 / texWidth;
-			vert[index + 5].v = ch.y1 / texHeight;
+			vert[index + 5].v = ch.y0 / texHeight;
 			vert[index + 5].w = 1;
 			vert[index + 5].color = color;
 
@@ -460,13 +400,9 @@ public:
 
 			vSize.x += w + (ch.offsetX + 1);
 			vSize.y = glm::max(h + offsetY, vSize.y);
-
 		}
-		glVertexAttribPointer(m_GLProgram_Font.getPositionAttribute(), 3, GL_FLOAT, GL_FALSE, sizeof(UIVertex), vert);
-		glVertexAttribPointer(m_GLProgram_Font.getUVAttribute(), 3, GL_FLOAT, GL_FALSE, sizeof(UIVertex), &vert[0].u);
-		glVertexAttribPointer(m_GLProgram_Font.getColorAttribute(), 4, GL_UNSIGNED_BYTE, GL_TRUE, sizeof(UIVertex), &vert[0].color);
-		glDrawArrays(GL_TRIANGLES, 0, index);
 
-		return  vSize;
+		return vert;
 	}
+
 };

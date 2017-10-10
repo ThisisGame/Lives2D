@@ -1,6 +1,6 @@
 /*
 ** Lua binding: UILabel
-** Generated automatically by tolua++-1.0.92 on Mon Oct  9 23:10:35 2017.
+** Generated automatically by tolua++-1.0.92 on Wed Oct 11 01:14:55 2017.
 */
 
 #ifndef __cplusplus
@@ -248,18 +248,20 @@ static int tolua_UILabel_UILabel_Init00(lua_State* tolua_S)
  tolua_Error tolua_err;
  if (
      !tolua_isusertype(tolua_S,1,"UILabel",0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,2,&tolua_err)
+     !tolua_isstring(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
  )
   goto tolua_lerror;
  else
 #endif
  {
   UILabel* self = (UILabel*)  tolua_tousertype(tolua_S,1,0);
+  const char* varText = ((const char*)  tolua_tostring(tolua_S,2,0));
 #ifndef TOLUA_RELEASE
   if (!self) tolua_error(tolua_S,"invalid 'self' in function 'Init'", NULL);
 #endif
   {
-   self->Init();
+   self->Init(varText);
   }
  }
  return 0;

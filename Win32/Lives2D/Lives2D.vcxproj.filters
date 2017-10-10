@@ -159,6 +159,9 @@
     <ClCompile Include="..\..\Src\GUI\lua_UILabel.cpp">
       <Filter>GUI</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Src\GUI\FontManager.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\Image\Image.h">
@@ -237,6 +240,9 @@
       <Filter>GUI</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Src\GUI\UILabel.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\GUI\FontManager.h">
       <Filter>GUI</Filter>
     </ClInclude>
   </ItemGroup>
