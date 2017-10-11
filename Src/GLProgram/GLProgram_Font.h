@@ -89,14 +89,7 @@ public:
 			"void main()"
 			"{"
 			"	vec4 color=texture2D(m_texture,vec2(m_outUV.x,m_outUV.y));"
-			"	if(m_outUV.z>0.0)"
-			"	{"
-			"		gl_FragColor = vec4(m_outColor.x,m_outColor.y,m_outColor.z,color.w*m_outColor.w);"
-			"	}"
-			"	else"
-			"	{"
-			"		gl_FragColor=color*m_outColor;"
-			"	}"
+			"	gl_FragColor = vec4(m_outColor.x,m_outColor.y,m_outColor.z,color.w*m_outColor.w);"
 			"}"
 		};
 

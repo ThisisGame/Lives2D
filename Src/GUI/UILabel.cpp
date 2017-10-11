@@ -7,7 +7,7 @@
 #include<glm\gtx\euler_angles.hpp>
 #include"FontManager.h"
 
-UILabel::UILabel():mPosX(0), mPosY(0), mScaleX(1), mScaleY(1)
+UILabel::UILabel():mPosX(0), mPosY(0), mScaleX(1), mScaleY(1), mSpace(2),mAlignCenter(true)
 {
 
 }
@@ -80,7 +80,7 @@ void UILabel::Draw()
 		int length = strlen(mText.c_str());
 
 
-		UIVertex* vert = mFont->GetUIVertex(0, 0, 0, RGBA_4_BYTE(255, 255, 255), mText.c_str(), -1,m_fontTexture);
+		UIVertex* vert = mFont->GetUIVertex(0, 0, 0, RGBA_4_BYTE(0, 0, 0,255), mText.c_str(),mSpace,m_fontTexture,mAlignCenter);
 
 		glVertexAttribPointer(m_GLProgram_Font.getPositionAttribute(), 3, GL_FLOAT, GL_FALSE, sizeof(UIVertex), vert);
 		glVertexAttribPointer(m_GLProgram_Font.getUVAttribute(), 3, GL_FLOAT, GL_FALSE, sizeof(UIVertex), &vert[0].u);
@@ -99,4 +99,14 @@ void UILabel::SetPosition(float varPosX, float varPosY)
 
 void UILabel::SetScale(float varScaleX, float varScaleY)
 {
+}
+
+void UILabel::SetSpace(int varSpace)
+{
+	mSpace = varSpace;
+}
+
+void UILabel::SetAlignCenter(bool varAlignCenter)
+{
+	mAlignCenter = varAlignCenter;
 }

@@ -25,6 +25,10 @@ private:
 
 	std::string mText;
 
+	int mSpace;//字间距
+
+	bool mAlignCenter;//居中对齐
+
 public:
 	UILabel();
 	~UILabel();
@@ -42,4 +46,10 @@ public:
 
 	//设置缩放
 	void SetScale(float varScaleX, float varScaleY);
+
+	//设置字间距
+	void SetSpace(int varSpace);
+
+	//设置居中对其
+	void SetAlignCenter(bool varAlignCenter);
 };

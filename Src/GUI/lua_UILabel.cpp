@@ -1,6 +1,6 @@
 /*
 ** Lua binding: UILabel
-** Generated automatically by tolua++-1.0.92 on Wed Oct 11 01:14:55 2017.
+** Generated automatically by tolua++-1.0.92 on Thu Oct 12 01:22:15 2017.
 */
 
 #ifndef __cplusplus
@@ -343,6 +343,72 @@ static int tolua_UILabel_UILabel_SetScale00(lua_State* tolua_S)
 }
 #endif //#ifndef TOLUA_DISABLE
 
+/* method: SetSpace of class  UILabel */
+#ifndef TOLUA_DISABLE_tolua_UILabel_UILabel_SetSpace00
+static int tolua_UILabel_UILabel_SetSpace00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"UILabel",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  UILabel* self = (UILabel*)  tolua_tousertype(tolua_S,1,0);
+  int varSpace = ((int)  tolua_tonumber(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'SetSpace'", NULL);
+#endif
+  {
+   self->SetSpace(varSpace);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'SetSpace'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: SetAlignCenter of class  UILabel */
+#ifndef TOLUA_DISABLE_tolua_UILabel_UILabel_SetAlignCenter00
+static int tolua_UILabel_UILabel_SetAlignCenter00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"UILabel",0,&tolua_err) ||
+     !tolua_isboolean(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  UILabel* self = (UILabel*)  tolua_tousertype(tolua_S,1,0);
+  bool varAlignCenter = ((bool)  tolua_toboolean(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'SetAlignCenter'", NULL);
+#endif
+  {
+   self->SetAlignCenter(varAlignCenter);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'SetAlignCenter'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
 /* Open function */
 TOLUA_API int tolua_UILabel_open (lua_State* tolua_S)
 {
@@ -367,6 +433,8 @@ TOLUA_API int tolua_UILabel_open (lua_State* tolua_S)
    tolua_function(tolua_S,"Init",tolua_UILabel_UILabel_Init00);
    tolua_function(tolua_S,"SetPosition",tolua_UILabel_UILabel_SetPosition00);
    tolua_function(tolua_S,"SetScale",tolua_UILabel_UILabel_SetScale00);
+   tolua_function(tolua_S,"SetSpace",tolua_UILabel_UILabel_SetSpace00);
+   tolua_function(tolua_S,"SetAlignCenter",tolua_UILabel_UILabel_SetAlignCenter00);
   tolua_endmodule(tolua_S);
  tolua_endmodule(tolua_S);
  return 1;

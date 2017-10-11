@@ -20,4 +20,10 @@ public:
 
 	
 	void SetScale(float varScaleX, float varScaleY);
+	
+
+	void SetSpace(int varSpace);
+
+
+	void SetAlignCenter(bool varAlignCenter);
 };

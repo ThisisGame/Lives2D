@@ -29,7 +29,7 @@ function SceneWelcom:Init()
 	mImage_Bg:SetDepth(0);
 	self.mUIRoot:AddChild(mImage_Bg);
 
-	local mUIButton = UIButton:new(ResourcesManager:DataPath() .. "/Resources/GUI/pop_button0.png", ResourcesManager:DataPath() .. "/Resources/GUI/pop_button1.png", 0, 100, 86, 48)
+	local mUIButton = UIButton:new(ResourcesManager:DataPath() .. "/Resources/GUI/pop_button0.png", ResourcesManager:DataPath() .. "/Resources/GUI/pop_button1.png", 0, 0, 86, 48)
 	mUIButton:SetOnClickListener(function(varTime)
 		audioSource2:Play()
 	end,111)
@@ -44,16 +44,18 @@ function SceneWelcom:Init()
 	self.mUIRoot:AddChild(mImageAnimation_Angel)
 	
 	local	label_name =  UILabel:new()
-	label_name:Init("Name:LILEI");
-	label_name:SetPosition(0, 100);
+	label_name:Init("UILabel");
+	label_name:SetPosition(0, 0);
 	label_name:SetDepth(3);
+	label_name:SetSpace(2)
+	label_name:SetAlignCenter(true)
 	self.mUIRoot:AddChild(label_name);
 	
-	local	label_Age =  UILabel:new()
-	label_Age:Init("Sex:Boy");
-	label_Age:SetPosition(0, 0);
-	label_Age:SetDepth(3);
-	self.mUIRoot:AddChild(label_Age);
+	-- local	label_Age =  UILabel:new()
+	-- label_Age:Init("Sex:Boy");
+	-- label_Age:SetPosition(0, 0);
+	-- label_Age:SetDepth(3);
+	-- self.mUIRoot:AddChild(label_Age);
 	
 end
 

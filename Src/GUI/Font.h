@@ -283,7 +283,7 @@ public:
 				m_character[ch].x1 = m_xStart + bitmap.width;
 				m_character[ch].y1 = m_yStart + bitmap.rows;
 
-				m_character[ch].offsetY = bitmapGlyph->top;
+				m_character[ch].offsetY = bitmapGlyph->top- bitmap.rows;
 				m_character[ch].offsetX = bitmapGlyph->left;
 
 				glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
@@ -312,7 +312,7 @@ public:
 		return m_character[ch];
 	}
 
-	UIVertex* GetUIVertex(float x, float y, float z, RGBA_4_BYTE color, const char* text, size_t length,unsigned int varTextureID)
+	UIVertex* GetUIVertex(float x, float y, float z, RGBA_4_BYTE color, const char* text, int space,unsigned int varTextureID,bool alignCenter)
 	{
 		m_fontTexture = varTextureID;
 
@@ -320,12 +320,12 @@ public:
 
 		float       texWidth = (float)1024;
 		float       texHeight = (float)1024;
-		float       xStart = (float)(int)x;
-		float       yStart = (float)(int)y + m_fontSize;
+		float       xStart = x;
+		float       yStart = y;
+		//float       yStart = (float)(int)y + m_fontSize;
 		float       zStart = z;
 		unsigned    index = 0;
-		unsigned    size = length == -1 ? strlen(text) : length;
-		glm::vec2      vSize(0, 0);
+		unsigned    size =  strlen(text);
 
 		for (unsigned i = 0; i < size; ++i)
 		{
@@ -333,12 +333,14 @@ public:
 
 			float       h = float(ch.y1 - ch.y0);
 			float       w = float(ch.x1 - ch.x0);
-			float       offsetY = (float(h) - float(ch.offsetY));
+
+			float tmpystart = yStart + ch.offsetY;
+
 			/**
 			*   第一个点
 			*/
 			vert[index + 0].x = xStart;
-			vert[index + 0].y = yStart - h + offsetY;
+			vert[index + 0].y = tmpystart;
 			vert[index + 0].z = zStart;
 			vert[index + 0].u = ch.x0 / texWidth;
 			vert[index + 0].v = ch.y1 / texHeight;
@@ -348,7 +350,7 @@ public:
 			*   第二个点
 			*/
 			vert[index + 1].x = xStart + w;
-			vert[index + 1].y = yStart - h + offsetY;
+			vert[index + 1].y = tmpystart;
 			vert[index + 1].z = zStart;
 			vert[index + 1].u = ch.x1 / texWidth;
 			vert[index + 1].v = ch.y1 / texHeight;
@@ -358,7 +360,7 @@ public:
 			*   第三个点
 			*/
 			vert[index + 2].x = xStart + w;
-			vert[index + 2].y = yStart + offsetY;
+			vert[index + 2].y = tmpystart + h;
 			vert[index + 2].z = zStart;
 			vert[index + 2].u = ch.x1 / texWidth;
 			vert[index + 2].v = ch.y0 / texHeight;
@@ -368,7 +370,7 @@ public:
 			*   第一个点
 			*/
 			vert[index + 3].x = xStart;
-			vert[index + 3].y = yStart - h + offsetY;
+			vert[index + 3].y = tmpystart;
 			vert[index + 3].z = zStart;
 			vert[index + 3].u = ch.x0 / texWidth;
 			vert[index + 3].v = ch.y1 / texHeight;
@@ -378,7 +380,7 @@ public:
 			*   第三个点
 			*/
 			vert[index + 4].x = xStart + w;
-			vert[index + 4].y = yStart + offsetY;
+			vert[index + 4].y = tmpystart + h;
 			vert[index + 4].z = zStart;
 			vert[index + 4].u = ch.x1 / texWidth;
 			vert[index + 4].v = ch.y0 / texHeight;
@@ -388,7 +390,7 @@ public:
 			*   第四个点
 			*/
 			vert[index + 5].x = xStart;
-			vert[index + 5].y = yStart + offsetY;
+			vert[index + 5].y = tmpystart + h;
 			vert[index + 5].z = zStart;
 			vert[index + 5].u = ch.x0 / texWidth;
 			vert[index + 5].v = ch.y0 / texHeight;
@@ -396,11 +398,19 @@ public:
 			vert[index + 5].color = color;
 
 			index += 6;
-			xStart += w + (ch.offsetX + 1);
-
-			vSize.x += w + (ch.offsetX + 1);
-			vSize.y = glm::max(h + offsetY, vSize.y);
+			xStart += w+ space;
 		}
+
+		if (alignCenter)
+		{
+			//居中显示
+			float xoffset = xStart / 2;
+			for (size_t i = 0; i < index; i++)
+			{
+				vert[i].x -= xoffset;
+			}
+		}
+
 
 		return vert;
 	}
