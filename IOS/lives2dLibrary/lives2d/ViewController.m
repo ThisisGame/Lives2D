@@ -8,6 +8,14 @@
 
 #import "ViewController.h"
 
+#import "lua.h"
+#import "lualib.h"
+#import "luaconf.h"
+#import "lauxlib.h"
+
+#import "tolua++.h"
+
+
 @interface ViewController ()
 
 @end
@@ -23,6 +31,14 @@
     CGRect screenRect=[[UIScreen mainScreen] bounds];
     self.glesView=[[GLESView alloc] initWithFrame:screenRect];
     [self.view addSubview:self.glesView];
+    
+    
+    
+    lua_State* p_Lua_State=luaL_newstate();
+    luaL_openlibs(p_Lua_State);
+    luaL_dostring(p_Lua_State, "print 'hello lua'");
+    lua_close(p_Lua_State);
+
     
 }
 

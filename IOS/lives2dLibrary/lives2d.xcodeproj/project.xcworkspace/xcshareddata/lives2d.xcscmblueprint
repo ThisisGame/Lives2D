@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "1F154F1C4F0600C3BC1743B9778100EBFA7656A4",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "3D2DD48E4FD629D1457165AA63C3E1CF250B48D0" : 9223372036854775807,
+    "1F154F1C4F0600C3BC1743B9778100EBFA7656A4" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "F1614135-1510-4E87-98CD-1964DBE26BF4",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "3D2DD48E4FD629D1457165AA63C3E1CF250B48D0" : "Lives2D_Depends\/",
+    "1F154F1C4F0600C3BC1743B9778100EBFA7656A4" : "Lives2D\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "lives2d",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "IOS\/lives2dLibrary\/lives2d.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ThisisGame\/Lives2D.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1F154F1C4F0600C3BC1743B9778100EBFA7656A4"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ThisisGame\/Lives2D_Depends.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3D2DD48E4FD629D1457165AA63C3E1CF250B48D0"
+    }
+  ]
+}
