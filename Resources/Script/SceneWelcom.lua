@@ -44,18 +44,18 @@ function SceneWelcom:Init()
 	self.mUIRoot:AddChild(mImageAnimation_Angel)
 	
 	local	label_name =  UILabel:new()
-	label_name:Init("UILabel");
+	label_name:Init("label_name");
 	label_name:SetPosition(0, 0);
 	label_name:SetDepth(3);
 	label_name:SetSpace(2)
 	label_name:SetAlignCenter(true)
 	self.mUIRoot:AddChild(label_name);
 	
-	-- local	label_Age =  UILabel:new()
-	-- label_Age:Init("Sex:Boy");
-	-- label_Age:SetPosition(0, 0);
-	-- label_Age:SetDepth(3);
-	-- self.mUIRoot:AddChild(label_Age);
+	local	label_Age =  UILabel:new()
+	label_Age:Init("label_Age");
+	label_Age:SetPosition(0, -100);
+	label_Age:SetDepth(3);
+	self.mUIRoot:AddChild(label_Age);
 	
 end
 

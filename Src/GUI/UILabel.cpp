@@ -23,7 +23,8 @@ void UILabel::Init(const char* varText)
 	m_GLProgram_Font.Initialize();
 
 	//首次调用，生成一个GLTexture，然后绑定使用;
-	glGenTextures(1, &m_fontTexture);
+	//glGenTextures(1, &m_fontTexture);
+	m_fontTexture = mFont->m_fontTexture;
 
 	mText = varText;
 }

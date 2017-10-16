@@ -180,6 +180,8 @@ public:
 		FT_Set_Char_Size(m_FTFace, ftSize, 0, 72, 72);
 
 		assert(m_FTFace != 0);
+
+		glGenTextures(1, &m_fontTexture);
 	}
 
 
