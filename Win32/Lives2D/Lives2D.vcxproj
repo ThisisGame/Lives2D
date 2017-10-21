@@ -48,7 +48,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\..\Libs\FreeImage;..\..\Libs\GLES2.0\include;..\..\Libs\GLM-0.9.6.3;..\..\Src;..\..\Libs\Alut\include;..\..\Libs\lua\include;..\..\Libs\tolua++\include;G:\Github\Lives2D\Libs\FreeType\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\Libs\FreeImage;..\..\Libs\GLES2.0\include;..\..\Libs\GLM-0.9.6.3;..\..\Src;..\..\Libs\Alut\include;..\..\Libs\lua\include;..\..\Libs\tolua++\include;..\..\Libs\FreeType\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>

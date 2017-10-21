@@ -186,6 +186,32 @@ public:
 		assert(m_FTFace != 0);
 
 		glGenTextures(1, &m_fontTexture);
+
+		glBindTexture(GL_TEXTURE_2D, m_fontTexture);
+
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
+
+
+		
+
+		BYTE* pixels = (BYTE*)malloc(1024 * 1024);
+		memset(pixels, 0, 1024 * 1024);
+
+		glTexImage2D(
+			GL_TEXTURE_2D,      //! 指定是二维图片  
+			0,                  //! 指定为第一级别，纹理可以做mipmap,即lod,离近的就采用级别大的，远则使用较小的纹理  
+			GL_ALPHA,             //! 纹理的使用的存储格式  
+			1024,              //! 宽度，老一点的显卡，不支持不规则的纹理，即宽度和高度不是2^n。  
+			1024,             //! 宽度，老一点的显卡，不支持不规则的纹理，即宽度和高度不是2^n。  
+			0,                  //! 是否的边  
+			GL_ALPHA,             //! 数据的格式，bmp中，windows,操作系统中存储的数据是bgr格式  
+			GL_UNSIGNED_BYTE,   //! 数据是8bit数据  
+			pixels
+		);
 	}
 
 
@@ -317,8 +343,6 @@ public:
 
 	UIVertex* GetUIVertex(float x, float y, float z, RGBA_4_BYTE color, const char* text, int space,unsigned int varTextureID,bool alignCenter)
 	{
-		m_fontTexture = varTextureID;
-
 		memset(m_Vert, 0, 1024 * sizeof(UIVertex));
 
 		float       texWidth = (float)1024;
