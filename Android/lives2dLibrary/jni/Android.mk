@@ -248,15 +248,19 @@ LOCAL_SRC_FILES := Tools/Helper.cpp \
 		Audio/AudioCard.cpp \
 		GLProgram/GLProgram.cpp \
 		GLProgram/GLProgram_Texture.cpp \
+		GUI/Font.cpp \
+		GUI/FontManager.cpp \
 		GUI/UIRect.cpp \
 		GUI/UIDrawRect.cpp \
 		GUI/UIClickRect.cpp \
 		GUI/UIButton.cpp \
+		GUI/UILabel.cpp \
 		GUI/UIRoot.cpp \
 		GUI/lua_UIRect.cpp \
 		GUI/lua_UIDrawRect.cpp \
 		GUI/lua_UIClickRect.cpp \
 		GUI/lua_UIButton.cpp \
+		GUI/lua_UILabel.cpp \
 		GUI/lua_UIRoot.cpp \
 		Image/Image.cpp \
 		Image/lua_Image.cpp \

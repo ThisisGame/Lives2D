@@ -67,10 +67,6 @@ void UILabel::Draw()
 	glm::mat4 mvp = proj*view*model;
 
 
-	glEnable(GL_BLEND);
-	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-	glActiveTexture(GL_TEXTURE0);
-	glEnable(GL_TEXTURE_2D);
 	glBindTexture(GL_TEXTURE_2D, m_fontTexture);
 
 	m_GLProgram_Font.begin();

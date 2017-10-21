@@ -109,6 +109,10 @@ public:
 	virtual void begin()
 	{
 		glUseProgram(m_programId);
+
+		glEnable(GL_BLEND);
+		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
 		glEnableVertexAttribArray(m_position);
 		glEnableVertexAttribArray(m_color);
 		glEnableVertexAttribArray(m_uv);
@@ -116,6 +120,8 @@ public:
 
 	virtual void end()
 	{
+		glDisable(GL_BLEND);
+
 		glDisableVertexAttribArray(m_position);
 		glDisableVertexAttribArray(m_color);
 		glDisableVertexAttribArray(m_uv);

@@ -1,6 +1,6 @@
 #pragma once
 
-#include"freetype\ftglyph.h"
+#include"ftglyph.h"
 
 #include FT_GLYPH_H
 #include FT_TRUETYPE_TABLES_H
@@ -96,6 +96,8 @@ public:
 	int m_fontPixelX;
 	int m_fontPixelY;
 
+	UIVertex* m_Vert;
+
 public:
 	Font()
 	{
@@ -104,6 +106,8 @@ public:
 		m_fontPixelY = 0;
 		m_yStart = 0;
 		m_xStart = 0;
+
+		m_Vert= (UIVertex*)malloc(1024 * sizeof(UIVertex));
 
 		m_fontBuffer = 0;
 		m_FTLibrary = 0;
@@ -193,9 +197,6 @@ public:
 			m_character[ch].x1 == 0 &&
 			m_character[ch].y1 == 0)
 		{
-			//如果之前还没有生成过这个字的信息，就先生成;
-			glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
-
 			//判断当前字的起始 x 坐标+字体大小 是不是超过了纹理的宽度，超过了就换行;
 			if (m_xStart + glm::max(m_fontPixelX, m_fontSize) > 1024)
 			{
@@ -318,7 +319,7 @@ public:
 	{
 		m_fontTexture = varTextureID;
 
-		UIVertex  vert[1024];
+		memset(m_Vert, 0, 1024 * sizeof(UIVertex));
 
 		float       texWidth = (float)1024;
 		float       texHeight = (float)1024;
@@ -341,63 +342,63 @@ public:
 			/**
 			*   第一个点
 			*/
-			vert[index + 0].x = xStart;
-			vert[index + 0].y = tmpystart;
-			vert[index + 0].z = zStart;
-			vert[index + 0].u = ch.x0 / texWidth;
-			vert[index + 0].v = ch.y1 / texHeight;
-			vert[index + 0].w = 1;
-			vert[index + 0].color = color;
+			m_Vert[index + 0].x = xStart;
+			m_Vert[index + 0].y = tmpystart;
+			m_Vert[index + 0].z = zStart;
+			m_Vert[index + 0].u = ch.x0 / texWidth;
+			m_Vert[index + 0].v = ch.y1 / texHeight;
+			m_Vert[index + 0].w = 1;
+			m_Vert[index + 0].color = color;
 			/**
 			*   第二个点
 			*/
-			vert[index + 1].x = xStart + w;
-			vert[index + 1].y = tmpystart;
-			vert[index + 1].z = zStart;
-			vert[index + 1].u = ch.x1 / texWidth;
-			vert[index + 1].v = ch.y1 / texHeight;
-			vert[index + 1].w = 1;
-			vert[index + 1].color = color;
+			m_Vert[index + 1].x = xStart + w;
+			m_Vert[index + 1].y = tmpystart;
+			m_Vert[index + 1].z = zStart;
+			m_Vert[index + 1].u = ch.x1 / texWidth;
+			m_Vert[index + 1].v = ch.y1 / texHeight;
+			m_Vert[index + 1].w = 1;
+			m_Vert[index + 1].color = color;
 			/**
 			*   第三个点
 			*/
-			vert[index + 2].x = xStart + w;
-			vert[index + 2].y = tmpystart + h;
-			vert[index + 2].z = zStart;
-			vert[index + 2].u = ch.x1 / texWidth;
-			vert[index + 2].v = ch.y0 / texHeight;
-			vert[index + 2].w = 1;
-			vert[index + 2].color = color;
+			m_Vert[index + 2].x = xStart + w;
+			m_Vert[index + 2].y = tmpystart + h;
+			m_Vert[index + 2].z = zStart;
+			m_Vert[index + 2].u = ch.x1 / texWidth;
+			m_Vert[index + 2].v = ch.y0 / texHeight;
+			m_Vert[index + 2].w = 1;
+			m_Vert[index + 2].color = color;
 			/**
 			*   第一个点
 			*/
-			vert[index + 3].x = xStart;
-			vert[index + 3].y = tmpystart;
-			vert[index + 3].z = zStart;
-			vert[index + 3].u = ch.x0 / texWidth;
-			vert[index + 3].v = ch.y1 / texHeight;
-			vert[index + 3].w = 1;
-			vert[index + 3].color = color;
+			m_Vert[index + 3].x = xStart;
+			m_Vert[index + 3].y = tmpystart;
+			m_Vert[index + 3].z = zStart;
+			m_Vert[index + 3].u = ch.x0 / texWidth;
+			m_Vert[index + 3].v = ch.y1 / texHeight;
+			m_Vert[index + 3].w = 1;
+			m_Vert[index + 3].color = color;
 			/**
 			*   第三个点
 			*/
-			vert[index + 4].x = xStart + w;
-			vert[index + 4].y = tmpystart + h;
-			vert[index + 4].z = zStart;
-			vert[index + 4].u = ch.x1 / texWidth;
-			vert[index + 4].v = ch.y0 / texHeight;
-			vert[index + 4].w = 1;
-			vert[index + 4].color = color;
+			m_Vert[index + 4].x = xStart + w;
+			m_Vert[index + 4].y = tmpystart + h;
+			m_Vert[index + 4].z = zStart;
+			m_Vert[index + 4].u = ch.x1 / texWidth;
+			m_Vert[index + 4].v = ch.y0 / texHeight;
+			m_Vert[index + 4].w = 1;
+			m_Vert[index + 4].color = color;
 			/**
 			*   第四个点
 			*/
-			vert[index + 5].x = xStart;
-			vert[index + 5].y = tmpystart + h;
-			vert[index + 5].z = zStart;
-			vert[index + 5].u = ch.x0 / texWidth;
-			vert[index + 5].v = ch.y0 / texHeight;
-			vert[index + 5].w = 1;
-			vert[index + 5].color = color;
+			m_Vert[index + 5].x = xStart;
+			m_Vert[index + 5].y = tmpystart + h;
+			m_Vert[index + 5].z = zStart;
+			m_Vert[index + 5].u = ch.x0 / texWidth;
+			m_Vert[index + 5].v = ch.y0 / texHeight;
+			m_Vert[index + 5].w = 1;
+			m_Vert[index + 5].color = color;
 
 			index += 6;
 			xStart += w+ space;
@@ -409,12 +410,12 @@ public:
 			float xoffset = xStart / 2;
 			for (size_t i = 0; i < index; i++)
 			{
-				vert[i].x -= xoffset;
+				m_Vert[i].x -= xoffset;
 			}
 		}
 
 
-		return vert;
+		return m_Vert;
 	}
 
 };
