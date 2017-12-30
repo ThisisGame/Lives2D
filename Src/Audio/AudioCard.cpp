@@ -56,6 +56,18 @@ void AudioCardExit()
 	
 }
 
+#elif IOS
+
+void AudioCardInit()
+{
+//    ALboolean tmpRet=alutInit(0, 0);
+}
+
+void AudioCardExit()
+{
+//    alutExit();
+}
+
 #endif
 
 

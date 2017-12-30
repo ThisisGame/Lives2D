@@ -23,12 +23,12 @@
 class WinGame
 {
 public:
-	HINSTANCE m_hInstance;	//ÊµÀý¾ä±ú;
+	HINSTANCE m_hInstance;	//Êµï¿½ï¿½ï¿½ï¿½ï¿½;
 
-	HWND m_hWnd;	//´°¿Ú¾ä±ú;
+	HWND m_hWnd;	//ï¿½ï¿½ï¿½Ú¾ï¿½ï¿½;
 
 
-	//GLÏà¹Ø;
+	//GLï¿½ï¿½ï¿½;
 	EGLConfig m_EGLConfig;
 	EGLSurface m_EGLSurface;
 	EGLContext m_EGLContext;
@@ -37,26 +37,26 @@ public:
 public:
 	WinGame(HINSTANCE hInstance = 0)
 	{
-		//ÏëÒª½¨Á¢Ò»¸ö´°¿Ú£¬±ØÐëÓÐÒ»¸ö´°¿ÚÀà;
+		//ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ú£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½;
 		WNDCLASSEX winClass;
-		//´°¿ÚÀàÃû;
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½;
 		winClass.lpszClassName = _T("WinGame");
 		winClass.cbSize = sizeof(winClass);
 
-		//µ±H Ë®Æ½·½Ïò£¬V ÊúÖ±·½Ïò ´óÐ¡±ä»¯»òÒÆ¶¯Ê±£¬ÖØ»æ´°¿Ú£¬
-		//Îª¸ÃÀàÖÐµÄÃ¿Ò»¸ö´°¿Ú·ÖÅäÒ»¸öÎ¨Ò»µÄÉè±¸ÉÏÏÂÎÄ;
+		//ï¿½ï¿½H Ë®Æ½ï¿½ï¿½ï¿½ï¿½V ï¿½ï¿½Ö±ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ð¡ï¿½ä»¯ï¿½ï¿½ï¿½Æ¶ï¿½Ê±ï¿½ï¿½ï¿½Ø»æ´°ï¿½Ú£ï¿½
+		//Îªï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½Ã¿Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Î¨Ò»ï¿½ï¿½ï¿½è±¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½;
 		winClass.style = CS_HREDRAW | CS_VREDRAW | CS_OWNDC;
 		winClass.lpfnWndProc = windowProc;
-		//ÊµÀý¾ä±ú;
+		//Êµï¿½ï¿½ï¿½ï¿½ï¿½;
 		winClass.hInstance = hInstance;
-		//´°¿Ú×îÐ¡»¯Í¼±ê;
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½Í¼ï¿½ï¿½;
 		winClass.hIcon = 0;
 		winClass.hIconSm = 0;
-		//Êó±ê¹â±ê;
+		//ï¿½ï¿½ï¿½ï¿½ï¿½;
 		winClass.hCursor = LoadCursor(hInstance, IDC_ARROW);
-		//´°¿Ú±³¾°É«;
+		//ï¿½ï¿½ï¿½Ú±ï¿½ï¿½ï¿½É«;
 		winClass.hbrBackground = (HBRUSH)GetStockObject(BLACK_BRUSH);
-		//´°¿Ú²Ëµ¥;
+		//ï¿½ï¿½ï¿½Ú²Ëµï¿½;
 		winClass.lpszMenuName = nullptr;
 		winClass.cbClsExtra = 0;
 		winClass.cbWndExtra = 0;
@@ -73,7 +73,7 @@ public:
 
 
 		//LuaEngine Start
-		LuaEngine::GetSingleton()->DoFile((Application::PersistentDataPath()+ "/Resources/Script/Engine/Lives2D.lua").c_str());
+		LuaEngine::GetSingleton()->DoFile((Application::PersistentDataPath()+ "/Resource/Script/Engine/Lives2D.lua").c_str());
 	}
 
 
@@ -93,7 +93,7 @@ public:
 		LuaEngine::GetSingleton()->CallLuaFunction("Update", 1, tmpFunction);
 	}
 
-	//äÖÈ¾º¯Êý;
+	//ï¿½ï¿½È¾ï¿½ï¿½ï¿½ï¿½;
 	void render()
 	{
 		if (Application::ScreenWidth == 0 || Application::ScreenHeight == 0)
@@ -103,15 +103,15 @@ public:
 
 		glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
 
-		//±£³Ö»­Ãæ±ÈÀý ½øÐÐËõ·Å »á³öÏÖºÚ±ß
+		//ï¿½ï¿½ï¿½Ö»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ÖºÚ±ï¿½
 		float tmpDesignRatio = (float)Application::DesignWidth / Application::DesignHeight;
 		float tmpScreenRatio = (float)Application::ScreenWidth / Application::ScreenHeight;
-		if (tmpScreenRatio > tmpDesignRatio)//¸ü¿í,È¡heihgt×öÊÊÅä,width×öºÚ±ß
+		if (tmpScreenRatio > tmpDesignRatio)//ï¿½ï¿½ï¿½ï¿½,È¡heihgtï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,widthï¿½ï¿½ï¿½Ú±ï¿½
 		{
 			Application::RenderWidth = Application::DesignWidth*((float)Application::ScreenHeight/Application::DesignHeight);
 			Application::RenderHeight = Application::ScreenHeight;
 		}
-		else if (tmpScreenRatio < tmpDesignRatio)//¸ü¸ß,È¡width×öÊÊÅä,height×öºÚ±ß
+		else if (tmpScreenRatio < tmpDesignRatio)//ï¿½ï¿½ï¿½ï¿½,È¡widthï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,heightï¿½ï¿½ï¿½Ú±ï¿½
 		{
 			Application::RenderWidth = Application::ScreenWidth;
 			Application::RenderHeight = Application::DesignHeight*((float)Application::ScreenWidth/Application::DesignWidth);
@@ -133,21 +133,21 @@ public:
 	}
 
 
-	//³õÊ¼»¯;
+	//ï¿½ï¿½Ê¼ï¿½ï¿½;
 	void onInit()
 	{
 		glClearColor(0, 0, 0, 1);
 
 
-		//±£³Ö»­Ãæ±ÈÀý ½øÐÐËõ·Å »á³öÏÖºÚ±ß
+		//ï¿½ï¿½ï¿½Ö»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ÖºÚ±ï¿½
 		float tmpDesignRatio = (float)Application::DesignWidth / Application::DesignHeight;
 		float tmpScreenRatio = (float)Application::ScreenWidth / Application::ScreenHeight;
-		if (tmpScreenRatio > tmpDesignRatio)//¸ü¿í,È¡heihgt×öÊÊÅä,width×öºÚ±ß
+		if (tmpScreenRatio > tmpDesignRatio)//ï¿½ï¿½ï¿½ï¿½,È¡heihgtï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,widthï¿½ï¿½ï¿½Ú±ï¿½
 		{
 			Application::RenderWidth = Application::DesignWidth*((float)Application::ScreenHeight / Application::DesignHeight);
 			Application::RenderHeight = Application::ScreenHeight;
 		}
-		else if (tmpScreenRatio < tmpDesignRatio)//¸ü¸ß,È¡width×öÊÊÅä,height×öºÚ±ß
+		else if (tmpScreenRatio < tmpDesignRatio)//ï¿½ï¿½ï¿½ï¿½,È¡widthï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,heightï¿½ï¿½ï¿½Ú±ï¿½
 		{
 			Application::RenderWidth = Application::ScreenWidth;
 			Application::RenderHeight = Application::DesignHeight*((float)Application::ScreenWidth / Application::DesignWidth);
@@ -176,7 +176,7 @@ public:
 		LuaEngine::GetSingleton()->CallLuaFunction("Init",2, tmpFunction);
 	}
 
-	//Èë¿Úº¯Êý;
+	//ï¿½ï¿½Úºï¿½ï¿½ï¿½;
 	int start(HWND hWnd, int width, int height)
 	{
 		Application::ScreenWidth = width;
@@ -194,7 +194,7 @@ public:
 			m_hWnd = hWnd;
 		}
 
-		//³õÊ¼»¯gles»·¾³;
+		//ï¿½ï¿½Ê¼ï¿½ï¿½glesï¿½ï¿½ï¿½ï¿½;
 		if (!initDevice())
 		{
 			return -2;
@@ -217,7 +217,7 @@ public:
 				break;
 			}
 			/**
-			*   ÓÐÏûÏ¢£¬´¦ÀíÏûÏ¢£¬ÎÞÏûÏ¢£¬Ôò½øÐÐäÖÈ¾»æÖÆ
+			*   ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¾ï¿½ï¿½ï¿½ï¿½
 			*/
 			if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
 			{
@@ -226,7 +226,7 @@ public:
 			}
 			else
 			{
-				static float frameTime = 1.0f/30; //ËøÖ¡ 30
+				static float frameTime = 1.0f/30; //ï¿½ï¿½Ö¡ 30
 				static int begintime = 0;
 				static int endtime = 0;
 				static float deltaTime = 0.0f;
@@ -247,7 +247,7 @@ public:
 	}
 
 	/**
-	*   ÊÂ¼þ
+	*   ï¿½Â¼ï¿½
 	*/
 	virtual int     events(unsigned msg, unsigned wParam, unsigned lParam)
 	{
@@ -281,12 +281,12 @@ public:
 			int tmpX = GET_X_LPARAM(lParam);
 			int tmpY = GET_Y_LPARAM(lParam);
 
-			//×ª»»³ÉÁãµãÔÚÆÁÄ»´°¿ÚÖÐ¼ä£¬ÓÒÉÏÔö³¤µÄ×ø±ê
+			//×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä»ï¿½ï¿½ï¿½ï¿½ï¿½Ð¼ä£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			tmpX = tmpX - Application::ScreenWidth / 2;
 			tmpY = Application::ScreenHeight /2 - tmpY;
 
 
-			//ÊÊÅäÉè¼Æ·Ö±æÂÊ
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·Ö±ï¿½ï¿½ï¿½
 			float tmpWidthRatio = Application::RenderWidth / (float)Application::DesignWidth;
 			float tmpHeightRatio = Application::RenderHeight / (float)Application::DesignHeight;
 
@@ -307,11 +307,11 @@ public:
 			int tmpX = GET_X_LPARAM(lParam);
 			int tmpY = GET_Y_LPARAM(lParam);
 
-			//×ª»»³ÉÁãµãÔÚÆÁÄ»´°¿ÚÖÐ¼ä£¬ÓÒÉÏÔö³¤µÄ×ø±ê
+			//×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä»ï¿½ï¿½ï¿½ï¿½ï¿½Ð¼ä£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			tmpX = tmpX - Application::ScreenWidth / 2;
 			tmpY = Application::ScreenHeight / 2 - tmpY;
 
-			//ÊÊÅäÉè¼Æ·Ö±æÂÊ
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·Ö±ï¿½ï¿½ï¿½
 			float tmpWidthRatio = Application::RenderWidth / (float)Application::DesignWidth;
 			float tmpHeightRatio = Application::RenderHeight / (float)Application::DesignHeight;
 
@@ -401,7 +401,7 @@ protected:
 			NULL,
 			NULL,
 			m_hInstance,
-			this    //! ÕâÀï×¢Òâ£¬½«µ±Ç°ÀàµÄÖ¸Õë×÷Îª²ÎÊý£¬´«µÝ,²Î¼û windowProcº¯Êý.
+			this    //! ï¿½ï¿½ï¿½ï¿½×¢ï¿½â£¬ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½Î¼ï¿½ windowProcï¿½ï¿½ï¿½ï¿½.
 		);
 
 		if (m_hWnd == 0)
@@ -461,7 +461,7 @@ protected:
 	}
 
 	/**
-	*   ¹Ø±Õ
+	*   ï¿½Ø±ï¿½
 	*/
 	void    shutDownDevice()
 	{
@@ -491,7 +491,7 @@ protected:
 	{
 #define GWL_USERDATA (-21)
 		/**
-		*   Ê¹ÓÃthisÊý¾Ý£¬½«È«¾Öº¯Êý£¬×ª»¯ÎªÀàµÄ³ÉÔ±º¯Êýµ÷ÓÃ
+		*   Ê¹ï¿½ï¿½thisï¿½ï¿½ï¿½Ý£ï¿½ï¿½ï¿½È«ï¿½Öºï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½Îªï¿½ï¿½Ä³ï¿½Ô±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		*/
 		WinGame*  pThis = (WinGame*)GetWindowLong(hWnd, GWL_USERDATA);
 		if (pThis)

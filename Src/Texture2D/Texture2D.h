@@ -1,6 +1,13 @@
 #pragma once
 #include"FreeImage.h"
-#include<gles2\gl2.h>
+
+#if IOS
+#include <OpenGLES/ES2/gl.h>
+#include <OpenGLES/ES2/glext.h>
+#else
+#include<gles2/gl2.h>
+
+#endif
 #include<string>
 
 class Texture2D

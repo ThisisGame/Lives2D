@@ -1,10 +1,10 @@
 #include"UILabel.h"
-#include"Tools\Application.h"
+#include"Tools/Application.h"
 #include<string>
-#include<glm\glm.hpp>
-#include<glm\gtc\matrix_transform.hpp>
-#include<glm\gtx\transform2.hpp>
-#include<glm\gtx\euler_angles.hpp>
+#include<glm/glm.hpp>
+#include<glm/gtc/matrix_transform.hpp>
+#include<glm/gtx/transform2.hpp>
+#include<glm/gtx/euler_angles.hpp>
 #include"FontManager.h"
 
 UILabel::UILabel():mPosX(0), mPosY(0), mScaleX(1), mScaleY(1), mSpace(2),mAlignCenter(true)
@@ -18,11 +18,11 @@ UILabel::~UILabel()
 
 void UILabel::Init(const char* varText)
 {
-	mFont= FontManager::GetSingleton()->BuildFont("/Resources/Font/msyh.ttf");
+	mFont= FontManager::GetSingleton()->BuildFont("/Resource/Font/msyh.ttf");
 
 	m_GLProgram_Font.Initialize();
 
-	//Ê×´Îµ÷ÓÃ£¬Éú³ÉÒ»¸öGLTexture£¬È»ºó°ó¶¨Ê¹ÓÃ;
+	//ï¿½×´Îµï¿½ï¿½Ã£ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½GLTextureï¿½ï¿½È»ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½;
 	//glGenTextures(1, &m_fontTexture);
 	m_fontTexture = mFont->m_fontTexture;
 
@@ -33,7 +33,7 @@ void UILabel::Draw()
 {
 	glBindTexture(GL_TEXTURE_2D, m_fontTexture);
 
-	//Ö¸¶¨·Å´óËõÐ¡ÂË²¨£¬Ê¹ÓÃÏßÐÔ·½Ê½£¬¼´Í¼Æ¬·Å´óÊ±²åÖµ·½Ê½;
+	//Ö¸ï¿½ï¿½ï¿½Å´ï¿½ï¿½ï¿½Ð¡ï¿½Ë²ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½Ô·ï¿½Ê½ï¿½ï¿½ï¿½ï¿½Í¼Æ¬ï¿½Å´ï¿½Ê±ï¿½ï¿½Öµï¿½ï¿½Ê½;
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 
@@ -41,14 +41,14 @@ void UILabel::Draw()
 	glm::mat4 rotation = glm::eulerAngleYXZ(glm::radians(0.0f), glm::radians(0.0f), glm::radians(0.0f));
 	glm::mat4 scale = glm::scale(glm::vec3(mScaleX, mScaleY, 1.0f));
 
-	//Ò»¶¨ÒªÏÈtrans£¬È»ºóÔÙÆäËü;ÏÈËõ·Å£¬È»ºóÔÙÒÆ¶¯£¬ÄÇÃ´ÒÆ¶¯µÄÎ»ÖÃÒ²±»Ëõ·ÅÁË¡£ÏÈÒÆ¶¯ÔÙËõ·Å¾Í²»»á·Å´óÒÆ¶¯µÄÎ»ÖÃ;
+	//Ò»ï¿½ï¿½Òªï¿½ï¿½transï¿½ï¿½È»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½;ï¿½ï¿½ï¿½ï¿½ï¿½Å£ï¿½È»ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½ï¿½ï¿½ï¿½Ã´ï¿½Æ¶ï¿½ï¿½ï¿½Î»ï¿½ï¿½Ò²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë¡ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å¾Í²ï¿½ï¿½ï¿½Å´ï¿½ï¿½Æ¶ï¿½ï¿½ï¿½Î»ï¿½ï¿½;
 	glm::mat4 model = trans*scale*rotation;
 
 	//View
 	glm::mat4 view = glm::lookAt(glm::vec3(0, 0, 10), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0));
 
 
-	//Õý½»ÉãÏñ»ú
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	glm::mat4 proj = glm::ortho(-(float)Application::DesignWidth / 2, (float)Application::DesignWidth / 2, -(float)Application::DesignHeight / 2, (float)Application::DesignHeight / 2, 0.0f, 100.0f);
 
 

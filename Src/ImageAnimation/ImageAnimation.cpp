@@ -2,7 +2,7 @@
 
 #include "ImageAnimation.h"
 
-#include"Tools\Helper.h"
+#include"Tools/Helper.h"
 
 
 ImageAnimation::ImageAnimation(std::string varConfigPath,float varSpeed):UIDrawRect(),mPlay(false), mCurrentPlayClip(NULL)

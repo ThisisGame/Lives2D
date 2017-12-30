@@ -1,10 +1,10 @@
 #include "Image.h"
 
-#include<glm\glm.hpp>
-#include<glm\gtc\matrix_transform.hpp>
-#include<glm\gtx\transform2.hpp>
-#include<glm\gtx\euler_angles.hpp>
-#include"Tools\Application.h"
+#include<glm/glm.hpp>
+#include<glm/gtc/matrix_transform.hpp>
+#include<glm/gtx/transform2.hpp>
+#include<glm/gtx/euler_angles.hpp>
+#include"Tools/Application.h"
 
 
 Image::Image(void):UIDrawRect(),mPosX(0),mPosY(0),mScaleX(1),mScaleY(1)

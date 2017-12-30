@@ -47,6 +47,21 @@ void AudioSource::Play()
 	AudioCardPlay(mAudioPath.c_str());
 }
 
+#elif IOS
+
+
+
+void AudioSource::LoadAudio(const char * varAudioPath)
+{
+//    mAudioPath = varAudioPath;
+    
+}
+
+void AudioSource::Play()
+{
+//    AudioCardPlay(mAudioPath.c_str());
+}
+
 #endif
 
 

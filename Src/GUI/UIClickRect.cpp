@@ -1,6 +1,6 @@
 #include "UIClickRect.h"
-#include"KeyTouch\KeyTouch.h"
-#include"Tools\Application.h"
+#include"KeyTouch/KeyTouch.h"
+#include"Tools/Application.h"
 
 
 UIClickRect::UIClickRect():KeyTouchListener("UIClickRect"),UIRect(UIRectType::Type_UIClickRect),mPosX(0),mPosY(0),mWidth(0),mHeight(0)

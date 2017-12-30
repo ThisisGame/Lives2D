@@ -47,6 +47,10 @@ public:
 		}
 		return tmpDataPath;
 #endif // _WIN32
+        
+#ifdef IOS
+        return mDataPath;
+#endif
 	}
 
 
@@ -74,6 +78,11 @@ public:
 		}
 		return tmpDataPath;
 #endif // _WIN32
+        
+#ifdef IOS
+        
+      return mPersistentDataPath;
+#endif
 	}
 
 private:

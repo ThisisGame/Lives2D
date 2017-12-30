@@ -1,9 +1,9 @@
 #pragma once
 
-#include"GUI\UIDrawRect.h"
+#include"GUI/UIDrawRect.h"
 
 #include<vector>
-#include"Image\Image.h"
+#include"Image/Image.h"
 
 #include"ImageAnimationClip.h"
 

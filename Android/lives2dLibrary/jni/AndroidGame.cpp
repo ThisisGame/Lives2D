@@ -86,7 +86,7 @@ void onInit(JNIEnv * env, jobject obj,  int varWidth,int varHeight)
 	
 
 	//LuaEngine Start
-	LuaEngine::GetSingleton()->DoFile((Application::PersistentDataPath()+ "/Resources/Script/Engine/Lives2D.lua").c_str());
+	LuaEngine::GetSingleton()->DoFile((Application::PersistentDataPath()+ "/Resource/Script/Engine/Lives2D.lua").c_str());
 
 	std::function<void(lua_State*)> tmpFunction = [&](lua_State* var_pLuaState)
 	{
@@ -195,7 +195,7 @@ JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_onTouch(JNIEnv * env,
 	};
 	LuaEngine::GetSingleton()->CallLuaFunction("OnTouch", 2, tmpFunction);
 	
-	//10-05 01:04:40.186: I/Lives2D(3879): Error: ...orage/emulated/0/Resources/Script/Engine/Lives2D.lua:35: error in function 'OnTouch'.  
+	//10-05 01:04:40.186: I/Lives2D(3879): Error: ...orage/emulated/0/Resource/Script/Engine/Lives2D.lua:35: error in function 'OnTouch'.  
 	//10-05 01:04:40.186: I/Lives2D(3879):      argument #4 is '202'; '[no object]' expected.
 	//这个错误，原本是第二个参数的 #2 202 为什么变成了#4 202…… 是不是有其它的函数漏掉了 或者 多出来了传参！，或者是tolua写法不对，或者是lambda用坏了 逐一替换掉测试 模拟器按键精灵
 }

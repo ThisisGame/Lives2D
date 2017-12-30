@@ -36,7 +36,13 @@ using namespace std;
 	system("pause");\
 	fflush(stdout)
 #elif defined IOS
-
+    #include <OpenGLES/ES2/gl.h>
+    #include <OpenGLES/ES2/glext.h>
+    #define LOGI(out,...) printf(out,##__VA_ARGS__);fflush(stdout)
+    #define LOGE(out,...) printf(out,##__VA_ARGS__);\
+    printf("The file name: %s\n", __FILE__);\
+    printf("The current line No:%d\n", __LINE__);\
+    fflush(stdout)
 #endif
 
 class Helper

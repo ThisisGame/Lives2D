@@ -1,7 +1,15 @@
 #pragma once
 #include<assert.h>
+
+#if IOS
+#include <OpenGLES/ES2/gl.h>
+#include <OpenGLES/ES2/glext.h>
+#else
 #include<egl\egl.h>
 #include<gles2\gl2.h>
+#endif
+
+
 
 #include"../Tools/Helper.h"	
 

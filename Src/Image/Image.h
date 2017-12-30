@@ -1,8 +1,8 @@
 #pragma once
 
-#include"GLProgram\GLProgram_Texture.h"
-#include"Texture2D\Texture2D.h"
-#include"GUI\UIDrawRect.h"
+#include"GLProgram/GLProgram_Texture.h"
+#include"Texture2D/Texture2D.h"
+#include"GUI/UIDrawRect.h"
 
 class Image:public UIDrawRect
 {

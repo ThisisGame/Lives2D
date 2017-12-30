@@ -3,8 +3,8 @@
 #include<iostream>
 #include<sstream>
 
-#include"Tools\Application.h"
-#include"Tools\Helper.h"
+#include"Tools/Application.h"
+#include"Tools/Helper.h"
 
 TOLUA_API int  tolua_Application_open(lua_State* tolua_S);
 TOLUA_API int  tolua_BinaryPacker_open(lua_State* tolua_S);
@@ -71,7 +71,7 @@ LuaEngine * LuaEngine::GetSingleton()
 
 void LuaEngine::SetLuaPath()
 {
-	std::string tmpPackagePath = "package.path='" + Application::PersistentDataPath() + "/Resources/Script/?.lua\'";
+	std::string tmpPackagePath = "package.path='" + Application::PersistentDataPath() + "/Resource/Script/?.lua\'";
 
 	Helper::LOG("Package.path=%s", tmpPackagePath.c_str());
 
@@ -192,7 +192,7 @@ void LuaEngine::ExecuteLuaFunction(LuaFunctionPoint* varLuaFunctionPoint)
 void LuaEngine::PrintError()
 {
 	lua_Debug debug = {};
-	int ret = lua_getstack(m_pLua_State, 2, &debug); // 0ÊÇpcall_callback_err_fun×Ô¼º, 1ÊÇerrorº¯Êý, 2ÊÇÕæÕý³ö´íµÄº¯Êý  
+	int ret = lua_getstack(m_pLua_State, 2, &debug); // 0ï¿½ï¿½pcall_callback_err_funï¿½Ô¼ï¿½, 1ï¿½ï¿½errorï¿½ï¿½ï¿½ï¿½, 2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Äºï¿½ï¿½ï¿½  
 	lua_getinfo(m_pLua_State, "Sln", &debug);
 
 	std::string err = lua_tostring(m_pLua_State, -1);
