@@ -15,6 +15,16 @@
 
 #import "tolua++.h"
 
+#import "FreeImage.h"
+
+//#include "ftglyph.h"
+//#include "ftbitmap.h"
+//
+//#include "freetype.h"
+
+
+
+
 
 @interface ViewController ()
 
@@ -39,7 +49,48 @@
     luaL_dostring(p_Lua_State, "print 'hello lua'");
     lua_close(p_Lua_State);
 
+//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//    NSString *docDir = [paths objectAtIndex:0];
+//    NSString* pngfilepath=[docDir stringByAppendingPathComponent:@"test.png"];
+//    NSLog(@"pngfilepath:%@",pngfilepath);
     
+    NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"Data/test" ofType:@"png"];
+    NSLog(@"pngfilepath:%@",imagePath);
+    UIImage *appleImage = [[UIImage alloc] initWithContentsOfFile:imagePath];
+    
+    
+    FREE_IMAGE_TYPE imageformat=FreeImage_GetFileType([imagePath UTF8String], 0);
+    
+    NSLog(@"imageformat:%d",imageformat);
+    
+    FIBITMAP *bitmap=FreeImage_Load(imageformat, [imagePath UTF8String], 0);
+    
+    if(bitmap==NULL)
+    {
+        NSLog(@"error image");
+    }
+    else
+    {
+        bitmap = FreeImage_ConvertTo32Bits(bitmap);
+        
+        BYTE *pixels = (BYTE*)FreeImage_GetBits(bitmap);
+        int mTextureWidth = FreeImage_GetWidth(bitmap);
+        int mTextureHeight = FreeImage_GetHeight(bitmap);
+    }
+    
+    
+    //Font tfontt;
+//    fontt.buildSystemFont(ttfpath.c_str(), 30);
+//
+//    bool bRet = font.getCharacter('L');
+//    if (bRet)
+//    {
+//        LOGI("find it .");
+//    }
+//    else
+//    {
+//        LOGI("Cannot find it .");
+//    }
 }
 
 
