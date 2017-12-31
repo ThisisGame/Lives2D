@@ -5,12 +5,15 @@
 #include"AL\alut.h"
 #elif ANDROID
 
+#elif IOS
+#include <OpenAL/OpenAL.h>
+#include "AL/alut.h"
 #endif
 
 class AudioSource
 {
 private:
-#ifdef WIN32
+#if (defined WIN32)||(defined __APPLE__)
 	ALenum format;
 	ALsizei size;
 	ALvoid* data;

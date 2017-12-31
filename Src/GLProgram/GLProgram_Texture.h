@@ -6,12 +6,12 @@ class GLProgram_Texture :public GLProgram
 public:
 
 	//传入shader中的值;
-	GLint m_position;
-	GLint m_color;
-	GLint m_mvp;
+	GLuint m_position;
+	GLuint m_color;
+	GLuint m_mvp;
 
-	GLint m_texture;
-	GLint m_uv;
+	GLuint m_texture;
+	GLuint m_uv;
 
 public:
 	GLProgram_Texture()
@@ -49,35 +49,37 @@ public:
 	{
 		const char* vertexShader=
 		{
-			"precision lowp float;"
+			//"precision lowp float;"
 			"uniform mat4 m_mvp;"
 			"attribute vec3 m_position;"
 			"attribute vec4 m_color;"
 			"attribute vec2 m_uv;"
 
 			"varying vec4 m_outColor;"
-			"varying vec2 m_outUV;"
+			"varying lowp vec2 m_outUV;"
 
 			"void main()"
 			"{"
 			"	vec4 pos=vec4(m_position,1);"
 			"	gl_Position=m_mvp*pos;"
-			"	m_outColor=m_color;"
+			//"	m_outColor=m_color;"
 			"	m_outUV=m_uv;"
 			"}"
 		};
 
 		const char* fragmentShader =
 		{
-			"precision lowp float;"
+			//"precision lowp float;"
 			"uniform sampler2D m_texture;"
 
-			"varying vec4 m_outColor;"
-			"varying vec2 m_outUV;"
+			//"varying vec4 m_outColor;"
+			"varying lowp vec2 m_outUV;"
 
 			"void main()"
 			"{"
-			"	gl_FragColor=m_outColor*texture2D(m_texture,m_outUV);"
+			//"	gl_FragColor=m_outColor*texture2D(m_texture,m_outUV);"
+            //"    gl_FragColor=vec4(0.5,0.5,1,1);"
+            "    gl_FragColor=texture2D(m_texture,m_outUV);"
 			"}"
 		};
 

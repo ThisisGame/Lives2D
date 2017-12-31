@@ -50,16 +50,24 @@ void AudioSource::Play()
 #elif IOS
 
 
-
 void AudioSource::LoadAudio(const char * varAudioPath)
 {
-//    mAudioPath = varAudioPath;
+    m_SoundBuffer = alutCreateBufferFromFile(varAudioPath);
+    if (m_SoundBuffer == AL_NONE)
+    {
+        ALenum tmpRet = alutGetError();
+        printf(alutGetErrorString(tmpRet));
+    }
     
+    
+    alGenSources(1, &m_SoundSource);
+    alSourcei(m_SoundSource, AL_BUFFER, m_SoundBuffer);
 }
+
 
 void AudioSource::Play()
 {
-//    AudioCardPlay(mAudioPath.c_str());
+    alSourcePlay(m_SoundSource);
 }
 
 #endif
@@ -67,7 +75,7 @@ void AudioSource::Play()
 
 void AudioSource::Loop()
 {
-#ifdef WIN32
+#if ( WIN32 || __APPLE__)
 	alSourcei(m_SoundSource, AL_LOOPING, AL_TRUE);
 #elif ANDROID
 

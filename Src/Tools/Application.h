@@ -5,8 +5,9 @@
 #else
 
 #endif
-#include <iostream>      
+#include <iostream>
 #include <string> 
+
 
 class Application
 {
@@ -21,6 +22,8 @@ public:
 	static int DesignHeight;
 	static int RenderWidth;//实际渲染分辨率
 	static int RenderHeight;
+    
+    static bool isRunning;
 
 public:
 	static void SetDataPath(const char* varDataPath)

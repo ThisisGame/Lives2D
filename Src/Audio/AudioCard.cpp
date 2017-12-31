@@ -58,14 +58,21 @@ void AudioCardExit()
 
 #elif IOS
 
+#include <OpenAL/OpenAL.h>
+#include "AL/alut.h"
+
 void AudioCardInit()
 {
-//    ALboolean tmpRet=alutInit(0, 0);
+    ALboolean tmpRet=alutInit(0, 0);
+    if(tmpRet)
+    {
+        
+    }
 }
 
 void AudioCardExit()
 {
-//    alutExit();
+    alutExit();
 }
 
 #endif

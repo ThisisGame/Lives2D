@@ -43,6 +43,7 @@ void Texture2D::LoadTexture(const char* varFilePath)
 		BYTE r = pixels[i];
 		pixels[i] = pixels[i + 2];
 		pixels[i + 2] = r;
+        
 	}
 
 	//1、产生一个纹理ID;
@@ -54,7 +55,10 @@ void Texture2D::LoadTexture(const char* varFilePath)
 	//3、指定放大，缩小滤波方式，线性滤波，即放大缩小的插值方式;
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-
+    
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+    
 	//将图片rgb数据上传到OpenGL,在这一步才把数据从内存Copy到显存;
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, mTextureWidth, mTextureHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, pixels);
 

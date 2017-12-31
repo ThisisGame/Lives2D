@@ -357,6 +357,17 @@
 		E4A41BE71FF800C800F4932B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A6EFC711F8B7EC7009A20F0 /* Main.storyboard */; };
 		E4A41BE81FF800C800F4932B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A6EFC741F8B7EC7009A20F0 /* Assets.xcassets */; };
 		E4A41C791FF81B2B00F4932B /* Resource in Resources */ = {isa = PBXBuildFile; fileRef = E4A41C781FF81B1F00F4932B /* Resource */; };
+		E4BB45371FF9232A00B2EA1F /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A41B7A1FF7F68A00F4932B /* OpenAL.framework */; };
+		E4BB45561FF929EC00B2EA1F /* alutBufferData.c in Sources */ = {isa = PBXBuildFile; fileRef = E4BB45431FF9297700B2EA1F /* alutBufferData.c */; };
+		E4BB45571FF92A1300B2EA1F /* alutCodec.c in Sources */ = {isa = PBXBuildFile; fileRef = E4BB45441FF9297700B2EA1F /* alutCodec.c */; };
+		E4BB45581FF92A1300B2EA1F /* alutError.c in Sources */ = {isa = PBXBuildFile; fileRef = E4BB45451FF9297700B2EA1F /* alutError.c */; };
+		E4BB45591FF92A1300B2EA1F /* alutInit.c in Sources */ = {isa = PBXBuildFile; fileRef = E4BB45461FF9297700B2EA1F /* alutInit.c */; };
+		E4BB455A1FF92A1300B2EA1F /* alutInputStream.c in Sources */ = {isa = PBXBuildFile; fileRef = E4BB45471FF9297700B2EA1F /* alutInputStream.c */; };
+		E4BB455B1FF92A1900B2EA1F /* alutLoader.c in Sources */ = {isa = PBXBuildFile; fileRef = E4BB45491FF9297700B2EA1F /* alutLoader.c */; };
+		E4BB455C1FF92A1900B2EA1F /* alutOutputStream.c in Sources */ = {isa = PBXBuildFile; fileRef = E4BB454A1FF9297700B2EA1F /* alutOutputStream.c */; };
+		E4BB455D1FF92A1900B2EA1F /* alutUtil.c in Sources */ = {isa = PBXBuildFile; fileRef = E4BB454B1FF9297700B2EA1F /* alutUtil.c */; };
+		E4BB455E1FF92A1900B2EA1F /* alutVersion.c in Sources */ = {isa = PBXBuildFile; fileRef = E4BB454C1FF9297700B2EA1F /* alutVersion.c */; };
+		E4BB455F1FF92A1900B2EA1F /* alutWaveform.c in Sources */ = {isa = PBXBuildFile; fileRef = E4BB454D1FF9297700B2EA1F /* alutWaveform.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -725,7 +736,7 @@
 		9A6EFC651F8B7EC7009A20F0 /* lives2d.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lives2d.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A6EFC691F8B7EC7009A20F0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9A6EFC6B1F8B7EC7009A20F0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		9A6EFC6C1F8B7EC7009A20F0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9A6EFC6C1F8B7EC7009A20F0 /* AppDelegate.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; path = AppDelegate.m; sourceTree = "<group>"; };
 		9A6EFC6E1F8B7EC7009A20F0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		9A6EFC6F1F8B7EC7009A20F0 /* ViewController.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
 		9A6EFC721F8B7EC7009A20F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -735,7 +746,7 @@
 		9A6EFC801F8B7F0E009A20F0 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		9A6EFC821F8B7F13009A20F0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9A6EFC841F8B7FC1009A20F0 /* GLESView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLESView.h; sourceTree = "<group>"; };
-		9A6EFC851F8B7FC1009A20F0 /* GLESView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLESView.m; sourceTree = "<group>"; };
+		9A6EFC851F8B7FC1009A20F0 /* GLESView.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = GLESView.m; sourceTree = "<group>"; };
 		E4A415441FF7E17E00F4932B /* ftconfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ftconfig.h; sourceTree = "<group>"; };
 		E4A415451FF7E17E00F4932B /* ftheader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ftheader.h; sourceTree = "<group>"; };
 		E4A415461FF7E17E00F4932B /* ftmodule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ftmodule.h; sourceTree = "<group>"; };
@@ -1335,7 +1346,7 @@
 		E4A41B2C1FF7F64A00F4932B /* tolua++.exe */ = {isa = PBXFileReference; lastKnownFileType = file; path = "tolua++.exe"; sourceTree = "<group>"; };
 		E4A41B321FF7F64A00F4932B /* Texture2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Texture2D.cpp; sourceTree = "<group>"; };
 		E4A41B331FF7F64A00F4932B /* Texture2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture2D.h; sourceTree = "<group>"; };
-		E4A41B351FF7F64A00F4932B /* Application.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Application.cpp; sourceTree = "<group>"; };
+		E4A41B351FF7F64A00F4932B /* Application.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Application.cpp; sourceTree = "<group>"; };
 		E4A41B361FF7F64A00F4932B /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
 		E4A41B371FF7F64A00F4932B /* Application.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Application.pkg; sourceTree = "<group>"; };
 		E4A41B381FF7F64A00F4932B /* Helper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Helper.cpp; sourceTree = "<group>"; };
@@ -1345,6 +1356,23 @@
 		E4A41B7A1FF7F68A00F4932B /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		E4A41BE31FF8001900F4932B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
 		E4A41C781FF81B1F00F4932B /* Resource */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Resource; path = ../../Resource; sourceTree = "<group>"; };
+		E4BB45431FF9297700B2EA1F /* alutBufferData.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = alutBufferData.c; sourceTree = "<group>"; };
+		E4BB45441FF9297700B2EA1F /* alutCodec.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = alutCodec.c; sourceTree = "<group>"; };
+		E4BB45451FF9297700B2EA1F /* alutError.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = alutError.c; sourceTree = "<group>"; };
+		E4BB45461FF9297700B2EA1F /* alutInit.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = alutInit.c; sourceTree = "<group>"; };
+		E4BB45471FF9297700B2EA1F /* alutInputStream.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = alutInputStream.c; sourceTree = "<group>"; };
+		E4BB45481FF9297700B2EA1F /* alutInternal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = alutInternal.h; sourceTree = "<group>"; };
+		E4BB45491FF9297700B2EA1F /* alutLoader.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = alutLoader.c; sourceTree = "<group>"; };
+		E4BB454A1FF9297700B2EA1F /* alutOutputStream.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = alutOutputStream.c; sourceTree = "<group>"; };
+		E4BB454B1FF9297700B2EA1F /* alutUtil.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = alutUtil.c; sourceTree = "<group>"; };
+		E4BB454C1FF9297700B2EA1F /* alutVersion.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = alutVersion.c; sourceTree = "<group>"; };
+		E4BB454D1FF9297700B2EA1F /* alutWaveform.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = alutWaveform.c; sourceTree = "<group>"; };
+		E4BB454E1FF9297700B2EA1F /* CMakeLists.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		E4BB454F1FF9297700B2EA1F /* helloworld.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = helloworld.wav; sourceTree = "<group>"; };
+		E4BB45501FF9297700B2EA1F /* Makefile.am */ = {isa = PBXFileReference; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
+		E4BB45511FF9297700B2EA1F /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		E4BB45541FF9297700B2EA1F /* alut.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = alut.h; sourceTree = "<group>"; };
+		E4BB45551FF9297700B2EA1F /* Makefile.am */ = {isa = PBXFileReference; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1352,6 +1380,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4BB45371FF9232A00B2EA1F /* OpenAL.framework in Frameworks */,
 				9A6EFC831F8B7F13009A20F0 /* QuartzCore.framework in Frameworks */,
 				9A6EFC811F8B7F0E009A20F0 /* OpenGLES.framework in Frameworks */,
 			);
@@ -1837,6 +1866,7 @@
 		9A6EFC671F8B7EC7009A20F0 /* lives2d */ = {
 			isa = PBXGroup;
 			children = (
+				E4BB453B1FF928A600B2EA1F /* freealut */,
 				E4A41A351FF7F50C00F4932B /* engine */,
 				E4A418C21FF7F2DB00F4932B /* glm */,
 				E4A412171FF7E03000F4932B /* freetype */,
@@ -2827,6 +2857,56 @@
 			path = Tools;
 			sourceTree = "<group>";
 		};
+		E4BB453B1FF928A600B2EA1F /* freealut */ = {
+			isa = PBXGroup;
+			children = (
+				E4BB45521FF9297700B2EA1F /* include */,
+				E4BB45421FF9297700B2EA1F /* src */,
+			);
+			name = freealut;
+			sourceTree = "<group>";
+		};
+		E4BB45421FF9297700B2EA1F /* src */ = {
+			isa = PBXGroup;
+			children = (
+				E4BB45431FF9297700B2EA1F /* alutBufferData.c */,
+				E4BB45441FF9297700B2EA1F /* alutCodec.c */,
+				E4BB45451FF9297700B2EA1F /* alutError.c */,
+				E4BB45461FF9297700B2EA1F /* alutInit.c */,
+				E4BB45471FF9297700B2EA1F /* alutInputStream.c */,
+				E4BB45481FF9297700B2EA1F /* alutInternal.h */,
+				E4BB45491FF9297700B2EA1F /* alutLoader.c */,
+				E4BB454A1FF9297700B2EA1F /* alutOutputStream.c */,
+				E4BB454B1FF9297700B2EA1F /* alutUtil.c */,
+				E4BB454C1FF9297700B2EA1F /* alutVersion.c */,
+				E4BB454D1FF9297700B2EA1F /* alutWaveform.c */,
+				E4BB454E1FF9297700B2EA1F /* CMakeLists.txt */,
+				E4BB454F1FF9297700B2EA1F /* helloworld.wav */,
+				E4BB45501FF9297700B2EA1F /* Makefile.am */,
+				E4BB45511FF9297700B2EA1F /* README */,
+			);
+			name = src;
+			path = ../../../../Lives2D_Depends/freealut/src;
+			sourceTree = "<group>";
+		};
+		E4BB45521FF9297700B2EA1F /* include */ = {
+			isa = PBXGroup;
+			children = (
+				E4BB45531FF9297700B2EA1F /* AL */,
+				E4BB45551FF9297700B2EA1F /* Makefile.am */,
+			);
+			name = include;
+			path = ../../../../Lives2D_Depends/freealut/include;
+			sourceTree = "<group>";
+		};
+		E4BB45531FF9297700B2EA1F /* AL */ = {
+			isa = PBXGroup;
+			children = (
+				E4BB45541FF9297700B2EA1F /* alut.h */,
+			);
+			path = AL;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2913,6 +2993,7 @@
 				E4A418911FF7E19900F4932B /* t1load.c in Sources */,
 				E4A4186B1FF7E19900F4932B /* smooth.c in Sources */,
 				E4A418341FF7E19800F4932B /* pfrsbit.c in Sources */,
+				E4BB455E1FF92A1900B2EA1F /* alutVersion.c in Sources */,
 				E4A417B91FF7E19800F4932B /* md5.c in Sources */,
 				204BD6EF1F93A8EE009D14C7 /* lobject.c in Sources */,
 				204BDAC51F93B07C009D14C7 /* ConversionRGBA16.cpp in Sources */,
@@ -2932,6 +3013,7 @@
 				204BDB9C1F93B07C009D14C7 /* pi.c in Sources */,
 				E4A41B5B1FF7F64B00F4932B /* ImageAnimation.cpp in Sources */,
 				204BDABB1F93B07C009D14C7 /* ColorLookup.cpp in Sources */,
+				E4BB455F1FF92A1900B2EA1F /* alutWaveform.c in Sources */,
 				E4A417B61FF7E19800F4932B /* ftwinfnt.c in Sources */,
 				204BD6FB1F93A8EE009D14C7 /* lundump.c in Sources */,
 				204BDBA21F93B07C009D14C7 /* t2.c in Sources */,
@@ -2981,6 +3063,7 @@
 				204BDB061F93B07C009D14C7 /* Channels.cpp in Sources */,
 				204BD6E31F93A8EE009D14C7 /* ldblib.c in Sources */,
 				204BD6F41F93A8EE009D14C7 /* lstring.c in Sources */,
+				E4BB455A1FF92A1300B2EA1F /* alutInputStream.c in Sources */,
 				204BD6FD1F93A8EE009D14C7 /* lzio.c in Sources */,
 				E4A419D01FF7F2F100F4932B /* glm.cpp in Sources */,
 				E4A418921FF7E19900F4932B /* t1objs.c in Sources */,
@@ -3095,7 +3178,9 @@
 				204BDB2F1F93B07C009D14C7 /* jdatadst.c in Sources */,
 				204BDAC91F93B07C009D14C7 /* ConversionUINT16.cpp in Sources */,
 				E4A4184D1FF7E19800F4932B /* pspic.c in Sources */,
+				E4BB45581FF92A1300B2EA1F /* alutError.c in Sources */,
 				E4A418321FF7E19800F4932B /* pfrload.c in Sources */,
+				E4BB455B1FF92A1900B2EA1F /* alutLoader.c in Sources */,
 				204BDB201F93B07C009D14C7 /* jcdctmgr.c in Sources */,
 				204BDB8F1F93B07C009D14C7 /* j2k.c in Sources */,
 				204BDBB91F93B07C009D14C7 /* pngget.c in Sources */,
@@ -3142,6 +3227,7 @@
 				204BDB1E1F93B07C009D14C7 /* jccoefct.c in Sources */,
 				E4A41B541FF7F64B00F4932B /* UIRect.cpp in Sources */,
 				E4A417AC1FF7E19800F4932B /* ftpic.c in Sources */,
+				E4BB455C1FF92A1900B2EA1F /* alutOutputStream.c in Sources */,
 				E4A418C11FF7EC0900F4932B /* winfnt.c in Sources */,
 				204BD70C1F93AE21009D14C7 /* tolua_push.c in Sources */,
 				204BDB9A1F93B07C009D14C7 /* opj_clock.c in Sources */,
@@ -3180,6 +3266,7 @@
 				E4A4183C1FF7E19800F4932B /* psobjs.c in Sources */,
 				204BDB961F93B07C009D14C7 /* mct.c in Sources */,
 				204BDCE91F93B07D009D14C7 /* gzread.c in Sources */,
+				E4BB45591FF92A1300B2EA1F /* alutInit.c in Sources */,
 				204BD70A1F93AE21009D14C7 /* tolua_is.c in Sources */,
 				204BDB541F93B07C009D14C7 /* rdbmp.c in Sources */,
 				E4A418461FF7E19800F4932B /* pshpic.c in Sources */,
@@ -3205,6 +3292,7 @@
 				E4A4179B1FF7E19700F4932B /* ftcid.c in Sources */,
 				E4A4179F1FF7E19700F4932B /* ftgasp.c in Sources */,
 				E4A418391FF7E19800F4932B /* psaux.c in Sources */,
+				E4BB455D1FF92A1900B2EA1F /* alutUtil.c in Sources */,
 				204BDAD01F93B07C009D14C7 /* LFPQuantizer.cpp in Sources */,
 				E4A418631FF7E19900F4932B /* ttpost.c in Sources */,
 				204BDB401F93B07C009D14C7 /* jfdctint.c in Sources */,
@@ -3216,6 +3304,7 @@
 				204BDB051F93B07C009D14C7 /* BSplineRotate.cpp in Sources */,
 				E4A418581FF7E19800F4932B /* pngshim.c in Sources */,
 				204BDC4C1F93B07C009D14C7 /* TagConversion.cpp in Sources */,
+				E4BB45571FF92A1300B2EA1F /* alutCodec.c in Sources */,
 				204BDAC01F93B07C009D14C7 /* Conversion32.cpp in Sources */,
 				204BDB331F93B07C009D14C7 /* jddctmgr.c in Sources */,
 				204BDB311F93B07C009D14C7 /* jdcoefct.c in Sources */,
@@ -3232,6 +3321,7 @@
 				E4A418B61FF7EB9700F4932B /* type42.c in Sources */,
 				204BDACD1F93B07C009D14C7 /* GetType.cpp in Sources */,
 				204BD70B1F93AE21009D14C7 /* tolua_map.c in Sources */,
+				E4BB45561FF929EC00B2EA1F /* alutBufferData.c in Sources */,
 				204BDACC1F93B07C009D14C7 /* FreeImageIO.cpp in Sources */,
 				204BDBC01F93B07C009D14C7 /* pngset.c in Sources */,
 				204BDABF1F93B07C009D14C7 /* Conversion24.cpp in Sources */,
@@ -3377,6 +3467,7 @@
 					"\"$(SRCROOT)/../../../Lives2D_Depends/freetype/include\"",
 					"\"$(SRCROOT)/../../../Lives2D_Depends/GLM-0.9.6.3\"",
 					"\"$(SRCROOT)/../../Src\"",
+					"\"$(SRCROOT)/../../../Lives2D_Depends/freealut/include\"",
 				);
 				INFOPLIST_FILE = lives2d/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -3404,6 +3495,7 @@
 					"\"$(SRCROOT)/../../../Lives2D_Depends/freetype/include\"",
 					"\"$(SRCROOT)/../../../Lives2D_Depends/GLM-0.9.6.3\"",
 					"\"$(SRCROOT)/../../Src\"",
+					"\"$(SRCROOT)/../../../Lives2D_Depends/freealut/include\"",
 				);
 				INFOPLIST_FILE = lives2d/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

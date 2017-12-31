@@ -28,7 +28,7 @@ Font* FontManager::BuildFont(const char * varFontPath)
 
 	Font* font = new Font();
 
-	char fontPath[100];
+	char fontPath[300];
 	sprintf(fontPath, "%s%s", Application::PersistentDataPath().c_str(), varFontPath);
 
 	font->buildSystemFont(fontPath, 30);

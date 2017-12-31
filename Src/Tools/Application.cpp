@@ -9,3 +9,5 @@ int Application::DesignWidth;
 int Application::DesignHeight;
 int Application::RenderWidth;//实际渲染分辨率
 int Application::RenderHeight;
+
+bool Application::isRunning;
