@@ -34,6 +34,9 @@
     <Filter Include="LuaEngine">
       <UniqueIdentifier>{a125a9bb-bc47-4aa6-b077-87d8f2adb0a0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Light">
+      <UniqueIdentifier>{8b714e41-5107-45fb-ba04-9518cd631d2c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Src\Image\Image.cpp">
@@ -162,6 +165,15 @@
     <ClCompile Include="..\..\Src\GUI\FontManager.cpp">
       <Filter>GUI</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Src\GLProgram\GLProgram_Texture_ReceiveLightEffect.cpp">
+      <Filter>GLProgram</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Light\Light.cpp">
+      <Filter>Light</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Light\LightManager.cpp">
+      <Filter>Light</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\Image\Image.h">
@@ -244,6 +256,15 @@
     </ClInclude>
     <ClInclude Include="..\..\Src\GUI\FontManager.h">
       <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\GLProgram\GLProgram_Texture_ReceiveLightEffect.h">
+      <Filter>GLProgram</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Light\Light.h">
+      <Filter>Light</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Light\LightManager.h">
+      <Filter>Light</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

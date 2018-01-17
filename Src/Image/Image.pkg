@@ -8,6 +8,7 @@ public:
 
 	void  Init(const char* varFilePath);
 
+	void Init(const char* varFilePath, bool varReceiveLightEffect);
 
 	void Draw();
 

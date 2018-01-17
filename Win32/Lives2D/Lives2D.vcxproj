@@ -82,6 +82,7 @@
     <ClCompile Include="..\..\Src\GLProgram\GLProgram.cpp" />
     <ClCompile Include="..\..\Src\GLProgram\GLProgram_Font.cpp" />
     <ClCompile Include="..\..\Src\GLProgram\GLProgram_Texture.cpp" />
+    <ClCompile Include="..\..\Src\GLProgram\GLProgram_Texture_ReceiveLightEffect.cpp" />
     <ClCompile Include="..\..\Src\GUI\Font.cpp" />
     <ClCompile Include="..\..\Src\GUI\FontManager.cpp" />
     <ClCompile Include="..\..\Src\GUI\lua_UIButton.cpp" />
@@ -107,6 +108,8 @@
     <ClCompile Include="..\..\Src\KeyTouch\KeyTouchListener.cpp" />
     <ClCompile Include="..\..\Src\KeyTouch\lua_KeyTouch.cpp" />
     <ClCompile Include="..\..\Src\KeyTouch\lua_KeyTouchListener.cpp" />
+    <ClCompile Include="..\..\Src\Light\Light.cpp" />
+    <ClCompile Include="..\..\Src\Light\LightManager.cpp" />
     <ClCompile Include="..\..\Src\LuaEngine\BinaryPacker.cpp" />
     <ClCompile Include="..\..\Src\LuaEngine\LuaEngine.cpp" />
     <ClCompile Include="..\..\Src\LuaEngine\lua_BinaryPacker.cpp" />
@@ -126,6 +129,7 @@
     <ClInclude Include="..\..\Src\GLProgram\GLProgram.h" />
     <ClInclude Include="..\..\Src\GLProgram\GLProgram_Font.h" />
     <ClInclude Include="..\..\Src\GLProgram\GLProgram_Texture.h" />
+    <ClInclude Include="..\..\Src\GLProgram\GLProgram_Texture_ReceiveLightEffect.h" />
     <ClInclude Include="..\..\Src\GUI\Font.h" />
     <ClInclude Include="..\..\Src\GUI\FontManager.h" />
     <ClInclude Include="..\..\Src\GUI\UIButton.h" />
@@ -140,6 +144,8 @@
     <ClInclude Include="..\..\Src\KeyTouch\KeyCode.h" />
     <ClInclude Include="..\..\Src\KeyTouch\KeyTouch.h" />
     <ClInclude Include="..\..\Src\KeyTouch\KeyTouchListener.h" />
+    <ClInclude Include="..\..\Src\Light\Light.h" />
+    <ClInclude Include="..\..\Src\Light\LightManager.h" />
     <ClInclude Include="..\..\Src\LuaEngine\BinaryPacker.h" />
     <ClInclude Include="..\..\Src\LuaEngine\LuaEngine.h" />
     <ClInclude Include="..\..\Src\LuaEngine\NetworkClient.h" />

@@ -1,6 +1,6 @@
 /*
 ** Lua binding: Image
-** Generated automatically by tolua++-1.0.92 on Mon Sep 25 23:43:38 2017.
+** Generated automatically by tolua++-1.0.92 on Wed Jan 17 21:34:48 2018.
 */
 
 #ifndef __cplusplus
@@ -153,6 +153,36 @@ static int tolua_Image_Image_Init00(lua_State* tolua_S)
 }
 #endif //#ifndef TOLUA_DISABLE
 
+/* method: Init of class  Image */
+#ifndef TOLUA_DISABLE_tolua_Image_Image_Init01
+static int tolua_Image_Image_Init01(lua_State* tolua_S)
+{
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"Image",0,&tolua_err) ||
+     !tolua_isstring(tolua_S,2,0,&tolua_err) ||
+     !tolua_isboolean(tolua_S,3,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+ {
+  Image* self = (Image*)  tolua_tousertype(tolua_S,1,0);
+  const char* varFilePath = ((const char*)  tolua_tostring(tolua_S,2,0));
+  bool varReceiveLightEffect = ((bool)  tolua_toboolean(tolua_S,3,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'Init'", NULL);
+#endif
+  {
+   self->Init(varFilePath,varReceiveLightEffect);
+  }
+ }
+ return 0;
+tolua_lerror:
+ return tolua_Image_Image_Init00(tolua_S);
+}
+#endif //#ifndef TOLUA_DISABLE
+
 /* method: Draw of class  Image */
 #ifndef TOLUA_DISABLE_tolua_Image_Image_Draw00
 static int tolua_Image_Image_Draw00(lua_State* tolua_S)
@@ -272,6 +302,7 @@ TOLUA_API int tolua_Image_open (lua_State* tolua_S)
    tolua_function(tolua_S,".call",tolua_Image_Image_new00_local);
    tolua_function(tolua_S,"delete",tolua_Image_Image_delete00);
    tolua_function(tolua_S,"Init",tolua_Image_Image_Init00);
+   tolua_function(tolua_S,"Init",tolua_Image_Image_Init01);
    tolua_function(tolua_S,"Draw",tolua_Image_Image_Draw00);
    tolua_function(tolua_S,"SetPosition",tolua_Image_Image_SetPosition00);
    tolua_function(tolua_S,"SetScale",tolua_Image_Image_SetScale00);

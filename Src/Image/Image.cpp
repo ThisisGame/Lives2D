@@ -7,7 +7,7 @@
 #include"Tools/Application.h"
 
 
-Image::Image(void):UIDrawRect(),mPosX(0),mPosY(0),mScaleX(1),mScaleY(1)
+Image::Image(void):UIDrawRect(),mPosX(0),mPosY(0),mScaleX(1),mScaleY(1),mReceiveLightEffect(false)
 {
 	mTexture2D = new Texture2D();
 }
@@ -21,8 +21,23 @@ Image::~Image(void)
 
 void Image::Init(const char * varFilePath)
 {
-	m_GLProgram.Initialize();
+	if (mReceiveLightEffect)
+	{
+		mGLProgram = new GLProgram_Texture_ReceiveLightEffect();
+	}
+	else
+	{
+		mGLProgram = new GLProgram_Texture();
+	}
+	mGLProgram->Initialize();
 	mTexture2D->LoadTexture(varFilePath);
+}
+
+void Image::Init(const char * varFilePath, bool varReceiveLightEffect)
+{
+	mReceiveLightEffect = varReceiveLightEffect;
+
+	Init(varFilePath);
 }
 
 void Image::SetPosition(float varPosX, float varPosY)
@@ -36,6 +51,8 @@ void Image::SetScale(float varScaleX, float varScaleY)
 	mScaleX = varScaleX;
 	mScaleY = varScaleY;
 }
+
+
 
 void Image::Draw()
 {
@@ -59,7 +76,7 @@ void Image::Draw()
 
 	glm::mat4 mvp = proj*view*model;
 
-	m_GLProgram.begin();
+	mGLProgram->begin();
 	{
 		float tmpRectRight = (float)mTexture2D->mTextureWidth / 2;
 		float tmpRectLeft = -tmpRectRight;
@@ -101,14 +118,20 @@ void Image::Draw()
 			glm::vec4(1, 1, 1, 1),
 		};
 
-		glUniformMatrix4fv(m_GLProgram.m_mvp, 1, false, &mvp[0][0]);
+		glUniformMatrix4fv(mGLProgram->m_mvp, 1, false, &mvp[0][0]);
 
-		glVertexAttribPointer(m_GLProgram.m_position, 3, GL_FLOAT, false, sizeof(glm::vec3), pos);
-		glVertexAttribPointer(m_GLProgram.m_uv, 2, GL_FLOAT, false, sizeof(glm::vec2), uv);
-		glVertexAttribPointer(m_GLProgram.m_color, 4, GL_FLOAT, false, sizeof(glm::vec4), color);
+		glVertexAttribPointer(mGLProgram->m_position, 3, GL_FLOAT, false, sizeof(glm::vec3), pos);
+		glVertexAttribPointer(mGLProgram->m_uv, 2, GL_FLOAT, false, sizeof(glm::vec2), uv);
+		glVertexAttribPointer(mGLProgram->m_color, 4, GL_FLOAT, false, sizeof(glm::vec4), color);
 
+		if (mReceiveLightEffect)
+		{
+
+			glUniform3f(((GLProgram_Texture_ReceiveLightEffect*)mGLProgram)->m_position_Light, 0, 0, 0);
+			glUniform4f(((GLProgram_Texture_ReceiveLightEffect*)mGLProgram)->m_color_Light, 1.0, 1.0, 1.0, 1.0);
+		}
 
 		glDrawArrays(GL_TRIANGLES, 0, 6);
 	};
-	m_GLProgram.end();
+	mGLProgram->end();
 }
