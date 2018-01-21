@@ -67,7 +67,7 @@ void Image::Draw()
 	glm::mat4 model = trans*scale*rotation;
 
 	//View
-	glm::mat4 view = glm::lookAt(glm::vec3(0, 0, 10), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0));
+	glm::mat4 view = glm::lookAt(glm::vec3(0, 0, -10), glm::vec3(0, 0, 10), glm::vec3(0, 1, 0));
 
 
 	//Õý½»ÉãÏñ»ú
@@ -75,6 +75,7 @@ void Image::Draw()
 
 
 	glm::mat4 mvp = proj*view*model;
+
 
 	mGLProgram->begin();
 	{
@@ -85,13 +86,13 @@ void Image::Draw()
 
 		glm::vec3 pos[] =
 		{
-			glm::vec3(tmpRectLeft, tmpRectBottom, 1.0f),
-			glm::vec3(tmpRectRight, tmpRectBottom, 1.0f),
-			glm::vec3(tmpRectRight, tmpRectTop, 1.0f),
+			glm::vec3(tmpRectLeft, tmpRectBottom, 0.0f),
+			glm::vec3(tmpRectRight, tmpRectBottom, 0.0f),
+			glm::vec3(tmpRectRight, tmpRectTop, 0.0f),
 
-			glm::vec3(tmpRectLeft, tmpRectBottom, 1.0f),
-			glm::vec3(tmpRectRight, tmpRectTop, 1.0f),
-			glm::vec3(tmpRectLeft, tmpRectTop, 1.0f),
+			glm::vec3(tmpRectLeft, tmpRectBottom, 0.0f),
+			glm::vec3(tmpRectRight, tmpRectTop, 0.0f),
+			glm::vec3(tmpRectLeft, tmpRectTop, 0.0f),
 		};
 
 		glm::vec2 uv[] =
@@ -126,9 +127,10 @@ void Image::Draw()
 
 		if (mReceiveLightEffect)
 		{
+			glUniform3f(((GLProgram_Texture_ReceiveLightEffect*)mGLProgram)->m_position_Light, 0, 0,240.0);
+			glUniform4f(((GLProgram_Texture_ReceiveLightEffect*)mGLProgram)->m_color_Light, 0.5, 0.0, 0.0, 1.0);
 
-			glUniform3f(((GLProgram_Texture_ReceiveLightEffect*)mGLProgram)->m_position_Light, 0, 0, 0);
-			glUniform4f(((GLProgram_Texture_ReceiveLightEffect*)mGLProgram)->m_color_Light, 1.0, 1.0, 1.0, 1.0);
+			glUniformMatrix4fv(((GLProgram_Texture_ReceiveLightEffect*)mGLProgram)->m_model_matrix,1,false,&model[0][0]);
 		}
 
 		glDrawArrays(GL_TRIANGLES, 0, 6);
