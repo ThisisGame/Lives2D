@@ -1,4 +1,8 @@
-APP_ABI := armeabi-v7a
-APP_PLATFORM := android-19
-APP_STL:=gnustl_static
-APP_CPPFLAGS :=-std=c++11
+# Без этой строчки ничего не будет работать (:
+APP_STL:=stlport_static
+# Список модулей/либ, которые нужна забилдить. Они будут такие же как в LOCAL_MODULE в Android.mk файле
+APP_MODULES      :=OpenAL
+# Указываем под какой arm собирать. Не обязательный параметр.
+APP_ABI := armeabi
+# Платформа, под которую билдим. Не обязательный параметр.
+APP_PLATFORM := android-10

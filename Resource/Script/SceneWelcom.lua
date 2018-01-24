@@ -21,10 +21,10 @@ function SceneWelcom:Init()
 	self.mUIRoot:AddChild(mImage_Bg);
 	
 	
-	-- local audioSource1 = AudioSource:new()
-	-- audioSource1:LoadAudio(ResourcesManager:DataPath().. "/Resource/Audio/m_sound600.wav")
-	-- audioSource1:Loop()
-	-- audioSource1:Play()
+	local audioSource1 = AudioSource:new()
+	audioSource1:LoadAudio(ResourcesManager:DataPath().. "/Resource/Audio/m_sound600.wav")
+	audioSource1:Loop()
+	audioSource1:Play()
 
 	-- local audioSource2 = AudioSource:new()
 	-- audioSource2:LoadAudio(ResourcesManager:DataPath() .. "/Resource/Audio/click.wav")
