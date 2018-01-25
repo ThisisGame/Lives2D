@@ -2,12 +2,16 @@
 
 #include<iostream>
 
+#include "fmod.hpp"
+#include "Audio/FMOD/common.h"
+
+extern FMOD::System     *FMOD_System;
 
 
 class AudioSource
 {
 private:
-
+	FMOD::Sound* mSound;
 
 
 public:

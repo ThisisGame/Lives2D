@@ -48,12 +48,12 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\..\Libs\FreeImage;..\..\Libs\GLES2.0\include;..\..\Libs\GLM-0.9.6.3;..\..\Src;..\..\Libs\lua\include;..\..\Libs\tolua++\include;..\..\Libs\FreeType\include;..\..\Libs\FMOD\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\Libs\FreeImage;..\..\Libs\GLES2.0\include;..\..\Libs\GLM-0.9.6.3;..\..\Src;..\..\Libs\lua\include;..\..\Libs\tolua++\include;..\..\Libs\FreeType\include;..\..\..\Lives2D_Depends\FMOD\Windows\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\..\Libs\FreeImage;..\..\Libs\GLES2.0\lib\windows\x86;..\..\Libs\lua\lib;..\..\Libs\tolua++\lib;..\..\Libs\FreeType\lib;..\..\Libs\FMOD\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\Libs\FreeImage;..\..\Libs\GLES2.0\lib\windows\x86;..\..\Libs\lua\lib;..\..\Libs\tolua++\lib;..\..\Libs\FreeType\lib;..\..\..\Lives2D_Depends\FMOD\Windows\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>FreeImage.lib;libEGL.lib;libGLESv2.lib;lua5.1.4.lib;tolua++.lib;freetype253_D.lib;fmodL_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Windows</SubSystem>
       <AdditionalOptions>/nodefaultlib:"MSVCRT" %(AdditionalOptions)</AdditionalOptions>
