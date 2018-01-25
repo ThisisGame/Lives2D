@@ -48,14 +48,15 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\..\Libs\FreeImage;..\..\Libs\GLES2.0\include;..\..\Libs\GLM-0.9.6.3;..\..\Src;..\..\Libs\Alut\include;..\..\Libs\lua\include;..\..\Libs\tolua++\include;..\..\Libs\FreeType\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\Libs\FreeImage;..\..\Libs\GLES2.0\include;..\..\Libs\GLM-0.9.6.3;..\..\Src;..\..\Libs\lua\include;..\..\Libs\tolua++\include;..\..\Libs\FreeType\include;..\..\Libs\FMOD\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\..\Libs\FreeImage;..\..\Libs\GLES2.0\lib\windows\x86;..\..\Libs\Alut\libs;..\..\Libs\lua\lib;..\..\Libs\tolua++\lib;..\..\Libs\FreeType\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>FreeImage.lib;libEGL.lib;libGLESv2.lib;alut.lib;OpenAL32.lib;lua5.1.4.lib;tolua++.lib;freetype253_D.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\Libs\FreeImage;..\..\Libs\GLES2.0\lib\windows\x86;..\..\Libs\lua\lib;..\..\Libs\tolua++\lib;..\..\Libs\FreeType\lib;..\..\Libs\FMOD\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>FreeImage.lib;libEGL.lib;libGLESv2.lib;lua5.1.4.lib;tolua++.lib;freetype253_D.lib;fmodL_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Windows</SubSystem>
+      <AdditionalOptions>/nodefaultlib:"MSVCRT" %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -78,6 +79,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Src\Audio\AudioSource.cpp" />
+    <ClCompile Include="..\..\Src\Audio\FMOD\common.cpp" />
+    <ClCompile Include="..\..\Src\Audio\FMOD\common_platform.cpp" />
     <ClCompile Include="..\..\Src\Audio\lua_AudioSource.cpp" />
     <ClCompile Include="..\..\Src\GLProgram\GLProgram.cpp" />
     <ClCompile Include="..\..\Src\GLProgram\GLProgram_Font.cpp" />
@@ -126,6 +129,8 @@
   <ItemGroup>
     <ClInclude Include="..\..\Src\Audio\AudioSource.h" />
     <ClInclude Include="..\..\Src\Audio\AudioCard.cpp" />
+    <ClInclude Include="..\..\Src\Audio\FMOD\common.h" />
+    <ClInclude Include="..\..\Src\Audio\FMOD\common_platform.h" />
     <ClInclude Include="..\..\Src\GLProgram\GLProgram.h" />
     <ClInclude Include="..\..\Src\GLProgram\GLProgram_Font.h" />
     <ClInclude Include="..\..\Src\GLProgram\GLProgram_Texture.h" />
