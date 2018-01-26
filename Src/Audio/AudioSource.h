@@ -3,7 +3,7 @@
 #include<iostream>
 
 #include "fmod.hpp"
-#include "Audio/FMOD/common.h"
+#include "common.h"
 
 extern FMOD::System     *FMOD_System;
 

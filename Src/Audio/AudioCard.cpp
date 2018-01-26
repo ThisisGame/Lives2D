@@ -1,8 +1,6 @@
 #pragma once
 #include "fmod.hpp"
-#include "Audio/FMOD/common.h"
-
-extern int FMOD_Platform_Main(int argc, char** argv);
+#include "common.h"
 
 FMOD::System     *FMOD_System;
 
@@ -37,7 +35,7 @@ int FMOD_Main()
 
 void AudioCardInit()
 {
-	FMOD_Platform_Main(0, NULL);
+	FMOD_Main();
 }
 
 void AudioCardExit()

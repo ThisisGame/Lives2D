@@ -48,7 +48,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\..\Libs\FreeImage;..\..\Libs\GLES2.0\include;..\..\Libs\GLM-0.9.6.3;..\..\Src;..\..\Libs\lua\include;..\..\Libs\tolua++\include;..\..\Libs\FreeType\include;..\..\..\Lives2D_Depends\FMOD\Windows\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\Libs\FreeImage;..\..\Libs\GLES2.0\include;..\..\Libs\GLM-0.9.6.3;..\..\Src;..\..\Libs\lua\include;..\..\Libs\tolua++\include;..\..\Libs\FreeType\include;..\..\..\Lives2D_Depends\FMOD\Windows\inc;..\..\..\Lives2D_Depends\FMOD\Windows\common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -78,9 +78,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\Lives2D_Depends\FMOD\Windows\common\common.cpp" />
+    <ClCompile Include="..\..\..\Lives2D_Depends\FMOD\Windows\common\common_platform.cpp" />
     <ClCompile Include="..\..\Src\Audio\AudioSource.cpp" />
-    <ClCompile Include="..\..\Src\Audio\FMOD\common.cpp" />
-    <ClCompile Include="..\..\Src\Audio\FMOD\common_platform.cpp" />
     <ClCompile Include="..\..\Src\Audio\lua_AudioSource.cpp" />
     <ClCompile Include="..\..\Src\GLProgram\GLProgram.cpp" />
     <ClCompile Include="..\..\Src\GLProgram\GLProgram_Font.cpp" />
@@ -127,10 +127,10 @@
     <ClCompile Include="..\..\Src\Tools\lua_Application.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\Lives2D_Depends\FMOD\Windows\common\common.h" />
+    <ClInclude Include="..\..\..\Lives2D_Depends\FMOD\Windows\common\common_platform.h" />
     <ClInclude Include="..\..\Src\Audio\AudioSource.h" />
     <ClInclude Include="..\..\Src\Audio\AudioCard.cpp" />
-    <ClInclude Include="..\..\Src\Audio\FMOD\common.h" />
-    <ClInclude Include="..\..\Src\Audio\FMOD\common_platform.h" />
     <ClInclude Include="..\..\Src\GLProgram\GLProgram.h" />
     <ClInclude Include="..\..\Src\GLProgram\GLProgram_Font.h" />
     <ClInclude Include="..\..\Src\GLProgram\GLProgram_Texture.h" />

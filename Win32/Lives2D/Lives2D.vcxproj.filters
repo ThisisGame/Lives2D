@@ -37,7 +37,7 @@
     <Filter Include="Light">
       <UniqueIdentifier>{8b714e41-5107-45fb-ba04-9518cd631d2c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Audio\FMOD">
+    <Filter Include="Audio\common">
       <UniqueIdentifier>{2ba806b8-b579-420f-b8d8-3d66d05aaaa7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -177,11 +177,11 @@
     <ClCompile Include="..\..\Src\Light\LightManager.cpp">
       <Filter>Light</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Src\Audio\FMOD\common_platform.cpp">
-      <Filter>Audio\FMOD</Filter>
+    <ClCompile Include="..\..\..\Lives2D_Depends\FMOD\Windows\common\common_platform.cpp">
+      <Filter>Audio\common</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Src\Audio\FMOD\common.cpp">
-      <Filter>Audio\FMOD</Filter>
+    <ClCompile Include="..\..\..\Lives2D_Depends\FMOD\Windows\common\common.cpp">
+      <Filter>Audio\common</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -275,11 +275,11 @@
     <ClInclude Include="..\..\Src\Light\LightManager.h">
       <Filter>Light</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Src\Audio\FMOD\common.h">
-      <Filter>Audio\FMOD</Filter>
+    <ClInclude Include="..\..\..\Lives2D_Depends\FMOD\Windows\common\common_platform.h">
+      <Filter>Audio\common</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Src\Audio\FMOD\common_platform.h">
-      <Filter>Audio\FMOD</Filter>
+    <ClInclude Include="..\..\..\Lives2D_Depends\FMOD\Windows\common\common.h">
+      <Filter>Audio\common</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
