@@ -67,7 +67,7 @@ extern "C"
 bool initSuccess=false;
 
 
-
+extern void AudioCardInit();
 
 //初始化;
 void onInit(JNIEnv * env, jobject obj,  int varWidth,int varHeight)
@@ -80,6 +80,8 @@ void onInit(JNIEnv * env, jobject obj,  int varWidth,int varHeight)
 	{
 		return;
 	}
+	
+	AudioCardInit();
 	
 	Application::ScreenWidth=varWidth;
 	Application::ScreenHeight=varHeight;

@@ -44,6 +44,8 @@ public class lives2dActivity extends Activity
         Log.i("Lives2D", "lives2dActivity ThreadId:"+Thread.currentThread().getId());
         
         
+        org.fmod.FMOD.init(getApplicationContext());
+        
         mView = new glesView(getApplication());
         setContentView(mView);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
