@@ -1,6 +1,6 @@
 /*
 ** Lua binding: UIRoot
-** Generated automatically by tolua++-1.0.92 on Tue Sep 26 00:17:41 2017.
+** Generated automatically by tolua++-1.0.92 on Sun Jan 28 23:44:03 2018.
 */
 
 #ifndef __cplusplus
@@ -30,6 +30,7 @@ static int tolua_collect_UIRoot (lua_State* tolua_S)
 /* function to register type */
 static void tolua_reg_types (lua_State* tolua_S)
 {
+ tolua_usertype(tolua_S,"Behavior");
  tolua_usertype(tolua_S,"UIRoot");
  tolua_usertype(tolua_S,"UIRect");
 }
@@ -289,9 +290,9 @@ TOLUA_API int tolua_UIRoot_open (lua_State* tolua_S)
  tolua_module(tolua_S,NULL,0);
  tolua_beginmodule(tolua_S,NULL);
   #ifdef __cplusplus
-  tolua_cclass(tolua_S,"UIRoot","UIRoot","",tolua_collect_UIRoot);
+  tolua_cclass(tolua_S,"UIRoot","UIRoot","Behavior",tolua_collect_UIRoot);
   #else
-  tolua_cclass(tolua_S,"UIRoot","UIRoot","",NULL);
+  tolua_cclass(tolua_S,"UIRoot","UIRoot","Behavior",NULL);
   #endif
   tolua_beginmodule(tolua_S,"UIRoot");
    tolua_function(tolua_S,"new",tolua_UIRoot_UIRoot_new00);

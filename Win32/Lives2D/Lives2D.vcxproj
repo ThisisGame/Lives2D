@@ -85,6 +85,11 @@
     <ClCompile Include="..\..\Src\Component\Behavior.cpp" />
     <ClCompile Include="..\..\Src\Component\Component.cpp" />
     <ClCompile Include="..\..\Src\Component\GameObject.cpp" />
+    <ClCompile Include="..\..\Src\Component\lua_Behavior.cpp" />
+    <ClCompile Include="..\..\Src\Component\lua_Component.cpp" />
+    <ClCompile Include="..\..\Src\Component\lua_GameObject.cpp" />
+    <ClCompile Include="..\..\Src\Component\lua_Object.cpp" />
+    <ClCompile Include="..\..\Src\Component\lua_Transform.cpp" />
     <ClCompile Include="..\..\Src\Component\Object.cpp" />
     <ClCompile Include="..\..\Src\Component\Reflection.cpp" />
     <ClCompile Include="..\..\Src\Component\Transform.cpp" />
@@ -94,6 +99,7 @@
     <ClCompile Include="..\..\Src\GLProgram\GLProgram_Texture_ReceiveLightEffect.cpp" />
     <ClCompile Include="..\..\Src\GUI\Font.cpp" />
     <ClCompile Include="..\..\Src\GUI\FontManager.cpp" />
+    <ClCompile Include="..\..\Src\GUI\lua_UIImage.cpp" />
     <ClCompile Include="..\..\Src\GUI\lua_UIButton.cpp" />
     <ClCompile Include="..\..\Src\GUI\lua_UIClickRect.cpp" />
     <ClCompile Include="..\..\Src\GUI\lua_UIDrawRect.cpp" />
@@ -103,6 +109,7 @@
     <ClCompile Include="..\..\Src\GUI\UIButton.cpp" />
     <ClCompile Include="..\..\Src\GUI\UIClickRect.cpp" />
     <ClCompile Include="..\..\Src\GUI\UIDrawRect.cpp" />
+    <ClCompile Include="..\..\Src\GUI\UIImage.cpp" />
     <ClCompile Include="..\..\Src\GUI\UILabel.cpp" />
     <ClCompile Include="..\..\Src\GUI\UIRect.cpp" />
     <ClCompile Include="..\..\Src\GUI\UIRoot.cpp" />
@@ -110,8 +117,6 @@
     <ClCompile Include="..\..\Src\ImageAnimation\ImageAnimationClip.cpp" />
     <ClCompile Include="..\..\Src\ImageAnimation\lua_ImageAnimation.cpp" />
     <ClCompile Include="..\..\Src\ImageAnimation\lua_ImageAnimationClip.cpp" />
-    <ClCompile Include="..\..\Src\Image\Image.cpp" />
-    <ClCompile Include="..\..\Src\Image\lua_Image.cpp" />
     <ClCompile Include="..\..\Src\KeyTouch\KeyCode.cpp" />
     <ClCompile Include="..\..\Src\KeyTouch\KeyTouch.cpp" />
     <ClCompile Include="..\..\Src\KeyTouch\KeyTouchListener.cpp" />
@@ -132,6 +137,7 @@
     <ClCompile Include="..\..\Src\Tools\Application.cpp" />
     <ClCompile Include="..\..\Src\Tools\Helper.cpp" />
     <ClCompile Include="..\..\Src\Tools\lua_Application.cpp" />
+    <ClCompile Include="Time.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Lives2D_Depends\FMOD\Windows\common\common.h" />
@@ -153,12 +159,12 @@
     <ClInclude Include="..\..\Src\GUI\UIButton.h" />
     <ClInclude Include="..\..\Src\GUI\UIClickRect.h" />
     <ClInclude Include="..\..\Src\GUI\UIDrawRect.h" />
+    <ClInclude Include="..\..\Src\GUI\UIImage.h" />
     <ClInclude Include="..\..\Src\GUI\UILabel.h" />
     <ClInclude Include="..\..\Src\GUI\UIRect.h" />
     <ClInclude Include="..\..\Src\GUI\UIRoot.h" />
     <ClInclude Include="..\..\Src\ImageAnimation\ImageAnimation.h" />
     <ClInclude Include="..\..\Src\ImageAnimation\ImageAnimationClip.h" />
-    <ClInclude Include="..\..\Src\Image\Image.h" />
     <ClInclude Include="..\..\Src\KeyTouch\KeyCode.h" />
     <ClInclude Include="..\..\Src\KeyTouch\KeyTouch.h" />
     <ClInclude Include="..\..\Src\KeyTouch\KeyTouchListener.h" />
@@ -173,6 +179,7 @@
     <ClInclude Include="..\..\Src\Texture2D\Texture2D.h" />
     <ClInclude Include="..\..\Src\Tools\Application.h" />
     <ClInclude Include="..\..\Src\Tools\Helper.h" />
+    <ClInclude Include="Time.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\Src\LuaEngine\BinaryPacker.pkg" />

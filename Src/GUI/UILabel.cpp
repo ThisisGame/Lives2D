@@ -7,6 +7,8 @@
 #include<glm/gtx/euler_angles.hpp>
 #include"FontManager.h"
 
+
+IMPLEMENT_DYNCRT_ACTION(UILabel)
 UILabel::UILabel():mPosX(0), mPosY(0), mScaleX(1), mScaleY(1), mSpace(2),mAlignCenter(true)
 {
 

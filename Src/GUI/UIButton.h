@@ -1,7 +1,7 @@
 #pragma once
 
 #include"UIClickRect.h"
-#include "Image/Image.h"
+#include "UIImage.h"
 
 #include<string>
 #include<functional>
@@ -10,11 +10,12 @@
 
 class UIButton:public UIClickRect
 {
-private:
+	DECLEAR_DYNCRT_ACTION(UIButton)
+public:
 	float mPosX, mPosY, mWidth, mHeight;
 
-	Image* mImageNormal;		//正常显示的图片
-	Image* mImageClickDown;		//按下的图片
+	UIImage* mImageNormal;		//正常显示的图片
+	UIImage* mImageClickDown;		//按下的图片
 
 	bool mClickDown;		//是否按下
 	
@@ -23,7 +24,7 @@ private:
 
 public:
 	UIButton(std::string varNormalImagePath,std::string varClickDownImagePath,float varPosX,float varPosY,float varWidth,float varHeight);
-
+	UIButton();
 	~UIButton();
 
 	void SetOnClickListener(lua_State* varlua_State);

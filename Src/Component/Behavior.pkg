@@ -1,0 +1,8 @@
+$#include"Behavior.h"
+
+class Behavior :public Component
+{
+public:
+	Behavior();
+	~Behavior();
+};

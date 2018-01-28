@@ -1,9 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Image">
-      <UniqueIdentifier>{90bb121a-1aed-4edd-8123-37ccec50736c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="GLProgram">
       <UniqueIdentifier>{0d88bccf-282b-42f4-b186-1e55232c8335}</UniqueIdentifier>
     </Filter>
@@ -48,9 +45,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Src\Image\Image.cpp">
-      <Filter>Image</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Src\Platform\Windows\WinMain.cpp">
       <Filter>Platform\Windows</Filter>
     </ClCompile>
@@ -116,9 +110,6 @@
     </ClCompile>
     <ClCompile Include="..\..\Src\KeyTouch\lua_KeyTouch.cpp">
       <Filter>KeyTouch</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Src\Image\lua_Image.cpp">
-      <Filter>Image</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Src\GUI\lua_UIDrawRect.cpp">
       <Filter>GUI</Filter>
@@ -210,11 +201,30 @@
     <ClCompile Include="..\..\Src\Math\Math.cpp">
       <Filter>Math</Filter>
     </ClCompile>
+    <ClCompile Include="Time.cpp" />
+    <ClCompile Include="..\..\Src\GUI\UIImage.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\GUI\lua_UIImage.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Component\lua_Component.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Component\lua_GameObject.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Component\lua_Object.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Component\lua_Transform.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Component\lua_Behavior.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Src\Image\Image.h">
-      <Filter>Image</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Src\Platform\Windows\WinGame.h">
       <Filter>Platform\Windows</Filter>
     </ClInclude>
@@ -328,6 +338,10 @@
     </ClInclude>
     <ClInclude Include="..\..\Src\Math\Math.h">
       <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Time.h" />
+    <ClInclude Include="..\..\Src\GUI\UIImage.h">
+      <Filter>GUI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -4,14 +4,14 @@
 
 #include<string>
 #include<vector>
-#include"Image/Image.h"
+#include"GUI/UIImage.h"
 
 class ImageAnimationClip
 {
 private:
 	std::string mClipName;
 
-	std::vector<Image*> mVectorImageData;
+	std::vector<UIImage*> mVectorImageData;
 
 
 	//ÊÇ·ñÔÚ²¥·Å

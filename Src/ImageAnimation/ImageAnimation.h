@@ -3,7 +3,7 @@
 #include"GUI/UIDrawRect.h"
 
 #include<vector>
-#include"Image/Image.h"
+#include"GUI/UIImage.h"
 
 #include"ImageAnimationClip.h"
 

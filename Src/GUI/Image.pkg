@@ -1,0 +1,19 @@
+$#include"Image.h"
+
+class Image:public UIDrawRect
+{  
+public:  
+	Image(void);
+	~Image(void);
+
+	void  Init(const char* varFilePath);
+
+	void Init(const char* varFilePath, bool varReceiveLightEffect);
+
+	void Draw();
+
+
+	void SetPosition(float varPosX, float varPosY);
+
+	void SetScale(float varScaleX, float varScaleY);
+};

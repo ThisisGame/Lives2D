@@ -13,8 +13,9 @@ end
 function SceneWelcom:Init()
 	print("SceneWelcom:Init")
 	
-	self.mUIRoot=UIRoot:new()
-	local	mImage_Bg =  Image:new()
+	local tmpGoUIRoot=GameObject:new("UIROOT")
+	self.mUIRoot=tmpGoUIRoot:AddComponent("UIRoot")
+	local	mImage_Bg =  UIImage:new()
 	mImage_Bg:Init(ResourcesManager:DataPath() .. "/Resource/GUI/bbg_temple_circle.jpg",true);
 	mImage_Bg:SetPosition(0, 0);
 	mImage_Bg:SetDepth(0);
@@ -32,7 +33,7 @@ function SceneWelcom:Init()
 	self.mUIRoot=UIRoot:new()
 
 	
-	local	mImage_Bg =  Image:new()
+	local	mImage_Bg =  UIImage:new()
 	mImage_Bg:Init(ResourcesManager:DataPath() .. "/Resource/GUI/bbg_temple_circle.jpg");
 	mImage_Bg:SetPosition(0, 0);
 	mImage_Bg:SetDepth(0);

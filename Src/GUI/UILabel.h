@@ -4,9 +4,10 @@
 #include"Font.h"
 #include"GLProgram/GLProgram_Font.h"
 
+
 class UILabel:public UIDrawRect
 {
-
+	DECLEAR_DYNCRT_ACTION(UILabel)
 public:
 	float mPosX;
 	float mPosY;

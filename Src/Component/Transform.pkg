@@ -1,0 +1,25 @@
+$#include"Transform.h"
+
+
+class Transform :
+	public Component
+{
+public:
+	Transform();
+	~Transform();
+public:
+	void SetLocalPosition(Vector3 varVector3);
+
+	void SetLocalRotation(Vector3 varVector3);
+
+	void SetLocalScale(Vector3 varVector3);
+
+	Vector3 GetLocalPosition();
+
+	Vector3 GetLocalRotation();
+
+	Vector3 GetLocalScale();
+
+
+	void SetPosition(Vector3 varVector3);
+};

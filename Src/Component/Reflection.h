@@ -12,9 +12,10 @@ public: \
 	{ \
 		return new TypeName(); \
 	} \
+	static Reflection* mReflection;
 
 #define IMPLEMENT_DYNCRT_ACTION(TypeName) \
-	Reflection tmpReflection(#TypeName,(FunCreateInstance)TypeName::CreateInstance);
+	Reflection* TypeName::mReflection=new Reflection(#TypeName,(FunCreateInstance)TypeName::CreateInstance);
 
 
 

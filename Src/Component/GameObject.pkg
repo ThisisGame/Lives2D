@@ -1,0 +1,37 @@
+$#include"GameObject.h"
+
+class GameObject :public Object
+{
+public:
+	GameObject(const char* varName);
+	~GameObject();
+
+	static void Destroy(GameObject* varGo);
+
+public:
+	std::string name;
+
+public:
+	void AddChild(GameObject* varGameObject);
+
+	int GetChildCount();
+
+	GameObject* GetChild(int varIndex);
+
+	void SetParent(GameObject* varGameObjectParent);
+
+public:
+	Component* AddComponent(const char* varComponentName);
+
+	void RemoveComponent(const char* varComponentName);
+
+public:
+	void Awake() ;
+	void OnEnable() ;
+	void Start() ;
+
+	void Update() ;
+
+	void OnDisable() ;
+	void OnDestroy() ;
+};

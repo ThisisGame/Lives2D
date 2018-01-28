@@ -1,6 +1,6 @@
 $#include"UIRoot.h"
 
-class UIRoot
+class UIRoot:Behavior
 {
 public:
 	UIRoot();

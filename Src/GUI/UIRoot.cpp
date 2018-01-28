@@ -6,7 +6,7 @@
 #include<iostream>
 #include<algorithm>
 
-
+IMPLEMENT_DYNCRT_ACTION(UIRoot)
 UIRoot::UIRoot():mDepth(0)
 {
 }

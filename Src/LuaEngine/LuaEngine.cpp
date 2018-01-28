@@ -14,6 +14,13 @@ TOLUA_API int  tolua_AudioSource_open(lua_State* tolua_S);
 TOLUA_API int  tolua_KeyTouchListener_open(lua_State* tolua_S);
 TOLUA_API int  tolua_KeyTouch_open(lua_State* tolua_S);
 
+TOLUA_API int  tolua_Object_open(lua_State* tolua_S);
+TOLUA_API int  tolua_GameObject_open(lua_State* tolua_S);
+TOLUA_API int  tolua_Component_open(lua_State* tolua_S);
+TOLUA_API int  tolua_Transform_open(lua_State* tolua_S);
+TOLUA_API int  tolua_Behavior_open(lua_State* tolua_S);
+
+
 
 TOLUA_API int  tolua_UIRect_open(lua_State* tolua_S);
 TOLUA_API int  tolua_UIDrawRect_open(lua_State* tolua_S);
@@ -39,6 +46,11 @@ LuaEngine::LuaEngine()
 	tolua_AudioSource_open(m_pLua_State);
 	tolua_KeyTouchListener_open(m_pLua_State);
 	tolua_KeyTouch_open(m_pLua_State);
+	tolua_Object_open(m_pLua_State);
+	tolua_GameObject_open(m_pLua_State);
+	tolua_Component_open(m_pLua_State);
+	tolua_Transform_open(m_pLua_State);
+	tolua_Behavior_open(m_pLua_State);
 	tolua_UIRect_open(m_pLua_State);
 	tolua_UIDrawRect_open(m_pLua_State);
 	tolua_UIClickRect_open(m_pLua_State);

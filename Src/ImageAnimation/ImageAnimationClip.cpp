@@ -12,7 +12,7 @@ ImageAnimationClip::ImageAnimationClip(std::string varClipName, std::vector<std:
 {
 	for (auto val : varVectorFrameImagePath)
 	{
-		Image* tmpImage = new Image();
+		UIImage* tmpImage = new UIImage();
 		tmpImage->Init(val.c_str());
 
 
