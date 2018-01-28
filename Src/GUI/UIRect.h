@@ -1,5 +1,7 @@
 #pragma once
 
+#include"Component/Behavior.h"
+
 enum  UIRectType
 {
 	Type_UIClickRect=0,
@@ -7,7 +9,7 @@ enum  UIRectType
 };
 
 //UIRect is base of ui widget
-class UIRect
+class UIRect:public Behavior
 {
 private:
 	int mDepth; //Depth use to control front or back

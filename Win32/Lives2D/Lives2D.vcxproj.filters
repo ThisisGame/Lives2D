@@ -40,6 +40,12 @@
     <Filter Include="Audio\common">
       <UniqueIdentifier>{2ba806b8-b579-420f-b8d8-3d66d05aaaa7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Math">
+      <UniqueIdentifier>{0b605c02-e138-41fc-9f4c-11b2a9e09d47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component">
+      <UniqueIdentifier>{3388505a-768e-4bdb-91d5-62e2bdd5defa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Src\Image\Image.cpp">
@@ -183,6 +189,27 @@
     <ClCompile Include="..\..\..\Lives2D_Depends\FMOD\Windows\common\common.cpp">
       <Filter>Audio\common</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Src\Component\Object.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Component\Reflection.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Component\Transform.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Component\Behavior.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Component\Component.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Component\GameObject.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Math\Math.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\Image\Image.h">
@@ -280,6 +307,27 @@
     </ClInclude>
     <ClInclude Include="..\..\..\Lives2D_Depends\FMOD\Windows\common\common.h">
       <Filter>Audio\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Component\GameObject.h">
+      <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Component\Object.h">
+      <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Component\Reflection.h">
+      <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Component\Transform.h">
+      <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Component\Behavior.h">
+      <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Component\Component.h">
+      <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Math\Math.h">
+      <Filter>Math</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

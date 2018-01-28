@@ -82,6 +82,12 @@
     <ClCompile Include="..\..\..\Lives2D_Depends\FMOD\Windows\common\common_platform.cpp" />
     <ClCompile Include="..\..\Src\Audio\AudioSource.cpp" />
     <ClCompile Include="..\..\Src\Audio\lua_AudioSource.cpp" />
+    <ClCompile Include="..\..\Src\Component\Behavior.cpp" />
+    <ClCompile Include="..\..\Src\Component\Component.cpp" />
+    <ClCompile Include="..\..\Src\Component\GameObject.cpp" />
+    <ClCompile Include="..\..\Src\Component\Object.cpp" />
+    <ClCompile Include="..\..\Src\Component\Reflection.cpp" />
+    <ClCompile Include="..\..\Src\Component\Transform.cpp" />
     <ClCompile Include="..\..\Src\GLProgram\GLProgram.cpp" />
     <ClCompile Include="..\..\Src\GLProgram\GLProgram_Font.cpp" />
     <ClCompile Include="..\..\Src\GLProgram\GLProgram_Texture.cpp" />
@@ -120,6 +126,7 @@
     <ClCompile Include="..\..\Src\LuaEngine\main.cpp" />
     <ClCompile Include="..\..\Src\LuaEngine\NetworkClient.cpp" />
     <ClCompile Include="..\..\Src\LuaEngine\NetworkDispatch.cpp" />
+    <ClCompile Include="..\..\Src\Math\Math.cpp" />
     <ClCompile Include="..\..\Src\Platform\Windows\WinMain.cpp" />
     <ClCompile Include="..\..\Src\Texture2D\Texture2D.cpp" />
     <ClCompile Include="..\..\Src\Tools\Application.cpp" />
@@ -131,6 +138,12 @@
     <ClInclude Include="..\..\..\Lives2D_Depends\FMOD\Windows\common\common_platform.h" />
     <ClInclude Include="..\..\Src\Audio\AudioSource.h" />
     <ClInclude Include="..\..\Src\Audio\AudioCard.cpp" />
+    <ClInclude Include="..\..\Src\Component\Behavior.h" />
+    <ClInclude Include="..\..\Src\Component\Component.h" />
+    <ClInclude Include="..\..\Src\Component\GameObject.h" />
+    <ClInclude Include="..\..\Src\Component\Object.h" />
+    <ClInclude Include="..\..\Src\Component\Reflection.h" />
+    <ClInclude Include="..\..\Src\Component\Transform.h" />
     <ClInclude Include="..\..\Src\GLProgram\GLProgram.h" />
     <ClInclude Include="..\..\Src\GLProgram\GLProgram_Font.h" />
     <ClInclude Include="..\..\Src\GLProgram\GLProgram_Texture.h" />
@@ -155,6 +168,7 @@
     <ClInclude Include="..\..\Src\LuaEngine\LuaEngine.h" />
     <ClInclude Include="..\..\Src\LuaEngine\NetworkClient.h" />
     <ClInclude Include="..\..\Src\LuaEngine\NetworkDispatch.h" />
+    <ClInclude Include="..\..\Src\Math\Math.h" />
     <ClInclude Include="..\..\Src\Platform\Windows\WinGame.h" />
     <ClInclude Include="..\..\Src\Texture2D\Texture2D.h" />
     <ClInclude Include="..\..\Src\Tools\Application.h" />

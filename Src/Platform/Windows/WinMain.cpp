@@ -5,7 +5,6 @@
 #include"Tools\Application.h"
 
 
-
 int APIENTRY _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCmdLine, int nCmdShow)
 {
 	UNREFERENCED_PARAMETER(hInstance);
@@ -15,8 +14,6 @@ int APIENTRY _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCm
 
 	AllocConsole();
 	freopen("CONOUT$", "a+", stdout);
-
-
 
 
 	std::string tmpConfigPath =Application::PersistentDataPath()+ "/Resource/Config.txt";
