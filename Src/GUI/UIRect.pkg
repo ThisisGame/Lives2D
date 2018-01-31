@@ -6,7 +6,7 @@ enum  UIRectType
 	Type_UIDrawRect=1,
 };
 
-class UIRect
+class UIRect:public Behavior
 {
 public:
 	UIRect(UIRectType varUIRectType);

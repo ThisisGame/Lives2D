@@ -223,6 +223,9 @@
     <ClCompile Include="..\..\Src\Component\lua_Behavior.cpp">
       <Filter>Component</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Src\Math\lua_Math.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\Platform\Windows\WinGame.h">

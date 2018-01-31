@@ -18,7 +18,15 @@ void Transform::SetLocalPosition(Vector3 varVector3)
 {
 	mLocalPosition = varVector3;
 
-	mPosition= mGameObject->GetParent()->mTransform->GetPosition() + varVector3;
+	if (mGameObject->GetParent() == nullptr)
+	{
+		mPosition = varVector3;
+	}
+	else
+	{
+		mPosition = mGameObject->GetParent()->mTransform->GetPosition() + varVector3;
+	}
+	
 }
 
 void Transform::SetLocalRotation(Vector3 varVector3)

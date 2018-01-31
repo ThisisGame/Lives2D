@@ -3,11 +3,12 @@
 #include"Transform.h"
 
 
-GameObject::GameObject(const char * varName)
+GameObject::GameObject(const char * varName):mGameObjectParent(nullptr)
 {
 	name = varName;
 
 	mTransform = (Transform*)Reflection::CreateInstance("Transform");
+	mTransform->mGameObject = this;
 }
 
 

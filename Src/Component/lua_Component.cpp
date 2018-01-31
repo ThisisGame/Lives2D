@@ -1,6 +1,6 @@
 /*
 ** Lua binding: Component
-** Generated automatically by tolua++-1.0.92 on Sun Jan 28 23:26:10 2018.
+** Generated automatically by tolua++-1.0.92 on Wed Jan 31 21:32:58 2018.
 */
 
 #ifndef __cplusplus
@@ -31,7 +31,9 @@ static int tolua_collect_Component (lua_State* tolua_S)
 static void tolua_reg_types (lua_State* tolua_S)
 {
  tolua_usertype(tolua_S,"Component");
+ tolua_usertype(tolua_S,"Transform");
  tolua_usertype(tolua_S,"Object");
+ tolua_usertype(tolua_S,"GameObject");
 }
 
 /* method: new of class  Component */
@@ -185,189 +187,63 @@ static int tolua_Component_Component_GetComponentName00(lua_State* tolua_S)
 }
 #endif //#ifndef TOLUA_DISABLE
 
-/* method: Awake of class  Component */
-#ifndef TOLUA_DISABLE_tolua_Component_Component_Awake00
-static int tolua_Component_Component_Awake00(lua_State* tolua_S)
+/* get function: mGameObject of class  Component */
+#ifndef TOLUA_DISABLE_tolua_get_Component_mGameObject_ptr
+static int tolua_get_Component_mGameObject_ptr(lua_State* tolua_S)
 {
-#ifndef TOLUA_RELEASE
- tolua_Error tolua_err;
- if (
-     !tolua_isusertype(tolua_S,1,"Component",0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,2,&tolua_err)
- )
-  goto tolua_lerror;
- else
-#endif
- {
   Component* self = (Component*)  tolua_tousertype(tolua_S,1,0);
 #ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'Awake'", NULL);
+  if (!self) tolua_error(tolua_S,"invalid 'self' in accessing variable 'mGameObject'",NULL);
 #endif
-  {
-   self->Awake();
-  }
- }
- return 0;
-#ifndef TOLUA_RELEASE
- tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'Awake'.",&tolua_err);
- return 0;
-#endif
+   tolua_pushusertype(tolua_S,(void*)self->mGameObject,"GameObject");
+ return 1;
 }
 #endif //#ifndef TOLUA_DISABLE
 
-/* method: OnEnable of class  Component */
-#ifndef TOLUA_DISABLE_tolua_Component_Component_OnEnable00
-static int tolua_Component_Component_OnEnable00(lua_State* tolua_S)
+/* set function: mGameObject of class  Component */
+#ifndef TOLUA_DISABLE_tolua_set_Component_mGameObject_ptr
+static int tolua_set_Component_mGameObject_ptr(lua_State* tolua_S)
 {
-#ifndef TOLUA_RELEASE
- tolua_Error tolua_err;
- if (
-     !tolua_isusertype(tolua_S,1,"Component",0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,2,&tolua_err)
- )
-  goto tolua_lerror;
- else
-#endif
- {
   Component* self = (Component*)  tolua_tousertype(tolua_S,1,0);
 #ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'OnEnable'", NULL);
+  tolua_Error tolua_err;
+  if (!self) tolua_error(tolua_S,"invalid 'self' in accessing variable 'mGameObject'",NULL);
+  if (!tolua_isusertype(tolua_S,2,"GameObject",0,&tolua_err))
+   tolua_error(tolua_S,"#vinvalid type in variable assignment.",&tolua_err);
 #endif
-  {
-   self->OnEnable();
-  }
- }
+  self->mGameObject = ((GameObject*)  tolua_tousertype(tolua_S,2,0))
+;
  return 0;
-#ifndef TOLUA_RELEASE
- tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'OnEnable'.",&tolua_err);
- return 0;
-#endif
 }
 #endif //#ifndef TOLUA_DISABLE
 
-/* method: Start of class  Component */
-#ifndef TOLUA_DISABLE_tolua_Component_Component_Start00
-static int tolua_Component_Component_Start00(lua_State* tolua_S)
+/* get function: mTransform of class  Component */
+#ifndef TOLUA_DISABLE_tolua_get_Component_mTransform_ptr
+static int tolua_get_Component_mTransform_ptr(lua_State* tolua_S)
 {
-#ifndef TOLUA_RELEASE
- tolua_Error tolua_err;
- if (
-     !tolua_isusertype(tolua_S,1,"Component",0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,2,&tolua_err)
- )
-  goto tolua_lerror;
- else
-#endif
- {
   Component* self = (Component*)  tolua_tousertype(tolua_S,1,0);
 #ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'Start'", NULL);
+  if (!self) tolua_error(tolua_S,"invalid 'self' in accessing variable 'mTransform'",NULL);
 #endif
-  {
-   self->Start();
-  }
- }
- return 0;
-#ifndef TOLUA_RELEASE
- tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'Start'.",&tolua_err);
- return 0;
-#endif
+   tolua_pushusertype(tolua_S,(void*)self->mTransform,"Transform");
+ return 1;
 }
 #endif //#ifndef TOLUA_DISABLE
 
-/* method: Update of class  Component */
-#ifndef TOLUA_DISABLE_tolua_Component_Component_Update00
-static int tolua_Component_Component_Update00(lua_State* tolua_S)
+/* set function: mTransform of class  Component */
+#ifndef TOLUA_DISABLE_tolua_set_Component_mTransform_ptr
+static int tolua_set_Component_mTransform_ptr(lua_State* tolua_S)
 {
-#ifndef TOLUA_RELEASE
- tolua_Error tolua_err;
- if (
-     !tolua_isusertype(tolua_S,1,"Component",0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,2,&tolua_err)
- )
-  goto tolua_lerror;
- else
-#endif
- {
   Component* self = (Component*)  tolua_tousertype(tolua_S,1,0);
 #ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'Update'", NULL);
+  tolua_Error tolua_err;
+  if (!self) tolua_error(tolua_S,"invalid 'self' in accessing variable 'mTransform'",NULL);
+  if (!tolua_isusertype(tolua_S,2,"Transform",0,&tolua_err))
+   tolua_error(tolua_S,"#vinvalid type in variable assignment.",&tolua_err);
 #endif
-  {
-   self->Update();
-  }
- }
+  self->mTransform = ((Transform*)  tolua_tousertype(tolua_S,2,0))
+;
  return 0;
-#ifndef TOLUA_RELEASE
- tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'Update'.",&tolua_err);
- return 0;
-#endif
-}
-#endif //#ifndef TOLUA_DISABLE
-
-/* method: OnDisable of class  Component */
-#ifndef TOLUA_DISABLE_tolua_Component_Component_OnDisable00
-static int tolua_Component_Component_OnDisable00(lua_State* tolua_S)
-{
-#ifndef TOLUA_RELEASE
- tolua_Error tolua_err;
- if (
-     !tolua_isusertype(tolua_S,1,"Component",0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,2,&tolua_err)
- )
-  goto tolua_lerror;
- else
-#endif
- {
-  Component* self = (Component*)  tolua_tousertype(tolua_S,1,0);
-#ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'OnDisable'", NULL);
-#endif
-  {
-   self->OnDisable();
-  }
- }
- return 0;
-#ifndef TOLUA_RELEASE
- tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'OnDisable'.",&tolua_err);
- return 0;
-#endif
-}
-#endif //#ifndef TOLUA_DISABLE
-
-/* method: OnDestroy of class  Component */
-#ifndef TOLUA_DISABLE_tolua_Component_Component_OnDestroy00
-static int tolua_Component_Component_OnDestroy00(lua_State* tolua_S)
-{
-#ifndef TOLUA_RELEASE
- tolua_Error tolua_err;
- if (
-     !tolua_isusertype(tolua_S,1,"Component",0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,2,&tolua_err)
- )
-  goto tolua_lerror;
- else
-#endif
- {
-  Component* self = (Component*)  tolua_tousertype(tolua_S,1,0);
-#ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'OnDestroy'", NULL);
-#endif
-  {
-   self->OnDestroy();
-  }
- }
- return 0;
-#ifndef TOLUA_RELEASE
- tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'OnDestroy'.",&tolua_err);
- return 0;
-#endif
 }
 #endif //#ifndef TOLUA_DISABLE
 
@@ -390,12 +266,8 @@ TOLUA_API int tolua_Component_open (lua_State* tolua_S)
    tolua_function(tolua_S,"delete",tolua_Component_Component_delete00);
    tolua_function(tolua_S,"SetComponentName",tolua_Component_Component_SetComponentName00);
    tolua_function(tolua_S,"GetComponentName",tolua_Component_Component_GetComponentName00);
-   tolua_function(tolua_S,"Awake",tolua_Component_Component_Awake00);
-   tolua_function(tolua_S,"OnEnable",tolua_Component_Component_OnEnable00);
-   tolua_function(tolua_S,"Start",tolua_Component_Component_Start00);
-   tolua_function(tolua_S,"Update",tolua_Component_Component_Update00);
-   tolua_function(tolua_S,"OnDisable",tolua_Component_Component_OnDisable00);
-   tolua_function(tolua_S,"OnDestroy",tolua_Component_Component_OnDestroy00);
+   tolua_variable(tolua_S,"mGameObject",tolua_get_Component_mGameObject_ptr,tolua_set_Component_mGameObject_ptr);
+   tolua_variable(tolua_S,"mTransform",tolua_get_Component_mTransform_ptr,tolua_set_Component_mTransform_ptr);
   tolua_endmodule(tolua_S);
  tolua_endmodule(tolua_S);
  return 1;

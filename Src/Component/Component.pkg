@@ -11,13 +11,8 @@ public:
 
 	std::string GetComponentName();
 
-public:
-	virtual void Awake() {};
-	virtual void OnEnable() {};
-	virtual void Start() {};
-	
-	virtual void Update() {};
 
-	virtual void OnDisable() {};
-	virtual void OnDestroy() {};
+public:
+	GameObject* mGameObject;
+	Transform* mTransform;
 };

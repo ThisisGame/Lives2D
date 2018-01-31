@@ -20,6 +20,7 @@ TOLUA_API int  tolua_Component_open(lua_State* tolua_S);
 TOLUA_API int  tolua_Transform_open(lua_State* tolua_S);
 TOLUA_API int  tolua_Behavior_open(lua_State* tolua_S);
 
+TOLUA_API int  tolua_Math_open(lua_State* tolua_S);
 
 
 TOLUA_API int  tolua_UIRect_open(lua_State* tolua_S);
@@ -51,6 +52,9 @@ LuaEngine::LuaEngine()
 	tolua_Component_open(m_pLua_State);
 	tolua_Transform_open(m_pLua_State);
 	tolua_Behavior_open(m_pLua_State);
+
+	tolua_Math_open(m_pLua_State);
+
 	tolua_UIRect_open(m_pLua_State);
 	tolua_UIDrawRect_open(m_pLua_State);
 	tolua_UIClickRect_open(m_pLua_State);

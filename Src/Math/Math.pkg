@@ -1,0 +1,12 @@
+$#include"Math.h"
+
+struct  Vector3
+{
+	float mX;
+	float mY;
+	float mZ;
+
+	Vector3();
+
+	Vector3(float varX, float varY, float varZ);
+};

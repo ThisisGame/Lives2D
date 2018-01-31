@@ -1,6 +1,6 @@
 /*
 ** Lua binding: UIRect
-** Generated automatically by tolua++-1.0.92 on Tue Sep 26 00:46:10 2017.
+** Generated automatically by tolua++-1.0.92 on Wed Jan 31 21:28:21 2018.
 */
 
 #ifndef __cplusplus
@@ -30,6 +30,7 @@ static int tolua_collect_UIRect (lua_State* tolua_S)
 /* function to register type */
 static void tolua_reg_types (lua_State* tolua_S)
 {
+ tolua_usertype(tolua_S,"Behavior");
  tolua_usertype(tolua_S,"UIRect");
 }
 
@@ -198,9 +199,9 @@ TOLUA_API int tolua_UIRect_open (lua_State* tolua_S)
   tolua_constant(tolua_S,"Type_UIClickRect",Type_UIClickRect);
   tolua_constant(tolua_S,"Type_UIDrawRect",Type_UIDrawRect);
   #ifdef __cplusplus
-  tolua_cclass(tolua_S,"UIRect","UIRect","",tolua_collect_UIRect);
+  tolua_cclass(tolua_S,"UIRect","UIRect","Behavior",tolua_collect_UIRect);
   #else
-  tolua_cclass(tolua_S,"UIRect","UIRect","",NULL);
+  tolua_cclass(tolua_S,"UIRect","UIRect","Behavior",NULL);
   #endif
   tolua_beginmodule(tolua_S,"UIRect");
    tolua_function(tolua_S,"new",tolua_UIRect_UIRect_new00);

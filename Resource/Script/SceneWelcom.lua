@@ -21,7 +21,8 @@ function SceneWelcom:Init()
 	
 	local	mImage_Bg =tmpGoImageBg:AddComponent("UIImage")
 	mImage_Bg:Init(ResourcesManager:DataPath() .. "/Resource/GUI/bbg_temple_circle.jpg",true);
-	mImage_Bg:SetPosition(0, 0);
+	
+	mImage_Bg.mTransform:SetLocalPosition(Vector3(100,300,0))
 	mImage_Bg:SetDepth(0);
 	self.mUIRoot:AddChild(mImage_Bg);
 	

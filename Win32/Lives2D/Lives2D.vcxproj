@@ -131,6 +131,7 @@
     <ClCompile Include="..\..\Src\LuaEngine\main.cpp" />
     <ClCompile Include="..\..\Src\LuaEngine\NetworkClient.cpp" />
     <ClCompile Include="..\..\Src\LuaEngine\NetworkDispatch.cpp" />
+    <ClCompile Include="..\..\Src\Math\lua_Math.cpp" />
     <ClCompile Include="..\..\Src\Math\Math.cpp" />
     <ClCompile Include="..\..\Src\Platform\Windows\WinMain.cpp" />
     <ClCompile Include="..\..\Src\Texture2D\Texture2D.cpp" />
