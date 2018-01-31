@@ -3,7 +3,7 @@
 #include"Component.h"
 #include<vector>
 
-
+class Transform;
 class GameObject :
 	public Object
 {
@@ -18,6 +18,8 @@ public:
 
 public:
 	std::string name;
+
+	Transform* mTransform;
 
 	//**************************************************父子结构相关
 

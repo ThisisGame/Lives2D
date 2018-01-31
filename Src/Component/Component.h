@@ -3,6 +3,8 @@
 #include<string>
 #include"Reflection.h"
 
+class Transform;
+class GameObject;
 class Component :
 	public Object
 {
@@ -26,6 +28,9 @@ public:
 
 private:
 	std::string mComponentName;
-	
+
+public:
+	GameObject* mGameObject;
+	Transform* mTransform;
 };
 

@@ -16,6 +16,15 @@ struct  Vector3
 		mY = varY;
 		mZ = varZ;
 	}
+
+	Vector3 operator+ (Vector3 varVector3)
+	{
+		Vector3 tmpVector3;
+		tmpVector3.mX = mX + varVector3.mX;
+		tmpVector3.mY = mY + varVector3.mY;
+		tmpVector3.mZ = mZ + varVector3.mZ;
+		return tmpVector3;
+	}
 };
 
 class Math

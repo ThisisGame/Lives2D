@@ -6,6 +6,8 @@
 GameObject::GameObject(const char * varName)
 {
 	name = varName;
+
+	mTransform = (Transform*)AddComponent("Transform");
 }
 
 
@@ -52,6 +54,8 @@ void GameObject::SetParent(GameObject * varGameObjectParent)
 Component * GameObject::AddComponent(const char * varComponentName)
 {
 	Component* tmpComponent = Reflection::CreateInstance(varComponentName);
+	tmpComponent->mGameObject = this;
+	tmpComponent->mTransform = mTransform;
 	mVectorComponent.push_back(tmpComponent);
 	return tmpComponent;
 }
