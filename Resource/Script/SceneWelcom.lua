@@ -15,57 +15,62 @@ function SceneWelcom:Init()
 	
 	local tmpGoUIRoot=GameObject:new("UIROOT")
 	self.mUIRoot=tmpGoUIRoot:AddComponent("UIRoot")
-	local	mImage_Bg =  UIImage:new()
+	
+	
+	local tmpGoImageBg=GameObject:new("mImage_Bg")
+	
+	local	mImage_Bg =tmpGoImageBg:AddComponent("UIImage")
 	mImage_Bg:Init(ResourcesManager:DataPath() .. "/Resource/GUI/bbg_temple_circle.jpg",true);
 	mImage_Bg:SetPosition(0, 0);
 	mImage_Bg:SetDepth(0);
 	self.mUIRoot:AddChild(mImage_Bg);
 	
 	
-	local audioSource1 = AudioSource:new()
-	audioSource1:LoadAudio(ResourcesManager:DataPath().. "/Resource/Audio/m_sound600.wav")
-	audioSource1:Loop()
-	audioSource1:Play()
+	-- local audioSource1 = AudioSource:new()
+	-- audioSource1:LoadAudio(ResourcesManager:DataPath().. "/Resource/Audio/m_sound600.wav")
+	-- audioSource1:Loop()
+	-- audioSource1:Play()
 
-	local audioSource2 = AudioSource:new()
-	audioSource2:LoadAudio(ResourcesManager:DataPath() .. "/Resource/Audio/click.wav")
+	-- local audioSource2 = AudioSource:new()
+	-- audioSource2:LoadAudio(ResourcesManager:DataPath() .. "/Resource/Audio/click.wav")
 	
-	self.mUIRoot=UIRoot:new()
+	-- self.mUIRoot=UIRoot:new()
 
 	
-	local	mImage_Bg =  UIImage:new()
-	mImage_Bg:Init(ResourcesManager:DataPath() .. "/Resource/GUI/bbg_temple_circle.jpg");
-	mImage_Bg:SetPosition(0, 0);
-	mImage_Bg:SetDepth(0);
-	self.mUIRoot:AddChild(mImage_Bg);
+	-- local	tmpGoImageCirle =  GameObject:new("ImageCirle")
+	-- local	tmpImageCirle =tmpGoImageCirle:AddComponent("UIImage")
+	-- tmpImageCirle:Init(ResourcesManager:DataPath() .. "/Resource/GUI/bbg_temple_circle.jpg");
+	-- tmpImageCirle:SetPosition(0, 0);
+	-- tmpImageCirle:SetDepth(0);
+	-- self.mUIRoot:AddChild(tmpImageCirle);
 
-	local mUIButton = UIButton:new(ResourcesManager:DataPath() .. "/Resource/GUI/pop_button0.png", ResourcesManager:DataPath() .. "/Resource/GUI/pop_button1.png", 0, 0, 86, 48)
-	mUIButton:SetOnClickListener(function(varTime)
-		audioSource2:Play()
-	end,111)
-	mUIButton:SetDepth(2);
-	self.mUIRoot:AddChild(mUIButton);
+	-- local mUIButton = UIButton:new(ResourcesManager:DataPath() .. "/Resource/GUI/pop_button0.png", ResourcesManager:DataPath() .. "/Resource/GUI/pop_button1.png", 0, 0, 86, 48)
+	-- mUIButton:SetOnClickListener(function(varTime)
+		-- audioSource2:Play()
+	-- end,111)
+	-- mUIButton:SetDepth(2);
+	-- self.mUIRoot:AddChild(mUIButton);
 
-	local mImageAnimation_Angel =  ImageAnimation:new(ResourcesManager:DataPath() .. "/Resource/ImageAnimations/Angel/Animations.txt",1.0/5)
-	mImageAnimation_Angel:SetPosition(0, 200)
-	mImageAnimation_Angel:SetScale(0.6, 0.6)
-	mImageAnimation_Angel:Play("Idle")
-	mImageAnimation_Angel:SetDepth(1);
-	self.mUIRoot:AddChild(mImageAnimation_Angel)
+	-- local mImageAnimation_Angel =  ImageAnimation:new(ResourcesManager:DataPath() .. "/Resource/ImageAnimations/Angel/Animations.txt",1.0/5)
+	-- mImageAnimation_Angel:SetPosition(0, 200)
+	-- mImageAnimation_Angel:SetScale(0.6, 0.6)
+	-- mImageAnimation_Angel:Play("Idle")
+	-- mImageAnimation_Angel:SetDepth(1);
+	-- self.mUIRoot:AddChild(mImageAnimation_Angel)
 	
-	local	label_name =  UILabel:new()
-	label_name:Init("label_name");
-	label_name:SetPosition(0, 0);
-	label_name:SetDepth(3);
-	label_name:SetSpace(2)
-	label_name:SetAlignCenter(true)
-	self.mUIRoot:AddChild(label_name);
+	-- local	label_name =  UILabel:new()
+	-- label_name:Init("label_name");
+	-- label_name:SetPosition(0, 0);
+	-- label_name:SetDepth(3);
+	-- label_name:SetSpace(2)
+	-- label_name:SetAlignCenter(true)
+	-- self.mUIRoot:AddChild(label_name);
 	
-	local	label_Age =  UILabel:new()
-	label_Age:Init("label_Age");
-	label_Age:SetPosition(0, -100);
-	label_Age:SetDepth(3);
-	self.mUIRoot:AddChild(label_Age);
+	-- local	label_Age =  UILabel:new()
+	-- label_Age:Init("label_Age");
+	-- label_Age:SetPosition(0, -100);
+	-- label_Age:SetDepth(3);
+	-- self.mUIRoot:AddChild(label_Age);
 	
 end
 

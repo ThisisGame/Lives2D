@@ -7,7 +7,7 @@ GameObject::GameObject(const char * varName)
 {
 	name = varName;
 
-	mTransform = (Transform*)AddComponent("Transform");
+	mTransform = (Transform*)Reflection::CreateInstance("Transform");
 }
 
 
@@ -23,7 +23,7 @@ void GameObject::AddChild(GameObject * varGameObject)
 		mVectorChild.push_back(varGameObject);
 
 		//×ø±êÉèÖÃ
-
+		varGameObject->mTransform->SetPosition(mTransform->GetPosition());
 	}
 }
 
@@ -49,6 +49,11 @@ GameObject * GameObject::GetChild(int varIndex)
 void GameObject::SetParent(GameObject * varGameObjectParent)
 {
 	mGameObjectParent = varGameObjectParent;
+}
+
+GameObject * GameObject::GetParent()
+{
+	return mGameObjectParent;
 }
 
 Component * GameObject::AddComponent(const char * varComponentName)

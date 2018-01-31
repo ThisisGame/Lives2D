@@ -5,6 +5,7 @@
 #include<glm/gtx/transform2.hpp>
 #include<glm/gtx/euler_angles.hpp>
 #include"Tools/Application.h"
+#include"Component/Transform.h"
 
 IMPLEMENT_DYNCRT_ACTION(UIImage)
 UIImage::UIImage(void):UIDrawRect(),mPosX(0),mPosY(0),mScaleX(1),mScaleY(1),mReceiveLightEffect(false)
@@ -58,8 +59,9 @@ void UIImage::Draw()
 {
 	//关联绑定这个纹理ID;
 	glBindTexture(GL_TEXTURE_2D, mTexture2D->m_textureId);
-
-	glm::mat4 trans = glm::translate(glm::vec3(mPosX, mPosY, 0));
+	
+	//glm::mat4 trans = glm::translate(glm::vec3(mPosX, mPosY, 0));
+	glm::mat4 trans = glm::translate(glm::vec3(mTransform->GetPosition().mX, mTransform->GetPosition().mY, 0));
 	glm::mat4 rotation = glm::eulerAngleYXZ(glm::radians(0.0f), glm::radians(0.0f), glm::radians(0.0f));
 	glm::mat4 scale = glm::scale(glm::vec3(mScaleX, mScaleY, 1.0f));
 

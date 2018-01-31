@@ -8,7 +8,10 @@ struct  Vector3
 	float mY;
 	float mZ;
 
-	Vector3() {}
+	Vector3():mX(0),mY(0),mZ(0)
+	{
+
+	}
 
 	Vector3(float varX, float varY, float varZ)
 	{

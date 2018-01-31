@@ -37,6 +37,9 @@ public:
 	///设置父节点
 	void SetParent(GameObject* varGameObjectParent);
 
+	///获取父节点
+	GameObject* GetParent();
+
 private:
 	std::vector<GameObject*> mVectorChild;//子物体列表
 

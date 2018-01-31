@@ -31,6 +31,7 @@ public:
 
 	Vector3 GetLocalScale();
 
+	Vector3 GetPosition();
 
 	void SetPosition(Vector3 varVector3);
 
