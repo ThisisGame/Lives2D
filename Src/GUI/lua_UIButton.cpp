@@ -1,6 +1,6 @@
 /*
 ** Lua binding: UIButton
-** Generated automatically by tolua++-1.0.92 on Tue Sep 26 00:42:31 2017.
+** Generated automatically by tolua++-1.0.92 on Thu Feb  1 17:18:31 2018.
 */
 
 #ifndef __cplusplus
@@ -42,26 +42,14 @@ static int tolua_UIButton_UIButton_new00(lua_State* tolua_S)
  tolua_Error tolua_err;
  if (
      !tolua_isusertable(tolua_S,1,"UIButton",0,&tolua_err) ||
-     !tolua_iscppstring(tolua_S,2,0,&tolua_err) ||
-     !tolua_iscppstring(tolua_S,3,0,&tolua_err) ||
-     !tolua_isnumber(tolua_S,4,0,&tolua_err) ||
-     !tolua_isnumber(tolua_S,5,0,&tolua_err) ||
-     !tolua_isnumber(tolua_S,6,0,&tolua_err) ||
-     !tolua_isnumber(tolua_S,7,0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,8,&tolua_err)
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
  )
   goto tolua_lerror;
  else
 #endif
  {
-  std::string varNormalImagePath = ((std::string)  tolua_tocppstring(tolua_S,2,0));
-  std::string varClickDownImagePath = ((std::string)  tolua_tocppstring(tolua_S,3,0));
-  float varPosX = ((float)  tolua_tonumber(tolua_S,4,0));
-  float varPosY = ((float)  tolua_tonumber(tolua_S,5,0));
-  float varWidth = ((float)  tolua_tonumber(tolua_S,6,0));
-  float varHeight = ((float)  tolua_tonumber(tolua_S,7,0));
   {
-   UIButton* tolua_ret = (UIButton*)  Mtolua_new((UIButton)(varNormalImagePath,varClickDownImagePath,varPosX,varPosY,varWidth,varHeight));
+   UIButton* tolua_ret = (UIButton*)  Mtolua_new((UIButton)());
     tolua_pushusertype(tolua_S,(void*)tolua_ret,"UIButton");
   }
  }
@@ -82,26 +70,14 @@ static int tolua_UIButton_UIButton_new00_local(lua_State* tolua_S)
  tolua_Error tolua_err;
  if (
      !tolua_isusertable(tolua_S,1,"UIButton",0,&tolua_err) ||
-     !tolua_iscppstring(tolua_S,2,0,&tolua_err) ||
-     !tolua_iscppstring(tolua_S,3,0,&tolua_err) ||
-     !tolua_isnumber(tolua_S,4,0,&tolua_err) ||
-     !tolua_isnumber(tolua_S,5,0,&tolua_err) ||
-     !tolua_isnumber(tolua_S,6,0,&tolua_err) ||
-     !tolua_isnumber(tolua_S,7,0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,8,&tolua_err)
+     !tolua_isnoobj(tolua_S,2,&tolua_err)
  )
   goto tolua_lerror;
  else
 #endif
  {
-  std::string varNormalImagePath = ((std::string)  tolua_tocppstring(tolua_S,2,0));
-  std::string varClickDownImagePath = ((std::string)  tolua_tocppstring(tolua_S,3,0));
-  float varPosX = ((float)  tolua_tonumber(tolua_S,4,0));
-  float varPosY = ((float)  tolua_tonumber(tolua_S,5,0));
-  float varWidth = ((float)  tolua_tonumber(tolua_S,6,0));
-  float varHeight = ((float)  tolua_tonumber(tolua_S,7,0));
   {
-   UIButton* tolua_ret = (UIButton*)  Mtolua_new((UIButton)(varNormalImagePath,varClickDownImagePath,varPosX,varPosY,varWidth,varHeight));
+   UIButton* tolua_ret = (UIButton*)  Mtolua_new((UIButton)());
     tolua_pushusertype(tolua_S,(void*)tolua_ret,"UIButton");
     tolua_register_gc(tolua_S,lua_gettop(tolua_S));
   }
@@ -139,6 +115,45 @@ static int tolua_UIButton_UIButton_delete00(lua_State* tolua_S)
 #ifndef TOLUA_RELEASE
  tolua_lerror:
  tolua_error(tolua_S,"#ferror in function 'delete'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: Init of class  UIButton */
+#ifndef TOLUA_DISABLE_tolua_UIButton_UIButton_Init00
+static int tolua_UIButton_UIButton_Init00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"UIButton",0,&tolua_err) ||
+     !tolua_iscppstring(tolua_S,2,0,&tolua_err) ||
+     !tolua_iscppstring(tolua_S,3,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,4,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,5,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,6,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  UIButton* self = (UIButton*)  tolua_tousertype(tolua_S,1,0);
+  std::string varNormalImagePath = ((std::string)  tolua_tocppstring(tolua_S,2,0));
+  std::string varClickDownImagePath = ((std::string)  tolua_tocppstring(tolua_S,3,0));
+  float varWidth = ((float)  tolua_tonumber(tolua_S,4,0));
+  float varHeight = ((float)  tolua_tonumber(tolua_S,5,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'Init'", NULL);
+#endif
+  {
+   self->Init(varNormalImagePath,varClickDownImagePath,varWidth,varHeight);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'Init'.",&tolua_err);
  return 0;
 #endif
 }
@@ -193,6 +208,7 @@ TOLUA_API int tolua_UIButton_open (lua_State* tolua_S)
    tolua_function(tolua_S,"new_local",tolua_UIButton_UIButton_new00_local);
    tolua_function(tolua_S,".call",tolua_UIButton_UIButton_new00_local);
    tolua_function(tolua_S,"delete",tolua_UIButton_UIButton_delete00);
+   tolua_function(tolua_S,"Init",tolua_UIButton_UIButton_Init00);
    tolua_function(tolua_S,"SetOnClickListener",tolua_UIButton_UIButton_SetOnClickListener00);
   tolua_endmodule(tolua_S);
  tolua_endmodule(tolua_S);

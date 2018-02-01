@@ -14,12 +14,17 @@ GameObject::GameObject(const char * varName):mGameObjectParent(nullptr)
 
 void GameObject::AddChild(GameObject * varGameObject)
 {
+	bool tmpFind = false;
 	for (size_t tmpChildIndex = 0; tmpChildIndex < mVectorChild.size(); tmpChildIndex++)
 	{
 		if (mVectorChild[tmpChildIndex] == varGameObject)
 		{
-			return;
+			tmpFind = true;
+			break;
 		}
+	}
+	if (tmpFind == false)
+	{
 
 		mVectorChild.push_back(varGameObject);
 

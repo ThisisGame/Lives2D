@@ -1,21 +1,38 @@
 #include "UIButton.h"
+#include"Component/GameObject.h"
+#include"Component/Transform.h"
 
 
 IMPLEMENT_DYNCRT_ACTION(UIButton)
-UIButton::UIButton(std::string varNormalImagePath, std::string varClickDownImagePath, float varPosX, float varPosY, float varWidth, float varHeight):UIClickRect(),mClickDown(false),mPosX(varPosX),mPosY(varPosY),mWidth(varWidth),mHeight(varHeight), mOnClickListener(NULL)
+UIButton::UIButton() :UIClickRect(), mClickDown(false), mWidth(0), mHeight(0), mOnClickListener(NULL)
 {
-	mImageNormal = new UIImage();
+}
+
+
+void UIButton::Init(std::string varNormalImagePath, std::string varClickDownImagePath, float varWidth, float varHeight)
+{
+	GameObject* tmpGoImageNormal = new GameObject("ImageNormal");
+	mGameObject->AddChild(tmpGoImageNormal);
+	mImageNormal = (UIImage*)tmpGoImageNormal->AddComponent("UIImage");
 	mImageNormal->Init(varNormalImagePath.c_str());
-	mImageNormal->SetPosition(mPosX, mPosY);
+	//mImageNormal->mTransform->SetLocalPosition(mPosX, mPosY);
+	
 
-	mImageClickDown = new UIImage();
+	GameObject* tmpGoImageClickDown = new GameObject("ImageClickDown");
+	mGameObject->AddChild(tmpGoImageClickDown);
+	mImageClickDown =(UIImage*)tmpGoImageClickDown->AddComponent("UIImage");
 	mImageClickDown->Init(varClickDownImagePath.c_str());
-	mImageClickDown->SetPosition(mPosX, mPosY);
+	//mImageClickDown->SetPosition(mPosX, mPosY);
+	
+
+	mWidth = varWidth;
+	mHeight = varHeight;
+
+	mPosX = mTransform->GetPosition().mX;
+	mPosY = mTransform->GetPosition().mY;
 }
 
-UIButton::UIButton()
-{
-}
+
 
 
 void UIButton::SetOnClickListener(lua_State * varlua_State)

@@ -23,9 +23,11 @@ public:
 	LuaFunctionPoint* mOnClickListener;
 
 public:
-	UIButton(std::string varNormalImagePath,std::string varClickDownImagePath,float varPosX,float varPosY,float varWidth,float varHeight);
+	
 	UIButton();
 	~UIButton();
+
+	void Init(std::string varNormalImagePath, std::string varClickDownImagePath,float varWidth, float varHeight);
 
 	void SetOnClickListener(lua_State* varlua_State);
 
