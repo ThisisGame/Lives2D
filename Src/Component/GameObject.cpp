@@ -7,8 +7,11 @@ GameObject::GameObject(const char * varName):mGameObjectParent(nullptr)
 {
 	name = varName;
 
+	Awake();
+
 	mTransform = (Transform*)Reflection::CreateInstance("Transform");
 	mTransform->mGameObject = this;
+	mTransform->Awake();
 }
 
 
@@ -65,6 +68,7 @@ GameObject * GameObject::GetParent()
 Component * GameObject::AddComponent(const char * varComponentName)
 {
 	Component* tmpComponent = Reflection::CreateInstance(varComponentName);
+	tmpComponent->Awake();
 	tmpComponent->mGameObject = this;
 	tmpComponent->mTransform = mTransform;
 	mVectorComponent.push_back(tmpComponent);
@@ -80,6 +84,33 @@ void GameObject::RemoveComponent(const char * varComponentName)
 		{
 			auto tmpIter = mVectorComponent.begin();
 			mVectorComponent.erase(tmpIter+tmpComponentIndex);
+			tmpComponent->OnDestroy();
+			return;
+		}
+	}
+}
+
+LuaComponent * GameObject::AddLuaComponent(const char * varFilePath)
+{
+	LuaComponent* tmpLuaComponent=(LuaComponent*)Reflection::CreateInstance("LuaComponent");
+	tmpLuaComponent->mGameObject = this;
+	tmpLuaComponent->mTransform = mTransform;
+	tmpLuaComponent->DoFile(varFilePath);
+	tmpLuaComponent->Awake();
+	mVectorLuaComponent.push_back(tmpLuaComponent);
+	return tmpLuaComponent;
+}
+
+void GameObject::RemoveLuaComponent(const char * varFilePath)
+{
+	for (size_t tmpLuaComponentIndex = 0; tmpLuaComponentIndex < mVectorLuaComponent.size(); tmpLuaComponentIndex++)
+	{
+		LuaComponent* tmpLuaComponent = mVectorLuaComponent[tmpLuaComponentIndex];
+		if (strcmp(tmpLuaComponent->mLuaFilePath.c_str(), varFilePath) == 0)
+		{
+			auto tmpIter = mVectorLuaComponent.begin();
+			mVectorLuaComponent.erase(tmpIter + tmpLuaComponentIndex);
+			tmpLuaComponent->OnDestroy();
 			return;
 		}
 	}
@@ -87,11 +118,17 @@ void GameObject::RemoveComponent(const char * varComponentName)
 
 void GameObject::Awake()
 {
-	for (size_t tmpComponentIndex = 0; tmpComponentIndex < mVectorComponent.size(); tmpComponentIndex++)
-	{
-		Component* tmpComponent = mVectorComponent[tmpComponentIndex];
-		tmpComponent->Awake();
-	}
+	//for (size_t tmpComponentIndex = 0; tmpComponentIndex < mVectorComponent.size(); tmpComponentIndex++)
+	//{
+	//	Component* tmpComponent = mVectorComponent[tmpComponentIndex];
+	//	tmpComponent->Awake();
+	//}
+
+	//for (size_t tmpLuaComponentIndex = 0; tmpLuaComponentIndex < mVectorLuaComponent.size(); tmpLuaComponentIndex++)
+	//{
+	//	LuaComponent* tmpLuaComponent = mVectorLuaComponent[tmpLuaComponentIndex];
+	//	tmpLuaComponent->Awake();
+	//}
 
 	for (size_t tmpChildIndex = 0; tmpChildIndex < mVectorChild.size(); tmpChildIndex++)
 	{
@@ -105,6 +142,12 @@ void GameObject::OnEnable()
 	{
 		Component* tmpComponent = mVectorComponent[tmpComponentIndex];
 		tmpComponent->Awake();
+	}
+
+	for (size_t tmpLuaComponentIndex = 0; tmpLuaComponentIndex < mVectorLuaComponent.size(); tmpLuaComponentIndex++)
+	{
+		LuaComponent* tmpLuaComponent = mVectorLuaComponent[tmpLuaComponentIndex];
+		tmpLuaComponent->Awake();
 	}
 
 	for (size_t tmpChildIndex = 0; tmpChildIndex < mVectorChild.size(); tmpChildIndex++)
@@ -121,6 +164,12 @@ void GameObject::Start()
 		tmpComponent->Start();
 	}
 
+	for (size_t tmpLuaComponentIndex = 0; tmpLuaComponentIndex < mVectorLuaComponent.size(); tmpLuaComponentIndex++)
+	{
+		LuaComponent* tmpLuaComponent = mVectorLuaComponent[tmpLuaComponentIndex];
+		tmpLuaComponent->Start();
+	}
+
 	for (size_t tmpChildIndex = 0; tmpChildIndex < mVectorChild.size(); tmpChildIndex++)
 	{
 		mVectorChild[tmpChildIndex]->Start();
@@ -135,6 +184,12 @@ void GameObject::Update()
 		tmpComponent->Update();
 	}
 
+	for (size_t tmpLuaComponentIndex = 0; tmpLuaComponentIndex < mVectorLuaComponent.size(); tmpLuaComponentIndex++)
+	{
+		LuaComponent* tmpLuaComponent = mVectorLuaComponent[tmpLuaComponentIndex];
+		tmpLuaComponent->Update();
+	}
+
 	for (size_t tmpChildIndex = 0; tmpChildIndex < mVectorChild.size(); tmpChildIndex++)
 	{
 		mVectorChild[tmpChildIndex]->Update();
@@ -147,6 +202,12 @@ void GameObject::OnDisable()
 	{
 		Component* tmpComponent = mVectorComponent[tmpComponentIndex];
 		tmpComponent->OnDisable();
+	}
+
+	for (size_t tmpLuaComponentIndex = 0; tmpLuaComponentIndex < mVectorLuaComponent.size(); tmpLuaComponentIndex++)
+	{
+		LuaComponent* tmpLuaComponent = mVectorLuaComponent[tmpLuaComponentIndex];
+		tmpLuaComponent->OnDisable();
 	}
 
 	for (size_t tmpChildIndex = 0; tmpChildIndex < mVectorChild.size(); tmpChildIndex++)
@@ -165,6 +226,18 @@ void GameObject::OnDestroy()
 			tmpComponent->OnDestroy();
 			delete(tmpComponent);
 			tmpComponent = nullptr;
+		}
+	}
+
+
+	for (size_t tmpLuaComponentIndex = 0; tmpLuaComponentIndex < mVectorLuaComponent.size(); tmpLuaComponentIndex++)
+	{
+		LuaComponent* tmpLuaComponent = mVectorLuaComponent[tmpLuaComponentIndex];
+		if (tmpLuaComponent != nullptr)
+		{
+			tmpLuaComponent->OnDestroy();
+			delete(tmpLuaComponent);
+			tmpLuaComponent = nullptr;
 		}
 	}
 

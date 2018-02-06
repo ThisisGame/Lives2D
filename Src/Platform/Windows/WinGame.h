@@ -74,6 +74,8 @@ public:
 
 		//LuaEngine Start
 		LuaEngine::GetSingleton()->DoFile((Application::PersistentDataPath()+ "/Resource/Script/Engine/Lives2D.lua").c_str());
+		/*LuaEngine::GetSingleton()->DoFile((Application::PersistentDataPath() + "/Resource/Script/test1.lua").c_str());
+		LuaEngine::GetSingleton()->DoFile((Application::PersistentDataPath() + "/Resource/Script/test2.lua").c_str());*/
 	}
 
 

@@ -1,0 +1,13 @@
+$#include"LuaComponent.h"
+
+class LuaComponent :public Component
+{
+public:
+	LuaComponent();
+	~LuaComponent();
+
+	void DoFile(const char* varFilePath);
+
+public:
+	std::string mLuaFilePath;
+};

@@ -2,6 +2,7 @@
 #include "Object.h"
 #include"Component.h"
 #include<vector>
+#include"LuaComponent.h"
 
 class Transform;
 class GameObject :
@@ -55,6 +56,17 @@ public:
 
 private:
 	std::vector<Component*> mVectorComponent;
+
+
+	//**************************************************Lua组件
+public:
+	LuaComponent* AddLuaComponent(const char* varFilePath);
+
+	void RemoveLuaComponent(const char* varFilePath);
+
+private:
+	std::vector<LuaComponent*> mVectorLuaComponent;
+
 
 	//**************************************************生命周期
 public:

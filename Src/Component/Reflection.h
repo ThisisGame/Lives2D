@@ -32,7 +32,7 @@ public:
 	static Component* CreateInstance(std::string varTypeName);
 
 private:
-	static std::map<std::string, FunCreateInstance> gMapTypeInfo;//类名和构造函数指针 列表
+	//static std::map<std::string, FunCreateInstance> gMapTypeInfo;//类名和构造函数指针 列表
 
 	std::string mReflectionClassName;
 

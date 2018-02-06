@@ -26,6 +26,11 @@ public:
 	void RemoveComponent(const char* varComponentName);
 
 public:
+	LuaComponent* AddLuaComponent(const char* varFilePath);
+
+	void RemoveLuaComponent(const char* varFilePath);
+
+public:
 	void Awake() ;
 	void OnEnable() ;
 	void Start() ;

@@ -16,6 +16,8 @@ function SceneWelcom:Init()
 	local tmpGoUIRoot=GameObject:new("UIROOT")
 	self.mUIRoot=tmpGoUIRoot:AddComponent("UIRoot")
 	
+	tmpGoUIRoot:AddLuaComponent("WhoSetMeActive.lua")
+	
 	
 	local tmpGoImageBg=GameObject:new("mImage_Bg")
 	

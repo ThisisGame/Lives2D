@@ -85,9 +85,11 @@
     <ClCompile Include="..\..\Src\Component\Behavior.cpp" />
     <ClCompile Include="..\..\Src\Component\Component.cpp" />
     <ClCompile Include="..\..\Src\Component\GameObject.cpp" />
+    <ClCompile Include="..\..\Src\Component\LuaComponent.cpp" />
     <ClCompile Include="..\..\Src\Component\lua_Behavior.cpp" />
     <ClCompile Include="..\..\Src\Component\lua_Component.cpp" />
     <ClCompile Include="..\..\Src\Component\lua_GameObject.cpp" />
+    <ClCompile Include="..\..\Src\Component\Lua_LuaComponent.cpp" />
     <ClCompile Include="..\..\Src\Component\lua_Object.cpp" />
     <ClCompile Include="..\..\Src\Component\lua_Transform.cpp" />
     <ClCompile Include="..\..\Src\Component\Object.cpp" />
@@ -148,6 +150,7 @@
     <ClInclude Include="..\..\Src\Component\Behavior.h" />
     <ClInclude Include="..\..\Src\Component\Component.h" />
     <ClInclude Include="..\..\Src\Component\GameObject.h" />
+    <ClInclude Include="..\..\Src\Component\LuaComponent.h" />
     <ClInclude Include="..\..\Src\Component\Object.h" />
     <ClInclude Include="..\..\Src\Component\Reflection.h" />
     <ClInclude Include="..\..\Src\Component\Transform.h" />

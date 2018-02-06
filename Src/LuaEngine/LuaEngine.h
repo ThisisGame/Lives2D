@@ -52,6 +52,8 @@ public:
 	
 	void DoFile(const char* varFilePath);
 
+	void DoFile(const char* varFilePath, std::function<void(lua_State*)> varFunction);
+
 	void CallLuaFunction(const char* varLuaFunctionName, int varParamCount, std::function<void(lua_State*)> varFunction);
 
 	void CallLuaFunction(const char* varLuaFunctionName);
@@ -63,6 +65,8 @@ public:
 	LuaFunctionPoint* GetLuaFunction(LuaFunctionPoint* varLuaFunctionPoint);
 
 	void ExecuteLuaFunction(LuaFunctionPoint* varLuaFunctionPoint);
+
+	void ExecuteLuaFunction(int varLuaFunctionUniqueIndex);
 
 private:
 	void PrintError();

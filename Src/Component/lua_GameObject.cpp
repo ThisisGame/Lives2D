@@ -1,6 +1,6 @@
 /*
 ** Lua binding: GameObject
-** Generated automatically by tolua++-1.0.92 on Sun Jan 28 23:23:39 2018.
+** Generated automatically by tolua++-1.0.92 on Tue Feb  6 22:53:32 2018.
 */
 
 #ifndef __cplusplus
@@ -31,6 +31,7 @@ static int tolua_collect_GameObject (lua_State* tolua_S)
 static void tolua_reg_types (lua_State* tolua_S)
 {
  tolua_usertype(tolua_S,"Component");
+ tolua_usertype(tolua_S,"LuaComponent");
  tolua_usertype(tolua_S,"Object");
  tolua_usertype(tolua_S,"GameObject");
 }
@@ -338,8 +339,7 @@ static int tolua_GameObject_GameObject_AddComponent00(lua_State* tolua_S)
 #endif
   {
    Component* tolua_ret = (Component*)  self->AddComponent(varComponentName);
-    //tolua_pushusertype(tolua_S,(void*)tolua_ret,"Component");
-   tolua_pushusertype(tolua_S, (void*)tolua_ret, varComponentName);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret, varComponentName);
   }
  }
  return 1;
@@ -379,6 +379,73 @@ static int tolua_GameObject_GameObject_RemoveComponent00(lua_State* tolua_S)
 #ifndef TOLUA_RELEASE
  tolua_lerror:
  tolua_error(tolua_S,"#ferror in function 'RemoveComponent'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: AddLuaComponent of class  GameObject */
+#ifndef TOLUA_DISABLE_tolua_GameObject_GameObject_AddLuaComponent00
+static int tolua_GameObject_GameObject_AddLuaComponent00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"GameObject",0,&tolua_err) ||
+     !tolua_isstring(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  GameObject* self = (GameObject*)  tolua_tousertype(tolua_S,1,0);
+  const char* varFilePath = ((const char*)  tolua_tostring(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'AddLuaComponent'", NULL);
+#endif
+  {
+   LuaComponent* tolua_ret = (LuaComponent*)  self->AddLuaComponent(varFilePath);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret,"LuaComponent");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'AddLuaComponent'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: RemoveLuaComponent of class  GameObject */
+#ifndef TOLUA_DISABLE_tolua_GameObject_GameObject_RemoveLuaComponent00
+static int tolua_GameObject_GameObject_RemoveLuaComponent00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"GameObject",0,&tolua_err) ||
+     !tolua_isstring(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  GameObject* self = (GameObject*)  tolua_tousertype(tolua_S,1,0);
+  const char* varFilePath = ((const char*)  tolua_tostring(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'RemoveLuaComponent'", NULL);
+#endif
+  {
+   self->RemoveLuaComponent(varFilePath);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'RemoveLuaComponent'.",&tolua_err);
  return 0;
 #endif
 }
@@ -595,6 +662,8 @@ TOLUA_API int tolua_GameObject_open (lua_State* tolua_S)
    tolua_function(tolua_S,"SetParent",tolua_GameObject_GameObject_SetParent00);
    tolua_function(tolua_S,"AddComponent",tolua_GameObject_GameObject_AddComponent00);
    tolua_function(tolua_S,"RemoveComponent",tolua_GameObject_GameObject_RemoveComponent00);
+   tolua_function(tolua_S,"AddLuaComponent",tolua_GameObject_GameObject_AddLuaComponent00);
+   tolua_function(tolua_S,"RemoveLuaComponent",tolua_GameObject_GameObject_RemoveLuaComponent00);
    tolua_function(tolua_S,"Awake",tolua_GameObject_GameObject_Awake00);
    tolua_function(tolua_S,"OnEnable",tolua_GameObject_GameObject_OnEnable00);
    tolua_function(tolua_S,"Start",tolua_GameObject_GameObject_Start00);
