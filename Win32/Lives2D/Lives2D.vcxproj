@@ -136,6 +136,12 @@
     <ClCompile Include="..\..\Src\Math\lua_Math.cpp" />
     <ClCompile Include="..\..\Src\Math\Math.cpp" />
     <ClCompile Include="..\..\Src\Platform\Windows\WinMain.cpp" />
+    <ClCompile Include="..\..\Src\PlayerPrefs\Convert.cpp" />
+    <ClCompile Include="..\..\Src\PlayerPrefs\PlayerPrefs.cpp" />
+    <ClCompile Include="..\..\Src\PlayerPrefs\TinyXml\tinystr.cpp" />
+    <ClCompile Include="..\..\Src\PlayerPrefs\TinyXml\tinyxml.cpp" />
+    <ClCompile Include="..\..\Src\PlayerPrefs\TinyXml\tinyxmlerror.cpp" />
+    <ClCompile Include="..\..\Src\PlayerPrefs\TinyXml\tinyxmlparser.cpp" />
     <ClCompile Include="..\..\Src\Texture2D\Texture2D.cpp" />
     <ClCompile Include="..\..\Src\Tools\Application.cpp" />
     <ClCompile Include="..\..\Src\Tools\Helper.cpp" />
@@ -180,6 +186,9 @@
     <ClInclude Include="..\..\Src\LuaEngine\NetworkDispatch.h" />
     <ClInclude Include="..\..\Src\Math\Math.h" />
     <ClInclude Include="..\..\Src\Platform\Windows\WinGame.h" />
+    <ClInclude Include="..\..\Src\PlayerPrefs\Convert.h" />
+    <ClInclude Include="..\..\Src\PlayerPrefs\PlayerPrefs.h" />
+    <ClInclude Include="..\..\Src\PlayerPrefs\TinyXml\tinyxml.h" />
     <ClInclude Include="..\..\Src\Texture2D\Texture2D.h" />
     <ClInclude Include="..\..\Src\Tools\Application.h" />
     <ClInclude Include="..\..\Src\Tools\Helper.h" />

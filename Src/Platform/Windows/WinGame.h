@@ -20,6 +20,8 @@
 #include"LuaEngine\LuaEngine.h"
 #include"Audio\AudioCard.cpp"
 
+#include"PlayerPrefs/PlayerPrefs.h"
+
 class WinGame
 {
 public:
@@ -71,6 +73,42 @@ public:
 		m_EGLContext = 0;
 		m_EGLDisplay = 0;
 
+		PlayerPrefs::Read((Application::PersistentDataPath() + "/Resource/PlayerPrefs.xml").c_str());
+
+		float version = PlayerPrefs::GetFloat("version");
+		PlayerPrefs::SetFloat("version", 1.12);
+		version = PlayerPrefs::GetFloat("version");
+
+		bool hasissdk = PlayerPrefs::HasKey("issdk");
+
+		bool issdk = PlayerPrefs::GetBool("issdk");
+		PlayerPrefs::SetBool("issdk", true);
+		issdk = PlayerPrefs::GetBool("issdk");
+		hasissdk = PlayerPrefs::HasKey("issdk");
+
+		bool firstopen = PlayerPrefs::GetBool("FirstOpenGame");
+		PlayerPrefs::SetBool("FirstOpenGame", true);
+		firstopen = PlayerPrefs::GetBool("FirstOpenGame");
+
+		int logincount = PlayerPrefs::GetInt("LoginCount");
+		PlayerPrefs::SetInt("LoginCount", 25);
+		logincount = PlayerPrefs::GetInt("LoginCount");
+
+		std::string servername = PlayerPrefs::GetString("ServerName");
+		PlayerPrefs::SetString("ServerName", "Taohao2");
+		servername = PlayerPrefs::GetString("ServerName");
+
+		PlayerPrefs::DeleteKey("ServerName");
+		PlayerPrefs::DeleteKey("issdk");
+
+
+
+		issdk = PlayerPrefs::GetBool("issdk");
+		servername = PlayerPrefs::GetString("ServerName");
+
+		PlayerPrefs::DeleteAll();
+		logincount = PlayerPrefs::GetInt("LoginCount");
+		firstopen = PlayerPrefs::GetBool("FirstOpenGame");
 
 		//LuaEngine Start
 		LuaEngine::GetSingleton()->DoFile((Application::PersistentDataPath()+ "/Resource/Script/Engine/Lives2D.lua").c_str());
@@ -386,6 +424,8 @@ public:
 		LuaEngine::GetSingleton()->CallLuaFunction("OnDestroy");
 
 		AudioCardExit();
+
+		PlayerPrefs::Close();
 	}
 
 protected:

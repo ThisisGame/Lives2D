@@ -43,6 +43,12 @@
     <Filter Include="Component">
       <UniqueIdentifier>{3388505a-768e-4bdb-91d5-62e2bdd5defa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="PlayerPrefs">
+      <UniqueIdentifier>{6b4481f3-0fdd-4674-aaeb-0813d344ab16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PlayerPrefs\TimyXml">
+      <UniqueIdentifier>{5a7b2542-6838-4a81-9642-10eb5c2c1c3e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Src\Platform\Windows\WinMain.cpp">
@@ -232,6 +238,24 @@
     <ClCompile Include="..\..\Src\Component\Lua_LuaComponent.cpp">
       <Filter>Component</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Src\PlayerPrefs\Convert.cpp">
+      <Filter>PlayerPrefs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\PlayerPrefs\PlayerPrefs.cpp">
+      <Filter>PlayerPrefs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\PlayerPrefs\TinyXml\tinyxmlerror.cpp">
+      <Filter>PlayerPrefs\TimyXml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\PlayerPrefs\TinyXml\tinyxmlparser.cpp">
+      <Filter>PlayerPrefs\TimyXml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\PlayerPrefs\TinyXml\tinystr.cpp">
+      <Filter>PlayerPrefs\TimyXml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\PlayerPrefs\TinyXml\tinyxml.cpp">
+      <Filter>PlayerPrefs\TimyXml</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\Platform\Windows\WinGame.h">
@@ -354,6 +378,15 @@
     </ClInclude>
     <ClInclude Include="..\..\Src\Component\LuaComponent.h">
       <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\PlayerPrefs\PlayerPrefs.h">
+      <Filter>PlayerPrefs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\PlayerPrefs\Convert.h">
+      <Filter>PlayerPrefs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\PlayerPrefs\TinyXml\tinyxml.h">
+      <Filter>PlayerPrefs\TimyXml</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
