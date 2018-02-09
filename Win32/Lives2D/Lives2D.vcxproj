@@ -113,6 +113,7 @@
     <ClCompile Include="..\..\Src\GUI\UIDrawRect.cpp" />
     <ClCompile Include="..\..\Src\GUI\UIImage.cpp" />
     <ClCompile Include="..\..\Src\GUI\UILabel.cpp" />
+    <ClCompile Include="..\..\Src\GUI\UIParser.cpp" />
     <ClCompile Include="..\..\Src\GUI\UIRect.cpp" />
     <ClCompile Include="..\..\Src\GUI\UIRoot.cpp" />
     <ClCompile Include="..\..\Src\ImageAnimation\ImageAnimation.cpp" />
@@ -146,7 +147,7 @@
     <ClCompile Include="..\..\Src\Tools\Application.cpp" />
     <ClCompile Include="..\..\Src\Tools\Helper.cpp" />
     <ClCompile Include="..\..\Src\Tools\lua_Application.cpp" />
-    <ClCompile Include="Time.cpp" />
+    <ClCompile Include="..\..\Src\Tools\Time.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Lives2D_Depends\FMOD\Windows\common\common.h" />
@@ -171,6 +172,7 @@
     <ClInclude Include="..\..\Src\GUI\UIDrawRect.h" />
     <ClInclude Include="..\..\Src\GUI\UIImage.h" />
     <ClInclude Include="..\..\Src\GUI\UILabel.h" />
+    <ClInclude Include="..\..\Src\GUI\UIParser.h" />
     <ClInclude Include="..\..\Src\GUI\UIRect.h" />
     <ClInclude Include="..\..\Src\GUI\UIRoot.h" />
     <ClInclude Include="..\..\Src\ImageAnimation\ImageAnimation.h" />
@@ -192,7 +194,7 @@
     <ClInclude Include="..\..\Src\Texture2D\Texture2D.h" />
     <ClInclude Include="..\..\Src\Tools\Application.h" />
     <ClInclude Include="..\..\Src\Tools\Helper.h" />
-    <ClInclude Include="Time.h" />
+    <ClInclude Include="..\..\Src\Tools\Time.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\Src\LuaEngine\BinaryPacker.pkg" />

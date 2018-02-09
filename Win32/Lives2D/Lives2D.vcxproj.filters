@@ -207,7 +207,6 @@
     <ClCompile Include="..\..\Src\Math\Math.cpp">
       <Filter>Math</Filter>
     </ClCompile>
-    <ClCompile Include="Time.cpp" />
     <ClCompile Include="..\..\Src\GUI\UIImage.cpp">
       <Filter>GUI</Filter>
     </ClCompile>
@@ -255,6 +254,12 @@
     </ClCompile>
     <ClCompile Include="..\..\Src\PlayerPrefs\TinyXml\tinyxml.cpp">
       <Filter>PlayerPrefs\TimyXml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Tools\Time.cpp">
+      <Filter>Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\GUI\UIParser.cpp">
+      <Filter>GUI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -372,7 +377,6 @@
     <ClInclude Include="..\..\Src\Math\Math.h">
       <Filter>Math</Filter>
     </ClInclude>
-    <ClInclude Include="Time.h" />
     <ClInclude Include="..\..\Src\GUI\UIImage.h">
       <Filter>GUI</Filter>
     </ClInclude>
@@ -387,6 +391,12 @@
     </ClInclude>
     <ClInclude Include="..\..\Src\PlayerPrefs\TinyXml\tinyxml.h">
       <Filter>PlayerPrefs\TimyXml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Tools\Time.h">
+      <Filter>Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\GUI\UIParser.h">
+      <Filter>GUI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
