@@ -3,6 +3,7 @@
 
 #include "WinGame.h"
 #include"Tools\Application.h"
+#include"PlayerPrefs/Convert.h"
 
 
 int APIENTRY _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCmdLine, int nCmdShow)
@@ -11,6 +12,9 @@ int APIENTRY _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCm
 	UNREFERENCED_PARAMETER(hPrevInstance);
 	UNREFERENCED_PARAMETER(lpCmdLine);
 	UNREFERENCED_PARAMETER(nCmdShow);
+
+
+	Convert::StringToVector3("(100,100,0.22)");
 
 	AllocConsole();
 	freopen("CONOUT$", "a+", stdout);

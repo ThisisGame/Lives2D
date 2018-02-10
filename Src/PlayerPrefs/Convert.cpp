@@ -89,3 +89,53 @@ float Convert::StringToFloat(const std::string& value)
 	ss >> f;
 	return f;
 }
+
+Vector3 Convert::StringToVector3(const char * value)
+{
+	Vector3 tmpVector3;
+
+	char* tmpOneNum = NULL;
+	int  tmpOneNumIndex = 0;
+
+	int tmpVector3ParamIndex = 0;
+
+	int tmpSize = strlen(value);
+	for (size_t i = 0; i < tmpSize; i++)
+	{
+		if (value[i] == '(' || value[i] == ',')
+		{
+			if (tmpOneNum != NULL)
+			{
+				tmpOneNum[tmpOneNumIndex++] = '\0';
+
+				if (tmpVector3ParamIndex == 0)
+				{
+					tmpVector3.mX = StringToFloat(tmpOneNum);
+				}
+				else if (tmpVector3ParamIndex == 1)
+				{
+					tmpVector3.mY = StringToFloat(tmpOneNum);
+				}
+				tmpVector3ParamIndex++;
+			}
+
+			tmpOneNum = new char[10];
+			tmpOneNumIndex = 0;
+
+			memset(tmpOneNum, 0, 10);
+			continue;
+		}
+
+		if (value[i] == ')')
+		{
+			tmpOneNum[tmpOneNumIndex++] = '\0';
+
+			tmpVector3.mZ = StringToFloat(tmpOneNum);
+		}
+		else
+		{
+			tmpOneNum[tmpOneNumIndex++] = value[i];
+		}
+	}
+	return tmpVector3;
+}

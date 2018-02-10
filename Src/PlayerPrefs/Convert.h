@@ -27,6 +27,7 @@ distribution.
 #include<strstream>
 #include<sstream>
 #include<string>
+#include"Math/Math.h"
 
 class Convert
 {
@@ -45,5 +46,7 @@ public:
 	static bool StringToBool(const std::string& value);
 
 	static float StringToFloat(const std::string& value);
+
+	static Vector3 StringToVector3(const char* value);
 };
 
