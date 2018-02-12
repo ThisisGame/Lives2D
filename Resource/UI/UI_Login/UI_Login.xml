@@ -2,7 +2,7 @@
 <GameObject Name="UIRoot"  Position="(0,0,0)" Rotation="(0,0,0)" Scale="(1,1,1)">
 	<Component Type="UIRoot" />
 	<GameObject Name="UIImage_BG" Position="(100,0,0)" Rotation="(0,0,0)" Scale="(1,1,1)">
-		<Component Type="UIImage" Image="UI/UI_Login/sweep.png"/>
+		<Component Type="UIImage" Image="UI/UI_Login/bbg_temple_circle.jpg"/>
 	</GameObject>
 	
 	<GameObject Name="UIButton_Login" Position="(50,300,0)" Rotation="(0,0,0)" Scale="(1,1,1)">
