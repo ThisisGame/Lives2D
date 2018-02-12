@@ -34,6 +34,8 @@ public:
 	UILabel();
 	~UILabel();
 
+	void InitWithXml(TiXmlElement* varTiXmlElement) override;
+
 public:
 	void Init(const char* varText);
 

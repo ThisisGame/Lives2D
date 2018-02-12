@@ -1,6 +1,6 @@
 /*
 ** Lua binding: AudioSource
-** Generated automatically by tolua++-1.0.92 on Sun Jul  9 13:35:50 2017.
+** Generated automatically by tolua++-1.0.92 on Mon Feb 12 22:58:42 2018.
 */
 
 #ifndef __cplusplus
@@ -13,7 +13,7 @@
 /* Exported function */
 TOLUA_API int  tolua_AudioSource_open (lua_State* tolua_S);
 
-#include"AudioSource.h"  
+#include"AudioSource.h"
 
 /* function to release collected object via destructor */
 #ifdef __cplusplus
@@ -31,6 +31,7 @@ static int tolua_collect_AudioSource (lua_State* tolua_S)
 static void tolua_reg_types (lua_State* tolua_S)
 {
  tolua_usertype(tolua_S,"AudioSource");
+ tolua_usertype(tolua_S,"Behavior");
 }
 
 /* method: new of class  AudioSource */
@@ -222,9 +223,9 @@ TOLUA_API int tolua_AudioSource_open (lua_State* tolua_S)
  tolua_module(tolua_S,NULL,0);
  tolua_beginmodule(tolua_S,NULL);
   #ifdef __cplusplus
-  tolua_cclass(tolua_S,"AudioSource","AudioSource","",tolua_collect_AudioSource);
+  tolua_cclass(tolua_S,"AudioSource","AudioSource","Behavior",tolua_collect_AudioSource);
   #else
-  tolua_cclass(tolua_S,"AudioSource","AudioSource","",NULL);
+  tolua_cclass(tolua_S,"AudioSource","AudioSource","Behavior",NULL);
   #endif
   tolua_beginmodule(tolua_S,"AudioSource");
    tolua_function(tolua_S,"new",tolua_AudioSource_AudioSource_new00);

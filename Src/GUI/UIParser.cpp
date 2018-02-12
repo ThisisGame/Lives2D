@@ -73,7 +73,11 @@ void UIParser::RecursiveNode(TiXmlElement * varTiXmlElementRoot, GameObject * va
 				}
 				else
 				{
-					mUIRoot->AddChild((UIRect*)tmpComponent);
+					UIRect* tmpUIRect =dynamic_cast<UIRect*>(tmpComponent);
+					if (tmpUIRect != nullptr)
+					{
+						mUIRoot->AddChild((UIRect*)tmpComponent);
+					}
 				}
 			}
 		}

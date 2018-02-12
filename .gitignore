@@ -19,3 +19,4 @@
 /Android/lives2dLibrary/bin
 /Android/lives2dLibrary/obj
 /Src/Tools/tolua++.exe
+*.opendb

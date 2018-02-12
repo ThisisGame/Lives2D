@@ -1,0 +1,14 @@
+$#include"AudioSource.h"
+
+class AudioSource :public Behavior
+{
+public:
+	AudioSource();
+	~AudioSource();
+public:
+	void LoadAudio(const char* varAudioPath);
+
+	void Play();
+
+	void Loop();
+};
