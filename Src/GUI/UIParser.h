@@ -1,8 +1,7 @@
 #pragma once
 
-
-
-
+class TiXmlDocument;
+class GameObject;
 class UIParser
 {
 public:
@@ -10,5 +9,7 @@ public:
 	~UIParser();
 
 	void CreateUI(const char* varFilePath);
+
+	void RecursiveNode(TiXmlElement* varTiXmlElementRoot, GameObject* varGameObjectRoot);
 };
 

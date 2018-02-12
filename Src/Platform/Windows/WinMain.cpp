@@ -3,7 +3,7 @@
 
 #include "WinGame.h"
 #include"Tools\Application.h"
-#include"PlayerPrefs/Convert.h"
+#include"GUI\UIParser.h"
 
 
 int APIENTRY _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCmdLine, int nCmdShow)
@@ -13,9 +13,10 @@ int APIENTRY _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCm
 	UNREFERENCED_PARAMETER(lpCmdLine);
 	UNREFERENCED_PARAMETER(nCmdShow);
 
+	UIParser* tmpUIParser = new UIParser();
+	tmpUIParser->CreateUI((Application::PersistentDataPath() + "/Resource/UI/UI_Login/UI_Login.xml").c_str());
 
-	Convert::StringToVector3("(100,100,0.22)");
-
+	return 0;
 	AllocConsole();
 	freopen("CONOUT$", "a+", stdout);
 
