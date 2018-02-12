@@ -27,6 +27,8 @@ public:
 	UIButton();
 	~UIButton();
 
+	void InitWithXml(TiXmlElement* varTiXmlElement) override;
+
 	void Init(std::string varNormalImagePath, std::string varClickDownImagePath,float varWidth, float varHeight);
 
 	void SetOnClickListener(lua_State* varlua_State);

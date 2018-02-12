@@ -1,6 +1,7 @@
 #include "Transform.h"
 #include"GameObject.h"
-
+#include"PlayerPrefs/Convert.h"
+#include"PlayerPrefs/TinyXml/tinyxml.h"
 
 IMPLEMENT_DYNCRT_ACTION(Transform)
 
@@ -12,6 +13,7 @@ Transform::Transform()
 Transform::~Transform()
 {
 }
+
 
 
 void Transform::SetLocalPosition(Vector3 varVector3)

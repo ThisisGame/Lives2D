@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<UI>
-	<GameObject Name="UIPanel" Position="(100,100,0)" Rotation="(0,0,0)" Scale="(1,1,1)">
-		<Component Name="UIPanel" />
-		
-		<GameObject Name="UIImage_BG" Position="(100,100,0)" Rotation="(0,0,0)" Scale="(1,1,1)">
-			<Component Name="UIImage" Image="UI/UI_Login/sweep.png"/>
-		</GameObject>
-		
-		<GameObject Name="UIButton_Login" Position="(100,100,0)" Rotation="(0,0,0)" Scale="(1,1,1)">
-			<Component Name="UIButton" ImageNormal="UI/UI_Login/pop_button0.png" ImageClickDown="UI/UI_Login/pop_button1.png"/>
-		</GameObject>
+<GameObject Name="UIRoot"  Position="(0,0,0)" Rotation="(0,0,0)" Scale="(1,1,1)">
+	<Component Type="UIRoot" />
+	<GameObject Name="UIImage_BG" Position="(100,0,0)" Rotation="(0,0,0)" Scale="(1,1,1)">
+		<Component Type="UIImage" Image="UI/UI_Login/sweep.png"/>
 	</GameObject>
-</UI>
+	
+	<GameObject Name="UIButton_Login" Position="(50,300,0)" Rotation="(0,0,0)" Scale="(1,1,1)">
+		<Component Type="UIButton" ImageNormal="UI/UI_Login/pop_button0.png" ImageClickDown="UI/UI_Login/pop_button1.png" Width="86" Height="48"/>
+	</GameObject>
+</GameObject>

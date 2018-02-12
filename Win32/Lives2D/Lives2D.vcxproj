@@ -106,6 +106,7 @@
     <ClCompile Include="..\..\Src\GUI\lua_UIClickRect.cpp" />
     <ClCompile Include="..\..\Src\GUI\lua_UIDrawRect.cpp" />
     <ClCompile Include="..\..\Src\GUI\lua_UILabel.cpp" />
+    <ClCompile Include="..\..\Src\GUI\lua_UIParse.cpp" />
     <ClCompile Include="..\..\Src\GUI\lua_UIRect.cpp" />
     <ClCompile Include="..\..\Src\GUI\lua_UIRoot.cpp" />
     <ClCompile Include="..\..\Src\GUI\UIButton.cpp" />

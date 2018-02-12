@@ -1,13 +1,37 @@
 #include "UIButton.h"
 #include"Component/GameObject.h"
 #include"Component/Transform.h"
-
+#include"PlayerPrefs/Convert.h"
+#include"Tools/Application.h"
 
 IMPLEMENT_DYNCRT_ACTION(UIButton)
 UIButton::UIButton() :UIClickRect(), mClickDown(false), mWidth(0), mHeight(0), mOnClickListener(NULL)
 {
+
 }
 
+void UIButton::InitWithXml(TiXmlElement * varTiXmlElement)
+{
+	const char* tmpNormalImagePath = varTiXmlElement->Attribute("ImageNormal");
+	char tmpNormalImageFullFilePath[128];
+	memset(tmpNormalImageFullFilePath, 0, 128);
+	strcat(tmpNormalImageFullFilePath, Application::DataPath().c_str());
+	strcat(tmpNormalImageFullFilePath, "/Resource/");
+	strcat(tmpNormalImageFullFilePath, tmpNormalImagePath);
+
+	const char* tmpClickDownImagePath = varTiXmlElement->Attribute("ImageClickDown");
+	char tmpClickDownFullFilePath[128];
+	memset(tmpClickDownFullFilePath, 0, 128);
+	strcat(tmpClickDownFullFilePath, Application::DataPath().c_str());
+	strcat(tmpClickDownFullFilePath, "/Resource/");
+	strcat(tmpClickDownFullFilePath, tmpClickDownImagePath);
+
+
+	float tmpWidth = Convert::StringToFloat(varTiXmlElement->Attribute("Width"));
+	float tmpHeight = Convert::StringToFloat(varTiXmlElement->Attribute("Height"));
+
+	Init(tmpNormalImageFullFilePath, tmpClickDownFullFilePath, tmpWidth, tmpHeight);
+}
 
 void UIButton::Init(std::string varNormalImagePath, std::string varClickDownImagePath, float varWidth, float varHeight)
 {
@@ -83,6 +107,8 @@ UIButton::~UIButton()
 {
 
 }
+
+
 
 
 

@@ -13,20 +13,23 @@ end
 function SceneWelcom:Init()
 	print("SceneWelcom:Init")
 	
-	local tmpGoUIRoot=GameObject:new("UIROOT")
-	self.mUIRoot=tmpGoUIRoot:AddComponent("UIRoot")
+	local tmpUIParser=UIParser:new()
+	self.mUIRoot=tmpUIParser:CreateUI(ResourcesManager:DataPath() .. "/Resource/UI/UI_Login/UI_Login.xml");
 	
-	tmpGoUIRoot:AddLuaComponent("WhoSetMeActive.lua")
+	-- local tmpGoUIRoot=GameObject:new("UIROOT")
+	-- self.mUIRoot=tmpGoUIRoot:AddComponent("UIRoot")
+	
+	-- tmpGoUIRoot:AddLuaComponent("WhoSetMeActive.lua")
 	
 	
-	local tmpGoImageBg=GameObject:new("mImage_Bg")
+	-- local tmpGoImageBg=GameObject:new("mImage_Bg")
 	
-	local	mImage_Bg =tmpGoImageBg:AddComponent("UIImage")
-	mImage_Bg:Init(ResourcesManager:DataPath() .. "/Resource/GUI/bbg_temple_circle.jpg",true);
+	-- local	mImage_Bg =tmpGoImageBg:AddComponent("UIImage")
+	-- mImage_Bg:Init(ResourcesManager:DataPath() .. "/Resource/GUI/sweep.png",true);
 	
-	mImage_Bg.mTransform:SetLocalPosition(Vector3(0,0,0))
-	mImage_Bg:SetDepth(0);
-	self.mUIRoot:AddChild(mImage_Bg);
+	-- mImage_Bg.mTransform:SetLocalPosition(Vector3(0,0,0))
+	-- mImage_Bg:SetDepth(0);
+	-- self.mUIRoot:AddChild(mImage_Bg);
 	
 	
 	-- local audioSource1 = AudioSource:new()
@@ -47,16 +50,16 @@ function SceneWelcom:Init()
 	-- tmpImageCirle:SetDepth(0);
 	-- self.mUIRoot:AddChild(tmpImageCirle);
 
-	local tmpGoButton=GameObject:new("UIButton")
-	local mUIButton=tmpGoButton:AddComponent("UIButton")
-	mUIButton.mTransform:SetLocalPosition(Vector3(0,300,0))
-	--local mUIButton = UIButton:new(ResourcesManager:DataPath() .. "/Resource/GUI/pop_button0.png", ResourcesManager:DataPath() .. "/Resource/GUI/pop_button1.png", 0, 0, 86, 48)
-	mUIButton:Init(ResourcesManager:DataPath() .. "/Resource/GUI/pop_button0.png", ResourcesManager:DataPath() .. "/Resource/GUI/pop_button1.png", 86, 48)
-	mUIButton:SetOnClickListener(function(varTime)
-		--audioSource2:Play()
-	end,111)
-	mUIButton:SetDepth(2);
-	self.mUIRoot:AddChild(mUIButton)
+	-- local tmpGoButton=GameObject:new("UIButton")
+	-- local mUIButton=tmpGoButton:AddComponent("UIButton")
+	-- mUIButton.mTransform:SetLocalPosition(Vector3(100,300,0))
+	
+	-- mUIButton:Init(ResourcesManager:DataPath() .. "/Resource/GUI/pop_button0.png", ResourcesManager:DataPath() .. "/Resource/GUI/pop_button1.png", 86, 48)
+	-- mUIButton:SetOnClickListener(function(varTime)
+		-- audioSource2:Play()
+	-- end,111)
+	-- mUIButton:SetDepth(2);
+	-- self.mUIRoot:AddChild(mUIButton)
 
 	-- local mImageAnimation_Angel =  ImageAnimation:new(ResourcesManager:DataPath() .. "/Resource/ImageAnimations/Angel/Animations.txt",1.0/5)
 	-- mImageAnimation_Angel:SetPosition(0, 200)

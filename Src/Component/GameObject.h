@@ -4,6 +4,7 @@
 #include<vector>
 #include"LuaComponent.h"
 
+class TiXmlElement;
 class Transform;
 class GameObject :
 	public Object
@@ -16,6 +17,8 @@ public:
 	~GameObject();
 
 	static void Destroy(GameObject* varGo);
+
+	void InitWithXml(TiXmlElement* varTiXmlElement);
 
 public:
 	std::string name;
@@ -53,6 +56,8 @@ public:
 	Component* AddComponent(const char* varComponentName);
 
 	void RemoveComponent(const char* varComponentName);
+
+	Component* GetComponent(const char* varComponentName);
 
 private:
 	std::vector<Component*> mVectorComponent;

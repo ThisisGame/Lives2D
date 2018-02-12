@@ -1,4 +1,5 @@
 #include "Reflection.h"
+#include"Component.h"
 
 //std::map<std::string, FunCreateInstance> Reflection::gMapTypeInfo;//类名和构造函数指针 列表
 
@@ -42,7 +43,9 @@ Component * Reflection::CreateInstance(std::string varTypeName)
 	std::map<std::string, FunCreateInstance>& tmpMapTypeInfo = gMapTypeInfo();
 	if (ContaisType(varTypeName))
 	{
-		return tmpMapTypeInfo[varTypeName]();
+		Component* tmpComponent = tmpMapTypeInfo[varTypeName]();
+		tmpComponent->SetComponentName(varTypeName);
+		return tmpComponent;
 	}
 	else
 	{

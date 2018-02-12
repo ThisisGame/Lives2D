@@ -1,0 +1,10 @@
+$#include"UIParser.h"  
+  
+class UIParser
+{
+public:
+	UIParser();
+	~UIParser();
+
+	UIRoot* CreateUI(const char* varFilePath);
+};

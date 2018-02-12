@@ -13,6 +13,8 @@ public:
 	UIImage(void);
 	~UIImage(void);
 
+	void InitWithXml(TiXmlElement* varTiXmlElement) override;
+
 public:
 	void  Init(const char* varFilePath); //º”‘ÿÕº∆¨£¨…˙≥…Texture;
 

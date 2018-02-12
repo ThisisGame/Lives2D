@@ -1,15 +1,20 @@
 #pragma once
 
-class TiXmlDocument;
+class TiXmlElement;
 class GameObject;
+class UIRoot;
 class UIParser
 {
 public:
 	UIParser();
 	~UIParser();
 
-	void CreateUI(const char* varFilePath);
+	UIRoot* CreateUI(const char* varFilePath);
 
+private:
 	void RecursiveNode(TiXmlElement* varTiXmlElementRoot, GameObject* varGameObjectRoot);
+
+private:
+	UIRoot* mUIRoot;
 };
 

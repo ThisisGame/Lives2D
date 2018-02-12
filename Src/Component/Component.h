@@ -2,6 +2,7 @@
 #include "Object.h"
 #include<string>
 #include"Reflection.h"
+#include"PlayerPrefs/TinyXml/tinyxml.h"
 
 class Transform;
 class GameObject;
@@ -15,6 +16,8 @@ public:
 	void SetComponentName(std::string varComponentName);
 
 	std::string GetComponentName();
+
+	virtual void InitWithXml(TiXmlElement* varTiXmlElement) {};
 
 public:
 	virtual void Awake() {};

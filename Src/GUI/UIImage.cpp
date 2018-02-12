@@ -20,6 +20,19 @@ UIImage::~UIImage(void)
 {
 }
 
+void UIImage::InitWithXml(TiXmlElement * varTiXmlElement)
+{
+	const char* tmpFilePath = varTiXmlElement->Attribute("Image");
+	char tmpFullFilePath[128];
+	memset(tmpFullFilePath, 0, 128);
+
+	strcat(tmpFullFilePath, Application::DataPath().c_str());
+	strcat(tmpFullFilePath, "/Resource/");
+	strcat(tmpFullFilePath, tmpFilePath);
+
+	Init(tmpFullFilePath);
+}
+
 void UIImage::Init(const char * varFilePath)
 {
 	if (mReceiveLightEffect)
@@ -69,7 +82,7 @@ void UIImage::Draw()
 	glm::mat4 model = trans*scale*rotation;
 
 	//View
-	glm::mat4 view = glm::lookAt(glm::vec3(0, 0, -10), glm::vec3(0, 0, 10), glm::vec3(0, 1, 0));
+	glm::mat4 view = glm::lookAt(glm::vec3(0, 0, 10), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0));
 
 
 	//Õý½»ÉãÏñ»ú
@@ -107,7 +120,6 @@ void UIImage::Draw()
 			glm::vec2(0, 0),
 			glm::vec2(1, 1),
 			glm::vec2(0, 1),
-
 		};
 
 		glm::vec4 color[] =

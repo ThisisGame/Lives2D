@@ -1,7 +1,8 @@
 #include "GameObject.h"
 #include<Tools/Helper.h>
 #include"Transform.h"
-
+#include"PlayerPrefs/Convert.h"
+#include"PlayerPrefs/TinyXml/tinyxml.h"
 
 GameObject::GameObject(const char * varName):mGameObjectParent(nullptr)
 {
@@ -88,6 +89,19 @@ void GameObject::RemoveComponent(const char * varComponentName)
 			return;
 		}
 	}
+}
+
+Component * GameObject::GetComponent(const char * varComponentName)
+{
+	for (size_t tmpComponentIndex = 0; tmpComponentIndex < mVectorComponent.size(); tmpComponentIndex++)
+	{
+		Component* tmpComponent = mVectorComponent[tmpComponentIndex];
+		if (strcmp(tmpComponent->GetComponentName().c_str(), varComponentName) == 0)
+		{
+			return tmpComponent;
+		}
+	}
+	return nullptr;
 }
 
 LuaComponent * GameObject::AddLuaComponent(const char * varFilePath)
@@ -272,3 +286,14 @@ void GameObject::Destroy(GameObject * varGo)
 
 	
 }
+
+void GameObject::InitWithXml(TiXmlElement * varTiXmlElement)
+{
+	Vector3 tmpLocalPosition = Convert::StringToVector3(varTiXmlElement->Attribute("Position"));
+	Vector3 tmpLocalRotation = Convert::StringToVector3(varTiXmlElement->Attribute("Rotation"));
+	Vector3 tmpLocalScale = Convert::StringToVector3(varTiXmlElement->Attribute("Scale"));
+
+	mTransform->SetLocalPosition(tmpLocalPosition);
+	mTransform->SetLocalRotation(tmpLocalRotation);
+	mTransform->SetLocalScale(tmpLocalScale);
+ }

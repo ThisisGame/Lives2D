@@ -1,9 +1,11 @@
 #include<Windows.h>
-#include"Tools\Helper.h"
+#include"Tools/Helper.h"
 
 #include "WinGame.h"
-#include"Tools\Application.h"
-#include"GUI\UIParser.h"
+#include"Tools/Application.h"
+#include"GUI/UIParser.h"
+#include"GUI/UIRoot.h"
+#include"Component/GameObject.h"
 
 
 int APIENTRY _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCmdLine, int nCmdShow)
@@ -13,10 +15,11 @@ int APIENTRY _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCm
 	UNREFERENCED_PARAMETER(lpCmdLine);
 	UNREFERENCED_PARAMETER(nCmdShow);
 
-	UIParser* tmpUIParser = new UIParser();
-	tmpUIParser->CreateUI((Application::PersistentDataPath() + "/Resource/UI/UI_Login/UI_Login.xml").c_str());
+	//UIParser* tmpUIParser = new UIParser();
+	//GameObject* tmpGoUI= tmpUIParser->CreateUI((Application::PersistentDataPath() + "/Resource/UI/UI_Login/UI_Login.xml").c_str());
+	//UIRoot* tmpUIRoot =(UIRoot*)tmpGoUI->GetComponent("UIRoot");
 
-	return 0;
+	//return 0;
 	AllocConsole();
 	freopen("CONOUT$", "a+", stdout);
 
