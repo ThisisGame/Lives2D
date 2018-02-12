@@ -223,6 +223,34 @@
 		9A6EFC811F8B7F0E009A20F0 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A6EFC801F8B7F0E009A20F0 /* OpenGLES.framework */; };
 		9A6EFC831F8B7F13009A20F0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A6EFC821F8B7F13009A20F0 /* QuartzCore.framework */; };
 		9A6EFC861F8B7FC1009A20F0 /* GLESView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6EFC851F8B7FC1009A20F0 /* GLESView.m */; };
+		C6AD45EC20319EA600A4ED2E /* Behavior.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6AD45D120319EA500A4ED2E /* Behavior.cpp */; };
+		C6AD45EE20319EA600A4ED2E /* Component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6AD45D420319EA500A4ED2E /* Component.cpp */; };
+		C6AD45F020319EA600A4ED2E /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6AD45D720319EA500A4ED2E /* GameObject.cpp */; };
+		C6AD45F220319EA600A4ED2E /* lua_Behavior.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6AD45DA20319EA500A4ED2E /* lua_Behavior.cpp */; };
+		C6AD45F320319EA600A4ED2E /* lua_Component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6AD45DB20319EA500A4ED2E /* lua_Component.cpp */; };
+		C6AD45F420319EA600A4ED2E /* lua_GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6AD45DC20319EA500A4ED2E /* lua_GameObject.cpp */; };
+		C6AD45F520319EA600A4ED2E /* Lua_LuaComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6AD45DD20319EA500A4ED2E /* Lua_LuaComponent.cpp */; };
+		C6AD45F620319EA600A4ED2E /* lua_Object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6AD45DE20319EA500A4ED2E /* lua_Object.cpp */; };
+		C6AD45F720319EA600A4ED2E /* lua_Transform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6AD45DF20319EA500A4ED2E /* lua_Transform.cpp */; };
+		C6AD45F820319EA600A4ED2E /* LuaComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6AD45E020319EA500A4ED2E /* LuaComponent.cpp */; };
+		C6AD45FA20319EA600A4ED2E /* Object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6AD45E320319EA500A4ED2E /* Object.cpp */; };
+		C6AD45FC20319EA600A4ED2E /* Reflection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6AD45E620319EA500A4ED2E /* Reflection.cpp */; };
+		C6AD45FD20319EA600A4ED2E /* tolua++.exe in Resources */ = {isa = PBXBuildFile; fileRef = C6AD45E820319EA500A4ED2E /* tolua++.exe */; };
+		C6AD45FE20319EA600A4ED2E /* Transform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6AD45E920319EA500A4ED2E /* Transform.cpp */; };
+		C6AD460620319EEC00A4ED2E /* lua_UIImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6AD460220319EEA00A4ED2E /* lua_UIImage.cpp */; };
+		C6AD460720319EEC00A4ED2E /* lua_UIParse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6AD460320319EEB00A4ED2E /* lua_UIParse.cpp */; };
+		C6AD460820319EEC00A4ED2E /* UIImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6AD460420319EEB00A4ED2E /* UIImage.cpp */; };
+		C6AD460920319EEC00A4ED2E /* UIParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6AD460520319EEC00A4ED2E /* UIParser.cpp */; };
+		C6AD461C20319F0600A4ED2E /* lua_Math.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6AD460B20319F0500A4ED2E /* lua_Math.cpp */; };
+		C6AD461D20319F0600A4ED2E /* Math.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6AD460C20319F0500A4ED2E /* Math.cpp */; };
+		C6AD461E20319F0600A4ED2E /* Math.pkg in Resources */ = {isa = PBXBuildFile; fileRef = C6AD460E20319F0500A4ED2E /* Math.pkg */; };
+		C6AD461F20319F0600A4ED2E /* tolua++.exe in Resources */ = {isa = PBXBuildFile; fileRef = C6AD460F20319F0500A4ED2E /* tolua++.exe */; };
+		C6AD462020319F0600A4ED2E /* Convert.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6AD461120319F0500A4ED2E /* Convert.cpp */; };
+		C6AD462120319F0600A4ED2E /* PlayerPrefs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6AD461320319F0500A4ED2E /* PlayerPrefs.cpp */; };
+		C6AD462220319F0600A4ED2E /* tinystr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6AD461620319F0500A4ED2E /* tinystr.cpp */; };
+		C6AD462320319F0600A4ED2E /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6AD461820319F0500A4ED2E /* tinyxml.cpp */; };
+		C6AD462420319F0600A4ED2E /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6AD461A20319F0500A4ED2E /* tinyxmlerror.cpp */; };
+		C6AD462520319F0600A4ED2E /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6AD461B20319F0500A4ED2E /* tinyxmlparser.cpp */; };
 		C6CFEE9E201B4E74009FAFD0 /* libfmodL_iphoneos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6CFEE9D201B4E74009FAFD0 /* libfmodL_iphoneos.a */; };
 		C6CFEEA0201B4EE5009FAFD0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6CFEE9F201B4EE5009FAFD0 /* AVFoundation.framework */; };
 		C6CFEEA2201B4EF4009FAFD0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6CFEEA1201B4EF4009FAFD0 /* AudioToolbox.framework */; };
@@ -339,8 +367,6 @@
 		E4A41B521FF7F64B00F4932B /* UILabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4A41AFB1FF7F64A00F4932B /* UILabel.cpp */; };
 		E4A41B541FF7F64B00F4932B /* UIRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4A41AFE1FF7F64A00F4932B /* UIRect.cpp */; };
 		E4A41B561FF7F64B00F4932B /* UIRoot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4A41B011FF7F64A00F4932B /* UIRoot.cpp */; };
-		E4A41B581FF7F64B00F4932B /* Image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4A41B051FF7F64A00F4932B /* Image.cpp */; };
-		E4A41B5A1FF7F64B00F4932B /* lua_Image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4A41B081FF7F64A00F4932B /* lua_Image.cpp */; };
 		E4A41B5B1FF7F64B00F4932B /* ImageAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4A41B0A1FF7F64A00F4932B /* ImageAnimation.cpp */; };
 		E4A41B5D1FF7F64B00F4932B /* ImageAnimationClip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4A41B0D1FF7F64A00F4932B /* ImageAnimationClip.cpp */; };
 		E4A41B5F1FF7F64B00F4932B /* lua_ImageAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4A41B101FF7F64A00F4932B /* lua_ImageAnimation.cpp */; };
@@ -743,6 +769,48 @@
 		9A6EFC821F8B7F13009A20F0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9A6EFC841F8B7FC1009A20F0 /* GLESView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLESView.h; sourceTree = "<group>"; };
 		9A6EFC851F8B7FC1009A20F0 /* GLESView.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = GLESView.m; sourceTree = "<group>"; };
+		C6AD45D120319EA500A4ED2E /* Behavior.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Behavior.cpp; sourceTree = "<group>"; };
+		C6AD45D220319EA500A4ED2E /* Behavior.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Behavior.h; sourceTree = "<group>"; };
+		C6AD45D420319EA500A4ED2E /* Component.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Component.cpp; sourceTree = "<group>"; };
+		C6AD45D520319EA500A4ED2E /* Component.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Component.h; sourceTree = "<group>"; };
+		C6AD45D720319EA500A4ED2E /* GameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameObject.cpp; sourceTree = "<group>"; };
+		C6AD45D820319EA500A4ED2E /* GameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameObject.h; sourceTree = "<group>"; };
+		C6AD45DA20319EA500A4ED2E /* lua_Behavior.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_Behavior.cpp; sourceTree = "<group>"; };
+		C6AD45DB20319EA500A4ED2E /* lua_Component.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_Component.cpp; sourceTree = "<group>"; };
+		C6AD45DC20319EA500A4ED2E /* lua_GameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_GameObject.cpp; sourceTree = "<group>"; };
+		C6AD45DD20319EA500A4ED2E /* Lua_LuaComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Lua_LuaComponent.cpp; sourceTree = "<group>"; };
+		C6AD45DE20319EA500A4ED2E /* lua_Object.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_Object.cpp; sourceTree = "<group>"; };
+		C6AD45DF20319EA500A4ED2E /* lua_Transform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_Transform.cpp; sourceTree = "<group>"; };
+		C6AD45E020319EA500A4ED2E /* LuaComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LuaComponent.cpp; sourceTree = "<group>"; };
+		C6AD45E120319EA500A4ED2E /* LuaComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaComponent.h; sourceTree = "<group>"; };
+		C6AD45E320319EA500A4ED2E /* Object.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Object.cpp; sourceTree = "<group>"; };
+		C6AD45E420319EA500A4ED2E /* Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object.h; sourceTree = "<group>"; };
+		C6AD45E620319EA500A4ED2E /* Reflection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Reflection.cpp; sourceTree = "<group>"; };
+		C6AD45E720319EA500A4ED2E /* Reflection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reflection.h; sourceTree = "<group>"; };
+		C6AD45E820319EA500A4ED2E /* tolua++.exe */ = {isa = PBXFileReference; lastKnownFileType = file; path = "tolua++.exe"; sourceTree = "<group>"; };
+		C6AD45E920319EA500A4ED2E /* Transform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Transform.cpp; sourceTree = "<group>"; };
+		C6AD45EA20319EA500A4ED2E /* Transform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transform.h; sourceTree = "<group>"; };
+		C6AD460020319EE900A4ED2E /* UIImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImage.h; sourceTree = "<group>"; };
+		C6AD460120319EEA00A4ED2E /* UIParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIParser.h; sourceTree = "<group>"; };
+		C6AD460220319EEA00A4ED2E /* lua_UIImage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_UIImage.cpp; sourceTree = "<group>"; };
+		C6AD460320319EEB00A4ED2E /* lua_UIParse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_UIParse.cpp; sourceTree = "<group>"; };
+		C6AD460420319EEB00A4ED2E /* UIImage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UIImage.cpp; sourceTree = "<group>"; };
+		C6AD460520319EEC00A4ED2E /* UIParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UIParser.cpp; sourceTree = "<group>"; };
+		C6AD460B20319F0500A4ED2E /* lua_Math.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_Math.cpp; sourceTree = "<group>"; };
+		C6AD460C20319F0500A4ED2E /* Math.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Math.cpp; sourceTree = "<group>"; };
+		C6AD460D20319F0500A4ED2E /* Math.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Math.h; sourceTree = "<group>"; };
+		C6AD460E20319F0500A4ED2E /* Math.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Math.pkg; sourceTree = "<group>"; };
+		C6AD460F20319F0500A4ED2E /* tolua++.exe */ = {isa = PBXFileReference; lastKnownFileType = file; path = "tolua++.exe"; sourceTree = "<group>"; };
+		C6AD461120319F0500A4ED2E /* Convert.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Convert.cpp; sourceTree = "<group>"; };
+		C6AD461220319F0500A4ED2E /* Convert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Convert.h; sourceTree = "<group>"; };
+		C6AD461320319F0500A4ED2E /* PlayerPrefs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlayerPrefs.cpp; sourceTree = "<group>"; };
+		C6AD461420319F0500A4ED2E /* PlayerPrefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerPrefs.h; sourceTree = "<group>"; };
+		C6AD461620319F0500A4ED2E /* tinystr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinystr.cpp; sourceTree = "<group>"; };
+		C6AD461720319F0500A4ED2E /* tinystr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinystr.h; sourceTree = "<group>"; };
+		C6AD461820319F0500A4ED2E /* tinyxml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxml.cpp; sourceTree = "<group>"; };
+		C6AD461920319F0500A4ED2E /* tinyxml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinyxml.h; sourceTree = "<group>"; };
+		C6AD461A20319F0500A4ED2E /* tinyxmlerror.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlerror.cpp; sourceTree = "<group>"; };
+		C6AD461B20319F0500A4ED2E /* tinyxmlparser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlparser.cpp; sourceTree = "<group>"; };
 		C6CFEE99201B4E03009FAFD0 /* common.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = common.cpp; sourceTree = "<group>"; };
 		C6CFEE9A201B4E03009FAFD0 /* common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
 		C6CFEE9B201B4E03009FAFD0 /* common_platform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = common_platform.h; sourceTree = "<group>"; };
@@ -1312,10 +1380,6 @@
 		E4A41B011FF7F64A00F4932B /* UIRoot.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UIRoot.cpp; sourceTree = "<group>"; };
 		E4A41B021FF7F64A00F4932B /* UIRoot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIRoot.h; sourceTree = "<group>"; };
 		E4A41B031FF7F64A00F4932B /* UIRoot.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UIRoot.pkg; sourceTree = "<group>"; };
-		E4A41B051FF7F64A00F4932B /* Image.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Image.cpp; sourceTree = "<group>"; };
-		E4A41B061FF7F64A00F4932B /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
-		E4A41B071FF7F64A00F4932B /* Image.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Image.pkg; sourceTree = "<group>"; };
-		E4A41B081FF7F64A00F4932B /* lua_Image.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_Image.cpp; sourceTree = "<group>"; };
 		E4A41B0A1FF7F64A00F4932B /* ImageAnimation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImageAnimation.cpp; sourceTree = "<group>"; };
 		E4A41B0B1FF7F64A00F4932B /* ImageAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageAnimation.h; sourceTree = "<group>"; };
 		E4A41B0C1FF7F64A00F4932B /* ImageAnimation.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ImageAnimation.pkg; sourceTree = "<group>"; };
@@ -1899,6 +1963,71 @@
 				9A6EFC801F8B7F0E009A20F0 /* OpenGLES.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C6AD45D020319EA500A4ED2E /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				C6AD45D120319EA500A4ED2E /* Behavior.cpp */,
+				C6AD45D220319EA500A4ED2E /* Behavior.h */,
+				C6AD45D420319EA500A4ED2E /* Component.cpp */,
+				C6AD45D520319EA500A4ED2E /* Component.h */,
+				C6AD45D720319EA500A4ED2E /* GameObject.cpp */,
+				C6AD45D820319EA500A4ED2E /* GameObject.h */,
+				C6AD45DA20319EA500A4ED2E /* lua_Behavior.cpp */,
+				C6AD45DB20319EA500A4ED2E /* lua_Component.cpp */,
+				C6AD45DC20319EA500A4ED2E /* lua_GameObject.cpp */,
+				C6AD45DD20319EA500A4ED2E /* Lua_LuaComponent.cpp */,
+				C6AD45DE20319EA500A4ED2E /* lua_Object.cpp */,
+				C6AD45DF20319EA500A4ED2E /* lua_Transform.cpp */,
+				C6AD45E020319EA500A4ED2E /* LuaComponent.cpp */,
+				C6AD45E120319EA500A4ED2E /* LuaComponent.h */,
+				C6AD45E320319EA500A4ED2E /* Object.cpp */,
+				C6AD45E420319EA500A4ED2E /* Object.h */,
+				C6AD45E620319EA500A4ED2E /* Reflection.cpp */,
+				C6AD45E720319EA500A4ED2E /* Reflection.h */,
+				C6AD45E820319EA500A4ED2E /* tolua++.exe */,
+				C6AD45E920319EA500A4ED2E /* Transform.cpp */,
+				C6AD45EA20319EA500A4ED2E /* Transform.h */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		C6AD460A20319F0500A4ED2E /* Math */ = {
+			isa = PBXGroup;
+			children = (
+				C6AD460B20319F0500A4ED2E /* lua_Math.cpp */,
+				C6AD460C20319F0500A4ED2E /* Math.cpp */,
+				C6AD460D20319F0500A4ED2E /* Math.h */,
+				C6AD460E20319F0500A4ED2E /* Math.pkg */,
+				C6AD460F20319F0500A4ED2E /* tolua++.exe */,
+			);
+			path = Math;
+			sourceTree = "<group>";
+		};
+		C6AD461020319F0500A4ED2E /* PlayerPrefs */ = {
+			isa = PBXGroup;
+			children = (
+				C6AD461120319F0500A4ED2E /* Convert.cpp */,
+				C6AD461220319F0500A4ED2E /* Convert.h */,
+				C6AD461320319F0500A4ED2E /* PlayerPrefs.cpp */,
+				C6AD461420319F0500A4ED2E /* PlayerPrefs.h */,
+				C6AD461520319F0500A4ED2E /* TinyXml */,
+			);
+			path = PlayerPrefs;
+			sourceTree = "<group>";
+		};
+		C6AD461520319F0500A4ED2E /* TinyXml */ = {
+			isa = PBXGroup;
+			children = (
+				C6AD461620319F0500A4ED2E /* tinystr.cpp */,
+				C6AD461720319F0500A4ED2E /* tinystr.h */,
+				C6AD461820319F0500A4ED2E /* tinyxml.cpp */,
+				C6AD461920319F0500A4ED2E /* tinyxml.h */,
+				C6AD461A20319F0500A4ED2E /* tinyxmlerror.cpp */,
+				C6AD461B20319F0500A4ED2E /* tinyxmlparser.cpp */,
+			);
+			path = TinyXml;
 			sourceTree = "<group>";
 		};
 		C6CFEE98201B4E03009FAFD0 /* common */ = {
@@ -2695,10 +2824,12 @@
 		E4A41AD81FF7F64A00F4932B /* Src */ = {
 			isa = PBXGroup;
 			children = (
+				C6AD460A20319F0500A4ED2E /* Math */,
+				C6AD461020319F0500A4ED2E /* PlayerPrefs */,
+				C6AD45D020319EA500A4ED2E /* Component */,
 				E4A41AD91FF7F64A00F4932B /* Audio */,
 				E4A41ADF1FF7F64A00F4932B /* GLProgram */,
 				E4A41AE61FF7F64A00F4932B /* GUI */,
-				E4A41B041FF7F64A00F4932B /* Image */,
 				E4A41B091FF7F64A00F4932B /* ImageAnimation */,
 				E4A41B121FF7F64A00F4932B /* KeyTouch */,
 				E4A41B1D1FF7F64A00F4932B /* LuaEngine */,
@@ -2739,6 +2870,12 @@
 		E4A41AE61FF7F64A00F4932B /* GUI */ = {
 			isa = PBXGroup;
 			children = (
+				C6AD460220319EEA00A4ED2E /* lua_UIImage.cpp */,
+				C6AD460320319EEB00A4ED2E /* lua_UIParse.cpp */,
+				C6AD460420319EEB00A4ED2E /* UIImage.cpp */,
+				C6AD460020319EE900A4ED2E /* UIImage.h */,
+				C6AD460520319EEC00A4ED2E /* UIParser.cpp */,
+				C6AD460120319EEA00A4ED2E /* UIParser.h */,
 				E4A41AE71FF7F64A00F4932B /* Font.cpp */,
 				E4A41AE81FF7F64A00F4932B /* Font.h */,
 				E4A41AE91FF7F64A00F4932B /* FontManager.cpp */,
@@ -2769,17 +2906,6 @@
 				E4A41B031FF7F64A00F4932B /* UIRoot.pkg */,
 			);
 			path = GUI;
-			sourceTree = "<group>";
-		};
-		E4A41B041FF7F64A00F4932B /* Image */ = {
-			isa = PBXGroup;
-			children = (
-				E4A41B051FF7F64A00F4932B /* Image.cpp */,
-				E4A41B061FF7F64A00F4932B /* Image.h */,
-				E4A41B071FF7F64A00F4932B /* Image.pkg */,
-				E4A41B081FF7F64A00F4932B /* lua_Image.cpp */,
-			);
-			path = Image;
 			sourceTree = "<group>";
 		};
 		E4A41B091FF7F64A00F4932B /* ImageAnimation */ = {
@@ -2923,9 +3049,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6AD461E20319F0600A4ED2E /* Math.pkg in Resources */,
 				E4A41BE71FF800C800F4932B /* Main.storyboard in Resources */,
+				C6AD461F20319F0600A4ED2E /* tolua++.exe in Resources */,
 				E4A41C791FF81B2B00F4932B /* Resource in Resources */,
 				E4A41BE81FF800C800F4932B /* Assets.xcassets in Resources */,
+				C6AD45FD20319EA600A4ED2E /* tolua++.exe in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2949,10 +3078,13 @@
 				204BDAF81F93B07C009D14C7 /* TIFFLogLuv.cpp in Sources */,
 				E4A4185A1FF7E19900F4932B /* sfdriver.c in Sources */,
 				E4A418641FF7E19900F4932B /* ttsbit.c in Sources */,
+				C6AD45EE20319EA600A4ED2E /* Component.cpp in Sources */,
 				E4A418911FF7E19900F4932B /* t1load.c in Sources */,
+				C6AD45F720319EA600A4ED2E /* lua_Transform.cpp in Sources */,
 				E4A4186B1FF7E19900F4932B /* smooth.c in Sources */,
 				E4A418341FF7E19800F4932B /* pfrsbit.c in Sources */,
 				E4A417B91FF7E19800F4932B /* md5.c in Sources */,
+				C6AD45F220319EA600A4ED2E /* lua_Behavior.cpp in Sources */,
 				204BD6EF1F93A8EE009D14C7 /* lobject.c in Sources */,
 				204BDAC51F93B07C009D14C7 /* ConversionRGBA16.cpp in Sources */,
 				204BDB481F93B07C009D14C7 /* jmemmgr.c in Sources */,
@@ -2975,22 +3107,28 @@
 				204BD6FB1F93A8EE009D14C7 /* lundump.c in Sources */,
 				204BDBA21F93B07C009D14C7 /* t2.c in Sources */,
 				204BD6F31F93A8EE009D14C7 /* lstate.c in Sources */,
+				C6AD460920319EEC00A4ED2E /* UIParser.cpp in Sources */,
+				C6AD461D20319F0600A4ED2E /* Math.cpp in Sources */,
 				204BDAD21F93B07C009D14C7 /* MNGHelper.cpp in Sources */,
 				E4A41B491FF7F64B00F4932B /* lua_UILabel.cpp in Sources */,
 				E4A41B701FF7F64B00F4932B /* NetworkDispatch.cpp in Sources */,
 				E4A417B01FF7E19800F4932B /* ftstroke.c in Sources */,
 				204BDABD1F93B07C009D14C7 /* Conversion16_555.cpp in Sources */,
+				C6AD462320319F0600A4ED2E /* tinyxml.cpp in Sources */,
 				204BDB1D1F93B07C009D14C7 /* jcarith.c in Sources */,
 				204BDCEC1F93B07D009D14C7 /* infback.c in Sources */,
 				204BDB581F93B07C009D14C7 /* rdppm.c in Sources */,
+				C6AD460720319EEC00A4ED2E /* lua_UIParse.cpp in Sources */,
 				204BDCF01F93B07D009D14C7 /* Makefile in Sources */,
 				E4A41B6B1FF7F64B00F4932B /* lua_NetworkClient.cpp in Sources */,
 				204BDB3A1F93B07C009D14C7 /* jdpostct.c in Sources */,
 				204BDB0B1F93B07C009D14C7 /* Flip.cpp in Sources */,
+				C6AD460820319EEC00A4ED2E /* UIImage.cpp in Sources */,
 				204BDBB81F93B07C009D14C7 /* pngerror.c in Sources */,
 				204BDACE1F93B07C009D14C7 /* Halftoning.cpp in Sources */,
 				204BD6EC1F93A8EE009D14C7 /* lmathlib.c in Sources */,
 				E4A4183B1FF7E19800F4932B /* psconv.c in Sources */,
+				C6AD45F020319EA600A4ED2E /* GameObject.cpp in Sources */,
 				E4A417A61FF7E19800F4932B /* ftmm.c in Sources */,
 				E4A41B521FF7F64B00F4932B /* UILabel.cpp in Sources */,
 				204BDB431F93B07C009D14C7 /* jidctint.c in Sources */,
@@ -3003,6 +3141,7 @@
 				204BDB651F93B07C009D14C7 /* wrrle.c in Sources */,
 				204BDB4A1F93B07C009D14C7 /* jmemnobs.c in Sources */,
 				204BDB3F1F93B07C009D14C7 /* jfdctfst.c in Sources */,
+				C6AD461C20319F0600A4ED2E /* lua_Math.cpp in Sources */,
 				E4A41B441FF7F64B00F4932B /* FontManager.cpp in Sources */,
 				E4A417AA1FF7E19800F4932B /* ftpatent.c in Sources */,
 				E4A4179E1FF7E19700F4932B /* ftfstype.c in Sources */,
@@ -3048,12 +3187,14 @@
 				E4A417B71FF7E19800F4932B /* ftxf86.c in Sources */,
 				9A6EFC701F8B7EC7009A20F0 /* ViewController.mm in Sources */,
 				9A6EFC6D1F8B7EC7009A20F0 /* AppDelegate.m in Sources */,
+				C6AD45FE20319EA600A4ED2E /* Transform.cpp in Sources */,
 				E4A418821FF7E19900F4932B /* truetype.c in Sources */,
 				204BDBBA1F93B07C009D14C7 /* pngmem.c in Sources */,
 				204BDABE1F93B07C009D14C7 /* Conversion16_565.cpp in Sources */,
 				E4A417A21FF7E19800F4932B /* ftgxval.c in Sources */,
 				204BDB5A1F93B07C009D14C7 /* rdswitch.c in Sources */,
 				204BDAB71F93B07C009D14C7 /* Deprecated.cpp in Sources */,
+				C6AD462420319F0600A4ED2E /* tinyxmlerror.cpp in Sources */,
 				204BDBBE1F93B07C009D14C7 /* pngrtran.c in Sources */,
 				E4A418361FF7E19800F4932B /* afmparse.c in Sources */,
 				E4A41B751FF7F64B00F4932B /* Application.cpp in Sources */,
@@ -3063,6 +3204,8 @@
 				E4A4185D1FF7E19900F4932B /* sfobjs.c in Sources */,
 				204BDCFB1F93B07D009D14C7 /* zutil.c in Sources */,
 				E4A418281FF7E19800F4932B /* pcfread.c in Sources */,
+				C6AD45F320319EA600A4ED2E /* lua_Component.cpp in Sources */,
+				C6AD45F620319EA600A4ED2E /* lua_Object.cpp in Sources */,
 				204BDAD41F93B07C009D14C7 /* NNQuantizer.cpp in Sources */,
 				204BDB2A1F93B07C009D14C7 /* jcsample.c in Sources */,
 				E4A41B3F1FF7F64B00F4932B /* lua_AudioSource.cpp in Sources */,
@@ -3087,6 +3230,7 @@
 				E4A417971FF7E19700F4932B /* ftbbox.c in Sources */,
 				204BD7091F93AE21009D14C7 /* tolua_event.c in Sources */,
 				204BDB221F93B07C009D14C7 /* jcinit.c in Sources */,
+				C6AD45EC20319EA600A4ED2E /* Behavior.cpp in Sources */,
 				204BDBA31F93B07C009D14C7 /* tcd.c in Sources */,
 				204BD6FC1F93A8EE009D14C7 /* lvm.c in Sources */,
 				204BDC4D1F93B07C009D14C7 /* TagLib.cpp in Sources */,
@@ -3118,12 +3262,14 @@
 				204BDB2C1F93B07C009D14C7 /* jdapimin.c in Sources */,
 				204BDBC21F93B07C009D14C7 /* pngtrans.c in Sources */,
 				E4A41B561FF7F64B00F4932B /* UIRoot.cpp in Sources */,
+				C6AD45F420319EA600A4ED2E /* lua_GameObject.cpp in Sources */,
 				204BDAD11F93B07C009D14C7 /* MemoryIO.cpp in Sources */,
 				204BDAC81F93B07C009D14C7 /* ConversionType.cpp in Sources */,
 				204BD6EB1F93A8EE009D14C7 /* llex.c in Sources */,
 				E4A41B601FF7F64B00F4932B /* lua_ImageAnimationClip.cpp in Sources */,
 				204BDCE81F93B07D009D14C7 /* gzlib.c in Sources */,
 				E4A4185E1FF7E19900F4932B /* ttbdf.c in Sources */,
+				C6AD460620319EEC00A4ED2E /* lua_UIImage.cpp in Sources */,
 				204BD6E11F93A8EE009D14C7 /* lbaselib.c in Sources */,
 				204BDC481F93B07C009D14C7 /* Exif.cpp in Sources */,
 				204BDB1F1F93B07C009D14C7 /* jccolor.c in Sources */,
@@ -3149,6 +3295,7 @@
 				E4A417931FF7E19700F4932B /* basepic.c in Sources */,
 				204BDB0E1F93B07C009D14C7 /* Rescale.cpp in Sources */,
 				E4A41B621FF7F64B00F4932B /* KeyTouch.cpp in Sources */,
+				C6AD45F520319EA600A4ED2E /* Lua_LuaComponent.cpp in Sources */,
 				204BD6F01F93A8EE009D14C7 /* lopcodes.c in Sources */,
 				204BDB281F93B07C009D14C7 /* jcparam.c in Sources */,
 				E4A41B3D1FF7F64A00F4932B /* AudioCard.cpp in Sources */,
@@ -3156,8 +3303,8 @@
 				E4A41B481FF7F64B00F4932B /* lua_UIDrawRect.cpp in Sources */,
 				E4A41B471FF7F64B00F4932B /* lua_UIClickRect.cpp in Sources */,
 				E4A418541FF7E19800F4932B /* rastpic.c in Sources */,
+				C6AD462520319F0600A4ED2E /* tinyxmlparser.cpp in Sources */,
 				204BDB3B1F93B07C009D14C7 /* jdsample.c in Sources */,
-				E4A41B5A1FF7F64B00F4932B /* lua_Image.cpp in Sources */,
 				204BDAFE1F93B07C009D14C7 /* WuQuantizer.cpp in Sources */,
 				204BDB2B1F93B07C009D14C7 /* jctrans.c in Sources */,
 				E4A4178E1FF7E19700F4932B /* autofit.c in Sources */,
@@ -3174,8 +3321,8 @@
 				E4A41B681FF7F64B00F4932B /* BinaryPacker.cpp in Sources */,
 				204BDB591F93B07C009D14C7 /* rdrle.c in Sources */,
 				204BDB4C1F93B07C009D14C7 /* jquant1.c in Sources */,
+				C6AD462120319F0600A4ED2E /* PlayerPrefs.cpp in Sources */,
 				204BDCE21F93B07D009D14C7 /* compress.c in Sources */,
-				E4A41B581FF7F64B00F4932B /* Image.cpp in Sources */,
 				E4A4179D1FF7E19700F4932B /* ftdebug.c in Sources */,
 				204BDBC51F93B07C009D14C7 /* pngwtran.c in Sources */,
 				204BDB1E1F93B07C009D14C7 /* jccoefct.c in Sources */,
@@ -3191,9 +3338,11 @@
 				204BD6F21F93A8EE009D14C7 /* lparser.c in Sources */,
 				204BDAD51F93B07C009D14C7 /* PixelAccess.cpp in Sources */,
 				204BDAFC1F93B07C009D14C7 /* tmoReinhard05.cpp in Sources */,
+				C6AD462220319F0600A4ED2E /* tinystr.cpp in Sources */,
 				E4A418291FF7E19800F4932B /* pcfutil.c in Sources */,
 				E4A417AB1FF7E19800F4932B /* ftpfr.c in Sources */,
 				204BDCF31F93B07D009D14C7 /* trees.c in Sources */,
+				C6AD45F820319EA600A4ED2E /* LuaComponent.cpp in Sources */,
 				204BDBBF1F93B07C009D14C7 /* pngrutil.c in Sources */,
 				204BD6E01F93A8EE009D14C7 /* lauxlib.c in Sources */,
 				204BDBAC1F93B07C009D14C7 /* example.c in Sources */,
@@ -3253,6 +3402,7 @@
 				204BDB891F93B07C009D14C7 /* dwt.c in Sources */,
 				204BDB361F93B07C009D14C7 /* jdmainct.c in Sources */,
 				204BDB051F93B07C009D14C7 /* BSplineRotate.cpp in Sources */,
+				C6AD45FC20319EA600A4ED2E /* Reflection.cpp in Sources */,
 				E4A418581FF7E19800F4932B /* pngshim.c in Sources */,
 				204BDC4C1F93B07C009D14C7 /* TagConversion.cpp in Sources */,
 				204BDAC01F93B07C009D14C7 /* Conversion32.cpp in Sources */,
@@ -3274,6 +3424,8 @@
 				204BDACC1F93B07C009D14C7 /* FreeImageIO.cpp in Sources */,
 				204BDBC01F93B07C009D14C7 /* pngset.c in Sources */,
 				204BDABF1F93B07C009D14C7 /* Conversion24.cpp in Sources */,
+				C6AD45FA20319EA600A4ED2E /* Object.cpp in Sources */,
+				C6AD462020319F0600A4ED2E /* Convert.cpp in Sources */,
 				204BDB611F93B07C009D14C7 /* wrbmp.c in Sources */,
 				204BDBBD1F93B07C009D14C7 /* pngrio.c in Sources */,
 				E4A41B5F1FF7F64B00F4932B /* lua_ImageAnimation.cpp in Sources */,
