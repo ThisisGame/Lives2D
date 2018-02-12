@@ -1,2 +1,2 @@
-![image](https://github.com/ThisisGame/Lives2D/blob/master/Docs/lives2d.gif)
+![image](https://github.com/ThisisGame/Lives2D/blob/V5_SwitchToLua_Windows/Docs/lives2d.gif)
 
