@@ -25,9 +25,9 @@ void UILabel::InitWithXml(TiXmlElement * varTiXmlElement)
 	Init(tmpText);
 }
 
-void UILabel::Init(const char* varText)
+void UILabel::Init(const char* varText) 
 {
-	mFont= FontManager::GetSingleton()->BuildFont("/Resource/Font/msyh.ttf");
+	mFont= FontManager::GetSingleton()->BuildFont("/Resource/Font/simsun.ttc");
 
 	m_GLProgram_Font.Initialize();
 

@@ -20,3 +20,5 @@
 /Android/lives2dLibrary/obj
 /Src/Tools/tolua++.exe
 *.opendb
+Resource/UI/UI_Login/1.png
+Src.zip

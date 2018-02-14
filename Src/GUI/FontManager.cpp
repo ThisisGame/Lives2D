@@ -31,7 +31,7 @@ Font* FontManager::BuildFont(const char * varFontPath)
 	char fontPath[300];
 	sprintf(fontPath, "%s%s", Application::PersistentDataPath().c_str(), varFontPath);
 
-	font->buildSystemFont(fontPath, 30);
+	font->buildSystemFont(fontPath, 50);
 
 	mMapFonts.insert(pair<const char*, Font*>(varFontPath, font));
 

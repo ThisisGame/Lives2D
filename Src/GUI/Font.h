@@ -312,7 +312,7 @@ public:
 				m_character[ch].x1 = m_xStart + bitmap.width;
 				m_character[ch].y1 = m_yStart + bitmap.rows;
 
-				m_character[ch].offsetY = bitmapGlyph->top- bitmap.rows;
+				m_character[ch].offsetY = bitmapGlyph->top;
 				m_character[ch].offsetX = bitmapGlyph->left;
 
 				glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
@@ -360,14 +360,13 @@ public:
 
 			float       h = float(ch.y1 - ch.y0);
 			float       w = float(ch.x1 - ch.x0);
-
-			float tmpystart = yStart + ch.offsetY;
+			float offsetY = h - ch.offsetY;
 
 			/**
 			*   第一个点
 			*/
 			m_Vert[index + 0].x = xStart;
-			m_Vert[index + 0].y = tmpystart;
+			m_Vert[index + 0].y = yStart  - offsetY;
 			m_Vert[index + 0].z = zStart;
 			m_Vert[index + 0].u = ch.x0 / texWidth;
 			m_Vert[index + 0].v = ch.y1 / texHeight;
@@ -377,7 +376,7 @@ public:
 			*   第二个点
 			*/
 			m_Vert[index + 1].x = xStart + w;
-			m_Vert[index + 1].y = tmpystart;
+			m_Vert[index + 1].y = yStart  -offsetY;
 			m_Vert[index + 1].z = zStart;
 			m_Vert[index + 1].u = ch.x1 / texWidth;
 			m_Vert[index + 1].v = ch.y1 / texHeight;
@@ -387,7 +386,7 @@ public:
 			*   第三个点
 			*/
 			m_Vert[index + 2].x = xStart + w;
-			m_Vert[index + 2].y = tmpystart + h;
+			m_Vert[index + 2].y = yStart +h- offsetY;
 			m_Vert[index + 2].z = zStart;
 			m_Vert[index + 2].u = ch.x1 / texWidth;
 			m_Vert[index + 2].v = ch.y0 / texHeight;
@@ -397,7 +396,7 @@ public:
 			*   第一个点
 			*/
 			m_Vert[index + 3].x = xStart;
-			m_Vert[index + 3].y = tmpystart;
+			m_Vert[index + 3].y = yStart  - offsetY;
 			m_Vert[index + 3].z = zStart;
 			m_Vert[index + 3].u = ch.x0 / texWidth;
 			m_Vert[index + 3].v = ch.y1 / texHeight;
@@ -407,7 +406,7 @@ public:
 			*   第三个点
 			*/
 			m_Vert[index + 4].x = xStart + w;
-			m_Vert[index + 4].y = tmpystart + h;
+			m_Vert[index + 4].y = yStart+h - offsetY;
 			m_Vert[index + 4].z = zStart;
 			m_Vert[index + 4].u = ch.x1 / texWidth;
 			m_Vert[index + 4].v = ch.y0 / texHeight;
@@ -417,7 +416,7 @@ public:
 			*   第四个点
 			*/
 			m_Vert[index + 5].x = xStart;
-			m_Vert[index + 5].y = tmpystart + h;
+			m_Vert[index + 5].y = yStart+h - offsetY;
 			m_Vert[index + 5].z = zStart;
 			m_Vert[index + 5].u = ch.x0 / texWidth;
 			m_Vert[index + 5].v = ch.y0 / texHeight;
@@ -425,7 +424,7 @@ public:
 			m_Vert[index + 5].color = color;
 
 			index += 6;
-			xStart += w+ space;
+			xStart += w+ ch.offsetX+ space;
 		}
 
 		if (alignCenter)
