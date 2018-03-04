@@ -1,6 +1,6 @@
 /*
 ** Lua binding: UILabel
-** Generated automatically by tolua++-1.0.92 on Thu Oct 12 01:22:15 2017.
+** Generated automatically by tolua++-1.0.92 on Sun Mar  4 20:55:42 2018.
 */
 
 #ifndef __cplusplus
@@ -30,8 +30,9 @@ static int tolua_collect_UILabel (lua_State* tolua_S)
 /* function to register type */
 static void tolua_reg_types (lua_State* tolua_S)
 {
- tolua_usertype(tolua_S,"UILabel");
  tolua_usertype(tolua_S,"UIDrawRect");
+ tolua_usertype(tolua_S,"std::u32string");
+ tolua_usertype(tolua_S,"UILabel");
 }
 
 /* get function: mPosX of class  UILabel */
@@ -248,7 +249,7 @@ static int tolua_UILabel_UILabel_Init00(lua_State* tolua_S)
  tolua_Error tolua_err;
  if (
      !tolua_isusertype(tolua_S,1,"UILabel",0,&tolua_err) ||
-     !tolua_isstring(tolua_S,2,0,&tolua_err) ||
+     (tolua_isvaluenil(tolua_S,2,&tolua_err) || !tolua_isusertype(tolua_S,2,"std::u32string",0,&tolua_err)) ||
      !tolua_isnoobj(tolua_S,3,&tolua_err)
  )
   goto tolua_lerror;
@@ -256,12 +257,12 @@ static int tolua_UILabel_UILabel_Init00(lua_State* tolua_S)
 #endif
  {
   UILabel* self = (UILabel*)  tolua_tousertype(tolua_S,1,0);
-  const char* varText = ((const char*)  tolua_tostring(tolua_S,2,0));
+  std::u32string* varText = ((std::u32string*)  tolua_tousertype(tolua_S,2,0));
 #ifndef TOLUA_RELEASE
   if (!self) tolua_error(tolua_S,"invalid 'self' in function 'Init'", NULL);
 #endif
   {
-   self->Init(varText);
+   self->Init(*varText);
   }
  }
  return 0;

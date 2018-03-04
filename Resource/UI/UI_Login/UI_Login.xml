@@ -11,6 +11,6 @@
 	</GameObject>
 	
 	<GameObject Name="UILabel_Compony" Position="(0,-550,0)" Rotation="(0,0,0)" Scale="(1,1,1)">
-		<Component Type="UILabel" Text="Powerd By Lives2d"/>
+		<Component Type="UILabel" Text="Powerd By Lives2d你好"/>
 	</GameObject>
 </GameObject>

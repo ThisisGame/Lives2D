@@ -49,6 +49,12 @@
     <Filter Include="PlayerPrefs\TimyXml">
       <UniqueIdentifier>{5a7b2542-6838-4a81-9642-10eb5c2c1c3e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="3D">
+      <UniqueIdentifier>{117a15af-8987-4bb8-9866-883aba634dd6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tools\ConvertUTF">
+      <UniqueIdentifier>{4734ac67-453b-4e7f-88e1-7d9adf93d99d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Src\Platform\Windows\WinMain.cpp">
@@ -264,6 +270,27 @@
     <ClCompile Include="..\..\Src\GUI\lua_UIParse.cpp">
       <Filter>Component</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Src\3D\Camera.cpp">
+      <Filter>3D</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\3D\Material.cpp">
+      <Filter>3D</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\3D\Mesh.cpp">
+      <Filter>3D</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\3D\Renderer.cpp">
+      <Filter>3D</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\3D\MeshRenderer.cpp">
+      <Filter>3D</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Tools\ConvertUTF\ConvertUTFWrapper.cpp">
+      <Filter>Tools\ConvertUTF</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Tools\ConvertUTF\ConvertUTF.c">
+      <Filter>Tools\ConvertUTF</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\Platform\Windows\WinGame.h">
@@ -400,6 +427,24 @@
     </ClInclude>
     <ClInclude Include="..\..\Src\GUI\UIParser.h">
       <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\3D\Camera.h">
+      <Filter>3D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\3D\Material.h">
+      <Filter>3D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\3D\Mesh.h">
+      <Filter>3D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\3D\Renderer.h">
+      <Filter>3D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\3D\MeshRenderer.h">
+      <Filter>3D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Tools\ConvertUTF\ConvertUTF.h">
+      <Filter>Tools\ConvertUTF</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

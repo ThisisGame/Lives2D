@@ -341,7 +341,7 @@ public:
 		return m_character[ch];
 	}
 
-	UIVertex* GetUIVertex(float x, float y, float z, RGBA_4_BYTE color, const char* text, int space,unsigned int varTextureID,bool alignCenter)
+	UIVertex* GetUIVertex(float x, float y, float z, RGBA_4_BYTE color, std::u32string& text, int space,unsigned int varTextureID,bool alignCenter)
 	{
 		memset(m_Vert, 0, 1024 * sizeof(UIVertex));
 
@@ -352,7 +352,7 @@ public:
 		//float       yStart = (float)(int)y + m_fontSize;
 		float       zStart = z;
 		unsigned    index = 0;
-		unsigned    size =  strlen(text);
+		unsigned    size =  text.length();
 
 		for (unsigned i = 0; i < size; ++i)
 		{

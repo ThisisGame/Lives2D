@@ -75,5 +75,8 @@ public :
 
 	//从路径中获取目录
 	static std::string GetDirPath(std::string varFilePath);
+
+	//string 转 u32string
+	static bool UTF8ToUTF32(const std::string& inUtf8, std::u32string& outUtf32);
 };
 

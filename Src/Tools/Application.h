@@ -95,7 +95,7 @@ private:
 		char exeFullPath[MAX_PATH]; // Full path   
 		std::string strPath = "";
 
-		GetModuleFileName(NULL, exeFullPath, MAX_PATH);
+		GetModuleFileNameA(NULL, exeFullPath, MAX_PATH);
 		strPath = (std::string)exeFullPath;    // Get full path of the file   
 
 		int pos = strPath.find_last_of('\\', strPath.length());

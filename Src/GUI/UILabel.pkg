@@ -12,7 +12,7 @@ public:
 	~UILabel();
 
 public:
-	void Init(const char* varText);
+	void Init(std::u32string& varText);
 
 	
 	void SetPosition(float varPosX, float varPosY);

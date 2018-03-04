@@ -1,4 +1,5 @@
 #include "Helper.h"
+#include"ConvertUTF/ConvertUTF.h"
 
 Helper::Helper(void)
 {
@@ -120,6 +121,73 @@ std::string Helper::GetDirPath(std::string varFilePath)
 	int tmpLastPatternIndex = varFilePath.find_last_of('/');
 	std::string tmpDirPath = varFilePath.substr(0, tmpLastPatternIndex + 1);
 	return tmpDirPath;
+}
+
+typedef unsigned int    UTF32;  /* at least 32 bits */
+typedef unsigned short  UTF16;  /* at least 16 bits */
+typedef unsigned char   UTF8;   /* typically 8 bits */
+
+template <typename T>
+struct ConvertTrait {
+	typedef T ArgType;
+};
+template <>
+struct ConvertTrait<char> {
+	typedef UTF8 ArgType;
+};
+template <>
+struct ConvertTrait<char16_t> {
+	typedef UTF16 ArgType;
+};
+template <>
+struct ConvertTrait<char32_t> {
+	typedef UTF32 ArgType;
+};
+
+template <typename From, typename To, typename FromTrait = ConvertTrait<From>, typename ToTrait = ConvertTrait<To>>
+bool utfConvert(
+	const std::basic_string<From>& from, std::basic_string<To>& to,
+	ConversionResult(*cvtfunc)(const typename FromTrait::ArgType**, const typename FromTrait::ArgType*,
+		typename ToTrait::ArgType**, typename ToTrait::ArgType*,
+		ConversionFlags)
+)
+{
+	static_assert(sizeof(From) == sizeof(typename FromTrait::ArgType), "Error size mismatched");
+	static_assert(sizeof(To) == sizeof(typename ToTrait::ArgType), "Error size mismatched");
+
+	if (from.empty())
+	{
+		to.clear();
+		return true;
+	}
+
+	// See: http://unicode.org/faq/utf_bom.html#gen6
+	static const int most_bytes_per_character = 4;
+
+	const size_t maxNumberOfChars = from.length(); // all UTFs at most one element represents one character.
+	const size_t numberOfOut = maxNumberOfChars * most_bytes_per_character / sizeof(To);
+
+	std::basic_string<To> working(numberOfOut, 0);
+
+	auto inbeg = reinterpret_cast<const typename FromTrait::ArgType*>(&from[0]);
+	auto inend = inbeg + from.length();
+
+
+	auto outbeg = reinterpret_cast<typename ToTrait::ArgType*>(&working[0]);
+	auto outend = outbeg + working.length();
+	auto r = cvtfunc(&inbeg, inend, &outbeg, outend, strictConversion);
+	if (r != conversionOK)
+		return false;
+
+	working.resize(reinterpret_cast<To*>(outbeg) - &working[0]);
+	to = std::move(working);
+
+	return true;
+};
+
+bool Helper::UTF8ToUTF32(const std::string& utf8, std::u32string& outUtf32)
+{
+	return utfConvert(utf8, outUtf32, ConvertUTF8toUTF32);
 }
 
 Helper::~Helper(void)

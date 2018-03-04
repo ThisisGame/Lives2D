@@ -22,12 +22,14 @@ UILabel::~UILabel()
 void UILabel::InitWithXml(TiXmlElement * varTiXmlElement)
 {
 	const char* tmpText = varTiXmlElement->Attribute("Text");
-	Init(tmpText);
+	std::u32string tmpu32Text;
+	Helper::UTF8ToUTF32(tmpText, tmpu32Text);
+	Init(tmpu32Text);
 }
 
-void UILabel::Init(const char* varText) 
+void UILabel::Init(std::u32string& varText) 
 {
-	mFont= FontManager::GetSingleton()->BuildFont("/Resource/Font/simsun.ttc");
+	mFont= FontManager::GetSingleton()->BuildFont("/Resource/Font/HKYuanMini.ttf");
 
 	m_GLProgram_Font.Initialize();
 
@@ -70,10 +72,10 @@ void UILabel::Draw()
 		glUniformMatrix4fv(m_GLProgram_Font.getMVPUniform(), 1, false, &mvp[0][0]);
 		glUniform1i(m_GLProgram_Font.getTextureUniform(), 0);
 
-		int length = strlen(mText.c_str());
+		int length = mText.length();
 
 
-		UIVertex* vert = mFont->GetUIVertex(0, 0, 0, RGBA_4_BYTE(0, 0, 0,255), mText.c_str(),mSpace,m_fontTexture,mAlignCenter);
+		UIVertex* vert = mFont->GetUIVertex(0, 0, 0, RGBA_4_BYTE(0, 0, 0,255), mText,mSpace,m_fontTexture,mAlignCenter);
 
 		glVertexAttribPointer(m_GLProgram_Font.getPositionAttribute(), 3, GL_FLOAT, GL_FALSE, sizeof(UIVertex), vert);
 		glVertexAttribPointer(m_GLProgram_Font.getUVAttribute(), 3, GL_FLOAT, GL_FALSE, sizeof(UIVertex), &vert[0].u);

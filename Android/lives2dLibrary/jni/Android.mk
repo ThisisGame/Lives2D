@@ -261,7 +261,30 @@ LOCAL_MODULE    := libEngine
 
 LOCAL_SRC_FILES := Tools/Helper.cpp \
 		Tools/Application.cpp \
+		Tools/ConvertUTF/ConvertUTF.c \
+		Tools/ConvertUTF/ConvertUTFWrapper.cpp \
 		Tools/lua_Application.cpp \
+		Math/Math.cpp \
+		Math/lua_Math.cpp \
+		PlayerPrefs/TinyXml/tinystr.cpp \
+		PlayerPrefs/TinyXml/tinyxmlerror.cpp \
+		PlayerPrefs/TinyXml/tinyxmlparser.cpp \
+		PlayerPrefs/TinyXml/tinyxml.cpp \
+		PlayerPrefs/Convert.cpp \
+		PlayerPrefs/PlayerPrefs.cpp \
+		Component/Component.cpp \
+		Component/Behavior.cpp \
+		Component/GameObject.cpp \
+		Component/LuaComponent.cpp \
+		Component/Object.cpp \
+		Component/Reflection.cpp \
+		Component/Transform.cpp \
+		Component/lua_Behavior.cpp \
+		Component/lua_Component.cpp \
+		Component/lua_GameObject.cpp \
+		Component/Lua_LuaComponent.cpp \
+		Component/lua_Object.cpp \
+		Component/lua_Transform.cpp \
 		$(FMOD_COMMON_PATH)/common.cpp \
 		$(FMOD_COMMON_PATH)/common_platform.cpp \
 		Audio/AudioSource.cpp \
@@ -276,15 +299,17 @@ LOCAL_SRC_FILES := Tools/Helper.cpp \
 		GUI/UIClickRect.cpp \
 		GUI/UIButton.cpp \
 		GUI/UILabel.cpp \
+		GUI/UIImage.cpp \
 		GUI/UIRoot.cpp \
+		GUI/UIParser.cpp \
 		GUI/lua_UIRect.cpp \
 		GUI/lua_UIDrawRect.cpp \
 		GUI/lua_UIClickRect.cpp \
 		GUI/lua_UIButton.cpp \
 		GUI/lua_UILabel.cpp \
+		GUI/lua_UIImage.cpp \
 		GUI/lua_UIRoot.cpp \
-		Image/Image.cpp \
-		Image/lua_Image.cpp \
+		GUI/lua_UIParse.cpp \
 		ImageAnimation/ImageAnimationClip.cpp \
 		ImageAnimation/ImageAnimation.cpp \
 		ImageAnimation/lua_ImageAnimationClip.cpp \

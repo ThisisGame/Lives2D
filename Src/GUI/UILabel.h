@@ -24,7 +24,7 @@ private:
 
 	UIVertex  vert[1024];
 
-	std::string mText;
+	std::u32string mText;
 
 	int mSpace;//×Ö¼ä¾à
 
@@ -37,7 +37,7 @@ public:
 	void InitWithXml(TiXmlElement* varTiXmlElement) override;
 
 public:
-	void Init(const char* varText);
+	void Init(std::u32string& varText);
 
 	//»æÖÆ				 
 	void Draw() override;
