@@ -6,5 +6,7 @@ class MeshRenderer :
 public:
 	MeshRenderer();
 	~MeshRenderer();
+
+	void Render() override;
 };
 

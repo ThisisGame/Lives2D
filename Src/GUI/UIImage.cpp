@@ -23,14 +23,8 @@ UIImage::~UIImage(void)
 void UIImage::InitWithXml(TiXmlElement * varTiXmlElement)
 {
 	const char* tmpFilePath = varTiXmlElement->Attribute("Image");
-	char tmpFullFilePath[128];
-	memset(tmpFullFilePath, 0, 128);
 
-	strcat(tmpFullFilePath, Application::DataPath().c_str());
-	strcat(tmpFullFilePath, "/Resource/");
-	strcat(tmpFullFilePath, tmpFilePath);
-
-	Init(tmpFullFilePath);
+	Init(Application::GetFullPath(tmpFilePath));
 }
 
 void UIImage::Init(const char * varFilePath)

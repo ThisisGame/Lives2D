@@ -83,6 +83,7 @@
     <ClCompile Include="..\..\Src\3D\Camera.cpp" />
     <ClCompile Include="..\..\Src\3D\Material.cpp" />
     <ClCompile Include="..\..\Src\3D\Mesh.cpp" />
+    <ClCompile Include="..\..\Src\3D\MeshFilter.cpp" />
     <ClCompile Include="..\..\Src\3D\MeshRenderer.cpp" />
     <ClCompile Include="..\..\Src\3D\Renderer.cpp" />
     <ClCompile Include="..\..\Src\Audio\AudioSource.cpp" />
@@ -163,8 +164,12 @@
     <ClInclude Include="..\..\Src\3D\Camera.h" />
     <ClInclude Include="..\..\Src\3D\Material.h" />
     <ClInclude Include="..\..\Src\3D\Mesh.h" />
+    <ClInclude Include="..\..\Src\3D\MeshFilter.h" />
     <ClInclude Include="..\..\Src\3D\MeshRenderer.h" />
     <ClInclude Include="..\..\Src\3D\Renderer.h" />
+    <ClInclude Include="..\..\Src\3D\Texture.h" />
+    <ClInclude Include="..\..\Src\3D\TextureType.h" />
+    <ClInclude Include="..\..\Src\3D\Vertex.h" />
     <ClInclude Include="..\..\Src\Audio\AudioSource.h" />
     <ClInclude Include="..\..\Src\Audio\AudioCard.cpp" />
     <ClInclude Include="..\..\Src\Component\Behavior.h" />

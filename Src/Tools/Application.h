@@ -56,6 +56,19 @@ public:
 #endif
 	}
 
+	//从Resources短路径 获取 文件完整路径
+	static char* GetFullPath(const char* varResourcesPath)
+	{
+		char tmpFullFilePath[128];
+		memset(tmpFullFilePath, 0, 128);
+
+		strcat(tmpFullFilePath, Application::DataPath().c_str());
+		strcat(tmpFullFilePath, "/Resource/");
+		strcat(tmpFullFilePath, varResourcesPath);
+		return tmpFullFilePath;
+	}
+
+
 
 	static void SetPersistentDataPath(const char* varpersistentDataPath)
 	{

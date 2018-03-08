@@ -1,10 +1,25 @@
 #pragma once
-#include "Component/Behavior.h"
+#include "Component/Component.h"
+#include"Material.h"
+#include"MeshFilter.h"
+
 class Renderer :
-	public Behavior
+	public Component
 {
 public:
 	Renderer();
 	~Renderer();
+
+public:
+	void Start() override;
+
+	void Update() override;
+
+public:
+	virtual void Render();
+
+protected:
+	Material* mMaterial;
+	Mesh* mMesh;
 };
 

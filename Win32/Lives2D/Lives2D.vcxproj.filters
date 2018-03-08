@@ -291,6 +291,9 @@
     <ClCompile Include="..\..\Src\Tools\ConvertUTF\ConvertUTF.c">
       <Filter>Tools\ConvertUTF</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Src\3D\MeshFilter.cpp">
+      <Filter>3D</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\Platform\Windows\WinGame.h">
@@ -445,6 +448,18 @@
     </ClInclude>
     <ClInclude Include="..\..\Src\Tools\ConvertUTF\ConvertUTF.h">
       <Filter>Tools\ConvertUTF</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\3D\MeshFilter.h">
+      <Filter>3D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\3D\Vertex.h">
+      <Filter>3D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\3D\Texture.h">
+      <Filter>3D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\3D\TextureType.h">
+      <Filter>3D</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
