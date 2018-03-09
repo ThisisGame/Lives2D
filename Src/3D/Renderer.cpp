@@ -18,6 +18,8 @@ void Renderer::Start()
 	
 	MeshFilter* tmpMeshFilter = (MeshFilter*)mGameObject->GetComponent("MeshFilter");
 	mMesh = tmpMeshFilter->GetMesh();
+
+	//∂‘Material…Ë÷√ Ù–‘
 }
 
 void Renderer::Update()

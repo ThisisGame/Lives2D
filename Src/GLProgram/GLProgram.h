@@ -8,10 +8,9 @@
 #include<egl\egl.h>
 #include<gles2\gl2.h>
 #endif
-
-
-
 #include"../Tools/Helper.h"	
+
+
 
 class ShaderID
 {

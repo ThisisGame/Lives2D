@@ -105,6 +105,7 @@
     <ClCompile Include="..\..\Src\GLProgram\GLProgram_Font.cpp" />
     <ClCompile Include="..\..\Src\GLProgram\GLProgram_Texture.cpp" />
     <ClCompile Include="..\..\Src\GLProgram\GLProgram_Texture_ReceiveLightEffect.cpp" />
+    <ClCompile Include="..\..\Src\GLProgram\Shader.cpp" />
     <ClCompile Include="..\..\Src\GUI\Font.cpp" />
     <ClCompile Include="..\..\Src\GUI\FontManager.cpp" />
     <ClCompile Include="..\..\Src\GUI\lua_UIImage.cpp" />
@@ -183,6 +184,7 @@
     <ClInclude Include="..\..\Src\GLProgram\GLProgram_Font.h" />
     <ClInclude Include="..\..\Src\GLProgram\GLProgram_Texture.h" />
     <ClInclude Include="..\..\Src\GLProgram\GLProgram_Texture_ReceiveLightEffect.h" />
+    <ClInclude Include="..\..\Src\GLProgram\Shader.h" />
     <ClInclude Include="..\..\Src\GUI\Font.h" />
     <ClInclude Include="..\..\Src\GUI\FontManager.h" />
     <ClInclude Include="..\..\Src\GUI\UIButton.h" />

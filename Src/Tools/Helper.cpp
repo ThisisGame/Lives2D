@@ -33,10 +33,10 @@ void Helper::LOG(const char* format,...)
 	LOGI("\n%s \n", buff);
 }
 
-std::string Helper::ReadTxt(std::string& varFilePath)
+std::string Helper::ReadTxt(const char* varFilePath)
 {
 	ifstream infile;
-	infile.open(varFilePath.data());   //将文件流对象与文件连接起来 
+	infile.open(varFilePath);   //将文件流对象与文件连接起来 
 	assert(infile.is_open());   //若失败,则输出错误消息,并终止程序运行 
 
 	std::string tmpAllContent;
@@ -188,6 +188,14 @@ bool utfConvert(
 bool Helper::UTF8ToUTF32(const std::string& utf8, std::u32string& outUtf32)
 {
 	return utfConvert(utf8, outUtf32, ConvertUTF8toUTF32);
+}
+
+const char * Helper::StrCat(const char * varStr1, const char * varStr2)
+{
+	char tmpTarget[128];
+	memset(tmpTarget, 0, 128);
+	strcat(tmpTarget, varStr1);
+	strcat(tmpTarget, varStr2);
 }
 
 Helper::~Helper(void)

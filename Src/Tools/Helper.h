@@ -62,7 +62,7 @@ public:
 
 public :
 	//读取Txt文本
-	static std::string ReadTxt(std::string& varFilePath);
+	static std::string ReadTxt(const char* varFilePath);
 
 	//字符串分割函数  
 	static std::vector<std::string> Split(std::string& varStr, std::string& varPattern);
@@ -78,5 +78,8 @@ public :
 
 	//string 转 u32string
 	static bool UTF8ToUTF32(const std::string& inUtf8, std::u32string& outUtf32);
+
+	//字符串拼接 目标长度128
+	static const char* StrCat(const char* varStr1, const char* varStr2);
 };
 

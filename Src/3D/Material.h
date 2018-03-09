@@ -1,9 +1,12 @@
 #pragma once
 #include "Component/Component.h"
 
-#include"GLProgram/GLProgram_Texture.h"
+#include"GLProgram/Shader.h"
 
 #include"Texture2D/Texture2D.h"
+
+#include<vector>
+
 
 class Material :
 	public Component
@@ -27,8 +30,11 @@ public:
 
 
 private:
-	GLProgram_Texture* mGLProgram_Texture;
+	Shader* mShader;
 
 	Texture2D* mTexture2D;
+
+	//需要用键值对存储属性和值
+	std::vector<ShaderProperty*> mVectorShaderProperty;
 };
 

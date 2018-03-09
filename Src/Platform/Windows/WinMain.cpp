@@ -25,7 +25,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCm
 
 
 	std::string tmpConfigPath =Application::PersistentDataPath()+ "/Resource/Config.txt";
-	std::string tmpConfig = Helper::ReadTxt(tmpConfigPath);
+	std::string tmpConfig = Helper::ReadTxt(tmpConfigPath.c_str());
 	std::string tmpPattern = "x";
 	std::vector<std::string> tmpConfigVector = Helper::Split(tmpConfig, tmpPattern);
 
