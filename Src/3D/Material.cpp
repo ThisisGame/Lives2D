@@ -33,8 +33,6 @@ void Material::InitWithXml(TiXmlElement * varTiXmlElement)
 	mTexture2D->LoadTexture(Application::GetFullPath(tmpTextureFilePath));
 
 
-	//从子节点解析Shader属性
-	//遍历 KeyValuePair;
 	TiXmlNode *tmpTiXmlNode = NULL;
 
 	for (tmpTiXmlNode = varTiXmlElement->FirstChildElement(); tmpTiXmlNode != NULL; tmpTiXmlNode = tmpTiXmlNode->NextSiblingElement())
@@ -47,29 +45,122 @@ void Material::InitWithXml(TiXmlElement * varTiXmlElement)
 			const char* tmpShaderPropertyValueType = tmpTiXmlElement->Attribute("ValueType");
 			const char* tmpShaderPropertyValue = tmpTiXmlElement->Attribute("Value");
 
-			if (strcmp(tmpShaderPropertyValueType, "float") == 0)
+            ShaderProperty* tmpShaderProperty=nullptr;
+            if (strcmp(tmpShaderPropertyValueType, ShaderPropertyValueType::TYPE_FLOAT) == 0)
 			{
-				ShaderPropertyFloat* tmpShaderProperty = new ShaderPropertyFloat();
-				tmpShaderProperty->mName = tmpShaderPropertyName;
-				tmpShaderProperty->mValueType = tmpShaderPropertyValueType;
-				tmpShaderProperty->mValue = Convert::StringToFloat(tmpShaderPropertyValue);
-
-				mVectorShaderProperty.push_back(tmpShaderProperty);
+                tmpShaderProperty = new ShaderPropertyFloat();
+                ShaderPropertyFloat* tmpShaderPropertyFloat=(ShaderPropertyFloat*)tmpShaderProperty;
+				tmpShaderPropertyFloat->mValue = Convert::StringToFloat(tmpShaderPropertyValue);
 			}
+            else if (strcmp(tmpShaderPropertyValueType, ShaderPropertyValueType::TYPE_INT) == 0)
+            {
+                tmpShaderProperty=new ShaderPropertyInt();
+                ShaderPropertyInt* tmpShaderPropertyInt=(ShaderPropertyInt*)tmpShaderProperty;
+                tmpShaderPropertyInt->mValue=Convert::StringToInt(tmpShaderPropertyValue);
+            }
+            else if (strcmp(tmpShaderPropertyValueType, ShaderPropertyValueType::TYPE_TEXTURE) == 0)
+            {
+                tmpShaderProperty=new ShaderPropertyTexture();
+                ShaderPropertyTexture* tmpShaderPropertyTexture=(ShaderPropertyTexture*)tmpShaderProperty;
+                
+                tmpShaderPropertyTexture->mActiveTextureIndex=Convert::StringToInt(tmpTiXmlElement->Attribute("ActiveTextureIndex"));
+                
+                const char* tmpTexturePath=tmpTiXmlElement->Attribute("TexturePath");
+                tmpShaderPropertyTexture->mTexturePath=tmpTexturePath;
+                
+                Texture2D* tmpTexture2D=new Texture2D();
+                tmpTexture2D->LoadTexture(Application::GetFullPath(tmpTexturePath));
+                tmpShaderPropertyTexture->mTextureID=tmpTexture2D->m_textureId;
+            }
+            tmpShaderProperty->mName = tmpShaderPropertyName;
+            tmpShaderProperty->mValueType = tmpShaderPropertyValueType;
+            mVectorShaderProperty.push_back(tmpShaderProperty);
 		}
 	}
 
 }
 
 
-void Material::Render()
+void Material::SetFloat(const char* varProperty, float varValue)
 {
-	mGLProgram_Texture->begin();
-
-
-
-	mGLProgram_Texture->end();
+    bool tmpFind=false;
+    for (size_t tmpIndex=0; tmpIndex<mVectorShaderProperty.size(); tmpIndex++)
+    {
+        if(strcmp( mVectorShaderProperty[tmpIndex]->mName,varProperty)==0)
+        {
+            ShaderPropertyFloat* tmpShaderPropertyFloat=(ShaderPropertyFloat*) mVectorShaderProperty[tmpIndex];
+            tmpShaderPropertyFloat->mValue=varValue;
+            
+            tmpFind=true;
+            break;
+        }
+    }
+    
+    if(tmpFind==false)
+    {
+        ShaderPropertyFloat* tmpShaderPropertyFloat=new ShaderPropertyFloat();
+        tmpShaderPropertyFloat->mName=varProperty;
+        tmpShaderPropertyFloat->mValue=varValue;
+    }
 }
 
+void Material::SetTexture(const char* varProperty, const char* varTexturePath)
+{
+    bool tmpFind=false;
+    for (size_t tmpIndex=0; tmpIndex<mVectorShaderProperty.size(); tmpIndex++)
+    {
+        if(strcmp( mVectorShaderProperty[tmpIndex]->mName,varProperty)==0)
+        {
+            ShaderPropertyTexture* tmpShaderPropertyTexture=(ShaderPropertyTexture*) mVectorShaderProperty[tmpIndex];
+            
+            //build texture
+            Texture2D* tmpTexture2D=new Texture2D();
+            tmpTexture2D->LoadTexture(Application::GetFullPath(varTexturePath));
+            tmpShaderPropertyTexture->mTextureID=tmpTexture2D->m_textureId;
+            
+            
+            tmpFind=true;
+            
+            break;
+        }
+    }
+    
+    if(tmpFind==false)
+    {
+        ShaderPropertyTexture* tmpShaderPropertyTexture=new ShaderPropertyTexture();
+        tmpShaderPropertyTexture->mName=varProperty;
+        
+        //get which GL_TEXTURE can bind
+        int tmpActiveTextureIndex=0;
+        for (size_t tmpIndex=0; tmpIndex<mVectorShaderProperty.size(); tmpIndex++)
+        {
+            if(strcmp( mVectorShaderProperty[tmpIndex]->mValueType,ShaderPropertyValueType::TYPE_TEXTURE)==0)
+            {
+                tmpActiveTextureIndex++;
+            }
+        }
+        
+        tmpShaderPropertyTexture->mActiveTextureIndex=tmpActiveTextureIndex;
+        tmpShaderPropertyTexture->mTexturePath=varTexturePath;
+        
+        //build texture
+        Texture2D* tmpTexture2D=new Texture2D();
+        tmpTexture2D->LoadTexture(Application::GetFullPath(varTexturePath));
+        tmpShaderPropertyTexture->mTextureID=tmpTexture2D->m_textureId;
+        
+        mVectorShaderProperty.push_back(tmpShaderPropertyTexture);
+    }
+}
+
+
+void Material::Render()
+{
+	mShader->begin();
+
+    
+
+
+	mShader->end();
+}
 
 

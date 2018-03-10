@@ -47,7 +47,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
             endingLineNumber = "37"
-            landmarkName = "Texture2D::LoadTexture(const char* varFilePath)"
+            landmarkName = "Texture2D::LoadTexture(const char* varFilePath,int varBindTextureIndex)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

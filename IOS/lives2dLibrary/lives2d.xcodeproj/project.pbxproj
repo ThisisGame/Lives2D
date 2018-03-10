@@ -257,6 +257,13 @@
 		C6CFEEA4201B4EFE009FAFD0 /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6CFEEA3201B4EFE009FAFD0 /* GameController.framework */; };
 		C6CFEEA5201B4F54009FAFD0 /* common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6CFEE99201B4E03009FAFD0 /* common.cpp */; };
 		C6CFEEA6201B4F56009FAFD0 /* common_platform.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6CFEE9C201B4E03009FAFD0 /* common_platform.mm */; };
+		E4140D602053B22000132D04 /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4140D5E2053B22000132D04 /* Shader.cpp */; };
+		E4140D712053C38A00132D04 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4140D622053C38900132D04 /* Camera.cpp */; };
+		E4140D722053C38A00132D04 /* Material.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4140D642053C38900132D04 /* Material.cpp */; };
+		E4140D732053C38A00132D04 /* Mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4140D662053C38900132D04 /* Mesh.cpp */; };
+		E4140D742053C38A00132D04 /* MeshFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4140D682053C38900132D04 /* MeshFilter.cpp */; };
+		E4140D752053C38A00132D04 /* MeshRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4140D6A2053C38900132D04 /* MeshRenderer.cpp */; };
+		E4140D762053C38A00132D04 /* Renderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4140D6C2053C38900132D04 /* Renderer.cpp */; };
 		E4A4178E1FF7E19700F4932B /* autofit.c in Sources */ = {isa = PBXBuildFile; fileRef = E4A415C51FF7E19700F4932B /* autofit.c */; };
 		E4A417931FF7E19700F4932B /* basepic.c in Sources */ = {isa = PBXBuildFile; fileRef = E4A415CC1FF7E19700F4932B /* basepic.c */; };
 		E4A417951FF7E19700F4932B /* ftapi.c in Sources */ = {isa = PBXBuildFile; fileRef = E4A415CF1FF7E19700F4932B /* ftapi.c */; };
@@ -819,6 +826,23 @@
 		C6CFEE9F201B4EE5009FAFD0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		C6CFEEA1201B4EF4009FAFD0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		C6CFEEA3201B4EFE009FAFD0 /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = System/Library/Frameworks/GameController.framework; sourceTree = SDKROOT; };
+		E4140D5E2053B22000132D04 /* Shader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Shader.cpp; sourceTree = "<group>"; };
+		E4140D5F2053B22000132D04 /* Shader.h */ = {isa = PBXFileReference; fileEncoding = 2147486000; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
+		E4140D622053C38900132D04 /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
+		E4140D632053C38900132D04 /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
+		E4140D642053C38900132D04 /* Material.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Material.cpp; sourceTree = "<group>"; };
+		E4140D652053C38900132D04 /* Material.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Material.h; sourceTree = "<group>"; };
+		E4140D662053C38900132D04 /* Mesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mesh.cpp; sourceTree = "<group>"; };
+		E4140D672053C38900132D04 /* Mesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mesh.h; sourceTree = "<group>"; };
+		E4140D682053C38900132D04 /* MeshFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MeshFilter.cpp; sourceTree = "<group>"; };
+		E4140D692053C38900132D04 /* MeshFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeshFilter.h; sourceTree = "<group>"; };
+		E4140D6A2053C38900132D04 /* MeshRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MeshRenderer.cpp; sourceTree = "<group>"; };
+		E4140D6B2053C38900132D04 /* MeshRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeshRenderer.h; sourceTree = "<group>"; };
+		E4140D6C2053C38900132D04 /* Renderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Renderer.cpp; sourceTree = "<group>"; };
+		E4140D6D2053C38900132D04 /* Renderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Renderer.h; sourceTree = "<group>"; };
+		E4140D6E2053C38900132D04 /* Texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture.h; sourceTree = "<group>"; };
+		E4140D6F2053C38900132D04 /* TextureType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextureType.h; sourceTree = "<group>"; };
+		E4140D702053C38900132D04 /* Vertex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vertex.h; sourceTree = "<group>"; };
 		E4A415441FF7E17E00F4932B /* ftconfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ftconfig.h; sourceTree = "<group>"; };
 		E4A415451FF7E17E00F4932B /* ftheader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ftheader.h; sourceTree = "<group>"; };
 		E4A415461FF7E17E00F4932B /* ftmodule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ftmodule.h; sourceTree = "<group>"; };
@@ -2042,6 +2066,28 @@
 			path = ../../../Lives2D_Depends/FMOD/IOS/common;
 			sourceTree = "<group>";
 		};
+		E4140D612053C38900132D04 /* 3D */ = {
+			isa = PBXGroup;
+			children = (
+				E4140D622053C38900132D04 /* Camera.cpp */,
+				E4140D632053C38900132D04 /* Camera.h */,
+				E4140D642053C38900132D04 /* Material.cpp */,
+				E4140D652053C38900132D04 /* Material.h */,
+				E4140D662053C38900132D04 /* Mesh.cpp */,
+				E4140D672053C38900132D04 /* Mesh.h */,
+				E4140D682053C38900132D04 /* MeshFilter.cpp */,
+				E4140D692053C38900132D04 /* MeshFilter.h */,
+				E4140D6A2053C38900132D04 /* MeshRenderer.cpp */,
+				E4140D6B2053C38900132D04 /* MeshRenderer.h */,
+				E4140D6C2053C38900132D04 /* Renderer.cpp */,
+				E4140D6D2053C38900132D04 /* Renderer.h */,
+				E4140D6E2053C38900132D04 /* Texture.h */,
+				E4140D6F2053C38900132D04 /* TextureType.h */,
+				E4140D702053C38900132D04 /* Vertex.h */,
+			);
+			path = 3D;
+			sourceTree = "<group>";
+		};
 		E4A412171FF7E03000F4932B /* freetype */ = {
 			isa = PBXGroup;
 			children = (
@@ -2824,6 +2870,7 @@
 		E4A41AD81FF7F64A00F4932B /* Src */ = {
 			isa = PBXGroup;
 			children = (
+				E4140D612053C38900132D04 /* 3D */,
 				C6AD460A20319F0500A4ED2E /* Math */,
 				C6AD461020319F0500A4ED2E /* PlayerPrefs */,
 				C6AD45D020319EA500A4ED2E /* Component */,
@@ -2858,6 +2905,8 @@
 			isa = PBXGroup;
 			children = (
 				E4A41AE01FF7F64A00F4932B /* GLProgram.cpp */,
+				E4140D5E2053B22000132D04 /* Shader.cpp */,
+				E4140D5F2053B22000132D04 /* Shader.h */,
 				E4A41AE11FF7F64A00F4932B /* GLProgram.h */,
 				E4A41AE21FF7F64A00F4932B /* GLProgram_Font.cpp */,
 				E4A41AE31FF7F64A00F4932B /* GLProgram_Font.h */,
@@ -3094,6 +3143,7 @@
 				204BDB0F1F93B07C009D14C7 /* Resize.cpp in Sources */,
 				E4A4182E1FF7E19800F4932B /* pfr.c in Sources */,
 				E4A41B771FF7F64B00F4932B /* Helper.cpp in Sources */,
+				E4140D752053C38A00132D04 /* MeshRenderer.cpp in Sources */,
 				E4A417E61FF7E19800F4932B /* cidobjs.c in Sources */,
 				E4A41B461FF7F64B00F4932B /* lua_UIButton.cpp in Sources */,
 				204BDB091F93B07C009D14C7 /* CopyPaste.cpp in Sources */,
@@ -3107,6 +3157,7 @@
 				204BD6FB1F93A8EE009D14C7 /* lundump.c in Sources */,
 				204BDBA21F93B07C009D14C7 /* t2.c in Sources */,
 				204BD6F31F93A8EE009D14C7 /* lstate.c in Sources */,
+				E4140D742053C38A00132D04 /* MeshFilter.cpp in Sources */,
 				C6AD460920319EEC00A4ED2E /* UIParser.cpp in Sources */,
 				C6AD461D20319F0600A4ED2E /* Math.cpp in Sources */,
 				204BDAD21F93B07C009D14C7 /* MNGHelper.cpp in Sources */,
@@ -3264,6 +3315,7 @@
 				E4A41B561FF7F64B00F4932B /* UIRoot.cpp in Sources */,
 				C6AD45F420319EA600A4ED2E /* lua_GameObject.cpp in Sources */,
 				204BDAD11F93B07C009D14C7 /* MemoryIO.cpp in Sources */,
+				E4140D762053C38A00132D04 /* Renderer.cpp in Sources */,
 				204BDAC81F93B07C009D14C7 /* ConversionType.cpp in Sources */,
 				204BD6EB1F93A8EE009D14C7 /* llex.c in Sources */,
 				E4A41B601FF7F64B00F4932B /* lua_ImageAnimationClip.cpp in Sources */,
@@ -3295,6 +3347,7 @@
 				E4A417931FF7E19700F4932B /* basepic.c in Sources */,
 				204BDB0E1F93B07C009D14C7 /* Rescale.cpp in Sources */,
 				E4A41B621FF7F64B00F4932B /* KeyTouch.cpp in Sources */,
+				E4140D732053C38A00132D04 /* Mesh.cpp in Sources */,
 				C6AD45F520319EA600A4ED2E /* Lua_LuaComponent.cpp in Sources */,
 				204BD6F01F93A8EE009D14C7 /* lopcodes.c in Sources */,
 				204BDB281F93B07C009D14C7 /* jcparam.c in Sources */,
@@ -3389,10 +3442,12 @@
 				204BDB371F93B07C009D14C7 /* jdmarker.c in Sources */,
 				204BDB661F93B07C009D14C7 /* wrtarga.c in Sources */,
 				E4A417991FF7E19700F4932B /* ftbitmap.c in Sources */,
+				E4140D722053C38A00132D04 /* Material.cpp in Sources */,
 				E4A417BC1FF7E19800F4932B /* bdfdrivr.c in Sources */,
 				E4A4179B1FF7E19700F4932B /* ftcid.c in Sources */,
 				E4A4179F1FF7E19700F4932B /* ftgasp.c in Sources */,
 				E4A418391FF7E19800F4932B /* psaux.c in Sources */,
+				E4140D712053C38A00132D04 /* Camera.cpp in Sources */,
 				204BDAD01F93B07C009D14C7 /* LFPQuantizer.cpp in Sources */,
 				E4A418631FF7E19900F4932B /* ttpost.c in Sources */,
 				204BDB401F93B07C009D14C7 /* jfdctint.c in Sources */,
@@ -3426,6 +3481,7 @@
 				204BDABF1F93B07C009D14C7 /* Conversion24.cpp in Sources */,
 				C6AD45FA20319EA600A4ED2E /* Object.cpp in Sources */,
 				C6AD462020319F0600A4ED2E /* Convert.cpp in Sources */,
+				E4140D602053B22000132D04 /* Shader.cpp in Sources */,
 				204BDB611F93B07C009D14C7 /* wrbmp.c in Sources */,
 				204BDBBD1F93B07C009D14C7 /* pngrio.c in Sources */,
 				E4A41B5F1FF7F64B00F4932B /* lua_ImageAnimation.cpp in Sources */,

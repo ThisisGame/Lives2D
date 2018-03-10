@@ -10,10 +10,19 @@
 #endif
 #include"../Tools/Helper.h"	
 
+class ShaderPropertyValueType
+{
+public:
+    static const char* TYPE_FLOAT="float";
+    static const char* TYPE_INT="int";
+    static const char* TYPE_VERTEXATTRIBPOINT="VertexAttributePoint";
+    static const char* TYPE_TEXTURE="Texture";
+};
+
 class ShaderProperty
 {
 public:
-	const char* mName; //属性
+	const char* mName; //蔛haderPropertyName in vertex shader or fragment shader
 	GLint mID;
 	const char* mValueType;
 };
@@ -21,11 +30,59 @@ public:
 class ShaderPropertyFloat:public ShaderProperty
 {
 public:
+    ShaderPropertyFloat()
+    {
+        mValueType=ShaderPropertyValueType::TYPE_FLOAT;
+    }
+    
+public:
 	float mValue;
 };
 
 
-//封装OpenGL 的glProgram的一些信息;
+class ShaderPropertyInt:public ShaderProperty
+{
+public:
+    ShaderPropertyInt()
+    {
+        mValueType=ShaderPropertyValueType::TYPE_INT;
+    }
+    
+public:
+    int mValue;
+};
+
+
+//to glVertexAttribPoint
+class ShaderPropertyVertexAttribPointer:public ShaderProperty
+{
+public:
+    ShaderPropertyVertexAttribPointer()
+    {
+        mValueType=ShaderPropertyValueType::TYPE_VERTEXATTRIBPOINT;
+    }
+    
+public:
+    int mSize;
+    int mStride;
+    void* mMemoryData;
+};
+
+class ShaderPropertyTexture:public ShaderProperty
+{
+public:
+    ShaderPropertyTexture()
+    {
+        mValueType=ShaderPropertyValueType::TYPE_TEXTURE;
+    }
+    
+public:
+    const char* mTexturePath;//Texture file short path
+    int mActiveTextureIndex;//GL_TEXTURE0+n,get from xml,first is 0,second is 1
+    int mTextureID;
+};
+
+
 class Shader
 {
 public:
@@ -41,7 +98,7 @@ public:
 	}
 
 public:
-	//加载shader并且创建glProgram;
+	
 	bool CreateProgram(const char *vertex, const char *fragment)
 	{
 		bool error = false;
@@ -49,11 +106,11 @@ public:
 		{
 			if (vertex)
 			{
-				//创建Shader;
+				
 				mVertexShader = glCreateShader(GL_VERTEX_SHADER);
-				//源码;
+				
 				glShaderSource(mVertexShader, 1, &vertex, 0);
-				//编译;
+				
 				glCompileShader(mVertexShader);
 
 				GLint compileStatus;
@@ -73,11 +130,11 @@ public:
 
 			if (fragment)
 			{
-				//创建Shader;
+				
 				mFragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-				//源码;
+				
 				glShaderSource(mFragmentShader, 1, &fragment, 0);
-				//编译;
+				
 				glCompileShader(mFragmentShader);
 
 				GLint compileStatus;
@@ -93,10 +150,10 @@ public:
 				}
 			}
 
-			//创建gl程序;
+			
 			mProgram = glCreateProgram();
 
-			//代码添加到program中;
+			
 			if (mVertexShader)
 			{
 				glAttachShader(mProgram, mVertexShader);
@@ -106,7 +163,7 @@ public:
 				glAttachShader(mProgram, mFragmentShader);
 			}
 
-			//链接;
+			
 			glLinkProgram(mProgram);
 
 			GLint linkStatus;
@@ -120,7 +177,7 @@ public:
 				break;
 			}
 
-			//使用program;
+			
 			//glUseProgram(mProgram);
 
 		} while (false);

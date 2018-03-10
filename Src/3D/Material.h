@@ -21,10 +21,9 @@ public:
 
 
 	void SetFloat(const char* varProperty, float varValue);
-	void SetFloat3(const char* varProperty, float varX, float varY, float varZ);
-	void SetFloat4(const char* varProperty, float varX, float varY, float varZ,float varW);
+	
 
-	void SetTexture(const char* varProperty, GLuint varTexture);
+	void SetTexture(const char* varProperty, const char* varTexturePath);
 
 	
 

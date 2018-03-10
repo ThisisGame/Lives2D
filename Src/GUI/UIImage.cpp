@@ -126,7 +126,7 @@ void UIImage::Draw()
 			glm::vec4(1, 1, 1, 1),
 			glm::vec4(1, 1, 1, 1),
 		};
-
+        
 		glUniformMatrix4fv(mGLProgram->m_mvp, 1, false, &mvp[0][0]);
 
 		glVertexAttribPointer(mGLProgram->m_position, 3, GL_FLOAT, false, sizeof(glm::vec3), pos);
