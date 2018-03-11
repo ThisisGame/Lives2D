@@ -13,11 +13,14 @@
 class ShaderPropertyValueType
 {
 public:
-    static const char* TYPE_FLOAT="float";
-    static const char* TYPE_INT="int";
-    static const char* TYPE_VERTEXATTRIBPOINT="VertexAttributePoint";
-    static const char* TYPE_TEXTURE="Texture";
+    static const char* TYPE_FLOAT;
+    static const char* TYPE_INT;
+    static const char* TYPE_VERTEXATTRIBPOINT;
+    static const char* TYPE_TEXTURE;
+	static const char* 
 };
+
+
 
 class ShaderProperty
 {

@@ -59,7 +59,7 @@ public:
 	//从Resources短路径 获取 文件完整路径
 	static char* GetFullPath(const char* varResourcesPath)
 	{
-		char tmpFullFilePath[128];
+		char* tmpFullFilePath=new char[128];
 		memset(tmpFullFilePath, 0, 128);
 
 		strcat(tmpFullFilePath, Application::DataPath().c_str());
@@ -72,7 +72,7 @@ public:
 	//从Resources短路径 获取 文件完整路径 传入后缀
 	static char* GetFullPathWithExtension(const char* varResourcesPath,const char* varExtension)
 	{
-		char tmpFullFilePath[128];
+		char* tmpFullFilePath=new char[128];
 		memset(tmpFullFilePath, 0, 128);
 
 		strcat(tmpFullFilePath, Application::DataPath().c_str());

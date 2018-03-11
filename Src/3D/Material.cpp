@@ -157,7 +157,28 @@ void Material::Render()
 {
 	mShader->begin();
 
-    
+    //…Ë÷√ Shader Ù–‘
+	for (size_t tmpShaderPropertyIndex = 0; tmpShaderPropertyIndex < mVectorShaderProperty.size(); tmpShaderPropertyIndex++)
+	{
+		ShaderProperty* tmpShaderProperty = mVectorShaderProperty[tmpShaderPropertyIndex];
+		if (tmpShaderProperty->mValueType == ShaderPropertyValueType::TYPE_FLOAT)
+		{
+
+		}
+		else if (tmpShaderProperty->mValueType == ShaderPropertyValueType::TYPE_INT)
+		{
+
+		}
+		else if (tmpShaderProperty->mValueType == ShaderPropertyValueType::TYPE_TEXTURE)
+		{
+
+		}
+		else if (tmpShaderProperty->mValueType == ShaderPropertyValueType::TYPE_VERTEXATTRIBPOINT)
+		{
+			ShaderPropertyVertexAttribPointer* tmpShaderPropertyVertexAttribPointer = (ShaderPropertyVertexAttribPointer*)tmpShaderProperty;
+			glVertexAttribPointer(tmpShaderProperty->mID, tmpShaderPropertyVertexAttribPointer->mSize, GL_FLOAT, false, tmpShaderPropertyVertexAttribPointer->mStride, tmpShaderPropertyVertexAttribPointer->mMemoryData);
+		}
+	}
 
 
 	mShader->end();

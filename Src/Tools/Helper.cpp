@@ -196,6 +196,7 @@ const char * Helper::StrCat(const char * varStr1, const char * varStr2)
 	memset(tmpTarget, 0, 128);
 	strcat(tmpTarget, varStr1);
 	strcat(tmpTarget, varStr2);
+	return tmpTarget;
 }
 
 Helper::~Helper(void)
