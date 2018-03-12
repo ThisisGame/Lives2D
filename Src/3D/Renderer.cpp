@@ -3,7 +3,7 @@
 #include"Component/GameObject.h"
 
 
-Renderer::Renderer()
+Renderer::Renderer():mSetProperty(false),mMesh(nullptr),mMaterial(nullptr)
 {
 }
 
@@ -12,22 +12,32 @@ Renderer::~Renderer()
 {
 }
 
-void Renderer::Start()
-{
-	mMaterial = (Material*)mGameObject->GetComponent("Material");
-	
-	MeshFilter* tmpMeshFilter = (MeshFilter*)mGameObject->GetComponent("MeshFilter");
-	mMesh = tmpMeshFilter->GetMesh();
-
-	//对Material设置属性
-	mMaterial->SetVertexAttribPointer("pos", 3, sizeof(Vertex), &(mMesh->GetVertexArray()->Position.x));
-	mMaterial->SetVertexAttribPointer("uv", 2, sizeof(Vertex),&(mMesh->GetVertexArray()->TexCoords.x));
-	mMaterial->SetVertexAttribPointer("normal", 3, sizeof(Vertex), &(mMesh->GetVertexArray()->Normal.x));
-}
-
 void Renderer::Update()
 {
-	Render();
+	if (mMesh == nullptr)
+	{
+		MeshFilter* tmpMeshFilter = (MeshFilter*)mGameObject->GetComponent("MeshFilter");
+		mMesh = tmpMeshFilter->GetMesh();
+	}
+
+	if (mMaterial == nullptr)
+	{
+		mMaterial = (Material*)mGameObject->GetComponent("Material");
+	}
+
+	if (mMesh && mMaterial && !mSetProperty)
+	{
+		mSetProperty = true;
+
+		//对Material设置属性
+		mMaterial->SetVertexAttribPointer("pos", 3, sizeof(Vertex), &(mMesh->GetVertexArray()->Position.x));
+		mMaterial->SetVertexAttribPointer("uv", 2, sizeof(Vertex), &(mMesh->GetVertexArray()->TexCoords.x));
+		mMaterial->SetVertexAttribPointer("normal", 3, sizeof(Vertex), &(mMesh->GetVertexArray()->Normal.x));
+	}
+	else
+	{
+		Render();
+	}
 }
 
 void Renderer::Render()

@@ -84,7 +84,8 @@ public:
 	void OnDisable() ;
 	void OnDestroy() ;
 
-
+public:
+	static std::vector<GameObject*>& GetVectorGameObject();//all gameobject in gameapp
 	
 };
 

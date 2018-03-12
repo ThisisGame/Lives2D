@@ -5,7 +5,7 @@ local SceneWelcom=class()
 function SceneWelcom:ctor()
 	print("SceneWelcom:ctor")
 	self.mUIRoot=nil
-	
+	self.mScene=nil
 	print(ResourcesManager:DataPath())
 end
 
@@ -13,8 +13,11 @@ end
 function SceneWelcom:Init()
 	print("SceneWelcom:Init")
 	
-	local tmpUIParser=UIParser:new()
-	self.mUIRoot=tmpUIParser:CreateUI(ResourcesManager:DataPath() .. "/Resource/UI/UI_Login/UI_Login.xml");
+	local tmpSceneParser=SceneParser:new()
+	self.mScene=tmpSceneParser:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/9000022/9000022.xml");
+	
+	--local tmpUIParser=UIParser:new()
+	--self.mUIRoot=tmpUIParser:CreateUI(ResourcesManager:DataPath() .. "/Resource/UI/UI_Login/UI_Login.xml");
 	
 	-- local tmpGoUIRoot=GameObject:new("UIROOT")
 	-- self.mUIRoot=tmpGoUIRoot:AddComponent("UIRoot")
@@ -87,12 +90,20 @@ end
 --ˢ֡
 function SceneWelcom:Update(varDeltaTime)
 	--print("SceneWelcom:Update " .. varDeltaTime)
-	self.mUIRoot:Update(varDeltaTime)
+	if self.mUIRoot~=nil then
+		self.mUIRoot:Update(varDeltaTime)
+	end
+	
+	if self.mScene~=nil then
+		self.mScene:Update()
+	end
 end
 
 --����
 function SceneWelcom:Draw()
-	self.mUIRoot:Draw()
+	if self.mUIRoot~=nil then
+		self.mUIRoot:Draw()
+	end
 end
 
 return SceneWelcom

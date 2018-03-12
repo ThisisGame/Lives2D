@@ -4,6 +4,8 @@
 #include"Texture.h"
 #include"Tools/Application.h"
 
+IMPLEMENT_DYNCRT_ACTION(MeshFilter)
+
 MeshFilter::MeshFilter():mMesh(nullptr)
 {
 }

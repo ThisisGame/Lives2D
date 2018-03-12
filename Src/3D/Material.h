@@ -11,6 +11,8 @@
 class Material :
 	public Component
 {
+	DECLEAR_DYNCRT_ACTION(Material)
+
 public:
 	Material();
 	~Material();

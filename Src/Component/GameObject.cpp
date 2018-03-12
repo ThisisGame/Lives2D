@@ -4,6 +4,8 @@
 #include"PlayerPrefs/Convert.h"
 #include"PlayerPrefs/TinyXml/tinyxml.h"
 
+
+
 GameObject::GameObject(const char * varName):mGameObjectParent(nullptr)
 {
 	name = varName;
@@ -15,6 +17,11 @@ GameObject::GameObject(const char * varName):mGameObjectParent(nullptr)
 	mTransform->Awake();
 }
 
+std::vector<GameObject*>& GameObject::GetVectorGameObject()
+{
+	static std::vector<GameObject*> sVectorGameObject;
+	return sVectorGameObject;
+}
 
 void GameObject::AddChild(GameObject * varGameObject)
 {

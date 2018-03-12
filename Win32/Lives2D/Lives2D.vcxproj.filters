@@ -297,6 +297,12 @@
     <ClCompile Include="..\..\Src\GLProgram\Shader.cpp">
       <Filter>GLProgram</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Src\3D\SceneParser.cpp">
+      <Filter>3D</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\3D\lua_SceneParse.cpp">
+      <Filter>3D</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\Platform\Windows\WinGame.h">
@@ -466,6 +472,9 @@
     </ClInclude>
     <ClInclude Include="..\..\Src\GLProgram\Shader.h">
       <Filter>GLProgram</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\3D\SceneParser.h">
+      <Filter>3D</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -5,6 +5,8 @@
 class MeshFilter :
 	public Component
 {
+	DECLEAR_DYNCRT_ACTION(MeshFilter)
+
 public:
 	MeshFilter();
 	~MeshFilter();

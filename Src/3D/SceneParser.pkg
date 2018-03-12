@@ -1,0 +1,10 @@
+$#include"SceneParser.h"
+
+class SceneParser
+{
+public:
+	SceneParser();
+	~SceneParser();
+
+	GameObject* CreateScene(const char* varFilePath);
+};

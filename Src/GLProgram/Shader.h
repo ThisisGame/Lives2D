@@ -17,7 +17,6 @@ public:
     static const char* TYPE_INT;
     static const char* TYPE_VERTEXATTRIBPOINT;
     static const char* TYPE_TEXTURE;
-	static const char* 
 };
 
 

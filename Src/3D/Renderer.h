@@ -11,8 +11,6 @@ public:
 	~Renderer();
 
 public:
-	void Start() override;
-
 	void Update() override;
 
 public:
@@ -21,5 +19,8 @@ public:
 protected:
 	Material* mMaterial;
 	Mesh* mMesh;
+
+private:
+	bool mSetProperty;
 };
 

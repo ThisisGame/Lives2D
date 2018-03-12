@@ -11,13 +11,14 @@ public:
 
 public:
 	void Awake() override;
-	void OnEnable() override;
-	void Start() override;
 
 	void Update() override;
 
-	void OnDisable() override;
-	void OnDestroy() override;
+
+public:
+	glm::mat4 GetMatrix_View();
+
+	glm::mat4 GetMatrix_Projection();
 
 private:
 	glm::mat4 mMatrix_View;

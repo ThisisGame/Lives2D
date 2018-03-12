@@ -2,6 +2,8 @@
 #include"Tools/Application.h"
 #include"PlayerPrefs/Convert.h"
 
+
+IMPLEMENT_DYNCRT_ACTION(Material)
 Material::Material()
 {
 	
@@ -15,12 +17,7 @@ Material::~Material()
 void Material::InitWithXml(TiXmlElement * varTiXmlElement)
 {
 	const char* tmpShaderName = varTiXmlElement->Attribute("Shader");
-	const char* tmpTextureFilePath = varTiXmlElement->Attribute("Texture");
-
 	mShader = new Shader();
-
-
-
 
 	const char* tmpVertexShaderPath = Application::GetFullPathWithExtension(tmpShaderName,".vert");
 	const char* tmpFragShaderPath = Application::GetFullPathWithExtension(tmpShaderName,".frag");
@@ -30,8 +27,6 @@ void Material::InitWithXml(TiXmlElement * varTiXmlElement)
 		Helper::LOG("Material::InitWithXml CreateProgram %s Failed",tmpShaderName);
 		return;
 	}
-	mTexture2D->LoadTexture(Application::GetFullPath(tmpTextureFilePath));
-
 
 	TiXmlNode *tmpTiXmlNode = NULL;
 
@@ -43,19 +38,23 @@ void Material::InitWithXml(TiXmlElement * varTiXmlElement)
 		{
 			const char* tmpShaderPropertyName= tmpTiXmlElement->Attribute("Name");
 			const char* tmpShaderPropertyValueType = tmpTiXmlElement->Attribute("ValueType");
-			const char* tmpShaderPropertyValue = tmpTiXmlElement->Attribute("Value");
+			
 
             ShaderProperty* tmpShaderProperty=nullptr;
             if (strcmp(tmpShaderPropertyValueType, ShaderPropertyValueType::TYPE_FLOAT) == 0)
 			{
                 tmpShaderProperty = new ShaderPropertyFloat();
                 ShaderPropertyFloat* tmpShaderPropertyFloat=(ShaderPropertyFloat*)tmpShaderProperty;
+
+				const char* tmpShaderPropertyValue = tmpTiXmlElement->Attribute("Value");
 				tmpShaderPropertyFloat->mValue = Convert::StringToFloat(tmpShaderPropertyValue);
 			}
             else if (strcmp(tmpShaderPropertyValueType, ShaderPropertyValueType::TYPE_INT) == 0)
             {
                 tmpShaderProperty=new ShaderPropertyInt();
                 ShaderPropertyInt* tmpShaderPropertyInt=(ShaderPropertyInt*)tmpShaderProperty;
+
+				const char* tmpShaderPropertyValue = tmpTiXmlElement->Attribute("Value");
                 tmpShaderPropertyInt->mValue=Convert::StringToInt(tmpShaderPropertyValue);
             }
             else if (strcmp(tmpShaderPropertyValueType, ShaderPropertyValueType::TYPE_TEXTURE) == 0)
