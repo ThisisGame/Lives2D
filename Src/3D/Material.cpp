@@ -81,6 +81,33 @@ void Material::InitWithXml(TiXmlElement * varTiXmlElement)
 }
 
 
+void Material::SetVertexAttribPointer(const char * varProperty, int varSize, int varStride, void * varMemoryData)
+{
+	bool tmpFind = false;
+	for (size_t tmpIndex = 0; tmpIndex<mVectorShaderProperty.size(); tmpIndex++)
+	{
+		if (strcmp(mVectorShaderProperty[tmpIndex]->mName, varProperty) == 0)
+		{
+			ShaderPropertyVertexAttribPointer* tmpShaderPropertyVertexAttribPointer = (ShaderPropertyVertexAttribPointer*)mVectorShaderProperty[tmpIndex];
+			tmpShaderPropertyVertexAttribPointer->mSize = varSize;
+			tmpShaderPropertyVertexAttribPointer->mStride = varStride;
+			tmpShaderPropertyVertexAttribPointer->mMemoryData = varMemoryData;
+
+			tmpFind = true;
+			break;
+		}
+	}
+
+	if (tmpFind == false)
+	{
+		ShaderPropertyVertexAttribPointer* tmpShaderPropertyVertexAttribPointer = new ShaderPropertyVertexAttribPointer();
+		tmpShaderPropertyVertexAttribPointer->mName = varProperty;
+		tmpShaderPropertyVertexAttribPointer->mSize = varSize;
+		tmpShaderPropertyVertexAttribPointer->mStride = varStride;
+		tmpShaderPropertyVertexAttribPointer->mMemoryData = varMemoryData;
+	}
+}
+
 void Material::SetFloat(const char* varProperty, float varValue)
 {
     bool tmpFind=false;
@@ -183,5 +210,6 @@ void Material::Render()
 
 	mShader->end();
 }
+
 
 

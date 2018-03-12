@@ -20,6 +20,9 @@ void Renderer::Start()
 	mMesh = tmpMeshFilter->GetMesh();
 
 	//¶ÔMaterialÉèÖÃÊôĞÔ
+	mMaterial->SetVertexAttribPointer("pos", 3, sizeof(Vertex), &(mMesh->GetVertexArray()->Position.x));
+	mMaterial->SetVertexAttribPointer("uv", 2, sizeof(Vertex),&(mMesh->GetVertexArray()->TexCoords.x));
+	mMaterial->SetVertexAttribPointer("normal", 3, sizeof(Vertex), &(mMesh->GetVertexArray()->Normal.x));
 }
 
 void Renderer::Update()
@@ -29,5 +32,5 @@ void Renderer::Update()
 
 void Renderer::Render()
 {
-	
+	mMaterial->Render();
 }

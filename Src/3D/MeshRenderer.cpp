@@ -11,10 +11,3 @@ MeshRenderer::~MeshRenderer()
 {
 
 }
-
-void MeshRenderer::Render()
-{
-	Renderer::Render();
-
-	mMaterial->Render();
-}

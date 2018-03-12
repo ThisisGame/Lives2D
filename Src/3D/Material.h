@@ -19,6 +19,7 @@ public:
 
 	void Render();
 
+	void SetVertexAttribPointer(const char* varProperty, int varSize, int varStride, void* varMemoryData);
 
 	void SetFloat(const char* varProperty, float varValue);
 	
