@@ -4,5 +4,5 @@ varying lowp vec2 m_outUV;
 
 void main()
 {
-    gl_FragColor=texture2D(m_texture,m_outUV);
+    gl_FragColor=vec4(0.5,0.5,1,1);
 }

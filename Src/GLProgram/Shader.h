@@ -17,6 +17,7 @@ public:
     static const char* TYPE_INT;
     static const char* TYPE_VERTEXATTRIBPOINT;
     static const char* TYPE_TEXTURE;
+	static const char* TYPE_UNIFORM_MATRIX4FV;
 };
 
 
@@ -81,14 +82,29 @@ public:
 public:
     const char* mTexturePath;//Texture file short path
     int mActiveTextureIndex;//GL_TEXTURE0+n,get from xml,first is 0,second is 1
-    int mTextureID;
+    GLuint mTextureID;
+};
+
+
+//for glUniformMatrix4fv
+class ShaderPropertyUniformMatrix4fv :public ShaderProperty
+{
+public:
+	ShaderPropertyUniformMatrix4fv():mSize(0)
+	{
+		mValueType = ShaderPropertyValueType::TYPE_UNIFORM_MATRIX4FV;
+	}
+
+public:
+	int mSize;
+	GLfloat* mMemoryData;
 };
 
 
 class Shader
 {
 public:
-	int mProgram;
+	GLuint mProgram;
 	GLuint mVertexShader;
 	GLuint mFragmentShader;
 

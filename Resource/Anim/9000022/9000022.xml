@@ -3,6 +3,7 @@
 	<Component Type="MeshFilter" Mesh="Anim/9000022/9000022.model"/>
 	<Component Type="Material" Shader="Shader/Texture">
 		<ShaderProperty Name="m_texture" ValueType="Texture" ActiveTextureIndex="0" TexturePath="Anim/9000022/9000022.png"/>
+    <ShaderProperty Name="m_mvp" ValueType="UniformMatrix4fv"/>
 	</Component>
 	<Component Type="MeshRenderer"/>
 </GameObject>

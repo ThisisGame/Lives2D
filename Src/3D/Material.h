@@ -21,6 +21,8 @@ public:
 
 	void Render();
 
+	void SetUniformMatrix4fv(const char* varProperty, int varSize, GLfloat* varMemoryData);
+
 	void SetVertexAttribPointer(const char* varProperty, int varSize, int varStride, void* varMemoryData);
 
 	void SetFloat(const char* varProperty, float varValue);

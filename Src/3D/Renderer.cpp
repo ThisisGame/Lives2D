@@ -30,9 +30,9 @@ void Renderer::Update()
 		mSetProperty = true;
 
 		//¶ÔMaterialÉèÖÃÊôÐÔ
-		mMaterial->SetVertexAttribPointer("pos", 3, sizeof(Vertex), &(mMesh->GetVertexArray()->Position.x));
-		mMaterial->SetVertexAttribPointer("uv", 2, sizeof(Vertex), &(mMesh->GetVertexArray()->TexCoords.x));
-		mMaterial->SetVertexAttribPointer("normal", 3, sizeof(Vertex), &(mMesh->GetVertexArray()->Normal.x));
+		mMaterial->SetVertexAttribPointer("m_position", 3, sizeof(Vertex), &(mMesh->GetVertexArray()->Position.x));
+		mMaterial->SetVertexAttribPointer("m_uv", 2, sizeof(Vertex), &(mMesh->GetVertexArray()->TexCoords.x));
+		//mMaterial->SetVertexAttribPointer("normal", 3, sizeof(Vertex), &(mMesh->GetVertexArray()->Normal.x));
 	}
 	else
 	{
