@@ -264,6 +264,10 @@
 		E4140D742053C38A00132D04 /* MeshFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4140D682053C38900132D04 /* MeshFilter.cpp */; };
 		E4140D752053C38A00132D04 /* MeshRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4140D6A2053C38900132D04 /* MeshRenderer.cpp */; };
 		E4140D762053C38A00132D04 /* Renderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4140D6C2053C38900132D04 /* Renderer.cpp */; };
+		E4475772205835E900BAC6B6 /* lua_SceneParse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4475770205835E800BAC6B6 /* lua_SceneParse.cpp */; };
+		E4475773205835E900BAC6B6 /* SceneParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4475771205835E900BAC6B6 /* SceneParser.cpp */; };
+		E4475778205836F400BAC6B6 /* ConvertUTF.c in Sources */ = {isa = PBXBuildFile; fileRef = E44757752058362E00BAC6B6 /* ConvertUTF.c */; };
+		E4475779205836F900BAC6B6 /* ConvertUTFWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E44757772058362E00BAC6B6 /* ConvertUTFWrapper.cpp */; };
 		E4A4178E1FF7E19700F4932B /* autofit.c in Sources */ = {isa = PBXBuildFile; fileRef = E4A415C51FF7E19700F4932B /* autofit.c */; };
 		E4A417931FF7E19700F4932B /* basepic.c in Sources */ = {isa = PBXBuildFile; fileRef = E4A415CC1FF7E19700F4932B /* basepic.c */; };
 		E4A417951FF7E19700F4932B /* ftapi.c in Sources */ = {isa = PBXBuildFile; fileRef = E4A415CF1FF7E19700F4932B /* ftapi.c */; };
@@ -843,6 +847,12 @@
 		E4140D6E2053C38900132D04 /* Texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture.h; sourceTree = "<group>"; };
 		E4140D6F2053C38900132D04 /* TextureType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextureType.h; sourceTree = "<group>"; };
 		E4140D702053C38900132D04 /* Vertex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vertex.h; sourceTree = "<group>"; };
+		E447576F205835E800BAC6B6 /* SceneParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneParser.h; sourceTree = "<group>"; };
+		E4475770205835E800BAC6B6 /* lua_SceneParse.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = lua_SceneParse.cpp; sourceTree = "<group>"; };
+		E4475771205835E900BAC6B6 /* SceneParser.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SceneParser.cpp; sourceTree = "<group>"; };
+		E44757752058362E00BAC6B6 /* ConvertUTF.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ConvertUTF.c; sourceTree = "<group>"; };
+		E44757762058362E00BAC6B6 /* ConvertUTF.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConvertUTF.h; sourceTree = "<group>"; };
+		E44757772058362E00BAC6B6 /* ConvertUTFWrapper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ConvertUTFWrapper.cpp; sourceTree = "<group>"; };
 		E4A415441FF7E17E00F4932B /* ftconfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ftconfig.h; sourceTree = "<group>"; };
 		E4A415451FF7E17E00F4932B /* ftheader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ftheader.h; sourceTree = "<group>"; };
 		E4A415461FF7E17E00F4932B /* ftmodule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ftmodule.h; sourceTree = "<group>"; };
@@ -2077,6 +2087,9 @@
 				E4140D672053C38900132D04 /* Mesh.h */,
 				E4140D682053C38900132D04 /* MeshFilter.cpp */,
 				E4140D692053C38900132D04 /* MeshFilter.h */,
+				E4475770205835E800BAC6B6 /* lua_SceneParse.cpp */,
+				E4475771205835E900BAC6B6 /* SceneParser.cpp */,
+				E447576F205835E800BAC6B6 /* SceneParser.h */,
 				E4140D6A2053C38900132D04 /* MeshRenderer.cpp */,
 				E4140D6B2053C38900132D04 /* MeshRenderer.h */,
 				E4140D6C2053C38900132D04 /* Renderer.cpp */,
@@ -2086,6 +2099,16 @@
 				E4140D702053C38900132D04 /* Vertex.h */,
 			);
 			path = 3D;
+			sourceTree = "<group>";
+		};
+		E44757742058362E00BAC6B6 /* ConvertUTF */ = {
+			isa = PBXGroup;
+			children = (
+				E44757752058362E00BAC6B6 /* ConvertUTF.c */,
+				E44757762058362E00BAC6B6 /* ConvertUTF.h */,
+				E44757772058362E00BAC6B6 /* ConvertUTFWrapper.cpp */,
+			);
+			path = ConvertUTF;
 			sourceTree = "<group>";
 		};
 		E4A412171FF7E03000F4932B /* freetype */ = {
@@ -3029,6 +3052,7 @@
 		E4A41B341FF7F64A00F4932B /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				E44757742058362E00BAC6B6 /* ConvertUTF */,
 				E4A41B351FF7F64A00F4932B /* Application.cpp */,
 				E4A41B361FF7F64A00F4932B /* Application.h */,
 				E4A41B371FF7F64A00F4932B /* Application.pkg */,
@@ -3116,11 +3140,13 @@
 			files = (
 				E4A41B431FF7F64B00F4932B /* Font.cpp in Sources */,
 				E4A4183F1FF7E19800F4932B /* t1decode.c in Sources */,
+				E4475778205836F400BAC6B6 /* ConvertUTF.c in Sources */,
 				E4A417981FF7E19700F4932B /* ftbdf.c in Sources */,
 				E4A418A21FF7EA4700F4932B /* BitmapAccess.cpp in Sources */,
 				C6CFEEA5201B4F54009FAFD0 /* common.cpp in Sources */,
 				C6CFEEA6201B4F56009FAFD0 /* common_platform.mm in Sources */,
 				204BDB5B1F93B07C009D14C7 /* rdtarga.c in Sources */,
+				E4475779205836F900BAC6B6 /* ConvertUTFWrapper.cpp in Sources */,
 				204BD6E71F93A8EE009D14C7 /* lfunc.c in Sources */,
 				E4A418331FF7E19800F4932B /* pfrobjs.c in Sources */,
 				E4A418311FF7E19800F4932B /* pfrgload.c in Sources */,
@@ -3181,6 +3207,7 @@
 				E4A4183B1FF7E19800F4932B /* psconv.c in Sources */,
 				C6AD45F020319EA600A4ED2E /* GameObject.cpp in Sources */,
 				E4A417A61FF7E19800F4932B /* ftmm.c in Sources */,
+				E4475772205835E900BAC6B6 /* lua_SceneParse.cpp in Sources */,
 				E4A41B521FF7F64B00F4932B /* UILabel.cpp in Sources */,
 				204BDB431F93B07C009D14C7 /* jidctint.c in Sources */,
 				204BDCED1F93B07D009D14C7 /* inffast.c in Sources */,
@@ -3323,6 +3350,7 @@
 				E4A4185E1FF7E19900F4932B /* ttbdf.c in Sources */,
 				C6AD460620319EEC00A4ED2E /* lua_UIImage.cpp in Sources */,
 				204BD6E11F93A8EE009D14C7 /* lbaselib.c in Sources */,
+				E4475773205835E900BAC6B6 /* SceneParser.cpp in Sources */,
 				204BDC481F93B07C009D14C7 /* Exif.cpp in Sources */,
 				204BDB1F1F93B07C009D14C7 /* jccolor.c in Sources */,
 				204BDB4D1F93B07C009D14C7 /* jquant2.c in Sources */,

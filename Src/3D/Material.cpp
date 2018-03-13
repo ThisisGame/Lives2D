@@ -267,6 +267,7 @@ void Material::Render()
 		glm::vec3(tmpRectRight, tmpRectTop, 0.0f),
 		glm::vec3(tmpRectLeft, tmpRectTop, 0.0f),
 	};
+    
 
 	glm::vec2 uv[] =
 	{
