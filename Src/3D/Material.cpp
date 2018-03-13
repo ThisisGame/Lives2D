@@ -232,7 +232,7 @@ void Material::Render()
 {
 	glm::mat4 trans = glm::translate(glm::vec3(mTransform->GetPosition().mX, mTransform->GetPosition().mY, mTransform->GetPosition().mZ));
 	glm::mat4 rotation = glm::eulerAngleYXZ(glm::radians(0.0f), glm::radians(0.0f), glm::radians(0.0f));
-	glm::mat4 scale = glm::scale(glm::vec3(100.0f, 100.0f, 100.0f));
+	glm::mat4 scale = glm::scale(glm::vec3(1.0f, 1.0f, 1.0f));
 	glm::mat4 model = trans*scale*rotation;
 
 	glm::mat4 view = glm::lookAt(glm::vec3(0, 0, 10), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0));
@@ -245,6 +245,57 @@ void Material::Render()
 	SetUniformMatrix4fv("m_mvp", 1, &mvp[0][0]);
 
 	mShader->begin();
+
+
+
+
+
+
+
+	float tmpRectRight = (float)100;
+	float tmpRectLeft = -tmpRectRight;
+	float tmpRectTop = (float)300;
+	float tmpRectBottom = -tmpRectTop;
+
+	glm::vec3 pos[] =
+	{
+		glm::vec3(tmpRectLeft, tmpRectBottom, 0.0f),
+		glm::vec3(tmpRectRight, tmpRectBottom, 0.0f),
+		glm::vec3(tmpRectRight, tmpRectTop, 0.0f),
+
+		glm::vec3(tmpRectLeft, tmpRectBottom, 0.0f),
+		glm::vec3(tmpRectRight, tmpRectTop, 0.0f),
+		glm::vec3(tmpRectLeft, tmpRectTop, 0.0f),
+	};
+
+	glm::vec2 uv[] =
+	{
+		//front
+		glm::vec2(0, 0),
+		glm::vec2(1, 0),
+		glm::vec2(1, 1),
+
+		glm::vec2(0, 0),
+		glm::vec2(1, 1),
+		glm::vec2(0, 1),
+	};
+
+	glm::vec4 color[] =
+	{
+		glm::vec4(1, 1, 1, 1),
+		glm::vec4(1, 1, 1, 1),
+		glm::vec4(1, 1, 1,1),
+
+		glm::vec4(1, 1, 1, 1),
+		glm::vec4(1, 1, 1, 1),
+		glm::vec4(1, 1, 1, 1),
+	};
+
+
+
+
+
+
 
 
     //ÉèÖÃ ShaderÊôÐÔ
@@ -262,21 +313,34 @@ void Material::Render()
 		else if (strcmp(tmpShaderProperty->mValueType,ShaderPropertyValueType::TYPE_UNIFORM_MATRIX4FV)==0)
 		{
 			ShaderPropertyUniformMatrix4fv* tmpShaderPropertyUniformMatrix4fv = (ShaderPropertyUniformMatrix4fv*)tmpShaderProperty;
-			glUniformMatrix4fv(tmpShaderProperty->mID, tmpShaderPropertyUniformMatrix4fv->mSize, false, tmpShaderPropertyUniformMatrix4fv->mMemoryData);
+			//glUniformMatrix4fv(tmpShaderProperty->mID, tmpShaderPropertyUniformMatrix4fv->mSize, false, tmpShaderPropertyUniformMatrix4fv->mMemoryData);
+			glUniformMatrix4fv(tmpShaderProperty->mID, 1, false, &mvp[0][0]);
 		}
 		else if (strcmp(tmpShaderProperty->mValueType , ShaderPropertyValueType::TYPE_TEXTURE)==0)
 		{
-			ShaderPropertyTexture* tmpShaderPropertyTexture = (ShaderPropertyTexture*)tmpShaderProperty;
-			glUniform1i(tmpShaderPropertyTexture->mID, tmpShaderPropertyTexture->mActiveTextureIndex);
-			glActiveTexture(GL_TEXTURE0 + tmpShaderPropertyTexture->mActiveTextureIndex);
-			glBindTexture(GL_TEXTURE_2D, tmpShaderPropertyTexture->mTextureID);
+			//ShaderPropertyTexture* tmpShaderPropertyTexture = (ShaderPropertyTexture*)tmpShaderProperty;
+			//glUniform1i(tmpShaderPropertyTexture->mID, tmpShaderPropertyTexture->mActiveTextureIndex);
+			//glActiveTexture(GL_TEXTURE0 + tmpShaderPropertyTexture->mActiveTextureIndex);
+			//glBindTexture(GL_TEXTURE_2D, tmpShaderPropertyTexture->mTextureID);
 		}
 		else if (strcmp(tmpShaderProperty->mValueType ,ShaderPropertyValueType::TYPE_VERTEXATTRIBPOINT)==0)
 		{
 			ShaderPropertyVertexAttribPointer* tmpShaderPropertyVertexAttribPointer = (ShaderPropertyVertexAttribPointer*)tmpShaderProperty;
 
 			glEnableVertexAttribArray(tmpShaderPropertyVertexAttribPointer->mID);
-			glVertexAttribPointer(tmpShaderProperty->mID, tmpShaderPropertyVertexAttribPointer->mSize, GL_FLOAT, false, tmpShaderPropertyVertexAttribPointer->mStride, tmpShaderPropertyVertexAttribPointer->mMemoryData);
+			//glVertexAttribPointer(tmpShaderProperty->mID, tmpShaderPropertyVertexAttribPointer->mSize, GL_FLOAT, false, tmpShaderPropertyVertexAttribPointer->mStride, tmpShaderPropertyVertexAttribPointer->mMemoryData);
+			if (strcmp(tmpShaderPropertyVertexAttribPointer->mName, "m_position"))
+			{
+				glVertexAttribPointer(tmpShaderProperty->mID, 3, GL_FLOAT, false, sizeof(glm::vec3), pos);
+			}
+			else if (strcmp(tmpShaderPropertyVertexAttribPointer->mName, "m_color"))
+			{
+				glVertexAttribPointer(tmpShaderProperty->mID, 4, GL_FLOAT, false, sizeof(glm::vec4), color);
+			}
+			else if (strcmp(tmpShaderPropertyVertexAttribPointer->mName, "m_uv"))
+			{
+				glVertexAttribPointer(tmpShaderProperty->mID, 2, GL_FLOAT, false, sizeof(glm::vec2), uv);
+			}
 		}
 	}
 

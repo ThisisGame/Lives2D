@@ -176,7 +176,7 @@ public:
 	//��ʼ��;
 	void onInit()
 	{
-		glClearColor(1, 1, 1, 1);
+		glClearColor(0, 0, 0, 1);
 
 
 		//���ֻ������ �������� ����ֺڱ�

@@ -94,15 +94,17 @@ function SceneWelcom:Update(varDeltaTime)
 		self.mUIRoot:Update(varDeltaTime)
 	end
 	
-	if self.mScene~=nil then
-		self.mScene:Update()
-	end
+	
 end
 
 --����
 function SceneWelcom:Draw()
 	if self.mUIRoot~=nil then
 		self.mUIRoot:Draw()
+	end
+	
+	if self.mScene~=nil then
+		self.mScene:Update()
 	end
 end
 
