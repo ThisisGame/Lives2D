@@ -58,14 +58,12 @@ void MeshFilter::LoadMesh(const char * varMeshPath)
 
 		//计算IndexCount;
 		int tmpIndexCount = tmpIndicesMemSize / sizeof(int);
+		tmpMesh->SetVertexIndicesSize(tmpIndexCount);
 
 		//读取index数据;
-		for (int tmpIndexIndex = 0; tmpIndexIndex < tmpIndexCount; tmpIndexIndex++)
-		{
-			int index = 0;
-			tmpStream.read((char*)(&index), sizeof(index));
-			//mesh.indices.push_back(index);
-		}
+		int* tmpVertexIndices = (int*)malloc(tmpIndicesMemSize);
+		tmpStream.read((char*)tmpVertexIndices, tmpIndicesMemSize);
+		tmpMesh->PushVertexIndicesArray(tmpVertexIndices);
 
 		//读取TextureMemSize;
 		int tmpTextureMemSize = 0;

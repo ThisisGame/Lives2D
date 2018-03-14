@@ -14,7 +14,7 @@ function SceneWelcom:Init()
 	print("SceneWelcom:Init")
 	
 	local tmpSceneParser=SceneParser:new()
-	self.mScene=tmpSceneParser:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/9000022/9000022.xml");
+	self.mScene=tmpSceneParser:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/1000000/1000000.xml");
 	
 	--local tmpUIParser=UIParser:new()
 	--self.mUIRoot=tmpUIParser:CreateUI(ResourcesManager:DataPath() .. "/Resource/UI/UI_Login/UI_Login.xml");
