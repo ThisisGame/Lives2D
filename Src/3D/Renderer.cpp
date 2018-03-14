@@ -33,8 +33,6 @@ void Renderer::Update()
 		mMaterial->SetVertexAttribPointer("m_position", 3, sizeof(Vertex), &(mMesh->GetVertexArray()->Position.x));
 		mMaterial->SetVertexAttribPointer("m_uv", 2, sizeof(Vertex), &(mMesh->GetVertexArray()->TexCoords.x));
 		//mMaterial->SetVertexAttribPointer("normal", 3, sizeof(Vertex), &(mMesh->GetVertexArray()->Normal.x));
-
-		mMaterial->SetVertexIndices(mMesh->GetVertexIndicesSize(), mMesh->GetVertexIndices());
 	}
 	else
 	{

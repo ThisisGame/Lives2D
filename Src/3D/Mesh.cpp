@@ -25,23 +25,3 @@ Vertex * Mesh::GetVertexArray()
 {
 	return mVertexArray;
 }
-
-void Mesh::SetVertexIndicesSize(int varVertexIndicesSize)
-{
-	mVertexIndicesSize = varVertexIndicesSize;
-}
-
-void Mesh::PushVertexIndicesArray(int * varVertexIndices)
-{
-	mVertexIndices = varVertexIndices;
-}
-
-int Mesh::GetVertexIndicesSize()
-{
-	return mVertexIndicesSize;
-}
-
-int * Mesh::GetVertexIndices()
-{
-	return mVertexIndices;
-}

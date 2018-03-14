@@ -227,17 +227,12 @@ void Material::SetTexture(const char* varProperty, const char* varTexturePath)
     }
 }
 
-void Material::SetVertexIndices(int varSize, int* varVertexIndices)
-{
-	mVertexIndicesSize = varSize;
-	mVertexIndices = varVertexIndices;
-}
 
 void Material::Render()
 {
 	glm::mat4 trans = glm::translate(glm::vec3(mTransform->GetPosition().mX, mTransform->GetPosition().mY, mTransform->GetPosition().mZ));
 	glm::mat4 rotation = glm::eulerAngleYXZ(glm::radians(0.0f), glm::radians(0.0f), glm::radians(0.0f));
-	glm::mat4 scale = glm::scale(glm::vec3(mTransform->GetLocalScale().mX, mTransform->GetLocalScale().mY, mTransform->GetLocalScale().mZ));
+	glm::mat4 scale = glm::scale(glm::vec3(1.0f, 1.0f, 1.0f));
 	glm::mat4 model = trans*scale*rotation;
 
 	glm::mat4 view = glm::lookAt(glm::vec3(0, 0, 10), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0));
@@ -250,6 +245,44 @@ void Material::Render()
 	SetUniformMatrix4fv("m_mvp", 1, &mvp[0][0]);
 
 	mShader->begin();
+
+
+    float tmpRectRight = (float)500 / 2;
+    float tmpRectLeft = -tmpRectRight;
+    float tmpRectTop = (float)400 / 2;
+    float tmpRectBottom = -tmpRectTop;
+
+	glm::vec3 pos[] =
+	{
+		glm::vec3(tmpRectLeft, tmpRectBottom, 0.0f),
+		glm::vec3(tmpRectRight, tmpRectBottom, 0.0f),
+		glm::vec3(tmpRectRight, tmpRectTop, 0.0f),
+
+		glm::vec3(tmpRectLeft, tmpRectBottom, 0.0f),
+		glm::vec3(tmpRectRight, tmpRectTop, 0.0f),
+		glm::vec3(tmpRectLeft, tmpRectTop, 0.0f),
+	};
+    
+
+    glm::vec2 uv[] =
+    {
+        //front
+        glm::vec2(0, 0),
+        glm::vec2(1, 0),
+        glm::vec2(1, 1),
+
+        glm::vec2(0, 0),
+        glm::vec2(1, 1),
+        glm::vec2(0, 1),
+    };
+
+
+
+
+
+
+
+
 
     //…Ë÷√ Shader Ù–‘
 	for (size_t tmpShaderPropertyIndex = 0; tmpShaderPropertyIndex < mVectorShaderProperty.size(); tmpShaderPropertyIndex++)
@@ -280,15 +313,19 @@ void Material::Render()
 			ShaderPropertyVertexAttribPointer* tmpShaderPropertyVertexAttribPointer = (ShaderPropertyVertexAttribPointer*)tmpShaderProperty;
 
 			glEnableVertexAttribArray(tmpShaderPropertyVertexAttribPointer->mID);
-			glVertexAttribPointer(tmpShaderProperty->mID, tmpShaderPropertyVertexAttribPointer->mSize, GL_FLOAT, false, tmpShaderPropertyVertexAttribPointer->mStride, tmpShaderPropertyVertexAttribPointer->mMemoryData);
+			//glVertexAttribPointer(tmpShaderProperty->mID, tmpShaderPropertyVertexAttribPointer->mSize, GL_FLOAT, false, tmpShaderPropertyVertexAttribPointer->mStride, tmpShaderPropertyVertexAttribPointer->mMemoryData);
+			if (strcmp(tmpShaderPropertyVertexAttribPointer->mName, "m_position")==0)
+			{
+				glVertexAttribPointer(tmpShaderProperty->mID, 3, GL_FLOAT, false, sizeof(glm::vec3), pos);
+			}
+            else if (strcmp(tmpShaderPropertyVertexAttribPointer->mName, "m_uv")==0)
+            {
+                glVertexAttribPointer(tmpShaderProperty->mID, 2, GL_FLOAT, false, sizeof(glm::vec2), uv);
+            }
 		}
 	}
 
-	//glDrawArrays(GL_TRIANGLES, 0, 6);
-
-	//glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, &indices[0]);
-
-	glDrawElements(GL_TRIANGLES, 6, GL_INT, &mVertexIndices[0]);
+	glDrawArrays(GL_TRIANGLES, 0, 6);
 
 	for (size_t tmpShaderPropertyIndex = 0; tmpShaderPropertyIndex < mVectorShaderProperty.size(); tmpShaderPropertyIndex++)
 	{

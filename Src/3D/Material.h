@@ -30,15 +30,15 @@ public:
 
 	void SetTexture(const char* varProperty, const char* varTexturePath);
 
-	void SetVertexIndices(int varSize,int* varVertexIndices);
+	
+
 
 private:
 	Shader* mShader;
 
+	Texture2D* mTexture2D;
+
 	//需要用键值对存储属性和值
 	std::vector<ShaderProperty*> mVectorShaderProperty;
-
-	int mVertexIndicesSize;
-	int* mVertexIndices;
 };
 
