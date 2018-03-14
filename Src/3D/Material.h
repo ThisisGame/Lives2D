@@ -30,7 +30,7 @@ public:
 
 	void SetTexture(const char* varProperty, const char* varTexturePath);
 
-	void SetVertexIndices(int varSize,int* varVertexIndices);
+	void SetVertexIndices(int varSize,unsigned short* varVertexIndices);
 
 private:
 	Shader* mShader;
@@ -39,6 +39,6 @@ private:
 	std::vector<ShaderProperty*> mVectorShaderProperty;
 
 	int mVertexIndicesSize;
-	int* mVertexIndices;
+	GLushort* mVertexIndices;
 };
 

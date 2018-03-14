@@ -17,16 +17,16 @@ public:
 
 	void SetVertexIndicesSize(int varVertexIndicesSize);
 
-	void PushVertexIndicesArray(int* varVertexIndices);
+	void PushVertexIndicesArray(unsigned short* varVertexIndices);
 
 	int GetVertexIndicesSize();
-	int* GetVertexIndices();
+	unsigned short* GetVertexIndices();
 
 private:
 	int mVertexCount;
 	Vertex* mVertexArray;
 
 	int mVertexIndicesSize;
-	int* mVertexIndices;
+	unsigned short* mVertexIndices;
 };
 

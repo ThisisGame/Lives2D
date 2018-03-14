@@ -227,22 +227,25 @@ void Material::SetTexture(const char* varProperty, const char* varTexturePath)
     }
 }
 
-void Material::SetVertexIndices(int varSize, int* varVertexIndices)
+void Material::SetVertexIndices(int varSize, unsigned short* varVertexIndices)
 {
 	mVertexIndicesSize = varSize;
 	mVertexIndices = varVertexIndices;
 }
 
+float tmpRotateY = 0;
+
 void Material::Render()
 {
+	//tmpRotateY += 1;
 	glm::mat4 trans = glm::translate(glm::vec3(mTransform->GetPosition().mX, mTransform->GetPosition().mY, mTransform->GetPosition().mZ));
-	glm::mat4 rotation = glm::eulerAngleYXZ(glm::radians(0.0f), glm::radians(0.0f), glm::radians(0.0f));
+	glm::mat4 rotation = glm::eulerAngleYXZ(glm::radians(tmpRotateY), glm::radians(-90.0f), glm::radians(tmpRotateY));
 	glm::mat4 scale = glm::scale(glm::vec3(mTransform->GetLocalScale().mX, mTransform->GetLocalScale().mY, mTransform->GetLocalScale().mZ));
 	glm::mat4 model = trans*scale*rotation;
 
-	glm::mat4 view = glm::lookAt(glm::vec3(0, 0, 10), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0));
+	glm::mat4 view = glm::lookAt(glm::vec3(0, 0, 5000), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0));
 	//正交摄像机
-	glm::mat4 proj = glm::ortho(-(float)Application::DesignWidth / 2, (float)Application::DesignWidth / 2, -(float)Application::DesignHeight / 2, (float)Application::DesignHeight / 2, 0.0f, 100.0f);
+	glm::mat4 proj = glm::ortho(-(float)Application::DesignWidth / 2, (float)Application::DesignWidth / 2, -(float)Application::DesignHeight / 2, (float)Application::DesignHeight / 2, 0.0f, 10000.0f);
 
 
 	glm::mat4 mvp = proj*view*model;
@@ -250,6 +253,14 @@ void Material::Render()
 	SetUniformMatrix4fv("m_mvp", 1, &mvp[0][0]);
 
 	mShader->begin();
+
+	//开启深度测试;
+	glEnable(GL_DEPTH_TEST);
+	glDepthFunc(GL_LESS);
+
+	//开启Alpha测试;
+	//glEnable(GL_BLEND);
+	//glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
     //设置 Shader属性
 	for (size_t tmpShaderPropertyIndex = 0; tmpShaderPropertyIndex < mVectorShaderProperty.size(); tmpShaderPropertyIndex++)
@@ -288,7 +299,7 @@ void Material::Render()
 
 	//glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, &indices[0]);
 
-	glDrawElements(GL_TRIANGLES, 6, GL_INT, &mVertexIndices[0]);
+	glDrawElements(GL_TRIANGLES, mVertexIndicesSize, GL_UNSIGNED_SHORT, mVertexIndices);
 
 	for (size_t tmpShaderPropertyIndex = 0; tmpShaderPropertyIndex < mVectorShaderProperty.size(); tmpShaderPropertyIndex++)
 	{

@@ -31,7 +31,7 @@ void Mesh::SetVertexIndicesSize(int varVertexIndicesSize)
 	mVertexIndicesSize = varVertexIndicesSize;
 }
 
-void Mesh::PushVertexIndicesArray(int * varVertexIndices)
+void Mesh::PushVertexIndicesArray(unsigned short * varVertexIndices)
 {
 	mVertexIndices = varVertexIndices;
 }
@@ -41,7 +41,7 @@ int Mesh::GetVertexIndicesSize()
 	return mVertexIndicesSize;
 }
 
-int * Mesh::GetVertexIndices()
+unsigned short * Mesh::GetVertexIndices()
 {
 	return mVertexIndices;
 }

@@ -57,11 +57,11 @@ void MeshFilter::LoadMesh(const char * varMeshPath)
 		tmpStream.read((char*)(&tmpIndicesMemSize), sizeof(int));
 
 		//计算IndexCount;
-		int tmpIndexCount = tmpIndicesMemSize / sizeof(int);
+		int tmpIndexCount = tmpIndicesMemSize / sizeof(unsigned short);
 		tmpMesh->SetVertexIndicesSize(tmpIndexCount);
 
 		//读取index数据;
-		int* tmpVertexIndices = (int*)malloc(tmpIndicesMemSize);
+		unsigned short* tmpVertexIndices = (unsigned short*)malloc(tmpIndicesMemSize);
 		tmpStream.read((char*)tmpVertexIndices, tmpIndicesMemSize);
 		tmpMesh->PushVertexIndicesArray(tmpVertexIndices);
 

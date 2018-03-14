@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<GameObject Name="9000022"  Position="(0,0,0)" Rotation="(0,0,0)" Scale="(1,1,1)">
+<GameObject Name="9000022"  Position="(0,0,0)" Rotation="(0,0,0)" Scale="(200,200,200)">
 	<Component Type="MeshFilter" Mesh="Anim/9000022/9000022.model"/>
 	<Component Type="Material" Shader="Shader/Texture">
 		<ShaderProperty Name="m_texture" ValueType="Texture" ActiveTextureIndex="0" TexturePath="Anim/9000022/9000022.png"/>
-		<ShaderProperty Name="m_texture_Gray" ValueType="Texture" ActiveTextureIndex="1" TexturePath="UI/UI_Login/login_button_1.png"/>
     	<ShaderProperty Name="m_mvp" ValueType="UniformMatrix4fv"/>
     	<ShaderProperty Name="m_position" ValueType="VertexAttributePoint"/>
     	<ShaderProperty Name="m_uv" ValueType="VertexAttributePoint"/>
