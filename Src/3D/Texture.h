@@ -12,5 +12,5 @@ class Texture
 public:
 	int id;
 	TextureType texturetype;
-	char path[50];
+	char path[1024];
 };
