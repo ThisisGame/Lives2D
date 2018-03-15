@@ -233,17 +233,16 @@ void Material::SetVertexIndices(int varSize, unsigned short* varVertexIndices)
 	mVertexIndices = varVertexIndices;
 }
 
-float tmpRotateY = 0;
 
 void Material::Render()
 {
 	//tmpRotateY += 1;
 	glm::mat4 trans = glm::translate(glm::vec3(mTransform->GetPosition().mX, mTransform->GetPosition().mY, mTransform->GetPosition().mZ));
-	glm::mat4 rotation = glm::eulerAngleYXZ(glm::radians(tmpRotateY), glm::radians(-90.0f), glm::radians(tmpRotateY));
+	glm::mat4 rotation = glm::eulerAngleYXZ(glm::radians(0.0f), glm::radians(0.0f), glm::radians(0.0f));
 	glm::mat4 scale = glm::scale(glm::vec3(mTransform->GetLocalScale().mX, mTransform->GetLocalScale().mY, mTransform->GetLocalScale().mZ));
 	glm::mat4 model = trans*scale*rotation;
 
-	glm::mat4 view = glm::lookAt(glm::vec3(0, 0, 5000), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0));
+	glm::mat4 view = glm::lookAt(glm::vec3(0, 0, 10), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0));
 	//正交摄像机
 	glm::mat4 proj = glm::ortho(-(float)Application::DesignWidth / 2, (float)Application::DesignWidth / 2, -(float)Application::DesignHeight / 2, (float)Application::DesignHeight / 2, 0.0f, 10000.0f);
 
@@ -257,6 +256,11 @@ void Material::Render()
 	//开启深度测试;
 	glEnable(GL_DEPTH_TEST);
 	glDepthFunc(GL_LESS);
+
+	glEnable(GL_CULL_FACE);
+	glCullFace(GL_BACK);
+	glFrontFace(GL_CCW);
+	
 
 	//开启Alpha测试;
 	//glEnable(GL_BLEND);
