@@ -303,6 +303,9 @@
     <ClCompile Include="..\..\Src\3D\lua_SceneParse.cpp">
       <Filter>3D</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Src\3D\lua_Camera.cpp">
+      <Filter>3D</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\Platform\Windows\WinGame.h">

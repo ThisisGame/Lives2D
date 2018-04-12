@@ -6,6 +6,7 @@
 #include<glm/gtx/transform2.hpp>
 #include<glm/gtx/euler_angles.hpp>
 #include"Component/Transform.h"
+#include"Camera.h"
 
 IMPLEMENT_DYNCRT_ACTION(Material)
 Material::Material()
@@ -236,16 +237,21 @@ void Material::SetVertexIndices(int varSize, unsigned short* varVertexIndices)
 float tmpRotateY = 0;
 void Material::Render()
 {
+	if (Camera::mainCamera == nullptr)
+	{
+		return;
+	}
+
 	tmpRotateY += 1;
 	glm::mat4 trans = glm::translate(glm::vec3(mTransform->GetPosition().mX, mTransform->GetPosition().mY, mTransform->GetPosition().mZ));
 	glm::mat4 rotation = glm::eulerAngleYXZ(glm::radians(tmpRotateY), glm::radians(mTransform->GetLocalRotation().mX), glm::radians(mTransform->GetLocalRotation().mZ));
 	glm::mat4 scale = glm::scale(glm::vec3(mTransform->GetLocalScale().mX, mTransform->GetLocalScale().mY, mTransform->GetLocalScale().mZ));
 	glm::mat4 model = trans*scale*rotation;
 
-	glm::mat4 view = glm::lookAt(glm::vec3(0, 0, 10), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0));
+	glm::mat4 view = Camera::mainCamera->GetMatrix_View();// glm::lookAt(glm::vec3(0, 0, 10), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0));
 	//Õý½»ÉãÏñ»ú
 	//glm::mat4 proj = glm::ortho(-(float)Application::DesignWidth / 2, (float)Application::DesignWidth / 2, -(float)Application::DesignHeight / 2, (float)Application::DesignHeight / 2, 0.0f, 10000.0f);
-	glm::mat4 proj = glm::perspective(glm::radians(45.0f), (float)Application::DesignWidth/ (float)Application::DesignHeight, 0.3f, 1000.0f);
+	glm::mat4 proj = Camera::mainCamera->GetMatrix_Projection();// glm::perspective(glm::radians(45.0f), (float)Application::DesignWidth / (float)Application::DesignHeight, 0.3f, 1000.0f);
 
 	glm::mat4 mvp = proj*view*model;
 

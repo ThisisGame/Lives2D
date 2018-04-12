@@ -1,10 +1,14 @@
 #pragma once
-#include "Component/Behavior.h"
+#include "Component/Component.h"
 #include"glm/glm.hpp"
 
+#include<vector>
+
 class Camera :
-	public Behavior
+	public Component
 {
+	DECLEAR_DYNCRT_ACTION(Camera)
+
 public:
 	Camera();
 	~Camera();
@@ -23,5 +27,10 @@ public:
 private:
 	glm::mat4 mMatrix_View;
 	glm::mat4 mMatrix_Projection;//Perspective/Orthographic
+
+
+public:
+	static std::vector<Camera*> sVectorCamera;
+	static Camera* mainCamera;
 };
 

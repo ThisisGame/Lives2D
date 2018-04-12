@@ -13,8 +13,11 @@ end
 function SceneWelcom:Init()
 	print("SceneWelcom:Init")
 	
+	local tmpGoCamera=GameObject:new("sceneCamera")
+	self.mCamera=tmpGoCamera:AddComponent("Camera")
+	
 	local tmpSceneParser=SceneParser:new()
-	self.mScene=tmpSceneParser:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/1000001/1000001.xml");
+	self.mScene=tmpSceneParser:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/Cube/Cube.xml");
 	
 	--local tmpUIParser=UIParser:new()
 	--self.mUIRoot=tmpUIParser:CreateUI(ResourcesManager:DataPath() .. "/Resource/UI/UI_Login/UI_Login.xml");
@@ -94,6 +97,9 @@ function SceneWelcom:Update(varDeltaTime)
 		self.mUIRoot:Update(varDeltaTime)
 	end
 	
+	if self.mCamera~=nil then
+		self.mCamera:Update()
+	end
 	
 end
 

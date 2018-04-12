@@ -382,6 +382,9 @@ public:
 
 		case WM_MOUSEWHEEL:
 		{
+			short tmpZDelta = (short)HIWORD(wParam);
+
+			Application::MouseWheel = Application::MouseWheel - tmpZDelta;
 		}
 		break;
 

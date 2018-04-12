@@ -81,6 +81,7 @@
     <ClCompile Include="..\..\..\Lives2D_Depends\FMOD\Windows\common\common.cpp" />
     <ClCompile Include="..\..\..\Lives2D_Depends\FMOD\Windows\common\common_platform.cpp" />
     <ClCompile Include="..\..\Src\3D\Camera.cpp" />
+    <ClCompile Include="..\..\Src\3D\lua_Camera.cpp" />
     <ClCompile Include="..\..\Src\3D\lua_SceneParse.cpp" />
     <ClCompile Include="..\..\Src\3D\Material.cpp" />
     <ClCompile Include="..\..\Src\3D\Mesh.cpp" />

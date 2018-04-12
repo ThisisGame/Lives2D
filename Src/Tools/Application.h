@@ -25,6 +25,8 @@ public:
     
     static bool isRunning;
 
+	static short MouseWheel;//Êó±ê¹öÂÖ
+
 public:
 	static void SetDataPath(const char* varDataPath)
 	{
