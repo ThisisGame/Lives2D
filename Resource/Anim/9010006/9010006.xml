@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<GameObject Name="9010006"  Position="(0,0,0)" Rotation="(0,0,0)" Scale="(1,1,1)">
+	<Component Type="MeshFilter" Mesh="Anim/9010006/9010006.model"/>
+	<Component Type="Material" Shader="Shader/Texture">
+		<ShaderProperty Name="m_texture" ValueType="Texture" ActiveTextureIndex="0" TexturePath="Anim/9010006/9010006.png"/>
+    	<ShaderProperty Name="m_mvp" ValueType="UniformMatrix4fv"/>
+    	<ShaderProperty Name="m_position" ValueType="VertexAttributePoint"/>
+    	<ShaderProperty Name="m_uv" ValueType="VertexAttributePoint"/>
+	</Component>
+	<Component Type="MeshRenderer"/>
+</GameObject>

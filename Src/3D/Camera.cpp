@@ -31,7 +31,7 @@ void Camera::Awake()
 
 void Camera::Update()
 {
-	mMatrix_View= glm::lookAt(glm::vec3(0, 0, 10 + Application::MouseWheel/12.0), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0));
+	mMatrix_View= glm::lookAt(glm::vec3(0, 0, 10 + Application::MouseWheel/120.0), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0));
 	mMatrix_Projection = glm::perspective(glm::radians(45.0f), (float)Application::DesignWidth / (float)Application::DesignHeight, 0.3f, 1000.0f);
 }
 
