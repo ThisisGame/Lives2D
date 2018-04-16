@@ -89,6 +89,7 @@
     <ClCompile Include="..\..\Src\3D\MeshRenderer.cpp" />
     <ClCompile Include="..\..\Src\3D\Renderer.cpp" />
     <ClCompile Include="..\..\Src\3D\SceneParser.cpp" />
+    <ClCompile Include="..\..\Src\3D\SkinMeshRenderer.cpp" />
     <ClCompile Include="..\..\Src\Audio\AudioSource.cpp" />
     <ClCompile Include="..\..\Src\Audio\lua_AudioSource.cpp" />
     <ClCompile Include="..\..\Src\Component\Behavior.cpp" />
@@ -172,6 +173,7 @@
     <ClInclude Include="..\..\Src\3D\MeshRenderer.h" />
     <ClInclude Include="..\..\Src\3D\Renderer.h" />
     <ClInclude Include="..\..\Src\3D\SceneParser.h" />
+    <ClInclude Include="..\..\Src\3D\SkinMeshRenderer.h" />
     <ClInclude Include="..\..\Src\3D\Texture.h" />
     <ClInclude Include="..\..\Src\3D\TextureType.h" />
     <ClInclude Include="..\..\Src\3D\Vertex.h" />
