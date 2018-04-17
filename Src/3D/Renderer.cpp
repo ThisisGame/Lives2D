@@ -38,6 +38,11 @@ void Renderer::Update()
 	}
 	else
 	{
+		if (mMesh->GetVertexPositionAnim() != nullptr)
+		{
+			mMaterial->SetVertexAttribPointer("m_position", 3, sizeof(glm::vec3), mMesh->GetVertexPositionAnim());
+		}
+
 		Render();
 	}
 }

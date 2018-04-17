@@ -1,9 +1,11 @@
 #include "SkinMeshRenderer.h"
 #include"Tools/Application.h"
-
+#include"Tools/Time.h"
+#include"Component/Transform.h"
+#include"Component/GameObject.h"
 
 IMPLEMENT_DYNCRT_ACTION(SkinMeshRenderer)
-SkinMeshRenderer::SkinMeshRenderer()
+SkinMeshRenderer::SkinMeshRenderer():mRunningTime(0),mMesh(nullptr)
 {
 }
 
@@ -109,4 +111,68 @@ void SkinMeshRenderer::LoadAnim(const char* varAnimPath)
 
 void SkinMeshRenderer::Update()
 {
+	if (mMesh == nullptr)
+	{
+		MeshFilter* tmpMeshFilter = (MeshFilter*)mGameObject->GetComponent("MeshFilter");
+		mMesh = tmpMeshFilter->GetMesh();
+	}
+
+	if (mMesh== nullptr)
+	{
+		return;
+	}
+
+	int tmpVertexCount = mMesh->GetVertexCount();
+	if (tmpVertexCount == 0)
+	{
+		return;
+	}
+	Vertex* tmpVertexArray = mMesh->GetVertexArray();
+	if (tmpVertexArray == nullptr)
+	{
+		return;
+	}
+
+	//calculate current frame bone offset
+	mRunningTime = mRunningTime + Time::deltaTime;
+	int tmpCurrentFrame = mRunningTime * 30;
+	tmpCurrentFrame = tmpCurrentFrame % 30;
+	int tmpCurrentAnimTime = tmpCurrentFrame * 160;
+
+	for (std::map<int, vector<glm::mat4x4>>::iterator  tmpIterBegin = mMapBoneMatrix.begin();  tmpIterBegin !=mMapBoneMatrix.end();  tmpIterBegin++)
+	{
+		if (tmpIterBegin->first == tmpCurrentAnimTime)
+		{
+			vector<glm::mat4x4> tmpVectorBoneMatrixOffset;
+
+			for (size_t tmpVectorBoneMatrixIndex = 0; tmpVectorBoneMatrixIndex < tmpIterBegin->second.size(); tmpVectorBoneMatrixIndex++)
+			{
+				glm::mat4x4 tmpBoneMatrixOffset = tmpIterBegin->second[tmpVectorBoneMatrixIndex] * mVectorBoneMatrixInvert[tmpVectorBoneMatrixIndex];
+				tmpVectorBoneMatrixOffset.push_back(tmpBoneMatrixOffset);
+			}
+
+			//calculate current frame vertex position
+			glm::vec3* tmpVec3PositionAnim = (glm::vec3*)malloc(sizeof(glm::vec3)*mVectorWeight.size());
+
+			for (size_t tmpVectorWeightIndex = 0; tmpVectorWeightIndex < mVectorWeight.size(); tmpVectorWeightIndex++)
+			{
+				glm::mat4x4 tmpMat4x4Offset;
+
+				std::map<unsigned short, float> tmpMapOneVertexBoneWeight = mVectorWeight[tmpVectorWeightIndex];
+				for (std::map<unsigned short, float>::iterator tmpIterBegin = tmpMapOneVertexBoneWeight.begin(); tmpIterBegin != tmpMapOneVertexBoneWeight.end(); tmpIterBegin++)
+				{
+					tmpMat4x4Offset= tmpMat4x4Offset*tmpVectorBoneMatrixOffset[tmpIterBegin->first] * tmpIterBegin->second;
+				}
+
+				glm::vec3 tmpVec3PositionSrc = (tmpVertexArray + tmpVectorWeightIndex)->Position;
+				glm::vec4 tmpVec4PositionSrc(tmpVec3PositionSrc, 1);
+				glm::vec4 tmpVec4NewPosition = tmpVec4PositionSrc* tmpMat4x4Offset;
+				glm::vec3 tmpVec3NewPosition = glm::vec3(tmpVec4NewPosition.x, tmpVec4NewPosition.y, tmpVec4NewPosition.z);
+
+				tmpVec3PositionAnim[tmpVectorWeightIndex] = tmpVec3NewPosition;
+			}
+
+			mMesh->PushVertexPositionAnim(tmpVec3PositionAnim);
+		}
+	}
 }

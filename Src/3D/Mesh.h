@@ -13,7 +13,13 @@ public:
 
 	void PushVertexArray(Vertex* varVertex);//传入顶点数据
 
+	void PushVertexPositionAnim(glm::vec3* varVertexPositionAnim);
+
+	glm::vec3* GetVertexPositionAnim();
+
 	Vertex* GetVertexArray();
+
+	int GetVertexCount();
 
 	void SetVertexIndicesSize(int varVertexIndicesSize);
 
@@ -25,6 +31,8 @@ public:
 private:
 	int mVertexCount;
 	Vertex* mVertexArray;
+
+	glm::vec3* mVertexPositionAnim;
 
 	int mVertexIndicesSize;
 	unsigned short* mVertexIndices;

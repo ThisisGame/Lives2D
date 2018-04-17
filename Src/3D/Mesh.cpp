@@ -2,7 +2,7 @@
 
 
 
-Mesh::Mesh():mVertexCount(0),mVertexArray(nullptr)
+Mesh::Mesh():mVertexCount(0),mVertexArray(nullptr),mVertexPositionAnim(nullptr)
 {
 }
 
@@ -21,9 +21,26 @@ void Mesh::PushVertexArray(Vertex * varVertex)
 	mVertexArray = varVertex;
 }
 
+void Mesh::PushVertexPositionAnim(glm::vec3 * varVertexPositionAnim)
+{
+	mVertexPositionAnim = varVertexPositionAnim;
+}
+
+glm::vec3 * Mesh::GetVertexPositionAnim()
+{
+	return mVertexPositionAnim;
+}
+
+
+
 Vertex * Mesh::GetVertexArray()
 {
 	return mVertexArray;
+}
+
+int Mesh::GetVertexCount()
+{
+	return mVertexCount;
 }
 
 void Mesh::SetVertexIndicesSize(int varVertexIndicesSize)

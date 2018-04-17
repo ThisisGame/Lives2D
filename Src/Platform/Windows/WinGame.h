@@ -22,6 +22,8 @@
 
 #include"PlayerPrefs/PlayerPrefs.h"
 
+#include"Tools/Time.h"
+
 class WinGame
 {
 public:
@@ -130,6 +132,7 @@ public:
 		{
 			tolua_pushnumber(var_pLuaState, varDeltaTime);
 		};
+		Time::deltaTime = varDeltaTime;
 		LuaEngine::GetSingleton()->CallLuaFunction("Update", 1, tmpFunction);
 	}
 

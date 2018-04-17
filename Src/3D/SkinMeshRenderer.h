@@ -4,8 +4,7 @@
 #include<map>
 #include"glm/glm.hpp"
 
-class SkinMeshRenderer :
-	public Renderer
+class SkinMeshRenderer:Component
 {
 	DECLEAR_DYNCRT_ACTION(SkinMeshRenderer)
 
@@ -30,5 +29,9 @@ private:
 	std::map<int, vector<glm::mat4x4>> mMapBoneMatrix;
 
 	std::vector<std::map<unsigned short, float>> mVectorWeight;
+
+	float mRunningTime;
+
+	Mesh* mMesh;
 };
 
