@@ -33,5 +33,8 @@ private:
 	float mRunningTime;
 
 	Mesh* mMesh;
+
+	int mFrameCount;
+	int mFrameTicks;
 };
 

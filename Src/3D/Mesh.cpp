@@ -23,6 +23,11 @@ void Mesh::PushVertexArray(Vertex * varVertex)
 
 void Mesh::PushVertexPositionAnim(glm::vec3 * varVertexPositionAnim)
 {
+	if (mVertexPositionAnim != nullptr)
+	{
+		delete(mVertexPositionAnim);
+		mVertexPositionAnim = nullptr;
+	}
 	mVertexPositionAnim = varVertexPositionAnim;
 }
 
