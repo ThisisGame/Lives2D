@@ -17,7 +17,7 @@ function SceneWelcom:Init()
 	self.mCamera=tmpGoCamera:AddComponent("Camera")
 	
 	local tmpSceneParser=SceneParser:new()
-	self.mScene=tmpSceneParser:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/9000001/9000001.xml");
+	self.mScene=tmpSceneParser:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/9010006/9010006.xml");
 	
 	--local tmpUIParser=UIParser:new()
 	--self.mUIRoot=tmpUIParser:CreateUI(ResourcesManager:DataPath() .. "/Resource/UI/UI_Login/UI_Login.xml");

@@ -145,7 +145,7 @@ void SkinMeshRenderer::Update()
 	tmpCurrentFrame = tmpCurrentFrame % mFrameCount;
 	int tmpCurrentAnimTime = tmpCurrentFrame * mFrameTicks;
 
-	//tmpCurrentAnimTime = 0;
+	//tmpCurrentAnimTime = 160*0;
 
 	for (std::map<int, vector<glm::mat4x4>>::iterator  tmpIterBegin = mMapBoneMatrix.begin();  tmpIterBegin !=mMapBoneMatrix.end();  tmpIterBegin++)
 	{
