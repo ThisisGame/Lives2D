@@ -13,8 +13,6 @@ public:
 
 	void PushVertexArray(Vertex* varVertex);//传入顶点数据
 
-	void PushVertexPositionAnim(glm::vec3* varVertexPositionAnim);
-
 	glm::vec3* GetVertexPositionAnim();
 
 	Vertex* GetVertexArray();

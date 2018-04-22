@@ -21,18 +21,12 @@ void Mesh::PushVertexArray(Vertex * varVertex)
 	mVertexArray = varVertex;
 }
 
-void Mesh::PushVertexPositionAnim(glm::vec3 * varVertexPositionAnim)
-{
-	if (mVertexPositionAnim != nullptr)
-	{
-		delete(mVertexPositionAnim);
-		mVertexPositionAnim = nullptr;
-	}
-	mVertexPositionAnim = varVertexPositionAnim;
-}
-
 glm::vec3 * Mesh::GetVertexPositionAnim()
 {
+	if (mVertexPositionAnim == nullptr)
+	{
+		mVertexPositionAnim = (glm::vec3*)malloc(sizeof(glm::vec3)*mVertexCount);
+	}
 	return mVertexPositionAnim;
 }
 

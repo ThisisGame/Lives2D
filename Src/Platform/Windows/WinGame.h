@@ -269,7 +269,7 @@ public:
 			}
 			else
 			{
-				static float frameTime = 1.0f/1; //��֡ 30
+				static float frameTime = 1.0f/30; //��֡ 30
 				static int begintime = 0;
 				static int endtime = 0;
 				static float deltaTime = 0.0f;
