@@ -325,6 +325,16 @@ LOCAL_SRC_FILES := Tools/Helper.cpp \
 		LuaEngine/lua_BinaryPacker.cpp \
 		LuaEngine/lua_NetworkClient.cpp \
 		Texture2D/Texture2D.cpp \
+		3D/Camera.cpp \
+		3D/Material.cpp \
+		3D/Mesh.cpp \
+		3D/MeshFilter.cpp \
+		3D/MeshRenderer.cpp \
+		3D/Renderer.cpp \
+		3D/SceneParser.cpp \
+		3D/SkinMeshRenderer.cpp \
+		3D/lua_Camera.cpp \
+		3D/lua_SceneParse.cpp \
 		LuaEngine/LuaEngine.cpp \
 		
 LOCAL_C_INCLUDES:= $(LUA_SRC_PATH) \
