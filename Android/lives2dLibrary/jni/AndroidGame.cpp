@@ -46,7 +46,8 @@ extern "C"
 	#import "lauxlib.h"
 }
 #include"LuaEngine/LuaEngine.h"
-#include"Tools\Application.h"
+#include"Tools/Application.h"
+#include"Tools/Time.h"
 
 #include <GLES2/gl2.h>
 #include <GLES2/gl2ext.h>
@@ -107,6 +108,7 @@ void update(float varDeltaTime)
 	{
 		tolua_pushnumber(var_pLuaState, varDeltaTime);
 	};
+	Time::deltaTime = varDeltaTime;
 	LuaEngine::GetSingleton()->CallLuaFunction("Update", 1, tmpFunction);
 }
 
