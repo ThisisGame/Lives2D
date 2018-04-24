@@ -82,7 +82,13 @@
     <ClCompile Include="..\..\..\Lives2D_Depends\FMOD\Windows\common\common_platform.cpp" />
     <ClCompile Include="..\..\Src\3D\Camera.cpp" />
     <ClCompile Include="..\..\Src\3D\lua_Camera.cpp" />
+    <ClCompile Include="..\..\Src\3D\lua_Material.cpp" />
+    <ClCompile Include="..\..\Src\3D\lua_Mesh.cpp" />
+    <ClCompile Include="..\..\Src\3D\lua_MeshFilter.cpp" />
+    <ClCompile Include="..\..\Src\3D\lua_MeshRenderer.cpp" />
+    <ClCompile Include="..\..\Src\3D\lua_Renderer.cpp" />
     <ClCompile Include="..\..\Src\3D\lua_SceneParse.cpp" />
+    <ClCompile Include="..\..\Src\3D\lua_SkinMeshRenderer.cpp" />
     <ClCompile Include="..\..\Src\3D\Material.cpp" />
     <ClCompile Include="..\..\Src\3D\Mesh.cpp" />
     <ClCompile Include="..\..\Src\3D\MeshFilter.cpp" />

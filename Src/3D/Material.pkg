@@ -1,0 +1,9 @@
+$#include"Material.h"
+
+class Material :
+	public Component
+{
+public:
+	Material();
+	~Material();
+};

@@ -1,0 +1,14 @@
+$#include"MeshFilter.h"
+
+class MeshFilter :
+	public Component
+{
+public:
+	MeshFilter();
+	~MeshFilter();
+
+
+	void InitWithXml(TiXmlElement* varTiXmlElement);
+
+	Mesh* GetMesh();
+};

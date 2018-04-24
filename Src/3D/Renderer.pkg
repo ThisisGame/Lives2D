@@ -1,0 +1,15 @@
+$#include"Renderer.h"
+
+class Renderer :
+	public Component
+{
+public:
+	Renderer();
+	~Renderer();
+
+public:
+	void Update();
+
+public:
+	void Render();
+};

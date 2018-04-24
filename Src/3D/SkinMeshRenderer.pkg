@@ -1,0 +1,9 @@
+$#include"SkinMeshRenderer.h"
+
+class SkinMeshRenderer:Component
+{
+	
+public:
+	SkinMeshRenderer();
+	~SkinMeshRenderer();
+};

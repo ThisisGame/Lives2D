@@ -264,6 +264,7 @@ LOCAL_SRC_FILES := Tools/Helper.cpp \
 		Tools/ConvertUTF/ConvertUTF.c \
 		Tools/ConvertUTF/ConvertUTFWrapper.cpp \
 		Tools/lua_Application.cpp \
+		Tools/Time.cpp \
 		Math/Math.cpp \
 		Math/lua_Math.cpp \
 		PlayerPrefs/TinyXml/tinystr.cpp \
@@ -292,6 +293,7 @@ LOCAL_SRC_FILES := Tools/Helper.cpp \
 		Audio/AudioCard.cpp \
 		GLProgram/GLProgram.cpp \
 		GLProgram/GLProgram_Texture.cpp \
+		GLProgram/Shader.cpp \
 		GUI/Font.cpp \
 		GUI/FontManager.cpp \
 		GUI/UIRect.cpp \
@@ -335,6 +337,12 @@ LOCAL_SRC_FILES := Tools/Helper.cpp \
 		3D/SkinMeshRenderer.cpp \
 		3D/lua_Camera.cpp \
 		3D/lua_SceneParse.cpp \
+		3D/lua_Material.cpp \
+		3D/lua_Mesh.cpp \
+		3D/lua_MeshFilter.cpp \
+		3D/lua_MeshRenderer.cpp \
+		3D/lua_Renderer.cpp \
+		3D/lua_SkinMeshRenderer.cpp \
 		LuaEngine/LuaEngine.cpp \
 		
 LOCAL_C_INCLUDES:= $(LUA_SRC_PATH) \

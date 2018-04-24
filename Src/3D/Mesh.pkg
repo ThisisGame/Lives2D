@@ -1,0 +1,9 @@
+$#include"Mesh.h"
+
+class Mesh :
+	public Object
+{
+public:
+	Mesh();
+	~Mesh();
+};
