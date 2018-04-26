@@ -9,7 +9,7 @@
 #include"Camera.h"
 
 IMPLEMENT_DYNCRT_ACTION(Material)
-Material::Material()
+Material::Material():mIsSkinMesh(false)
 {
 	
 }
@@ -21,6 +21,13 @@ Material::~Material()
 
 void Material::InitWithXml(TiXmlElement * varTiXmlElement)
 {
+	const char* tmpIsSkinMesh= varTiXmlElement->Attribute("IsSkinMesh");
+	if (tmpIsSkinMesh != nullptr)
+	{
+		mIsSkinMesh = Convert::StringToBool(tmpIsSkinMesh);
+	}
+	
+
 	const char* tmpShaderName = varTiXmlElement->Attribute("Shader");
 	mShader = new Shader();
 
@@ -244,8 +251,17 @@ void Material::Render()
 
 	//tmpRotateY += 1;
 	glm::mat4 trans = glm::translate(glm::vec3(mTransform->GetPosition().mX, mTransform->GetPosition().mY, mTransform->GetPosition().mZ));
-	glm::mat4 rotation = glm::eulerAngleYXZ(glm::radians(mTransform->GetLocalRotation().mY), glm::radians(mTransform->GetLocalRotation().mX-90), glm::radians(mTransform->GetLocalRotation().mZ));
-	
+
+	glm::mat4 rotation;
+	if (mIsSkinMesh)
+	{
+		rotation = glm::eulerAngleYXZ(glm::radians(mTransform->GetLocalRotation().mY), glm::radians(mTransform->GetLocalRotation().mX - 90), glm::radians(mTransform->GetLocalRotation().mZ));
+	}
+	else
+	{
+		rotation = glm::eulerAngleYXZ(glm::radians(mTransform->GetLocalRotation().mY), glm::radians(mTransform->GetLocalRotation().mX), glm::radians(mTransform->GetLocalRotation().mZ));
+	}
+
 	glm::mat4 scale = glm::scale(glm::vec3(mTransform->GetLocalScale().mX, mTransform->GetLocalScale().mY, mTransform->GetLocalScale().mZ));
 	glm::mat4 model = trans*scale*rotation;
 

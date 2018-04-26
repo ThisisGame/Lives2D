@@ -15,6 +15,10 @@ public:
 
 	glm::vec3* GetVertexPositionAnim();
 
+	void ApplySkin();
+
+	bool GetApplyedSkin();
+
 	Vertex* GetVertexArray();
 
 	int GetVertexCount();
@@ -34,5 +38,7 @@ private:
 
 	int mVertexIndicesSize;
 	unsigned short* mVertexIndices;
+
+	bool mApplyedSkin;
 };
 

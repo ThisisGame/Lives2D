@@ -182,6 +182,8 @@ void SkinMeshRenderer::Update()
 				tmpVec3PositionAnim[tmpVectorWeightIndex] = glm::vec3(tmpVec4PositionNew.x, tmpVec4PositionNew.y, tmpVec4PositionNew.z);
 			}
 
+			mMesh->ApplySkin();
+
 			break;
 		}
 	}

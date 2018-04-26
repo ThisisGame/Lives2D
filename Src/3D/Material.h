@@ -40,5 +40,7 @@ private:
 
 	int mVertexIndicesSize;
 	GLushort* mVertexIndices;
+
+	bool mIsSkinMesh;
 };
 

@@ -93,7 +93,7 @@ class glesView extends GLSurfaceView
 
     public glesView(Context context) {
         super(context);
-        init(false, 0, 0);
+        init(false, 24, 0);
     }
 
     public glesView(Context context, boolean translucent, int depth, int stencil) {

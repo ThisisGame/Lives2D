@@ -2,7 +2,7 @@
 #include<stdlib.h>
 
 
-Mesh::Mesh():mVertexCount(0),mVertexArray(nullptr),mVertexPositionAnim(nullptr)
+Mesh::Mesh():mVertexCount(0),mVertexArray(nullptr),mVertexPositionAnim(nullptr),mApplyedSkin(false)
 {
 }
 
@@ -28,6 +28,16 @@ glm::vec3 * Mesh::GetVertexPositionAnim()
 		mVertexPositionAnim = (glm::vec3*)malloc(sizeof(glm::vec3)*mVertexCount);
 	}
 	return mVertexPositionAnim;
+}
+
+void Mesh::ApplySkin()
+{
+	mApplyedSkin = true;
+}
+
+bool Mesh::GetApplyedSkin()
+{
+	return mApplyedSkin;
 }
 
 

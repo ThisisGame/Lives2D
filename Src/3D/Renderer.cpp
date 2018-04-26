@@ -38,7 +38,7 @@ void Renderer::Update()
 	}
 	else
 	{
-		if (mMesh->GetVertexPositionAnim() != nullptr)
+		if (mMesh->GetApplyedSkin())
 		{
 			mMaterial->SetVertexAttribPointer("m_position", 3, sizeof(glm::vec3), mMesh->GetVertexPositionAnim());
 		}
