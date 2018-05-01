@@ -139,6 +139,8 @@ void SkinMeshRenderer::Update()
 		return;
 	}
 
+	//int tmpUpdateBeginTime = GetTickCount();
+
 	//calculate current frame bone offset
 	mRunningTime = mRunningTime + Time::deltaTime;
 	int tmpCurrentFrame = mRunningTime * 30;
@@ -154,19 +156,25 @@ void SkinMeshRenderer::Update()
 			//calculate current frame vertex position
 			glm::vec3* tmpVec3PositionAnim = mMesh->GetVertexPositionAnim();
 
+			glm::vec4 tmpVec4PositionSrc;
+			glm::vec4 tmpVec4PositionNew;
 
 			for (size_t tmpVectorWeightIndex = 0; tmpVectorWeightIndex < mVectorWeight.size(); tmpVectorWeightIndex++)
 			{
 				glm::vec3& tmpVec3PositionSrc = (tmpVertexArray + tmpVectorWeightIndex)->Position;
-				glm::vec4 tmpVec4PositionSrc = glm::vec4(tmpVec3PositionSrc, 1);
+				
+				tmpVec4PositionSrc.x = tmpVec3PositionSrc.x;
+				tmpVec4PositionSrc.y = -tmpVec3PositionSrc.z;
+				tmpVec4PositionSrc.z = tmpVec3PositionSrc.y;
+				tmpVec4PositionSrc.w = 1;
 
-				//exchange y z
-				float tmp = tmpVec4PositionSrc.z;
-				tmpVec4PositionSrc.z = tmpVec4PositionSrc.y;
-				tmpVec4PositionSrc.y = -tmp;
 
 
-				glm::vec4 tmpVec4PositionNew;
+				
+				tmpVec4PositionNew.x = 0;
+				tmpVec4PositionNew.y = 0;
+				tmpVec4PositionNew.z = 0;
+				tmpVec4PositionNew.w = 1;
 
 				std::map<unsigned short, float>& tmpMapOneVertexBoneWeight = mVectorWeight[tmpVectorWeightIndex];
 				for (std::map<unsigned short, float>::iterator tmpIterBegin = tmpMapOneVertexBoneWeight.begin(); tmpIterBegin != tmpMapOneVertexBoneWeight.end(); tmpIterBegin++)
@@ -175,7 +183,7 @@ void SkinMeshRenderer::Update()
 
 					tmpPosition = tmpMapBoneMatrixIterBegin->second[tmpIterBegin->first] * tmpIterBegin->second*tmpPosition;
 
-					tmpVec4PositionNew = tmpVec4PositionNew + tmpPosition;
+					tmpVec4PositionNew += tmpPosition;
 				}
 
 				
@@ -187,4 +195,9 @@ void SkinMeshRenderer::Update()
 			break;
 		}
 	}
+
+	//int tmpUpdateCost = GetTickCount() - tmpUpdateBeginTime;
+	//int a = 0;
+
+	//Helper::LOG("%d", tmpUpdateCost);
 }

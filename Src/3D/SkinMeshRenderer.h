@@ -30,6 +30,8 @@ private:
 
 	std::vector<std::map<unsigned short, float>> mVectorWeight;
 
+	std::map<unsigned short, std::vector<glm::vec4>> mMapPositionInvert;
+
 	float mRunningTime;
 
 	Mesh* mMesh;

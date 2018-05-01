@@ -17,17 +17,17 @@ public:
 
 	void ApplySkin();
 
-	bool GetApplyedSkin();
+	const bool& GetApplyedSkin();
 
 	Vertex* GetVertexArray();
 
-	int GetVertexCount();
+	const int& GetVertexCount();
 
 	void SetVertexIndicesSize(int varVertexIndicesSize);
 
 	void PushVertexIndicesArray(unsigned short* varVertexIndices);
 
-	int GetVertexIndicesSize();
+	const int& GetVertexIndicesSize();
 	unsigned short* GetVertexIndices();
 
 private:

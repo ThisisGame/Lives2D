@@ -25,7 +25,9 @@ glm::vec3 * Mesh::GetVertexPositionAnim()
 {
 	if (mVertexPositionAnim == nullptr)
 	{
-		mVertexPositionAnim = (glm::vec3*)malloc(sizeof(glm::vec3)*mVertexCount);
+		size_t tmpSize = sizeof(glm::vec3)*mVertexCount;
+		mVertexPositionAnim = (glm::vec3*)malloc(tmpSize);
+		memset(mVertexPositionAnim, 0, tmpSize);
 	}
 	return mVertexPositionAnim;
 }
@@ -35,7 +37,7 @@ void Mesh::ApplySkin()
 	mApplyedSkin = true;
 }
 
-bool Mesh::GetApplyedSkin()
+const bool& Mesh::GetApplyedSkin()
 {
 	return mApplyedSkin;
 }
@@ -47,7 +49,7 @@ Vertex * Mesh::GetVertexArray()
 	return mVertexArray;
 }
 
-int Mesh::GetVertexCount()
+const int& Mesh::GetVertexCount()
 {
 	return mVertexCount;
 }
@@ -62,7 +64,7 @@ void Mesh::PushVertexIndicesArray(unsigned short * varVertexIndices)
 	mVertexIndices = varVertexIndices;
 }
 
-int Mesh::GetVertexIndicesSize()
+const int& Mesh::GetVertexIndicesSize()
 {
 	return mVertexIndicesSize;
 }
