@@ -327,6 +327,9 @@
     <ClCompile Include="..\..\Src\3D\lua_SkinMeshRenderer.cpp">
       <Filter>3D</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Src\Tools\FileIO.cpp">
+      <Filter>Tools</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\Platform\Windows\WinGame.h">
@@ -502,6 +505,9 @@
     </ClInclude>
     <ClInclude Include="..\..\Src\3D\SkinMeshRenderer.h">
       <Filter>3D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Tools\FileIO.h">
+      <Filter>Tools</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

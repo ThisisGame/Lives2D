@@ -7,10 +7,13 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lives2D", "Lives2D.vcxproj"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Android_Debug|x86 = Android_Debug|x86
 		Debug|x86 = Debug|x86
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{29763FBA-1FE7-4A96-BA42-5A19728BE612}.Android_Debug|x86.ActiveCfg = Android_Debug|Win32
+		{29763FBA-1FE7-4A96-BA42-5A19728BE612}.Android_Debug|x86.Build.0 = Android_Debug|Win32
 		{29763FBA-1FE7-4A96-BA42-5A19728BE612}.Debug|x86.ActiveCfg = Debug|Win32
 		{29763FBA-1FE7-4A96-BA42-5A19728BE612}.Debug|x86.Build.0 = Debug|Win32
 		{29763FBA-1FE7-4A96-BA42-5A19728BE612}.Release|x86.ActiveCfg = Release|Win32

@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Android_Debug|Win32">
+      <Configuration>Android_Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
       <Platform>Win32</Platform>
@@ -23,6 +27,12 @@
     <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Android_Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
@@ -36,11 +46,18 @@
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Android_Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>../../Runable/Win/$(Configuration)\</OutDir>
+    <ExecutablePath>../../Runable/Win;$(ExecutablePath)</ExecutablePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Android_Debug|Win32'">
     <OutDir>../../Runable/Win/$(Configuration)\</OutDir>
     <ExecutablePath>../../Runable/Win;$(ExecutablePath)</ExecutablePath>
   </PropertyGroup>
@@ -50,6 +67,21 @@
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\..\Libs\FreeImage;..\..\Libs\GLES2.0\include;..\..\Libs\GLM-0.9.6.3;..\..\Src;..\..\Libs\lua\include;..\..\Libs\tolua++\include;..\..\Libs\FreeType\include;..\..\..\Lives2D_Depends\FMOD\Windows\inc;..\..\..\Lives2D_Depends\FMOD\Windows\common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\..\Libs\FreeImage;..\..\Libs\GLES2.0\lib\windows\x86;..\..\Libs\lua\lib;..\..\Libs\tolua++\lib;..\..\Libs\FreeType\lib;..\..\..\Lives2D_Depends\FMOD\Windows\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>FreeImage.lib;libEGL.lib;libGLESv2.lib;lua5.1.4.lib;tolua++.lib;freetype253_D.lib;fmodL_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalOptions>/nodefaultlib:"MSVCRT" %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Android_Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\Libs\FreeImage;..\..\Libs\GLES2.0\include;..\..\Libs\GLM-0.9.6.3;..\..\Src;..\..\Libs\lua\include;..\..\Libs\tolua++\include;..\..\Libs\FreeType\include;..\..\..\Lives2D_Depends\FMOD\Windows\inc;..\..\..\Lives2D_Depends\FMOD\Windows\common;C:\Users\captain\Downloads\Compressed\android-ndk-r16b-windows-x86_64\android-ndk-r16b\sysroot\usr\include;C:\Users\captain\Downloads\Compressed\android-ndk-r16b-windows-x86_64\android-ndk-r16b\sysroot\usr\include\android;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ANDROID;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -165,6 +197,7 @@
     <ClCompile Include="..\..\Src\Tools\Application.cpp" />
     <ClCompile Include="..\..\Src\Tools\ConvertUTF\ConvertUTF.c" />
     <ClCompile Include="..\..\Src\Tools\ConvertUTF\ConvertUTFWrapper.cpp" />
+    <ClCompile Include="..\..\Src\Tools\FileIO.cpp" />
     <ClCompile Include="..\..\Src\Tools\Helper.cpp" />
     <ClCompile Include="..\..\Src\Tools\lua_Application.cpp" />
     <ClCompile Include="..\..\Src\Tools\Time.cpp" />
@@ -226,6 +259,7 @@
     <ClInclude Include="..\..\Src\Texture2D\Texture2D.h" />
     <ClInclude Include="..\..\Src\Tools\Application.h" />
     <ClInclude Include="..\..\Src\Tools\ConvertUTF\ConvertUTF.h" />
+    <ClInclude Include="..\..\Src\Tools\FileIO.h" />
     <ClInclude Include="..\..\Src\Tools\Helper.h" />
     <ClInclude Include="..\..\Src\Tools\Time.h" />
   </ItemGroup>
