@@ -172,6 +172,7 @@ void SkinMeshRenderer::Update()
 	{
 		if (tmpMapBoneMatrixIterBegin->first == tmpCurrentAnimTime)
 		{
+
 			//calculate current frame vertex position
 			glm::vec3* tmpVec3PositionAnim = mMesh->GetVertexPositionAnim();
 
@@ -200,14 +201,7 @@ void SkinMeshRenderer::Update()
 				int tmpMapOneVertexBoneWeightBoneIndex = 0;
 				for (std::map<unsigned short, float>::iterator tmpIterBegin = tmpMapOneVertexBoneWeight.begin(); tmpIterBegin != tmpMapOneVertexBoneWeight.end(); tmpIterBegin++)
 				{
-					//glm::vec4 tmpPosition = mVectorBoneMatrixInvert[tmpIterBegin->first] * tmpVec4PositionSrc;
-
 					glm::vec4 tmpPosition = mVectorVertexPositionNoBone[tmpVectorWeightIndex][tmpMapOneVertexBoneWeightBoneIndex];
-
-					//if (tmpPosition1 != tmpPosition)
-					//{
-					//	int a = 0;
-					//}
 
 					tmpPosition = tmpMapBoneMatrixIterBegin->second[tmpIterBegin->first] * tmpIterBegin->second*tmpPosition;
 

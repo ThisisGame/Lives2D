@@ -17,7 +17,8 @@ public:
 	virtual void Render();
 
 protected:
-	Material* mMaterial;
+	std::vector<Material*> mVectorMaterial;
+	MeshFilter* mMeshFilter;
 	Mesh* mMesh;
 
 private:

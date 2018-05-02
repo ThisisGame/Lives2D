@@ -197,7 +197,6 @@
     <ClCompile Include="..\..\Src\Tools\Application.cpp" />
     <ClCompile Include="..\..\Src\Tools\ConvertUTF\ConvertUTF.c" />
     <ClCompile Include="..\..\Src\Tools\ConvertUTF\ConvertUTFWrapper.cpp" />
-    <ClCompile Include="..\..\Src\Tools\FileIO.cpp" />
     <ClCompile Include="..\..\Src\Tools\Helper.cpp" />
     <ClCompile Include="..\..\Src\Tools\lua_Application.cpp" />
     <ClCompile Include="..\..\Src\Tools\Time.cpp" />
@@ -259,7 +258,6 @@
     <ClInclude Include="..\..\Src\Texture2D\Texture2D.h" />
     <ClInclude Include="..\..\Src\Tools\Application.h" />
     <ClInclude Include="..\..\Src\Tools\ConvertUTF\ConvertUTF.h" />
-    <ClInclude Include="..\..\Src\Tools\FileIO.h" />
     <ClInclude Include="..\..\Src\Tools\Helper.h" />
     <ClInclude Include="..\..\Src\Tools\Time.h" />
   </ItemGroup>

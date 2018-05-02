@@ -3,7 +3,7 @@
 #include"Component/GameObject.h"
 
 
-Renderer::Renderer():mSetProperty(false),mMesh(nullptr),mMaterial(nullptr)
+Renderer::Renderer():mSetProperty(false),mMeshFilter(nullptr),mMesh(nullptr)
 {
 }
 
@@ -16,31 +16,46 @@ void Renderer::Update()
 {
 	if (mMesh == nullptr)
 	{
-		MeshFilter* tmpMeshFilter = (MeshFilter*)mGameObject->GetComponent("MeshFilter");
-		mMesh = tmpMeshFilter->GetMesh();
+		mMeshFilter = (MeshFilter*)mGameObject->GetComponent("MeshFilter");
+		mMesh = mMeshFilter->GetMesh();
 	}
 
-	if (mMaterial == nullptr)
+	if (mVectorMaterial.size()==0)
 	{
-		mMaterial = (Material*)mGameObject->GetComponent("Material");
+		std::vector<Component*> tmpVectorComponent= mGameObject->GetComponents("Material");
+		for (size_t i = 0; i < tmpVectorComponent.size(); i++)
+		{
+			mVectorMaterial.push_back((Material*)tmpVectorComponent[i]);
+		}
 	}
 
-	if (mMesh && mMaterial && !mSetProperty)
+	if (mMesh && mVectorMaterial.size()>0 && !mSetProperty)
 	{
 		mSetProperty = true;
 
 		//¶ÔMaterialÉèÖÃÊôÐÔ
-		mMaterial->SetVertexAttribPointer("m_position", 3, sizeof(Vertex), &(mMesh->GetVertexArray()->Position.x));
-		mMaterial->SetVertexAttribPointer("m_uv", 2, sizeof(Vertex), &(mMesh->GetVertexArray()->TexCoords.x));
+		for (size_t i = 0; i < mVectorMaterial.size(); i++)
+		{
+			mVectorMaterial[i]->SetVertexAttribPointer("m_position", 3, sizeof(Vertex), &(mMesh->GetVertexArray()->Position.x));
+			mVectorMaterial[i]->SetVertexAttribPointer("m_uv", 2, sizeof(Vertex), &(mMesh->GetVertexArray()->TexCoords.x));
+
+			std::vector<unsigned short>& tmpVertexIndexInMaterial=(std::vector<unsigned short>&)(mMeshFilter->GetVertexIndexInMaterial(i));
+			mVectorMaterial[i]->SetVertexIndices(tmpVertexIndexInMaterial.size(), &tmpVertexIndexInMaterial[0]);
+		}
+		
 		//mMaterial->SetVertexAttribPointer("normal", 3, sizeof(Vertex), &(mMesh->GetVertexArray()->Normal.x));
 
-		mMaterial->SetVertexIndices(mMesh->GetVertexIndicesSize(), mMesh->GetVertexIndices());
+		
 	}
 	else
 	{
 		if (mMesh->GetApplyedSkin())
 		{
-			mMaterial->SetVertexAttribPointer("m_position", 3, sizeof(glm::vec3), mMesh->GetVertexPositionAnim());
+			for (size_t i = 0; i < mVectorMaterial.size(); i++)
+			{
+				mVectorMaterial[i]->SetVertexAttribPointer("m_position", 3, sizeof(glm::vec3), mMesh->GetVertexPositionAnim());
+			}
+			
 		}
 
 		Render();
@@ -49,5 +64,9 @@ void Renderer::Update()
 
 void Renderer::Render()
 {
-	mMaterial->Render();
+	for (size_t i = 0; i < mVectorMaterial.size(); i++)
+	{
+		mVectorMaterial[i]->Render();
+	}
+	
 }

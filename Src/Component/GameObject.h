@@ -59,6 +59,9 @@ public:
 
 	Component* GetComponent(const char* varComponentName);
 
+
+	std::vector<Component*> GetComponents(const char* varComponentName);
+
 private:
 	std::vector<Component*> mVectorComponent;
 

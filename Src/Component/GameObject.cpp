@@ -111,6 +111,20 @@ Component * GameObject::GetComponent(const char * varComponentName)
 	return nullptr;
 }
 
+std::vector<Component*> GameObject::GetComponents(const char * varComponentName)
+{
+	std::vector<Component*> tmpVectorComponent;
+	for (size_t tmpComponentIndex = 0; tmpComponentIndex < mVectorComponent.size(); tmpComponentIndex++)
+	{
+		Component* tmpComponent = mVectorComponent[tmpComponentIndex];
+		if (strcmp(tmpComponent->GetComponentName().c_str(), varComponentName) == 0)
+		{
+			tmpVectorComponent.push_back(tmpComponent);
+		}
+	}
+	return tmpVectorComponent;
+}
+
 LuaComponent * GameObject::AddLuaComponent(const char * varFilePath)
 {
 	LuaComponent* tmpLuaComponent=(LuaComponent*)Reflection::CreateInstance("LuaComponent");

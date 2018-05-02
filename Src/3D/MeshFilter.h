@@ -1,6 +1,7 @@
 #pragma once
 #include "Component/Component.h"
 #include"Mesh.h"
+#include<vector>
 
 class MeshFilter :
 	public Component
@@ -16,10 +17,14 @@ public:
 
 	Mesh* GetMesh();
 
+	const std::vector<unsigned short>& GetVertexIndexInMaterial(int varMaterialIndex);
+
 private:
 	void LoadMesh(const char* varMeshPath);
 
 private:
 	Mesh* mMesh;
+
+	std::vector<std::vector<unsigned short>> mVertexIndexInMaterial;
 };
 

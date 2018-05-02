@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<GameObject Name="Combine"  Position="(0,-1,5)" Rotation="(0,0,0)" Scale="(1,1,1)">
+	<Component Type="MeshFilter" Mesh="Anim/Combine/Combine.mesh"/>
+	<Component Type="Material" Shader="Shader/Texture" IsSkinMesh="false">
+		<ShaderProperty Name="m_texture" ValueType="Texture" ActiveTextureIndex="0" TexturePath="Anim/Combine/2.png"/>
+    	<ShaderProperty Name="m_mvp" ValueType="UniformMatrix4fv"/>
+    	<ShaderProperty Name="m_position" ValueType="VertexAttributePoint"/>
+    	<ShaderProperty Name="m_uv" ValueType="VertexAttributePoint"/>
+	</Component>
+	<Component Type="Material" Shader="Shader/Texture" IsSkinMesh="false">
+		<ShaderProperty Name="m_texture" ValueType="Texture" ActiveTextureIndex="0" TexturePath="Anim/Combine/1.png"/>
+		<ShaderProperty Name="m_mvp" ValueType="UniformMatrix4fv"/>
+		<ShaderProperty Name="m_position" ValueType="VertexAttributePoint"/>
+		<ShaderProperty Name="m_uv" ValueType="VertexAttributePoint"/>
+	</Component>
+	<Component Type="MeshRenderer"/>
+	<!--<Component Type="SkinMeshRenderer" Anim="Anim/Combine/Combine.anim"/>-->
+</GameObject>
