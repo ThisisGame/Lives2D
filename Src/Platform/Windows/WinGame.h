@@ -287,10 +287,6 @@ public:
 					//int tmpRenderCost = GetTickCount() - tmpRenderBeginTime;
 					//int a = 0;
 				}
-				else
-				{
-					Sleep(1);
-				}
 				endtime = GetTickCount();
 			}
 		}

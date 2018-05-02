@@ -248,7 +248,7 @@ void Material::Render()
 	{
 		return;
 	}
-	int tmpUpdateBeginTime = GetTickCount();
+	//int tmpUpdateBeginTime = GetTickCount();
 
 	//tmpRotateY += 1;
 	glm::mat4 trans = glm::translate(glm::vec3(mTransform->GetPosition().mX, mTransform->GetPosition().mY, mTransform->GetPosition().mZ));
@@ -339,8 +339,8 @@ void Material::Render()
 
 	mShader->end();
 
-	int tmpUpdateCost = GetTickCount() - tmpUpdateBeginTime;
-	int a = 0;
+	//int tmpUpdateCost = GetTickCount() - tmpUpdateBeginTime;
+	//int a = 0;
 }
 
 

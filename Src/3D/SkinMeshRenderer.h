@@ -32,6 +32,8 @@ private:
 
 	std::map<unsigned short, std::vector<glm::vec4>> mMapPositionInvert;
 
+	std::vector<std::vector<glm::vec4>> mVectorVertexPositionNoBone;
+
 	float mRunningTime;
 
 	Mesh* mMesh;
