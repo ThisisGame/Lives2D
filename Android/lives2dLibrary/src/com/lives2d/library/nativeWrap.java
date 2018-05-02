@@ -20,6 +20,7 @@ import java.io.File;
 import java.io.IOException;
 
 import android.app.Activity;
+import android.content.res.AssetManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.util.Log;
@@ -37,6 +38,7 @@ public class nativeWrap {
      * @param height the current view height
      */
      public static native void init(int width, int height);
+     public static native void setAssetManager(AssetManager assetManager);
      public static native void step(float deltaTime);
      public static native void setSdCardPath(String sdcardpath);
      public static native void setAssetsPath(String assetpath);

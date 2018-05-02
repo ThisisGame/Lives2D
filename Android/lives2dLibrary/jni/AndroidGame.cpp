@@ -58,6 +58,7 @@ std::string mSdCardPath;
 extern "C" 
 {
     JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_init(JNIEnv * env, jobject obj,  jint width, jint height);
+	JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_setAssetManager(JNIEnv * env, jobject obj,  jobject assetManager)
     JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_step(JNIEnv * env, jobject obj,jfloat deltaTime);
 	JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_setSdCardPath(JNIEnv * env, jobject obj,jstring sdcardpath);
 	JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_onTouch(JNIEnv * env, jobject obj,jint x, jint y);
@@ -147,6 +148,17 @@ JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_init(JNIEnv * env, jo
 {
 	JniHelper::setJNIEnv(env);
 	onInit(env,obj,width,height);
+}
+
+JNIEXPORT void JNICALL Java_com_lives2d_library_nativeWrap_setAssetManager(JNIEnv * env, jobject obj,  jobject assetManager)
+{
+	AAssetManager* mgr = AAssetManager_fromJava(env, assetManager);
+	if(mgr==NULL) 
+	{ 
+	  LOGI(" %s","AAssetManager==NULL"); 
+	  return ; 
+	} 
+	
 }
 
 

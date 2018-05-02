@@ -41,6 +41,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 import android.R.integer;
 import android.content.Context;
+import android.content.res.AssetManager;
 import android.graphics.PixelFormat;
 import android.opengl.GLSurfaceView;
 import android.os.Environment;
@@ -93,12 +94,13 @@ class glesView extends GLSurfaceView
 
     public glesView(Context context) {
         super(context);
-        init(false, 24, 0);
+        
+        init(context,false, 24, 0);
     }
 
     public glesView(Context context, boolean translucent, int depth, int stencil) {
         super(context);
-        init(translucent, depth, stencil);
+        init(context,translucent, depth, stencil);
     }
     
     @Override
@@ -119,7 +121,7 @@ class glesView extends GLSurfaceView
     	return true;
     }
 
-    private void init(boolean translucent, int depth, int stencil) 
+    private void init(Context context,boolean translucent, int depth, int stencil) 
     {
 
         /* By default, GLSurfaceView() creates a RGB_565 opaque surface.
@@ -148,6 +150,7 @@ class glesView extends GLSurfaceView
         /* Set the renderer responsible for frame rendering */
         Renderer renderer=new Renderer();
         renderer.mMotionEventHashtable=mMotionEventHashtable;
+        renderer.setAssetsManager(context.getAssets());
         setRenderer(renderer);
     }
 
@@ -374,6 +377,11 @@ class glesView extends GLSurfaceView
     	public Hashtable<Integer,Vector2> mMotionEventHashtable;
     	public static ReentrantLock reentrantLock=new ReentrantLock();
     	
+    	public void setAssetsManager(AssetManager assetManager)
+    	{
+    		nativeWrap.setAssetManager(assetManager);
+    	}
+    	
     	long begin = 0;
     	long end = 0;
     	long frame_time = 33;
@@ -450,7 +458,7 @@ class glesView extends GLSurfaceView
             String tmpSdCardPath=Environment.getExternalStorageDirectory().getAbsolutePath();
             Log.i("Lives2D","SdCardPath:"+tmpSdCardPath);
             nativeWrap.setSdCardPath(tmpSdCardPath);
-        	
+        
             nativeWrap.init(width, height);
         }
 

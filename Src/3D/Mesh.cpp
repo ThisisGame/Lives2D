@@ -1,5 +1,6 @@
 #include "Mesh.h"
 #include<stdlib.h>
+#include<string.h>
 
 
 Mesh::Mesh():mVertexCount(0),mVertexArray(nullptr),mVertexPositionAnim(nullptr),mApplyedSkin(false)
