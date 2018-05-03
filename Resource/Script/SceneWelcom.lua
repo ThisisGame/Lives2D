@@ -5,7 +5,8 @@ local SceneWelcom=class()
 function SceneWelcom:ctor()
 	print("SceneWelcom:ctor")
 	self.mUIRoot=nil
-	self.mScene=nil
+	self.mWomenHair=nil
+	self.mWomenBody=nil
 	print(ResourcesManager:DataPath())
 end
 
@@ -16,8 +17,11 @@ function SceneWelcom:Init()
 	local tmpGoCamera=GameObject:new("sceneCamera")
 	self.mCamera=tmpGoCamera:AddComponent("Camera")
 	
-	local tmpSceneParser=SceneParser:new()
-	self.mScene=tmpSceneParser:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/Combine/Combine.xml");
+	local tmpSceneParserWomenHair=SceneParser:new()
+	self.mWomenHair=tmpSceneParserWomenHair:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/Women_0/Women_0.xml");
+	
+	local tmpSceneParserWomenBody=SceneParser:new()
+	self.mWomenBody=tmpSceneParserWomenBody:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/Women_3/Women_3.xml");
 	
 	--local tmpUIParser=UIParser:new()
 	--self.mUIRoot=tmpUIParser:CreateUI(ResourcesManager:DataPath() .. "/Resource/UI/UI_Login/UI_Login.xml");
@@ -109,8 +113,12 @@ function SceneWelcom:Draw()
 		self.mUIRoot:Draw()
 	end
 	
-	if self.mScene~=nil then
-		self.mScene:Update()
+	if self.mWomenHair~=nil then
+		self.mWomenHair:Update()
+	end
+	
+	if self.mWomenBody~=nil then
+		self.mWomenBody:Update()
 	end
 end
 
