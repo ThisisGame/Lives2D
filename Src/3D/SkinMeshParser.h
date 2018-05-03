@@ -2,11 +2,11 @@
 
 class TiXmlElement;
 class GameObject;
-class SceneParser
+class SkinMeshParser
 {
 public:
-	SceneParser();
-	~SceneParser();
+	SkinMeshParser();
+	~SkinMeshParser();
 
 	GameObject* CreateScene(const char* varFilePath);
 

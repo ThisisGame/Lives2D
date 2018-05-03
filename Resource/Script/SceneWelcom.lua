@@ -17,11 +17,11 @@ function SceneWelcom:Init()
 	local tmpGoCamera=GameObject:new("sceneCamera")
 	self.mCamera=tmpGoCamera:AddComponent("Camera")
 	
-	local tmpSceneParserWomenHair=SceneParser:new()
-	self.mWomenHair=tmpSceneParserWomenHair:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/Women_0/Women_0.xml");
+	local tmpSkinMeshParserWomenHair=SkinMeshParser:new()
+	self.mWomenHair=tmpSkinMeshParserWomenHair:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/9010006/9010006.xml");
 	
-	local tmpSceneParserWomenBody=SceneParser:new()
-	self.mWomenBody=tmpSceneParserWomenBody:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/Women_3/Women_3.xml");
+	-- local tmpSkinMeshParserWomenBody=SkinMeshParser:new()
+	-- self.mWomenBody=tmpSkinMeshParserWomenBody:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/Women_3/Women_3.xml");
 	
 	--local tmpUIParser=UIParser:new()
 	--self.mUIRoot=tmpUIParser:CreateUI(ResourcesManager:DataPath() .. "/Resource/UI/UI_Login/UI_Login.xml");

@@ -119,14 +119,14 @@
     <ClCompile Include="..\..\Src\3D\lua_MeshFilter.cpp" />
     <ClCompile Include="..\..\Src\3D\lua_MeshRenderer.cpp" />
     <ClCompile Include="..\..\Src\3D\lua_Renderer.cpp" />
-    <ClCompile Include="..\..\Src\3D\lua_SceneParse.cpp" />
+    <ClCompile Include="..\..\Src\3D\lua_SkinMeshParser.cpp" />
     <ClCompile Include="..\..\Src\3D\lua_SkinMeshRenderer.cpp" />
     <ClCompile Include="..\..\Src\3D\Material.cpp" />
     <ClCompile Include="..\..\Src\3D\Mesh.cpp" />
     <ClCompile Include="..\..\Src\3D\MeshFilter.cpp" />
     <ClCompile Include="..\..\Src\3D\MeshRenderer.cpp" />
     <ClCompile Include="..\..\Src\3D\Renderer.cpp" />
-    <ClCompile Include="..\..\Src\3D\SceneParser.cpp" />
+    <ClCompile Include="..\..\Src\3D\SkinMeshParser.cpp" />
     <ClCompile Include="..\..\Src\3D\SkinMeshRenderer.cpp" />
     <ClCompile Include="..\..\Src\Audio\AudioSource.cpp" />
     <ClCompile Include="..\..\Src\Audio\lua_AudioSource.cpp" />
@@ -210,7 +210,7 @@
     <ClInclude Include="..\..\Src\3D\MeshFilter.h" />
     <ClInclude Include="..\..\Src\3D\MeshRenderer.h" />
     <ClInclude Include="..\..\Src\3D\Renderer.h" />
-    <ClInclude Include="..\..\Src\3D\SceneParser.h" />
+    <ClInclude Include="..\..\Src\3D\SkinMeshParser.h" />
     <ClInclude Include="..\..\Src\3D\SkinMeshRenderer.h" />
     <ClInclude Include="..\..\Src\3D\Texture.h" />
     <ClInclude Include="..\..\Src\3D\TextureType.h" />

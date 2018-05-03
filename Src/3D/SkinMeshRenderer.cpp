@@ -158,7 +158,7 @@ void SkinMeshRenderer::Update()
 		return;
 	}
 
-	int tmpUpdateBeginTime = GetTickCount();
+	//int tmpUpdateBeginTime = GetTickCount();
 
 	//calculate current frame bone offset
 	mRunningTime = mRunningTime + Time::deltaTime;
@@ -222,8 +222,8 @@ void SkinMeshRenderer::Update()
 		}
 	}
 
-	int tmpUpdateCost = GetTickCount() - tmpUpdateBeginTime;
+	/*int tmpUpdateCost = GetTickCount() - tmpUpdateBeginTime;
 	int a = 0;
 
-	Helper::LOG("%d", tmpUpdateCost);
+	Helper::LOG("%d", tmpUpdateCost);*/
 }

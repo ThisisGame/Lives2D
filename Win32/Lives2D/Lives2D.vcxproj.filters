@@ -297,12 +297,6 @@
     <ClCompile Include="..\..\Src\GLProgram\Shader.cpp">
       <Filter>GLProgram</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Src\3D\SceneParser.cpp">
-      <Filter>3D</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Src\3D\lua_SceneParse.cpp">
-      <Filter>3D</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Src\3D\lua_Camera.cpp">
       <Filter>3D</Filter>
     </ClCompile>
@@ -325,6 +319,12 @@
       <Filter>3D</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Src\3D\lua_SkinMeshRenderer.cpp">
+      <Filter>3D</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\3D\SkinMeshParser.cpp">
+      <Filter>3D</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\3D\lua_SkinMeshParser.cpp">
       <Filter>3D</Filter>
     </ClCompile>
   </ItemGroup>
@@ -497,10 +497,10 @@
     <ClInclude Include="..\..\Src\GLProgram\Shader.h">
       <Filter>GLProgram</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Src\3D\SceneParser.h">
+    <ClInclude Include="..\..\Src\3D\SkinMeshRenderer.h">
       <Filter>3D</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Src\3D\SkinMeshRenderer.h">
+    <ClInclude Include="..\..\Src\3D\SkinMeshParser.h">
       <Filter>3D</Filter>
     </ClInclude>
   </ItemGroup>

@@ -333,10 +333,10 @@ LOCAL_SRC_FILES := Tools/Helper.cpp \
 		3D/MeshFilter.cpp \
 		3D/MeshRenderer.cpp \
 		3D/Renderer.cpp \
-		3D/SceneParser.cpp \
+		3D/SkinMeshParser.cpp \
 		3D/SkinMeshRenderer.cpp \
 		3D/lua_Camera.cpp \
-		3D/lua_SceneParse.cpp \
+		3D/lua_SkinMeshParser.cpp \
 		3D/lua_Material.cpp \
 		3D/lua_Mesh.cpp \
 		3D/lua_MeshFilter.cpp \

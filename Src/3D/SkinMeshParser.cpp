@@ -1,21 +1,21 @@
-#include "SceneParser.h"
+#include "SkinMeshParser.h"
 #include"PlayerPrefs/TinyXml/tinyxml.h"
 #include"Component/GameObject.h"
 #include<fstream>
 #include"Tools/Helper.h"
 
-SceneParser::SceneParser()
+SkinMeshParser::SkinMeshParser()
 {
 }
 
 
-GameObject*	 SceneParser::CreateScene(const char * varFilePath)
+GameObject*	 SkinMeshParser::CreateScene(const char * varFilePath)
 {
 	//文件不存在，先创建
 	std::ifstream tmpXmlFile(varFilePath);
 	if (!tmpXmlFile)
 	{
-		Helper::LOG("SceneParser::CreateScene %s not exist", varFilePath);
+		Helper::LOG("SkinMeshParser::CreateScene %s not exist", varFilePath);
 		return nullptr;
 	}
 
@@ -27,7 +27,7 @@ GameObject*	 SceneParser::CreateScene(const char * varFilePath)
 	TiXmlElement *tmpTiXmlElementRoot = tmpTiXmlDocument->RootElement();
 	if (tmpTiXmlElementRoot == NULL)
 	{
-		Helper::LOG("SceneParser::CreateScene RootElement NULL");
+		Helper::LOG("SkinMeshParser::CreateScene RootElement NULL");
 		return nullptr;
 	}
 
@@ -39,7 +39,7 @@ GameObject*	 SceneParser::CreateScene(const char * varFilePath)
 	return tmpGameObjectRoot;
 }
 
-void SceneParser::RecursiveNode(TiXmlElement * varTiXmlElementRoot, GameObject * varGameObjectRoot)
+void SkinMeshParser::RecursiveNode(TiXmlElement * varTiXmlElementRoot, GameObject * varGameObjectRoot)
 {
 	varGameObjectRoot->InitWithXml(varTiXmlElementRoot);
 
@@ -67,7 +67,7 @@ void SceneParser::RecursiveNode(TiXmlElement * varTiXmlElementRoot, GameObject *
 	}
 }
 
-SceneParser::~SceneParser()
+SkinMeshParser::~SkinMeshParser()
 {
 }
 
