@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<GameObject Name="MultiTexture"  Position="(0,-1,5)" Rotation="(0,0,0)" Scale="(1,1,1)">
+	<Component Type="MeshFilter" Mesh="Anim/MultiTexture/MultiTexture.mesh"/>
+	<Component Type="Material" Shader="Shader/MultiTexture" IsSkinMesh="false">
+		<ShaderProperty Name="m_texture" ValueType="Texture" ActiveTextureIndex="0" TexturePath="Anim/MultiTexture/JP_Brick01_Bump.jpg"/>
+		<ShaderProperty Name="m_texture_Gray" ValueType="Texture" ActiveTextureIndex="1" TexturePath="Anim/MultiTexture/license plates.jpg"/>
+    	<ShaderProperty Name="m_mvp" ValueType="UniformMatrix4fv"/>
+    	<ShaderProperty Name="m_position" ValueType="VertexAttributePoint"/>
+    	<ShaderProperty Name="m_uv" ValueType="VertexAttributePoint"/>
+	</Component>
+	<Component Type="MeshRenderer"/>
+</GameObject>

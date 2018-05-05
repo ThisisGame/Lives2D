@@ -18,7 +18,7 @@ function SceneWelcom:Init()
 	self.mCamera=tmpGoCamera:AddComponent("Camera")
 	
 	local tmpSkinMeshParserWomenHair=SkinMeshParser:new()
-	self.mWomenHair=tmpSkinMeshParserWomenHair:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/9010006/9010006.xml");
+	self.mWomenHair=tmpSkinMeshParserWomenHair:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/MultiTexture/MultiTexture.xml");
 	
 	-- local tmpSkinMeshParserWomenBody=SkinMeshParser:new()
 	-- self.mWomenBody=tmpSkinMeshParserWomenBody:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/Women_3/Women_3.xml");

@@ -94,6 +94,40 @@ void MeshFilter::LoadMesh(const char * varMeshPath)
 
 		for (size_t i = 0; i < tmpMaterialSize; i++)
 		{
+			//读取材质名字
+			unsigned char tmpMaterialNameStringSize = 0;
+			tmpStream.read((char*)(&tmpMaterialNameStringSize), sizeof(tmpMaterialNameStringSize));
+
+			char* tmpMaterialNameStr = (char*)malloc(tmpMaterialNameStringSize);
+			tmpStream.read(tmpMaterialNameStr, tmpMaterialNameStringSize);
+
+			//读取贴图数量
+			unsigned char tmpTextureCount = 0;
+			tmpStream.read((char*)(&tmpTextureCount), sizeof(tmpTextureCount));
+
+			for (unsigned char tmpTextureIndex = 0; tmpTextureIndex < tmpTextureCount; tmpTextureIndex++)
+			{
+				//读取贴图名字
+				unsigned char tmpTextureNameStringSize = 0;
+				tmpStream.read((char*)(&tmpTextureNameStringSize), sizeof(tmpTextureNameStringSize));
+
+				char* tmpTextureNameStr = (char*)malloc(tmpTextureNameStringSize);
+				tmpStream.read(tmpTextureNameStr, tmpTextureNameStringSize);
+
+				//获取UV Tiling、Offset
+				float tmpUTilingValue = 0.0f;
+				tmpStream.read((char*)(&tmpUTilingValue), sizeof(tmpUTilingValue));
+
+				float tmpVTilingValue = 0.0f;
+				tmpStream.read((char*)(&tmpVTilingValue), sizeof(tmpVTilingValue));
+
+				float tmpUOffsetValue = 0.0f;
+				tmpStream.read((char*)(&tmpUOffsetValue), sizeof(tmpUOffsetValue));
+
+				float tmpVOffsetValue = 0.0f;
+				tmpStream.read((char*)(&tmpVOffsetValue), sizeof(tmpVOffsetValue));
+			}
+
 			//读取单个材质上 附属的顶点
 			int tmpVertexSizeInMaterial;
 			tmpStream.read((char*)(&tmpVertexSizeInMaterial), sizeof(tmpVertexSizeInMaterial));
