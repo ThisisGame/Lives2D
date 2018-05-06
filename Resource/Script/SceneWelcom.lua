@@ -5,7 +5,8 @@ local SceneWelcom=class()
 function SceneWelcom:ctor()
 	print("SceneWelcom:ctor")
 	self.mUIRoot=nil
-	self.mWomenHair=nil
+	self.mGround=nil
+	self.mPlayer=nil
 	self.mWomenBody=nil
 	print(ResourcesManager:DataPath())
 end
@@ -14,11 +15,34 @@ end
 function SceneWelcom:Init()
 	print("SceneWelcom:Init")
 	
+	
+	
 	local tmpGoCamera=GameObject:new("sceneCamera")
 	self.mCamera=tmpGoCamera:AddComponent("Camera")
 	
-	local tmpSkinMeshParserWomenHair=SkinMeshParser:new()
-	self.mWomenHair=tmpSkinMeshParserWomenHair:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/MultiTexture/MultiTexture.xml");
+	
+	
+	local tmpGoPhysicsWorld=GameObject:new("PhysicsWorld")
+	local tmpPhysicsWorld=tmpGoPhysicsWorld:AddComponent("PhysicsWorld")
+	
+	local tmpSkinMeshParserGround=SkinMeshParser:new()
+	self.mGround=tmpSkinMeshParserGround:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/ground/ground.xml");
+	self.mGround.mTransform:SetLocalPosition(Vector3(0,-5,-10))
+	local tmpRigidbody= self.mGround:AddComponent("Rigidbody")
+	tmpRigidbody:SetCollisionShape(1,0.0,10,0.5,10)
+	
+	
+	local tmpSkinMeshParserPlayer=SkinMeshParser:new()
+	self.mPlayer=tmpSkinMeshParserPlayer:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/9010006/9010006.xml");
+	self.mPlayer.mTransform:SetLocalPosition(Vector3(0,-1,-10))
+	local tmpRigidbodyPlayer= self.mPlayer:AddComponent("Rigidbody")
+	tmpRigidbodyPlayer:SetCollisionShape(2,1.0,1,0,0)
+	
+	-- local tmpBox=GameObject:new("Box")
+	-- tmpBox.mTransform:SetLocalPosition(Vector3(0,1000,0))
+	-- local tmpRigidbody= tmpBox:AddComponent("Rigidbody")
+	-- tmpRigidbody:SetCollisionShape(1,1.0,10,10,10)
+	
 	
 	-- local tmpSkinMeshParserWomenBody=SkinMeshParser:new()
 	-- self.mWomenBody=tmpSkinMeshParserWomenBody:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/Women_3/Women_3.xml");
@@ -119,6 +143,14 @@ function SceneWelcom:Draw()
 	
 	if self.mWomenBody~=nil then
 		self.mWomenBody:Update()
+	end
+	
+	if self.mGround~=nil then
+		self.mGround:Update()
+	end
+	
+	if self.mPlayer~=nil then
+		self.mPlayer:Update()
 	end
 end
 

@@ -1,0 +1,13 @@
+$#include"Rigidbody.h"
+
+
+class Rigidbody :public Component
+{
+public:
+	Rigidbody();
+	~Rigidbody();
+
+
+public:
+	void SetCollisionShape(int varRigidbodyShape,int varMass,  float varX, float varY, float varZ);
+};

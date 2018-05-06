@@ -24,6 +24,8 @@
 
 #include"Tools/Time.h"
 
+#include"Physics/PhysicsWorld.h"
+
 class WinGame
 {
 public:
@@ -127,6 +129,8 @@ public:
 
 	void update(float varDeltaTime)
 	{
+		PhysicsWorld::Simulation();
+
 		//Lives2D::Update(varDeltaTime);
 		std::function<void(lua_State*)> tmpFunction = [&](lua_State* var_pLuaState)
 		{

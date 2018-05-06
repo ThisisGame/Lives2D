@@ -55,6 +55,9 @@
     <Filter Include="Tools\ConvertUTF">
       <UniqueIdentifier>{4734ac67-453b-4e7f-88e1-7d9adf93d99d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Physics">
+      <UniqueIdentifier>{e4c0d5a1-2243-417d-a7b4-db8b1dbab042}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Src\Platform\Windows\WinMain.cpp">
@@ -327,6 +330,24 @@
     <ClCompile Include="..\..\Src\3D\lua_SkinMeshParser.cpp">
       <Filter>3D</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Src\Physics\Rigidbody.cpp">
+      <Filter>Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Physics\PhysicsWorld.cpp">
+      <Filter>Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Physics\lua_Rigidbody.cpp">
+      <Filter>Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Physics\lua_PhysicsWorld.cpp">
+      <Filter>Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Physics\PhysicsShape.cpp">
+      <Filter>Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Physics\lua_PhysicsShape.cpp">
+      <Filter>Physics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\Platform\Windows\WinGame.h">
@@ -502,6 +523,15 @@
     </ClInclude>
     <ClInclude Include="..\..\Src\3D\SkinMeshParser.h">
       <Filter>3D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Physics\Rigidbody.h">
+      <Filter>Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Physics\PhysicsWorld.h">
+      <Filter>Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Physics\PhysicsShape.h">
+      <Filter>Physics</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

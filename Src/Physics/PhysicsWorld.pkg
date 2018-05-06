@@ -1,0 +1,8 @@
+$#include"PhysicsWorld.h"
+
+class PhysicsWorld :public Component
+{
+public:
+	PhysicsWorld();
+	~PhysicsWorld();
+};

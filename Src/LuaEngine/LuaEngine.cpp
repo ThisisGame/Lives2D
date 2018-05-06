@@ -44,6 +44,10 @@ TOLUA_API int  tolua_Renderer_open(lua_State* tolua_S);
 TOLUA_API int  tolua_MeshRenderer_open(lua_State* tolua_S);
 TOLUA_API int  tolua_SkinMeshRenderer_open(lua_State* tolua_S);
 
+TOLUA_API int  tolua_PhysicsShape_open(lua_State* tolua_S);
+TOLUA_API int  tolua_Rigidbody_open(lua_State* tolua_S);
+TOLUA_API int  tolua_PhysicsWorld_open(lua_State* tolua_S);
+
 LuaEngine* LuaEngine::m_pSingleton = nullptr;
 
 LuaEngine::LuaEngine()
@@ -86,6 +90,10 @@ LuaEngine::LuaEngine()
 	tolua_Renderer_open(m_pLua_State);
 	tolua_MeshRenderer_open(m_pLua_State);
 	tolua_SkinMeshRenderer_open(m_pLua_State);
+
+	tolua_PhysicsShape_open(m_pLua_State);
+	tolua_Rigidbody_open(m_pLua_State);
+	tolua_PhysicsWorld_open(m_pLua_State);
 
 	mErrorPause = false;
 

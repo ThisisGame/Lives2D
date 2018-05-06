@@ -65,13 +65,13 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\..\Libs\FreeImage;..\..\Libs\GLES2.0\include;..\..\Libs\GLM-0.9.6.3;..\..\Src;..\..\Libs\lua\include;..\..\Libs\tolua++\include;..\..\Libs\FreeType\include;..\..\..\Lives2D_Depends\FMOD\Windows\inc;..\..\..\Lives2D_Depends\FMOD\Windows\common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\Libs\FreeImage;..\..\Libs\GLES2.0\include;..\..\Libs\GLM-0.9.6.3;..\..\Src;..\..\Libs\lua\include;..\..\Libs\tolua++\include;..\..\Libs\FreeType\include;..\..\..\Lives2D_Depends\FMOD\Windows\inc;..\..\..\Lives2D_Depends\FMOD\Windows\common;..\..\Libs\bullet3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\..\Libs\FreeImage;..\..\Libs\GLES2.0\lib\windows\x86;..\..\Libs\lua\lib;..\..\Libs\tolua++\lib;..\..\Libs\FreeType\lib;..\..\..\Lives2D_Depends\FMOD\Windows\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>FreeImage.lib;libEGL.lib;libGLESv2.lib;lua5.1.4.lib;tolua++.lib;freetype253_D.lib;fmodL_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\Libs\FreeImage;..\..\Libs\GLES2.0\lib\windows\x86;..\..\Libs\lua\lib;..\..\Libs\tolua++\lib;..\..\Libs\FreeType\lib;..\..\..\Lives2D_Depends\FMOD\Windows\lib;..\..\Libs\bullet3\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>FreeImage.lib;libEGL.lib;libGLESv2.lib;lua5.1.4.lib;tolua++.lib;freetype253_D.lib;fmodL_vc.lib;BulletCollision.lib;BulletDynamics.lib;LinearMath.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Windows</SubSystem>
       <AdditionalOptions>/nodefaultlib:"MSVCRT" %(AdditionalOptions)</AdditionalOptions>
     </Link>
@@ -186,6 +186,12 @@
     <ClCompile Include="..\..\Src\LuaEngine\NetworkDispatch.cpp" />
     <ClCompile Include="..\..\Src\Math\lua_Math.cpp" />
     <ClCompile Include="..\..\Src\Math\Math.cpp" />
+    <ClCompile Include="..\..\Src\Physics\lua_PhysicsShape.cpp" />
+    <ClCompile Include="..\..\Src\Physics\lua_PhysicsWorld.cpp" />
+    <ClCompile Include="..\..\Src\Physics\lua_Rigidbody.cpp" />
+    <ClCompile Include="..\..\Src\Physics\PhysicsShape.cpp" />
+    <ClCompile Include="..\..\Src\Physics\PhysicsWorld.cpp" />
+    <ClCompile Include="..\..\Src\Physics\Rigidbody.cpp" />
     <ClCompile Include="..\..\Src\Platform\Windows\WinMain.cpp" />
     <ClCompile Include="..\..\Src\PlayerPrefs\Convert.cpp" />
     <ClCompile Include="..\..\Src\PlayerPrefs\PlayerPrefs.cpp" />
@@ -251,6 +257,9 @@
     <ClInclude Include="..\..\Src\LuaEngine\NetworkClient.h" />
     <ClInclude Include="..\..\Src\LuaEngine\NetworkDispatch.h" />
     <ClInclude Include="..\..\Src\Math\Math.h" />
+    <ClInclude Include="..\..\Src\Physics\PhysicsShape.h" />
+    <ClInclude Include="..\..\Src\Physics\PhysicsWorld.h" />
+    <ClInclude Include="..\..\Src\Physics\Rigidbody.h" />
     <ClInclude Include="..\..\Src\Platform\Windows\WinGame.h" />
     <ClInclude Include="..\..\Src\PlayerPrefs\Convert.h" />
     <ClInclude Include="..\..\Src\PlayerPrefs\PlayerPrefs.h" />

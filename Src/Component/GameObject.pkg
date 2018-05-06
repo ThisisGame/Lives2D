@@ -10,7 +10,8 @@ public:
 
 public:
 	std::string name;
-
+	Transform* mTransform;
+	
 public:
 	void AddChild(GameObject* varGameObject);
 

@@ -1,0 +1,7 @@
+$#include"PhysicsShape.h"
+
+enum RigidbodyShape
+{
+	BoxShape = 1,
+	SphereShape = 2,
+};
