@@ -18,25 +18,28 @@ function SceneWelcom:Init()
 	
 	
 	local tmpGoCamera=GameObject:new("sceneCamera")
+	tmpGoCamera.mTransform:SetLocalPosition(Vector3(15.2,57.7,9.4))
+	tmpGoCamera.mTransform:SetLocalRotation(Vector3(38.1321,13.1721,8.222899))
 	self.mCamera=tmpGoCamera:AddComponent("Camera")
 	
-	
-	
-	local tmpGoPhysicsWorld=GameObject:new("PhysicsWorld")
-	local tmpPhysicsWorld=tmpGoPhysicsWorld:AddComponent("PhysicsWorld")
-	
 	local tmpSkinMeshParserGround=SkinMeshParser:new()
-	self.mGround=tmpSkinMeshParserGround:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/ground/ground.xml");
-	self.mGround.mTransform:SetLocalPosition(Vector3(0,-5,-10))
-	local tmpRigidbody= self.mGround:AddComponent("Rigidbody")
-	tmpRigidbody:SetCollisionShape(1,0.0,10,0.5,10)
+	self.mGround=tmpSkinMeshParserGround:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/City-1/City-1.xml");
+	
+	-- local tmpGoPhysicsWorld=GameObject:new("PhysicsWorld")
+	-- local tmpPhysicsWorld=tmpGoPhysicsWorld:AddComponent("PhysicsWorld")
+	
+	-- local tmpSkinMeshParserGround=SkinMeshParser:new()
+	-- self.mGround=tmpSkinMeshParserGround:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/ground/ground.xml");
+	-- self.mGround.mTransform:SetLocalPosition(Vector3(0,-5,-10))
+	-- local tmpRigidbody= self.mGround:AddComponent("Rigidbody")
+	-- tmpRigidbody:SetCollisionShape(1,0.0,10,0.5,10)
 	
 	
-	local tmpSkinMeshParserPlayer=SkinMeshParser:new()
-	self.mPlayer=tmpSkinMeshParserPlayer:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/9010006/9010006.xml");
-	self.mPlayer.mTransform:SetLocalPosition(Vector3(0,-1,-10))
-	local tmpRigidbodyPlayer= self.mPlayer:AddComponent("Rigidbody")
-	tmpRigidbodyPlayer:SetCollisionShape(2,1.0,1,0,0)
+	-- local tmpSkinMeshParserPlayer=SkinMeshParser:new()
+	-- self.mPlayer=tmpSkinMeshParserPlayer:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/9010006/9010006.xml");
+	-- self.mPlayer.mTransform:SetLocalPosition(Vector3(0,-1,-10))
+	-- local tmpRigidbodyPlayer= self.mPlayer:AddComponent("Rigidbody")
+	-- tmpRigidbodyPlayer:SetCollisionShape(2,1.0,1,0,0)
 	
 	-- local tmpBox=GameObject:new("Box")
 	-- tmpBox.mTransform:SetLocalPosition(Vector3(0,1000,0))

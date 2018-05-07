@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<GameObject Name="City-1"  Position="(0,0,0)" Rotation="(0,0,0)" Scale="(0.01,0.01,0.01)">
+	<Component Type="MeshFilter" Mesh="Anim/City-1/City-1.mesh"/>
+	<Component Type="Material" Name="lambert5" Shader="Shader/Texture" IsSkinMesh="false">
+		<ShaderProperty Name="m_texture" ValueType="Texture" ActiveTextureIndex="0" TexturePath="Anim/City-1/City-1_wujian01.jpg"/>
+    	<ShaderProperty Name="m_mvp" ValueType="UniformMatrix4fv"/>
+    	<ShaderProperty Name="m_position" ValueType="VertexAttributePoint"/>
+    	<ShaderProperty Name="m_uv" ValueType="VertexAttributePoint"/>
+	</Component>
+	<Component Type="Material" Name="lambert43" Shader="Shader/Texture" IsSkinMesh="false">
+		<ShaderProperty Name="m_texture" ValueType="Texture" ActiveTextureIndex="0" TexturePath="Anim/City-1/City-1_wujian02 .jpg"/>
+    	<ShaderProperty Name="m_mvp" ValueType="UniformMatrix4fv"/>
+    	<ShaderProperty Name="m_position" ValueType="VertexAttributePoint"/>
+    	<ShaderProperty Name="m_uv" ValueType="VertexAttributePoint"/>
+	</Component>
+	<Component Type="Material" Name="lambert46" Shader="Shader/Texture" IsSkinMesh="false">
+		<ShaderProperty Name="m_texture" ValueType="Texture" ActiveTextureIndex="0" TexturePath="Anim/City-1/City-1_wujian03.jpg"/>
+    	<ShaderProperty Name="m_mvp" ValueType="UniformMatrix4fv"/>
+    	<ShaderProperty Name="m_position" ValueType="VertexAttributePoint"/>
+    	<ShaderProperty Name="m_uv" ValueType="VertexAttributePoint"/>
+	</Component>
+	<Component Type="Material" Name="lambert41" Shader="Shader/Texture" IsSkinMesh="false">
+		<ShaderProperty Name="m_texture" ValueType="Texture" ActiveTextureIndex="0" TexturePath="Anim/City-1/City-1_zhiwu.png"/>
+    	<ShaderProperty Name="m_mvp" ValueType="UniformMatrix4fv"/>
+    	<ShaderProperty Name="m_position" ValueType="VertexAttributePoint"/>
+    	<ShaderProperty Name="m_uv" ValueType="VertexAttributePoint"/>
+	</Component>
+	<Component Type="Material" Name="lambert45" Shader="Shader/Texture" IsSkinMesh="false">
+		<ShaderProperty Name="m_texture" ValueType="Texture" ActiveTextureIndex="0" TexturePath="Anim/City-1/City-1_shitou.png"/>
+    	<ShaderProperty Name="m_mvp" ValueType="UniformMatrix4fv"/>
+    	<ShaderProperty Name="m_position" ValueType="VertexAttributePoint"/>
+    	<ShaderProperty Name="m_uv" ValueType="VertexAttributePoint"/>
+	</Component>
+	<Component Type="Material" Name="lambert54" Shader="Shader/Texture" IsSkinMesh="false">
+		<ShaderProperty Name="m_texture" ValueType="Texture" ActiveTextureIndex="0" TexturePath="Anim/City-1/City-1_yuan.jpg"/>
+    	<ShaderProperty Name="m_mvp" ValueType="UniformMatrix4fv"/>
+    	<ShaderProperty Name="m_position" ValueType="VertexAttributePoint"/>
+    	<ShaderProperty Name="m_uv" ValueType="VertexAttributePoint"/>
+	</Component>
+	<Component Type="Material" Name="lambert51" Shader="Shader/Texture" IsSkinMesh="false">
+		<ShaderProperty Name="m_texture" ValueType="Texture" ActiveTextureIndex="0" TexturePath="Anim/City-1/City-4_zhiwu.png"/>
+    	<ShaderProperty Name="m_mvp" ValueType="UniformMatrix4fv"/>
+    	<ShaderProperty Name="m_position" ValueType="VertexAttributePoint"/>
+    	<ShaderProperty Name="m_uv" ValueType="VertexAttributePoint"/>
+	</Component>
+	<Component Type="MeshRenderer"/>
+</GameObject>
