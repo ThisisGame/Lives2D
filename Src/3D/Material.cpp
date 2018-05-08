@@ -21,6 +21,8 @@ Material::~Material()
 
 void Material::InitWithXml(TiXmlElement * varTiXmlElement)
 {
+	mName = varTiXmlElement->Attribute("Name");
+
 	const char* tmpIsSkinMesh= varTiXmlElement->Attribute("IsSkinMesh");
 	if (tmpIsSkinMesh != nullptr)
 	{
@@ -239,6 +241,11 @@ void Material::SetVertexIndices(int varSize, unsigned short* varVertexIndices)
 {
 	mVertexIndicesSize = varSize;
 	mVertexIndices = varVertexIndices;
+}
+
+const char * Material::GetName()
+{
+	return mName;
 }
 
 float tmpRotateY = 0;

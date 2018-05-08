@@ -18,12 +18,12 @@ function SceneWelcom:Init()
 	
 	
 	local tmpGoCamera=GameObject:new("sceneCamera")
-	tmpGoCamera.mTransform:SetLocalPosition(Vector3(15.2,57.7,9.4))
-	tmpGoCamera.mTransform:SetLocalRotation(Vector3(38.1321,13.1721,8.222899))
+	tmpGoCamera.mTransform:SetLocalPosition(Vector3(0,0,10))
+	tmpGoCamera.mTransform:SetLocalRotation(Vector3(45,0,0))
 	self.mCamera=tmpGoCamera:AddComponent("Camera")
 	
-	local tmpSkinMeshParserGround=SkinMeshParser:new()
-	self.mGround=tmpSkinMeshParserGround:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/City-1/City-1.xml");
+	-- local tmpSkinMeshParserGround=SkinMeshParser:new()
+	-- self.mGround=tmpSkinMeshParserGround:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/City-1/City-1.xml");
 	
 	-- local tmpGoPhysicsWorld=GameObject:new("PhysicsWorld")
 	-- local tmpPhysicsWorld=tmpGoPhysicsWorld:AddComponent("PhysicsWorld")
@@ -35,8 +35,8 @@ function SceneWelcom:Init()
 	-- tmpRigidbody:SetCollisionShape(1,0.0,10,0.5,10)
 	
 	
-	-- local tmpSkinMeshParserPlayer=SkinMeshParser:new()
-	-- self.mPlayer=tmpSkinMeshParserPlayer:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/9010006/9010006.xml");
+	local tmpSkinMeshParserPlayer=SkinMeshParser:new()
+	self.mPlayer=tmpSkinMeshParserPlayer:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/9010006/9010006.xml");
 	-- self.mPlayer.mTransform:SetLocalPosition(Vector3(0,-1,-10))
 	-- local tmpRigidbodyPlayer= self.mPlayer:AddComponent("Rigidbody")
 	-- tmpRigidbodyPlayer:SetCollisionShape(2,1.0,1,0,0)

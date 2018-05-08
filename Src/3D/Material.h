@@ -32,7 +32,11 @@ public:
 
 	void SetVertexIndices(int varSize,unsigned short* varVertexIndices);
 
+	const char* GetName();
+
 private:
+	const char* mName;
+
 	Shader* mShader;
 
 	//需要用键值对存储属性和值

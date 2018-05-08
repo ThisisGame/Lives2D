@@ -32,6 +32,12 @@ const std::vector<unsigned short>& MeshFilter::GetVertexIndexInMaterial(int varM
 	return mVertexIndexInMaterial[varMaterialIndex];
 }
 
+const std::vector<unsigned short>& MeshFilter::GetIndexInMaterial(const char * varMaterialName)
+{
+	// TODO: 在此处插入 return 语句
+	return mMapIndexInMaterial[varMaterialName];
+}
+
 void MeshFilter::LoadMesh(const char * varMeshPath)
 {
 	std::ifstream tmpStream(varMeshPath, std::ios::binary);
@@ -143,6 +149,8 @@ void MeshFilter::LoadMesh(const char * varMeshPath)
 			}
 
 			mVertexIndexInMaterial[i] = tmpVertexIndexInOneMaterial;
+
+			mMapIndexInMaterial[tmpMaterialNameStr]=tmpVertexIndexInOneMaterial;
 		}
 
 		mMesh = tmpMesh;

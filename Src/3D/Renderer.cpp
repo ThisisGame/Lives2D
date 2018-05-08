@@ -39,7 +39,8 @@ void Renderer::Update()
 			mVectorMaterial[i]->SetVertexAttribPointer("m_position", 3, sizeof(Vertex), &(mMesh->GetVertexArray()->Position.x));
 			mVectorMaterial[i]->SetVertexAttribPointer("m_uv", 2, sizeof(Vertex), &(mMesh->GetVertexArray()->TexCoords.x));
 
-			std::vector<unsigned short>& tmpVertexIndexInMaterial=(std::vector<unsigned short>&)(mMeshFilter->GetVertexIndexInMaterial(i));
+			const char* tmpMaterialName = mVectorMaterial[i]->GetName();
+			std::vector<unsigned short>& tmpVertexIndexInMaterial=(std::vector<unsigned short>&)(mMeshFilter->GetIndexInMaterial(tmpMaterialName));
 			mVectorMaterial[i]->SetVertexIndices(tmpVertexIndexInMaterial.size(), &tmpVertexIndexInMaterial[0]);
 		}
 		

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<GameObject Name="City-1"  Position="(0,0,0)" Rotation="(0,0,0)" Scale="(0.01,0.01,0.01)">
+<GameObject Name="City-1"  Position="(0,0,0)" Rotation="(0,0,0)" Scale="(0.1,0.1,0.1)">
 	<Component Type="MeshFilter" Mesh="Anim/City-1/City-1.mesh"/>
 	<Component Type="Material" Name="lambert5" Shader="Shader/Texture" IsSkinMesh="false">
 		<ShaderProperty Name="m_texture" ValueType="Texture" ActiveTextureIndex="0" TexturePath="Anim/City-1/City-1_wujian01.jpg"/>
