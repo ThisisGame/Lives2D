@@ -2,6 +2,7 @@
 #include"PhysicsWorld.h"
 #include"PhysicsShape.h"
 #include"Component/Transform.h"
+#include"Component/GameObject.h"
 
 IMPLEMENT_DYNCRT_ACTION(Rigidbody)
 Rigidbody::Rigidbody()
@@ -77,6 +78,8 @@ void Rigidbody::SetCollisionShape(RigidbodyShape varRigidbodyShape, int varMass,
 
 	//add the body to the dynamics world
 	PhysicsWorld::AddRigidBody(body, mTransform);
+
+	body->setUserPointer((void*)mGameObject->name.c_str());
 }
 
 

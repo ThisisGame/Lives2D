@@ -191,6 +191,8 @@
     <ClCompile Include="..\..\Src\Physics\lua_Rigidbody.cpp" />
     <ClCompile Include="..\..\Src\Physics\PhysicsShape.cpp" />
     <ClCompile Include="..\..\Src\Physics\PhysicsWorld.cpp" />
+    <ClCompile Include="..\..\Src\Physics\Raycast.cpp" />
+    <ClCompile Include="..\..\Src\Physics\RaycastHit.cpp" />
     <ClCompile Include="..\..\Src\Physics\Rigidbody.cpp" />
     <ClCompile Include="..\..\Src\Platform\Windows\WinMain.cpp" />
     <ClCompile Include="..\..\Src\PlayerPrefs\Convert.cpp" />
@@ -259,6 +261,8 @@
     <ClInclude Include="..\..\Src\Math\Math.h" />
     <ClInclude Include="..\..\Src\Physics\PhysicsShape.h" />
     <ClInclude Include="..\..\Src\Physics\PhysicsWorld.h" />
+    <ClInclude Include="..\..\Src\Physics\Raycast.h" />
+    <ClInclude Include="..\..\Src\Physics\RaycastHit.h" />
     <ClInclude Include="..\..\Src\Physics\Rigidbody.h" />
     <ClInclude Include="..\..\Src\Platform\Windows\WinGame.h" />
     <ClInclude Include="..\..\Src\PlayerPrefs\Convert.h" />
