@@ -13,6 +13,7 @@ TOLUA_API int  tolua_AudioSource_open(lua_State* tolua_S);
 
 TOLUA_API int  tolua_KeyTouchListener_open(lua_State* tolua_S);
 TOLUA_API int  tolua_KeyTouch_open(lua_State* tolua_S);
+TOLUA_API int  tolua_Input_open(lua_State* tolua_S);
 
 TOLUA_API int  tolua_Object_open(lua_State* tolua_S);
 TOLUA_API int  tolua_GameObject_open(lua_State* tolua_S);
@@ -47,6 +48,8 @@ TOLUA_API int  tolua_SkinMeshRenderer_open(lua_State* tolua_S);
 TOLUA_API int  tolua_PhysicsShape_open(lua_State* tolua_S);
 TOLUA_API int  tolua_Rigidbody_open(lua_State* tolua_S);
 TOLUA_API int  tolua_PhysicsWorld_open(lua_State* tolua_S);
+TOLUA_API int  tolua_RaycastHit_open(lua_State* tolua_S);
+TOLUA_API int  tolua_Raycast_open(lua_State* tolua_S);
 
 LuaEngine* LuaEngine::m_pSingleton = nullptr;
 
@@ -62,6 +65,8 @@ LuaEngine::LuaEngine()
 	tolua_AudioSource_open(m_pLua_State);
 	tolua_KeyTouchListener_open(m_pLua_State);
 	tolua_KeyTouch_open(m_pLua_State);
+	tolua_Input_open(m_pLua_State);
+
 	tolua_Object_open(m_pLua_State);
 	tolua_GameObject_open(m_pLua_State);
 	tolua_Component_open(m_pLua_State);
@@ -94,6 +99,8 @@ LuaEngine::LuaEngine()
 	tolua_PhysicsShape_open(m_pLua_State);
 	tolua_Rigidbody_open(m_pLua_State);
 	tolua_PhysicsWorld_open(m_pLua_State);
+	tolua_RaycastHit_open(m_pLua_State);
+	tolua_Raycast_open(m_pLua_State);
 
 	mErrorPause = false;
 

@@ -39,7 +39,7 @@ function SceneWelcom:Init()
 	self.mPlayer=tmpSkinMeshParserPlayer:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/9010006/9010006.xml");
 	self.mPlayer.mTransform:SetLocalPosition(Vector3(0,-1,-10))
 	local tmpRigidbodyPlayer= self.mPlayer:AddComponent("Rigidbody")
-	tmpRigidbodyPlayer:SetCollisionShape(2,.0,1,0,0)
+	tmpRigidbodyPlayer:SetCollisionShape(1,.0,1,2,0)
 	
 	-- local tmpBox=GameObject:new("Box")
 	-- tmpBox.mTransform:SetLocalPosition(Vector3(0,1000,0))
@@ -132,9 +132,18 @@ function SceneWelcom:Update(varDeltaTime)
 		self.mCamera:Update()
 	end
 	
+	if Input.touchCount>0 then
+		print("touchCount:" .. Input.touchCount)
+		
+		local tmpRaycastHit=RaycastHit:new()
+		if Raycast:ScreenPointToRay(Input.mousePosition,self.mCamera,tmpRaycastHit) then
+			local tmpGo=tmpRaycastHit:GetHitGameObject()
+			print("HitGameObject:" .. tmpGo.name)
+		end
+	end
 end
 
---����
+
 function SceneWelcom:Draw()
 	if self.mUIRoot~=nil then
 		self.mUIRoot:Draw()

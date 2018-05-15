@@ -354,6 +354,18 @@
     <ClCompile Include="..\..\Src\Physics\Raycast.cpp">
       <Filter>Physics</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Src\Physics\lua_Raycast.cpp">
+      <Filter>Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Physics\lua_RaycastHit.cpp">
+      <Filter>Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\KeyTouch\Input.cpp">
+      <Filter>KeyTouch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\KeyTouch\lua_Input.cpp">
+      <Filter>KeyTouch</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\Platform\Windows\WinGame.h">
@@ -544,6 +556,9 @@
     </ClInclude>
     <ClInclude Include="..\..\Src\Physics\Raycast.h">
       <Filter>Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\KeyTouch\Input.h">
+      <Filter>KeyTouch</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

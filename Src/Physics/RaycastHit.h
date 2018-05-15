@@ -11,12 +11,19 @@ public:
 
 	float GetDistance();
 
+	void SetPoint(Vector3& varPoint);
+
 	Vector3 GetPoint();
+
+	void SetHitGameObject(GameObject* varGameObject);
+
+	GameObject* GetHitGameObject();
 
 private:
 	float mDistance;
 
 	Vector3 mPoint;
 
+	GameObject* mHitGameObject;
 };
 

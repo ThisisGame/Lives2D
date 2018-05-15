@@ -170,9 +170,11 @@
     <ClCompile Include="..\..\Src\ImageAnimation\ImageAnimationClip.cpp" />
     <ClCompile Include="..\..\Src\ImageAnimation\lua_ImageAnimation.cpp" />
     <ClCompile Include="..\..\Src\ImageAnimation\lua_ImageAnimationClip.cpp" />
+    <ClCompile Include="..\..\Src\KeyTouch\Input.cpp" />
     <ClCompile Include="..\..\Src\KeyTouch\KeyCode.cpp" />
     <ClCompile Include="..\..\Src\KeyTouch\KeyTouch.cpp" />
     <ClCompile Include="..\..\Src\KeyTouch\KeyTouchListener.cpp" />
+    <ClCompile Include="..\..\Src\KeyTouch\lua_Input.cpp" />
     <ClCompile Include="..\..\Src\KeyTouch\lua_KeyTouch.cpp" />
     <ClCompile Include="..\..\Src\KeyTouch\lua_KeyTouchListener.cpp" />
     <ClCompile Include="..\..\Src\Light\Light.cpp" />
@@ -188,6 +190,8 @@
     <ClCompile Include="..\..\Src\Math\Math.cpp" />
     <ClCompile Include="..\..\Src\Physics\lua_PhysicsShape.cpp" />
     <ClCompile Include="..\..\Src\Physics\lua_PhysicsWorld.cpp" />
+    <ClCompile Include="..\..\Src\Physics\lua_Raycast.cpp" />
+    <ClCompile Include="..\..\Src\Physics\lua_RaycastHit.cpp" />
     <ClCompile Include="..\..\Src\Physics\lua_Rigidbody.cpp" />
     <ClCompile Include="..\..\Src\Physics\PhysicsShape.cpp" />
     <ClCompile Include="..\..\Src\Physics\PhysicsWorld.cpp" />
@@ -249,6 +253,7 @@
     <ClInclude Include="..\..\Src\GUI\UIRoot.h" />
     <ClInclude Include="..\..\Src\ImageAnimation\ImageAnimation.h" />
     <ClInclude Include="..\..\Src\ImageAnimation\ImageAnimationClip.h" />
+    <ClInclude Include="..\..\Src\KeyTouch\Input.h" />
     <ClInclude Include="..\..\Src\KeyTouch\KeyCode.h" />
     <ClInclude Include="..\..\Src\KeyTouch\KeyTouch.h" />
     <ClInclude Include="..\..\Src\KeyTouch\KeyTouchListener.h" />

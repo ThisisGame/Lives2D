@@ -1,0 +1,20 @@
+$#include"RaycastHit.h"
+
+
+class RaycastHit
+{
+public:
+	RaycastHit();
+	~RaycastHit();
+
+
+	float GetDistance();
+
+	void SetPoint(Vector3& varPoint);
+
+	Vector3 GetPoint();
+
+	void SetHitGameObject(GameObject* varGameObject);
+	
+	GameObject* GetHitGameObject();
+};

@@ -6,6 +6,8 @@
 
 #include<map>
 
+#include"RaycastHit.h"
+
 class PhysicsWorld :
 	public Component
 {
@@ -26,6 +28,8 @@ public:
 	static void AddRigidBody(btRigidBody* varRigidBody,Transform* varTransform);
 
 	static void Simulation();
+
+	static bool RayTest(btVector3& varOrigin, btVector3& varEnd, RaycastHit* varRaycastHit);
 
 private:
 	btDefaultCollisionConfiguration* mCollisionConfiguration;

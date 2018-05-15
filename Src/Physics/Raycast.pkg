@@ -1,0 +1,11 @@
+$#include"Raycast.h"
+
+
+class Raycast
+{
+public:
+	Raycast();
+	~Raycast();
+
+	static bool ScreenPointToRay(Vector3& varScreenTouchPosition, Camera* varCamera,RaycastHit* varRaycastHit);
+};

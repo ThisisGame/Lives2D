@@ -26,13 +26,23 @@ function OnKey(varkeyCode)
 	--print("OnKey " .. varkeyCode)
 	
 	KeyTouch:OnKey(varkeyCode)
+	
+	
 end
 
 --屏幕触摸点击
 function OnTouch(varX,varY)
 
+	Input.touchCount=1
+
 	--print("OnTouch " .. varX .." " .. varY)
 	KeyTouch:OnTouch(varX, varY)
+	
+	Input.mousePosition.mX=varX;
+	Input.mousePosition.mY=varY;
+	
+	--print("Input.mousePosition:" .. Input.mousePosition.mX .. Input.mousePosition.mY)
+	
 end
 
 
@@ -40,7 +50,11 @@ end
 function OnTouchRelease(varX,varY)
 	--print("OnTouchRelease " .. varX .." " .. varY)
 
+	Input.touchCount=0
+	
 	KeyTouch:OnTouchRelease(varX, varY)
+	
+	
 end
 
 function OnDestroy()

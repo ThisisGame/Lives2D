@@ -123,10 +123,32 @@ void PhysicsWorld::Simulation()
 		float tmpY = float(trans.getOrigin().getY());
 		float tmpZ = float(trans.getOrigin().getZ());
 
-		Helper::LOG("world pos object %d = %f,%f,%f\n", j, tmpX, tmpY, tmpZ);
+		//Helper::LOG("world pos object %d = %f,%f,%f\n", j, tmpX, tmpY, tmpZ);
 
 		Transform* tmpTransform = sMapRigidBodyToTransform[body];
 		tmpTransform->SetPosition(Vector3(tmpX, tmpY, tmpZ));
+	}
+}
+
+bool PhysicsWorld::RayTest(btVector3 & varOrigin, btVector3 & varEnd, RaycastHit* varRaycastHit)
+{
+	btCollisionWorld::ClosestRayResultCallback tmpRayResultCallback(varOrigin, varEnd);
+
+	sDiscreteDynamicsWorld->rayTest(varOrigin, varEnd, tmpRayResultCallback);
+
+	if (tmpRayResultCallback.hasHit())
+	{
+		const char* tmpGameObjectName =(const char*) tmpRayResultCallback.m_collisionObject->getUserPointer();
+
+		btRigidBody* tmpRigidBody = (btRigidBody*)tmpRayResultCallback.m_collisionObject;
+		Transform* tmpHitTransform = sMapRigidBodyToTransform[tmpRigidBody];
+		varRaycastHit->SetHitGameObject(tmpHitTransform->mGameObject);
+
+		return true;
+	}
+	else
+	{
+		return false;
 	}
 }
 
