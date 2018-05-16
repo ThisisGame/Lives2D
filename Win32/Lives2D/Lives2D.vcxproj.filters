@@ -58,11 +58,11 @@
     <Filter Include="Physics">
       <UniqueIdentifier>{e4c0d5a1-2243-417d-a7b4-db8b1dbab042}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Platform\Windows\glfw">
+      <UniqueIdentifier>{238a4e24-a453-4091-ae40-9452ef396091}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Src\Platform\Windows\WinMain.cpp">
-      <Filter>Platform\Windows</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Src\Texture2D\Texture2D.cpp">
       <Filter>Texture2D</Filter>
     </ClCompile>
@@ -366,11 +366,11 @@
     <ClCompile Include="..\..\Src\KeyTouch\lua_Input.cpp">
       <Filter>KeyTouch</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Src\Platform\Windows\main.cpp">
+      <Filter>Platform\Windows</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Src\Platform\Windows\WinGame.h">
-      <Filter>Platform\Windows</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Src\Texture2D\Texture2D.h">
       <Filter>Texture2D</Filter>
     </ClInclude>
@@ -559,6 +559,15 @@
     </ClInclude>
     <ClInclude Include="..\..\Src\KeyTouch\Input.h">
       <Filter>KeyTouch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libs\glfw\include\glfw_config.h">
+      <Filter>Platform\Windows\glfw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libs\glfw\include\glfw3.h">
+      <Filter>Platform\Windows\glfw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libs\glfw\include\glfw3native.h">
+      <Filter>Platform\Windows\glfw</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
