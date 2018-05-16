@@ -17,16 +17,16 @@ function SceneWelcom:Init()
 	
 	
 	
-	local tmpGoCamera=GameObject:new("sceneCamera")
-	tmpGoCamera.mTransform:SetLocalPosition(Vector3(0,0,10))
-	tmpGoCamera.mTransform:SetLocalRotation(Vector3(0,0,0))
-	self.mCamera=tmpGoCamera:AddComponent("Camera")
+	-- local tmpGoCamera=GameObject:new("sceneCamera")
+	-- tmpGoCamera.mTransform:SetLocalPosition(Vector3(0,0,10))
+	-- tmpGoCamera.mTransform:SetLocalRotation(Vector3(0,0,0))
+	-- self.mCamera=tmpGoCamera:AddComponent("Camera")
 	
 	-- local tmpSkinMeshParserGround=SkinMeshParser:new()
 	-- self.mGround=tmpSkinMeshParserGround:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/City-1/City-1.xml");
 	
-	local tmpGoPhysicsWorld=GameObject:new("PhysicsWorld")
-	local tmpPhysicsWorld=tmpGoPhysicsWorld:AddComponent("PhysicsWorld")
+	-- local tmpGoPhysicsWorld=GameObject:new("PhysicsWorld")
+	-- local tmpPhysicsWorld=tmpGoPhysicsWorld:AddComponent("PhysicsWorld")
 	
 	-- local tmpSkinMeshParserGround=SkinMeshParser:new()
 	-- self.mGround=tmpSkinMeshParserGround:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/ground/ground.xml");
@@ -35,11 +35,11 @@ function SceneWelcom:Init()
 	-- tmpRigidbody:SetCollisionShape(1,0.0,10,0.5,10)
 	
 	
-	local tmpSkinMeshParserPlayer=SkinMeshParser:new()
-	self.mPlayer=tmpSkinMeshParserPlayer:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/9010006/9010006.xml");
-	self.mPlayer.mTransform:SetLocalPosition(Vector3(0,-1,-10))
-	local tmpRigidbodyPlayer= self.mPlayer:AddComponent("Rigidbody")
-	tmpRigidbodyPlayer:SetCollisionShape(1,.0,1,2,0)
+	-- local tmpSkinMeshParserPlayer=SkinMeshParser:new()
+	-- self.mPlayer=tmpSkinMeshParserPlayer:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/9010006/9010006.xml");
+	-- self.mPlayer.mTransform:SetLocalPosition(Vector3(0,-1,-10))
+	-- local tmpRigidbodyPlayer= self.mPlayer:AddComponent("Rigidbody")
+	-- tmpRigidbodyPlayer:SetCollisionShape(1,.0,1,2,0)
 	
 	-- local tmpBox=GameObject:new("Box")
 	-- tmpBox.mTransform:SetLocalPosition(Vector3(0,1000,0))
@@ -50,8 +50,8 @@ function SceneWelcom:Init()
 	-- local tmpSkinMeshParserWomenBody=SkinMeshParser:new()
 	-- self.mWomenBody=tmpSkinMeshParserWomenBody:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/Women_3/Women_3.xml");
 	
-	--local tmpUIParser=UIParser:new()
-	--self.mUIRoot=tmpUIParser:CreateUI(ResourcesManager:DataPath() .. "/Resource/UI/UI_Login/UI_Login.xml");
+	local tmpUIParser=UIParser:new()
+	self.mUIRoot=tmpUIParser:CreateUI(ResourcesManager:DataPath() .. "/Resource/UI/UI_Login/UI_Login.xml");
 	
 	-- local tmpGoUIRoot=GameObject:new("UIROOT")
 	-- self.mUIRoot=tmpGoUIRoot:AddComponent("UIRoot")

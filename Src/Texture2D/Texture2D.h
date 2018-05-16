@@ -4,9 +4,11 @@
 #if IOS
 #include <OpenGLES/ES2/gl.h>
 #include <OpenGLES/ES2/glext.h>
+#elif ANDROID
+#include<egl\egl.h>
+#include<gles2\gl2.h>
 #else
-#include<gles2/gl2.h>
-
+#include<glad/glad.h>
 #endif
 #include<string>
 

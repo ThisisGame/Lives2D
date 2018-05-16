@@ -369,6 +369,9 @@
     <ClCompile Include="..\..\Src\Platform\Windows\main.cpp">
       <Filter>Platform\Windows</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Libs\glfw\include\deps\glad.c">
+      <Filter>Platform\Windows\glfw</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\Texture2D\Texture2D.h">
@@ -430,9 +433,6 @@
     </ClInclude>
     <ClInclude Include="..\..\Src\GLProgram\GLProgram_Texture.h">
       <Filter>GLProgram</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Src\Audio\AudioCard.cpp">
-      <Filter>Audio</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Src\GLProgram\GLProgram_Font.h">
       <Filter>GLProgram</Filter>
@@ -568,6 +568,9 @@
     </ClInclude>
     <ClInclude Include="..\..\Libs\glfw\include\glfw3native.h">
       <Filter>Platform\Windows\glfw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Audio\AudioCard.cpp">
+      <Filter>Audio</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

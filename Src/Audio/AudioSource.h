@@ -6,9 +6,9 @@
 #include "common.h"
 #include"Component/Behavior.h"
 
+
+
 extern FMOD::System     *FMOD_System;
-
-
 class AudioSource :public Behavior
 {
 	DECLEAR_DYNCRT_ACTION(AudioSource)

@@ -35,6 +35,7 @@ void AudioSource::InitWithXml(TiXmlElement * varTiXmlElement)
 	Play();
 }
 
+
 void AudioSource::LoadAudio(const char * varAudioPath)
 {
 	FMOD_RESULT   tmpResult= FMOD_System->createSound(varAudioPath, FMOD_DEFAULT, 0, &mSound);

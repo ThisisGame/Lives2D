@@ -1,8 +1,9 @@
+#include<glad/glad.h>
 #include<glfw/include/glfw3.h>
+
 #include <stdlib.h>
 #include <stdio.h>
 
-#include<gles2/gl2.h>
 #include<glm/glm.hpp>
 #include<glm/gtc/matrix_transform.hpp>
 #include<glm/gtx/transform2.hpp>
@@ -11,7 +12,9 @@
 #include"Tools/Application.h"
 
 #include"LuaEngine/LuaEngine.h"
-#include"Audio/AudioCard.cpp"
+
+
+
 
 #include"PlayerPrefs/PlayerPrefs.h"
 
@@ -70,8 +73,8 @@ static void mouse_callback(GLFWwindow* window, int button, int action, int mods)
 					double xpos, ypos;
 					glfwGetCursorPos(window,&xpos, &ypos);
 
-					int tmpX = xpos;
-					int tmpY = ypos;
+					int tmpX =(int) xpos;
+					int tmpY = (int)ypos;
 
 					tmpX = tmpX - Application::ScreenWidth / 2;
 					tmpY = Application::ScreenHeight / 2 - tmpY;
@@ -283,7 +286,7 @@ void onInit()
 	float viewportoffsetHeight = (Application::ScreenHeight - Application::RenderHeight) / 2;
 	glViewport(viewportoffsetWidth, viewportoffsetHeight, Application::RenderWidth, Application::RenderHeight);
 
-	AudioCardInit();
+	//AudioCardInit();
 
 	//[captures] (params) -> ret {Statments;} 
 	//Lives2D::Init(m_EGLSurface, m_EGLDisplay,m_width,m_height);
@@ -299,12 +302,7 @@ void onInit()
 
 int main(void)
 {
-	onInit();
-
-
 	GLFWwindow* window;
-	GLuint vertex_buffer, vertex_shader, fragment_shader, program;
-	GLint mvp_location, vpos_location, vcol_location;
 
 	glfwSetErrorCallback(error_callback);
 
@@ -322,6 +320,7 @@ int main(void)
 	}
 
 	glfwMakeContextCurrent(window);
+	gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 
 	glfwSetKeyCallback(window, key_callback);
 
@@ -333,6 +332,7 @@ int main(void)
 	
 	glfwSwapInterval(1);
 
+	onInit();
 
 	while (!glfwWindowShouldClose(window))
 	{
@@ -341,6 +341,7 @@ int main(void)
 
 		glfwGetFramebufferSize(window, &width, &height);
 		//ratio = width / (float)height;
+
 		Application::ScreenWidth = width;
 		Application::ScreenHeight = height;
 

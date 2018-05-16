@@ -27,7 +27,7 @@ using namespace std;
 #include<windows.h>
 #include<stdio.h>
 #include<stdlib.h>
-#include"gles2\gl2.h"
+#include<glad/glad.h>
 
 #define LOGI(out,...) printf(out,##__VA_ARGS__);fflush(stdout)
 #define LOGE(out,...) printf(out,##__VA_ARGS__);\
