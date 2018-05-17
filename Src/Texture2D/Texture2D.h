@@ -1,5 +1,5 @@
 #pragma once
-#include"FreeImage.h"
+
 
 #if IOS
 #include <OpenGLES/ES2/gl.h>
@@ -11,6 +11,7 @@
 #include<glad/glad.h>
 #endif
 #include<string>
+#include"FreeImage.h"
 
 class Texture2D
 {

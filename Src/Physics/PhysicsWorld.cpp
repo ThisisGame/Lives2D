@@ -133,7 +133,10 @@ void PhysicsWorld::Simulation()
 bool PhysicsWorld::RayTest(btVector3 & varOrigin, btVector3 & varEnd, RaycastHit* varRaycastHit)
 {
 	btCollisionWorld::ClosestRayResultCallback tmpRayResultCallback(varOrigin, varEnd);
-
+	if (sDiscreteDynamicsWorld == nullptr)
+	{
+		return false;
+	}
 	sDiscreteDynamicsWorld->rayTest(varOrigin, varEnd, tmpRayResultCallback);
 
 	if (tmpRayResultCallback.hasHit())

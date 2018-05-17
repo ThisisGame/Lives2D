@@ -34,9 +34,9 @@ void Camera::Awake()
 void Camera::Update()
 {
 	//mMatrix_View= glm::lookAt(glm::vec3(0, 0, 10 + Application::MouseWheel/120.0), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0));
-	glm::vec3 tmpVector3CameraPosition = glm::vec3(mTransform->GetLocalPosition().mX, mTransform->GetLocalPosition().mY, mTransform->GetLocalPosition().mZ + Application::MouseWheel / 120.0);
+	glm::vec3 tmpVector3CameraPosition = glm::vec3(mTransform->GetLocalPosition().mX, mTransform->GetLocalPosition().mY, mTransform->GetLocalPosition().mZ + Application::MouseWheel );
 	glm::vec3 tmpVector3CameraRotation = glm::vec3(mTransform->GetLocalRotation().mX, mTransform->GetLocalRotation().mY, mTransform->GetLocalRotation().mZ);
-	glm::vec3 tmpVector3CenterPosition = glm::vec3(mTransform->GetLocalPosition().mX, mTransform->GetLocalPosition().mY, mTransform->GetLocalPosition().mZ + Application::MouseWheel / 120.0-10);
+	glm::vec3 tmpVector3CenterPosition = glm::vec3(mTransform->GetLocalPosition().mX, mTransform->GetLocalPosition().mY, mTransform->GetLocalPosition().mZ + Application::MouseWheel -10);
 	glm::mat4 rotation = glm::eulerAngleYXZ(glm::radians(mTransform->GetLocalRotation().mY), glm::radians(mTransform->GetLocalRotation().mX), glm::radians(mTransform->GetLocalRotation().mZ));
 	glm::vec4 tmpVector4CenterPosition = glm::vec4(tmpVector3CenterPosition,1) * rotation;
 	tmpVector3CenterPosition.x = tmpVector4CenterPosition.x;

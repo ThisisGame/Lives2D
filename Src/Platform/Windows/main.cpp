@@ -345,24 +345,19 @@ int main(void)
 		Application::ScreenWidth = width;
 		Application::ScreenHeight = height;
 
-		static float frameTime = 1.0f / 30;
 		static int begintime = 0;
 		static int endtime = 0;
 		static float deltaTime = 0.0f;
 		deltaTime = (endtime - begintime) / 1000.0f;
-		if (deltaTime>frameTime)
-		{
-			begintime = GetTickCount();
 
-			//int tmpUpdateBeginTime= GetTickCount();
-			update(deltaTime);
-			//int tmpUpdateCost = GetTickCount() - tmpUpdateBeginTime;
+		begintime = GetTickCount();
 
-			//int tmpRenderBeginTime = GetTickCount();
-			render();
-			//int tmpRenderCost = GetTickCount() - tmpRenderBeginTime;
-			//int a = 0;
-		}
+
+		update(deltaTime);
+
+
+		render();
+
 		endtime = GetTickCount();
 
 
