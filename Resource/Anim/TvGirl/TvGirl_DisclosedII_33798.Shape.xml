@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<GameObject Name="TvGirl_DisclosedII_33798.Shape"  Position="(0,0,0)" Rotation="(0,0,0)" Scale="(0.01,0.01,0.01)">
+	<Component Type="MeshFilter" Mesh="Anim/TvGirl/TvGirl_DisclosedII_33798.Shape.mesh"/>
+	<Component Type="Material" Name="Pant" Shader="Shader/Texture" IsSkinMesh="false">
+		<ShaderProperty Name="m_texture" ValueType="Texture" ActiveTextureIndex="0" TexturePath="Anim/TvGirl/3DA_PMDsclsdII_BP9.jpg"/>
+    	<ShaderProperty Name="m_mvp" ValueType="UniformMatrix4fv"/>
+    	<ShaderProperty Name="m_position" ValueType="VertexAttributePoint"/>
+    	<ShaderProperty Name="m_uv" ValueType="VertexAttributePoint"/>
+	</Component>
+	<Component Type="Material" Name="HipBelts" Shader="Shader/Texture" IsSkinMesh="false">
+		<ShaderProperty Name="m_texture" ValueType="Texture" ActiveTextureIndex="1" TexturePath="Anim/TvGirl/3DA_PMDsclsdII_Strp9.jpg"/>
+    	<ShaderProperty Name="m_mvp" ValueType="UniformMatrix4fv"/>
+    	<ShaderProperty Name="m_position" ValueType="VertexAttributePoint"/>
+    	<ShaderProperty Name="m_uv" ValueType="VertexAttributePoint"/>
+	</Component>
+	<Component Type="Material" Name="Loops" Shader="Shader/Texture" IsSkinMesh="false">
+		<ShaderProperty Name="m_texture" ValueType="Texture" ActiveTextureIndex="2" TexturePath="Anim/TvGirl/3DA_PMDsclsdII_Strp9.jpg"/>
+    	<ShaderProperty Name="m_mvp" ValueType="UniformMatrix4fv"/>
+    	<ShaderProperty Name="m_position" ValueType="VertexAttributePoint"/>
+    	<ShaderProperty Name="m_uv" ValueType="VertexAttributePoint"/>
+	</Component>
+	<Component Type="Material" Name="Neck" Shader="Shader/Texture" IsSkinMesh="false">
+		<ShaderProperty Name="m_texture" ValueType="Texture" ActiveTextureIndex="3" TexturePath="Anim/TvGirl/3DA_PMDsclsdII_Strp9.jpg"/>
+    	<ShaderProperty Name="m_mvp" ValueType="UniformMatrix4fv"/>
+    	<ShaderProperty Name="m_position" ValueType="VertexAttributePoint"/>
+    	<ShaderProperty Name="m_uv" ValueType="VertexAttributePoint"/>
+	</Component>
+	<Component Type="Material" Name="WaistBelts" Shader="Shader/Texture" IsSkinMesh="false">
+		<ShaderProperty Name="m_texture" ValueType="Texture" ActiveTextureIndex="4" TexturePath="Anim/TvGirl/3DA_PMDsclsdII_Strp9.jpg"/>
+    	<ShaderProperty Name="m_mvp" ValueType="UniformMatrix4fv"/>
+    	<ShaderProperty Name="m_position" ValueType="VertexAttributePoint"/>
+    	<ShaderProperty Name="m_uv" ValueType="VertexAttributePoint"/>
+	</Component>
+	<Component Type="Material" Name="ChestBelts" Shader="Shader/Texture" IsSkinMesh="false">
+		<ShaderProperty Name="m_texture" ValueType="Texture" ActiveTextureIndex="5" TexturePath="Anim/TvGirl/3DA_PMDsclsdII_Strp9.jpg"/>
+    	<ShaderProperty Name="m_mvp" ValueType="UniformMatrix4fv"/>
+    	<ShaderProperty Name="m_position" ValueType="VertexAttributePoint"/>
+    	<ShaderProperty Name="m_uv" ValueType="VertexAttributePoint"/>
+	</Component>
+	<Component Type="Material" Name="Bra" Shader="Shader/Texture" IsSkinMesh="false">
+		<ShaderProperty Name="m_texture" ValueType="Texture" ActiveTextureIndex="6" TexturePath="Anim/TvGirl/3DA_PMDsclsdII_BP9.jpg"/>
+    	<ShaderProperty Name="m_mvp" ValueType="UniformMatrix4fv"/>
+    	<ShaderProperty Name="m_position" ValueType="VertexAttributePoint"/>
+    	<ShaderProperty Name="m_uv" ValueType="VertexAttributePoint"/>
+	</Component>
+	<Component Type="MeshRenderer"/>
+</GameObject>

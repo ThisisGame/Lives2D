@@ -237,7 +237,11 @@ void Material::SetTexture(const char* varProperty, const char* varTexturePath)
     }
 }
 
+#ifdef MINI_MESH
 void Material::SetVertexIndices(int varSize, unsigned short* varVertexIndices)
+#else
+void Material::SetVertexIndices(int varSize, int* varVertexIndices)
+#endif
 {
 	mVertexIndicesSize = varSize;
 	mVertexIndices = varVertexIndices;

@@ -8,6 +8,11 @@ function SceneWelcom:ctor()
 	self.mGround=nil
 	self.mPlayer=nil
 	self.mWomenBody=nil
+	self.TvGirl_CruX_Gloves_7778=nil
+	self.TvGirl_DisclosedII_33798=nil
+	self.TvGirl_finalhair_65512=nil
+	self.TvGirl_G3_Pantyhose_5176=nil
+	self.TvGirl_Genesis3Female=nil
 	print(ResourcesManager:DataPath())
 end
 
@@ -17,108 +22,30 @@ function SceneWelcom:Init()
 	
 	
 	
-	-- local tmpGoCamera=GameObject:new("sceneCamera")
-	-- tmpGoCamera.mTransform:SetLocalPosition(Vector3(0,0,10))
-	-- tmpGoCamera.mTransform:SetLocalRotation(Vector3(0,0,0))
-	-- self.mCamera=tmpGoCamera:AddComponent("Camera")
-	
-	-- local tmpSkinMeshParserGround=SkinMeshParser:new()
-	-- self.mGround=tmpSkinMeshParserGround:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/City-1/City-1.xml");
-	
-	-- local tmpGoPhysicsWorld=GameObject:new("PhysicsWorld")
-	-- local tmpPhysicsWorld=tmpGoPhysicsWorld:AddComponent("PhysicsWorld")
-	
-	-- local tmpSkinMeshParserGround=SkinMeshParser:new()
-	-- self.mGround=tmpSkinMeshParserGround:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/ground/ground.xml");
-	-- self.mGround.mTransform:SetLocalPosition(Vector3(0,-5,-10))
-	-- local tmpRigidbody= self.mGround:AddComponent("Rigidbody")
-	-- tmpRigidbody:SetCollisionShape(1,0.0,10,0.5,10)
-	
+	local tmpGoCamera=GameObject:new("sceneCamera")
+	tmpGoCamera.mTransform:SetLocalPosition(Vector3(0,0.5,10))
+	tmpGoCamera.mTransform:SetLocalRotation(Vector3(0,0,0))
+	self.mCamera=tmpGoCamera:AddComponent("Camera")
 	
 	-- local tmpSkinMeshParserPlayer=SkinMeshParser:new()
-	-- self.mPlayer=tmpSkinMeshParserPlayer:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/9010006/9010006.xml");
-	-- self.mPlayer.mTransform:SetLocalPosition(Vector3(0,-1,-10))
-	-- local tmpRigidbodyPlayer= self.mPlayer:AddComponent("Rigidbody")
-	-- tmpRigidbodyPlayer:SetCollisionShape(1,.0,1,2,0)
+	-- self.TvGirl_CruX_Gloves_7778=tmpSkinMeshParserPlayer:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/TvGirl/TvGirl_CruX Gloves_7778.Shape.xml");
+	-- self.TvGirl_CruX_Gloves_7778.mTransform:SetLocalPosition(Vector3(0,0,8))
 	
-	-- local tmpBox=GameObject:new("Box")
-	-- tmpBox.mTransform:SetLocalPosition(Vector3(0,1000,0))
-	-- local tmpRigidbody= tmpBox:AddComponent("Rigidbody")
-	-- tmpRigidbody:SetCollisionShape(1,1.0,10,10,10)
+	-- local tmpSkinMeshParserPlayer=SkinMeshParser:new()
+	-- self.TvGirl_DisclosedII_33798=tmpSkinMeshParserPlayer:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/TvGirl/TvGirl_DisclosedII_33798.Shape.xml");
+	-- self.TvGirl_DisclosedII_33798.mTransform:SetLocalPosition(Vector3(0,0,8))
 	
+	-- local tmpSkinMeshParserPlayer=SkinMeshParser:new()
+	-- self.TvGirl_finalhair_65512=tmpSkinMeshParserPlayer:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/TvGirl/TvGirl_finalhair_65512.Shape.xml");
+	-- self.TvGirl_finalhair_65512.mTransform:SetLocalPosition(Vector3(0,0,8))
 	
-	-- local tmpSkinMeshParserWomenBody=SkinMeshParser:new()
-	-- self.mWomenBody=tmpSkinMeshParserWomenBody:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/Women_3/Women_3.xml");
+	-- local tmpSkinMeshParserPlayer=SkinMeshParser:new()
+	-- self.TvGirl_G3_Pantyhose_5176=tmpSkinMeshParserPlayer:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/TvGirl/TvGirl_G3 Pantyhose_5176.Shape.xml");
+	-- self.TvGirl_G3_Pantyhose_5176.mTransform:SetLocalPosition(Vector3(0,0,8))
 	
-	local tmpUIParser=UIParser:new()
-	self.mUIRoot=tmpUIParser:CreateUI(ResourcesManager:DataPath() .. "/Resource/UI/UI_Login/UI_Login.xml");
-	
-	-- local tmpGoUIRoot=GameObject:new("UIROOT")
-	-- self.mUIRoot=tmpGoUIRoot:AddComponent("UIRoot")
-	
-	-- tmpGoUIRoot:AddLuaComponent("WhoSetMeActive.lua")
-	
-	
-	-- local tmpGoImageBg=GameObject:new("mImage_Bg")
-	
-	-- local	mImage_Bg =tmpGoImageBg:AddComponent("UIImage")
-	-- mImage_Bg:Init(ResourcesManager:DataPath() .. "/Resource/GUI/sweep.png",true);
-	
-	-- mImage_Bg.mTransform:SetLocalPosition(Vector3(0,0,0))
-	-- mImage_Bg:SetDepth(0);
-	-- self.mUIRoot:AddChild(mImage_Bg);
-	
-	
-	-- local audioSource1 = AudioSource:new()
-	-- audioSource1:LoadAudio(ResourcesManager:DataPath().. "/Resource/Audio/m_sound600.wav")
-	-- audioSource1:Loop()
-	-- audioSource1:Play()
-
-	-- local audioSource2 = AudioSource:new()
-	-- audioSource2:LoadAudio(ResourcesManager:DataPath() .. "/Resource/Audio/click.wav")
-	
-	-- self.mUIRoot=UIRoot:new()
-
-	
-	-- local	tmpGoImageCirle =  GameObject:new("ImageCirle")
-	-- local	tmpImageCirle =tmpGoImageCirle:AddComponent("UIImage")
-	-- tmpImageCirle:Init(ResourcesManager:DataPath() .. "/Resource/GUI/bbg_temple_circle.jpg");
-	-- tmpImageCirle:SetPosition(0, 0);
-	-- tmpImageCirle:SetDepth(0);
-	-- self.mUIRoot:AddChild(tmpImageCirle);
-
-	-- local tmpGoButton=GameObject:new("UIButton")
-	-- local mUIButton=tmpGoButton:AddComponent("UIButton")
-	-- mUIButton.mTransform:SetLocalPosition(Vector3(100,300,0))
-	
-	-- mUIButton:Init(ResourcesManager:DataPath() .. "/Resource/GUI/pop_button0.png", ResourcesManager:DataPath() .. "/Resource/GUI/pop_button1.png", 86, 48)
-	-- mUIButton:SetOnClickListener(function(varTime)
-		-- audioSource2:Play()
-	-- end,111)
-	-- mUIButton:SetDepth(2);
-	-- self.mUIRoot:AddChild(mUIButton)
-
-	-- local mImageAnimation_Angel =  ImageAnimation:new(ResourcesManager:DataPath() .. "/Resource/ImageAnimations/Angel/Animations.txt",1.0/5)
-	-- mImageAnimation_Angel:SetPosition(0, 200)
-	-- mImageAnimation_Angel:SetScale(0.6, 0.6)
-	-- mImageAnimation_Angel:Play("Idle")
-	-- mImageAnimation_Angel:SetDepth(1);
-	-- self.mUIRoot:AddChild(mImageAnimation_Angel)
-	
-	-- local	label_name =  UILabel:new()
-	-- label_name:Init("label_name");
-	-- label_name:SetPosition(0, 0);
-	-- label_name:SetDepth(3);
-	-- label_name:SetSpace(2)
-	-- label_name:SetAlignCenter(true)
-	-- self.mUIRoot:AddChild(label_name);
-	
-	-- local	label_Age =  UILabel:new()
-	-- label_Age:Init("label_Age");
-	-- label_Age:SetPosition(0, -100);
-	-- label_Age:SetDepth(3);
-	-- self.mUIRoot:AddChild(label_Age);
-	
+	local tmpSkinMeshParserPlayer=SkinMeshParser:new()
+	self.TvGirl_Genesis3Female=tmpSkinMeshParserPlayer:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/TvGirl/TvGirl_Genesis3Female.Shape.xml");
+	self.TvGirl_Genesis3Female.mTransform:SetLocalPosition(Vector3(0,0,8))
 end
 
 --ˢ֡
@@ -163,6 +90,26 @@ function SceneWelcom:Draw()
 	
 	if self.mPlayer~=nil then
 		self.mPlayer:Update()
+	end
+
+	if self.TvGirl_CruX_Gloves_7778~=nil then
+		self.TvGirl_CruX_Gloves_7778:Update()
+	end
+	
+	if self.TvGirl_DisclosedII_33798~=nil then
+		self.TvGirl_DisclosedII_33798:Update()
+	end
+	
+	if self.TvGirl_finalhair_65512~=nil then
+		self.TvGirl_finalhair_65512:Update()
+	end
+	
+	if self.TvGirl_G3_Pantyhose_5176~=nil then
+		self.TvGirl_G3_Pantyhose_5176:Update()
+	end
+	
+	if self.TvGirl_Genesis3Female~=nil then
+		self.TvGirl_Genesis3Female:Update()
 	end
 end
 

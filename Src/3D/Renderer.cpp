@@ -40,7 +40,14 @@ void Renderer::Update()
 			mVectorMaterial[i]->SetVertexAttribPointer("m_uv", 2, sizeof(Vertex), &(mMesh->GetVertexArray()->TexCoords.x));
 
 			const char* tmpMaterialName = mVectorMaterial[i]->GetName();
-			std::vector<unsigned short>& tmpVertexIndexInMaterial=(std::vector<unsigned short>&)(mMeshFilter->GetIndexInMaterial(tmpMaterialName));
+
+
+#ifdef MINI_MESH
+			std::vector<unsigned short>& tmpVertexIndexInMaterial = (std::vector<unsigned short>&)(mMeshFilter->GetIndexInMaterial(tmpMaterialName));
+#else
+			std::vector<int>& tmpVertexIndexInMaterial = (std::vector<int>&)(mMeshFilter->GetIndexInMaterial(tmpMaterialName));
+#endif
+			
 			mVectorMaterial[i]->SetVertexIndices(tmpVertexIndexInMaterial.size(), &tmpVertexIndexInMaterial[0]);
 		}
 		

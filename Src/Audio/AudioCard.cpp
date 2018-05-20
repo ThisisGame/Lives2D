@@ -1,8 +1,10 @@
-#pragma once
+#include"AudioCard.h"
+
 #include "fmod.hpp"
 #include "common.h"
 
 #include"Tools/Helper.h"
+
 
 FMOD::System     *FMOD_System;
 
@@ -49,12 +51,23 @@ int FMOD_Main()
 }
 
 
-void AudioCardInit()
+AudioCard::AudioCard()
+{
+}
+
+AudioCard::~AudioCard()
+{
+}
+
+
+
+
+void AudioCard::AudioCardInit()
 {
 	FMOD_Main();
 }
 
-void AudioCardExit()
+void AudioCard::AudioCardExit()
 {
 	
 }

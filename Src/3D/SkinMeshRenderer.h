@@ -28,9 +28,18 @@ private:
 
 	std::map<int, vector<glm::mat4x4>> mMapBoneMatrix;
 
+#ifdef MINI_MESH
 	std::vector<std::map<unsigned short, float>> mVectorWeight;
-
+#else
+	std::vector<std::map<int, float>> mVectorWeight;
+#endif
+	
+#ifdef MINI_MESH
 	std::map<unsigned short, std::vector<glm::vec4>> mMapPositionInvert;
+#else
+	std::map<int, std::vector<glm::vec4>> mMapPositionInvert;
+#endif
+	
 
 	std::vector<std::vector<glm::vec4>> mVectorVertexPositionNoBone;
 

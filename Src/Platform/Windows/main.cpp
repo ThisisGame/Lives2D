@@ -10,6 +10,7 @@
 #include<glm/gtx/euler_angles.hpp>
 
 #include"Tools/Application.h"
+#include"Tools/Helper.h"
 
 #include"LuaEngine/LuaEngine.h"
 
@@ -312,7 +313,16 @@ int main(void)
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 2);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 0);
 
-	window = glfwCreateWindow(640, 480, "Lives2d", NULL, NULL);
+
+	std::string tmpConfigPath = Application::PersistentDataPath() + "/Resource/Config.txt";
+	std::string tmpConfig = Helper::ReadTxt(tmpConfigPath.c_str());
+	std::string tmpPattern = "x";
+	std::vector<std::string> tmpConfigVector = Helper::Split(tmpConfig, tmpPattern);
+
+	int tmpWidth = std::stoi(tmpConfigVector[0]);
+	int tmpHeight = std::stoi(tmpConfigVector[1]);
+
+	window = glfwCreateWindow(tmpWidth, tmpHeight, "Lives2d", NULL, NULL);
 	if (!window)
 	{
 		glfwTerminate();

@@ -572,6 +572,9 @@
     <ClInclude Include="..\..\Src\Audio\AudioCard.cpp">
       <Filter>Audio</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Src\Audio\AudioCard.h">
+      <Filter>Audio</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\Src\LuaEngine\BinaryPacker.pkg">

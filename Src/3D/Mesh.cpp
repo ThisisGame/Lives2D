@@ -60,7 +60,11 @@ void Mesh::SetVertexIndicesSize(int varVertexIndicesSize)
 	mVertexIndicesSize = varVertexIndicesSize;
 }
 
+#ifdef MINI_MESH
 void Mesh::PushVertexIndicesArray(unsigned short * varVertexIndices)
+#else
+void Mesh::PushVertexIndicesArray(int * varVertexIndices)
+#endif
 {
 	mVertexIndices = varVertexIndices;
 }
@@ -70,7 +74,12 @@ const int& Mesh::GetVertexIndicesSize()
 	return mVertexIndicesSize;
 }
 
+
+#ifdef MINI_MESH
 unsigned short * Mesh::GetVertexIndices()
+#else
+int * Mesh::GetVertexIndices()
+#endif
 {
 	return mVertexIndices;
 }

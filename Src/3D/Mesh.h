@@ -25,10 +25,20 @@ public:
 
 	void SetVertexIndicesSize(int varVertexIndicesSize);
 
-	void PushVertexIndicesArray(unsigned short* varVertexIndices);
+#ifdef MINI_MESH
+	void PushVertexIndicesArray(unsigned short * varVertexIndices);
+#else
+	void PushVertexIndicesArray(int * varVertexIndices);
+#endif
 
 	const int& GetVertexIndicesSize();
+	
+
+#ifdef MINI_MESH
 	unsigned short* GetVertexIndices();
+#else
+	int* GetVertexIndices();
+#endif
 
 private:
 	int mVertexCount;
@@ -37,7 +47,12 @@ private:
 	glm::vec3* mVertexPositionAnim;
 
 	int mVertexIndicesSize;
+	
+#ifdef MINI_MESH
 	unsigned short* mVertexIndices;
+#else
+	int* mVertexIndices;
+#endif
 
 	bool mApplyedSkin;
 };

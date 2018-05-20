@@ -30,7 +30,11 @@ public:
 
 	void SetTexture(const char* varProperty, const char* varTexturePath);
 
-	void SetVertexIndices(int varSize,unsigned short* varVertexIndices);
+#ifdef MINI_MESH
+	void SetVertexIndices(int varSize, unsigned short* varVertexIndices);
+#else
+	void SetVertexIndices(int varSize, int* varVertexIndices);
+#endif
 
 	const char* GetName();
 
@@ -43,7 +47,13 @@ private:
 	std::vector<ShaderProperty*> mVectorShaderProperty;
 
 	int mVertexIndicesSize;
+
+#ifdef MINI_MESH
 	GLushort* mVertexIndices;
+#else
+	GLint* mVertexIndices;
+#endif
+	
 
 	bool mIsSkinMesh;
 };

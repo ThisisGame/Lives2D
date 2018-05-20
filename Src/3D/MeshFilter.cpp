@@ -26,13 +26,22 @@ Mesh * MeshFilter::GetMesh()
 	return mMesh;
 }
 
+#ifdef MINI_MESH
 const std::vector<unsigned short>& MeshFilter::GetVertexIndexInMaterial(int varMaterialIndex)
+#else
+const std::vector<int>& MeshFilter::GetVertexIndexInMaterial(int varMaterialIndex)
+#endif
 {
 	// TODO: 在此处插入 return 语句
 	return mVertexIndexInMaterial[varMaterialIndex];
 }
 
+#ifdef MINI_MESH
 const std::vector<unsigned short>& MeshFilter::GetIndexInMaterial(const char * varMaterialName)
+#else
+const std::vector<int>& MeshFilter::GetIndexInMaterial(const char * varMaterialName)
+#endif
+
 {
 	// TODO: 在此处插入 return 语句
 	return mMapIndexInMaterial[varMaterialName];
@@ -69,11 +78,21 @@ void MeshFilter::LoadMesh(const char * varMeshPath)
 		tmpStream.read((char*)(&tmpIndicesMemSize), sizeof(int));
 
 		//计算IndexCount;
+#ifdef MINI_MESH
 		int tmpIndexCount = tmpIndicesMemSize / sizeof(unsigned short);
+#else
+		int tmpIndexCount = tmpIndicesMemSize / sizeof(int);
+#endif
+		
 		tmpMesh->SetVertexIndicesSize(tmpIndexCount);
 
 		//读取index数据;
+#ifdef MINI_MESH
 		unsigned short* tmpVertexIndices = (unsigned short*)malloc(tmpIndicesMemSize);
+#else
+		int* tmpVertexIndices = (int*)malloc(tmpIndicesMemSize);
+#endif
+		
 		tmpStream.read((char*)tmpVertexIndices, tmpIndicesMemSize);
 		tmpMesh->PushVertexIndicesArray(tmpVertexIndices);
 
@@ -138,7 +157,12 @@ void MeshFilter::LoadMesh(const char * varMeshPath)
 			int tmpVertexSizeInMaterial;
 			tmpStream.read((char*)(&tmpVertexSizeInMaterial), sizeof(tmpVertexSizeInMaterial));
 
+#ifdef MINI_MESH
 			std::vector<unsigned short> tmpVertexIndexInOneMaterial(tmpVertexSizeInMaterial);
+#else
+			std::vector<int> tmpVertexIndexInOneMaterial(tmpVertexSizeInMaterial);
+#endif
+			
 
 			for (size_t tmpVectorIndex = 0; tmpVectorIndex < tmpVertexSizeInMaterial; tmpVectorIndex++)
 			{

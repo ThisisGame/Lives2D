@@ -31,6 +31,11 @@ bool Raycast::ScreenPointToRay(Vector3& varScreenTouchPosition, Camera* varCamer
 		1.0f
 	);
 
+	if (Camera::mainCamera == nullptr)
+	{
+		return false;
+	}
+
 	glm::mat4 tmpMatrixInverseProjection =glm::inverse( Camera::mainCamera->GetMatrix_Projection());
 
 	glm::mat4 tmpMatrixInverseView = glm::inverse(Camera::mainCamera->GetMatrix_View());
