@@ -335,7 +335,13 @@ void Material::Render()
 		}
 	}
 
+#ifdef MINI_MESH
 	glDrawElements(GL_TRIANGLES, mVertexIndicesSize, GL_UNSIGNED_SHORT, mVertexIndices);
+#else
+	glDrawElements(GL_TRIANGLES, mVertexIndicesSize, GL_UNSIGNED_INT, mVertexIndices);
+#endif
+
+	
 
 	for (size_t tmpShaderPropertyIndex = 0; tmpShaderPropertyIndex < mVectorShaderProperty.size(); tmpShaderPropertyIndex++)
 	{

@@ -27,21 +27,21 @@ function SceneWelcom:Init()
 	tmpGoCamera.mTransform:SetLocalRotation(Vector3(0,0,0))
 	self.mCamera=tmpGoCamera:AddComponent("Camera")
 	
-	-- local tmpSkinMeshParserPlayer=SkinMeshParser:new()
-	-- self.TvGirl_CruX_Gloves_7778=tmpSkinMeshParserPlayer:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/TvGirl/TvGirl_CruX Gloves_7778.Shape.xml");
-	-- self.TvGirl_CruX_Gloves_7778.mTransform:SetLocalPosition(Vector3(0,0,8))
+	local tmpSkinMeshParserPlayer=SkinMeshParser:new()
+	self.TvGirl_CruX_Gloves_7778=tmpSkinMeshParserPlayer:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/TvGirl/TvGirl_CruX Gloves_7778.Shape.xml");
+	self.TvGirl_CruX_Gloves_7778.mTransform:SetLocalPosition(Vector3(0,0,8))
 	
-	-- local tmpSkinMeshParserPlayer=SkinMeshParser:new()
-	-- self.TvGirl_DisclosedII_33798=tmpSkinMeshParserPlayer:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/TvGirl/TvGirl_DisclosedII_33798.Shape.xml");
-	-- self.TvGirl_DisclosedII_33798.mTransform:SetLocalPosition(Vector3(0,0,8))
+	local tmpSkinMeshParserPlayer=SkinMeshParser:new()
+	self.TvGirl_DisclosedII_33798=tmpSkinMeshParserPlayer:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/TvGirl/TvGirl_DisclosedII_33798.Shape.xml");
+	self.TvGirl_DisclosedII_33798.mTransform:SetLocalPosition(Vector3(0,0,8))
 	
-	-- local tmpSkinMeshParserPlayer=SkinMeshParser:new()
-	-- self.TvGirl_finalhair_65512=tmpSkinMeshParserPlayer:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/TvGirl/TvGirl_finalhair_65512.Shape.xml");
-	-- self.TvGirl_finalhair_65512.mTransform:SetLocalPosition(Vector3(0,0,8))
+	local tmpSkinMeshParserPlayer=SkinMeshParser:new()
+	self.TvGirl_finalhair_65512=tmpSkinMeshParserPlayer:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/TvGirl/TvGirl_finalhair_65512.Shape.xml");
+	self.TvGirl_finalhair_65512.mTransform:SetLocalPosition(Vector3(0,0,8))
 	
-	-- local tmpSkinMeshParserPlayer=SkinMeshParser:new()
-	-- self.TvGirl_G3_Pantyhose_5176=tmpSkinMeshParserPlayer:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/TvGirl/TvGirl_G3 Pantyhose_5176.Shape.xml");
-	-- self.TvGirl_G3_Pantyhose_5176.mTransform:SetLocalPosition(Vector3(0,0,8))
+	local tmpSkinMeshParserPlayer=SkinMeshParser:new()
+	self.TvGirl_G3_Pantyhose_5176=tmpSkinMeshParserPlayer:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/TvGirl/TvGirl_G3 Pantyhose_5176.Shape.xml");
+	self.TvGirl_G3_Pantyhose_5176.mTransform:SetLocalPosition(Vector3(0,0,8))
 	
 	local tmpSkinMeshParserPlayer=SkinMeshParser:new()
 	self.TvGirl_Genesis3Female=tmpSkinMeshParserPlayer:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/TvGirl/TvGirl_Genesis3Female.Shape.xml");
