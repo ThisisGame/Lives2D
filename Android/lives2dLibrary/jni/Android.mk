@@ -248,6 +248,53 @@ include $(PREBUILT_SHARED_LIBRARY)
 # ProgmaEnd
 
 
+
+
+
+
+# ProgmaBegin BuildBullet
+
+Bullet_SRC_PATH:=../../../../Lives2D_Depends/bullet3
+
+include $(CLEAR_VARS)
+
+LOCAL_PATH:=$(Bullet_SRC_PATH)
+
+LOCAL_MODULE    := libBullet
+
+LOCAL_C_INCLUDES:= $(Bullet_SRC_PATH)/src
+
+#find all the file recursively under jni/
+FILE_LIST := $(wildcard \
+		$(Bullet_SRC_PATH)/src/LinearMath/*.cpp \
+		$(Bullet_SRC_PATH)/src/Bullet3Common/*.cpp \
+		$(Bullet_SRC_PATH)/src/BulletCollision/BroadphaseCollision/*.cpp \
+		$(Bullet_SRC_PATH)/src/BulletCollision/CollisionDispatch/*.cpp \
+		$(Bullet_SRC_PATH)/src/BulletCollision/CollisionShapes/*.cpp \
+		$(Bullet_SRC_PATH)/src/BulletCollision/NarrowPhaseCollision/*.cpp \
+		$(Bullet_SRC_PATH)/src/BulletDynamics/ConstraintSolver/*.cpp \
+		$(Bullet_SRC_PATH)/src/BulletDynamics/Dynamics/*.cpp \
+		$(Bullet_SRC_PATH)/src/BulletDynamics/Featherstone/*.cpp \
+		$(Bullet_SRC_PATH)/src/BulletDynamics/MLCPSolvers/*.cpp \
+		$(Bullet_SRC_PATH)/src/BulletDynamics/Vehicle/*.cpp \
+		$(Bullet_SRC_PATH)/src/BulletDynamics/Character/*.cpp \
+		$(Bullet_SRC_PATH)/src/BulletSoftBody/*.cpp \
+		$(Bullet_SRC_PATH)/src/BulletInverseDynamics/*.cpp \
+		$(Bullet_SRC_PATH)/src/BulletInverseDynamics/details/*.cpp \
+		)
+LOCAL_SRC_FILES := $(FILE_LIST:$(LOCAL_PATH)/%=%)
+
+include $(BUILD_STATIC_LIBRARY)
+
+# ProgmaEnd
+
+
+
+
+
+
+
+
 # ProgmaBegin BuildEngine
 
 ENGINE_SRC_PATH:=../../../Src
@@ -321,6 +368,8 @@ LOCAL_SRC_FILES := Tools/Helper.cpp \
 		KeyTouch/KeyTouch.cpp \
 		KeyTouch/lua_KeyTouchListener.cpp \
 		KeyTouch/lua_KeyTouch.cpp \
+		KeyTouch/Input.cpp \
+		KeyTouch/lua_Input.cpp \
 		LuaEngine/BinaryPacker.cpp \
 		LuaEngine/NetworkClient.cpp \
 		LuaEngine/NetworkDispatch.cpp \
@@ -343,6 +392,16 @@ LOCAL_SRC_FILES := Tools/Helper.cpp \
 		3D/lua_MeshRenderer.cpp \
 		3D/lua_Renderer.cpp \
 		3D/lua_SkinMeshRenderer.cpp \
+		Physics/lua_PhysicsShape.cpp \
+		Physics/lua_PhysicsWorld.cpp \
+		Physics/lua_Raycast.cpp \
+		Physics/lua_RaycastHit.cpp \
+		Physics/lua_Rigidbody.cpp \
+		Physics/PhysicsShape.cpp \
+		Physics/PhysicsWorld.cpp \
+		Physics/Raycast.cpp \
+		Physics/RaycastHit.cpp \
+		Physics/Rigidbody.cpp \
 		LuaEngine/LuaEngine.cpp \
 		
 LOCAL_C_INCLUDES:= $(LUA_SRC_PATH) \
@@ -352,10 +411,11 @@ $(GLM_SRC_PATH)\
 $(FreeType_PATH)/include \
 $(FMOD_INCLUDE_PATH) \
 $(FMOD_COMMON_PATH) \
+$(Bullet_SRC_PATH)/src \
 $(ENGINE_SRC_PATH) \
 $(JNI_PATH) \
 
-LOCAL_STATIC_LIBRARIES := libLua libTOLUAPP libFreeImage libGLM libFreeType
+LOCAL_STATIC_LIBRARIES := libLua libTOLUAPP libFreeImage libGLM libFreeType libBullet
 
 include $(BUILD_STATIC_LIBRARY)
 
@@ -378,6 +438,7 @@ $(TOLUAPP_SRC_PATH)/src/lib \
 $(FREE_IMAGE_SRC_PATH)/Source \
 $(GLM_SRC_PATH) \
 $(FreeType_PATH)/include \
+$(Bullet_SRC_PATH)/src \
 $(ENGINE_SRC_PATH) \
 $(JNI_PATH) \
 

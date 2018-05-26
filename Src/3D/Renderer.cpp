@@ -39,21 +39,10 @@ void Renderer::Update()
 			mVectorMaterial[i]->SetVertexAttribPointer("m_position", 3, sizeof(Vertex), &(mMesh->GetVertexArray()->Position.x));
 			mVectorMaterial[i]->SetVertexAttribPointer("m_uv", 2, sizeof(Vertex), &(mMesh->GetVertexArray()->TexCoords.x));
 
-			const char* tmpMaterialName = mVectorMaterial[i]->GetName();
-
-
-#ifdef MINI_MESH
-			std::vector<unsigned short>& tmpVertexIndexInMaterial = (std::vector<unsigned short>&)(mMeshFilter->GetIndexInMaterial(tmpMaterialName));
-#else
-			std::vector<int>& tmpVertexIndexInMaterial = (std::vector<int>&)(mMeshFilter->GetIndexInMaterial(tmpMaterialName));
-#endif
 			
-			mVectorMaterial[i]->SetVertexIndices(tmpVertexIndexInMaterial.size(), &tmpVertexIndexInMaterial[0]);
-		}
-		
-		//mMaterial->SetVertexAttribPointer("normal", 3, sizeof(Vertex), &(mMesh->GetVertexArray()->Normal.x));
 
-		
+			mVectorMaterial[i]->SetVertexIndices(mMesh->GetVertexIndicesSize(),mMesh->GetVertexIndices());
+		}
 	}
 	else
 	{

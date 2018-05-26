@@ -18,7 +18,7 @@ SkinMeshRenderer::~SkinMeshRenderer()
 void SkinMeshRenderer::InitWithXml(TiXmlElement * varTiXmlElement)
 {
 	const char* tmpMeshFilePath = varTiXmlElement->Attribute("Anim");
-	LoadAnim(Application::GetFullPath(tmpMeshFilePath));
+	LoadAnim(Application::GetFullPath(tmpMeshFilePath).c_str());
 }
 
 void SkinMeshRenderer::LoadAnim(const char* varAnimPath)
@@ -95,32 +95,25 @@ void SkinMeshRenderer::LoadAnim(const char* varAnimPath)
 		int tmpMapWeightOneVertexSize = 0;
 		tmpStream.read((char*)(&tmpMapWeightOneVertexSize), sizeof(tmpMapWeightOneVertexSize));
 
-#ifdef MINI_MESH
+
 		std::map<unsigned short, float> tmpMapWeight;
-#else
-		std::map<int, float> tmpMapWeight;
-#endif
+
 		
 
 		for (int  tmpMapWeightOneVertexIndex = 0; tmpMapWeightOneVertexIndex < tmpMapWeightOneVertexSize; tmpMapWeightOneVertexIndex++)
 		{
 			//read bone index
-#ifdef MINI_MESH
 			unsigned short tmpBoneIndex = 0;
-#else
-			int tmpBoneIndex = 0;
-#endif
+
 			
 			tmpStream.read((char*)(&tmpBoneIndex), sizeof(tmpBoneIndex));
 
 			float tmpWeight = 0;
 			tmpStream.read((char*)(&tmpWeight), sizeof(tmpWeight));
 
-#ifdef MINI_MESH
+
 			tmpMapWeight.insert(std::pair<unsigned short, float>(tmpBoneIndex, tmpWeight));
-#else
-			tmpMapWeight.insert(std::pair<int, float>(tmpBoneIndex, tmpWeight));
-#endif
+
 			
 		}
 
@@ -131,11 +124,9 @@ void SkinMeshRenderer::LoadAnim(const char* varAnimPath)
 	//读取顶点初始位置
 	for (int tmpVectorVertexWeightIndex = 0; tmpVectorVertexWeightIndex < tmpVectorVertexWeightSize; tmpVectorVertexWeightIndex++)
 	{
-#ifdef MINI_MESH
+
 		unsigned short tmpMapWeightOneVertexSize = 0;
-#else
-		int tmpMapWeightOneVertexSize = 0;
-#endif
+
 		
 		tmpStream.read((char*)(&tmpMapWeightOneVertexSize), sizeof(tmpMapWeightOneVertexSize));
 
@@ -216,20 +207,16 @@ void SkinMeshRenderer::Update()
 				tmpVec4PositionNew.z = 0;
 				tmpVec4PositionNew.w = 1;
 
-#ifdef MINI_MESH
+
 				std::map<unsigned short, float>& tmpMapOneVertexBoneWeight = mVectorWeight[tmpVectorWeightIndex];
-#else
-				std::map<int, float>& tmpMapOneVertexBoneWeight = mVectorWeight[tmpVectorWeightIndex];
-#endif
+
 				
 
 				int tmpMapOneVertexBoneWeightBoneIndex = 0;
 
-#ifdef MINI_MESH
+
 				for (std::map<unsigned short, float>::iterator tmpIterBegin = tmpMapOneVertexBoneWeight.begin(); tmpIterBegin != tmpMapOneVertexBoneWeight.end(); tmpIterBegin++)
-#else
-				for (std::map<int, float>::iterator tmpIterBegin = tmpMapOneVertexBoneWeight.begin(); tmpIterBegin != tmpMapOneVertexBoneWeight.end(); tmpIterBegin++)
-#endif
+
 				
 				{
 					glm::vec4 tmpPosition = mVectorVertexPositionNoBone[tmpVectorWeightIndex][tmpMapOneVertexBoneWeightBoneIndex];

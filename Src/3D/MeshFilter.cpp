@@ -18,7 +18,7 @@ MeshFilter::~MeshFilter()
 void MeshFilter::InitWithXml(TiXmlElement * varTiXmlElement)
 {
 	const char* tmpMeshFilePath = varTiXmlElement->Attribute("Mesh");
-	LoadMesh(Application::GetFullPath(tmpMeshFilePath));
+	LoadMesh(Application::GetFullPath(tmpMeshFilePath).c_str());
 }
 
 Mesh * MeshFilter::GetMesh()
@@ -26,36 +26,11 @@ Mesh * MeshFilter::GetMesh()
 	return mMesh;
 }
 
-#ifdef MINI_MESH
-const std::vector<unsigned short>& MeshFilter::GetVertexIndexInMaterial(int varMaterialIndex)
-#else
-const std::vector<int>& MeshFilter::GetVertexIndexInMaterial(int varMaterialIndex)
-#endif
-{
-	// TODO: 在此处插入 return 语句
-	return mVertexIndexInMaterial[varMaterialIndex];
-}
-
-#ifdef MINI_MESH
-const std::vector<unsigned short>& MeshFilter::GetIndexInMaterial(const char * varMaterialName)
-#else
-const std::vector<int>& MeshFilter::GetIndexInMaterial(const char * varMaterialName)
-#endif
-
-{
-	// TODO: 在此处插入 return 语句
-	return mMapIndexInMaterial[varMaterialName];
-}
-
 void MeshFilter::LoadMesh(const char * varMeshPath)
 {
 	std::ifstream tmpStream(varMeshPath, std::ios::binary);
 
-	//读取meshcount;
-	int tmpMeshCount = 0;
-	tmpStream.read((char*)(&tmpMeshCount), sizeof(int));
-
-	for (int tmpMeshIndex = 0; tmpMeshIndex < tmpMeshCount; tmpMeshIndex++)
+	
 	{
 		Mesh* tmpMesh=new Mesh();
 
@@ -78,44 +53,24 @@ void MeshFilter::LoadMesh(const char * varMeshPath)
 		tmpStream.read((char*)(&tmpIndicesMemSize), sizeof(int));
 
 		//计算IndexCount;
-#ifdef MINI_MESH
-		int tmpIndexCount = tmpIndicesMemSize / sizeof(unsigned short);
-#else
-		int tmpIndexCount = tmpIndicesMemSize / sizeof(int);
-#endif
+
+		unsigned short tmpIndexCount = tmpIndicesMemSize / sizeof(unsigned short);
+
 		
 		tmpMesh->SetVertexIndicesSize(tmpIndexCount);
 
 		//读取index数据;
-#ifdef MINI_MESH
+
 		unsigned short* tmpVertexIndices = (unsigned short*)malloc(tmpIndicesMemSize);
-#else
-		int* tmpVertexIndices = (int*)malloc(tmpIndicesMemSize);
-#endif
+
 		
 		tmpStream.read((char*)tmpVertexIndices, tmpIndicesMemSize);
 		tmpMesh->PushVertexIndicesArray(tmpVertexIndices);
-
-		//读取TextureMemSize;
-		int tmpTextureMemSize = 0;
-		tmpStream.read((char*)(&tmpTextureMemSize), sizeof(int));
-
-		//计算 TextureCount;
-		int tmpTextureCount = tmpTextureMemSize / sizeof(Texture);
-
-		//读取Texture数据;
-		for (int tmpTextureIndex = 0; tmpTextureIndex < tmpTextureCount; tmpTextureIndex++)
-		{
-			Texture tmpTexture;
-			tmpStream.read((char*)(&tmpTexture), sizeof(Texture));
-		}
-
 
 		//读取材质数量
 		int tmpMaterialSize = 0;
 		tmpStream.read((char*)(&tmpMaterialSize), sizeof(tmpMaterialSize));
 
-		mVertexIndexInMaterial.resize(tmpMaterialSize);
 
 		for (size_t i = 0; i < tmpMaterialSize; i++)
 		{
@@ -152,29 +107,6 @@ void MeshFilter::LoadMesh(const char * varMeshPath)
 				float tmpVOffsetValue = 0.0f;
 				tmpStream.read((char*)(&tmpVOffsetValue), sizeof(tmpVOffsetValue));
 			}
-
-			//读取单个材质上 附属的顶点
-			int tmpVertexSizeInMaterial;
-			tmpStream.read((char*)(&tmpVertexSizeInMaterial), sizeof(tmpVertexSizeInMaterial));
-
-#ifdef MINI_MESH
-			std::vector<unsigned short> tmpVertexIndexInOneMaterial(tmpVertexSizeInMaterial);
-#else
-			std::vector<int> tmpVertexIndexInOneMaterial(tmpVertexSizeInMaterial);
-#endif
-			
-
-			for (size_t tmpVectorIndex = 0; tmpVectorIndex < tmpVertexSizeInMaterial; tmpVectorIndex++)
-			{
-				int tmpVertexIndex = 0;
-				tmpStream.read((char*)(&tmpVertexIndex), sizeof(tmpVertexIndex));
-
-				tmpVertexIndexInOneMaterial[tmpVectorIndex] = tmpVertexIndex;
-			}
-
-			mVertexIndexInMaterial[i] = tmpVertexIndexInOneMaterial;
-
-			mMapIndexInMaterial[tmpMaterialNameStr]=tmpVertexIndexInOneMaterial;
 		}
 
 		mMesh = tmpMesh;

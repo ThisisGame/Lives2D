@@ -170,6 +170,7 @@
     <ClCompile Include="..\..\Src\3D\Renderer.cpp" />
     <ClCompile Include="..\..\Src\3D\SkinMeshParser.cpp" />
     <ClCompile Include="..\..\Src\3D\SkinMeshRenderer.cpp" />
+    <ClCompile Include="..\..\Src\Audio\AudioCard.cpp" />
     <ClCompile Include="..\..\Src\Audio\AudioSource.cpp" />
     <ClCompile Include="..\..\Src\Audio\lua_AudioSource.cpp" />
     <ClCompile Include="..\..\Src\Component\Behavior.cpp" />
@@ -225,7 +226,6 @@
     <ClCompile Include="..\..\Src\LuaEngine\LuaEngine.cpp" />
     <ClCompile Include="..\..\Src\LuaEngine\lua_BinaryPacker.cpp" />
     <ClCompile Include="..\..\Src\LuaEngine\lua_NetworkClient.cpp" />
-    <ClCompile Include="..\..\Src\LuaEngine\main.cpp" />
     <ClCompile Include="..\..\Src\LuaEngine\NetworkClient.cpp" />
     <ClCompile Include="..\..\Src\LuaEngine\NetworkDispatch.cpp" />
     <ClCompile Include="..\..\Src\Math\lua_Math.cpp" />
@@ -274,7 +274,6 @@
     <ClInclude Include="..\..\Src\3D\Vertex.h" />
     <ClInclude Include="..\..\Src\Audio\AudioCard.h" />
     <ClInclude Include="..\..\Src\Audio\AudioSource.h" />
-    <ClInclude Include="..\..\Src\Audio\AudioCard.cpp" />
     <ClInclude Include="..\..\Src\Component\Behavior.h" />
     <ClInclude Include="..\..\Src\Component\Component.h" />
     <ClInclude Include="..\..\Src\Component\GameObject.h" />

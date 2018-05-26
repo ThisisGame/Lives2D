@@ -56,10 +56,13 @@ bool Raycast::ScreenPointToRay(Vector3& varScreenTouchPosition, Camera* varCamer
 
 
 	//get the raycast hit object(rigidbody)
-	glm::vec3 tmpOrigin =glm::vec3( tmpRayStart_World);
-	glm::vec3 tmpDirection = glm::vec3(tmpRayDir);
-	glm::vec3 tmpOutEnd = tmpOrigin + tmpDirection*1000.0f;
+	glm::vec3 tmpOriginVec3 =glm::vec3( tmpRayStart_World);
+	glm::vec3 tmpDirectionVec3 = glm::vec3(tmpRayDir);
+	glm::vec3 tmpOutEndVec3 = tmpOriginVec3 + tmpDirectionVec3*1000.0f;
 
-	return PhysicsWorld::RayTest(btVector3(tmpOrigin.x, tmpOrigin.y, tmpOrigin.z), btVector3(tmpOutEnd.x, tmpOutEnd.y, tmpOutEnd.z), varRaycastHit);
+
+	btVector3 tmpOrigin(tmpOriginVec3.x, tmpOriginVec3.y, tmpOriginVec3.z);
+	btVector3 tmpEnd(tmpOutEndVec3.x, tmpOutEndVec3.y, tmpOutEndVec3.z);
+	return PhysicsWorld::RayTest(tmpOrigin, tmpEnd, varRaycastHit);
 }
 

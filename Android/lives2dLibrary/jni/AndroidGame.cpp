@@ -48,6 +48,7 @@ extern "C"
 #include"LuaEngine/LuaEngine.h"
 #include"Tools/Application.h"
 #include"Tools/Time.h"
+#include"Audio/AudioCard.h"
 
 #include <GLES2/gl2.h>
 #include <GLES2/gl2ext.h>
@@ -83,7 +84,7 @@ void onInit(JNIEnv * env, jobject obj,  int varWidth,int varHeight)
 		return;
 	}
 	
-	AudioCardInit();
+	AudioCard::AudioCardInit();
 	
 	Application::ScreenWidth=varWidth;
 	Application::ScreenHeight=varHeight;

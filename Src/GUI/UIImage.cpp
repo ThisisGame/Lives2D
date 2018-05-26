@@ -24,7 +24,7 @@ void UIImage::InitWithXml(TiXmlElement * varTiXmlElement)
 {
 	const char* tmpFilePath = varTiXmlElement->Attribute("Image");
 
-	Init(Application::GetFullPath(tmpFilePath));
+	Init(Application::GetFullPath(tmpFilePath).c_str());
 }
 
 void UIImage::Init(const char * varFilePath)

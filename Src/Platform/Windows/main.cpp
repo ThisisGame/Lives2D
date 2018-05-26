@@ -23,6 +23,8 @@
 
 #include"Physics/PhysicsWorld.h"
 
+#include"Audio/AudioCard.h"
+
 static void error_callback(int error, const char* description)
 {
 	fprintf(stderr, "Error: %s\n", description);
@@ -287,7 +289,7 @@ void onInit()
 	float viewportoffsetHeight = (Application::ScreenHeight - Application::RenderHeight) / 2;
 	glViewport(viewportoffsetWidth, viewportoffsetHeight, Application::RenderWidth, Application::RenderHeight);
 
-	//AudioCardInit();
+	AudioCard::AudioCardInit();
 
 	//[captures] (params) -> ret {Statments;} 
 	//Lives2D::Init(m_EGLSurface, m_EGLDisplay,m_width,m_height);

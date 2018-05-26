@@ -17,28 +17,23 @@ public:
 
 	void ApplySkin();
 
-	const bool& GetApplyedSkin();
+	const bool GetApplyedSkin();
 
 	Vertex* GetVertexArray();
 
-	const int& GetVertexCount();
+	const unsigned short GetVertexCount();
 
-	void SetVertexIndicesSize(int varVertexIndicesSize);
+	void SetVertexIndicesSize(unsigned short varVertexIndicesSize);
 
-#ifdef MINI_MESH
+
 	void PushVertexIndicesArray(unsigned short * varVertexIndices);
-#else
-	void PushVertexIndicesArray(int * varVertexIndices);
-#endif
 
-	const int& GetVertexIndicesSize();
+
+	const unsigned short GetVertexIndicesSize();
 	
 
-#ifdef MINI_MESH
 	unsigned short* GetVertexIndices();
-#else
-	int* GetVertexIndices();
-#endif
+
 
 private:
 	int mVertexCount;
@@ -46,13 +41,11 @@ private:
 
 	glm::vec3* mVertexPositionAnim;
 
-	int mVertexIndicesSize;
+	unsigned short mVertexIndicesSize;
 	
-#ifdef MINI_MESH
+
 	unsigned short* mVertexIndices;
-#else
-	int* mVertexIndices;
-#endif
+
 
 	bool mApplyedSkin;
 };

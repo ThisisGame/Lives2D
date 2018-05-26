@@ -190,7 +190,7 @@ bool Helper::UTF8ToUTF32(const std::string& utf8, std::u32string& outUtf32)
 	return utfConvert(utf8, outUtf32, ConvertUTF8toUTF32);
 }
 
-const char * Helper::StrCat(const char * varStr1, const char * varStr2)
+std::string Helper::StrCat(const char * varStr1, const char * varStr2)
 {
 	char tmpTarget[128];
 	memset(tmpTarget, 0, 128);

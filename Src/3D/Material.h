@@ -30,11 +30,9 @@ public:
 
 	void SetTexture(const char* varProperty, const char* varTexturePath);
 
-#ifdef MINI_MESH
-	void SetVertexIndices(int varSize, unsigned short* varVertexIndices);
-#else
-	void SetVertexIndices(int varSize, int* varVertexIndices);
-#endif
+
+	void SetVertexIndices(unsigned short varSize, unsigned short* varVertexIndices);
+
 
 	const char* GetName();
 
@@ -46,13 +44,11 @@ private:
 	//需要用键值对存储属性和值
 	std::vector<ShaderProperty*> mVectorShaderProperty;
 
-	int mVertexIndicesSize;
+	unsigned short mVertexIndicesSize;
 
-#ifdef MINI_MESH
+
 	GLushort* mVertexIndices;
-#else
-	GLint* mVertexIndices;
-#endif
+
 	
 
 	bool mIsSkinMesh;

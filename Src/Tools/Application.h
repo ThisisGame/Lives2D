@@ -59,7 +59,7 @@ public:
 	}
 
 	//从Resources短路径 获取 文件完整路径
-	static char* GetFullPath(const char* varResourcesPath)
+	static std::string GetFullPath(const char* varResourcesPath)
 	{
 		char* tmpFullFilePath=new char[128];
 		memset(tmpFullFilePath, 0, 128);
@@ -67,12 +67,16 @@ public:
 		strcat(tmpFullFilePath, Application::DataPath().c_str());
 		strcat(tmpFullFilePath, "/Resource/");
 		strcat(tmpFullFilePath, varResourcesPath);
-		return tmpFullFilePath;
+
+		std::string tmpRet(tmpFullFilePath);
+		delete[](tmpFullFilePath);
+
+		return tmpRet;
 	}
 
 
 	//从Resources短路径 获取 文件完整路径 传入后缀
-	static char* GetFullPathWithExtension(const char* varResourcesPath,const char* varExtension)
+	static  std::string  GetFullPathWithExtension(const char* varResourcesPath,const char* varExtension)
 	{
 		char* tmpFullFilePath=new char[128];
 		memset(tmpFullFilePath, 0, 128);
@@ -81,7 +85,10 @@ public:
 		strcat(tmpFullFilePath, "/Resource/");
 		strcat(tmpFullFilePath, varResourcesPath);
 		strcat(tmpFullFilePath, varExtension);
-		return tmpFullFilePath;
+
+		std::string tmpRet(tmpFullFilePath);
+		delete[](tmpFullFilePath);
+		return tmpRet;
 	}
 
 

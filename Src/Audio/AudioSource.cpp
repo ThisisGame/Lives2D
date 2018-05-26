@@ -38,16 +38,16 @@ void AudioSource::InitWithXml(TiXmlElement * varTiXmlElement)
 
 void AudioSource::LoadAudio(const char * varAudioPath)
 {
-	//FMOD_RESULT   tmpResult= FMOD_System->createSound(varAudioPath, FMOD_DEFAULT, 0, &mSound);
-	//ERRCHECK(tmpResult);
+	FMOD_RESULT   tmpResult= FMOD_System->createSound(varAudioPath, FMOD_DEFAULT, 0, &mSound);
+	ERRCHECK(tmpResult);
 }
 
 
 void AudioSource::Play()
 {
-	//FMOD::Channel    *channel = 0;
-	//FMOD_RESULT   tmpResult = FMOD_System->playSound(mSound, 0, false, &channel);
-	//ERRCHECK(tmpResult);
+	FMOD::Channel    *channel = 0;
+	FMOD_RESULT   tmpResult = FMOD_System->playSound(mSound, 0, false, &channel);
+	ERRCHECK(tmpResult);
 }
 
 

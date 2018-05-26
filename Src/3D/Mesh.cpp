@@ -38,7 +38,7 @@ void Mesh::ApplySkin()
 	mApplyedSkin = true;
 }
 
-const bool& Mesh::GetApplyedSkin()
+const bool Mesh::GetApplyedSkin()
 {
 	return mApplyedSkin;
 }
@@ -50,36 +50,29 @@ Vertex * Mesh::GetVertexArray()
 	return mVertexArray;
 }
 
-const int& Mesh::GetVertexCount()
+const unsigned short Mesh::GetVertexCount()
 {
 	return mVertexCount;
 }
 
-void Mesh::SetVertexIndicesSize(int varVertexIndicesSize)
+void Mesh::SetVertexIndicesSize(unsigned short varVertexIndicesSize)
 {
 	mVertexIndicesSize = varVertexIndicesSize;
 }
 
-#ifdef MINI_MESH
 void Mesh::PushVertexIndicesArray(unsigned short * varVertexIndices)
-#else
-void Mesh::PushVertexIndicesArray(int * varVertexIndices)
-#endif
 {
 	mVertexIndices = varVertexIndices;
 }
 
-const int& Mesh::GetVertexIndicesSize()
+const unsigned short Mesh::GetVertexIndicesSize()
 {
 	return mVertexIndicesSize;
 }
 
 
-#ifdef MINI_MESH
+
 unsigned short * Mesh::GetVertexIndices()
-#else
-int * Mesh::GetVertexIndices()
-#endif
 {
 	return mVertexIndices;
 }

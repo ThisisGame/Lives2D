@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<GameObject Name="65535_Box001_1"  Position="(0,0,0)" Rotation="(0,0,0)" Scale="(1,1,1)">
+	<Component Type="MeshFilter" Mesh="Anim/65535/65535_Box001_1.mesh"/>
+	<Component Type="Material" Name="01 - Default" Shader="Shader/Texture" IsSkinMesh="false">
+		<ShaderProperty Name="m_texture" ValueType="Texture" ActiveTextureIndex="0" TexturePath="Anim/65535/e05f0919ab3b0003141643cf02d8d154.jpg"/>
+    	<ShaderProperty Name="m_mvp" ValueType="UniformMatrix4fv"/>
+    	<ShaderProperty Name="m_position" ValueType="VertexAttributePoint"/>
+    	<ShaderProperty Name="m_uv" ValueType="VertexAttributePoint"/>
+	</Component>
+	<Component Type="MeshRenderer"/>
+</GameObject>

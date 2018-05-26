@@ -33,8 +33,10 @@ void Material::InitWithXml(TiXmlElement * varTiXmlElement)
 	const char* tmpShaderName = varTiXmlElement->Attribute("Shader");
 	mShader = new Shader();
 
-	const char* tmpVertexShaderPath = Application::GetFullPathWithExtension(tmpShaderName,".vert");
-	const char* tmpFragShaderPath = Application::GetFullPathWithExtension(tmpShaderName,".frag");
+	std::string tmpVertexShaderPathStr = Application::GetFullPathWithExtension(tmpShaderName,".vert");
+	const char* tmpVertexShaderPath = tmpVertexShaderPathStr.c_str();
+	std::string tmpFragShaderPathStr = Application::GetFullPathWithExtension(tmpShaderName,".frag");
+	const char* tmpFragShaderPath = tmpFragShaderPathStr.c_str();
 	bool tmpRet=mShader->CreateProgram(Helper::ReadTxt(tmpVertexShaderPath).c_str(), Helper::ReadTxt(tmpFragShaderPath).c_str());
 	if (tmpRet == false)
 	{
@@ -84,7 +86,7 @@ void Material::InitWithXml(TiXmlElement * varTiXmlElement)
                 tmpShaderPropertyTexture->mTexturePath=tmpTexturePath;
                 
                 Texture2D* tmpTexture2D=new Texture2D();
-                tmpTexture2D->LoadTexture(Application::GetFullPath(tmpTexturePath));
+                tmpTexture2D->LoadTexture(Application::GetFullPath(tmpTexturePath).c_str());
                 tmpShaderPropertyTexture->mTextureID=tmpTexture2D->m_textureId;
             }
 			else if (strcmp(tmpShaderPropertyValueType, ShaderPropertyValueType::TYPE_UNIFORM_MATRIX4FV) == 0)
@@ -200,7 +202,7 @@ void Material::SetTexture(const char* varProperty, const char* varTexturePath)
             
             //build texture
             Texture2D* tmpTexture2D=new Texture2D();
-            tmpTexture2D->LoadTexture(Application::GetFullPath(varTexturePath));
+            tmpTexture2D->LoadTexture(Application::GetFullPath(varTexturePath).c_str());
             tmpShaderPropertyTexture->mTextureID=tmpTexture2D->m_textureId;
             
             
@@ -230,18 +232,14 @@ void Material::SetTexture(const char* varProperty, const char* varTexturePath)
         
         //build texture
         Texture2D* tmpTexture2D=new Texture2D();
-        tmpTexture2D->LoadTexture(Application::GetFullPath(varTexturePath));
+        tmpTexture2D->LoadTexture(Application::GetFullPath(varTexturePath).c_str());
         tmpShaderPropertyTexture->mTextureID=tmpTexture2D->m_textureId;
         
         mVectorShaderProperty.push_back(tmpShaderPropertyTexture);
     }
 }
 
-#ifdef MINI_MESH
-void Material::SetVertexIndices(int varSize, unsigned short* varVertexIndices)
-#else
-void Material::SetVertexIndices(int varSize, int* varVertexIndices)
-#endif
+void Material::SetVertexIndices(unsigned short varSize, unsigned short* varVertexIndices)
 {
 	mVertexIndicesSize = varSize;
 	mVertexIndices = varVertexIndices;
@@ -335,11 +333,8 @@ void Material::Render()
 		}
 	}
 
-#ifdef MINI_MESH
 	glDrawElements(GL_TRIANGLES, mVertexIndicesSize, GL_UNSIGNED_SHORT, mVertexIndices);
-#else
-	glDrawElements(GL_TRIANGLES, mVertexIndicesSize, GL_UNSIGNED_INT, mVertexIndices);
-#endif
+
 
 	
 
