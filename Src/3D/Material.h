@@ -23,6 +23,8 @@ public:
 
 	void SetUniformMatrix4fv(const char* varProperty, int varSize, GLfloat* varMemoryData);
 
+	void SetUniform3f(const char* varProperty, GLfloat varX, GLfloat varY, GLfloat varZ);
+
 	void SetVertexAttribPointer(const char* varProperty, int varSize, int varStride, void* varMemoryData);
 
 	void SetFloat(const char* varProperty, float varValue);

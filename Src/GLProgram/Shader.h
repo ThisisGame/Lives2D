@@ -20,6 +20,7 @@ public:
     static const char* TYPE_VERTEXATTRIBPOINT;
     static const char* TYPE_TEXTURE;
 	static const char* TYPE_UNIFORM_MATRIX4FV;
+	static const char* TYPE_UNIFORM3F;
 };
 
 
@@ -100,6 +101,21 @@ public:
 public:
 	int mSize;
 	GLfloat* mMemoryData;
+};
+
+//for glUniform3f
+class ShaderPropertyUniform3f :public ShaderProperty
+{
+public:
+	ShaderPropertyUniform3f():mX(0),mY(0),mZ(0)
+	{
+		mValueType = ShaderPropertyValueType::TYPE_UNIFORM3F;
+	}
+
+public:
+	GLfloat mX;
+	GLfloat mY;
+	GLfloat mZ;
 };
 
 

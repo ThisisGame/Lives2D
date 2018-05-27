@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <GameObject Name="65535_Box001_21"  Position="(0,0,0)" Rotation="(0,0,0)" Scale="(1,1,1)">
 	<Component Type="MeshFilter" Mesh="Anim/65535/65535_Box001_21.mesh"/>
-	<Component Type="Material" Name="01 - Default" Shader="Shader/Texture" IsSkinMesh="false">
+	<Component Type="Material" Name="01 - Default" Shader="Shader/Diffuse" IsSkinMesh="false">
 		<ShaderProperty Name="m_texture" ValueType="Texture" ActiveTextureIndex="0" TexturePath="Anim/65535/e05f0919ab3b0003141643cf02d8d154.jpg"/>
     	<ShaderProperty Name="m_mvp" ValueType="UniformMatrix4fv"/>
     	<ShaderProperty Name="m_position" ValueType="VertexAttributePoint"/>
     	<ShaderProperty Name="m_uv" ValueType="VertexAttributePoint"/>
+		
+		<ShaderProperty Name="m_normal" ValueType="VertexAttributePoint"/>
+		<ShaderProperty Name="m_model" ValueType="UniformMatrix4fv"/>
+		<ShaderProperty Name="m_modelofnormal" ValueType="UniformMatrix4fv"/>
+		
+		<ShaderProperty Name="m_lightcolor" ValueType="Uniform3f"/>
+		<ShaderProperty Name="m_lightpos" ValueType="Uniform3f"/>
 	</Component>
 	<Component Type="MeshRenderer"/>
 </GameObject>

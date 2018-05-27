@@ -96,6 +96,13 @@ void Material::InitWithXml(TiXmlElement * varTiXmlElement)
 
 				tmpShaderPropertyUniformMatrix4fv->mID= glGetUniformLocation(mShader->mProgram, tmpShaderPropertyName);
 			}
+			else if (strcmp(tmpShaderPropertyValueType, ShaderPropertyValueType::TYPE_UNIFORM3F) == 0)
+			{
+				tmpShaderProperty = new ShaderPropertyUniform3f();
+				ShaderPropertyUniform3f* tmpShaderPropertyUniform3f = (ShaderPropertyUniform3f*)tmpShaderProperty;
+
+				tmpShaderPropertyUniform3f->mID = glGetUniformLocation(mShader->mProgram, tmpShaderPropertyName);
+			}
 			else if (strcmp(tmpShaderPropertyValueType, ShaderPropertyValueType::TYPE_VERTEXATTRIBPOINT) == 0)
 			{
 				tmpShaderProperty = new ShaderPropertyVertexAttribPointer();
@@ -133,6 +140,33 @@ void Material::SetUniformMatrix4fv(const char * varProperty, int varSize, GLfloa
 		tmpShaderPropertyUniformMatrix4fv->mSize = varSize;
 		tmpShaderPropertyUniformMatrix4fv->mMemoryData = varMemoryData;
 		mVectorShaderProperty.push_back(tmpShaderPropertyUniformMatrix4fv);
+	}
+}
+
+void Material::SetUniform3f(const char* varProperty, GLfloat varX, GLfloat varY, GLfloat varZ)
+{
+	bool tmpFind = false;
+	for (size_t tmpIndex = 0; tmpIndex<mVectorShaderProperty.size(); tmpIndex++)
+	{
+		if (strcmp(mVectorShaderProperty[tmpIndex]->mName, varProperty) == 0)
+		{
+			ShaderPropertyUniform3f * tmpShaderPropertyUniform3f = (ShaderPropertyUniform3f*)mVectorShaderProperty[tmpIndex];
+			tmpShaderPropertyUniform3f->mX = varX;
+			tmpShaderPropertyUniform3f->mY = varY;
+			tmpShaderPropertyUniform3f->mZ = varZ;
+			tmpFind = true;
+			break;
+		}
+	}
+
+	if (tmpFind == false)
+	{
+		ShaderPropertyUniform3f * tmpShaderPropertyUniform3f = new ShaderPropertyUniform3f();
+		tmpShaderPropertyUniform3f->mName = varProperty;
+		tmpShaderPropertyUniform3f->mX = varX;
+		tmpShaderPropertyUniform3f->mY = varY;
+		tmpShaderPropertyUniform3f->mZ = varZ;
+		mVectorShaderProperty.push_back(tmpShaderPropertyUniform3f);
 	}
 }
 
@@ -284,6 +318,16 @@ void Material::Render()
 
 	SetUniformMatrix4fv("m_mvp", 1, &mvp[0][0]);
 
+	SetUniformMatrix4fv("m_model", 1, &model[0][0]);
+
+	//传入模型矩阵的逆矩阵的转置，用于计算法线向量的世界坐标;
+	glm::mat4 modelofnormal = glm::transpose(glm::inverse(model));
+	SetUniformMatrix4fv("m_modelofnormal", 1, &modelofnormal[0][0]);
+
+	//传入灯光的位置
+	SetUniform3f("m_lightpos", 0.0f, 0.0f, 30.0f);
+	SetUniform3f("m_lightcolor", 1.0f, 1.0f, 1.0f);
+
 	mShader->begin();
 
 	//开启深度测试;
@@ -316,6 +360,11 @@ void Material::Render()
 		{
 			ShaderPropertyUniformMatrix4fv* tmpShaderPropertyUniformMatrix4fv = (ShaderPropertyUniformMatrix4fv*)tmpShaderProperty;
 			glUniformMatrix4fv(tmpShaderProperty->mID, tmpShaderPropertyUniformMatrix4fv->mSize, false, tmpShaderPropertyUniformMatrix4fv->mMemoryData);
+		}
+		else if (strcmp(tmpShaderProperty->mValueType, ShaderPropertyValueType::TYPE_UNIFORM3F) == 0)
+		{
+			ShaderPropertyUniform3f* tmpShaderPropertyUniform3f = (ShaderPropertyUniform3f*)tmpShaderProperty;
+			glUniform3f(tmpShaderProperty->mID,tmpShaderPropertyUniform3f->mX, tmpShaderPropertyUniform3f->mY, tmpShaderPropertyUniform3f->mZ);
 		}
 		else if (strcmp(tmpShaderProperty->mValueType , ShaderPropertyValueType::TYPE_TEXTURE)==0)
 		{
