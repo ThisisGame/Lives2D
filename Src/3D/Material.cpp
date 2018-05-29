@@ -325,7 +325,7 @@ void Material::Render()
 	SetUniformMatrix4fv("m_modelofnormal", 1, &modelofnormal[0][0]);
 
 	//传入灯光的位置
-	SetUniform3f("m_lightpos", 0.0f, 0.0f, 30.0f);
+	SetUniform3f("m_lightpos", 0.0f, 0.0f, 50.0f);
 	SetUniform3f("m_lightcolor", 1.0f, 1.0f, 1.0f);
 
 	mShader->begin();
