@@ -1,0 +1,10 @@
+$#include"SocketID.h"
+
+class SocketID
+{
+public:
+	SocketID();
+	~SocketID();
+	
+	const char* ToString();
+};

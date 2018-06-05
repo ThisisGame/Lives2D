@@ -61,6 +61,15 @@
     <Filter Include="Platform\Windows\glfw">
       <UniqueIdentifier>{238a4e24-a453-4091-ae40-9452ef396091}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Network">
+      <UniqueIdentifier>{120286d0-e0da-4ee0-b181-e2d4b822e399}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Network\Raknet">
+      <UniqueIdentifier>{71635a29-e367-43ce-a025-3f3182bedb03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LuaEngine\lua-cjson">
+      <UniqueIdentifier>{ec45ecc8-4c69-4e20-8e73-99c0e4439a50}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Src\Texture2D\Texture2D.cpp">
@@ -96,22 +105,7 @@
     <ClCompile Include="..\..\Src\Audio\AudioSource.cpp">
       <Filter>Audio</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Src\LuaEngine\BinaryPacker.cpp">
-      <Filter>LuaEngine</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Src\LuaEngine\lua_BinaryPacker.cpp">
-      <Filter>LuaEngine</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Src\LuaEngine\lua_NetworkClient.cpp">
-      <Filter>LuaEngine</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Src\LuaEngine\LuaEngine.cpp">
-      <Filter>LuaEngine</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Src\LuaEngine\NetworkClient.cpp">
-      <Filter>LuaEngine</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Src\LuaEngine\NetworkDispatch.cpp">
       <Filter>LuaEngine</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Src\Audio\lua_AudioSource.cpp">
@@ -372,6 +366,357 @@
     <ClCompile Include="..\..\Src\Audio\AudioCard.cpp">
       <Filter>Audio</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\_FindFirst.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\Base64Encoder.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\BitStream.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\CCRakNetSlidingWindow.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\CCRakNetUDT.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\CheckSum.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\CloudClient.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\CloudCommon.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\CloudServer.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\CommandParserInterface.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\ConnectionGraph2.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\ConsoleServer.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\DataCompressor.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\DirectoryDeltaTransfer.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\DR_SHA1.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\DS_BytePool.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\DS_ByteQueue.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\DS_HuffmanEncodingTree.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\DS_Table.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\DynDNS.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\EmailSender.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\EpochTimeToString.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\FileList.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\FileListTransfer.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\FileOperations.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\FormatString.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\FullyConnectedMesh2.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\Getche.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\Gets.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\GetTime.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\gettimeofday.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\GridSectorizer.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\HTTPConnection.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\HTTPConnection2.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\IncrementalReadInterface.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\Itoa.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\LinuxStrings.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\LocklessTypes.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\LogCommandParser.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\MessageFilter.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\NatPunchthroughClient.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\NatPunchthroughServer.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\NatTypeDetectionClient.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\NatTypeDetectionCommon.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\NatTypeDetectionServer.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\NetworkIDManager.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\NetworkIDObject.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\PacketConsoleLogger.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\PacketFileLogger.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\PacketizedTCP.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\PacketLogger.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\PacketOutputWindowLogger.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\PluginInterface2.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\PS4Includes.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\Rackspace.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\RakMemoryOverride.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\RakNetCommandParser.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\RakNetSocket.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\RakNetSocket2.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\RakNetSocket2_360_720.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\RakNetSocket2_Berkley.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\RakNetSocket2_Berkley_NativeClient.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\RakNetSocket2_NativeClient.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\RakNetSocket2_PS3_PS4.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\RakNetSocket2_PS4.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\RakNetSocket2_Vita.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\RakNetSocket2_Windows_Linux.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\RakNetSocket2_Windows_Linux_360.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\RakNetSocket2_WindowsStore8.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\RakNetStatistics.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\RakNetTransport2.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\RakNetTypes.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\RakPeer.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\RakSleep.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\RakString.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\RakThread.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\RakWString.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\Rand.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\RandSync.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\ReadyEvent.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\RelayPlugin.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\ReliabilityLayer.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\ReplicaManager3.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\Router2.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\RPC4Plugin.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\SecureHandshake.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\SendToThread.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\SignaledEvent.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\SimpleMutex.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\SocketLayer.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\StatisticsHistory.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\StringCompressor.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\StringTable.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\SuperFastHash.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\TableSerializer.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\TCPInterface.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\TeamBalancer.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\TeamManager.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\TelnetTransport.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\ThreadsafePacketLogger.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\TwoWayAuthentication.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\UDPForwarder.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\UDPProxyClient.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\UDPProxyCoordinator.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\UDPProxyServer.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\VariableDeltaSerializer.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\VariableListDeltaTracker.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\VariadicSQLParser.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\VitaIncludes.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\Raknet\WSAStartupSingleton.cpp">
+      <Filter>Network\Raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Network\lua_SocketID.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Network\lua_UDPSocket.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Network\SocketID.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Network\UDPSocket.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\lua-cjson\fpconv.c">
+      <Filter>LuaEngine\lua-cjson</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\lua-cjson\lua_cjson.c">
+      <Filter>LuaEngine\lua-cjson</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Lives2D_Depends\lua-cjson\strbuf.c">
+      <Filter>LuaEngine\lua-cjson</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\Texture2D\Texture2D.h">
@@ -413,16 +758,7 @@
     <ClInclude Include="..\..\Src\Audio\AudioSource.h">
       <Filter>Audio</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Src\LuaEngine\BinaryPacker.h">
-      <Filter>LuaEngine</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Src\LuaEngine\LuaEngine.h">
-      <Filter>LuaEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Src\LuaEngine\NetworkClient.h">
-      <Filter>LuaEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Src\LuaEngine\NetworkDispatch.h">
       <Filter>LuaEngine</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Src\Tools\Application.h">
@@ -572,13 +908,489 @@
     <ClInclude Include="..\..\Src\Audio\AudioCard.h">
       <Filter>Audio</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\_FindFirst.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\AutopatcherPatchContext.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\AutopatcherRepositoryInterface.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\Base64Encoder.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\BitStream.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\CCRakNetSlidingWindow.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\CCRakNetUDT.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\CheckSum.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\CloudClient.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\CloudCommon.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\CloudServer.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\CommandParserInterface.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\ConnectionGraph2.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\ConsoleServer.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\DataCompressor.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\DirectoryDeltaTransfer.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\DR_SHA1.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\DS_BinarySearchTree.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\DS_BPlusTree.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\DS_BytePool.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\DS_ByteQueue.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\DS_Hash.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\DS_Heap.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\DS_HuffmanEncodingTree.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\DS_HuffmanEncodingTreeFactory.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\DS_HuffmanEncodingTreeNode.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\DS_LinkedList.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\DS_List.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\DS_Map.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\DS_MemoryPool.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\DS_Multilist.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\DS_OrderedChannelHeap.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\DS_OrderedList.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\DS_Queue.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\DS_QueueLinkedList.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\DS_RangeList.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\DS_Table.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\DS_ThreadsafeAllocatingQueue.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\DS_Tree.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\DS_WeightedGraph.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\DynDNS.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\EmailSender.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\EmptyHeader.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\EpochTimeToString.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\Export.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\FileList.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\FileListNodeContext.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\FileListTransfer.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\FileListTransferCBInterface.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\FileOperations.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\FormatString.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\FullyConnectedMesh2.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\Getche.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\Gets.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\GetTime.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\gettimeofday.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\GridSectorizer.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\HTTPConnection.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\HTTPConnection2.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\IncrementalReadInterface.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\InternalPacket.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\Itoa.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\Kbhit.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\LinuxStrings.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\LocklessTypes.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\LogCommandParser.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\MessageFilter.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\MessageIdentifiers.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\MTUSize.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\NativeFeatureIncludes.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\NativeFeatureIncludesOverrides.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\NativeTypes.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\NatPunchthroughClient.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\NatPunchthroughServer.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\NatTypeDetectionClient.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\NatTypeDetectionCommon.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\NatTypeDetectionServer.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\NetworkIDManager.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\NetworkIDObject.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\PacketConsoleLogger.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\PacketFileLogger.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\PacketizedTCP.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\PacketLogger.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\PacketOutputWindowLogger.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\PacketPool.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\PacketPriority.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\PluginInterface2.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\PS3Includes.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\PS4Includes.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\Rackspace.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\RakAlloca.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\RakAssert.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\RakMemoryOverride.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\RakNetCommandParser.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\RakNetDefines.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\RakNetDefinesOverrides.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\RakNetSmartPtr.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\RakNetSocket.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\RakNetSocket2.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\RakNetStatistics.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\RakNetTime.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\RakNetTransport2.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\RakNetTypes.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\RakNetVersion.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\RakPeer.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\RakPeerInterface.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\RakSleep.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\RakString.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\RakThread.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\RakWString.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\Rand.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\RandSync.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\ReadyEvent.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\RefCountedObj.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\RelayPlugin.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\ReliabilityLayer.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\ReplicaEnums.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\ReplicaManager3.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\Router2.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\RPC4Plugin.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\SecureHandshake.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\SendToThread.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\SignaledEvent.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\SimpleMutex.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\SimpleTCPServer.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\SingleProducerConsumer.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\SocketDefines.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\SocketIncludes.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\SocketLayer.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\StatisticsHistory.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\StringCompressor.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\StringTable.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\SuperFastHash.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\TableSerializer.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\TCPInterface.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\TeamBalancer.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\TeamManager.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\TelnetTransport.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\ThreadPool.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\ThreadsafePacketLogger.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\TransportInterface.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\TwoWayAuthentication.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\UDPForwarder.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\UDPProxyClient.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\UDPProxyCommon.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\UDPProxyCoordinator.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\UDPProxyServer.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\VariableDeltaSerializer.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\VariableListDeltaTracker.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\VariadicSQLParser.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\VitaIncludes.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\WindowsIncludes.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\WSAStartupSingleton.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Lives2D_Depends\Raknet\XBox360Includes.h">
+      <Filter>Network\Raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Network\SocketID.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Network\UDPSocket.h">
+      <Filter>Network</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\Src\LuaEngine\BinaryPacker.pkg">
-      <Filter>LuaEngine</Filter>
+    <None Include="..\..\..\Lives2D_Depends\Raknet\RakNet.vcproj">
+      <Filter>Network\Raknet</Filter>
     </None>
-    <None Include="..\..\Src\LuaEngine\NetworkClient.pkg">
-      <Filter>LuaEngine</Filter>
+    <None Include="..\..\..\Lives2D_Depends\Raknet\RakNet_vc8.vcproj">
+      <Filter>Network\Raknet</Filter>
     </None>
+    <None Include="..\..\..\Lives2D_Depends\Raknet\RakNet_vc9.vcproj">
+      <Filter>Network\Raknet</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\..\Lives2D_Depends\Raknet\CMakeLists.txt">
+      <Filter>Network\Raknet</Filter>
+    </Text>
   </ItemGroup>
 </Project>

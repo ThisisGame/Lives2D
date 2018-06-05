@@ -239,7 +239,7 @@ include $(CLEAR_VARS)
 
 LOCAL_MODULE            := fmod
 LOCAL_SRC_FILES         := $(FMOD_LIB_PATH)/$(TARGET_ARCH_ABI)/libfmodL.so
-LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)/../../lowlevel/inc
+# LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)/../../lowlevel/inc
 
 include $(PREBUILT_SHARED_LIBRARY)
 
@@ -290,7 +290,26 @@ include $(BUILD_STATIC_LIBRARY)
 
 
 
+# ProgmaBegin Raknet
 
+Raknet_SRC_PATH:=../../../../Lives2D_Depends/Raknet
+
+include $(CLEAR_VARS)
+
+LOCAL_PATH:=$(Raknet_SRC_PATH)
+
+LOCAL_MODULE    := libRaknet
+
+LOCAL_C_INCLUDES:= $(Raknet_SRC_PATH)
+
+#find all the file recursively under jni/
+FILE_LIST := $(wildcard \
+		$(Raknet_SRC_PATH)/*.cpp \
+		)
+LOCAL_SRC_FILES := $(FILE_LIST:$(LOCAL_PATH)/%=%)
+
+include $(BUILD_STATIC_LIBRARY)
+# ProgmaEnd
 
 
 
@@ -415,7 +434,7 @@ $(Bullet_SRC_PATH)/src \
 $(ENGINE_SRC_PATH) \
 $(JNI_PATH) \
 
-LOCAL_STATIC_LIBRARIES := libLua libTOLUAPP libFreeImage libGLM libFreeType libBullet
+LOCAL_STATIC_LIBRARIES := libLua libTOLUAPP libFreeImage libGLM libFreeType libBullet libRaknet
 
 include $(BUILD_STATIC_LIBRARY)
 

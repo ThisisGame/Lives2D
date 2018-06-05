@@ -6,6 +6,8 @@ extern "C"
 #include "lualib.h"    
 #include "lauxlib.h"    
 #include "luaconf.h"    
+
+#include"lua_cjson.h"
 }
 #include "tolua++.h"
 
@@ -70,5 +72,7 @@ public:
 
 private:
 	void PrintError();
+
+	void RegisterThirdParty();
 };
 

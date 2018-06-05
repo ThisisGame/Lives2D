@@ -1,0 +1,30 @@
+$#include"UDPSocket.h"
+
+class UDPSocket
+{
+public:
+	UDPSocket();
+	~UDPSocket();
+
+	bool Connect(char* varAddress,unsigned short varPort);
+
+	bool Listen(char* varAddress, unsigned short varPort);
+
+	void SetReceiveNewIncomingConnection(const char* varLuaFunctionName);
+	
+	void SetReceiveConnectAccepted(const char* varLuaFunctionName);
+
+	void SetReceiveNewPackListener(const char* varLuaFunctionName);
+
+	void SetReceiveConnectionLost(const char* varLuaFunctionName);
+	
+	void Update();
+
+	void Send(const char* varJson);
+
+	void Send(SocketID* var_pSocketID, const char* varJson);
+
+	void CloseConnection(SocketID* var_pSocketID);
+	
+	void Stop();
+};

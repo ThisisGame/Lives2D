@@ -7,8 +7,6 @@
 #include"Tools/Helper.h"
 
 TOLUA_API int  tolua_Application_open(lua_State* tolua_S);
-TOLUA_API int  tolua_BinaryPacker_open(lua_State* tolua_S);
-TOLUA_API int  tolua_NetworkClient_open(lua_State* tolua_S);
 TOLUA_API int  tolua_AudioSource_open(lua_State* tolua_S);
 
 TOLUA_API int  tolua_KeyTouchListener_open(lua_State* tolua_S);
@@ -51,6 +49,9 @@ TOLUA_API int  tolua_PhysicsWorld_open(lua_State* tolua_S);
 TOLUA_API int  tolua_RaycastHit_open(lua_State* tolua_S);
 TOLUA_API int  tolua_Raycast_open(lua_State* tolua_S);
 
+TOLUA_API int  tolua_SocketID_open(lua_State* tolua_S);
+TOLUA_API int  tolua_UDPSocket_open(lua_State* tolua_S);
+
 LuaEngine* LuaEngine::m_pSingleton = nullptr;
 
 LuaEngine::LuaEngine()
@@ -59,9 +60,10 @@ LuaEngine::LuaEngine()
 	m_pLua_State = luaL_newstate();
 	luaL_openlibs(m_pLua_State);
 
+	RegisterThirdParty();
+
 	tolua_Application_open(m_pLua_State);
-	tolua_BinaryPacker_open(m_pLua_State);
-	tolua_NetworkClient_open(m_pLua_State);
+
 	tolua_AudioSource_open(m_pLua_State);
 	tolua_KeyTouchListener_open(m_pLua_State);
 	tolua_KeyTouch_open(m_pLua_State);
@@ -102,9 +104,26 @@ LuaEngine::LuaEngine()
 	tolua_RaycastHit_open(m_pLua_State);
 	tolua_Raycast_open(m_pLua_State);
 
+	tolua_SocketID_open(m_pLua_State);
+	tolua_UDPSocket_open(m_pLua_State);
+
 	mErrorPause = false;
 
 	SetLuaPath();
+}
+
+void LuaEngine::RegisterThirdParty()
+{
+	luaL_Reg lualibs[] = {
+		{ LUA_CJSON,luaopen_cjson },
+		{ NULL, NULL }
+	};
+	const luaL_Reg *lib = lualibs;
+	for (; lib->func; lib++) {
+		lua_pushcfunction(m_pLua_State, lib->func);
+		lua_pushstring(m_pLua_State, lib->name);
+		lua_call(m_pLua_State, 1, 0);
+	}
 }
 
 

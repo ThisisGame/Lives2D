@@ -1,6 +1,11 @@
+require("Core/Core")
+require("Public/Public")
+
 local ResourcesManager=require("ResourcesManager")
 
 local SceneWelcom=class()
+
+local udpSocketConnectToGateServer
 
 function SceneWelcom:ctor()
 	print("SceneWelcom:ctor")
@@ -70,6 +75,36 @@ function SceneWelcom:Init()
 	audioSource1:LoadAudio(ResourcesManager:DataPath().. "/Resource/Audio/Login.mp3")
 	audioSource1:Loop()
 	audioSource1:Play()
+	
+	udpSocketConnectToGateServer=UDPSocket:new()
+	udpSocketConnectToGateServer:SetReceiveConnectAccepted(Wrap(ReceiveConnectAccepted))
+	udpSocketConnectToGateServer:SetReceiveNewPackListener(Wrap(ReceiveNewPackListener))
+	local tmpConnected=udpSocketConnectToGateServer:Connect("127.0.0.1",60001)
+	if tmpConnected then
+		print("Connect GateServer Success")
+	end
+end
+
+function ReceiveConnectAccepted(varSocketID)
+	print("ReceiveConnectAccepted")
+	local msg={msgid=GameMessage.Test,Account="Test099",PassWord="123456",Channel="UC"}
+	SendMsgToServer(udpSocketConnectToGateServer,msg)
+end
+
+function ReceiveNewPackListener(varSocketID,varJson)
+	local msgjson=varJson
+
+	local socketIdStr=varSocketID:ToString()
+	print("----ReceiveNewPackListener from:" ..socketIdStr .. " " .. msgjson)
+	
+	--ProfileTime:BeginSample("json.decode")
+	local msg=cjson.decode(msgjson)
+	--ProfileTime:EndSample()
+   
+    --print("消耗时间：" .. useTime .. "s");
+
+	local msgid=msg["msgid"]
+	GameMessage:Print(msgid)
 end
 
 --ˢ֡
@@ -92,6 +127,8 @@ function SceneWelcom:Update(varDeltaTime)
 			print("HitGameObject:" .. tmpGo.name)
 		end
 	end
+	
+	udpSocketConnectToGateServer:Update()
 end
 
 
