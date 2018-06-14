@@ -15,6 +15,10 @@ function Update(varDeltaTime)
 	GameMain:Update(varDeltaTime)
 end
 
+function FixedUpdate()
+	GameMain:FixedUpdate()
+end
+
 --绘制
 function Draw()
 	--print("Draw")

@@ -256,6 +256,7 @@ void LuaEngine::CallLuaFunction(const char * varLuaFunctionName, int varParamCou
 	}
 
 	varFunction(m_pLua_State);
+	
 
 	int ret = lua_pcall(m_pLua_State, varParamCount, 0, 0);
 	if (ret != 0)
@@ -341,6 +342,34 @@ void LuaEngine::ExecuteLuaFunction(int varLuaFunctionUniqueIndex)
 {
 	lua_rawgeti(m_pLua_State, LUA_REGISTRYINDEX, varLuaFunctionUniqueIndex);
 	lua_call(m_pLua_State, 0, 0);
+}
+
+int LuaEngine::GetGlobalViriable(const char* varName)
+{
+	int tmpRet = 0;
+	//获取lua的全局变量  
+
+	lua_getglobal(m_pLua_State, varName);  //会将lua全局变量压入栈  
+
+										   //int ret = lua_getglobal(m_pLua_State,varName);  //会将lua全局变量压入栈  
+
+										   // if (ret != 0)
+										   // {
+										   // 	int t = lua_type(m_pLua_State, -1);
+										   // 	const char* err = lua_tostring(m_pLua_State, -1);
+										   // 	Helper::LOG("Error: %s\n", err);
+										   // 	lua_pop(m_pLua_State, 1);
+
+										   // 	mErrorPause = true;
+										   // }
+
+
+	if (lua_isnumber(m_pLua_State, -1))
+	{
+		tmpRet = lua_tonumber(m_pLua_State, -1);
+	}
+	lua_pop(m_pLua_State, -1);
+	return tmpRet;
 }
 
 void LuaEngine::PrintError()

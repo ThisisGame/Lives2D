@@ -70,6 +70,8 @@ public:
 
 	void ExecuteLuaFunction(int varLuaFunctionUniqueIndex);
 
+	int GetGlobalViriable(const char* varName);
+
 private:
 	void PrintError();
 

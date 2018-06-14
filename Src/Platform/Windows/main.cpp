@@ -25,6 +25,10 @@
 
 #include"Audio/AudioCard.h"
 
+#include"RakNetTime.h"
+#include"GetTime.h"
+
+
 static void error_callback(int error, const char* description)
 {
 	fprintf(stderr, "Error: %s\n", description);
@@ -207,8 +211,14 @@ void Init()
 	firstopen = PlayerPrefs::GetBool("FirstOpenGame");
 }
 
+
+
+static RakNet::TimeUS sFixedUpdateTime = 1000000 / 15;
 void update(float varDeltaTime)
 {
+	
+	static RakNet::TimeUS tmpFixedUpdateEndTime = RakNet::GetTimeUS() + sFixedUpdateTime;
+
 	PhysicsWorld::Simulation();
 
 	//Lives2D::Update(varDeltaTime);
@@ -218,6 +228,27 @@ void update(float varDeltaTime)
 	};
 	Time::deltaTime = varDeltaTime;
 	LuaEngine::GetSingleton()->CallLuaFunction("Update", 1, tmpFunction);
+
+	RakNet::TimeUS tmpCurrentTimeUS = RakNet::GetTimeUS();
+
+	if (RakNet::GreaterThan(tmpCurrentTimeUS, tmpFixedUpdateEndTime))
+	{
+		RakNet::TimeUS tmpTimeUpdateCost=  tmpCurrentTimeUS- tmpFixedUpdateEndTime;//如果这一帧花费了很长时间，那么应该把FixedUpdate补回来，计算应该调用的次数
+
+		int tmpFixedUpdateNeedCallTime = tmpTimeUpdateCost / sFixedUpdateTime;
+
+		for (size_t i = 0; i < tmpFixedUpdateNeedCallTime; i++)
+		{
+			LuaEngine::GetSingleton()->CallLuaFunction("FixedUpdate");
+		}
+
+		if (tmpFixedUpdateNeedCallTime > 0)
+		{
+			int tmpTimeUSRemain = tmpTimeUpdateCost%sFixedUpdateTime;//调用多次后，仍然超出，但是又不足一个FixedUpdate，就把下一个FixedUpdate时间扣除一点
+
+			tmpFixedUpdateEndTime = RakNet::GetTimeUS() + sFixedUpdateTime - tmpTimeUSRemain;
+		}
+	}
 }
 
 
@@ -264,6 +295,8 @@ void onInit()
 	//LuaEngine Start
 	LuaEngine::GetSingleton()->DoFile((Application::PersistentDataPath() + "/Resource/Script/Engine/Lives2D.lua").c_str());
 
+	
+
 	glClearColor(0, 0, 0, 1);
 
 
@@ -289,7 +322,7 @@ void onInit()
 	float viewportoffsetHeight = (Application::ScreenHeight - Application::RenderHeight) / 2;
 	glViewport(viewportoffsetWidth, viewportoffsetHeight, Application::RenderWidth, Application::RenderHeight);
 
-	AudioCard::AudioCardInit();
+	//AudioCard::AudioCardInit();
 
 	//[captures] (params) -> ret {Statments;} 
 	//Lives2D::Init(m_EGLSurface, m_EGLDisplay,m_width,m_height);
@@ -301,6 +334,10 @@ void onInit()
 		tolua_pushnumber(var_pLuaState, Application::ScreenHeight);
 	};
 	LuaEngine::GetSingleton()->CallLuaFunction("Init", 2, tmpFunction);
+
+
+	sFixedUpdateTime =1000000/ LuaEngine::GetSingleton()->GetGlobalViriable("fixedUpdateFrame");
+	printf("fixedUpdateFrame:%d\n", sFixedUpdateTime);
 }
 
 int main(void)

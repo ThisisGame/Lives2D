@@ -5,251 +5,151 @@ local ResourcesManager=require("ResourcesManager")
 
 local SceneWelcom=class()
 
-local udpSocketConnectToGateServer
+local udpSocketConnectToLoginServer
+local udpSocketConnectToPVPServer
+
+local mRoleid=0
 
 function SceneWelcom:ctor()
 	print("SceneWelcom:ctor")
-	self.mUIRoot=nil
-	self.mGround=nil
-	self.mPlayer=nil
-	self.mWomenBody=nil
-	self.TvGirl_CruX_Gloves_7778=nil
-	self.TvGirl_DisclosedII_33798=nil
-	self.TvGirl_finalhair_65512=nil
-	self.TvGirl_G3_Pantyhose_5176=nil
-	self.TvGirl_Genesis3Female=nil
-	self.Sphere_0=nil
-	self.Sphere_1=nil
-	self.Box001_0=nil
-	self.Box001_1=nil
-	self.Box001_2=nil
-	self.Box001_3=nil
-	self.Box001_4=nil
-	self.Box001_5=nil
-	self.Box001_6=nil
-	self.Box001_7=nil
-	self.Box001_8=nil
-	self.Box001_9=nil
-	self.Box001_10=nil
-	self.Box001_11=nil
-	self.Box001_12=nil
-	self.Box001_13=nil
-	self.Box001_14=nil
-	self.Box001_15=nil
-	self.Box001_16=nil
-	self.Box001_17=nil
-	self.Box001_18=nil
-	self.Box001_19=nil
-	self.Box001_20=nil
-	self.Box001_21=nil
+	
 	print(ResourcesManager:DataPath())
+	
+	self.mUIRoot=nil
 end
 
---��ʼ��
+local mGoImageBg
 function SceneWelcom:Init()
 	print("SceneWelcom:Init")
 	
+	local tmpGoUIRoot=GameObject:new("UIROOT")
+	self.mUIRoot=tmpGoUIRoot:AddComponent("UIRoot")
 	
+	mGoImageBg=GameObject:new("mImage_Bg")
 	
-	local tmpGoCamera=GameObject:new("sceneCamera")
-	tmpGoCamera.mTransform:SetLocalPosition(Vector3(0,0.5,10))
-	tmpGoCamera.mTransform:SetLocalRotation(Vector3(0,0,0))
-	self.mCamera=tmpGoCamera:AddComponent("Camera")
+	local	mImage_Bg =mGoImageBg:AddComponent("UIImage")
+	mImage_Bg:Init(ResourcesManager:DataPath() .. "/Resource/UI/pointer-lb128.png",false);
 	
-	local tmpGoPhysicsWorld=GameObject:new("PhysicsWorld")
-	local tmpPhysicsWorld=tmpGoPhysicsWorld:AddComponent("PhysicsWorld")
+	mImage_Bg.mTransform:SetLocalPosition(Vector3(0,0,0))
+	mImage_Bg:SetDepth(0);
+	self.mUIRoot:AddChild(mImage_Bg);
 	
-	local tmpSkinMeshParserGround=SkinMeshParser:new()
-	self.mGround=tmpSkinMeshParserGround:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/ground/ground.xml");
-	self.mGround.mTransform:SetLocalPosition(Vector3(0,-5,-10))
-	local tmpRigidbody= self.mGround:AddComponent("Rigidbody")
-	tmpRigidbody:SetCollisionShape(1,0.0,10,0.5,10)
-	
-	local tmpSkinMeshParserPlayer=SkinMeshParser:new()
-	self.mPlayer=tmpSkinMeshParserPlayer:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/9010006/9010006.xml");
-	self.mPlayer.mTransform:SetLocalPosition(Vector3(0,0,0))
-	local tmpRigidbodyPlayer= self.mPlayer:AddComponent("Rigidbody")
-	tmpRigidbodyPlayer:SetCollisionShape(1,.0,1,2,0)
-	
-	local audioSource1 = AudioSource:new()
-	audioSource1:LoadAudio(ResourcesManager:DataPath().. "/Resource/Audio/Login.mp3")
-	audioSource1:Loop()
-	audioSource1:Play()
-	
-	udpSocketConnectToGateServer=UDPSocket:new()
-	udpSocketConnectToGateServer:SetReceiveConnectAccepted(Wrap(ReceiveConnectAccepted))
-	udpSocketConnectToGateServer:SetReceiveNewPackListener(Wrap(ReceiveNewPackListener))
-	local tmpConnected=udpSocketConnectToGateServer:Connect("127.0.0.1",60001)
+	udpSocketConnectToLoginServer=UDPSocket:new()
+	udpSocketConnectToLoginServer:SetReceiveConnectAccepted(Wrap(ReceiveConnectAccepted))
+	udpSocketConnectToLoginServer:SetReceiveNewPackListener(Wrap(ReceiveNewPackListener))
+	local tmpConnected=udpSocketConnectToLoginServer:Connect(LoginServer_Address,LoginServer_Port)
 	if tmpConnected then
 		print("Connect GateServer Success")
 	end
 end
 
+---------------LoginServer---------------------
+
 function ReceiveConnectAccepted(varSocketID)
 	print("ReceiveConnectAccepted")
-	local msg={msgid=GameMessage.Test,Account="Test099",PassWord="123456",Channel="UC"}
-	SendMsgToServer(udpSocketConnectToGateServer,msg)
+	SendMsgToServer(udpSocketConnectToLoginServer,{msgid=GameMessage.Login_Request})
 end
 
-function ReceiveNewPackListener(varSocketID,varJson)
-	local msgjson=varJson
 
+function ReceiveNewPackListener(varSocketID,varJson)
+	print("receivetime:" .. os.clock())
+	local msgjson=varJson
+	
+	
 	local socketIdStr=varSocketID:ToString()
 	print("----ReceiveNewPackListener from:" ..socketIdStr .. " " .. msgjson)
 	
-	--ProfileTime:BeginSample("json.decode")
+	
 	local msg=cjson.decode(msgjson)
-	--ProfileTime:EndSample()
-   
-    --print("消耗时间：" .. useTime .. "s");
+	
 
 	local msgid=msg["msgid"]
 	GameMessage:Print(msgid)
+
+	if msgid==GameMessage.Login_Return then
+		local pvpServerIP=msg["pvpip"]
+		local pvpSeverPort=msg["port"]
+		mRoleid=msg["roleid"]
+		udpSocketConnectToPVPServer=UDPSocket:new()
+		udpSocketConnectToPVPServer:SetReceiveConnectAccepted(Wrap(ReceiveConnectPVPServerAccepted))
+		udpSocketConnectToPVPServer:SetReceiveNewPackListener(Wrap(ReceiveNewPackPVPServerListener))
+		local tmpConnected=udpSocketConnectToPVPServer:Connect(pvpServerIP,pvpSeverPort)
+		if tmpConnected then
+			print("Connect PVPServer Success")
+		end
+	end
 end
 
---ˢ֡
+------------------PVPServer---------------------
+
+local pvpStart=false
+local msgIndex=0
+
+function ReceiveConnectPVPServerAccepted(varSocketID)
+	print("ReceiveConnectPVPServerAccepted")
+	
+end
+
+
+local mTablePackWaitDispatch={}
+function ReceiveNewPackPVPServerListener(varSocketID,varJson)
+	
+	local msgjson=varJson
+	
+	local socketIdStr=varSocketID:ToString()
+	--print("----ReceiveNewPackListener from:" ..socketIdStr .. " " .. msgjson)
+	local msg=cjson.decode(msgjson)
+	local msgid=msg["msgid"]
+	--GameMessage:Print(msgid)
+	
+	if pvpStart then
+		table.insert(mTablePackWaitDispatch,msg)
+	else
+		if msgid==GameMessage.PVP_Start then
+			pvpStart=true
+		end
+	end
+end
+
+
+
+
 function SceneWelcom:Update(varDeltaTime)
 	--print("SceneWelcom:Update " .. varDeltaTime)
 	if self.mUIRoot~=nil then
 		self.mUIRoot:Update(varDeltaTime)
 	end
+
+	udpSocketConnectToLoginServer:Update()
 	
-	if self.mCamera~=nil then
-		self.mCamera:Update()
+	if udpSocketConnectToPVPServer~=nil then
+		udpSocketConnectToPVPServer:Update()
 	end
-	
-	if Input.touchCount>0 then
-		print("touchCount:" .. Input.touchCount)
-		
-		local tmpRaycastHit=RaycastHit:new()
-		if Raycast:ScreenPointToRay(Input.mousePosition,self.mCamera,tmpRaycastHit) then
-			local tmpGo=tmpRaycastHit:GetHitGameObject()
-			print("HitGameObject:" .. tmpGo.name)
-		end
-	end
-	
-	udpSocketConnectToGateServer:Update()
 end
 
+function SceneWelcom:FixedUpdate()
+	--print("SceneWelcom:FixedUpdate")
+	if table.getn(mTablePackWaitDispatch)>0 then
+		local tmpFirst=mTablePackWaitDispatch[1]
+		
+		local msg=tmpFirst["data"][1]
+		
+		--拿到服务器广播数据，修改客户端表现
+		--print(msg["x"] .. "," .. msg["y"])
+		
+		mGoImageBg.mTransform:SetLocalPosition(Vector3(msg["x"],msg["y"],0))
+		
+		table.remove(mTablePackWaitDispatch,1)
+	end
+	
+	
+	local msg={msgid=GameMessage.Move_Request,roleid=mRoleid,x=Input.mousePosition.mX,y=Input.mousePosition.mY,packIndex=msgIndex}
+	SendMsgToServer(udpSocketConnectToPVPServer,msg)
+	msgIndex=msgIndex+1
+end
 
 function SceneWelcom:Draw()
-	if self.mUIRoot~=nil then
-		self.mUIRoot:Draw()
-	end
-	
-	if self.mWomenHair~=nil then
-		self.mWomenHair:Update()
-	end
-	
-	if self.mWomenBody~=nil then
-		self.mWomenBody:Update()
-	end
-	
-	if self.mGround~=nil then
-		self.mGround:Update()
-	end
-	
-	if self.mPlayer~=nil then
-		self.mPlayer:Update()
-	end
-	
-	if self.Sphere_0~=nil then
-		self.Sphere_0:Update()
-	end
-	
-	if self.Sphere_1~=nil then
-		self.Sphere_1:Update()
-	end
-	
-	if self.Box001_0~=nil then
-		self.Box001_0:Update()
-	end
-	
-	if self.Box001_1~=nil then
-		self.Box001_1:Update()
-	end
-	
-	if self.Box001_2~=nil then
-		self.Box001_2:Update()
-	end
-	
-	if self.Box001_3~=nil then
-		self.Box001_3:Update()
-	end
-	if self.Box001_4~=nil then
-		self.Box001_4:Update()
-	end
-	if self.Box001_5~=nil then
-		self.Box001_5:Update()
-	end
-	if self.Box001_6~=nil then
-		self.Box001_6:Update()
-	end
-	if self.Box001_7~=nil then
-		self.Box001_7:Update()
-	end
-	if self.Box001_8~=nil then
-		self.Box001_8:Update()
-	end
-	if self.Box001_9~=nil then
-		self.Box001_9:Update()
-	end
-	if self.Box001_10~=nil then
-		self.Box001_10:Update()
-	end
-	if self.Box001_11~=nil then
-		self.Box001_11:Update()
-	end
-	if self.Box001_12~=nil then
-		self.Box001_12:Update()
-	end
-	if self.Box001_13~=nil then
-		self.Box001_13:Update()
-	end
-	if self.Box001_14~=nil then
-		self.Box001_14:Update()
-	end
-	if self.Box001_15~=nil then
-		self.Box001_15:Update()
-	end
-	if self.Box001_16~=nil then
-		self.Box001_16:Update()
-	end
-	if self.Box001_17~=nil then
-		self.Box001_17:Update()
-	end
-	if self.Box001_18~=nil then
-		self.Box001_18:Update()
-	end
-	if self.Box001_19~=nil then
-		self.Box001_19:Update()
-	end
-	if self.Box001_20~=nil then
-		self.Box001_20:Update()
-	end
-	if self.Box001_21~=nil then
-		self.Box001_21:Update()
-	end
-
-	if self.TvGirl_CruX_Gloves_7778~=nil then
-		self.TvGirl_CruX_Gloves_7778:Update()
-	end
-	
-	if self.TvGirl_DisclosedII_33798~=nil then
-		self.TvGirl_DisclosedII_33798:Update()
-	end
-	
-	if self.TvGirl_finalhair_65512~=nil then
-		self.TvGirl_finalhair_65512:Update()
-	end
-	
-	if self.TvGirl_G3_Pantyhose_5176~=nil then
-		self.TvGirl_G3_Pantyhose_5176:Update()
-	end
-	
-	if self.TvGirl_Genesis3Female~=nil then
-		self.TvGirl_Genesis3Female:Update()
-	end
+	self.mUIRoot:Draw()
 end
 
 return SceneWelcom
