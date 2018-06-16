@@ -52,7 +52,7 @@ end
 
 
 function ReceiveNewPackListener(varSocketID,varJson)
-	print("receivetime:" .. os.clock())
+	print("receivetime:" .. Time:GetTimeUS_Str())
 	local msgjson=varJson
 	
 	
@@ -82,12 +82,13 @@ end
 
 ------------------PVPServer---------------------
 
+local connectAccepted=false
 local pvpStart=false
 local msgIndex=0
 
 function ReceiveConnectPVPServerAccepted(varSocketID)
 	print("ReceiveConnectPVPServerAccepted")
-	
+	connectAccepted=true
 end
 
 
@@ -97,12 +98,13 @@ function ReceiveNewPackPVPServerListener(varSocketID,varJson)
 	local msgjson=varJson
 	
 	local socketIdStr=varSocketID:ToString()
-	--print("----ReceiveNewPackListener from:" ..socketIdStr .. " " .. msgjson)
+	print("----ReceiveNewPackListener from:" ..socketIdStr .. " " .. msgjson)
 	local msg=cjson.decode(msgjson)
 	local msgid=msg["msgid"]
-	--GameMessage:Print(msgid)
+	GameMessage:Print(msgid)
 	
 	if pvpStart then
+		print("Receive:" .. Time:GetTimeUS_Str())
 		table.insert(mTablePackWaitDispatch,msg)
 	else
 		if msgid==GameMessage.PVP_Start then
@@ -125,9 +127,11 @@ function SceneWelcom:Update(varDeltaTime)
 	if udpSocketConnectToPVPServer~=nil then
 		udpSocketConnectToPVPServer:Update()
 	end
+	
+	self:GameUpdate()
 end
 
-function SceneWelcom:FixedUpdate()
+function SceneWelcom:GameUpdate()
 	--print("SceneWelcom:FixedUpdate")
 	if table.getn(mTablePackWaitDispatch)>0 then
 		local tmpFirst=mTablePackWaitDispatch[1]
@@ -136,16 +140,22 @@ function SceneWelcom:FixedUpdate()
 		
 		--拿到服务器广播数据，修改客户端表现
 		--print(msg["x"] .. "," .. msg["y"])
-		
+		print("SetLocation:" .. Time:GetTimeUS_Str())
 		mGoImageBg.mTransform:SetLocalPosition(Vector3(msg["x"],msg["y"],0))
 		
 		table.remove(mTablePackWaitDispatch,1)
 	end
-	
-	
-	local msg={msgid=GameMessage.Move_Request,roleid=mRoleid,x=Input.mousePosition.mX,y=Input.mousePosition.mY,packIndex=msgIndex}
-	SendMsgToServer(udpSocketConnectToPVPServer,msg)
-	msgIndex=msgIndex+1
+end
+
+function SceneWelcom:FixedUpdate()
+	if msgIndex>0 then
+		--return
+	end
+	if pvpStart then
+		local msg={msgid=GameMessage.Move_Request,roleid=mRoleid,x=Input.mousePosition.mX,y=Input.mousePosition.mY,packIndex=msgIndex,sendTime=Time:GetTimeUS_Str()}
+		SendMsgToServer(udpSocketConnectToPVPServer,msg)
+		msgIndex=msgIndex+1
+	end
 end
 
 function SceneWelcom:Draw()

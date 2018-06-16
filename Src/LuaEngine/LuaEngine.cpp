@@ -7,6 +7,7 @@
 #include"Tools/Helper.h"
 
 TOLUA_API int  tolua_Application_open(lua_State* tolua_S);
+TOLUA_API int  tolua_Time_open(lua_State* tolua_S);
 TOLUA_API int  tolua_AudioSource_open(lua_State* tolua_S);
 
 TOLUA_API int  tolua_KeyTouchListener_open(lua_State* tolua_S);
@@ -63,6 +64,7 @@ LuaEngine::LuaEngine()
 	RegisterThirdParty();
 
 	tolua_Application_open(m_pLua_State);
+	tolua_Time_open(m_pLua_State);
 
 	tolua_AudioSource_open(m_pLua_State);
 	tolua_KeyTouchListener_open(m_pLua_State);

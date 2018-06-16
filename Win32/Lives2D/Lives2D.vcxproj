@@ -365,6 +365,7 @@
     <ClCompile Include="..\..\Src\Tools\ConvertUTF\ConvertUTFWrapper.cpp" />
     <ClCompile Include="..\..\Src\Tools\Helper.cpp" />
     <ClCompile Include="..\..\Src\Tools\lua_Application.cpp" />
+    <ClCompile Include="..\..\Src\Tools\lua_Time.cpp" />
     <ClCompile Include="..\..\Src\Tools\Time.cpp" />
   </ItemGroup>
   <ItemGroup>

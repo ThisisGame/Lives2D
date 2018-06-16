@@ -1,0 +1,18 @@
+$#include"Time.h"
+
+
+class Time
+{
+public:
+	Time();
+	~Time();
+
+public:
+	static int GetTimeMS();
+
+	static std::string GetTimeUS_Str();
+
+public:
+	static float deltaTime;
+};
+

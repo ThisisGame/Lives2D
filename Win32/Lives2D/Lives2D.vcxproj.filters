@@ -717,6 +717,9 @@
     <ClCompile Include="..\..\..\Lives2D_Depends\lua-cjson\strbuf.c">
       <Filter>LuaEngine\lua-cjson</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Src\Tools\lua_Time.cpp">
+      <Filter>Tools</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\Texture2D\Texture2D.h">
