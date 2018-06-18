@@ -10,29 +10,26 @@ local udpSocketConnectToPVPServer
 
 local mRoleid=0
 
+local playersTable={}
+
+local mUIRoot=nil
+
+local moveSpeed=0
+
 function SceneWelcom:ctor()
 	print("SceneWelcom:ctor")
 	
 	print(ResourcesManager:DataPath())
-	
-	self.mUIRoot=nil
+
 end
 
-local mGoImageBg
 function SceneWelcom:Init()
 	print("SceneWelcom:Init")
 	
 	local tmpGoUIRoot=GameObject:new("UIROOT")
-	self.mUIRoot=tmpGoUIRoot:AddComponent("UIRoot")
+	mUIRoot=tmpGoUIRoot:AddComponent("UIRoot")
 	
-	mGoImageBg=GameObject:new("mImage_Bg")
 	
-	local	mImage_Bg =mGoImageBg:AddComponent("UIImage")
-	mImage_Bg:Init(ResourcesManager:DataPath() .. "/Resource/UI/pointer-lb128.png",false);
-	
-	mImage_Bg.mTransform:SetLocalPosition(Vector3(0,0,0))
-	mImage_Bg:SetDepth(0);
-	self.mUIRoot:AddChild(mImage_Bg);
 	
 	udpSocketConnectToLoginServer=UDPSocket:new()
 	udpSocketConnectToLoginServer:SetReceiveConnectAccepted(Wrap(ReceiveConnectAccepted))
@@ -77,6 +74,28 @@ function ReceiveNewPackListener(varSocketID,varJson)
 		if tmpConnected then
 			print("Connect PVPServer Success")
 		end
+	elseif msgid==GameMessage.Login_PlayerIn then
+		local tmpPlayerID=msg["roleid"]
+		
+		if playersTable[tmpPlayerID]== nil then
+			local tmpGoPlayer=GameObject:new("Player")
+			playersTable[tmpPlayerID]=tmpGoPlayer
+			
+			local tmpPlayerNum=0
+			for k,v in pairs(playersTable) do 
+				print(k)
+				print(v)
+				tmpPlayerNum=tmpPlayerNum+1
+			end
+			
+			local tmpPlayerImage =tmpGoPlayer:AddComponent("UIImage")
+			tmpPlayerImage:Init(ResourcesManager:DataPath() .. "/Resource/UI/hero0.png",false);
+			tmpPlayerImage.mTransform:SetLocalPosition(Vector3(0,100*tmpPlayerNum,0))
+			tmpPlayerImage:SetDepth(0);
+			mUIRoot:AddChild(tmpPlayerImage);
+		end
+		
+		
 	end
 end
 
@@ -118,8 +137,8 @@ end
 
 function SceneWelcom:Update(varDeltaTime)
 	--print("SceneWelcom:Update " .. varDeltaTime)
-	if self.mUIRoot~=nil then
-		self.mUIRoot:Update(varDeltaTime)
+	if mUIRoot~=nil then
+		mUIRoot:Update(varDeltaTime)
 	end
 
 	udpSocketConnectToLoginServer:Update()
@@ -131,18 +150,31 @@ function SceneWelcom:Update(varDeltaTime)
 	self:GameUpdate()
 end
 
+local receivedMsgIndex=0
 function SceneWelcom:GameUpdate()
 	--print("SceneWelcom:FixedUpdate")
 	if table.getn(mTablePackWaitDispatch)>0 then
+		print("mTablePackWaitDispatch Length:" .. table.getn(mTablePackWaitDispatch))
+		for key,value in pairs(mTablePackWaitDispatch) do
+			print(key)
+		end
 		local tmpFirst=mTablePackWaitDispatch[1]
+		print("tmpFirst msgid:" .. tmpFirst["msgid"] )
 		
-		local msg=tmpFirst["data"][1]
+		local allPlayerActionTable=tmpFirst["data"]
+		print("allPlayerActionTable Length:" .. table.getn(allPlayerActionTable) )
 		
-		--拿到服务器广播数据，修改客户端表现
-		--print(msg["x"] .. "," .. msg["y"])
-		print("SetLocation:" .. Time:GetTimeUS_Str())
-		mGoImageBg.mTransform:SetLocalPosition(Vector3(msg["x"],msg["y"],0))
+		for key,value in pairs(allPlayerActionTable) do
+			print("key:" .. key)
+			local msg=value
+			local tmpPlayerID=msg["roleid"]
+			local tmpGoPlayer=playersTable[tmpPlayerID]
+			local tmpNewPosition=tmpGoPlayer.mTransform:GetLocalPosition()
+			tmpNewPosition.mX=math.sin(math.rad(1*receivedMsgIndex*tmpPlayerID))*500
+			tmpGoPlayer.mTransform:SetLocalPosition(tmpNewPosition)
+		end
 		
+		receivedMsgIndex=receivedMsgIndex+1
 		table.remove(mTablePackWaitDispatch,1)
 	end
 end
@@ -152,14 +184,14 @@ function SceneWelcom:FixedUpdate()
 		--return
 	end
 	if pvpStart then
-		local msg={msgid=GameMessage.Move_Request,roleid=mRoleid,x=Input.mousePosition.mX,y=Input.mousePosition.mY,packIndex=msgIndex,sendTime=Time:GetTimeUS_Str()}
+		local msg={msgid=GameMessage.Move_Request,roleid=mRoleid,x=0,y=0,packIndex=msgIndex,sendTime=Time:GetTimeUS_Str()}
 		SendMsgToServer(udpSocketConnectToPVPServer,msg)
 		msgIndex=msgIndex+1
 	end
 end
 
 function SceneWelcom:Draw()
-	self.mUIRoot:Draw()
+	mUIRoot:Draw()
 end
 
 return SceneWelcom

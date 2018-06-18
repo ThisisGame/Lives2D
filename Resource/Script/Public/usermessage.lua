@@ -2,7 +2,7 @@ local GameMessage=
 {
     Login_Request=1001,
     Login_Return=1002,--返回玩家详细信息
-
+	Login_PlayerIn=1003,
 
     PVP_Start=2000,
 

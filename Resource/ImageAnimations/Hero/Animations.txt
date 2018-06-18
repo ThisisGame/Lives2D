@@ -1,0 +1,1 @@
+Idle:hero0.png,hero1.png,hero2.png
