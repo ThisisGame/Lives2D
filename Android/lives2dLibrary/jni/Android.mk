@@ -93,7 +93,7 @@ LOCAL_PATH:=$(LUACJSON_SRC_PATH)
 
 LOCAL_MODULE    := libLUACJSON
 
-LOCAL_C_INCLUDES:= $(LUACJSON_SRC_PATH)
+LOCAL_C_INCLUDES:= $(LUA_SRC_PATH) $(LUACJSON_SRC_PATH)
 
 LOCAL_SRC_FILES:=fpconv.c \
 lua_cjson.c \
@@ -350,6 +350,7 @@ LOCAL_SRC_FILES := Tools/Helper.cpp \
 		Tools/ConvertUTF/ConvertUTF.c \
 		Tools/ConvertUTF/ConvertUTFWrapper.cpp \
 		Tools/lua_Application.cpp \
+		Tools/lua_Time.cpp \
 		Tools/Time.cpp \
 		Math/Math.cpp \
 		Math/lua_Math.cpp \
