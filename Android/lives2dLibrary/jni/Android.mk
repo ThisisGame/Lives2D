@@ -83,6 +83,26 @@ include $(BUILD_STATIC_LIBRARY)
 
 # ProgmaEnd
 
+# ProgmaBegin BuildLUACJSON
+
+LUACJSON_SRC_PATH:=../../../../Lives2D_Depends/lua-cjson
+
+include $(CLEAR_VARS)
+
+LOCAL_PATH:=$(LUACJSON_SRC_PATH)
+
+LOCAL_MODULE    := libLUACJSON
+
+LOCAL_C_INCLUDES:= $(LUACJSON_SRC_PATH)
+
+LOCAL_SRC_FILES:=fpconv.c \
+lua_cjson.c \
+strbuf.c \
+
+include $(BUILD_STATIC_LIBRARY)
+
+# ProgmaEnd
+
 # ProgmaBegin BuildFreeImage
 
 FREE_IMAGE_SRC_PATH:=../../../../Lives2D_Depends/FreeImage
@@ -389,11 +409,10 @@ LOCAL_SRC_FILES := Tools/Helper.cpp \
 		KeyTouch/lua_KeyTouch.cpp \
 		KeyTouch/Input.cpp \
 		KeyTouch/lua_Input.cpp \
-		LuaEngine/BinaryPacker.cpp \
-		LuaEngine/NetworkClient.cpp \
-		LuaEngine/NetworkDispatch.cpp \
-		LuaEngine/lua_BinaryPacker.cpp \
-		LuaEngine/lua_NetworkClient.cpp \
+		Network/lua_SocketID.cpp \
+		Network/lua_UDPSocket.cpp \
+		Network/SocketID.cpp \
+		Network/UDPSocket.cpp \
 		Texture2D/Texture2D.cpp \
 		3D/Camera.cpp \
 		3D/Material.cpp \
@@ -425,16 +444,18 @@ LOCAL_SRC_FILES := Tools/Helper.cpp \
 		
 LOCAL_C_INCLUDES:= $(LUA_SRC_PATH) \
 $(TOLUAPP_SRC_PATH)/include \
+$(LUACJSON_SRC_PATH) \
 $(FREE_IMAGE_SRC_PATH)/Source \
 $(GLM_SRC_PATH)\
 $(FreeType_PATH)/include \
 $(FMOD_INCLUDE_PATH) \
 $(FMOD_COMMON_PATH) \
 $(Bullet_SRC_PATH)/src \
+$(Raknet_SRC_PATH) \
 $(ENGINE_SRC_PATH) \
 $(JNI_PATH) \
 
-LOCAL_STATIC_LIBRARIES := libLua libTOLUAPP libFreeImage libGLM libFreeType libBullet libRaknet
+LOCAL_STATIC_LIBRARIES := libLua libTOLUAPP libLUACJSON libFreeImage libGLM libFreeType libBullet libRaknet
 
 include $(BUILD_STATIC_LIBRARY)
 
@@ -445,7 +466,7 @@ include $(CLEAR_VARS)
 LOCAL_PATH:= $(JNI_PATH)
 
 LOCAL_MODULE    := liblives2d
-LOCAL_CFLAGS    := -Werror -Wno-deprecated-register
+LOCAL_CFLAGS    := -Wno-deprecated-register
 LOCAL_SRC_FILES := ./AndroidGame.cpp \
 ./JniHelper.cpp
 
@@ -454,10 +475,12 @@ LOCAL_LDLIBS    := -llog -lGLESv2
 LOCAL_C_INCLUDES:= $(LUA_SRC_PATH) \
 $(TOLUAPP_SRC_PATH)/include \
 $(TOLUAPP_SRC_PATH)/src/lib \
+$(LUACJSON_SRC_PATH) \
 $(FREE_IMAGE_SRC_PATH)/Source \
 $(GLM_SRC_PATH) \
 $(FreeType_PATH)/include \
 $(Bullet_SRC_PATH)/src \
+$(Raknet_SRC_PATH) \
 $(ENGINE_SRC_PATH) \
 $(JNI_PATH) \
 
