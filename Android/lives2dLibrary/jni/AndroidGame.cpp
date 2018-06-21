@@ -54,6 +54,10 @@ extern "C"
 #include <GLES2/gl2ext.h>
 #include "JniHelper.h"
 
+#include"RakNetTime.h"
+#include"GetTime.h"
+#include"Physics/PhysicsWorld.h"
+
 std::string mSdCardPath;
 
 extern "C" 
@@ -71,7 +75,7 @@ bool initSuccess=false;
 
 
 extern void AudioCardInit();
-
+static RakNet::TimeUS sFixedUpdateTime = 1000000 / 15;
 //初始化;
 void onInit(JNIEnv * env, jobject obj,  int varWidth,int varHeight)
 {
@@ -101,10 +105,19 @@ void onInit(JNIEnv * env, jobject obj,  int varWidth,int varHeight)
 	LuaEngine::GetSingleton()->CallLuaFunction("Init",2, tmpFunction);
 	
 	initSuccess=true;
+	int fixedUpdateFrame=LuaEngine::GetSingleton()->GetGlobalViriable("fixedUpdateFrame");
+	LOGI("lua fixedUpdateFrame:%d\n", fixedUpdateFrame);
+	sFixedUpdateTime =1000000/ fixedUpdateFrame;
+	LOGI("sFixedUpdateTime:%llu\n", sFixedUpdateTime);
 }
+
 
 void update(float varDeltaTime)
 {
+	static RakNet::TimeUS tmpFixedUpdateEndTime = RakNet::GetTimeUS() + sFixedUpdateTime;
+
+	PhysicsWorld::Simulation();
+
 	//Lives2D::Update(varDeltaTime);
 	std::function<void(lua_State*)> tmpFunction = [&](lua_State* var_pLuaState)
 	{
@@ -112,6 +125,27 @@ void update(float varDeltaTime)
 	};
 	Time::deltaTime = varDeltaTime;
 	LuaEngine::GetSingleton()->CallLuaFunction("Update", 1, tmpFunction);
+
+	RakNet::TimeUS tmpCurrentTimeUS = RakNet::GetTimeUS();
+
+	if (RakNet::GreaterThan(tmpCurrentTimeUS, tmpFixedUpdateEndTime))
+	{
+		RakNet::TimeUS tmpTimeUpdateCost=  tmpCurrentTimeUS- tmpFixedUpdateEndTime;//如果这一帧花费了很长时间，那么应该把FixedUpdate补回来，计算应该调用的次数
+
+		int tmpFixedUpdateNeedCallTime = tmpTimeUpdateCost / sFixedUpdateTime;
+
+		for (size_t i = 0; i < tmpFixedUpdateNeedCallTime; i++)
+		{
+			LuaEngine::GetSingleton()->CallLuaFunction("FixedUpdate");
+		}
+
+		if (tmpFixedUpdateNeedCallTime > 0)
+		{
+			int tmpTimeUSRemain = tmpTimeUpdateCost%sFixedUpdateTime;//调用多次后，仍然超出，但是又不足一个FixedUpdate，就把下一个FixedUpdate时间扣除一点
+
+			tmpFixedUpdateEndTime = RakNet::GetTimeUS() + sFixedUpdateTime - tmpTimeUSRemain;
+		}
+	}
 }
 
 //渲染函数;

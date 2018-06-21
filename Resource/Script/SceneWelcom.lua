@@ -29,11 +29,18 @@ function SceneWelcom:Init()
 	local tmpGoUIRoot=GameObject:new("UIROOT")
 	mUIRoot=tmpGoUIRoot:AddComponent("UIRoot")
 	
-	
+	local tmpGoPlayer=GameObject:new("Player")
+	local tmpPlayerImage =tmpGoPlayer:AddComponent("UIImage")
+	tmpPlayerImage:Init(ResourcesManager:DataPath() .. "/Resource/UI/hero0.png",false);
+	tmpPlayerImage.mTransform:SetLocalPosition(Vector3(0,0,0))
+	tmpPlayerImage:SetDepth(0);
+	mUIRoot:AddChild(tmpPlayerImage);
 	
 	udpSocketConnectToLoginServer=UDPSocket:new()
 	udpSocketConnectToLoginServer:SetReceiveConnectAccepted(Wrap(ReceiveConnectAccepted))
 	udpSocketConnectToLoginServer:SetReceiveNewPackListener(Wrap(ReceiveNewPackListener))
+	print("LoginServer_Address:" .. LoginServer_Address .. " Port:" .. tostring(LoginServer_Port))
+	
 	local tmpConnected=udpSocketConnectToLoginServer:Connect(LoginServer_Address,LoginServer_Port)
 	if tmpConnected then
 		print("Connect GateServer Success")
@@ -152,7 +159,7 @@ end
 
 local receivedMsgIndex=0
 function SceneWelcom:GameUpdate()
-	--print("SceneWelcom:FixedUpdate")
+	
 	if table.getn(mTablePackWaitDispatch)>0 then
 		print("mTablePackWaitDispatch Length:" .. table.getn(mTablePackWaitDispatch))
 		for key,value in pairs(mTablePackWaitDispatch) do
@@ -180,6 +187,7 @@ function SceneWelcom:GameUpdate()
 end
 
 function SceneWelcom:FixedUpdate()
+	--print("SceneWelcom:FixedUpdate")
 	if msgIndex>0 then
 		--return
 	end
