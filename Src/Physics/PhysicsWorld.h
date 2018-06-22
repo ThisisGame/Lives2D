@@ -5,6 +5,7 @@
 #include"btBulletDynamicsCommon.h"
 
 #include<map>
+#include<list>
 
 #include"RaycastHit.h"
 
@@ -28,6 +29,8 @@ public:
 	static void AddRigidBody(btRigidBody* varRigidBody,Transform* varTransform);
 
 	static void Simulation();
+
+	static void PerformDiscreteCollisionDetection();
 
 	static bool RayTest(btVector3& varOrigin, btVector3& varEnd, RaycastHit* varRaycastHit);
 
