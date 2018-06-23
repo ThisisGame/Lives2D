@@ -13,16 +13,24 @@ public:
 
 	void DoFile(const char* varFilePath);
 
+	void BindAwake(const char* varLuaFunctionName);
+	void BindOnEnable(const char* varLuaFunctionName);
+	void BindStart(const char* varLuaFunctionName);
+	void BindUpdate(const char* varLuaFunctionName);
+	void BindOnDisable(const char* varLuaFunctionName);
+	void BindOnDestroy(const char* varLuaFunctionName);
+
 public:
 	std::string mLuaFilePath;
 
+
 private:
-	int mAwakeIndex;
-	int mOnEnableIndex;
-	int mStartIndex;
-	int mUpdateIndex;
-	int mOnDisableIndex;
-	int mOnDestroyIndex;
+	const char* mLuaFunctionNameAwake;
+	const char* mLuaFunctionNameOnEnable;
+	const char* mLuaFunctionNameStart;
+	const char* mLuaFunctionNameUpdate;
+	const char* mLuaFunctionNameOnDisable;
+	const char* mLuaFunctionNameOnDestroy;
 
 public:
 	void Awake() override;

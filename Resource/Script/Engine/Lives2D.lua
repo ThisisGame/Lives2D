@@ -1,5 +1,6 @@
 print("Lives2D")
 
+require("Engine/FunctionWrap")
 local GameMain=require("GameMain")
 
 --初始化

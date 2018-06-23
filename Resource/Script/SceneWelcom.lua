@@ -15,7 +15,8 @@ function SceneWelcom:Init()
 	
 	local tmpUIParser=UIParser:new()
 	self.mUIRoot=tmpUIParser:CreateUI(ResourcesManager:DataPath() .. "/Resource/UI/UI_Login/UI_Login.xml");
-	
+	self.mUIRoot.mGameObject:AddLuaComponent("WhoSetMeActive.lua")
+	self.mUIRoot.mGameObject:AddLuaComponent("WhoSetMeActive.lua")
 	-- local tmpGoUIRoot=GameObject:new("UIROOT")
 	-- self.mUIRoot=tmpGoUIRoot:AddComponent("UIRoot")
 	
