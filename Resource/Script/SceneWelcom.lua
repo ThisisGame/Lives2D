@@ -15,8 +15,6 @@ end
 function SceneWelcom:Init()
 	print("SceneWelcom:Init")
 	
-	
-	
 	local tmpGoCamera=GameObject:new("sceneCamera")
 	tmpGoCamera.mTransform:SetLocalPosition(Vector3(0,0.5,10))
 	tmpGoCamera.mTransform:SetLocalRotation(Vector3(0,0,0))
