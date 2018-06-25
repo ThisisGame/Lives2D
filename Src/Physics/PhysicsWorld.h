@@ -9,6 +9,8 @@
 
 #include"RaycastHit.h"
 
+class LuaComponent;
+class GameObject;
 class PhysicsWorld :
 	public Component
 {
@@ -49,6 +51,6 @@ private:
 	//make sure to re-use collision shapes among rigid bodies whenever possible!
 	static btAlignedObjectArray<btCollisionShape*> sAlignedObjectArray_CollisionShapes;
 
-	static std::map<btRigidBody*, Transform*> sMapRigidBodyToTransform;
+	static std::map<const btRigidBody*, Transform*> sMapRigidBodyToTransform;
 };
 

@@ -36,110 +36,68 @@ void LuaComponent::DoFile(const char * varFilePath)
 	LuaEngine::GetSingleton()->DoFile((Application::PersistentDataPath() + "/Resource/Script/"+ varFilePath).c_str(), tmpFunction);
 }
 
-void LuaComponent::BindAwake(const char * varLuaFunctionName)
+
+void LuaComponent::Bind(const char * varKey, const char * varLuaFunctionName)
 {
-	mLuaFunctionNameAwake = varLuaFunctionName;
+	mBindLuaFunctionMap[varKey] = varLuaFunctionName;
 }
 
-void LuaComponent::BindOnEnable(const char * varLuaFunctionName)
+void LuaComponent::Invoke(const char * varKey)
 {
-	mLuaFunctionNameOnEnable = varLuaFunctionName;
+	const char* tmpLuaFunctionName = mBindLuaFunctionMap[varKey];
+	if (tmpLuaFunctionName == nullptr)
+	{
+		return;
+	}
+	std::function<void(lua_State*)> tmpFunction = [&](lua_State* pLuaState)
+	{
+		tolua_pushstring(pLuaState, tmpLuaFunctionName);
+	};
+	LuaEngine::GetSingleton()->CallLuaFunction("RunWrap", 1, tmpFunction);
 }
 
-void LuaComponent::BindStart(const char * varLuaFunctionName)
+void LuaComponent::Invoke(const char * varKey, Transform * varTransA, Transform * varTransB)
 {
-	mLuaFunctionNameStart = varLuaFunctionName;
-}
-
-void LuaComponent::BindUpdate(const char * varLuaFunctionName)
-{
-	mLuaFunctionNameUpdate = varLuaFunctionName;
-}
-
-void LuaComponent::BindOnDisable(const char * varLuaFunctionName)
-{
-	mLuaFunctionNameOnDisable = varLuaFunctionName;
-}
-
-void LuaComponent::BindOnDestroy(const char * varLuaFunctionName)
-{
-	mLuaFunctionNameOnDestroy = varLuaFunctionName;
+	const char* tmpLuaFunctionName = mBindLuaFunctionMap[varKey];
+	if (tmpLuaFunctionName == nullptr)
+	{
+		return;
+	}
+	std::function<void(lua_State*)> tmpFunction = [&](lua_State* pLuaState)
+	{
+		tolua_pushstring(pLuaState, tmpLuaFunctionName);
+		tolua_pushusertype(pLuaState, varTransA, "Transform");
+		tolua_pushusertype(pLuaState, varTransB, "Transform");
+	};
+	LuaEngine::GetSingleton()->CallLuaFunction("RunWrap", 3, tmpFunction);
 }
 
 void LuaComponent::Awake()
 {
-	if (mLuaFunctionNameAwake == nullptr)
-	{
-		return;
-	}
-	std::function<void(lua_State*)> tmpFunction = [&](lua_State* pLuaState)
-	{
-		tolua_pushstring(pLuaState, mLuaFunctionNameAwake);
-	};
-	LuaEngine::GetSingleton()->CallLuaFunction("RunWrap", 1, tmpFunction);
+	Invoke("Awake");
 }
 
 void LuaComponent::OnEnable()
 {
-	if (mLuaFunctionNameOnEnable == nullptr)
-	{
-		return;
-	}
-	std::function<void(lua_State*)> tmpFunction = [&](lua_State* pLuaState)
-	{
-		tolua_pushstring(pLuaState, mLuaFunctionNameOnEnable);
-	};
-	LuaEngine::GetSingleton()->CallLuaFunction("RunWrap", 1, tmpFunction);
+	Invoke("OnEnable");
 }
 
 void LuaComponent::Start()
 {
-	if (mLuaFunctionNameStart == nullptr)
-	{
-		return;
-	}
-	std::function<void(lua_State*)> tmpFunction = [&](lua_State* pLuaState)
-	{
-		tolua_pushstring(pLuaState, mLuaFunctionNameStart);
-	};
-	LuaEngine::GetSingleton()->CallLuaFunction("RunWrap", 1, tmpFunction);
+	Invoke("Start");
 }
 
 void LuaComponent::Update()
 {
-	if (mLuaFunctionNameUpdate == nullptr)
-	{
-		return;
-	}
-	std::function<void(lua_State*)> tmpFunction = [&](lua_State* pLuaState)
-	{
-		tolua_pushstring(pLuaState, mLuaFunctionNameUpdate);
-	};
-	LuaEngine::GetSingleton()->CallLuaFunction("RunWrap", 1, tmpFunction);
+	Invoke("Update");
 }
 
 void LuaComponent::OnDisable()
 {
-	if (mLuaFunctionNameOnDisable == nullptr)
-	{
-		return;
-	}
-	std::function<void(lua_State*)> tmpFunction = [&](lua_State* pLuaState)
-	{
-		tolua_pushstring(pLuaState, mLuaFunctionNameOnDisable);
-	};
-	LuaEngine::GetSingleton()->CallLuaFunction("RunWrap", 1, tmpFunction);
+	Invoke("OnDisable");
 }
 
 void LuaComponent::OnDestroy()
 {
-	if (mLuaFunctionNameOnDestroy == nullptr)
-	{
-		return;
-	}
-	std::function<void(lua_State*)> tmpFunction = [&](lua_State* pLuaState)
-	{
-		tolua_pushstring(pLuaState, mLuaFunctionNameOnDestroy);
-	};
-	LuaEngine::GetSingleton()->CallLuaFunction("RunWrap", 1, tmpFunction);
+	Invoke("OnDestroy");
 }

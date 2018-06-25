@@ -1,11 +1,13 @@
 #include "PhysicsWorld.h"
 #include"Tools/Helper.h"
 #include"Component/Transform.h"
+#include"Component/LuaComponent.h"
+#include"Component/GameObject.h"
 
 
 btDiscreteDynamicsWorld* PhysicsWorld::sDiscreteDynamicsWorld=nullptr;
 btAlignedObjectArray<btCollisionShape*> PhysicsWorld::sAlignedObjectArray_CollisionShapes;
-std::map<btRigidBody*, Transform*> PhysicsWorld::sMapRigidBodyToTransform;
+std::map<const btRigidBody*, Transform*> PhysicsWorld::sMapRigidBodyToTransform;
 
 IMPLEMENT_DYNCRT_ACTION(PhysicsWorld)
 PhysicsWorld::PhysicsWorld()
@@ -149,29 +151,43 @@ void PhysicsWorld::PerformDiscreteCollisionDetection()
 		if (tmpNumContacts > 0)
 		{
 			//Contact happend,call lua callback,but here cannot get contact objA objb,so get in next code
-		}
-		for (size_t j = 0; j < tmpNumContacts; j++)
-		{
-			btManifoldPoint& tmpManifoldPoint = tmpPersistentManifold->getContactPoint(j);
-			btScalar tmpDistance = tmpManifoldPoint.getDistance();
-			if (tmpDistance<= 0.f)
+			const btRigidBody* tmpRigidBodyA = btRigidBody::upcast(tmpCollisionObjectA);
+			const btRigidBody* tmpRigidBodyB = btRigidBody::upcast(tmpCollisionObjectB);
+
+			Transform* tmpTransformA = sMapRigidBodyToTransform[tmpRigidBodyA];
+			Transform* tmpTransformB = sMapRigidBodyToTransform[tmpRigidBodyB];
+			
+			LuaComponent* tmpLuaComponent =(LuaComponent*) tmpTransformA->mGameObject->GetComponent("LuaComponent");
+			if (tmpLuaComponent != nullptr && tmpTransformA!=nullptr && tmpTransformB!=nullptr)
 			{
-				tmpCollisionObjectList.push_back(tmpCollisionObjectA);
-				tmpCollisionObjectList.push_back(tmpCollisionObjectB);
-
-				//unique
-				/*tmpCollisionObjectList.sort();
-				tmpCollisionObjectList.unique();*/
-
-
-				//here get contact objA objB,then call lua callback,pass objA objB,then break
-				btVector3 tmpVecor3PositionA = tmpManifoldPoint.getPositionWorldOnA();
-				btVector3 tmpVecor3PositionB = tmpManifoldPoint.getPositionWorldOnB();
-
-				printf("%d A->{%f,%f,%f}\n", i, tmpVecor3PositionA.getX(), tmpVecor3PositionA.getY(), tmpVecor3PositionA.getZ());
-				printf("%d B->{%f,%f,%f}\n", i, tmpVecor3PositionB.getX(), tmpVecor3PositionB.getY(), tmpVecor3PositionB.getZ());
+				tmpLuaComponent->Invoke("OnCollisionEnter", tmpTransformA, tmpTransformB);
 			}
 		}
+		//for (size_t j = 0; j < tmpNumContacts; j++)
+		//{
+		//	btManifoldPoint& tmpManifoldPoint = tmpPersistentManifold->getContactPoint(j);
+		//	btScalar tmpDistance = tmpManifoldPoint.getDistance();
+		//	if (tmpDistance<= 0.f)
+		//	{
+		//		
+
+
+		//		tmpCollisionObjectList.push_back(tmpCollisionObjectA);
+		//		tmpCollisionObjectList.push_back(tmpCollisionObjectB);
+
+		//		//unique
+		//		/*tmpCollisionObjectList.sort();
+		//		tmpCollisionObjectList.unique();*/
+		//		
+
+		//		//here get contact objA objB,then call lua callback,pass objA objB,then break
+		//		btVector3 tmpVecor3PositionA = tmpManifoldPoint.getPositionWorldOnA();
+		//		btVector3 tmpVecor3PositionB = tmpManifoldPoint.getPositionWorldOnB();
+
+		//		printf("%d A->{%f,%f,%f}\n", i, tmpVecor3PositionA.getX(), tmpVecor3PositionA.getY(), tmpVecor3PositionA.getZ());
+		//		printf("%d B->{%f,%f,%f}\n", i, tmpVecor3PositionB.getX(), tmpVecor3PositionB.getY(), tmpVecor3PositionB.getZ());
+		//	}
+		//}
 	}
 }
 

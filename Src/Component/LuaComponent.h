@@ -2,6 +2,7 @@
 #include "Component.h"
 
 #include<string>
+#include<map>
 
 class LuaComponent :
 	public Component
@@ -13,24 +14,22 @@ public:
 
 	void DoFile(const char* varFilePath);
 
-	void BindAwake(const char* varLuaFunctionName);
-	void BindOnEnable(const char* varLuaFunctionName);
-	void BindStart(const char* varLuaFunctionName);
-	void BindUpdate(const char* varLuaFunctionName);
-	void BindOnDisable(const char* varLuaFunctionName);
-	void BindOnDestroy(const char* varLuaFunctionName);
+	
+	///Bind a Function to a key in lua code,then we can call lua function by global functionname
+	void Bind(const char* varKey,const char* varLuaFunctionName);
+
+	void Invoke(const char* varKey);
+
+	void Invoke(const char* varKey, Transform* varTransA, Transform* varTransB);
 
 public:
 	std::string mLuaFilePath;
 
 
 private:
-	const char* mLuaFunctionNameAwake;
-	const char* mLuaFunctionNameOnEnable;
-	const char* mLuaFunctionNameStart;
-	const char* mLuaFunctionNameUpdate;
-	const char* mLuaFunctionNameOnDisable;
-	const char* mLuaFunctionNameOnDestroy;
+	
+
+	std::map<const char*, const char*> mBindLuaFunctionMap;
 
 public:
 	void Awake() override;
