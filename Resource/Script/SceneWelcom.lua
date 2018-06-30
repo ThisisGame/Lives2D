@@ -34,6 +34,7 @@ function SceneWelcom:Init()
 	self.mPlayer.mTransform:SetLocalPosition(Vector3(0,2,0))
 	local tmpRigidbodyPlayer= self.mPlayer:AddComponent("Rigidbody")
 	tmpRigidbodyPlayer:SetCollisionShape(1,1.0,1,2,1)
+	self.mPlayer:AddLuaComponent("Player.lua")
 	
 	local audioSource1 = AudioSource:new()
 	audioSource1:LoadAudio(ResourcesManager:DataPath().. "/Resource/Audio/Login.mp3")

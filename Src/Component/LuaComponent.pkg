@@ -7,12 +7,11 @@ public:
 	~LuaComponent();
 
 	void DoFile(const char* varFilePath);
-	void BindAwake(const char* varLuaFunctionName);
-	void BindOnEnable(const char* varLuaFunctionName);
-	void BindStart(const char* varLuaFunctionName);
-	void BindUpdate(const char* varLuaFunctionName);
-	void BindOnDisable(const char* varLuaFunctionName);
-	void BindOnDestroy(const char* varLuaFunctionName);
+	void Bind(const char* varKey,const char* varLuaFunctionName);
+
+	void Invoke(const char* varKey);
+
+	void Invoke(const char* varKey, Transform* varTransA, Transform* varTransB);
 public:
 	std::string mLuaFilePath;
 };

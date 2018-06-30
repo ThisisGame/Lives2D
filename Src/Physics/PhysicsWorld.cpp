@@ -157,10 +157,16 @@ void PhysicsWorld::PerformDiscreteCollisionDetection()
 			Transform* tmpTransformA = sMapRigidBodyToTransform[tmpRigidBodyA];
 			Transform* tmpTransformB = sMapRigidBodyToTransform[tmpRigidBodyB];
 			
-			LuaComponent* tmpLuaComponent =(LuaComponent*) tmpTransformA->mGameObject->GetComponent("LuaComponent");
-			if (tmpLuaComponent != nullptr && tmpTransformA!=nullptr && tmpTransformB!=nullptr)
+			LuaComponent* tmpLuaComponentA =(LuaComponent*) tmpTransformA->mGameObject->GetComponent("LuaComponent");
+			if (tmpLuaComponentA != nullptr && tmpTransformA!=nullptr && tmpTransformB!=nullptr)
 			{
-				tmpLuaComponent->Invoke("OnCollisionEnter", tmpTransformA, tmpTransformB);
+				tmpLuaComponentA->Invoke("OnCollisionEnter", tmpTransformA, tmpTransformB);
+			}
+
+			LuaComponent* tmpLuaComponentB = (LuaComponent*)tmpTransformB->mGameObject->GetComponent("LuaComponent");
+			if (tmpLuaComponentB != nullptr && tmpTransformA != nullptr && tmpTransformB != nullptr)
+			{
+				tmpLuaComponentB->Invoke("OnCollisionEnter", tmpTransformA, tmpTransformB);
 			}
 		}
 		//for (size_t j = 0; j < tmpNumContacts; j++)

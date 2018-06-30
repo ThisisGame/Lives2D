@@ -132,9 +132,12 @@ LuaComponent * GameObject::AddLuaComponent(const char * varFilePath)
 	tmpLuaComponent->mTransform = mTransform;
 	tmpLuaComponent->DoFile(varFilePath);
 	tmpLuaComponent->Awake();
+	mVectorComponent.push_back(tmpLuaComponent);
 	mVectorLuaComponent.push_back(tmpLuaComponent);
 	return tmpLuaComponent;
 }
+
+
 
 void GameObject::RemoveLuaComponent(const char * varFilePath)
 {

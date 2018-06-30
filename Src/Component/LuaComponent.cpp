@@ -37,6 +37,7 @@ void LuaComponent::DoFile(const char * varFilePath)
 }
 
 
+
 void LuaComponent::Bind(const char * varKey, const char * varLuaFunctionName)
 {
 	mBindLuaFunctionMap[varKey] = varLuaFunctionName;

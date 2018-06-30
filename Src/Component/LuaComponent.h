@@ -4,6 +4,14 @@
 #include<string>
 #include<map>
 
+struct map_cmp_str
+{
+	bool operator()(char const* a, char const* b) const
+	{
+		return std::strcmp(a, b) < 0;
+	}
+};
+
 class LuaComponent :
 	public Component
 {
@@ -29,7 +37,7 @@ public:
 private:
 	
 
-	std::map<const char*, const char*> mBindLuaFunctionMap;
+	std::map<const char*, const char*, map_cmp_str> mBindLuaFunctionMap;
 
 public:
 	void Awake() override;
