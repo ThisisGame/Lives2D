@@ -1,6 +1,6 @@
 /*
 ** Lua binding: LuaComponent
-** Generated automatically by tolua++-1.0.92 on Tue Feb  6 23:06:02 2018.
+** Generated automatically by tolua++-1.0.92 on Sat Jun 30 14:19:05 2018.
 */
 
 #ifndef __cplusplus
@@ -30,8 +30,9 @@ static int tolua_collect_LuaComponent (lua_State* tolua_S)
 /* function to register type */
 static void tolua_reg_types (lua_State* tolua_S)
 {
- tolua_usertype(tolua_S,"LuaComponent");
  tolua_usertype(tolua_S,"Component");
+ tolua_usertype(tolua_S,"Transform");
+ tolua_usertype(tolua_S,"LuaComponent");
 }
 
 /* method: new of class  LuaComponent */
@@ -153,6 +154,106 @@ static int tolua_LuaComponent_LuaComponent_DoFile00(lua_State* tolua_S)
 }
 #endif //#ifndef TOLUA_DISABLE
 
+/* method: Bind of class  LuaComponent */
+#ifndef TOLUA_DISABLE_tolua_LuaComponent_LuaComponent_Bind00
+static int tolua_LuaComponent_LuaComponent_Bind00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"LuaComponent",0,&tolua_err) ||
+     !tolua_isstring(tolua_S,2,0,&tolua_err) ||
+     !tolua_isstring(tolua_S,3,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,4,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  LuaComponent* self = (LuaComponent*)  tolua_tousertype(tolua_S,1,0);
+  const char* varKey = ((const char*)  tolua_tostring(tolua_S,2,0));
+  const char* varLuaFunctionName = ((const char*)  tolua_tostring(tolua_S,3,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'Bind'", NULL);
+#endif
+  {
+   self->Bind(varKey,varLuaFunctionName);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'Bind'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: Invoke of class  LuaComponent */
+#ifndef TOLUA_DISABLE_tolua_LuaComponent_LuaComponent_Invoke00
+static int tolua_LuaComponent_LuaComponent_Invoke00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"LuaComponent",0,&tolua_err) ||
+     !tolua_isstring(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  LuaComponent* self = (LuaComponent*)  tolua_tousertype(tolua_S,1,0);
+  const char* varKey = ((const char*)  tolua_tostring(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'Invoke'", NULL);
+#endif
+  {
+   self->Invoke(varKey);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'Invoke'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: Invoke of class  LuaComponent */
+#ifndef TOLUA_DISABLE_tolua_LuaComponent_LuaComponent_Invoke01
+static int tolua_LuaComponent_LuaComponent_Invoke01(lua_State* tolua_S)
+{
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"LuaComponent",0,&tolua_err) ||
+     !tolua_isstring(tolua_S,2,0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,3,"Transform",0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,4,"Transform",0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,5,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+ {
+  LuaComponent* self = (LuaComponent*)  tolua_tousertype(tolua_S,1,0);
+  const char* varKey = ((const char*)  tolua_tostring(tolua_S,2,0));
+  Transform* varTransA = ((Transform*)  tolua_tousertype(tolua_S,3,0));
+  Transform* varTransB = ((Transform*)  tolua_tousertype(tolua_S,4,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'Invoke'", NULL);
+#endif
+  {
+   self->Invoke(varKey,varTransA,varTransB);
+  }
+ }
+ return 0;
+tolua_lerror:
+ return tolua_LuaComponent_LuaComponent_Invoke00(tolua_S);
+}
+#endif //#ifndef TOLUA_DISABLE
+
 /* get function: mLuaFilePath of class  LuaComponent */
 #ifndef TOLUA_DISABLE_tolua_get_LuaComponent_mLuaFilePath
 static int tolua_get_LuaComponent_mLuaFilePath(lua_State* tolua_S)
@@ -201,6 +302,9 @@ TOLUA_API int tolua_LuaComponent_open (lua_State* tolua_S)
    tolua_function(tolua_S,".call",tolua_LuaComponent_LuaComponent_new00_local);
    tolua_function(tolua_S,"delete",tolua_LuaComponent_LuaComponent_delete00);
    tolua_function(tolua_S,"DoFile",tolua_LuaComponent_LuaComponent_DoFile00);
+   tolua_function(tolua_S,"Bind",tolua_LuaComponent_LuaComponent_Bind00);
+   tolua_function(tolua_S,"Invoke",tolua_LuaComponent_LuaComponent_Invoke00);
+   tolua_function(tolua_S,"Invoke",tolua_LuaComponent_LuaComponent_Invoke01);
    tolua_variable(tolua_S,"mLuaFilePath",tolua_get_LuaComponent_mLuaFilePath,tolua_set_LuaComponent_mLuaFilePath);
   tolua_endmodule(tolua_S);
  tolua_endmodule(tolua_S);

@@ -2,6 +2,15 @@
 #include "Component.h"
 
 #include<string>
+#include<map>
+
+struct map_cmp_str
+{
+	bool operator()(char const* a, char const* b) const
+	{
+		return std::strcmp(a, b) < 0;
+	}
+};
 
 class LuaComponent :
 	public Component
@@ -13,16 +22,22 @@ public:
 
 	void DoFile(const char* varFilePath);
 
+	
+	///Bind a Function to a key in lua code,then we can call lua function by global functionname
+	void Bind(const char* varKey,const char* varLuaFunctionName);
+
+	void Invoke(const char* varKey);
+
+	void Invoke(const char* varKey, Transform* varTransA, Transform* varTransB);
+
 public:
 	std::string mLuaFilePath;
 
+
 private:
-	int mAwakeIndex;
-	int mOnEnableIndex;
-	int mStartIndex;
-	int mUpdateIndex;
-	int mOnDisableIndex;
-	int mOnDestroyIndex;
+	
+
+	std::map<const char*, const char*, map_cmp_str> mBindLuaFunctionMap;
 
 public:
 	void Awake() override;

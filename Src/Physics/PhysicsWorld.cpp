@@ -1,10 +1,13 @@
 #include "PhysicsWorld.h"
 #include"Tools/Helper.h"
 #include"Component/Transform.h"
+#include"Component/LuaComponent.h"
+#include"Component/GameObject.h"
+
 
 btDiscreteDynamicsWorld* PhysicsWorld::sDiscreteDynamicsWorld=nullptr;
 btAlignedObjectArray<btCollisionShape*> PhysicsWorld::sAlignedObjectArray_CollisionShapes;
-std::map<btRigidBody*, Transform*> PhysicsWorld::sMapRigidBodyToTransform;
+std::map<const btRigidBody*, Transform*> PhysicsWorld::sMapRigidBodyToTransform;
 
 IMPLEMENT_DYNCRT_ACTION(PhysicsWorld)
 PhysicsWorld::PhysicsWorld()
@@ -127,6 +130,70 @@ void PhysicsWorld::Simulation()
 
 		Transform* tmpTransform = sMapRigidBodyToTransform[body];
 		tmpTransform->SetPosition(Vector3(tmpX, tmpY, tmpZ));
+	}
+
+	PerformDiscreteCollisionDetection();
+}
+
+void PhysicsWorld::PerformDiscreteCollisionDetection()
+{
+	sDiscreteDynamicsWorld->performDiscreteCollisionDetection();
+
+	std::list<const btCollisionObject*> tmpCollisionObjectList;
+	const int tmpNumManifolds = sDiscreteDynamicsWorld->getDispatcher()->getNumManifolds();
+	for (size_t i = 0; i < tmpNumManifolds; i++)
+	{
+		btPersistentManifold* tmpPersistentManifold = sDiscreteDynamicsWorld->getDispatcher()->getManifoldByIndexInternal(i);
+		const btCollisionObject* tmpCollisionObjectA = tmpPersistentManifold->getBody0();
+		const btCollisionObject* tmpCollisionObjectB = tmpPersistentManifold->getBody1();
+
+		const int tmpNumContacts = tmpPersistentManifold->getNumContacts();
+		if (tmpNumContacts > 0)
+		{
+			//Contact happend,call lua callback,but here cannot get contact objA objb,so get in next code
+			const btRigidBody* tmpRigidBodyA = btRigidBody::upcast(tmpCollisionObjectA);
+			const btRigidBody* tmpRigidBodyB = btRigidBody::upcast(tmpCollisionObjectB);
+
+			Transform* tmpTransformA = sMapRigidBodyToTransform[tmpRigidBodyA];
+			Transform* tmpTransformB = sMapRigidBodyToTransform[tmpRigidBodyB];
+			
+			LuaComponent* tmpLuaComponentA =(LuaComponent*) tmpTransformA->mGameObject->GetComponent("LuaComponent");
+			if (tmpLuaComponentA != nullptr && tmpTransformA!=nullptr && tmpTransformB!=nullptr)
+			{
+				tmpLuaComponentA->Invoke("OnCollisionEnter", tmpTransformA, tmpTransformB);
+			}
+
+			LuaComponent* tmpLuaComponentB = (LuaComponent*)tmpTransformB->mGameObject->GetComponent("LuaComponent");
+			if (tmpLuaComponentB != nullptr && tmpTransformA != nullptr && tmpTransformB != nullptr)
+			{
+				tmpLuaComponentB->Invoke("OnCollisionEnter", tmpTransformA, tmpTransformB);
+			}
+		}
+		//for (size_t j = 0; j < tmpNumContacts; j++)
+		//{
+		//	btManifoldPoint& tmpManifoldPoint = tmpPersistentManifold->getContactPoint(j);
+		//	btScalar tmpDistance = tmpManifoldPoint.getDistance();
+		//	if (tmpDistance<= 0.f)
+		//	{
+		//		
+
+
+		//		tmpCollisionObjectList.push_back(tmpCollisionObjectA);
+		//		tmpCollisionObjectList.push_back(tmpCollisionObjectB);
+
+		//		//unique
+		//		/*tmpCollisionObjectList.sort();
+		//		tmpCollisionObjectList.unique();*/
+		//		
+
+		//		//here get contact objA objB,then call lua callback,pass objA objB,then break
+		//		btVector3 tmpVecor3PositionA = tmpManifoldPoint.getPositionWorldOnA();
+		//		btVector3 tmpVecor3PositionB = tmpManifoldPoint.getPositionWorldOnB();
+
+		//		printf("%d A->{%f,%f,%f}\n", i, tmpVecor3PositionA.getX(), tmpVecor3PositionA.getY(), tmpVecor3PositionA.getZ());
+		//		printf("%d B->{%f,%f,%f}\n", i, tmpVecor3PositionB.getX(), tmpVecor3PositionB.getY(), tmpVecor3PositionB.getZ());
+		//	}
+		//}
 	}
 }
 

@@ -7,7 +7,11 @@ public:
 	~LuaComponent();
 
 	void DoFile(const char* varFilePath);
+	void Bind(const char* varKey,const char* varLuaFunctionName);
 
+	void Invoke(const char* varKey);
+
+	void Invoke(const char* varKey, Transform* varTransA, Transform* varTransB);
 public:
 	std::string mLuaFilePath;
 };

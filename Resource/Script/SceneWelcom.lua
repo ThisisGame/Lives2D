@@ -26,6 +26,7 @@ end
 function SceneWelcom:Init()
 	print("SceneWelcom:Init")
 	
+
 	local tmpGoUIRoot=GameObject:new("UIROOT")
 	mUIRoot=tmpGoUIRoot:AddComponent("UIRoot")
 	
@@ -45,6 +46,7 @@ function SceneWelcom:Init()
 	if tmpConnected then
 		print("Connect GateServer Success")
 	end
+
 end
 
 ---------------LoginServer---------------------
@@ -60,12 +62,15 @@ function ReceiveNewPackListener(varSocketID,varJson)
 	local msgjson=varJson
 	
 	
+
 	local socketIdStr=varSocketID:ToString()
 	print("----ReceiveNewPackListener from:" ..socketIdStr .. " " .. msgjson)
+
 	
 	
 	local msg=cjson.decode(msgjson)
 	
+
 
 	local msgid=msg["msgid"]
 	GameMessage:Print(msgid)

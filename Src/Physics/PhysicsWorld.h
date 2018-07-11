@@ -5,9 +5,12 @@
 #include"btBulletDynamicsCommon.h"
 
 #include<map>
+#include<list>
 
 #include"RaycastHit.h"
 
+class LuaComponent;
+class GameObject;
 class PhysicsWorld :
 	public Component
 {
@@ -29,6 +32,8 @@ public:
 
 	static void Simulation();
 
+	static void PerformDiscreteCollisionDetection();
+
 	static bool RayTest(btVector3& varOrigin, btVector3& varEnd, RaycastHit* varRaycastHit);
 
 private:
@@ -46,6 +51,6 @@ private:
 	//make sure to re-use collision shapes among rigid bodies whenever possible!
 	static btAlignedObjectArray<btCollisionShape*> sAlignedObjectArray_CollisionShapes;
 
-	static std::map<btRigidBody*, Transform*> sMapRigidBodyToTransform;
+	static std::map<const btRigidBody*, Transform*> sMapRigidBodyToTransform;
 };
 
