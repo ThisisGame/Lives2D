@@ -103,33 +103,6 @@ include $(BUILD_STATIC_LIBRARY)
 
 # ProgmaEnd
 
-# ProgmaBegin BuildFreeImage
-
-FREE_IMAGE_SRC_PATH:=../../../../Lives2D_Depends/FreeImage
-
-include $(CLEAR_VARS)
-
-LOCAL_PATH:=$(FREE_IMAGE_SRC_PATH)
-
-include $(FREE_IMAGE_SRC_PATH)/Makefile.srcs
-
-LOCAL_MODULE    := libFreeImage
-
-LOCAL_C_INCLUDES:= $(FREE_IMAGE_SRC_PATH)/Source \
-$(FREE_IMAGE_SRC_PATH)/Metadata \
-$(FREE_IMAGE_SRC_PATH)/FreeImageToolkit \
-$(FREE_IMAGE_SRC_PATH)/LibJPEG \
-$(FREE_IMAGE_SRC_PATH)/LibPNG \
-$(FREE_IMAGE_SRC_PATH)/ZLib \
-$(FREE_IMAGE_SRC_PATH)/LibOpenJPEG \
-
-LOCAL_SRC_FILES:=$(SRCS)
-LOCAL_CPP_FEATURES:=rtti exceptions
-LOCAL_CFLAGS:=-O3 -fPIC
-
-include $(BUILD_STATIC_LIBRARY)
-
-# ProgmaEnd
 
 
 # ProgmaBegin BuildGLM
@@ -457,7 +430,7 @@ $(Raknet_SRC_PATH) \
 $(ENGINE_SRC_PATH) \
 $(JNI_PATH) \
 
-LOCAL_STATIC_LIBRARIES := libLua libTOLUAPP libLUACJSON libFreeImage libGLM libFreeType libBullet libRaknet
+LOCAL_STATIC_LIBRARIES := libLua libTOLUAPP libLUACJSON libGLM libFreeType libBullet libRaknet
 
 include $(BUILD_STATIC_LIBRARY)
 

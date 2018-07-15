@@ -15,7 +15,6 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
-#include"FreeImage.h"
 
 #include<iostream>
 #include<fstream>
@@ -198,7 +197,7 @@ public:
 
 		
 
-		BYTE* pixels = (BYTE*)malloc(1024 * 1024);
+		unsigned char * pixels = (unsigned char *)malloc(1024 * 1024);
 		memset(pixels, 0, 1024 * 1024);
 
 		glTexImage2D(

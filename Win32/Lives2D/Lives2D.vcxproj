@@ -89,13 +89,13 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\..\Libs\FreeImage;..\..\Libs\GLM-0.9.6.3;..\..\Src;..\..\Libs\lua\include;..\..\Libs\tolua++\include;..\..\Libs\FreeType\include;..\..\..\Lives2D_Depends\FMOD\Windows\inc;..\..\..\Lives2D_Depends\FMOD\Windows\common;..\..\Libs\bullet3\include;..\..\Libs\;..\..\Libs\glfw\include\deps;..\..\..\Lives2D_Depends\Raknet;..\..\..\Lives2D_Depends\lua-cjson;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\Libs\GLM-0.9.6.3;..\..\Src;..\..\Libs\lua\include;..\..\Libs\tolua++\include;..\..\Libs\FreeType\include;..\..\..\Lives2D_Depends\FMOD\Windows\inc;..\..\..\Lives2D_Depends\FMOD\Windows\common;..\..\Libs\bullet3\include;..\..\Libs\;..\..\Libs\glfw\include\deps;..\..\..\Lives2D_Depends\Raknet;..\..\..\Lives2D_Depends\lua-cjson;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\..\Libs\FreeImage;..\..\Libs\lua\lib;..\..\Libs\tolua++\lib;..\..\Libs\FreeType\lib;..\..\..\Lives2D_Depends\FMOD\Windows\lib;..\..\Libs\bullet3\lib;..\..\Libs\glfw\lib\win;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>FreeImage.lib;lua5.1.4.lib;tolua++.lib;freetype253_D.lib;fmodL_vc.lib;BulletCollision.lib;BulletDynamics.lib;LinearMath.lib;glfw3.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\Libs\lua\lib;..\..\Libs\tolua++\lib;..\..\Libs\FreeType\lib;..\..\..\Lives2D_Depends\FMOD\Windows\lib;..\..\Libs\bullet3\lib;..\..\Libs\glfw\lib\win;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>lua5.1.4.lib;tolua++.lib;freetype253_D.lib;fmodL_vc.lib;BulletCollision.lib;BulletDynamics.lib;LinearMath.lib;glfw3.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
       <AdditionalOptions>/nodefaultlib:"MSVCRT" %(AdditionalOptions)</AdditionalOptions>
       <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
