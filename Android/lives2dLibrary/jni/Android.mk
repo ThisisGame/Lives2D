@@ -415,6 +415,7 @@ LOCAL_SRC_FILES := Tools/Helper.cpp \
 		Network/SocketID.cpp \
 		Network/UDPSocket.cpp \
 		Texture2D/Texture2D.cpp \
+		Texture2D/stb_image.cpp \
 		3D/Camera.cpp \
 		3D/Material.cpp \
 		3D/Mesh.cpp \

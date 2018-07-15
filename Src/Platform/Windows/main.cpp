@@ -297,7 +297,7 @@ void onInit()
 
 	
 
-	glClearColor(0, 0, 0, 1);
+	glClearColor(49.0 / 255, 77.0 / 255, 121.0 / 255, 1);
 
 
 	float tmpDesignRatio = (float)Application::DesignWidth / Application::DesignHeight;

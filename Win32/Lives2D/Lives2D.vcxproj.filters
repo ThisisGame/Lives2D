@@ -720,6 +720,9 @@
     <ClCompile Include="..\..\Src\Tools\lua_Time.cpp">
       <Filter>Tools</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Src\Texture2D\stb_image.cpp">
+      <Filter>Texture2D</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\Texture2D\Texture2D.h">
@@ -1378,6 +1381,9 @@
     </ClInclude>
     <ClInclude Include="..\..\Src\Network\UDPSocket.h">
       <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Texture2D\stb_image.h">
+      <Filter>Texture2D</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

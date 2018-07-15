@@ -359,6 +359,7 @@
     <ClCompile Include="..\..\Src\PlayerPrefs\TinyXml\tinyxml.cpp" />
     <ClCompile Include="..\..\Src\PlayerPrefs\TinyXml\tinyxmlerror.cpp" />
     <ClCompile Include="..\..\Src\PlayerPrefs\TinyXml\tinyxmlparser.cpp" />
+    <ClCompile Include="..\..\Src\Texture2D\stb_image.cpp" />
     <ClCompile Include="..\..\Src\Texture2D\Texture2D.cpp" />
     <ClCompile Include="..\..\Src\Tools\Application.cpp" />
     <ClCompile Include="..\..\Src\Tools\ConvertUTF\ConvertUTF.c" />
@@ -583,6 +584,7 @@
     <ClInclude Include="..\..\Src\PlayerPrefs\Convert.h" />
     <ClInclude Include="..\..\Src\PlayerPrefs\PlayerPrefs.h" />
     <ClInclude Include="..\..\Src\PlayerPrefs\TinyXml\tinyxml.h" />
+    <ClInclude Include="..\..\Src\Texture2D\stb_image.h" />
     <ClInclude Include="..\..\Src\Texture2D\Texture2D.h" />
     <ClInclude Include="..\..\Src\Tools\Application.h" />
     <ClInclude Include="..\..\Src\Tools\ConvertUTF\ConvertUTF.h" />

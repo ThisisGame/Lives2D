@@ -5,8 +5,8 @@
 #include <OpenGLES/ES2/gl.h>
 #include <OpenGLES/ES2/glext.h>
 #elif ANDROID
-#include<egl\egl.h>
-#include<gles2\gl2.h>
+#include <GLES2/gl2.h>
+#include <GLES2/gl2ext.h>
 #else
 #include<glad/glad.h>
 #endif
