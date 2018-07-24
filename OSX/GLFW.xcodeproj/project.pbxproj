@@ -1,0 +1,720 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FF4510FF20F7C1AD00406ADF /* posix_thread.c in Sources */ = {isa = PBXBuildFile; fileRef = FF4510F020F7C1A600406ADF /* posix_thread.c */; };
+		FF45110020F7C1AD00406ADF /* cocoa_time.c in Sources */ = {isa = PBXBuildFile; fileRef = FF4510F120F7C1A600406ADF /* cocoa_time.c */; };
+		FF45110120F7C1AD00406ADF /* nsgl_context.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4510F220F7C1A700406ADF /* nsgl_context.m */; };
+		FF45110220F7C1AD00406ADF /* cocoa_monitor.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4510F320F7C1A700406ADF /* cocoa_monitor.m */; };
+		FF45110320F7C1AD00406ADF /* cocoa_init.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4510F420F7C1A800406ADF /* cocoa_init.m */; };
+		FF45110420F7C1AD00406ADF /* cocoa_joystick.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4510F520F7C1A800406ADF /* cocoa_joystick.m */; };
+		FF45110520F7C1AD00406ADF /* init.c in Sources */ = {isa = PBXBuildFile; fileRef = FF4510F620F7C1A900406ADF /* init.c */; };
+		FF45110620F7C1AD00406ADF /* vulkan.c in Sources */ = {isa = PBXBuildFile; fileRef = FF4510F720F7C1A900406ADF /* vulkan.c */; };
+		FF45110720F7C1AD00406ADF /* cocoa_window.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4510F820F7C1AA00406ADF /* cocoa_window.m */; };
+		FF45110820F7C1AD00406ADF /* egl_context.c in Sources */ = {isa = PBXBuildFile; fileRef = FF4510F920F7C1AA00406ADF /* egl_context.c */; };
+		FF45110920F7C1AD00406ADF /* input.c in Sources */ = {isa = PBXBuildFile; fileRef = FF4510FA20F7C1AB00406ADF /* input.c */; };
+		FF45110A20F7C1AD00406ADF /* monitor.c in Sources */ = {isa = PBXBuildFile; fileRef = FF4510FB20F7C1AB00406ADF /* monitor.c */; };
+		FF45110B20F7C1AD00406ADF /* context.c in Sources */ = {isa = PBXBuildFile; fileRef = FF4510FC20F7C1AB00406ADF /* context.c */; };
+		FF45110C20F7C1AD00406ADF /* osmesa_context.c in Sources */ = {isa = PBXBuildFile; fileRef = FF4510FD20F7C1AC00406ADF /* osmesa_context.c */; };
+		FF45110D20F7C1AD00406ADF /* window.c in Sources */ = {isa = PBXBuildFile; fileRef = FF4510FE20F7C1AC00406ADF /* window.c */; };
+		FF45111A20F7C33600406ADF /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = FF45111920F7C33500406ADF /* glad.c */; };
+		FF45111C20F7C35800406ADF /* tinycthread.c in Sources */ = {isa = PBXBuildFile; fileRef = FF45111B20F7C35800406ADF /* tinycthread.c */; };
+		FF45112120F7C38700406ADF /* empty.c in Sources */ = {isa = PBXBuildFile; fileRef = FF45112020F7C38700406ADF /* empty.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B8674949B11B4542BF1ECE41 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00F6C84E7E994F989966BA94 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C05C1317DB734006A974DB5F;
+			remoteInfo = glfw;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		615136C1636049779B5A9321 /* empty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = empty.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B27BC3B1186743B988236BE3 /* libglfw3.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libglfw3.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF4510F020F7C1A600406ADF /* posix_thread.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = posix_thread.c; path = ../Lives2D_Depends/glfw/src/posix_thread.c; sourceTree = "<group>"; };
+		FF4510F120F7C1A600406ADF /* cocoa_time.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = cocoa_time.c; path = ../Lives2D_Depends/glfw/src/cocoa_time.c; sourceTree = "<group>"; };
+		FF4510F220F7C1A700406ADF /* nsgl_context.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = nsgl_context.m; path = ../Lives2D_Depends/glfw/src/nsgl_context.m; sourceTree = "<group>"; };
+		FF4510F320F7C1A700406ADF /* cocoa_monitor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = cocoa_monitor.m; path = ../Lives2D_Depends/glfw/src/cocoa_monitor.m; sourceTree = "<group>"; };
+		FF4510F420F7C1A800406ADF /* cocoa_init.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = cocoa_init.m; path = ../Lives2D_Depends/glfw/src/cocoa_init.m; sourceTree = "<group>"; };
+		FF4510F520F7C1A800406ADF /* cocoa_joystick.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = cocoa_joystick.m; path = ../Lives2D_Depends/glfw/src/cocoa_joystick.m; sourceTree = "<group>"; };
+		FF4510F620F7C1A900406ADF /* init.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = init.c; path = ../Lives2D_Depends/glfw/src/init.c; sourceTree = "<group>"; };
+		FF4510F720F7C1A900406ADF /* vulkan.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = vulkan.c; path = ../Lives2D_Depends/glfw/src/vulkan.c; sourceTree = "<group>"; };
+		FF4510F820F7C1AA00406ADF /* cocoa_window.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = cocoa_window.m; path = ../Lives2D_Depends/glfw/src/cocoa_window.m; sourceTree = "<group>"; };
+		FF4510F920F7C1AA00406ADF /* egl_context.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = egl_context.c; path = ../Lives2D_Depends/glfw/src/egl_context.c; sourceTree = "<group>"; };
+		FF4510FA20F7C1AB00406ADF /* input.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = input.c; path = ../Lives2D_Depends/glfw/src/input.c; sourceTree = "<group>"; };
+		FF4510FB20F7C1AB00406ADF /* monitor.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = monitor.c; path = ../Lives2D_Depends/glfw/src/monitor.c; sourceTree = "<group>"; };
+		FF4510FC20F7C1AB00406ADF /* context.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = context.c; path = ../Lives2D_Depends/glfw/src/context.c; sourceTree = "<group>"; };
+		FF4510FD20F7C1AC00406ADF /* osmesa_context.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = osmesa_context.c; path = ../Lives2D_Depends/glfw/src/osmesa_context.c; sourceTree = "<group>"; };
+		FF4510FE20F7C1AC00406ADF /* window.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = window.c; path = ../Lives2D_Depends/glfw/src/window.c; sourceTree = "<group>"; };
+		FF45110E20F7C25E00406ADF /* glfw_config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = glfw_config.h; path = OSX/src/glfw_config.h; sourceTree = "<group>"; };
+		FF45110F20F7C29500406ADF /* glfw3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = glfw3.h; path = ../Lives2D_Depends/glfw/include/GLFW/glfw3.h; sourceTree = "<group>"; };
+		FF45111020F7C29600406ADF /* glfw3native.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = glfw3native.h; path = ../Lives2D_Depends/glfw/include/GLFW/glfw3native.h; sourceTree = "<group>"; };
+		FF45111120F7C2A300406ADF /* cocoa_joystick.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = cocoa_joystick.h; path = ../Lives2D_Depends/glfw/src/cocoa_joystick.h; sourceTree = "<group>"; };
+		FF45111220F7C2AB00406ADF /* cocoa_platform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = cocoa_platform.h; path = ../Lives2D_Depends/glfw/src/cocoa_platform.h; sourceTree = "<group>"; };
+		FF45111320F7C2B600406ADF /* egl_context.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = egl_context.h; path = ../Lives2D_Depends/glfw/src/egl_context.h; sourceTree = "<group>"; };
+		FF45111420F7C2D800406ADF /* osmesa_context.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = osmesa_context.h; path = ../Lives2D_Depends/glfw/src/osmesa_context.h; sourceTree = "<group>"; };
+		FF45111520F7C2D800406ADF /* nsgl_context.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = nsgl_context.h; path = ../Lives2D_Depends/glfw/src/nsgl_context.h; sourceTree = "<group>"; };
+		FF45111620F7C2D900406ADF /* internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = internal.h; path = ../Lives2D_Depends/glfw/src/internal.h; sourceTree = "<group>"; };
+		FF45111720F7C2D900406ADF /* mappings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = mappings.h; path = ../Lives2D_Depends/glfw/src/mappings.h; sourceTree = "<group>"; };
+		FF45111820F7C2D900406ADF /* posix_thread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = posix_thread.h; path = ../Lives2D_Depends/glfw/src/posix_thread.h; sourceTree = "<group>"; };
+		FF45111920F7C33500406ADF /* glad.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = glad.c; path = ../Lives2D_Depends/glfw/deps/glad.c; sourceTree = "<group>"; };
+		FF45111B20F7C35800406ADF /* tinycthread.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = tinycthread.c; path = ../Lives2D_Depends/glfw/deps/tinycthread.c; sourceTree = "<group>"; };
+		FF45111D20F7C36300406ADF /* glad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = glad.h; path = ../Lives2D_Depends/glfw/deps/glad/glad.h; sourceTree = "<group>"; };
+		FF45111E20F7C37100406ADF /* tinycthread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = tinycthread.h; path = ../Lives2D_Depends/glfw/deps/tinycthread.h; sourceTree = "<group>"; };
+		FF45111F20F7C37800406ADF /* tinycthread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = tinycthread.h; path = ../Lives2D_Depends/glfw/deps/tinycthread.h; sourceTree = "<group>"; };
+		FF45112020F7C38700406ADF /* empty.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = empty.c; path = ../Lives2D_Depends/glfw/tests/empty.c; sourceTree = "<group>"; };
+		FF91CA1820F7C5D900630DC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = OSX/Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		142470848661445D8FB45677 /* Header Files */ = {
+			isa = PBXGroup;
+			children = (
+				FF45111D20F7C36300406ADF /* glad.h */,
+				FF45111F20F7C37800406ADF /* tinycthread.h */,
+			);
+			name = "Header Files";
+			sourceTree = "<group>";
+		};
+		2375632AE87F481CA758E76F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B27BC3B1186743B988236BE3 /* libglfw3.a */,
+				615136C1636049779B5A9321 /* empty.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		474B7FC02AEA45A497AA1339 /* GLFW3 */ = {
+			isa = PBXGroup;
+			children = (
+				D23443E030714868BF09395F /* glfw */,
+				542348E3DEB94A8299B4D595 /* Tests */,
+			);
+			name = GLFW3;
+			sourceTree = "<group>";
+		};
+		542348E3DEB94A8299B4D595 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				E2DE1791BC38405BBEABF2D8 /* empty */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
+		70408FFB6314447DBA56946E = {
+			isa = PBXGroup;
+			children = (
+				474B7FC02AEA45A497AA1339 /* GLFW3 */,
+				2375632AE87F481CA758E76F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		99FF866EBCE34DE39AEF95EC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FF91CA1820F7C5D900630DC0 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		C45640980D4D42B896EFC17E /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				FF4510F420F7C1A800406ADF /* cocoa_init.m */,
+				FF4510F520F7C1A800406ADF /* cocoa_joystick.m */,
+				FF4510F320F7C1A700406ADF /* cocoa_monitor.m */,
+				FF4510F120F7C1A600406ADF /* cocoa_time.c */,
+				FF4510F820F7C1AA00406ADF /* cocoa_window.m */,
+				FF4510FC20F7C1AB00406ADF /* context.c */,
+				FF4510F920F7C1AA00406ADF /* egl_context.c */,
+				FF4510F620F7C1A900406ADF /* init.c */,
+				FF4510FA20F7C1AB00406ADF /* input.c */,
+				FF4510FB20F7C1AB00406ADF /* monitor.c */,
+				FF4510F220F7C1A700406ADF /* nsgl_context.m */,
+				FF4510FD20F7C1AC00406ADF /* osmesa_context.c */,
+				FF4510F020F7C1A600406ADF /* posix_thread.c */,
+				FF4510F720F7C1A900406ADF /* vulkan.c */,
+				FF4510FE20F7C1AC00406ADF /* window.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		CCEA0D910F66412698F015D1 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				FF45111920F7C33500406ADF /* glad.c */,
+				FF45111B20F7C35800406ADF /* tinycthread.c */,
+				FF45111E20F7C37100406ADF /* tinycthread.h */,
+				FF45112020F7C38700406ADF /* empty.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		D23443E030714868BF09395F /* glfw */ = {
+			isa = PBXGroup;
+			children = (
+				C45640980D4D42B896EFC17E /* Source Files */,
+				F170D97A1E99441D825EF255 /* Header Files */,
+			);
+			name = glfw;
+			sourceTree = "<group>";
+		};
+		E2DE1791BC38405BBEABF2D8 /* empty */ = {
+			isa = PBXGroup;
+			children = (
+				CCEA0D910F66412698F015D1 /* Source Files */,
+				142470848661445D8FB45677 /* Header Files */,
+				99FF866EBCE34DE39AEF95EC /* Resources */,
+			);
+			name = empty;
+			sourceTree = "<group>";
+		};
+		F170D97A1E99441D825EF255 /* Header Files */ = {
+			isa = PBXGroup;
+			children = (
+				FF45110E20F7C25E00406ADF /* glfw_config.h */,
+				FF45110F20F7C29500406ADF /* glfw3.h */,
+				FF45111020F7C29600406ADF /* glfw3native.h */,
+				FF45111120F7C2A300406ADF /* cocoa_joystick.h */,
+				FF45111220F7C2AB00406ADF /* cocoa_platform.h */,
+				FF45111620F7C2D900406ADF /* internal.h */,
+				FF45111720F7C2D900406ADF /* mappings.h */,
+				FF45111520F7C2D800406ADF /* nsgl_context.h */,
+				FF45111420F7C2D800406ADF /* osmesa_context.h */,
+				FF45111820F7C2D900406ADF /* posix_thread.h */,
+				FF45111320F7C2B600406ADF /* egl_context.h */,
+			);
+			name = "Header Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6EE4024E212E4331A907167A /* empty */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A074C2EE49F44E9A45C80B4 /* Build configuration list for PBXNativeTarget "empty" */;
+			buildPhases = (
+				C77F304D539146F3ACD90DF6 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				101B3779AF7D45F4BC7CB5FC /* PBXTargetDependency */,
+			);
+			name = empty;
+			productName = empty;
+			productReference = 615136C1636049779B5A9321 /* empty.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C05C1317DB734006A974DB5F /* glfw */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 645C8283D68C47BDBFDDE134 /* Build configuration list for PBXNativeTarget "glfw" */;
+			buildPhases = (
+				C6EA2FC6019D4116A640AF97 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = glfw;
+			productName = glfw;
+			productReference = B27BC3B1186743B988236BE3 /* libglfw3.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		00F6C84E7E994F989966BA94 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 0900;
+			};
+			buildConfigurationList = FA02032491944E728D7868C1 /* Build configuration list for PBXProject "GLFW" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 70408FFB6314447DBA56946E;
+			projectDirPath = ../;
+			projectRoot = "";
+			targets = (
+				C05C1317DB734006A974DB5F /* glfw */,
+				6EE4024E212E4331A907167A /* empty */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C6EA2FC6019D4116A640AF97 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF45110020F7C1AD00406ADF /* cocoa_time.c in Sources */,
+				FF45110C20F7C1AD00406ADF /* osmesa_context.c in Sources */,
+				FF45110D20F7C1AD00406ADF /* window.c in Sources */,
+				FF45110A20F7C1AD00406ADF /* monitor.c in Sources */,
+				FF45110320F7C1AD00406ADF /* cocoa_init.m in Sources */,
+				FF45110520F7C1AD00406ADF /* init.c in Sources */,
+				FF45110B20F7C1AD00406ADF /* context.c in Sources */,
+				FF4510FF20F7C1AD00406ADF /* posix_thread.c in Sources */,
+				FF45110820F7C1AD00406ADF /* egl_context.c in Sources */,
+				FF45110720F7C1AD00406ADF /* cocoa_window.m in Sources */,
+				FF45110120F7C1AD00406ADF /* nsgl_context.m in Sources */,
+				FF45110420F7C1AD00406ADF /* cocoa_joystick.m in Sources */,
+				FF45110920F7C1AD00406ADF /* input.c in Sources */,
+				FF45110620F7C1AD00406ADF /* vulkan.c in Sources */,
+				FF45110220F7C1AD00406ADF /* cocoa_monitor.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C77F304D539146F3ACD90DF6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF45111C20F7C35800406ADF /* tinycthread.c in Sources */,
+				FF45111A20F7C33600406ADF /* glad.c in Sources */,
+				FF45112120F7C38700406ADF /* empty.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		101B3779AF7D45F4BC7CB5FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C05C1317DB734006A974DB5F /* glfw */;
+			targetProxy = B8674949B11B4542BF1ECE41 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0FA4F34ADC3B417495210236 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk;
+				SYMROOT = /Users/pengchen/Documents/GitHub/Lives2D_Depends/glfw/build/build;
+			};
+			name = RelWithDebInfo;
+		};
+		2A323E2272204FB09818CD6E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk;
+				SYMROOT = /Users/pengchen/Documents/GitHub/Lives2D_Depends/glfw/build/build;
+			};
+			name = Release;
+		};
+		423A905942944B538404BD71 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk;
+				SYMROOT = /Users/pengchen/Documents/GitHub/Lives2D_Depends/glfw/build/build;
+			};
+			name = MinSizeRel;
+		};
+		486BBA93D3D84BB693C3E0CB /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/pengchen/Documents/GitHub/Lives2D_Depends/glfw/deps,
+					/Users/pengchen/Documents/GitHub/Lives2D_Depends/glfw/include,
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/OSX/Info.plist";
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					"-framework",
+					Cocoa,
+					"\"$(SRCROOT)/Runable/OSX/Debug/libglfw3.a\"",
+					"-framework",
+					IOKit,
+					"-framework",
+					CoreFoundation,
+					"-framework",
+					CoreVideo,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = empty;
+				SECTORDER_FLAGS = "";
+				SYMROOT = Runable/OSX;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = MinSizeRel;
+		};
+		4D09289982BF4004ACB5973E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/pengchen/Documents/GitHub/Lives2D_Depends/glfw/deps,
+					/Users/pengchen/Documents/GitHub/Lives2D_Depends/glfw/include,
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/OSX/Info.plist";
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    ";
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					"\"$(SRCROOT)/Runable/OSX/Debug/libglfw3.a\"",
+					"-framework",
+					Cocoa,
+					"-framework",
+					IOKit,
+					"-framework",
+					CoreFoundation,
+					"-framework",
+					CoreVideo,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = empty;
+				SECTORDER_FLAGS = "";
+				SYMROOT = Runable/OSX;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Debug;
+		};
+		61E4B548E2FC4C8A81E13594 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/pengchen/Documents/GitHub/Lives2D_Depends/glfw/deps,
+					/Users/pengchen/Documents/GitHub/Lives2D_Depends/glfw/include,
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/OSX/Info.plist";
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					"-framework",
+					"\"$(SRCROOT)/Runable/OSX/Debug/libglfw3.a\"",
+					Cocoa,
+					"-framework",
+					IOKit,
+					"-framework",
+					CoreFoundation,
+					"-framework",
+					CoreVideo,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = empty;
+				SECTORDER_FLAGS = "";
+				SYMROOT = Runable/OSX;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Release;
+		};
+		6B15A036F476434D8F615532 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					_GLFW_USE_CONFIG_H,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../Lives2D_Depends/glfw/include\"",
+					"\"$(SRCROOT)/../Lives2D_Depends/glfw/src\"",
+					"\"$(SRCROOT)/OSX/src\"",
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "   -fPIC  ";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = glfw3;
+				SECTORDER_FLAGS = "";
+				SYMROOT = Runable/OSX;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Debug;
+		};
+		73E5E4448DA04D8C9672B1C3 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/pengchen/Documents/GitHub/Lives2D_Depends/glfw/deps,
+					/Users/pengchen/Documents/GitHub/Lives2D_Depends/glfw/include,
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/OSX/Info.plist";
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "       -DNDEBUG  ";
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					"\"$(SRCROOT)/Runable/OSX/Debug/libglfw3.a\"",
+					"-framework",
+					Cocoa,
+					"-framework",
+					IOKit,
+					"-framework",
+					CoreFoundation,
+					"-framework",
+					CoreVideo,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = empty;
+				SECTORDER_FLAGS = "";
+				SYMROOT = Runable/OSX;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		8AA39120ADB849C0934D47E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk;
+				SYMROOT = /Users/pengchen/Documents/GitHub/Lives2D_Depends/glfw/build/build;
+			};
+			name = Debug;
+		};
+		8B31B0A4A45A4439885636C3 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					_GLFW_USE_CONFIG_H,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../Lives2D_Depends/glfw/include\"",
+					"\"$(SRCROOT)/../Lives2D_Depends/glfw/src\"",
+					"\"$(SRCROOT)/OSX/src\"",
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = (
+					"-DNDEBUG",
+					"-fPIC",
+				);
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = glfw3;
+				SECTORDER_FLAGS = "";
+				SYMROOT = Runable/OSX;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		96C7D0D4BDDA41A69FA4D8F3 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					_GLFW_USE_CONFIG_H,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../Lives2D_Depends/glfw/include\"",
+					"\"$(SRCROOT)/../Lives2D_Depends/glfw/src\"",
+					"\"$(SRCROOT)/OSX/src\"",
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = (
+					"-DNDEBUG",
+					"-fPIC",
+				);
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = glfw3;
+				SECTORDER_FLAGS = "";
+				SYMROOT = Runable/OSX;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = MinSizeRel;
+		};
+		EDD8C75DDC314FBAB5F7301B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					_GLFW_USE_CONFIG_H,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../Lives2D_Depends/glfw/include\"",
+					"\"$(SRCROOT)/../Lives2D_Depends/glfw/src\"",
+					"\"$(SRCROOT)/OSX/src\"",
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = (
+					"-DNDEBUG",
+					"-fPIC",
+				);
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = glfw3;
+				SECTORDER_FLAGS = "";
+				SYMROOT = Runable/OSX;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5A074C2EE49F44E9A45C80B4 /* Build configuration list for PBXNativeTarget "empty" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D09289982BF4004ACB5973E /* Debug */,
+				61E4B548E2FC4C8A81E13594 /* Release */,
+				486BBA93D3D84BB693C3E0CB /* MinSizeRel */,
+				73E5E4448DA04D8C9672B1C3 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		645C8283D68C47BDBFDDE134 /* Build configuration list for PBXNativeTarget "glfw" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B15A036F476434D8F615532 /* Debug */,
+				EDD8C75DDC314FBAB5F7301B /* Release */,
+				96C7D0D4BDDA41A69FA4D8F3 /* MinSizeRel */,
+				8B31B0A4A45A4439885636C3 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		FA02032491944E728D7868C1 /* Build configuration list for PBXProject "GLFW" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8AA39120ADB849C0934D47E4 /* Debug */,
+				2A323E2272204FB09818CD6E /* Release */,
+				423A905942944B538404BD71 /* MinSizeRel */,
+				0FA4F34ADC3B417495210236 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 00F6C84E7E994F989966BA94 /* Project object */;
+}
