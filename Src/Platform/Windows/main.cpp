@@ -264,7 +264,7 @@ void onInit()
 	//LuaEngine Start
 	LuaEngine::GetSingleton()->DoFile((Application::PersistentDataPath() + "/Resource/Script/Engine/Lives2D.lua").c_str());
 
-	glClearColor(0, 0, 0, 1);
+	glClearColor(49.0f/255, 77.0f/255, 121.0f/255, 1);
 
 
 	float tmpDesignRatio = (float)Application::DesignWidth / Application::DesignHeight;

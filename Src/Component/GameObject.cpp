@@ -63,6 +63,18 @@ GameObject * GameObject::GetChild(int varIndex)
 	}
 }
 
+GameObject* GameObject::GetChild(const char* varName)
+{
+	for (size_t i = 0; i < mVectorChild.size(); i++)
+	{
+		if (strcmp(mVectorChild[i]->name.c_str(), varName) == 0)
+		{
+			return mVectorChild[i];
+		}
+	}
+	return nullptr;
+}
+
 void GameObject::SetParent(GameObject * varGameObjectParent)
 {
 	mGameObjectParent = varGameObjectParent;

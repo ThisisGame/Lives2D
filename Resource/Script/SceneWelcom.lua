@@ -44,6 +44,18 @@ end
 function SceneWelcom:Init()
 	print("SceneWelcom:Init")
 	
+	local tmpUIParser=UIParser:new()
+	self.mUIRoot=tmpUIParser:CreateUI(ResourcesManager:DataPath() .. "/Resource/UI/UI_Skill/UI_Skill.xml");
+	local tmpUIButton_BeAttack=self.mUIRoot.mGameObject:GetChild("UIButton_BeAttack"):GetComponent("UIButton")
+	tmpUIButton_BeAttack:SetOnClickListener(function(varTime)
+		print("OnClick")
+		self.mPlayer:GetComponent("SkinMeshRenderer"):Play("BeAttack")
+	end,111)
+	local tmpUIButton_Caiji=self.mUIRoot.mGameObject:GetChild("UIButton_Caiji"):GetComponent("UIButton")
+	tmpUIButton_Caiji:SetOnClickListener(function(varTime)
+		print("OnClick")
+		self.mPlayer:GetComponent("SkinMeshRenderer"):Play("Caiji")
+	end,111)
 	
 	
 	local tmpGoCamera=GameObject:new("sceneCamera")
@@ -55,14 +67,15 @@ function SceneWelcom:Init()
 	local tmpPhysicsWorld=tmpGoPhysicsWorld:AddComponent("PhysicsWorld")
 	
 	local tmpSkinMeshParserGround=SkinMeshParser:new()
-	self.mGround=tmpSkinMeshParserGround:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/ground/ground.xml");
+	self.mGround=tmpSkinMeshParserGround:Create(ResourcesManager:DataPath() .. "/Resource/Anim/ground/ground.xml");
 	self.mGround.mTransform:SetLocalPosition(Vector3(0,-5,-10))
 	local tmpRigidbody= self.mGround:AddComponent("Rigidbody")
 	tmpRigidbody:SetCollisionShape(1,0.0,10,0.5,10)
 	
 	local tmpSkinMeshParserPlayer=SkinMeshParser:new()
-	self.mPlayer=tmpSkinMeshParserPlayer:CreateScene(ResourcesManager:DataPath() .. "/Resource/Anim/9010006/9010006.xml");
+	self.mPlayer=tmpSkinMeshParserPlayer:Create(ResourcesManager:DataPath() .. "/Resource/Anim/cike/cike.xml");
 	self.mPlayer.mTransform:SetLocalPosition(Vector3(0,0,0))
+	self.mPlayer:GetComponent("SkinMeshRenderer"):Play("Idle")
 	local tmpRigidbodyPlayer= self.mPlayer:AddComponent("Rigidbody")
 	tmpRigidbodyPlayer:SetCollisionShape(1,.0,1,2,0)
 	

@@ -6,4 +6,6 @@ class SkinMeshRenderer:Component
 public:
 	SkinMeshRenderer();
 	~SkinMeshRenderer();
+	
+	void Play(const char* varName);
 };

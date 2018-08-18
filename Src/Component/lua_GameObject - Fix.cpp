@@ -1,6 +1,6 @@
 /*
 ** Lua binding: GameObject
-** Generated automatically by tolua++-1.0.92 on Sun May  6 11:11:26 2018.
+** Generated automatically by tolua++-1.0.92 on Sun Aug 19 02:14:24 2018.
 */
 
 #ifndef __cplusplus
@@ -415,6 +415,40 @@ static int tolua_GameObject_GameObject_RemoveComponent00(lua_State* tolua_S)
 }
 #endif //#ifndef TOLUA_DISABLE
 
+/* method: GetComponent of class  GameObject */
+#ifndef TOLUA_DISABLE_tolua_GameObject_GameObject_GetComponent00
+static int tolua_GameObject_GameObject_GetComponent00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"GameObject",0,&tolua_err) ||
+     !tolua_isstring(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  GameObject* self = (GameObject*)  tolua_tousertype(tolua_S,1,0);
+  const char* varComponentName = ((const char*)  tolua_tostring(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'GetComponent'", NULL);
+#endif
+  {
+   Component* tolua_ret = (Component*)  self->GetComponent(varComponentName);
+    tolua_pushusertype(tolua_S,(void*)tolua_ret, varComponentName);
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'GetComponent'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
 /* method: AddLuaComponent of class  GameObject */
 #ifndef TOLUA_DISABLE_tolua_GameObject_GameObject_AddLuaComponent00
 static int tolua_GameObject_GameObject_AddLuaComponent00(lua_State* tolua_S)
@@ -694,6 +728,7 @@ TOLUA_API int tolua_GameObject_open (lua_State* tolua_S)
    tolua_function(tolua_S,"SetParent",tolua_GameObject_GameObject_SetParent00);
    tolua_function(tolua_S,"AddComponent",tolua_GameObject_GameObject_AddComponent00);
    tolua_function(tolua_S,"RemoveComponent",tolua_GameObject_GameObject_RemoveComponent00);
+   tolua_function(tolua_S,"GetComponent",tolua_GameObject_GameObject_GetComponent00);
    tolua_function(tolua_S,"AddLuaComponent",tolua_GameObject_GameObject_AddLuaComponent00);
    tolua_function(tolua_S,"RemoveLuaComponent",tolua_GameObject_GameObject_RemoveLuaComponent00);
    tolua_function(tolua_S,"Awake",tolua_GameObject_GameObject_Awake00);

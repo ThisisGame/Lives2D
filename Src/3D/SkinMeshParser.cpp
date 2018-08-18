@@ -9,7 +9,7 @@ SkinMeshParser::SkinMeshParser()
 }
 
 
-GameObject*	 SkinMeshParser::CreateScene(const char * varFilePath)
+GameObject*	 SkinMeshParser::Create(const char * varFilePath)
 {
 	//文件不存在，先创建
 	std::ifstream tmpXmlFile(varFilePath);
