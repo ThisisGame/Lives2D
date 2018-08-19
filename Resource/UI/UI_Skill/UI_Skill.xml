@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<GameObject Name="UIRoot"  Position="(0,0,0)" Rotation="(0,0,0)" Scale="(1,1,1)">
+	<Component Type="UIRoot" />
+	
+	<GameObject Name="UILabel_BeAttack" Position="(0,-180,0)" Rotation="(0,0,0)" Scale="(1,1,1)">
+		<Component Type="UILabel" Text="BeAttack"/>
+	</GameObject>
+	<GameObject Name="UIButton_BeAttack" Position="(0,-200,0)" Rotation="(0,0,0)" Scale="(1,1,1)">
+		<Component Type="UIButton" ImageNormal="UI/UI_Skill/button-normal.png" ImageClickDown="UI/UI_Skill/button-click.png" Width="540" Height="299"/>
+	</GameObject>
+	
+
+	
+	<GameObject Name="UILabel_Caiji" Position="(200,-180,0)" Rotation="(0,0,0)" Scale="(1,1,1)">
+		<Component Type="UILabel" Text="Caiji"/>
+	</GameObject>
+	<GameObject Name="UIButton_Caiji" Position="(200,-200,0)" Rotation="(0,0,0)" Scale="(1,1,1)">
+		<Component Type="UIButton" ImageNormal="UI/UI_Skill/button-normal.png" ImageClickDown="UI/UI_Skill/button-click.png" Width="540" Height="299"/>
+	</GameObject>
+	
+
+</GameObject>

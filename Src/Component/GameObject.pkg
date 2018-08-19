@@ -18,6 +18,8 @@ public:
 	int GetChildCount();
 
 	GameObject* GetChild(int varIndex);
+	
+	GameObject* GetChild(const char* varName);
 
 	void SetParent(GameObject* varGameObjectParent);
 
@@ -25,6 +27,8 @@ public:
 	Component* AddComponent(const char* varComponentName);
 
 	void RemoveComponent(const char* varComponentName);
+	
+	Component* GetComponent(const char* varComponentName);
 
 public:
 	LuaComponent* AddLuaComponent(const char* varFilePath);

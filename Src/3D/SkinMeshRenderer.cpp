@@ -3,9 +3,10 @@
 #include"Tools/Time.h"
 #include"Component/Transform.h"
 #include"Component/GameObject.h"
+#include"PlayerPrefs/Convert.h"
 
 IMPLEMENT_DYNCRT_ACTION(SkinMeshRenderer)
-SkinMeshRenderer::SkinMeshRenderer():mRunningTime(0),mMesh(nullptr), mFrameCount(0), mFrameTicks(160)
+SkinMeshRenderer::SkinMeshRenderer():mRunningTime(0),mMesh(nullptr), mFrameCount(0), mFrameTicks(160), mCurrentAnimClip(nullptr)
 {
 }
 
@@ -17,6 +18,20 @@ SkinMeshRenderer::~SkinMeshRenderer()
 
 void SkinMeshRenderer::InitWithXml(TiXmlElement * varTiXmlElement)
 {
+	TiXmlNode *tmpTiXmlNode = NULL;
+	for (tmpTiXmlNode = varTiXmlElement->FirstChildElement(); tmpTiXmlNode != NULL; tmpTiXmlNode = tmpTiXmlNode->NextSiblingElement())
+	{
+		TiXmlElement* tmpTiXmlElement = tmpTiXmlNode->ToElement();
+
+		const char* tmpName=tmpTiXmlElement->Attribute("Name");
+		int tmpBegin =Convert::StringToInt( tmpTiXmlElement->Attribute("Begin"));
+		int tmpEnd = Convert::StringToInt(tmpTiXmlElement->Attribute("End"));
+
+		AnimClip* tmpAnimClip = new AnimClip(tmpName, tmpBegin, tmpEnd);
+
+		mVectorAnimClip.push_back(tmpAnimClip);
+	}
+
 	const char* tmpMeshFilePath = varTiXmlElement->Attribute("Anim");
 	LoadAnim(Application::GetFullPath(tmpMeshFilePath).c_str());
 }
@@ -145,6 +160,11 @@ void SkinMeshRenderer::LoadAnim(const char* varAnimPath)
 	tmpStream.close();
 }
 
+void SkinMeshRenderer::Play(const char* varName)
+{
+	mNextAnimClip = varName;
+}
+
 void SkinMeshRenderer::Update()
 {
 	if (mMesh == nullptr)
@@ -169,13 +189,50 @@ void SkinMeshRenderer::Update()
 		return;
 	}
 
-	//int tmpUpdateBeginTime = GetTickCount();
+	if (mCurrentAnimClip == nullptr )
+	{
+		if (mNextAnimClip == nullptr)
+		{
+			return;
+		}
+		else
+		{
+			mCurrentAnimClip = mNextAnimClip;
+		}
+		
+	}
+
+
+
+	if (strcmp( mNextAnimClip ,mCurrentAnimClip)!=0)
+	{
+		mCurrentAnimClip = mNextAnimClip;
+
+		mRunningTime = 0;
+	}
+
+	int tmpFrameOffset = 0;
+	int tmpFrameCount = 0;
+	for (size_t i = 0; i < mVectorAnimClip.size(); i++)
+	{
+		if (strcmp(mVectorAnimClip[i]->mName, mCurrentAnimClip) == 0)
+		{
+			tmpFrameOffset = mVectorAnimClip[i]->mBegin;
+			tmpFrameCount = mVectorAnimClip[i]->mEnd - mVectorAnimClip[i]->mBegin;
+		}
+	}
+
 
 	//calculate current frame bone offset
 	mRunningTime = mRunningTime + Time::deltaTime;
-	int tmpCurrentFrame = mRunningTime * 30;
-	tmpCurrentFrame = tmpCurrentFrame % mFrameCount;
-	int tmpCurrentAnimTime = tmpCurrentFrame * mFrameTicks;
+
+	int tmpCurrentFrame = mRunningTime * 30; //当前总运行帧数
+	tmpCurrentFrame = tmpCurrentFrame % tmpFrameCount;//取余，这一个循环的当前帧
+	tmpCurrentFrame = tmpCurrentFrame + tmpFrameOffset;
+	int tmpCurrentAnimTime = tmpCurrentFrame * mFrameTicks;//乘以160计算动画时间，max里每160为一帧
+
+
+
 
 	//tmpCurrentAnimTime = 160*0;
 

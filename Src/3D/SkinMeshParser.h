@@ -8,7 +8,7 @@ public:
 	SkinMeshParser();
 	~SkinMeshParser();
 
-	GameObject* CreateScene(const char* varFilePath);
+	GameObject* Create(const char* varFilePath);
 
 private:
 	void RecursiveNode(TiXmlElement* varTiXmlElementRoot, GameObject* varGameObjectRoot);

@@ -1,0 +1,10 @@
+$#include"SkinMeshParser.h"
+
+class SkinMeshParser
+{
+public:
+	SkinMeshParser();
+	~SkinMeshParser();
+
+	GameObject* Create(const char* varFilePath);
+};

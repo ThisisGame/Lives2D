@@ -1,6 +1,6 @@
 /*
 ** Lua binding: SkinMeshRenderer
-** Generated automatically by tolua++-1.0.92 on Wed Apr 25 01:28:58 2018.
+** Generated automatically by tolua++-1.0.92 on Sun Aug 19 02:04:51 2018.
 */
 
 #ifndef __cplusplus
@@ -30,9 +30,8 @@ static int tolua_collect_SkinMeshRenderer (lua_State* tolua_S)
 /* function to register type */
 static void tolua_reg_types (lua_State* tolua_S)
 {
- tolua_usertype(tolua_S,"Component");
  tolua_usertype(tolua_S,"SkinMeshRenderer");
- tolua_usertype(tolua_S,"TiXmlElement");
+ tolua_usertype(tolua_S,"Component");
 }
 
 /* method: new of class  SkinMeshRenderer */
@@ -121,15 +120,15 @@ static int tolua_SkinMeshRenderer_SkinMeshRenderer_delete00(lua_State* tolua_S)
 }
 #endif //#ifndef TOLUA_DISABLE
 
-/* method: InitWithXml of class  SkinMeshRenderer */
-#ifndef TOLUA_DISABLE_tolua_SkinMeshRenderer_SkinMeshRenderer_InitWithXml00
-static int tolua_SkinMeshRenderer_SkinMeshRenderer_InitWithXml00(lua_State* tolua_S)
+/* method: Play of class  SkinMeshRenderer */
+#ifndef TOLUA_DISABLE_tolua_SkinMeshRenderer_SkinMeshRenderer_Play00
+static int tolua_SkinMeshRenderer_SkinMeshRenderer_Play00(lua_State* tolua_S)
 {
 #ifndef TOLUA_RELEASE
  tolua_Error tolua_err;
  if (
      !tolua_isusertype(tolua_S,1,"SkinMeshRenderer",0,&tolua_err) ||
-     !tolua_isusertype(tolua_S,2,"TiXmlElement",0,&tolua_err) ||
+     !tolua_isstring(tolua_S,2,0,&tolua_err) ||
      !tolua_isnoobj(tolua_S,3,&tolua_err)
  )
   goto tolua_lerror;
@@ -137,49 +136,18 @@ static int tolua_SkinMeshRenderer_SkinMeshRenderer_InitWithXml00(lua_State* tolu
 #endif
  {
   SkinMeshRenderer* self = (SkinMeshRenderer*)  tolua_tousertype(tolua_S,1,0);
-  TiXmlElement* varTiXmlElement = ((TiXmlElement*)  tolua_tousertype(tolua_S,2,0));
+  const char* varName = ((const char*)  tolua_tostring(tolua_S,2,0));
 #ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'InitWithXml'", NULL);
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'Play'", NULL);
 #endif
   {
-   self->InitWithXml(varTiXmlElement);
+   self->Play(varName);
   }
  }
  return 0;
 #ifndef TOLUA_RELEASE
  tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'InitWithXml'.",&tolua_err);
- return 0;
-#endif
-}
-#endif //#ifndef TOLUA_DISABLE
-
-/* method: Update of class  SkinMeshRenderer */
-#ifndef TOLUA_DISABLE_tolua_SkinMeshRenderer_SkinMeshRenderer_Update00
-static int tolua_SkinMeshRenderer_SkinMeshRenderer_Update00(lua_State* tolua_S)
-{
-#ifndef TOLUA_RELEASE
- tolua_Error tolua_err;
- if (
-     !tolua_isusertype(tolua_S,1,"SkinMeshRenderer",0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,2,&tolua_err)
- )
-  goto tolua_lerror;
- else
-#endif
- {
-  SkinMeshRenderer* self = (SkinMeshRenderer*)  tolua_tousertype(tolua_S,1,0);
-#ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'Update'", NULL);
-#endif
-  {
-   self->Update();
-  }
- }
- return 0;
-#ifndef TOLUA_RELEASE
- tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'Update'.",&tolua_err);
+ tolua_error(tolua_S,"#ferror in function 'Play'.",&tolua_err);
  return 0;
 #endif
 }
@@ -202,8 +170,7 @@ TOLUA_API int tolua_SkinMeshRenderer_open (lua_State* tolua_S)
    tolua_function(tolua_S,"new_local",tolua_SkinMeshRenderer_SkinMeshRenderer_new00_local);
    tolua_function(tolua_S,".call",tolua_SkinMeshRenderer_SkinMeshRenderer_new00_local);
    tolua_function(tolua_S,"delete",tolua_SkinMeshRenderer_SkinMeshRenderer_delete00);
-   tolua_function(tolua_S,"InitWithXml",tolua_SkinMeshRenderer_SkinMeshRenderer_InitWithXml00);
-   tolua_function(tolua_S,"Update",tolua_SkinMeshRenderer_SkinMeshRenderer_Update00);
+   tolua_function(tolua_S,"Play",tolua_SkinMeshRenderer_SkinMeshRenderer_Play00);
   tolua_endmodule(tolua_S);
  tolua_endmodule(tolua_S);
  return 1;

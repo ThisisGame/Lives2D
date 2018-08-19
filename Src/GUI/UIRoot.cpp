@@ -7,7 +7,7 @@
 #include<algorithm>
 
 IMPLEMENT_DYNCRT_ACTION(UIRoot)
-UIRoot::UIRoot():mDepth(0)
+UIRoot::UIRoot():mDepth(0),mVectorUIRect(0)
 {
 }
 

@@ -38,6 +38,9 @@ public:
 	///获取子物体
 	GameObject* GetChild(int varIndex);
 
+	///获取子物体
+	GameObject* GetChild(const char* varName);
+
 	///设置父节点
 	void SetParent(GameObject* varGameObjectParent);
 

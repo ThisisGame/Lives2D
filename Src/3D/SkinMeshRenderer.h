@@ -4,6 +4,28 @@
 #include<map>
 #include"glm/glm.hpp"
 
+class AnimClip
+{
+public:
+	AnimClip(const char* varName, const int varBegin, const int varEnd):mName(nullptr),mBegin(0),mEnd(0)
+	{
+		mName = varName;
+		mBegin = varBegin;
+		mEnd = varEnd;
+	}
+
+
+	~AnimClip()
+	{
+
+	}
+
+public:
+	const char* mName;
+	int mBegin;
+	int mEnd;
+};
+
 class SkinMeshRenderer:Component
 {
 	DECLEAR_DYNCRT_ACTION(SkinMeshRenderer)
@@ -14,6 +36,8 @@ public:
 
 	void InitWithXml(TiXmlElement* varTiXmlElement) override;
 
+	void Play(const char* varName);
+
 private:
 	void LoadAnim(const char* varAnimPath);
 
@@ -22,6 +46,11 @@ public:
 
 
 private:
+	std::vector<AnimClip*> mVectorAnimClip;//AnimParts parse from xml
+
+	const char* mCurrentAnimClip;//current playing animclip
+	const char* mNextAnimClip;//will playing animclip
+
 	std::vector<std::string> mVectorBoneName;
 
 	std::vector<glm::mat4x4> mVectorBoneMatrixInvert;
