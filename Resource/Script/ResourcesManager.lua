@@ -1,4 +1,4 @@
-local ResourcesManager=
+ResourcesManager=
 {
 	mDataPath,
 }

@@ -2,15 +2,16 @@
 <GameObject Name="UIRoot"  Position="(0,0,0)" Rotation="(0,0,0)" Scale="(1,1,1)">
 	<Component Type="UIRoot" />
 	<!--<Component Type="AudioSource" Audio="Audio/Login.mp3" Loop="true" />-->
-	<GameObject Name="UIImage_BG" Position="(0,0,0)" Rotation="(0,0,0)" Scale="(1,1,1)">
-		<Component Type="UIImage" Image="UI/UI_Login/bg.jpeg"/>
+	
+	<GameObject Name="UIButton_Login" Position="(0,-300,0)" Rotation="(0,0,0)" Scale="(1,1,1)">
+		<Component Type="UIButton" ImageNormal="UI/UI_Login/button-normal.png" ImageClickDown="UI/UI_Login/button-click.png" Width="155" Height="60"/>
 	</GameObject>
 	
-	<GameObject Name="UIButton_Login" Position="(0,300,0)" Rotation="(0,0,0)" Scale="(1,1,1)">
-		<Component Type="UIButton" ImageNormal="UI/UI_Login/login_button_0.png" ImageClickDown="UI/UI_Login/login_button_1.png" Width="540" Height="299"/>
+	<GameObject Name="UILabel_Title" Position="(0,-300,0)" Rotation="(0,0,0)" Scale="(1,1,1)">
+		<Component Type="UILabel" Text="Login"/>
 	</GameObject>
-	
-	<GameObject Name="UILabel_Compony" Position="(0,-550,0)" Rotation="(0,0,0)" Scale="(1,1,1)">
-		<Component Type="UILabel" Text="Powerd By Lives2d你好"/>
+
+	<GameObject Name="UILabel_Title" Position="(0,200,0)" Rotation="(0,0,0)" Scale="(1,1,1)">
+		<Component Type="UILabel" Text="BrokenWar"/>
 	</GameObject>
 </GameObject>

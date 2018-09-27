@@ -1,7 +1,16 @@
 print("GameMain Run")
 
 local class=require("Engine/class")
-local SceneWelcom=require("SceneWelcom")
+
+require("ResourcesManager")
+
+require("Scene/SceneManager")
+
+require("Framework/DelayTaskManager")
+
+require("Framework/Network/NetworkConnect")
+
+require("Framework/WindowManager")
 
 --设置每秒固定刷帧
 fixedUpdateFrame=20
@@ -13,28 +22,33 @@ local GameMain=
 
 --初始化
 function GameMain:Init()
-	Application.DesignWidth=1136
-	Application.DesignHeight=640
-	
+	Application.DesignWidth=540
+	Application.DesignHeight=960
 	
 
-	self.mSceneWelcom=SceneWelcom.new()
-	self.mSceneWelcom:Init()
+	SceneManager:Register()
 end
 
 
 --刷帧
 function GameMain:Update(varDeltaTime)
-	self.mSceneWelcom:Update(varDeltaTime)
+	SceneManager:Update(varDeltaTime)
+
+	DelayTaskManager:Update()
+	NetworkConnect:Update()
+
+	WindowManager:Update(varDeltaTime)
 end
 
 function GameMain:FixedUpdate()
-	self.mSceneWelcom:FixedUpdate()
+	SceneManager:FixedUpdate()
 end
 
 --绘制
 function GameMain:Draw()
-	self.mSceneWelcom:Draw()
+	SceneManager:Draw()
+
+	WindowManager:Draw()
 end
 
 

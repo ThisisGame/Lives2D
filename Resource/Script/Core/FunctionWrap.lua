@@ -5,9 +5,9 @@ local FunctionWrap=
 }
 
 
-function FunctionWrap:Wrap(varFunction)
+function FunctionWrap:Wrap(this,varFunction)
     local functionWraped="FunctionWrap_" .. self.mFunctionIndex
-    self.mFunctionWrap[functionWraped]=varFunction
+    self.mFunctionWrap[functionWraped]={this,varFunction}
     self.mFunctionIndex=self.mFunctionIndex+1
 
     return functionWraped
@@ -16,14 +16,14 @@ end
 function FunctionWrap:RunWrap(varFunctionID,...)
     for key,value in pairs(self.mFunctionWrap) do
         if key==varFunctionID then
-            value(...)
+            value[1]:value[2](...)
         end
     end
 end
 
 
-function Wrap(varFunction)
-    return FunctionWrap:Wrap(varFunction)
+function Wrap(this,varFunction)
+    return FunctionWrap:Wrap(this,varFunction)
 end
 
 function RunWrap(varFunctionID,...)
