@@ -60,10 +60,13 @@ play skeleton animation,this branch ,you need learn code 3dsMax plugin to export
 
 ## V7_Physic_Bullet3
 
-learn bullet3
+learn bullet3.
 
 
-## 
+## V8_Lighting
+
+you can learn simple light,and material system.
+
 
 ## V9_Network_Raknet_Json
 
