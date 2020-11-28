@@ -3,6 +3,9 @@
 
 Lives2D is a simple 2D gameengine,it is degined to learn opengles.
 
+# Framework
+![image](https://github.com/ThisisGame/Lives2D/blob/V9_Network_Raknet_Json/Docs/lives2d%20Framework.png)
+
 
 # Environment
 
@@ -57,15 +60,20 @@ and now you can run lives2d on android and ios.
 
 play skeleton animation,this branch ,you need learn code 3dsMax plugin to export skeleton animation data.
 
+![image](https://github.com/ThisisGame/Lives2D/blob/V5_SwitchToLua_Windows/Docs/v6.gif)
 
 ## V7_Physic_Bullet3
 
 learn bullet3.
 
+![image](https://github.com/ThisisGame/Lives2D/blob/V5_SwitchToLua_Windows/Docs/v7.gif)
+
 
 ## V8_Lighting
 
 you can learn simple light,and material system.
+
+![image](https://github.com/ThisisGame/Lives2D/blob/V5_SwitchToLua_Windows/Docs/v8.gif)
 
 
 ## V9_Network_Raknet_Json
@@ -73,9 +81,3 @@ you can learn simple light,and material system.
 now your game can connect to server,you can learn raknet .
 
 
-
-![image](https://github.com/ThisisGame/Lives2D/blob/V9_Network_Raknet_Json/Docs/lives2d%20Framework.png)
-
-#NDK版本 android-ndk-r13-windows-x86_64
-
-![image](https://github.com/ThisisGame/Lives2D/blob/V5_SwitchToLua_Windows/Docs/lives2d.gif)
