@@ -60,20 +60,20 @@ and now you can run lives2d on android and ios.
 
 play skeleton animation,this branch ,you need learn code 3dsMax plugin to export skeleton animation data.
 
-![image](https://github.com/ThisisGame/Lives2D/blob/V5_SwitchToLua_Windows/Docs/v6.gif)
+![image](https://github.com/ThisisGame/Lives2D/blob/V9_Network_Raknet_Json/Docs/v6.png)
 
 ## V7_Physic_Bullet3
 
 learn bullet3.
 
-![image](https://github.com/ThisisGame/Lives2D/blob/V5_SwitchToLua_Windows/Docs/v7.gif)
+![image](https://github.com/ThisisGame/Lives2D/blob/V9_Network_Raknet_Json/Docs/v7.png)
 
 
 ## V8_Lighting
 
 you can learn simple light,and material system.
 
-![image](https://github.com/ThisisGame/Lives2D/blob/V5_SwitchToLua_Windows/Docs/v8.gif)
+![image](https://github.com/ThisisGame/Lives2D/blob/V9_Network_Raknet_Json/Docs/v8.png)
 
 
 ## V9_Network_Raknet_Json
